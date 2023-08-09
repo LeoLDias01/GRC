@@ -1,0 +1,13 @@
+C:\Users\leonardoleal\Desktop\BusinessManager\Business Manager\bin\Debug\Business Manager.exe.config
+C:\Users\leonardoleal\Desktop\BusinessManager\Business Manager\bin\Debug\Business Manager.exe
+C:\Users\leonardoleal\Desktop\BusinessManager\Business Manager\bin\Debug\Business Manager.pdb
+C:\Users\leonardoleal\Desktop\BusinessManager\Business Manager\obj\Debug\Business Manager.csproj.AssemblyReference.cache
+C:\Users\leonardoleal\Desktop\BusinessManager\Business Manager\obj\Debug\Business Manager.csproj.SuggestedBindingRedirects.cache
+C:\Users\leonardoleal\Desktop\BusinessManager\Business Manager\obj\Debug\Business_Manager.Properties.Resources.resources
+C:\Users\leonardoleal\Desktop\BusinessManager\Business Manager\obj\Debug\Business Manager.csproj.GenerateResource.cache
+C:\Users\leonardoleal\Desktop\BusinessManager\Business Manager\obj\Debug\Business Manager.csproj.CoreCompileInputs.cache
+C:\Users\leonardoleal\Desktop\BusinessManager\Business Manager\obj\Debug\Business Manager.exe
+C:\Users\leonardoleal\Desktop\BusinessManager\Business Manager\obj\Debug\Business Manager.pdb
+C:\Users\leonardoleal\Desktop\BusinessManager\Business Manager\obj\Debug\Business_Manager.Screens.Loading.resources
+C:\Users\leonardoleal\Desktop\BusinessManager\Business Manager\obj\Debug\Business_Manager.Screens.Menu.resources
+C:\Users\leonardoleal\Desktop\BusinessManager\Business Manager\obj\Debug\Business_Manager.Screens.Notepad.resources
