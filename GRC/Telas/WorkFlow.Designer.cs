@@ -1,0 +1,910 @@
+﻿namespace GRC.Telas
+{
+    partial class WorkFlow
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorkFlow));
+            this.tlpMenu = new System.Windows.Forms.TableLayoutPanel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btnMovimentacoes = new System.Windows.Forms.Button();
+            this.btnOrdemServiço = new GRC.Componentes.CustomButton();
+            this.customButton1 = new GRC.Componentes.CustomButton();
+            this.btnClientes = new System.Windows.Forms.Button();
+            this.pcbLogo = new System.Windows.Forms.PictureBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnFornecedor = new GRC.Componentes.CustomButton();
+            this.btnEstoque = new GRC.Componentes.CustomButton();
+            this.customPictureBox1 = new GRC.Componentes.CustomPictureBox();
+            this.button9 = new System.Windows.Forms.Button();
+            this.tsSuperior = new System.Windows.Forms.ToolStrip();
+            this.tdbMenuUsuario = new System.Windows.Forms.ToolStripDropDownButton();
+            this.tsmDesconectar = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmEncerrar = new System.Windows.Forms.ToolStripMenuItem();
+            this.customPanel3 = new GRC.Componentes.CustomPanel();
+            this.customPictureBox5 = new GRC.Componentes.CustomPictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.customPanel5 = new GRC.Componentes.CustomPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.customPanel6 = new GRC.Componentes.CustomPanel();
+            this.customPictureBox6 = new GRC.Componentes.CustomPictureBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.customPanel7 = new GRC.Componentes.CustomPanel();
+            this.customPictureBox7 = new GRC.Componentes.CustomPictureBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.customPanel1 = new GRC.Componentes.CustomPanel();
+            this.customPictureBox2 = new GRC.Componentes.CustomPictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.customPanel2 = new GRC.Componentes.CustomPanel();
+            this.customPictureBox3 = new GRC.Componentes.CustomPictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.customPanel4 = new GRC.Componentes.CustomPanel();
+            this.customPictureBox4 = new GRC.Componentes.CustomPictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tlpMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox1)).BeginInit();
+            this.tsSuperior.SuspendLayout();
+            this.customPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox5)).BeginInit();
+            this.customPanel5.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.customPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox6)).BeginInit();
+            this.customPanel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox7)).BeginInit();
+            this.customPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox2)).BeginInit();
+            this.customPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox3)).BeginInit();
+            this.customPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox4)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // tlpMenu
+            // 
+            this.tlpMenu.BackColor = System.Drawing.Color.White;
+            this.tlpMenu.ColumnCount = 1;
+            this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMenu.Controls.Add(this.button4, 0, 12);
+            this.tlpMenu.Controls.Add(this.btnMovimentacoes, 0, 7);
+            this.tlpMenu.Controls.Add(this.btnOrdemServiço, 0, 5);
+            this.tlpMenu.Controls.Add(this.customButton1, 0, 4);
+            this.tlpMenu.Controls.Add(this.btnClientes, 0, 8);
+            this.tlpMenu.Controls.Add(this.pcbLogo, 0, 0);
+            this.tlpMenu.Controls.Add(this.button7, 0, 10);
+            this.tlpMenu.Controls.Add(this.label1, 0, 2);
+            this.tlpMenu.Controls.Add(this.btnFornecedor, 0, 9);
+            this.tlpMenu.Controls.Add(this.btnEstoque, 0, 6);
+            this.tlpMenu.Controls.Add(this.customPictureBox1, 0, 13);
+            this.tlpMenu.Controls.Add(this.button9, 0, 11);
+            this.tlpMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMenu.Location = new System.Drawing.Point(0, 0);
+            this.tlpMenu.Name = "tlpMenu";
+            this.tlpMenu.RowCount = 14;
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.2293F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.77069F));
+            this.tlpMenu.Size = new System.Drawing.Size(223, 729);
+            this.tlpMenu.TabIndex = 0;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.Enabled = false;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
+            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(90)))));
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(3, 568);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(217, 44);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "        Despesas";
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button4.UseMnemonic = false;
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // btnMovimentacoes
+            // 
+            this.btnMovimentacoes.BackColor = System.Drawing.Color.Transparent;
+            this.btnMovimentacoes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMovimentacoes.FlatAppearance.BorderSize = 0;
+            this.btnMovimentacoes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnMovimentacoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMovimentacoes.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
+            this.btnMovimentacoes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(90)))));
+            this.btnMovimentacoes.Image = ((System.Drawing.Image)(resources.GetObject("btnMovimentacoes.Image")));
+            this.btnMovimentacoes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMovimentacoes.Location = new System.Drawing.Point(3, 318);
+            this.btnMovimentacoes.Name = "btnMovimentacoes";
+            this.btnMovimentacoes.Size = new System.Drawing.Size(217, 44);
+            this.btnMovimentacoes.TabIndex = 4;
+            this.btnMovimentacoes.Text = "        Movimentações";
+            this.btnMovimentacoes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMovimentacoes.UseMnemonic = false;
+            this.btnMovimentacoes.UseVisualStyleBackColor = false;
+            this.btnMovimentacoes.Click += new System.EventHandler(this.btnMovimentacoes_Click);
+            // 
+            // btnOrdemServiço
+            // 
+            this.btnOrdemServiço.BackColor = System.Drawing.Color.Transparent;
+            this.btnOrdemServiço.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnOrdemServiço.CorBotao = System.Drawing.Color.Transparent;
+            this.btnOrdemServiço.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnOrdemServiço.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOrdemServiço.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnOrdemServiço.FlatAppearance.BorderSize = 0;
+            this.btnOrdemServiço.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnOrdemServiço.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrdemServiço.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrdemServiço.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnOrdemServiço.Image = ((System.Drawing.Image)(resources.GetObject("btnOrdemServiço.Image")));
+            this.btnOrdemServiço.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrdemServiço.Location = new System.Drawing.Point(3, 218);
+            this.btnOrdemServiço.Name = "btnOrdemServiço";
+            this.btnOrdemServiço.Size = new System.Drawing.Size(217, 44);
+            this.btnOrdemServiço.TabIndex = 6;
+            this.btnOrdemServiço.TamanhoBorda = 0;
+            this.btnOrdemServiço.TamanhoRaio = 15;
+            this.btnOrdemServiço.Text = "        Ordem de Serviço";
+            this.btnOrdemServiço.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnOrdemServiço.UseVisualStyleBackColor = false;
+            this.btnOrdemServiço.Click += new System.EventHandler(this.btnOrdemServiço_Click);
+            // 
+            // customButton1
+            // 
+            this.customButton1.BackColor = System.Drawing.Color.Transparent;
+            this.customButton1.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.customButton1.CorBotao = System.Drawing.Color.Transparent;
+            this.customButton1.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.customButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customButton1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customButton1.Enabled = false;
+            this.customButton1.FlatAppearance.BorderSize = 0;
+            this.customButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.customButton1.Image = ((System.Drawing.Image)(resources.GetObject("customButton1.Image")));
+            this.customButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.customButton1.Location = new System.Drawing.Point(3, 168);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.Size = new System.Drawing.Size(217, 44);
+            this.customButton1.TabIndex = 6;
+            this.customButton1.TamanhoBorda = 0;
+            this.customButton1.TamanhoRaio = 15;
+            this.customButton1.Text = "        Vendas";
+            this.customButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.customButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.customButton1.UseVisualStyleBackColor = false;
+            // 
+            // btnClientes
+            // 
+            this.btnClientes.BackColor = System.Drawing.Color.Transparent;
+            this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClientes.FlatAppearance.BorderSize = 0;
+            this.btnClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClientes.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
+            this.btnClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(90)))));
+            this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
+            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClientes.Location = new System.Drawing.Point(3, 368);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(217, 44);
+            this.btnClientes.TabIndex = 3;
+            this.btnClientes.Text = "        Clientes";
+            this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnClientes.UseMnemonic = false;
+            this.btnClientes.UseVisualStyleBackColor = false;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            // 
+            // pcbLogo
+            // 
+            this.pcbLogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pcbLogo.Image = global::GRC.Properties.Resources.RF_LabTech_Logo;
+            this.pcbLogo.Location = new System.Drawing.Point(3, 3);
+            this.pcbLogo.Name = "pcbLogo";
+            this.pcbLogo.Size = new System.Drawing.Size(217, 109);
+            this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbLogo.TabIndex = 0;
+            this.pcbLogo.TabStop = false;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Transparent;
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.Enabled = false;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
+            this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(90)))));
+            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.Location = new System.Drawing.Point(3, 468);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(217, 44);
+            this.button7.TabIndex = 3;
+            this.button7.Text = "        Relatórios";
+            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button7.UseMnemonic = false;
+            this.button7.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Roboto", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(3, 123);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(217, 17);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Módulos";
+            // 
+            // btnFornecedor
+            // 
+            this.btnFornecedor.BackColor = System.Drawing.Color.Transparent;
+            this.btnFornecedor.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnFornecedor.CorBotao = System.Drawing.Color.Transparent;
+            this.btnFornecedor.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnFornecedor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFornecedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFornecedor.FlatAppearance.BorderSize = 0;
+            this.btnFornecedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFornecedor.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFornecedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnFornecedor.Image = ((System.Drawing.Image)(resources.GetObject("btnFornecedor.Image")));
+            this.btnFornecedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFornecedor.Location = new System.Drawing.Point(3, 418);
+            this.btnFornecedor.Name = "btnFornecedor";
+            this.btnFornecedor.Size = new System.Drawing.Size(217, 44);
+            this.btnFornecedor.TabIndex = 4;
+            this.btnFornecedor.TamanhoBorda = 0;
+            this.btnFornecedor.TamanhoRaio = 15;
+            this.btnFornecedor.Text = "        Fornecedores";
+            this.btnFornecedor.UseVisualStyleBackColor = false;
+            this.btnFornecedor.Click += new System.EventHandler(this.btnFornecedor_Click);
+            // 
+            // btnEstoque
+            // 
+            this.btnEstoque.BackColor = System.Drawing.Color.Transparent;
+            this.btnEstoque.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnEstoque.CorBotao = System.Drawing.Color.Transparent;
+            this.btnEstoque.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnEstoque.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEstoque.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEstoque.FlatAppearance.BorderSize = 0;
+            this.btnEstoque.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEstoque.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstoque.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnEstoque.Image = ((System.Drawing.Image)(resources.GetObject("btnEstoque.Image")));
+            this.btnEstoque.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEstoque.Location = new System.Drawing.Point(3, 268);
+            this.btnEstoque.Name = "btnEstoque";
+            this.btnEstoque.Size = new System.Drawing.Size(217, 44);
+            this.btnEstoque.TabIndex = 5;
+            this.btnEstoque.TamanhoBorda = 0;
+            this.btnEstoque.TamanhoRaio = 15;
+            this.btnEstoque.Text = "        Estoque";
+            this.btnEstoque.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEstoque.UseVisualStyleBackColor = false;
+            this.btnEstoque.Click += new System.EventHandler(this.btnEstoque_Click);
+            // 
+            // customPictureBox1
+            // 
+            this.customPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.customPictureBox1.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.customPictureBox1.CorBotao = System.Drawing.Color.Transparent;
+            this.customPictureBox1.CorTextoBotao = System.Drawing.SystemColors.ControlText;
+            this.customPictureBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.customPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.customPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("customPictureBox1.Image")));
+            this.customPictureBox1.Location = new System.Drawing.Point(3, 675);
+            this.customPictureBox1.Name = "customPictureBox1";
+            this.customPictureBox1.Size = new System.Drawing.Size(217, 51);
+            this.customPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.customPictureBox1.TabIndex = 7;
+            this.customPictureBox1.TabStop = false;
+            this.customPictureBox1.TamanhoBorda = 0;
+            this.customPictureBox1.TamanhoRaio = 0;
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.Transparent;
+            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button9.Enabled = false;
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
+            this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(90)))));
+            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
+            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button9.Location = new System.Drawing.Point(3, 518);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(217, 44);
+            this.button9.TabIndex = 3;
+            this.button9.Text = "        Finalizadores";
+            this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button9.UseMnemonic = false;
+            this.button9.UseVisualStyleBackColor = false;
+            // 
+            // tsSuperior
+            // 
+            this.tsSuperior.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tsSuperior.AutoSize = false;
+            this.tsSuperior.BackColor = System.Drawing.Color.White;
+            this.tsSuperior.Dock = System.Windows.Forms.DockStyle.None;
+            this.tsSuperior.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.tsSuperior.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tdbMenuUsuario});
+            this.tsSuperior.Location = new System.Drawing.Point(3, 0);
+            this.tsSuperior.Name = "tsSuperior";
+            this.tsSuperior.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.tsSuperior.Size = new System.Drawing.Size(1350, 51);
+            this.tsSuperior.Stretch = true;
+            this.tsSuperior.TabIndex = 1;
+            this.tsSuperior.Text = "toolStrip1";
+            // 
+            // tdbMenuUsuario
+            // 
+            this.tdbMenuUsuario.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tdbMenuUsuario.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmDesconectar,
+            this.tsmEncerrar});
+            this.tdbMenuUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tdbMenuUsuario.Image = ((System.Drawing.Image)(resources.GetObject("tdbMenuUsuario.Image")));
+            this.tdbMenuUsuario.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tdbMenuUsuario.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tdbMenuUsuario.Margin = new System.Windows.Forms.Padding(0, 1, 20, 2);
+            this.tdbMenuUsuario.Name = "tdbMenuUsuario";
+            this.tdbMenuUsuario.Size = new System.Drawing.Size(37, 48);
+            this.tdbMenuUsuario.ToolTipText = "Opções do Usuário";
+            this.tdbMenuUsuario.MouseLeave += new System.EventHandler(this.tdbMenuUsuario_MouseLeave);
+            this.tdbMenuUsuario.MouseHover += new System.EventHandler(this.tdbMenuUsuario_MouseHover);
+            // 
+            // tsmDesconectar
+            // 
+            this.tsmDesconectar.Image = ((System.Drawing.Image)(resources.GetObject("tsmDesconectar.Image")));
+            this.tsmDesconectar.Name = "tsmDesconectar";
+            this.tsmDesconectar.Size = new System.Drawing.Size(126, 22);
+            this.tsmDesconectar.Text = "Trocar";
+            this.tsmDesconectar.Click += new System.EventHandler(this.tsmDesconectar_Click);
+            // 
+            // tsmEncerrar
+            // 
+            this.tsmEncerrar.Image = ((System.Drawing.Image)(resources.GetObject("tsmEncerrar.Image")));
+            this.tsmEncerrar.Name = "tsmEncerrar";
+            this.tsmEncerrar.Size = new System.Drawing.Size(126, 22);
+            this.tsmEncerrar.Text = "Encerrar";
+            this.tsmEncerrar.Click += new System.EventHandler(this.tsmEncerrar_Click);
+            // 
+            // customPanel3
+            // 
+            this.customPanel3.BackColor = System.Drawing.Color.White;
+            this.customPanel3.Controls.Add(this.customPictureBox5);
+            this.customPanel3.Controls.Add(this.label8);
+            this.customPanel3.Controls.Add(this.label9);
+            this.customPanel3.CorBorda = System.Drawing.Color.Black;
+            this.customPanel3.CorBotao = System.Drawing.Color.White;
+            this.customPanel3.CorTextoBotao = System.Drawing.Color.White;
+            this.customPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customPanel3.ForeColor = System.Drawing.Color.White;
+            this.customPanel3.Location = new System.Drawing.Point(831, 3);
+            this.customPanel3.Name = "customPanel3";
+            this.customPanel3.Size = new System.Drawing.Size(270, 125);
+            this.customPanel3.TabIndex = 5;
+            this.customPanel3.TamanhoBorda = 0;
+            this.customPanel3.TamanhoRaio = 15;
+            // 
+            // customPictureBox5
+            // 
+            this.customPictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.customPictureBox5.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.customPictureBox5.CorBotao = System.Drawing.Color.Transparent;
+            this.customPictureBox5.CorTextoBotao = System.Drawing.Color.White;
+            this.customPictureBox5.ForeColor = System.Drawing.Color.White;
+            this.customPictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("customPictureBox5.Image")));
+            this.customPictureBox5.Location = new System.Drawing.Point(6, 17);
+            this.customPictureBox5.Name = "customPictureBox5";
+            this.customPictureBox5.Size = new System.Drawing.Size(79, 98);
+            this.customPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.customPictureBox5.TabIndex = 11;
+            this.customPictureBox5.TabStop = false;
+            this.customPictureBox5.TamanhoBorda = 0;
+            this.customPictureBox5.TamanhoRaio = 0;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.label8.Font = new System.Drawing.Font("Roboto", 13F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.Color.Crimson;
+            this.label8.Location = new System.Drawing.Point(91, 17);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(117, 22);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "OS atrasadas";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.label9.Font = new System.Drawing.Font("Roboto", 36F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.Color.Crimson;
+            this.label9.Location = new System.Drawing.Point(91, 60);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 58);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "5";
+            // 
+            // customPanel5
+            // 
+            this.customPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.customPanel5.BackColor = System.Drawing.Color.AliceBlue;
+            this.customPanel5.Controls.Add(this.flowLayoutPanel1);
+            this.customPanel5.CorBorda = System.Drawing.Color.Black;
+            this.customPanel5.CorBotao = System.Drawing.Color.AliceBlue;
+            this.customPanel5.CorTextoBotao = System.Drawing.Color.White;
+            this.customPanel5.ForeColor = System.Drawing.Color.White;
+            this.customPanel5.Location = new System.Drawing.Point(1061, 205);
+            this.customPanel5.Name = "customPanel5";
+            this.customPanel5.Size = new System.Drawing.Size(277, 512);
+            this.customPanel5.TabIndex = 6;
+            this.customPanel5.TamanhoBorda = 0;
+            this.customPanel5.TamanhoRaio = 10;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel1.Controls.Add(this.customPanel6);
+            this.flowLayoutPanel1.Controls.Add(this.customPanel7);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(277, 512);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // customPanel6
+            // 
+            this.customPanel6.BackColor = System.Drawing.Color.Goldenrod;
+            this.customPanel6.Controls.Add(this.customPictureBox6);
+            this.customPanel6.Controls.Add(this.label10);
+            this.customPanel6.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.customPanel6.CorBotao = System.Drawing.Color.Goldenrod;
+            this.customPanel6.CorTextoBotao = System.Drawing.Color.White;
+            this.customPanel6.ForeColor = System.Drawing.Color.White;
+            this.customPanel6.Location = new System.Drawing.Point(3, 3);
+            this.customPanel6.Name = "customPanel6";
+            this.customPanel6.Size = new System.Drawing.Size(271, 80);
+            this.customPanel6.TabIndex = 8;
+            this.customPanel6.TamanhoBorda = 0;
+            this.customPanel6.TamanhoRaio = 15;
+            // 
+            // customPictureBox6
+            // 
+            this.customPictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.customPictureBox6.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.customPictureBox6.CorBotao = System.Drawing.Color.Transparent;
+            this.customPictureBox6.CorTextoBotao = System.Drawing.Color.White;
+            this.customPictureBox6.ForeColor = System.Drawing.Color.White;
+            this.customPictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("customPictureBox6.Image")));
+            this.customPictureBox6.Location = new System.Drawing.Point(3, 3);
+            this.customPictureBox6.Name = "customPictureBox6";
+            this.customPictureBox6.Size = new System.Drawing.Size(55, 77);
+            this.customPictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.customPictureBox6.TabIndex = 3;
+            this.customPictureBox6.TabStop = false;
+            this.customPictureBox6.TamanhoBorda = 0;
+            this.customPictureBox6.TamanhoRaio = 0;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Roboto", 9F);
+            this.label10.Location = new System.Drawing.Point(61, 20);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(205, 42);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Item: Poco X7\r\n\r\nSituação: Abaixo do estoque mínimo";
+            // 
+            // customPanel7
+            // 
+            this.customPanel7.BackColor = System.Drawing.Color.Crimson;
+            this.customPanel7.Controls.Add(this.customPictureBox7);
+            this.customPanel7.Controls.Add(this.label11);
+            this.customPanel7.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.customPanel7.CorBotao = System.Drawing.Color.Crimson;
+            this.customPanel7.CorTextoBotao = System.Drawing.Color.White;
+            this.customPanel7.ForeColor = System.Drawing.Color.White;
+            this.customPanel7.Location = new System.Drawing.Point(3, 89);
+            this.customPanel7.Name = "customPanel7";
+            this.customPanel7.Size = new System.Drawing.Size(271, 80);
+            this.customPanel7.TabIndex = 9;
+            this.customPanel7.TamanhoBorda = 0;
+            this.customPanel7.TamanhoRaio = 15;
+            // 
+            // customPictureBox7
+            // 
+            this.customPictureBox7.BackColor = System.Drawing.Color.Transparent;
+            this.customPictureBox7.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.customPictureBox7.CorBotao = System.Drawing.Color.Transparent;
+            this.customPictureBox7.CorTextoBotao = System.Drawing.Color.White;
+            this.customPictureBox7.ForeColor = System.Drawing.Color.White;
+            this.customPictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("customPictureBox7.Image")));
+            this.customPictureBox7.Location = new System.Drawing.Point(3, 3);
+            this.customPictureBox7.Name = "customPictureBox7";
+            this.customPictureBox7.Size = new System.Drawing.Size(55, 77);
+            this.customPictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.customPictureBox7.TabIndex = 3;
+            this.customPictureBox7.TabStop = false;
+            this.customPictureBox7.TamanhoBorda = 0;
+            this.customPictureBox7.TamanhoRaio = 0;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Roboto", 9F);
+            this.label11.Location = new System.Drawing.Point(61, 10);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(155, 56);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "OS: 12458\r\n\r\nSituação: Prestes a acabar \r\no prazo de reparo";
+            // 
+            // customPanel1
+            // 
+            this.customPanel1.BackColor = System.Drawing.Color.White;
+            this.customPanel1.Controls.Add(this.customPictureBox2);
+            this.customPanel1.Controls.Add(this.label3);
+            this.customPanel1.Controls.Add(this.label2);
+            this.customPanel1.CorBorda = System.Drawing.Color.Black;
+            this.customPanel1.CorBotao = System.Drawing.Color.White;
+            this.customPanel1.CorTextoBotao = System.Drawing.Color.DarkGreen;
+            this.customPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customPanel1.ForeColor = System.Drawing.Color.DarkGreen;
+            this.customPanel1.Location = new System.Drawing.Point(3, 3);
+            this.customPanel1.Name = "customPanel1";
+            this.customPanel1.Size = new System.Drawing.Size(270, 125);
+            this.customPanel1.TabIndex = 6;
+            this.customPanel1.TamanhoBorda = 0;
+            this.customPanel1.TamanhoRaio = 15;
+            // 
+            // customPictureBox2
+            // 
+            this.customPictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.customPictureBox2.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.customPictureBox2.CorBotao = System.Drawing.Color.Transparent;
+            this.customPictureBox2.CorTextoBotao = System.Drawing.Color.White;
+            this.customPictureBox2.ForeColor = System.Drawing.Color.White;
+            this.customPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("customPictureBox2.Image")));
+            this.customPictureBox2.Location = new System.Drawing.Point(3, 17);
+            this.customPictureBox2.Name = "customPictureBox2";
+            this.customPictureBox2.Size = new System.Drawing.Size(79, 98);
+            this.customPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.customPictureBox2.TabIndex = 2;
+            this.customPictureBox2.TabStop = false;
+            this.customPictureBox2.TamanhoBorda = 0;
+            this.customPictureBox2.TamanhoRaio = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.label3.Font = new System.Drawing.Font("Roboto", 13F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.ForestGreen;
+            this.label3.Location = new System.Drawing.Point(88, 17);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(153, 22);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Vendas Efetuadas";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.label2.Font = new System.Drawing.Font("Roboto", 36F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.ForestGreen;
+            this.label2.Location = new System.Drawing.Point(88, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(109, 58);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "250";
+            // 
+            // customPanel2
+            // 
+            this.customPanel2.BackColor = System.Drawing.Color.White;
+            this.customPanel2.Controls.Add(this.customPictureBox3);
+            this.customPanel2.Controls.Add(this.label4);
+            this.customPanel2.Controls.Add(this.label5);
+            this.customPanel2.CorBorda = System.Drawing.Color.Black;
+            this.customPanel2.CorBotao = System.Drawing.Color.White;
+            this.customPanel2.CorTextoBotao = System.Drawing.Color.White;
+            this.customPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customPanel2.ForeColor = System.Drawing.Color.White;
+            this.customPanel2.Location = new System.Drawing.Point(279, 3);
+            this.customPanel2.Name = "customPanel2";
+            this.customPanel2.Size = new System.Drawing.Size(270, 125);
+            this.customPanel2.TabIndex = 6;
+            this.customPanel2.TamanhoBorda = 0;
+            this.customPanel2.TamanhoRaio = 15;
+            // 
+            // customPictureBox3
+            // 
+            this.customPictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.customPictureBox3.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.customPictureBox3.CorBotao = System.Drawing.Color.Transparent;
+            this.customPictureBox3.CorTextoBotao = System.Drawing.Color.White;
+            this.customPictureBox3.ForeColor = System.Drawing.Color.White;
+            this.customPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("customPictureBox3.Image")));
+            this.customPictureBox3.Location = new System.Drawing.Point(8, 17);
+            this.customPictureBox3.Name = "customPictureBox3";
+            this.customPictureBox3.Size = new System.Drawing.Size(79, 98);
+            this.customPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.customPictureBox3.TabIndex = 5;
+            this.customPictureBox3.TabStop = false;
+            this.customPictureBox3.TamanhoBorda = 0;
+            this.customPictureBox3.TamanhoRaio = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.label4.Font = new System.Drawing.Font("Roboto", 13F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.label4.Location = new System.Drawing.Point(87, 17);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(172, 22);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Reparos Finalizados";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.label5.Font = new System.Drawing.Font("Roboto", 36F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.label5.Location = new System.Drawing.Point(93, 60);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(109, 58);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "100";
+            // 
+            // customPanel4
+            // 
+            this.customPanel4.BackColor = System.Drawing.Color.White;
+            this.customPanel4.Controls.Add(this.customPictureBox4);
+            this.customPanel4.Controls.Add(this.label6);
+            this.customPanel4.Controls.Add(this.label7);
+            this.customPanel4.CorBorda = System.Drawing.Color.Black;
+            this.customPanel4.CorBotao = System.Drawing.Color.White;
+            this.customPanel4.CorTextoBotao = System.Drawing.Color.White;
+            this.customPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customPanel4.ForeColor = System.Drawing.Color.White;
+            this.customPanel4.Location = new System.Drawing.Point(555, 3);
+            this.customPanel4.Name = "customPanel4";
+            this.customPanel4.Size = new System.Drawing.Size(270, 125);
+            this.customPanel4.TabIndex = 6;
+            this.customPanel4.TamanhoBorda = 0;
+            this.customPanel4.TamanhoRaio = 15;
+            // 
+            // customPictureBox4
+            // 
+            this.customPictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.customPictureBox4.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.customPictureBox4.CorBotao = System.Drawing.Color.Transparent;
+            this.customPictureBox4.CorTextoBotao = System.Drawing.Color.White;
+            this.customPictureBox4.ForeColor = System.Drawing.Color.White;
+            this.customPictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("customPictureBox4.Image")));
+            this.customPictureBox4.Location = new System.Drawing.Point(3, 17);
+            this.customPictureBox4.Name = "customPictureBox4";
+            this.customPictureBox4.Size = new System.Drawing.Size(79, 98);
+            this.customPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.customPictureBox4.TabIndex = 8;
+            this.customPictureBox4.TabStop = false;
+            this.customPictureBox4.TamanhoBorda = 0;
+            this.customPictureBox4.TamanhoRaio = 0;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.label6.Font = new System.Drawing.Font("Roboto", 13F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label6.Location = new System.Drawing.Point(88, 17);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(133, 22);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Reparos a fazer";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.label7.Font = new System.Drawing.Font("Roboto", 36F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label7.Location = new System.Drawing.Point(88, 60);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(81, 58);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "50";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.customPanel1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.customPanel4, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.customPanel3, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.customPanel2, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(234, 60);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1104, 131);
+            this.tableLayoutPanel1.TabIndex = 7;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.tlpMenu);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(223, 729);
+            this.panel1.TabIndex = 11;
+            // 
+            // WorkFlow
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.customPanel5);
+            this.Controls.Add(this.tsSuperior);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "WorkFlow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "WorkFlow";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.WorkFlow_Load);
+            this.tlpMenu.ResumeLayout(false);
+            this.tlpMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox1)).EndInit();
+            this.tsSuperior.ResumeLayout(false);
+            this.tsSuperior.PerformLayout();
+            this.customPanel3.ResumeLayout(false);
+            this.customPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox5)).EndInit();
+            this.customPanel5.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.customPanel6.ResumeLayout(false);
+            this.customPanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox6)).EndInit();
+            this.customPanel7.ResumeLayout(false);
+            this.customPanel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox7)).EndInit();
+            this.customPanel1.ResumeLayout(false);
+            this.customPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox2)).EndInit();
+            this.customPanel2.ResumeLayout(false);
+            this.customPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox3)).EndInit();
+            this.customPanel4.ResumeLayout(false);
+            this.customPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox4)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.TableLayoutPanel tlpMenu;
+        private System.Windows.Forms.PictureBox pcbLogo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnClientes;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ToolStrip tsSuperior;
+        private System.Windows.Forms.ToolStripDropDownButton tdbMenuUsuario;
+        private System.Windows.Forms.ToolStripMenuItem tsmDesconectar;
+        private System.Windows.Forms.ToolStripMenuItem tsmEncerrar;
+        private Componentes.CustomButton btnFornecedor;
+        private Componentes.CustomButton btnEstoque;
+        private Componentes.CustomButton customButton1;
+        private Componentes.CustomButton btnOrdemServiço;
+        private Componentes.CustomPictureBox customPictureBox1;
+        private Componentes.CustomPanel customPanel3;
+        private Componentes.CustomPanel customPanel5;
+        private Componentes.CustomPanel customPanel1;
+        private Componentes.CustomPanel customPanel2;
+        private Componentes.CustomPanel customPanel4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private Componentes.CustomPictureBox customPictureBox2;
+        private Componentes.CustomPictureBox customPictureBox3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private Componentes.CustomPictureBox customPictureBox5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private Componentes.CustomPictureBox customPictureBox4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private Componentes.CustomPanel customPanel6;
+        private Componentes.CustomPictureBox customPictureBox6;
+        private System.Windows.Forms.Label label10;
+        private Componentes.CustomPanel customPanel7;
+        private Componentes.CustomPictureBox customPictureBox7;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnMovimentacoes;
+        private System.Windows.Forms.Panel panel1;
+    }
+}
