@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GRC.Telas;
-
 namespace GRC
 {
     internal static class Program
@@ -15,9 +14,10 @@ namespace GRC
         [STAThread]
         static void Main()
         {
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PesquisaCliente());
+            Application.Run(new WorkFlow());
             //Application.Run(new Movimentacoes());
         }
     }

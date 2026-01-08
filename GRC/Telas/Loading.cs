@@ -45,7 +45,7 @@ namespace GRC.Telas
         }
         private bool VerificaBanco()
         {
-            string diretorioSistema = Path.Combine("C:\\GRC", "rf_db.db");
+            string diretorioSistema = Path.Combine("C:\\GRC\\Databases", "rf_db.db");
             if (File.Exists(diretorioSistema))
                 return true;
             else return false;

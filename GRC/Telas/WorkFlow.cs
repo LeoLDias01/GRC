@@ -1,4 +1,5 @@
 ﻿using Business.EmailSender;
+using Business.Helper;
 using Business.Session;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace GRC.Telas
 {
     public partial class WorkFlow : Form
     {
+        CriacaoBanco _inicializacao = new CriacaoBanco();
         public WorkFlow()
         {
             InitializeComponent();
@@ -22,6 +24,7 @@ namespace GRC.Telas
         private void WorkFlow_Load(object sender, EventArgs e)
         {
             this.Visible = false;
+            _inicializacao.VerificaBanco();
             new Login().ShowDialog();
             this.Visible = true;
             tdbMenuUsuario.Text = Sessao.UsuarioNome;
@@ -67,7 +70,7 @@ namespace GRC.Telas
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            new CadastroCliente().ShowDialog();
+            new PesquisaCliente().ShowDialog();
         }
 
         private void btnMovimentacoes_Click(object sender, EventArgs e)
