@@ -9,7 +9,7 @@ namespace Domain.Conections
     {
         public String GetConnections()
         {
-            string caminhoBanco = Path.Combine("C:\\GRC", "rf_db.db");
+            string caminhoBanco = Path.Combine("C:\\GRC\\Databases", "rf_db.db");
 
             return $"Data Source={caminhoBanco};Version=3";
         }

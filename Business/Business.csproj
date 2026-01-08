@@ -98,6 +98,7 @@
     <Compile Include="Helper\FormataMoeda.cs" />
     <Compile Include="Helper\RecalculaEstoque.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ServiceCliente.cs" />
     <Compile Include="Services\ServiceFornecedor.cs" />
     <Compile Include="Services\ServiceItemEstoque.cs" />
     <Compile Include="Services\ServiceLogin.cs" />

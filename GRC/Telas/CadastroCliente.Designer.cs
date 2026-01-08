@@ -29,33 +29,38 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroCliente));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.customPanel1 = new GRC.Componentes.CustomPanel();
-            this.txtRg = new MaterialSkin.Controls.MaterialTextBox();
+            this.rbtPJ = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rbtPF = new MaterialSkin.Controls.MaterialRadioButton();
+            this.pcAtivo = new System.Windows.Forms.PictureBox();
+            this.swAtivo = new MaterialSkin.Controls.MaterialSwitch();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.txtObservacoes = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
-            this.txtCpf = new MaterialSkin.Controls.MaterialTextBox();
             this.txtNome = new MaterialSkin.Controls.MaterialTextBox();
-            this.customPanel5 = new GRC.Componentes.CustomPanel();
-            this.chkHabilitaEmail = new MaterialSkin.Controls.MaterialCheckbox();
-            this.txtObservacoesEmail = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
-            this.txtEmail = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.txtIdentificador = new MaterialSkin.Controls.MaterialTextBox();
+            this.pn1 = new GRC.Componentes.RoundedPanel();
+            this.pn2 = new GRC.Componentes.RoundedPanel();
+            this.pn3 = new GRC.Componentes.RoundedPanel();
+            this.pn4 = new GRC.Componentes.RoundedPanel();
+            this.btnSalvar = new GRC.Componentes.CustomButton();
             this.customPanel2 = new GRC.Componentes.CustomPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAddTelefone = new GRC.Componentes.CustomButton();
             this.chkWhatsapp = new MaterialSkin.Controls.MaterialCheckbox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.txtObservacoesTelefone = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
             this.txtTelefone = new MaterialSkin.Controls.MaterialTextBox();
-            this.dgvTelefones = new System.Windows.Forms.DataGridView();
-            this.colIdTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colWhatsApp = new System.Windows.Forms.DataGridViewImageColumn();
-            this.colTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colObservacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colExcluir = new System.Windows.Forms.DataGridViewImageColumn();
+            this.customPanel5 = new GRC.Componentes.CustomPanel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.chkHabilitaEmail = new MaterialSkin.Controls.MaterialCheckbox();
+            this.txtObservacoesEmail = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
+            this.txtEmail = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.customPanel3 = new GRC.Componentes.CustomPanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.chkHabilitaEndereco = new MaterialSkin.Controls.MaterialCheckbox();
             this.txtObservacoesEndereco = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
             this.txtUf = new MaterialSkin.Controls.MaterialTextBox();
@@ -66,28 +71,34 @@
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.txtLogradouro = new MaterialSkin.Controls.MaterialTextBox();
             this.txtCep = new MaterialSkin.Controls.MaterialTextBox();
-            this.roundedPanel1 = new GRC.Componentes.RoundedPanel();
-            this.roundedPanel2 = new GRC.Componentes.RoundedPanel();
-            this.roundedPanel3 = new GRC.Componentes.RoundedPanel();
-            this.roundedPanel4 = new GRC.Componentes.RoundedPanel();
-            this.btnSalvar = new GRC.Componentes.CustomButton();
-            this.swAtivo = new MaterialSkin.Controls.MaterialSwitch();
+            this.dgvTelefones = new System.Windows.Forms.DataGridView();
+            this.colIdTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colWhatsApp = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colObservacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colExcluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.customPanel1.SuspendLayout();
-            this.customPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcAtivo)).BeginInit();
             this.customPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTelefones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.customPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.customPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTelefones)).BeginInit();
             this.SuspendLayout();
             // 
             // customPanel1
             // 
             this.customPanel1.BackColor = System.Drawing.Color.AliceBlue;
+            this.customPanel1.Controls.Add(this.rbtPJ);
+            this.customPanel1.Controls.Add(this.rbtPF);
+            this.customPanel1.Controls.Add(this.pcAtivo);
             this.customPanel1.Controls.Add(this.swAtivo);
-            this.customPanel1.Controls.Add(this.txtRg);
             this.customPanel1.Controls.Add(this.materialLabel1);
             this.customPanel1.Controls.Add(this.txtObservacoes);
-            this.customPanel1.Controls.Add(this.txtCpf);
             this.customPanel1.Controls.Add(this.txtNome);
+            this.customPanel1.Controls.Add(this.txtIdentificador);
             this.customPanel1.CorBorda = System.Drawing.Color.MediumSlateBlue;
             this.customPanel1.CorBotao = System.Drawing.Color.AliceBlue;
             this.customPanel1.CorTextoBotao = System.Drawing.Color.White;
@@ -99,27 +110,67 @@
             this.customPanel1.TamanhoBorda = 0;
             this.customPanel1.TamanhoRaio = 20;
             // 
-            // txtRg
+            // rbtPJ
             // 
-            this.txtRg.AcceptsTab = true;
-            this.txtRg.AnimateReadOnly = false;
-            this.txtRg.AutoWordSelection = true;
-            this.txtRg.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtRg.Depth = 0;
-            this.txtRg.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtRg.Hint = "RG";
-            this.txtRg.LeadingIcon = null;
-            this.txtRg.LeaveOnEnterKey = true;
-            this.txtRg.Location = new System.Drawing.Point(16, 169);
-            this.txtRg.MaxLength = 18;
-            this.txtRg.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtRg.Multiline = false;
-            this.txtRg.Name = "txtRg";
-            this.txtRg.Size = new System.Drawing.Size(282, 50);
-            this.txtRg.TabIndex = 6;
-            this.txtRg.Text = "";
-            this.txtRg.TrailingIcon = null;
-            this.txtRg.UseAccent = false;
+            this.rbtPJ.AutoSize = true;
+            this.rbtPJ.Depth = 0;
+            this.rbtPJ.Location = new System.Drawing.Point(16, 70);
+            this.rbtPJ.Margin = new System.Windows.Forms.Padding(0);
+            this.rbtPJ.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbtPJ.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbtPJ.Name = "rbtPJ";
+            this.rbtPJ.Ripple = true;
+            this.rbtPJ.Size = new System.Drawing.Size(148, 37);
+            this.rbtPJ.TabIndex = 41;
+            this.rbtPJ.TabStop = true;
+            this.rbtPJ.Text = "Pessoa Jurídica";
+            this.rbtPJ.UseVisualStyleBackColor = true;
+            this.rbtPJ.CheckedChanged += new System.EventHandler(this.rbtPJ_CheckedChanged);
+            // 
+            // rbtPF
+            // 
+            this.rbtPF.AutoSize = true;
+            this.rbtPF.Depth = 0;
+            this.rbtPF.Location = new System.Drawing.Point(16, 40);
+            this.rbtPF.Margin = new System.Windows.Forms.Padding(0);
+            this.rbtPF.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbtPF.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbtPF.Name = "rbtPF";
+            this.rbtPF.Ripple = true;
+            this.rbtPF.Size = new System.Drawing.Size(133, 37);
+            this.rbtPF.TabIndex = 40;
+            this.rbtPF.TabStop = true;
+            this.rbtPF.Text = "Pessoa Física";
+            this.rbtPF.UseVisualStyleBackColor = true;
+            this.rbtPF.CheckedChanged += new System.EventHandler(this.rbtPF_CheckedChanged);
+            // 
+            // pcAtivo
+            // 
+            this.pcAtivo.Image = ((System.Drawing.Image)(resources.GetObject("pcAtivo.Image")));
+            this.pcAtivo.Location = new System.Drawing.Point(92, 4);
+            this.pcAtivo.Name = "pcAtivo";
+            this.pcAtivo.Size = new System.Drawing.Size(35, 36);
+            this.pcAtivo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcAtivo.TabIndex = 38;
+            this.pcAtivo.TabStop = false;
+            this.pcAtivo.Visible = false;
+            // 
+            // swAtivo
+            // 
+            this.swAtivo.AutoSize = true;
+            this.swAtivo.Depth = 0;
+            this.swAtivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.swAtivo.Location = new System.Drawing.Point(218, 10);
+            this.swAtivo.Margin = new System.Windows.Forms.Padding(0);
+            this.swAtivo.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.swAtivo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.swAtivo.Name = "swAtivo";
+            this.swAtivo.Ripple = true;
+            this.swAtivo.Size = new System.Drawing.Size(94, 37);
+            this.swAtivo.TabIndex = 39;
+            this.swAtivo.Text = "Ativo";
+            this.swAtivo.UseVisualStyleBackColor = true;
+            this.swAtivo.CheckedChanged += new System.EventHandler(this.swAtivo_CheckedChanged);
             // 
             // materialLabel1
             // 
@@ -133,9 +184,9 @@
             this.materialLabel1.Location = new System.Drawing.Point(22, 16);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(152, 24);
+            this.materialLabel1.Size = new System.Drawing.Size(64, 24);
             this.materialLabel1.TabIndex = 5;
-            this.materialLabel1.Text = "Dados de Cliente";
+            this.materialLabel1.Text = "Cliente";
             // 
             // txtObservacoes
             // 
@@ -146,7 +197,7 @@
             this.txtObservacoes.Depth = 0;
             this.txtObservacoes.HideSelection = true;
             this.txtObservacoes.Hint = "Observações";
-            this.txtObservacoes.Location = new System.Drawing.Point(16, 225);
+            this.txtObservacoes.Location = new System.Drawing.Point(16, 222);
             this.txtObservacoes.MaxLength = 300;
             this.txtObservacoes.MouseState = MaterialSkin.MouseState.OUT;
             this.txtObservacoes.Name = "txtObservacoes";
@@ -157,34 +208,12 @@
             this.txtObservacoes.SelectionLength = 0;
             this.txtObservacoes.SelectionStart = 0;
             this.txtObservacoes.ShortcutsEnabled = true;
-            this.txtObservacoes.Size = new System.Drawing.Size(282, 153);
+            this.txtObservacoes.Size = new System.Drawing.Size(282, 156);
             this.txtObservacoes.TabIndex = 5;
             this.txtObservacoes.TabStop = false;
             this.txtObservacoes.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtObservacoes.UseAccent = false;
             this.txtObservacoes.UseSystemPasswordChar = false;
-            // 
-            // txtCpf
-            // 
-            this.txtCpf.AcceptsTab = true;
-            this.txtCpf.AnimateReadOnly = false;
-            this.txtCpf.AutoWordSelection = true;
-            this.txtCpf.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCpf.Depth = 0;
-            this.txtCpf.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtCpf.Hint = "CPF";
-            this.txtCpf.LeadingIcon = null;
-            this.txtCpf.LeaveOnEnterKey = true;
-            this.txtCpf.Location = new System.Drawing.Point(16, 113);
-            this.txtCpf.MaxLength = 18;
-            this.txtCpf.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtCpf.Multiline = false;
-            this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(282, 50);
-            this.txtCpf.TabIndex = 3;
-            this.txtCpf.Text = "";
-            this.txtCpf.TrailingIcon = null;
-            this.txtCpf.UseAccent = false;
             // 
             // txtNome
             // 
@@ -197,7 +226,7 @@
             this.txtNome.Hint = "Nome";
             this.txtNome.LeadingIcon = null;
             this.txtNome.LeaveOnEnterKey = true;
-            this.txtNome.Location = new System.Drawing.Point(16, 57);
+            this.txtNome.Location = new System.Drawing.Point(16, 110);
             this.txtNome.MaxLength = 60;
             this.txtNome.MouseState = MaterialSkin.MouseState.OUT;
             this.txtNome.Multiline = false;
@@ -208,9 +237,243 @@
             this.txtNome.TrailingIcon = null;
             this.txtNome.UseAccent = false;
             // 
+            // txtIdentificador
+            // 
+            this.txtIdentificador.AcceptsTab = true;
+            this.txtIdentificador.AnimateReadOnly = false;
+            this.txtIdentificador.AutoWordSelection = true;
+            this.txtIdentificador.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIdentificador.Depth = 0;
+            this.txtIdentificador.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtIdentificador.Hint = "CPF";
+            this.txtIdentificador.LeadingIcon = null;
+            this.txtIdentificador.LeaveOnEnterKey = true;
+            this.txtIdentificador.Location = new System.Drawing.Point(16, 166);
+            this.txtIdentificador.MaxLength = 18;
+            this.txtIdentificador.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtIdentificador.Multiline = false;
+            this.txtIdentificador.Name = "txtIdentificador";
+            this.txtIdentificador.Size = new System.Drawing.Size(282, 50);
+            this.txtIdentificador.TabIndex = 3;
+            this.txtIdentificador.Text = "";
+            this.txtIdentificador.TrailingIcon = null;
+            this.txtIdentificador.UseAccent = false;
+            this.txtIdentificador.TextChanged += new System.EventHandler(this.txtIdentificador_TextChanged);
+            // 
+            // pn1
+            // 
+            this.pn1.BackColor = System.Drawing.Color.Transparent;
+            this.pn1.Color1 = System.Drawing.Color.SpringGreen;
+            this.pn1.Color2 = System.Drawing.Color.Aqua;
+            this.pn1.CornerRadius = 8;
+            this.pn1.GradientAngle = 300F;
+            this.pn1.Location = new System.Drawing.Point(658, 12);
+            this.pn1.Name = "pn1";
+            this.pn1.Size = new System.Drawing.Size(55, 34);
+            this.pn1.TabIndex = 20;
+            // 
+            // pn2
+            // 
+            this.pn2.BackColor = System.Drawing.Color.Transparent;
+            this.pn2.Color1 = System.Drawing.Color.SpringGreen;
+            this.pn2.Color2 = System.Drawing.Color.Aqua;
+            this.pn2.CornerRadius = 8;
+            this.pn2.GradientAngle = 300F;
+            this.pn2.Location = new System.Drawing.Point(723, 12);
+            this.pn2.Name = "pn2";
+            this.pn2.Size = new System.Drawing.Size(55, 34);
+            this.pn2.TabIndex = 21;
+            // 
+            // pn3
+            // 
+            this.pn3.BackColor = System.Drawing.Color.Transparent;
+            this.pn3.Color1 = System.Drawing.Color.SpringGreen;
+            this.pn3.Color2 = System.Drawing.Color.Aqua;
+            this.pn3.CornerRadius = 8;
+            this.pn3.GradientAngle = 300F;
+            this.pn3.Location = new System.Drawing.Point(784, 12);
+            this.pn3.Name = "pn3";
+            this.pn3.Size = new System.Drawing.Size(55, 34);
+            this.pn3.TabIndex = 21;
+            // 
+            // pn4
+            // 
+            this.pn4.BackColor = System.Drawing.Color.Transparent;
+            this.pn4.Color1 = System.Drawing.Color.SpringGreen;
+            this.pn4.Color2 = System.Drawing.Color.Aqua;
+            this.pn4.CornerRadius = 8;
+            this.pn4.GradientAngle = 300F;
+            this.pn4.Location = new System.Drawing.Point(845, 12);
+            this.pn4.Name = "pn4";
+            this.pn4.Size = new System.Drawing.Size(55, 34);
+            this.pn4.TabIndex = 21;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSalvar.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnSalvar.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnSalvar.CorTextoBotao = System.Drawing.Color.White;
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvar.FlatAppearance.BorderSize = 0;
+            this.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSalvar.ForeColor = System.Drawing.Color.White;
+            this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalvar.Location = new System.Drawing.Point(906, 9);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnSalvar.Size = new System.Drawing.Size(167, 37);
+            this.btnSalvar.TabIndex = 18;
+            this.btnSalvar.TamanhoBorda = 0;
+            this.btnSalvar.TamanhoRaio = 5;
+            this.btnSalvar.Text = "      Salvar dados";
+            this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // customPanel2
+            // 
+            this.customPanel2.BackColor = System.Drawing.Color.AliceBlue;
+            this.customPanel2.Controls.Add(this.pictureBox1);
+            this.customPanel2.Controls.Add(this.btnAddTelefone);
+            this.customPanel2.Controls.Add(this.chkWhatsapp);
+            this.customPanel2.Controls.Add(this.materialLabel2);
+            this.customPanel2.Controls.Add(this.txtObservacoesTelefone);
+            this.customPanel2.Controls.Add(this.txtTelefone);
+            this.customPanel2.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.customPanel2.CorBotao = System.Drawing.Color.AliceBlue;
+            this.customPanel2.CorTextoBotao = System.Drawing.Color.White;
+            this.customPanel2.ForeColor = System.Drawing.Color.White;
+            this.customPanel2.Location = new System.Drawing.Point(336, 12);
+            this.customPanel2.Name = "customPanel2";
+            this.customPanel2.Size = new System.Drawing.Size(316, 192);
+            this.customPanel2.TabIndex = 22;
+            this.customPanel2.TamanhoBorda = 0;
+            this.customPanel2.TamanhoRaio = 20;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(52, 57);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(41, 47);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnAddTelefone
+            // 
+            this.btnAddTelefone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnAddTelefone.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnAddTelefone.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnAddTelefone.CorTextoBotao = System.Drawing.Color.White;
+            this.btnAddTelefone.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddTelefone.FlatAppearance.BorderSize = 0;
+            this.btnAddTelefone.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnAddTelefone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddTelefone.ForeColor = System.Drawing.Color.White;
+            this.btnAddTelefone.Image = ((System.Drawing.Image)(resources.GetObject("btnAddTelefone.Image")));
+            this.btnAddTelefone.Location = new System.Drawing.Point(264, 10);
+            this.btnAddTelefone.Name = "btnAddTelefone";
+            this.btnAddTelefone.Size = new System.Drawing.Size(39, 39);
+            this.btnAddTelefone.TabIndex = 13;
+            this.btnAddTelefone.TamanhoBorda = 0;
+            this.btnAddTelefone.TamanhoRaio = 16;
+            this.btnAddTelefone.UseVisualStyleBackColor = false;
+            this.btnAddTelefone.Click += new System.EventHandler(this.btnAddTelefone_Click);
+            // 
+            // chkWhatsapp
+            // 
+            this.chkWhatsapp.AutoSize = true;
+            this.chkWhatsapp.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chkWhatsapp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chkWhatsapp.Depth = 0;
+            this.chkWhatsapp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.chkWhatsapp.Location = new System.Drawing.Point(14, 70);
+            this.chkWhatsapp.Margin = new System.Windows.Forms.Padding(0);
+            this.chkWhatsapp.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkWhatsapp.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkWhatsapp.Name = "chkWhatsapp";
+            this.chkWhatsapp.ReadOnly = false;
+            this.chkWhatsapp.Ripple = true;
+            this.chkWhatsapp.Size = new System.Drawing.Size(35, 37);
+            this.chkWhatsapp.TabIndex = 11;
+            this.chkWhatsapp.UseVisualStyleBackColor = true;
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.BackColor = System.Drawing.Color.SlateGray;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel2.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
+            this.materialLabel2.ForeColor = System.Drawing.Color.Black;
+            this.materialLabel2.Location = new System.Drawing.Point(22, 16);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(80, 24);
+            this.materialLabel2.TabIndex = 5;
+            this.materialLabel2.Text = "Telefone";
+            // 
+            // txtObservacoesTelefone
+            // 
+            this.txtObservacoesTelefone.AnimateReadOnly = false;
+            this.txtObservacoesTelefone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtObservacoesTelefone.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtObservacoesTelefone.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtObservacoesTelefone.Depth = 0;
+            this.txtObservacoesTelefone.HideSelection = true;
+            this.txtObservacoesTelefone.Hint = "Observações";
+            this.txtObservacoesTelefone.Location = new System.Drawing.Point(16, 110);
+            this.txtObservacoesTelefone.MaxLength = 300;
+            this.txtObservacoesTelefone.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtObservacoesTelefone.Name = "txtObservacoesTelefone";
+            this.txtObservacoesTelefone.PasswordChar = '\0';
+            this.txtObservacoesTelefone.ReadOnly = false;
+            this.txtObservacoesTelefone.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtObservacoesTelefone.SelectedText = "";
+            this.txtObservacoesTelefone.SelectionLength = 0;
+            this.txtObservacoesTelefone.SelectionStart = 0;
+            this.txtObservacoesTelefone.ShortcutsEnabled = true;
+            this.txtObservacoesTelefone.Size = new System.Drawing.Size(287, 68);
+            this.txtObservacoesTelefone.TabIndex = 12;
+            this.txtObservacoesTelefone.TabStop = false;
+            this.txtObservacoesTelefone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtObservacoesTelefone.UseAccent = false;
+            this.txtObservacoesTelefone.UseSystemPasswordChar = false;
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.AcceptsTab = true;
+            this.txtTelefone.AnimateReadOnly = false;
+            this.txtTelefone.AutoWordSelection = true;
+            this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTelefone.Depth = 0;
+            this.txtTelefone.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtTelefone.Hint = "Telefone";
+            this.txtTelefone.LeadingIcon = null;
+            this.txtTelefone.LeaveOnEnterKey = true;
+            this.txtTelefone.Location = new System.Drawing.Point(99, 57);
+            this.txtTelefone.MaxLength = 15;
+            this.txtTelefone.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtTelefone.Multiline = false;
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(204, 50);
+            this.txtTelefone.TabIndex = 10;
+            this.txtTelefone.Text = "";
+            this.txtTelefone.TrailingIcon = null;
+            this.txtTelefone.UseAccent = false;
+            this.txtTelefone.TextChanged += new System.EventHandler(this.txtTelefone_TextChanged);
+            // 
             // customPanel5
             // 
             this.customPanel5.BackColor = System.Drawing.Color.AliceBlue;
+            this.customPanel5.Controls.Add(this.pictureBox3);
             this.customPanel5.Controls.Add(this.chkHabilitaEmail);
             this.customPanel5.Controls.Add(this.txtObservacoesEmail);
             this.customPanel5.Controls.Add(this.txtEmail);
@@ -222,9 +485,19 @@
             this.customPanel5.Location = new System.Drawing.Point(336, 207);
             this.customPanel5.Name = "customPanel5";
             this.customPanel5.Size = new System.Drawing.Size(316, 189);
-            this.customPanel5.TabIndex = 6;
+            this.customPanel5.TabIndex = 23;
             this.customPanel5.TamanhoBorda = 0;
             this.customPanel5.TamanhoRaio = 20;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(264, 4);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(41, 47);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 25;
+            this.pictureBox3.TabStop = false;
             // 
             // chkHabilitaEmail
             // 
@@ -233,16 +506,15 @@
             this.chkHabilitaEmail.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkHabilitaEmail.Depth = 0;
             this.chkHabilitaEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkHabilitaEmail.Location = new System.Drawing.Point(141, 10);
+            this.chkHabilitaEmail.Location = new System.Drawing.Point(226, 17);
             this.chkHabilitaEmail.Margin = new System.Windows.Forms.Padding(0);
             this.chkHabilitaEmail.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkHabilitaEmail.MouseState = MaterialSkin.MouseState.HOVER;
             this.chkHabilitaEmail.Name = "chkHabilitaEmail";
             this.chkHabilitaEmail.ReadOnly = false;
             this.chkHabilitaEmail.Ripple = true;
-            this.chkHabilitaEmail.Size = new System.Drawing.Size(131, 37);
+            this.chkHabilitaEmail.Size = new System.Drawing.Size(35, 37);
             this.chkHabilitaEmail.TabIndex = 6;
-            this.chkHabilitaEmail.Text = "Possui E-mail";
             this.chkHabilitaEmail.UseVisualStyleBackColor = true;
             this.chkHabilitaEmail.CheckedChanged += new System.EventHandler(this.chkHabilitaEmail_CheckedChanged);
             // 
@@ -313,218 +585,12 @@
             this.materialLabel4.TabIndex = 5;
             this.materialLabel4.Text = "E-mail";
             // 
-            // customPanel2
-            // 
-            this.customPanel2.BackColor = System.Drawing.Color.AliceBlue;
-            this.customPanel2.Controls.Add(this.btnAddTelefone);
-            this.customPanel2.Controls.Add(this.chkWhatsapp);
-            this.customPanel2.Controls.Add(this.materialLabel2);
-            this.customPanel2.Controls.Add(this.txtObservacoesTelefone);
-            this.customPanel2.Controls.Add(this.txtTelefone);
-            this.customPanel2.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.customPanel2.CorBotao = System.Drawing.Color.AliceBlue;
-            this.customPanel2.CorTextoBotao = System.Drawing.Color.White;
-            this.customPanel2.ForeColor = System.Drawing.Color.White;
-            this.customPanel2.Location = new System.Drawing.Point(336, 12);
-            this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(316, 189);
-            this.customPanel2.TabIndex = 10;
-            this.customPanel2.TamanhoBorda = 0;
-            this.customPanel2.TamanhoRaio = 20;
-            // 
-            // btnAddTelefone
-            // 
-            this.btnAddTelefone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnAddTelefone.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnAddTelefone.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnAddTelefone.CorTextoBotao = System.Drawing.Color.White;
-            this.btnAddTelefone.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddTelefone.FlatAppearance.BorderSize = 0;
-            this.btnAddTelefone.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnAddTelefone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddTelefone.ForeColor = System.Drawing.Color.White;
-            this.btnAddTelefone.Image = ((System.Drawing.Image)(resources.GetObject("btnAddTelefone.Image")));
-            this.btnAddTelefone.Location = new System.Drawing.Point(262, 10);
-            this.btnAddTelefone.Name = "btnAddTelefone";
-            this.btnAddTelefone.Size = new System.Drawing.Size(41, 40);
-            this.btnAddTelefone.TabIndex = 13;
-            this.btnAddTelefone.TamanhoBorda = 0;
-            this.btnAddTelefone.TamanhoRaio = 10;
-            this.btnAddTelefone.UseVisualStyleBackColor = false;
-            // 
-            // chkWhatsapp
-            // 
-            this.chkWhatsapp.AutoSize = true;
-            this.chkWhatsapp.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.chkWhatsapp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chkWhatsapp.Depth = 0;
-            this.chkWhatsapp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkWhatsapp.Location = new System.Drawing.Point(196, 70);
-            this.chkWhatsapp.Margin = new System.Windows.Forms.Padding(0);
-            this.chkWhatsapp.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkWhatsapp.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkWhatsapp.Name = "chkWhatsapp";
-            this.chkWhatsapp.ReadOnly = false;
-            this.chkWhatsapp.Ripple = true;
-            this.chkWhatsapp.Size = new System.Drawing.Size(107, 37);
-            this.chkWhatsapp.TabIndex = 11;
-            this.chkWhatsapp.Text = "Whatsapp";
-            this.chkWhatsapp.UseVisualStyleBackColor = true;
-            // 
-            // materialLabel2
-            // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.BackColor = System.Drawing.Color.SlateGray;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            this.materialLabel2.ForeColor = System.Drawing.Color.Black;
-            this.materialLabel2.Location = new System.Drawing.Point(22, 16);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(80, 24);
-            this.materialLabel2.TabIndex = 5;
-            this.materialLabel2.Text = "Telefone";
-            // 
-            // txtObservacoesTelefone
-            // 
-            this.txtObservacoesTelefone.AnimateReadOnly = false;
-            this.txtObservacoesTelefone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtObservacoesTelefone.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtObservacoesTelefone.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtObservacoesTelefone.Depth = 0;
-            this.txtObservacoesTelefone.HideSelection = true;
-            this.txtObservacoesTelefone.Hint = "Observações";
-            this.txtObservacoesTelefone.Location = new System.Drawing.Point(16, 110);
-            this.txtObservacoesTelefone.MaxLength = 300;
-            this.txtObservacoesTelefone.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtObservacoesTelefone.Name = "txtObservacoesTelefone";
-            this.txtObservacoesTelefone.PasswordChar = '\0';
-            this.txtObservacoesTelefone.ReadOnly = false;
-            this.txtObservacoesTelefone.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtObservacoesTelefone.SelectedText = "";
-            this.txtObservacoesTelefone.SelectionLength = 0;
-            this.txtObservacoesTelefone.SelectionStart = 0;
-            this.txtObservacoesTelefone.ShortcutsEnabled = true;
-            this.txtObservacoesTelefone.Size = new System.Drawing.Size(287, 73);
-            this.txtObservacoesTelefone.TabIndex = 12;
-            this.txtObservacoesTelefone.TabStop = false;
-            this.txtObservacoesTelefone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtObservacoesTelefone.UseAccent = false;
-            this.txtObservacoesTelefone.UseSystemPasswordChar = false;
-            // 
-            // txtTelefone
-            // 
-            this.txtTelefone.AcceptsTab = true;
-            this.txtTelefone.AnimateReadOnly = false;
-            this.txtTelefone.AutoWordSelection = true;
-            this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTelefone.Depth = 0;
-            this.txtTelefone.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtTelefone.Hint = "Telefone";
-            this.txtTelefone.LeadingIcon = null;
-            this.txtTelefone.LeaveOnEnterKey = true;
-            this.txtTelefone.Location = new System.Drawing.Point(16, 57);
-            this.txtTelefone.MaxLength = 80;
-            this.txtTelefone.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtTelefone.Multiline = false;
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(176, 50);
-            this.txtTelefone.TabIndex = 10;
-            this.txtTelefone.Text = "";
-            this.txtTelefone.TrailingIcon = null;
-            this.txtTelefone.UseAccent = false;
-            // 
-            // dgvTelefones
-            // 
-            this.dgvTelefones.AllowUserToAddRows = false;
-            this.dgvTelefones.AllowUserToDeleteRows = false;
-            this.dgvTelefones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvTelefones.BackgroundColor = System.Drawing.Color.AliceBlue;
-            this.dgvTelefones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvTelefones.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dgvTelefones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTelefones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvTelefones.ColumnHeadersHeight = 35;
-            this.dgvTelefones.ColumnHeadersVisible = false;
-            this.dgvTelefones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colIdTelefone,
-            this.colWhatsApp,
-            this.colTelefone,
-            this.colObservacoes,
-            this.colExcluir});
-            this.dgvTelefones.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Symbol", 13F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTelefones.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvTelefones.EnableHeadersVisualStyles = false;
-            this.dgvTelefones.GridColor = System.Drawing.Color.Black;
-            this.dgvTelefones.Location = new System.Drawing.Point(658, 55);
-            this.dgvTelefones.MultiSelect = false;
-            this.dgvTelefones.Name = "dgvTelefones";
-            this.dgvTelefones.ReadOnly = true;
-            this.dgvTelefones.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvTelefones.RowHeadersVisible = false;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvTelefones.RowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvTelefones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTelefones.Size = new System.Drawing.Size(411, 341);
-            this.dgvTelefones.TabIndex = 15;
-            // 
-            // colIdTelefone
-            // 
-            this.colIdTelefone.FillWeight = 1F;
-            this.colIdTelefone.HeaderText = "Id";
-            this.colIdTelefone.Name = "colIdTelefone";
-            this.colIdTelefone.ReadOnly = true;
-            this.colIdTelefone.Visible = false;
-            // 
-            // colWhatsApp
-            // 
-            this.colWhatsApp.FillWeight = 45F;
-            this.colWhatsApp.HeaderText = "";
-            this.colWhatsApp.Name = "colWhatsApp";
-            this.colWhatsApp.ReadOnly = true;
-            // 
-            // colTelefone
-            // 
-            this.colTelefone.FillWeight = 250F;
-            this.colTelefone.HeaderText = "Telefone";
-            this.colTelefone.Name = "colTelefone";
-            this.colTelefone.ReadOnly = true;
-            // 
-            // colObservacoes
-            // 
-            this.colObservacoes.FillWeight = 230F;
-            this.colObservacoes.HeaderText = "Observações";
-            this.colObservacoes.Name = "colObservacoes";
-            this.colObservacoes.ReadOnly = true;
-            // 
-            // colExcluir
-            // 
-            this.colExcluir.FillWeight = 45F;
-            this.colExcluir.HeaderText = "";
-            this.colExcluir.Name = "colExcluir";
-            this.colExcluir.ReadOnly = true;
-            // 
             // customPanel3
             // 
             this.customPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.customPanel3.BackColor = System.Drawing.Color.AliceBlue;
+            this.customPanel3.Controls.Add(this.pictureBox2);
             this.customPanel3.Controls.Add(this.chkHabilitaEndereco);
             this.customPanel3.Controls.Add(this.txtObservacoesEndereco);
             this.customPanel3.Controls.Add(this.txtUf);
@@ -539,12 +605,22 @@
             this.customPanel3.CorBotao = System.Drawing.Color.AliceBlue;
             this.customPanel3.CorTextoBotao = System.Drawing.Color.White;
             this.customPanel3.ForeColor = System.Drawing.Color.White;
-            this.customPanel3.Location = new System.Drawing.Point(12, 402);
+            this.customPanel3.Location = new System.Drawing.Point(12, 406);
             this.customPanel3.Name = "customPanel3";
-            this.customPanel3.Size = new System.Drawing.Size(1064, 253);
-            this.customPanel3.TabIndex = 19;
+            this.customPanel3.Size = new System.Drawing.Size(1061, 253);
+            this.customPanel3.TabIndex = 24;
             this.customPanel3.TamanhoBorda = 0;
             this.customPanel3.TamanhoRaio = 20;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(1000, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(41, 47);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
             // 
             // chkHabilitaEndereco
             // 
@@ -553,16 +629,15 @@
             this.chkHabilitaEndereco.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkHabilitaEndereco.Depth = 0;
             this.chkHabilitaEndereco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkHabilitaEndereco.Location = new System.Drawing.Point(906, 12);
+            this.chkHabilitaEndereco.Location = new System.Drawing.Point(962, 16);
             this.chkHabilitaEndereco.Margin = new System.Windows.Forms.Padding(0);
             this.chkHabilitaEndereco.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkHabilitaEndereco.MouseState = MaterialSkin.MouseState.HOVER;
             this.chkHabilitaEndereco.Name = "chkHabilitaEndereco";
             this.chkHabilitaEndereco.ReadOnly = false;
             this.chkHabilitaEndereco.Ripple = true;
-            this.chkHabilitaEndereco.Size = new System.Drawing.Size(151, 37);
+            this.chkHabilitaEndereco.Size = new System.Drawing.Size(35, 37);
             this.chkHabilitaEndereco.TabIndex = 16;
-            this.chkHabilitaEndereco.Text = "Possui endereço";
             this.chkHabilitaEndereco.UseVisualStyleBackColor = true;
             this.chkHabilitaEndereco.CheckedChanged += new System.EventHandler(this.chkHabilitaEndereco_CheckedChanged);
             // 
@@ -587,7 +662,7 @@
             this.txtObservacoesEndereco.SelectionLength = 0;
             this.txtObservacoesEndereco.SelectionStart = 0;
             this.txtObservacoesEndereco.ShortcutsEnabled = true;
-            this.txtObservacoesEndereco.Size = new System.Drawing.Size(1041, 81);
+            this.txtObservacoesEndereco.Size = new System.Drawing.Size(1028, 81);
             this.txtObservacoesEndereco.TabIndex = 24;
             this.txtObservacoesEndereco.TabStop = false;
             this.txtObservacoesEndereco.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -606,7 +681,7 @@
             this.txtUf.Hint = "UF";
             this.txtUf.LeadingIcon = null;
             this.txtUf.LeaveOnEnterKey = true;
-            this.txtUf.Location = new System.Drawing.Point(975, 113);
+            this.txtUf.Location = new System.Drawing.Point(962, 112);
             this.txtUf.MaxLength = 2;
             this.txtUf.MouseState = MaterialSkin.MouseState.OUT;
             this.txtUf.Multiline = false;
@@ -634,7 +709,7 @@
             this.txtCidade.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCidade.Multiline = false;
             this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(362, 50);
+            this.txtCidade.Size = new System.Drawing.Size(349, 50);
             this.txtCidade.TabIndex = 22;
             this.txtCidade.Text = "";
             this.txtCidade.TrailingIcon = null;
@@ -698,7 +773,7 @@
             this.txtNumero.Hint = "Nº";
             this.txtNumero.LeadingIcon = null;
             this.txtNumero.LeaveOnEnterKey = true;
-            this.txtNumero.Location = new System.Drawing.Point(975, 57);
+            this.txtNumero.Location = new System.Drawing.Point(962, 56);
             this.txtNumero.MaxLength = 8;
             this.txtNumero.MouseState = MaterialSkin.MouseState.OUT;
             this.txtNumero.Multiline = false;
@@ -742,7 +817,7 @@
             this.txtLogradouro.MouseState = MaterialSkin.MouseState.OUT;
             this.txtLogradouro.Multiline = false;
             this.txtLogradouro.Name = "txtLogradouro";
-            this.txtLogradouro.Size = new System.Drawing.Size(760, 50);
+            this.txtLogradouro.Size = new System.Drawing.Size(747, 50);
             this.txtLogradouro.TabIndex = 18;
             this.txtLogradouro.Text = "";
             this.txtLogradouro.TrailingIcon = null;
@@ -770,126 +845,132 @@
             this.txtCep.Text = "";
             this.txtCep.TrailingIcon = null;
             this.txtCep.UseAccent = false;
+            this.txtCep.TextChanged += new System.EventHandler(this.txtCep_TextChanged);
+            this.txtCep.Leave += new System.EventHandler(this.txtCep_Leave);
             // 
-            // roundedPanel1
+            // dgvTelefones
             // 
-            this.roundedPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.roundedPanel1.Color1 = System.Drawing.Color.SpringGreen;
-            this.roundedPanel1.Color2 = System.Drawing.Color.Aqua;
-            this.roundedPanel1.CornerRadius = 8;
-            this.roundedPanel1.GradientAngle = 300F;
-            this.roundedPanel1.Location = new System.Drawing.Point(658, 12);
-            this.roundedPanel1.Name = "roundedPanel1";
-            this.roundedPanel1.Size = new System.Drawing.Size(50, 34);
-            this.roundedPanel1.TabIndex = 20;
+            this.dgvTelefones.AllowUserToAddRows = false;
+            this.dgvTelefones.AllowUserToDeleteRows = false;
+            this.dgvTelefones.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvTelefones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTelefones.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.dgvTelefones.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvTelefones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvTelefones.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvTelefones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTelefones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            this.dgvTelefones.ColumnHeadersHeight = 35;
+            this.dgvTelefones.ColumnHeadersVisible = false;
+            this.dgvTelefones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colIdTelefone,
+            this.colWhatsApp,
+            this.colTelefone,
+            this.colObservacoes,
+            this.colExcluir});
+            this.dgvTelefones.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTelefones.DefaultCellStyle = dataGridViewCellStyle17;
+            this.dgvTelefones.EnableHeadersVisualStyles = false;
+            this.dgvTelefones.GridColor = System.Drawing.Color.Black;
+            this.dgvTelefones.Location = new System.Drawing.Point(658, 52);
+            this.dgvTelefones.MultiSelect = false;
+            this.dgvTelefones.Name = "dgvTelefones";
+            this.dgvTelefones.ReadOnly = true;
+            this.dgvTelefones.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvTelefones.RowHeadersVisible = false;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvTelefones.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            this.dgvTelefones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTelefones.Size = new System.Drawing.Size(415, 344);
+            this.dgvTelefones.TabIndex = 25;
+            this.dgvTelefones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTelefones_CellClick);
             // 
-            // roundedPanel2
+            // colIdTelefone
             // 
-            this.roundedPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.roundedPanel2.Color1 = System.Drawing.Color.SpringGreen;
-            this.roundedPanel2.Color2 = System.Drawing.Color.Aqua;
-            this.roundedPanel2.CornerRadius = 8;
-            this.roundedPanel2.GradientAngle = 300F;
-            this.roundedPanel2.Location = new System.Drawing.Point(714, 12);
-            this.roundedPanel2.Name = "roundedPanel2";
-            this.roundedPanel2.Size = new System.Drawing.Size(50, 34);
-            this.roundedPanel2.TabIndex = 21;
+            this.colIdTelefone.FillWeight = 1F;
+            this.colIdTelefone.HeaderText = "Id";
+            this.colIdTelefone.Name = "colIdTelefone";
+            this.colIdTelefone.ReadOnly = true;
+            this.colIdTelefone.Visible = false;
             // 
-            // roundedPanel3
+            // colWhatsApp
             // 
-            this.roundedPanel3.BackColor = System.Drawing.Color.Transparent;
-            this.roundedPanel3.Color1 = System.Drawing.Color.SpringGreen;
-            this.roundedPanel3.Color2 = System.Drawing.Color.Aqua;
-            this.roundedPanel3.CornerRadius = 8;
-            this.roundedPanel3.GradientAngle = 300F;
-            this.roundedPanel3.Location = new System.Drawing.Point(770, 12);
-            this.roundedPanel3.Name = "roundedPanel3";
-            this.roundedPanel3.Size = new System.Drawing.Size(50, 34);
-            this.roundedPanel3.TabIndex = 21;
+            this.colWhatsApp.FillWeight = 45F;
+            this.colWhatsApp.HeaderText = "";
+            this.colWhatsApp.Name = "colWhatsApp";
+            this.colWhatsApp.ReadOnly = true;
             // 
-            // roundedPanel4
+            // colTelefone
             // 
-            this.roundedPanel4.BackColor = System.Drawing.Color.Transparent;
-            this.roundedPanel4.Color1 = System.Drawing.Color.SpringGreen;
-            this.roundedPanel4.Color2 = System.Drawing.Color.Aqua;
-            this.roundedPanel4.CornerRadius = 8;
-            this.roundedPanel4.GradientAngle = 300F;
-            this.roundedPanel4.Location = new System.Drawing.Point(826, 12);
-            this.roundedPanel4.Name = "roundedPanel4";
-            this.roundedPanel4.Size = new System.Drawing.Size(50, 34);
-            this.roundedPanel4.TabIndex = 21;
+            this.colTelefone.FillWeight = 250F;
+            this.colTelefone.HeaderText = "Telefone";
+            this.colTelefone.Name = "colTelefone";
+            this.colTelefone.ReadOnly = true;
             // 
-            // btnSalvar
+            // colObservacoes
             // 
-            this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnSalvar.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnSalvar.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnSalvar.CorTextoBotao = System.Drawing.Color.White;
-            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalvar.FlatAppearance.BorderSize = 0;
-            this.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(902, 12);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnSalvar.Size = new System.Drawing.Size(167, 37);
-            this.btnSalvar.TabIndex = 18;
-            this.btnSalvar.TamanhoBorda = 0;
-            this.btnSalvar.TamanhoRaio = 5;
-            this.btnSalvar.Text = "      Salvar dados";
-            this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSalvar.UseVisualStyleBackColor = false;
+            this.colObservacoes.FillWeight = 230F;
+            this.colObservacoes.HeaderText = "Observações";
+            this.colObservacoes.Name = "colObservacoes";
+            this.colObservacoes.ReadOnly = true;
             // 
-            // swAtivo
+            // colExcluir
             // 
-            this.swAtivo.AutoSize = true;
-            this.swAtivo.Depth = 0;
-            this.swAtivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.swAtivo.Location = new System.Drawing.Point(194, 10);
-            this.swAtivo.Margin = new System.Windows.Forms.Padding(0);
-            this.swAtivo.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.swAtivo.MouseState = MaterialSkin.MouseState.HOVER;
-            this.swAtivo.Name = "swAtivo";
-            this.swAtivo.Ripple = true;
-            this.swAtivo.Size = new System.Drawing.Size(94, 37);
-            this.swAtivo.TabIndex = 36;
-            this.swAtivo.Text = "Ativo";
-            this.swAtivo.UseVisualStyleBackColor = true;
+            this.colExcluir.FillWeight = 45F;
+            this.colExcluir.HeaderText = "";
+            this.colExcluir.Name = "colExcluir";
+            this.colExcluir.ReadOnly = true;
             // 
             // CadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.ClientSize = new System.Drawing.Size(1081, 671);
-            this.Controls.Add(this.roundedPanel4);
-            this.Controls.Add(this.roundedPanel3);
-            this.Controls.Add(this.roundedPanel2);
-            this.Controls.Add(this.roundedPanel1);
-            this.Controls.Add(this.customPanel3);
-            this.Controls.Add(this.btnSalvar);
+            this.ClientSize = new System.Drawing.Size(1085, 671);
             this.Controls.Add(this.dgvTelefones);
-            this.Controls.Add(this.customPanel2);
+            this.Controls.Add(this.customPanel3);
             this.Controls.Add(this.customPanel5);
+            this.Controls.Add(this.customPanel2);
+            this.Controls.Add(this.pn4);
+            this.Controls.Add(this.pn3);
+            this.Controls.Add(this.pn2);
+            this.Controls.Add(this.pn1);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.customPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CadastroCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CadastroCliente";
+            this.Text = " ";
+            this.Load += new System.EventHandler(this.CadastroCliente_Load);
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
-            this.customPanel5.ResumeLayout(false);
-            this.customPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcAtivo)).EndInit();
             this.customPanel2.ResumeLayout(false);
             this.customPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTelefones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.customPanel5.ResumeLayout(false);
+            this.customPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.customPanel3.ResumeLayout(false);
             this.customPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTelefones)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -897,30 +978,32 @@
         #endregion
 
         private Componentes.CustomPanel customPanel1;
-        private MaterialSkin.Controls.MaterialTextBox txtRg;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtObservacoes;
-        private MaterialSkin.Controls.MaterialTextBox txtCpf;
+        private MaterialSkin.Controls.MaterialTextBox txtIdentificador;
         private MaterialSkin.Controls.MaterialTextBox txtNome;
-        private Componentes.CustomPanel customPanel5;
-        private MaterialSkin.Controls.MaterialCheckbox chkHabilitaEmail;
-        private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtObservacoesEmail;
-        private MaterialSkin.Controls.MaterialTextBox txtEmail;
-        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private Componentes.CustomButton btnSalvar;
+        private Componentes.RoundedPanel pn1;
+        private Componentes.RoundedPanel pn2;
+        private Componentes.RoundedPanel pn3;
+        private Componentes.RoundedPanel pn4;
+        private System.Windows.Forms.PictureBox pcAtivo;
+        private MaterialSkin.Controls.MaterialSwitch swAtivo;
         private Componentes.CustomPanel customPanel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private Componentes.CustomButton btnAddTelefone;
         private MaterialSkin.Controls.MaterialCheckbox chkWhatsapp;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtObservacoesTelefone;
         private MaterialSkin.Controls.MaterialTextBox txtTelefone;
-        private Componentes.CustomButton btnSalvar;
-        private System.Windows.Forms.DataGridView dgvTelefones;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIdTelefone;
-        private System.Windows.Forms.DataGridViewImageColumn colWhatsApp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTelefone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colObservacoes;
-        private System.Windows.Forms.DataGridViewImageColumn colExcluir;
+        private Componentes.CustomPanel customPanel5;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private MaterialSkin.Controls.MaterialCheckbox chkHabilitaEmail;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtObservacoesEmail;
+        private MaterialSkin.Controls.MaterialTextBox txtEmail;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private Componentes.CustomPanel customPanel3;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private MaterialSkin.Controls.MaterialCheckbox chkHabilitaEndereco;
         private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtObservacoesEndereco;
         private MaterialSkin.Controls.MaterialTextBox txtUf;
@@ -931,10 +1014,13 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialTextBox txtLogradouro;
         private MaterialSkin.Controls.MaterialTextBox txtCep;
-        private Componentes.RoundedPanel roundedPanel1;
-        private Componentes.RoundedPanel roundedPanel2;
-        private Componentes.RoundedPanel roundedPanel3;
-        private Componentes.RoundedPanel roundedPanel4;
-        private MaterialSkin.Controls.MaterialSwitch swAtivo;
+        private System.Windows.Forms.DataGridView dgvTelefones;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIdTelefone;
+        private System.Windows.Forms.DataGridViewImageColumn colWhatsApp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTelefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colObservacoes;
+        private System.Windows.Forms.DataGridViewImageColumn colExcluir;
+        private MaterialSkin.Controls.MaterialRadioButton rbtPF;
+        private MaterialSkin.Controls.MaterialRadioButton rbtPJ;
     }
 }
