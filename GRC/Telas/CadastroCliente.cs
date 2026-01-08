@@ -84,6 +84,7 @@ namespace GRC.Telas
         private void CadastroCliente_Load(object sender, EventArgs e)
         {
             swAtivo.Checked = true;
+            rbtPF.Checked = true;
             if (_idCliente > 0)
                 CarregaDados();
             txtNome.Focus();
@@ -92,13 +93,20 @@ namespace GRC.Telas
         private void rbtPF_CheckedChanged(object sender, EventArgs e)
         {
             if (rbtPF.Checked)
+            { 
                 txtIdentificador.Clear();
+                txtIdentificador.Hint = "CPF";
+            }
+                
         }
 
         private void rbtPJ_CheckedChanged(object sender, EventArgs e)
         {
             if (rbtPJ.Checked)
+            {
                 txtIdentificador.Clear();
+                txtIdentificador.Hint = "CNPJ";
+            }
         }
 
         private void txtIdentificador_TextChanged(object sender, EventArgs e)
@@ -456,20 +464,20 @@ namespace GRC.Telas
                 int? retorno = _service.SalvaFornecedor(cliente);
 
                 if (retorno > 0)
-                    new AlertBox(Color.FromArgb(0, 60, 4), Color.LimeGreen, Color.Green, Resources.Confirm, "Fornecedor", cliente.Nome.ToString(), "Foi cadastrado com sucesso!", false).ShowDialog();
+                    new AlertBox(Color.FromArgb(0, 60, 4), Color.LimeGreen, Color.Green, Resources.Confirm, "Cliente", cliente.Nome.ToString(), "Foi cadastrado com sucesso!", false).ShowDialog();
                 else if (retorno == 0)
-                    new AlertBox(Color.FromArgb(0, 60, 4), Color.LimeGreen, Color.Green, Resources.Confirm, "Fornecedor", cliente.Nome.ToString(), "Foi alterado com sucesso!", false).ShowDialog();
+                    new AlertBox(Color.FromArgb(0, 60, 4), Color.LimeGreen, Color.Green, Resources.Confirm, "Cliente", cliente.Nome.ToString(), "Foi alterado com sucesso!", false).ShowDialog();
                 else if (retorno == -1)
-                    new AlertBox(Color.FromArgb(0, 60, 4), Color.LimeGreen, Color.Green, Resources.Confirm, "Fornecedor", cliente.Nome.ToString(), "Foi inativado!", false).ShowDialog();
+                    new AlertBox(Color.FromArgb(0, 60, 4), Color.LimeGreen, Color.Green, Resources.Confirm, "Cliente", cliente.Nome.ToString(), "Foi inativado!", false).ShowDialog();
                 else
-                    new AlertBox(Color.FromArgb(64, 0, 0), Color.Red, Color.Crimson, Resources.Error, "Um erro ocorreu:", "Entidade: Fornecedor", "Se o erro persistir chame o suporte!", false).ShowDialog();
+                    new AlertBox(Color.FromArgb(64, 0, 0), Color.Red, Color.Crimson, Resources.Error, "Um erro ocorreu:", "Entidade: Cliente", "Se o erro persistir chame o suporte!", false).ShowDialog();
 
                 LimpaCampos();
             }
             catch (Exception ex)
             {
                 EmailError.EnviarEmailErro(ex.ToString());
-                new AlertBox(Color.FromArgb(64, 0, 0), Color.Red, Color.Crimson, Resources.Error, "Um erro ocorreu:", "Entidade: Fornecedor", "Erro ao salvar fornecedor!", false).ShowDialog();
+                new AlertBox(Color.FromArgb(64, 0, 0), Color.Red, Color.Crimson, Resources.Error, "Um erro ocorreu:", "Entidade: Cliente", "Erro ao salvar Cliente!", false).ShowDialog();
             }
         }
         private bool ValidaCampos()
@@ -477,7 +485,7 @@ namespace GRC.Telas
             // Nome obrigatório
             if (string.IsNullOrWhiteSpace(txtNome.Text))
             {
-                new AlertBox(Color.Goldenrod, Color.LimeGreen, Color.Yellow, Resources.Warning, "Entidade: Fornecedor", string.Empty, "Nome do fornecedor é obrigatório", false).ShowDialog();
+                new AlertBox(Color.Goldenrod, Color.LimeGreen, Color.Yellow, Resources.Warning, "Entidade: Cliente", string.Empty, "Nome do Cliente é obrigatório", false).ShowDialog();
                 txtNome.Focus();
                 return false;
             }
@@ -488,7 +496,7 @@ namespace GRC.Telas
                 if (string.IsNullOrWhiteSpace(txtEmail.Text) ||
                     !System.Text.RegularExpressions.Regex.IsMatch(txtEmail.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
                 {
-                    new AlertBox(Color.Goldenrod, Color.LimeGreen, Color.Yellow, Resources.Warning, "Entidade: Fornecedor/e-mail", string.Empty, "Informe um e-mail válido", false).ShowDialog();
+                    new AlertBox(Color.Goldenrod, Color.LimeGreen, Color.Yellow, Resources.Warning, "Entidade: Cliente/e-mail", string.Empty, "Informe um e-mail válido", false).ShowDialog();
                     txtEmail.Focus();
                     return false;
                 }
@@ -502,7 +510,7 @@ namespace GRC.Telas
                     || string.IsNullOrWhiteSpace(txtCidade.Text)
                     || string.IsNullOrWhiteSpace(txtUf.Text))
                 {
-                    new AlertBox(Color.Goldenrod, Color.LimeGreen, Color.Yellow, Resources.Warning, "Entidade: Fornecedor/Endereço", string.Empty, "O endereço é obrigatório!", false).ShowDialog();
+                    new AlertBox(Color.Goldenrod, Color.LimeGreen, Color.Yellow, Resources.Warning, "Entidade: Cliente/Endereço", string.Empty, "O endereço é obrigatório!", false).ShowDialog();
                     txtLogradouro.Focus();
                     return false;
                 }

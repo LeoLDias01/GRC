@@ -17,7 +17,7 @@ namespace GRC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new WorkFlow());
+            Application.Run(new PesquisaCliente());
             //Application.Run(new Movimentacoes());
         }
     }

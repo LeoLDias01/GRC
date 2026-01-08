@@ -1,5 +1,4 @@
-﻿using Business.Helper;
-using Business.Services;
+﻿using Business.Services;
 using Data.Models;
 using GRC.Properties;
 using System;
@@ -14,17 +13,21 @@ using System.Windows.Forms;
 
 namespace GRC.Telas
 {
-    public partial class Fornecedor : Form
+    public partial class PesquisaCliente : Form
     {
-        private ServiceFornecedor _serviceFornecedor = new ServiceFornecedor();
-        public Fornecedor()
+        private ServiceCliente _service = new ServiceCliente();
+        public PesquisaCliente()
         {
             InitializeComponent();
         }
 
+        private void btnAddCliente_Click(object sender, EventArgs e)
+        {
+            new CadastroCliente().ShowDialog();
+        }
+
         private void cbxQtdRegistros_TextChanged(object sender, EventArgs e)
         {
-
             if (!string.IsNullOrWhiteSpace(cbxQtdRegistros.Text))
             {
                 if (Convert.ToInt32(cbxQtdRegistros.Text) > 100)
@@ -33,7 +36,6 @@ namespace GRC.Telas
             else cbxQtdRegistros.Text = "10";
 
             RealizaPesquisa();
-
         }
 
         private void cbxQtdRegistros_KeyPress(object sender, KeyPressEventArgs e)
@@ -45,9 +47,9 @@ namespace GRC.Telas
             }
         }
 
-        private void dgvFornecedores_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void dgvClientes_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            lbRegistros.Text = $"{dgvFornecedores.Rows.Count} registros encontrados!";
+            lbRegistros.Text = $"{dgvClientes.Rows.Count} registros encontrados!";
         }
 
         private void btnApagar_Click(object sender, EventArgs e)
@@ -57,11 +59,11 @@ namespace GRC.Telas
         private void RealizaPesquisa()
         {
             /// Monta o objeto com base na pesquisa
-            var fornecedor = new Fornecedores
+            var cliente = new Cliente
             {
-                Nome = txtFornecedor.Text,
-                RazaoSocial = txtRazaoSocial.Text,
-                Cnpj = txtCnpj.Text.Trim(),
+                Nome = txtCliente.Text,
+                TipoPessoa = rbtPF.Checked == true ? 1 : 2,
+                Identidade = txtIdentidade.Text.Trim(),
                 Ativo = chkAtivo.Checked ? true : false,
                 Endereco = new Endereco
                 {
@@ -71,14 +73,14 @@ namespace GRC.Telas
             };
             int registros = Convert.ToInt32(cbxQtdRegistros.Text);
 
-            dgvFornecedores.Visible = true;
-            dgvFornecedores.Rows.Clear();
-            dgvFornecedores.RowTemplate.Height = 30;
-            dgvFornecedores.AutoGenerateColumns = false;
-            dgvFornecedores.ColumnHeadersVisible = true;
-            dgvFornecedores.ColumnHeadersHeight = 50;
+            dgvClientes.Visible = true;
+            dgvClientes.Rows.Clear();
+            dgvClientes.RowTemplate.Height = 30;
+            dgvClientes.AutoGenerateColumns = false;
+            dgvClientes.ColumnHeadersVisible = true;
+            dgvClientes.ColumnHeadersHeight = 50;
 
-            var lista = _serviceFornecedor.BuscaLimitada(fornecedor, registros);
+            var lista = _service.BuscaLimitada(cliente, registros);
 
             if (lista != null)
             {
@@ -86,11 +88,11 @@ namespace GRC.Telas
                 {
                     if (estoque.Id > 0)
                     {
-                        dgvFornecedores.Rows.Add(
-                            estoque.Id, 
+                        dgvClientes.Rows.Add(
+                            estoque.Id,
                             estoque.Nome,
-                            estoque.RazaoSocial,
-                            estoque.Cnpj,
+                            estoque.TipoPessoa == 1 ? "Pessoa Física" : "Pessoa Jurídica",
+                            estoque.Identidade,
                             estoque.Endereco.Cidade,
                             estoque.Endereco.Uf,
                             Resources.remove
@@ -99,43 +101,40 @@ namespace GRC.Telas
                 }
             }
 
-            lbRegistros.Text = $"{dgvFornecedores.Rows.Count} registros encontrados!";
+            lbRegistros.Text = $"{dgvClientes.Rows.Count} registros encontrados!";
         }
 
         private void LimpaCampos()
         {
-            //dgvFornecedores.Visible = false;
-            txtFornecedor.Clear();
-            txtCnpj.Clear();
-            txtRazaoSocial.Clear();
+            txtCliente.Clear();
+            txtIdentidade.Clear();
+            rbtPF.Checked = true;
+            rbtPJ.Checked = false;
             txtCidade.Clear();
             txtUf.Clear();
             chkAtivo.Checked = true;
-            dgvFornecedores.Rows.Clear();
-            dgvFornecedores.ColumnHeadersVisible = false;
+            dgvClientes.Rows.Clear();
+            dgvClientes.ColumnHeadersVisible = false;
             cbxQtdRegistros.Text = "10";
         }
-        private int? PegaIdFornecedor(DataGridViewCellEventArgs e)
+        private int? PegaIdCliente(DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                var row = dgvFornecedores.Rows[e.RowIndex];
-                return Convert.ToInt32(row.Cells["colIdFornecedor"].Value);
+                var row = dgvClientes.Rows[e.RowIndex];
+                return Convert.ToInt32(row.Cells["colIdCliente"].Value);
             }
             return null;
         }
-        private void dgvFornecedores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+
+        private void dgvClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int? idFornecedor = PegaIdFornecedor(e);
-            if (idFornecedor.HasValue)
+            int? idCliente = PegaIdCliente(e);
+            if (idCliente.HasValue)
             {
-                new CadastroFornecedor(idFornecedor.Value).ShowDialog();
+                new CadastroCliente(idCliente.Value).ShowDialog();
                 RealizaPesquisa();
             }
-        }
-        private void btnAddFornecedor_Click(object sender, EventArgs e)
-        {
-            new CadastroFornecedor().ShowDialog();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -143,9 +142,10 @@ namespace GRC.Telas
             RealizaPesquisa();
         }
 
-        private void Fornecedor_Load(object sender, EventArgs e)
+        private void PesquisaCliente_Load(object sender, EventArgs e)
         {
             chkAtivo.Checked = true;
+            rbtPF.Checked = true;   
         }
     }
 }

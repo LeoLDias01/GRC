@@ -401,6 +401,7 @@ namespace Domain.Repository
                 SELECT 
                     CAST(CLI.IDGRC_CLIENTE AS INT) AS Id,
                     CLI.NOME AS Nome,
+                    CLI.IDGRC_TIPO_PESSOA AS Tipo,
                     CLI.IDENTIFICACAO AS Identificacao,
                     ENDE.CIDADE AS Cidade,
                     ENDE.UF AS Uf
@@ -413,6 +414,9 @@ namespace Domain.Repository
                     // Filtros dinâmicos
                     if (!string.IsNullOrWhiteSpace(cliente.Nome))
                         sql.Append(" AND CLI.NOME LIKE @Nome ");
+
+                    if (cliente.TipoPessoa > 0)
+                        sql.Append(" AND CLI.IDGRC_TIPO_PESSOA = @Tipo ");
 
                     if (!string.IsNullOrWhiteSpace(cliente.Identidade))
                         sql.Append(" AND CLI.IDENTIFICACAO LIKE @Identificacao ");
@@ -428,12 +432,13 @@ namespace Domain.Repository
                             sql.Append(" AND ENDE.UF LIKE @Uf ");
                     }
 
-                    sql.Append(" ORDER BY FORN.DESCRICAO ASC LIMIT @Registros; ");
+                    sql.Append(" ORDER BY CLI.NOME ASC LIMIT @Registros; ");
 
                     var lista = conn.Query(sql.ToString(), new
                     {
                         Nome = $"%{cliente.Nome}%",
-                        cliente = $"%{cliente.Identidade}%",
+                        Tipo = cliente.TipoPessoa,
+                        Identificacao = $"%{cliente.Identidade}%",
                         Ativo = cliente.Ativo,
                         Cidade = cliente.Endereco != null ? $"%{cliente.Endereco.Cidade}%" : null,
                         Uf = cliente.Endereco != null ? $"%{cliente.Endereco.Uf}%" : null,
@@ -443,6 +448,7 @@ namespace Domain.Repository
                     {
                         Id = (int)x.Id,
                         Nome = x.Nome,
+                        TipoPessoa = (int)x.Tipo,
                         Identidade = x.Identificacao,
                         //Observacoes = x.Observacoes,
                         Endereco = new Endereco
@@ -471,7 +477,7 @@ namespace Domain.Repository
                     // Query principal com LEFT JOIN para trazer endereço e email
                     var clientes = conn.Query($@"
             SELECT 
-                CAST(FORN.IDGRC_FORNECEDOR AS INT) AS Id,
+                CAST(CLI.IDGRC_CLIENTE AS INT) AS Id,
                 CLI.NOME AS Nome,
                 CLI.IDGRC_TIPO_PESSOA AS TipoPessoa,
                 CLI.IDENTIFICACAO AS Identidade,
@@ -497,7 +503,7 @@ namespace Domain.Repository
                     {
                         Id = (int)x.Id,
                         Nome = x.Nome,
-                        TipoPessoa = x.TipoPessoa,
+                        TipoPessoa = (int)x.TipoPessoa,
                         Identidade = x.Identidade,
                         Observacoes = x.Observacoes,
                         Ativo = Convert.ToBoolean(x.Ativo),
