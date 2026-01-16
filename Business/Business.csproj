@@ -125,6 +125,7 @@
     <Compile Include="Services\ServiceItemEstoque.cs" />
     <Compile Include="Services\ServiceLogin.cs" />
     <Compile Include="Services\ServiceMovimentacao.cs" />
+    <Compile Include="Services\ServiceOrdemServico.cs" />
     <Compile Include="Services\ServiceTipo.cs" />
     <Compile Include="Session\Sessao.cs" />
   </ItemGroup>

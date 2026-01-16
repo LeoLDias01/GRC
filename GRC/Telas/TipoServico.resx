@@ -117,6 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnSalvar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAChSURBVDhPzZOx
+        DcIwFER/0sAeKDOkRRkDGCBMQEuJxDywTOagftFJduR8bEChyUkn2d/3X3FRDKiBE3CJNjNL727W6jwp
+        LM8U5qXZC9ingKvLfgNIgnT/ACRB2iwA2AA3560PabcEePgSgacPfQL8qhUCBuCeKTBab8oUATvgnCkw
+        ugeaIiDzrd/kMisBTD/TAsBRl0oHtRweffMzJ5mDdkfn7m46EWaDkwAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="colId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -126,7 +136,6 @@
   <metadata name="colExcluir.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="colExcluir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -136,26 +145,6 @@
         IBgjhlxzPirznAH1Kubt7WPU3ktebxJNbKnMcwb0EKFbPMWxbutkWQGQ2LVr5z+NACRKnU5WwKRbpHuh
         asy8EiOguZy03Q4+0yJX5jkDnA7absRB86E/wCoApr4yw0yT8CNc+v1vS0RSzyup4AnvN5harrjBZ999
         AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="dataGridViewImageColumn1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADxSURBVEhL7ZbR
-        CoIwFIZ9hB6lq3kbTJC8LHqObut1tAfIIHuVSOgVSpih3ix+K5jb2AbOuy5+HOec/d/ZdMzgsZjPGCUH
-        RknFKOGeVDEaZvAOvuZygR9FJAXAZ+eyngDIQa/6A6wyAl77LW+KnNfrWMkhhhxq5JwoIwAGXdfxtrwO
-        IBgjhlxzPirznAH1Kubt7WPU3ktebxJNbKnMcwb0EKFbPMWxbutkWQGQ2LVr5z+NACRKnU5WwKRbpHuh
-        asy8EiOguZy03Q4+0yJX5jkDnA7absRB86E/wCoApr4yw0yT8CNc+v1vS0RSzyup4AnvN5harrjBZ999
-        AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btnSalvar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAChSURBVDhPzZOx
-        DcIwFER/0sAeKDOkRRkDGCBMQEuJxDywTOagftFJduR8bEChyUkn2d/3X3FRDKiBE3CJNjNL727W6jwp
-        LM8U5qXZC9ingKvLfgNIgnT/ACRB2iwA2AA3560PabcEePgSgacPfQL8qhUCBuCeKTBab8oUATvgnCkw
-        ugeaIiDzrd/kMisBTD/TAsBRl0oHtRweffMzJ5mDdkfn7m46EWaDkwAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

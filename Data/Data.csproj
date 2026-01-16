@@ -66,6 +66,7 @@
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\Fornecedores.cs" />
     <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\ItemCard.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Movimentacao.cs" />
     <Compile Include="Models\Telefone.cs" />

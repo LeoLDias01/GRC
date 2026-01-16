@@ -14,10 +14,11 @@ using System.Windows.Forms;
 
 namespace GRC.Telas
 {
-    public partial class PesquisaCliente : Form
+    public partial class PesquisaRapidaCliente : Form
     {
+        public Cliente _cliente = new Cliente();
         private ServiceCliente _service = new ServiceCliente();
-        public PesquisaCliente()
+        public PesquisaRapidaCliente()
         {
             InitializeComponent();
         }
@@ -25,6 +26,31 @@ namespace GRC.Telas
         private void btnAddCliente_Click(object sender, EventArgs e)
         {
             new CadastroCliente().ShowDialog();
+        }
+
+        private void btnApagar_Click(object sender, EventArgs e)
+        {
+            LimpaCampos();
+        }
+        private void LimpaCampos()
+        {
+            txtCliente.Clear();
+            txtIdentidade.Clear();
+            rbtPF.Checked = true;
+            rbtPJ.Checked = false;
+            dgvClientes.Rows.Clear();
+            dgvClientes.ColumnHeadersVisible = false;
+            dgvClientes.DataSource = null;
+            cbxQtdRegistros.Text = "10";
+        }
+
+        private void cbxQtdRegistros_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite dígitos e a tecla Backspace
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ignora o caractere digitado
+            }
         }
 
         private void cbxQtdRegistros_TextChanged(object sender, EventArgs e)
@@ -39,23 +65,14 @@ namespace GRC.Telas
             RealizaPesquisa();
         }
 
-        private void cbxQtdRegistros_KeyPress(object sender, KeyPressEventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
-            // Permite dígitos e a tecla Backspace
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true; // Ignora o caractere digitado
-            }
+            RealizaPesquisa();
         }
 
         private void dgvClientes_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             lbRegistros.Text = $"{dgvClientes.Rows.Count} registros encontrados!";
-        }
-
-        private void btnApagar_Click(object sender, EventArgs e)
-        {
-            LimpaCampos();
         }
         private void RealizaPesquisa()
         {
@@ -65,12 +82,7 @@ namespace GRC.Telas
                 Nome = txtCliente.Text,
                 TipoPessoa = rbtPF.Checked == true ? 1 : 2,
                 Identidade = txtIdentidade.Text.Trim(),
-                Ativo = chkAtivo.Checked ? true : false,
-                Endereco = new Endereco
-                {
-                    Cidade = txtCidade.Text,
-                    Uf = txtUf.Text.Trim(),
-                }
+                Ativo = true //Pegar sempre os clientes ativos nesse caso
             };
             int registros = Convert.ToInt32(cbxQtdRegistros.Text);
 
@@ -93,10 +105,7 @@ namespace GRC.Telas
                             estoque.Id,
                             estoque.Nome,
                             estoque.TipoPessoa == 1 ? "Pessoa Física" : "Pessoa Jurídica",
-                            estoque.Identidade,
-                            estoque.Endereco.Cidade,
-                            estoque.Endereco.Uf,
-                            Resources.remove
+                            estoque.Identidade
                         );
                     }
                 }
@@ -105,48 +114,22 @@ namespace GRC.Telas
             lbRegistros.Text = $"{dgvClientes.Rows.Count} registros encontrados!";
         }
 
-        private void LimpaCampos()
-        {
-            txtCliente.Clear();
-            txtIdentidade.Clear();
-            rbtPF.Checked = true;
-            rbtPJ.Checked = false;
-            txtCidade.Clear();
-            txtUf.Clear();
-            chkAtivo.Checked = true;
-            dgvClientes.Rows.Clear();
-            dgvClientes.ColumnHeadersVisible = false;
-            cbxQtdRegistros.Text = "10";
-        }
-        private int? PegaIdCliente(DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                var row = dgvClientes.Rows[e.RowIndex];
-                return Convert.ToInt32(row.Cells["colIdCliente"].Value);
-            }
-            return null;
-        }
-
         private void dgvClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int? idCliente = PegaIdCliente(e);
-            if (idCliente.HasValue)
-            {
-                new CadastroCliente(idCliente.Value).ShowDialog();
-                RealizaPesquisa();
-            }
+            // Ignora clique no cabeçalho
+            if (e.RowIndex < 0)
+                return;
+
+            var linha = dgvClientes.Rows[e.RowIndex];
+
+           _cliente.Id = Convert.ToInt32(linha.Cells["colIdCliente"].Value);
+           _cliente.Nome = linha.Cells["colNome"].Value?.ToString();
+           this.DialogResult = DialogResult.OK;
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void PesquisaRapidaCliente_Load(object sender, EventArgs e)
         {
-            RealizaPesquisa();
-        }
-
-        private void PesquisaCliente_Load(object sender, EventArgs e)
-        {
-            chkAtivo.Checked = true;
-            rbtPF.Checked = true;   
+            rbtPF.Checked = true;
         }
 
         private void txtIdentidade_TextChanged(object sender, EventArgs e)

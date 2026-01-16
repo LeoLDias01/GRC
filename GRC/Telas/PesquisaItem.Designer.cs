@@ -36,21 +36,26 @@
             this.colImagem = new System.Windows.Forms.DataGridViewImageColumn();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customPanel2 = new GRC.Componentes.CustomPanel();
             this.cbxQtdRegistros = new System.Windows.Forms.ComboBox();
             this.lbRegistros = new System.Windows.Forms.Label();
             this.pnPesquisa = new GRC.Componentes.CustomPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.txtCodigo = new MaterialSkin.Controls.MaterialTextBox();
             this.txtItem = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtCodigo = new MaterialSkin.Controls.MaterialTextBox();
             this.btnApagar = new GRC.Componentes.CustomButton();
             this.btnSearch = new GRC.Componentes.CustomButton();
             this.roundedPanel1 = new GRC.Componentes.RoundedPanel();
             this.roundedPanel2 = new GRC.Componentes.RoundedPanel();
+            this.customPanel1 = new GRC.Componentes.CustomPanel();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
             this.customPanel2.SuspendLayout();
             this.pnPesquisa.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.customPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvItens
@@ -78,19 +83,21 @@
             this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colImagem,
             this.colId,
-            this.colDescricao});
+            this.colDescricao,
+            this.colQtd,
+            this.colPreco});
             this.dgvItens.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(218)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvItens.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvItens.EnableHeadersVisualStyles = false;
             this.dgvItens.GridColor = System.Drawing.Color.Silver;
-            this.dgvItens.Location = new System.Drawing.Point(15, 122);
+            this.dgvItens.Location = new System.Drawing.Point(3, 17);
             this.dgvItens.MultiSelect = false;
             this.dgvItens.Name = "dgvItens";
             this.dgvItens.ReadOnly = true;
@@ -99,7 +106,7 @@
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItens.Size = new System.Drawing.Size(683, 308);
+            this.dgvItens.Size = new System.Drawing.Size(602, 449);
             this.dgvItens.TabIndex = 23;
             this.dgvItens.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItens_CellDoubleClick);
             this.dgvItens.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItens_CellValueChanged);
@@ -129,6 +136,18 @@
             this.colDescricao.Name = "colDescricao";
             this.colDescricao.ReadOnly = true;
             // 
+            // colQtd
+            // 
+            this.colQtd.HeaderText = "Quantidade";
+            this.colQtd.Name = "colQtd";
+            this.colQtd.ReadOnly = true;
+            // 
+            // colPreco
+            // 
+            this.colPreco.HeaderText = "Preço";
+            this.colPreco.Name = "colPreco";
+            this.colPreco.ReadOnly = true;
+            // 
             // customPanel2
             // 
             this.customPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -140,9 +159,9 @@
             this.customPanel2.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
             this.customPanel2.CorTextoBotao = System.Drawing.Color.White;
             this.customPanel2.ForeColor = System.Drawing.Color.White;
-            this.customPanel2.Location = new System.Drawing.Point(12, 436);
+            this.customPanel2.Location = new System.Drawing.Point(12, 648);
             this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(686, 37);
+            this.customPanel2.Size = new System.Drawing.Size(600, 37);
             this.customPanel2.TabIndex = 21;
             this.customPanel2.TamanhoBorda = 0;
             this.customPanel2.TamanhoRaio = 10;
@@ -163,11 +182,13 @@
             "80",
             "90",
             "100"});
-            this.cbxQtdRegistros.Location = new System.Drawing.Point(608, 10);
+            this.cbxQtdRegistros.Location = new System.Drawing.Point(522, 10);
             this.cbxQtdRegistros.Name = "cbxQtdRegistros";
             this.cbxQtdRegistros.Size = new System.Drawing.Size(59, 21);
             this.cbxQtdRegistros.TabIndex = 2;
             this.cbxQtdRegistros.Text = "10";
+            this.cbxQtdRegistros.TextChanged += new System.EventHandler(this.cbxQtdRegistros_TextChanged);
+            this.cbxQtdRegistros.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxQtdRegistros_KeyPress);
             // 
             // lbRegistros
             // 
@@ -188,50 +209,22 @@
             this.pnPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnPesquisa.BackColor = System.Drawing.Color.AliceBlue;
-            this.pnPesquisa.Controls.Add(this.flowLayoutPanel1);
+            this.pnPesquisa.Controls.Add(this.pictureBox1);
+            this.pnPesquisa.Controls.Add(this.materialLabel1);
+            this.pnPesquisa.Controls.Add(this.txtItem);
+            this.pnPesquisa.Controls.Add(this.txtCodigo);
+            this.pnPesquisa.Controls.Add(this.btnApagar);
+            this.pnPesquisa.Controls.Add(this.btnSearch);
             this.pnPesquisa.CorBorda = System.Drawing.Color.Black;
             this.pnPesquisa.CorBotao = System.Drawing.Color.AliceBlue;
             this.pnPesquisa.CorTextoBotao = System.Drawing.Color.White;
             this.pnPesquisa.ForeColor = System.Drawing.Color.White;
-            this.pnPesquisa.Location = new System.Drawing.Point(12, 52);
+            this.pnPesquisa.Location = new System.Drawing.Point(12, 34);
             this.pnPesquisa.Name = "pnPesquisa";
-            this.pnPesquisa.Size = new System.Drawing.Size(686, 64);
+            this.pnPesquisa.Size = new System.Drawing.Size(608, 119);
             this.pnPesquisa.TabIndex = 22;
             this.pnPesquisa.TamanhoBorda = 0;
             this.pnPesquisa.TamanhoRaio = 20;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.Controls.Add(this.txtCodigo);
-            this.flowLayoutPanel1.Controls.Add(this.txtItem);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(674, 56);
-            this.flowLayoutPanel1.TabIndex = 104;
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.AcceptsTab = true;
-            this.txtCodigo.AnimateReadOnly = false;
-            this.txtCodigo.AutoWordSelection = true;
-            this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCodigo.Depth = 0;
-            this.txtCodigo.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtCodigo.Hint = "Código do item";
-            this.txtCodigo.LeadingIcon = null;
-            this.txtCodigo.LeaveOnEnterKey = true;
-            this.txtCodigo.Location = new System.Drawing.Point(3, 3);
-            this.txtCodigo.MaxLength = 60;
-            this.txtCodigo.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtCodigo.Multiline = false;
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(141, 50);
-            this.txtCodigo.TabIndex = 37;
-            this.txtCodigo.Text = "";
-            this.txtCodigo.TrailingIcon = null;
-            this.txtCodigo.UseAccent = false;
             // 
             // txtItem
             // 
@@ -244,16 +237,38 @@
             this.txtItem.Hint = "Nome do Item";
             this.txtItem.LeadingIcon = null;
             this.txtItem.LeaveOnEnterKey = true;
-            this.txtItem.Location = new System.Drawing.Point(150, 3);
+            this.txtItem.Location = new System.Drawing.Point(155, 56);
             this.txtItem.MaxLength = 60;
             this.txtItem.MouseState = MaterialSkin.MouseState.OUT;
             this.txtItem.Multiline = false;
             this.txtItem.Name = "txtItem";
-            this.txtItem.Size = new System.Drawing.Size(521, 50);
+            this.txtItem.Size = new System.Drawing.Size(436, 50);
             this.txtItem.TabIndex = 33;
             this.txtItem.Text = "";
             this.txtItem.TrailingIcon = null;
             this.txtItem.UseAccent = false;
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.AcceptsTab = true;
+            this.txtCodigo.AnimateReadOnly = false;
+            this.txtCodigo.AutoWordSelection = true;
+            this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCodigo.Depth = 0;
+            this.txtCodigo.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCodigo.Hint = "Código do item";
+            this.txtCodigo.LeadingIcon = null;
+            this.txtCodigo.LeaveOnEnterKey = true;
+            this.txtCodigo.Location = new System.Drawing.Point(8, 56);
+            this.txtCodigo.MaxLength = 60;
+            this.txtCodigo.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtCodigo.Multiline = false;
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(141, 50);
+            this.txtCodigo.TabIndex = 37;
+            this.txtCodigo.Text = "";
+            this.txtCodigo.TrailingIcon = null;
+            this.txtCodigo.UseAccent = false;
             // 
             // btnApagar
             // 
@@ -268,7 +283,7 @@
             this.btnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApagar.ForeColor = System.Drawing.Color.White;
             this.btnApagar.Image = ((System.Drawing.Image)(resources.GetObject("btnApagar.Image")));
-            this.btnApagar.Location = new System.Drawing.Point(603, 3);
+            this.btnApagar.Location = new System.Drawing.Point(499, 7);
             this.btnApagar.Name = "btnApagar";
             this.btnApagar.Size = new System.Drawing.Size(43, 43);
             this.btnApagar.TabIndex = 14;
@@ -290,7 +305,7 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(652, 3);
+            this.btnSearch.Location = new System.Drawing.Point(548, 7);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(43, 43);
             this.btnSearch.TabIndex = 99;
@@ -308,7 +323,7 @@
             this.roundedPanel1.GradientAngle = 45F;
             this.roundedPanel1.Location = new System.Drawing.Point(76, 3);
             this.roundedPanel1.Name = "roundedPanel1";
-            this.roundedPanel1.Size = new System.Drawing.Size(521, 43);
+            this.roundedPanel1.Size = new System.Drawing.Size(543, 25);
             this.roundedPanel1.TabIndex = 100;
             // 
             // roundedPanel2
@@ -320,21 +335,60 @@
             this.roundedPanel2.GradientAngle = 45F;
             this.roundedPanel2.Location = new System.Drawing.Point(12, 3);
             this.roundedPanel2.Name = "roundedPanel2";
-            this.roundedPanel2.Size = new System.Drawing.Size(58, 43);
+            this.roundedPanel2.Size = new System.Drawing.Size(58, 25);
             this.roundedPanel2.TabIndex = 101;
+            // 
+            // customPanel1
+            // 
+            this.customPanel1.BackColor = System.Drawing.Color.AliceBlue;
+            this.customPanel1.Controls.Add(this.dgvItens);
+            this.customPanel1.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.customPanel1.CorBotao = System.Drawing.Color.AliceBlue;
+            this.customPanel1.CorTextoBotao = System.Drawing.Color.White;
+            this.customPanel1.ForeColor = System.Drawing.Color.White;
+            this.customPanel1.Location = new System.Drawing.Point(12, 159);
+            this.customPanel1.Name = "customPanel1";
+            this.customPanel1.Size = new System.Drawing.Size(608, 481);
+            this.customPanel1.TabIndex = 102;
+            this.customPanel1.TamanhoBorda = 0;
+            this.customPanel1.TamanhoRaio = 20;
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.BackColor = System.Drawing.Color.SlateGray;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.materialLabel1.Location = new System.Drawing.Point(68, 14);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(133, 24);
+            this.materialLabel1.TabIndex = 100;
+            this.materialLabel1.Text = "Busca de Itens";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(21, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(41, 31);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 101;
+            this.pictureBox1.TabStop = false;
             // 
             // PesquisaItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.ClientSize = new System.Drawing.Size(710, 485);
+            this.ClientSize = new System.Drawing.Size(632, 697);
+            this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.roundedPanel2);
             this.Controls.Add(this.roundedPanel1);
-            this.Controls.Add(this.dgvItens);
             this.Controls.Add(this.customPanel2);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.btnApagar);
             this.Controls.Add(this.pnPesquisa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -347,7 +401,9 @@
             this.customPanel2.ResumeLayout(false);
             this.customPanel2.PerformLayout();
             this.pnPesquisa.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.pnPesquisa.PerformLayout();
+            this.customPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -358,16 +414,20 @@
         private System.Windows.Forms.ComboBox cbxQtdRegistros;
         private System.Windows.Forms.Label lbRegistros;
         private Componentes.CustomPanel pnPesquisa;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private MaterialSkin.Controls.MaterialTextBox txtCodigo;
         private MaterialSkin.Controls.MaterialTextBox txtItem;
         private Componentes.CustomButton btnApagar;
         private Componentes.CustomButton btnSearch;
         private System.Windows.Forms.DataGridView dgvItens;
+        private Componentes.RoundedPanel roundedPanel1;
+        private Componentes.RoundedPanel roundedPanel2;
+        private Componentes.CustomPanel customPanel1;
         private System.Windows.Forms.DataGridViewImageColumn colImagem;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescricao;
-        private Componentes.RoundedPanel roundedPanel1;
-        private Componentes.RoundedPanel roundedPanel2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colQtd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPreco;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

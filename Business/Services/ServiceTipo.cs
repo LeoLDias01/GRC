@@ -131,5 +131,46 @@ namespace Business.Services
             }
         }
         #endregion
+
+        #region ..:: MARCA ::..
+        public int SalvaTipoServico(Tipo tipo)
+        {
+            try
+            {
+                if (tipo.Id == 0)
+                    return _database.SalvaTipoServico(tipo);
+                else
+                    return _database.AlteraTipoServico(tipo);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao salvar tipo de serviço: " + ex.Message, "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
+        }
+        public List<Tipo> BuscaTipoServico()
+        {
+            try
+            {
+                return _database.BuscaTipoServico();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao buscar tipo de serviço: " + ex.Message, "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+        public void InativaTipoServico(int id)
+        {
+            try
+            {
+                _database.InativaTipoServico(id);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao inativar tipo de serviço: \n" + ex.Message, "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        #endregion
     }
 }

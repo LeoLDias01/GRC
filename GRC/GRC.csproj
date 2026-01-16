@@ -195,6 +195,18 @@
     <Compile Include="Telas\PesquisaItem.Designer.cs">
       <DependentUpon>PesquisaItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\PesquisaRapidaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\PesquisaRapidaCliente.Designer.cs">
+      <DependentUpon>PesquisaRapidaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\TipoServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\TipoServico.Designer.cs">
+      <DependentUpon>TipoServico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\UnidadeMedida.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,6 +282,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\PesquisaItem.resx">
       <DependentUpon>PesquisaItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\PesquisaRapidaCliente.resx">
+      <DependentUpon>PesquisaRapidaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\TipoServico.resx">
+      <DependentUpon>TipoServico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\UnidadeMedida.resx">
       <DependentUpon>UnidadeMedida.cs</DependentUpon>

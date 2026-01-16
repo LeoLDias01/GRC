@@ -63,7 +63,10 @@ namespace GRC.Telas
                         dgvItens.Rows.Add(
                         !string.IsNullOrWhiteSpace(estoque.FotoItem) ? new Bitmap(CriptoImagem.Base64ToImage(estoque.FotoItem), new Size(100, 100)) : null,
                         estoque.Id.ToString(),
-                        estoque.Descricao);
+                        estoque.Descricao,
+                        estoque.Quatidade.ToString(),
+                        estoque.CustoUnitario
+                        );
                     }
                 }
             }
@@ -93,6 +96,27 @@ namespace GRC.Telas
                 _item = _service.BuscaTelaPesquisaCompleta((int)id.Value);
                 this.DialogResult = DialogResult.OK;
             }
+        }
+
+        private void cbxQtdRegistros_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite dígitos e a tecla Backspace
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ignora o caractere digitado
+            }
+        }
+
+        private void cbxQtdRegistros_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(cbxQtdRegistros.Text))
+            {
+                if (Convert.ToInt32(cbxQtdRegistros.Text) > 100)
+                    cbxQtdRegistros.Text = "100";
+            }
+            else cbxQtdRegistros.Text = "10";
+
+            RealizaPesquisa();
         }
     }
 }

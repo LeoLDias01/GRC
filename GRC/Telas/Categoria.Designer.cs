@@ -35,15 +35,15 @@
             this.dgvTipo = new System.Windows.Forms.DataGridView();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colExcluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.customPanel1 = new GRC.Componentes.CustomPanel();
             this.lbRegistros = new System.Windows.Forms.Label();
             this.customPanel2 = new GRC.Componentes.CustomPanel();
-            this.btnSalvar = new GRC.Componentes.CustomButton();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.txtCategoria = new MaterialSkin.Controls.MaterialTextBox();
             this.roundedPanel1 = new GRC.Componentes.RoundedPanel();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnSalvar = new GRC.Componentes.CustomButton();
+            this.colExcluir = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipo)).BeginInit();
             this.customPanel1.SuspendLayout();
             this.customPanel2.SuspendLayout();
@@ -55,6 +55,7 @@
             this.dgvTipo.AllowUserToDeleteRows = false;
             this.dgvTipo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTipo.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.dgvTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTipo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvTipo.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvTipo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -92,7 +93,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvTipo.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTipo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTipo.Size = new System.Drawing.Size(315, 327);
+            this.dgvTipo.Size = new System.Drawing.Size(376, 327);
             this.dgvTipo.TabIndex = 19;
             this.dgvTipo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTipo_CellContentClick);
             this.dgvTipo.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTipo_CellDoubleClick);
@@ -114,14 +115,6 @@
             this.colDescricao.Name = "colDescricao";
             this.colDescricao.ReadOnly = true;
             // 
-            // colExcluir
-            // 
-            this.colExcluir.FillWeight = 45F;
-            this.colExcluir.HeaderText = "";
-            this.colExcluir.Image = ((System.Drawing.Image)(resources.GetObject("colExcluir.Image")));
-            this.colExcluir.Name = "colExcluir";
-            this.colExcluir.ReadOnly = true;
-            // 
             // customPanel1
             // 
             this.customPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -134,7 +127,7 @@
             this.customPanel1.ForeColor = System.Drawing.Color.White;
             this.customPanel1.Location = new System.Drawing.Point(12, 496);
             this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(312, 37);
+            this.customPanel1.Size = new System.Drawing.Size(376, 37);
             this.customPanel1.TabIndex = 20;
             this.customPanel1.TamanhoBorda = 0;
             this.customPanel1.TamanhoRaio = 10;
@@ -164,37 +157,10 @@
             this.customPanel2.ForeColor = System.Drawing.Color.White;
             this.customPanel2.Location = new System.Drawing.Point(12, 45);
             this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(315, 112);
+            this.customPanel2.Size = new System.Drawing.Size(376, 112);
             this.customPanel2.TabIndex = 18;
             this.customPanel2.TamanhoBorda = 0;
             this.customPanel2.TamanhoRaio = 20;
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnSalvar.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnSalvar.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnSalvar.CorTextoBotao = System.Drawing.Color.White;
-            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalvar.FlatAppearance.BorderSize = 0;
-            this.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(240, 2);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnSalvar.Size = new System.Drawing.Size(87, 37);
-            this.btnSalvar.TabIndex = 20;
-            this.btnSalvar.TamanhoBorda = 0;
-            this.btnSalvar.TamanhoRaio = 5;
-            this.btnSalvar.Text = " Salvar";
-            this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSalvar.UseVisualStyleBackColor = false;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // materialLabel2
             // 
@@ -228,7 +194,7 @@
             this.txtCategoria.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCategoria.Multiline = false;
             this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(281, 50);
+            this.txtCategoria.Size = new System.Drawing.Size(340, 50);
             this.txtCategoria.TabIndex = 10;
             this.txtCategoria.Text = "";
             this.txtCategoria.TrailingIcon = null;
@@ -243,7 +209,7 @@
             this.roundedPanel1.GradientAngle = 45F;
             this.roundedPanel1.Location = new System.Drawing.Point(12, 2);
             this.roundedPanel1.Name = "roundedPanel1";
-            this.roundedPanel1.Size = new System.Drawing.Size(222, 37);
+            this.roundedPanel1.Size = new System.Drawing.Size(283, 37);
             this.roundedPanel1.TabIndex = 3;
             // 
             // dataGridViewImageColumn1
@@ -254,12 +220,47 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 57;
             // 
+            // btnSalvar
+            // 
+            this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSalvar.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnSalvar.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnSalvar.CorTextoBotao = System.Drawing.Color.White;
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvar.FlatAppearance.BorderSize = 0;
+            this.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSalvar.ForeColor = System.Drawing.Color.White;
+            this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalvar.Location = new System.Drawing.Point(301, 2);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnSalvar.Size = new System.Drawing.Size(87, 37);
+            this.btnSalvar.TabIndex = 20;
+            this.btnSalvar.TamanhoBorda = 0;
+            this.btnSalvar.TamanhoRaio = 5;
+            this.btnSalvar.Text = " Salvar";
+            this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // colExcluir
+            // 
+            this.colExcluir.FillWeight = 45F;
+            this.colExcluir.HeaderText = "";
+            this.colExcluir.Image = ((System.Drawing.Image)(resources.GetObject("colExcluir.Image")));
+            this.colExcluir.Name = "colExcluir";
+            this.colExcluir.ReadOnly = true;
+            // 
             // Categoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.ClientSize = new System.Drawing.Size(336, 536);
+            this.ClientSize = new System.Drawing.Size(400, 536);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.dgvTipo);

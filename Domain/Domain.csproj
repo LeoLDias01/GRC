@@ -110,6 +110,7 @@
     <Compile Include="Repository\Database_ItemEstoque.cs" />
     <Compile Include="Repository\Database_Login.cs" />
     <Compile Include="Repository\Database_MovimentoEstoque.cs" />
+    <Compile Include="Repository\Database_OrdemServico.cs" />
     <Compile Include="Repository\Database_Tipo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -630,7 +630,9 @@ namespace Domain.Repository
                     sql.Append(@"SELECT 
                                         ITM.IDGRC_ITEM_ESTOQUE AS Id,
                                         ITM.DESCRICAO AS Descricao,
-                                        ITM.FOTO  AS Foto
+                                        ITM.FOTO  AS Foto, 
+                                        ITM.QUANTIDADE AS Qtd,
+                                        ITM.CUSTO_UNITARIO AS Custo
                                 FROM GRC_ITEM_ESTOQUE ITM                                
                                 WHERE 1 = 1 AND ITM.ATIVO = 1");
 
@@ -654,6 +656,8 @@ namespace Domain.Repository
                         Id = Convert.ToInt32(x.Id),
                         Descricao = x.Descricao,
                         FotoItem = x.Foto,
+                        Quatidade = Convert.ToInt32(x.Qtd),
+                        CustoUnitario = x.Custo
                     }).ToList();
 
                     return lista;
@@ -680,7 +684,8 @@ namespace Domain.Repository
                                         QUANTIDADE  AS Quantidade,
                                         CUSTO_UNITARIO AS CustoUnitario,
                                         ITEM_VENDA AS ItemVenda,
-                                        VALOR_UNITARIO_VENDA AS PrecoUnitario
+                                        VALOR_UNITARIO_VENDA AS PrecoUnitario,
+                                        FOTO AS Foto
                                 FROM GRC_ITEM_ESTOQUE                               
                                 WHERE ATIVO = 1 AND IDGRC_ITEM_ESTOQUE = @Id");
                     var lista = conn.Query(sql.ToString(), new
@@ -694,7 +699,8 @@ namespace Domain.Repository
                         Quatidade = (int)x.Quantidade,
                         CustoUnitario = x.CustoUnitario,
                         ItemVenda = Convert.ToBoolean(x.ItemVenda),
-                        VendaUnitario = x.PrecoUnitario
+                        VendaUnitario = x.PrecoUnitario,
+                        FotoItem = x.Foto
                     }).ToList();
 
                     return lista;
