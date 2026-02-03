@@ -40,7 +40,46 @@ namespace Business.Services
             }
         }
 
+        #region ..:: SALVA OS ::..
 
+
+        public int? SalvaOS(OrdemServico os)
+        {
+            try
+            {
+                if (os.Id == 0)
+                    return _database.InsereOS(os);
+                else
+                {
+                    
+                        _database.AlteraOS(os);
+                        return 0;
+                    
+                   
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao salvar OS: " + ex.Message, "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+        #endregion
+
+        public List<OrdemServico> BuscaCompleta(int id)
+        {
+            try
+            {
+                return _database.BuscaCompleta(id);
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao buscar: " + ex.Message, "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
 
 
     }

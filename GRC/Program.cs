@@ -19,6 +19,8 @@ namespace GRC
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new WorkFlow());
             Application.Run(new CadastroOS());
+            //Application.Run(new CadastroCliente());
+
         }
     }
 }

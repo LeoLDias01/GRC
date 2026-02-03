@@ -481,6 +481,8 @@ namespace GRC.Telas
                     FotoItem = string.IsNullOrEmpty(_base64Imagem) ? string.Empty : _base64Imagem,
                     Favorito = _favorito == true ? false : true,
                     Ativo = swItemAtivo.Checked ? true : false,
+
+
                     ComposicaoItem = dgvItemComposicao.Rows.Cast<DataGridViewRow>()
                     .Where(r => !r.IsNewRow)
                     .Select(r =>

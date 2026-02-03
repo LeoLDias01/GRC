@@ -1,4 +1,5 @@
-﻿using Business.Helper;
+﻿using Business.EmailSender;
+using Business.Helper;
 using Business.Services;
 using Data.Models;
 using GRC.Componentes;
@@ -15,22 +16,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace GRC.Telas
 {
     public partial class CadastroOS : Form
     {
+        private int _idOS = 0;
         private int _idCliente = 0;
         private bool _favorito = false;
+        private int _StatusAntigo = 0;
 
         private List<ItemCard> _itensOS = new List<ItemCard>();
-        public Item _dadosItem = new Item();
+        //public Item _dadosItem = new Item();
         ServiceOrdemServico _service = new ServiceOrdemServico();
 
-        public CadastroOS()
+        public CadastroOS(int id = 0)
         {
             InitializeComponent();
+            _idOS = 2;// id;
         }
 
         private void btnNovoItem_Click(object sender, EventArgs e)
@@ -50,9 +55,78 @@ namespace GRC.Telas
 
         private void CadastroOS_Load(object sender, EventArgs e)
         {
-            swAtivo.Checked = true;
+            _favorito = false;
+            Favorito();
             lbDataAtual.Text = DateTime.Today.ToString("dd/MM/yyyy");
+            txtDataEntrada.Text = DateTime.Today.ToString("dd/MM/yyyy");
             CarregaCombos();
+
+            if (_idOS > 0)
+                CarregaDados();
+            
+            else btnExportar.Enabled = false;
+
+            txtDescricao.Focus();
+        }
+        private void CarregaDados()
+        {
+            try
+            {
+                
+                // Limpa cards e lista
+                flpItens.Controls.Clear();
+                _itensOS.Clear();
+
+                var dadosOs = _service.BuscaCompleta(_idOS).FirstOrDefault();
+                if (dadosOs == null)
+                    return;
+
+
+                txtId.Text = dadosOs.Id.ToString();
+                _idCliente = dadosOs.IdCliente;
+                txtCliente.Text = dadosOs.NomeCliente.ToString();
+                txtDescricao.Text = dadosOs.Descricao.ToString();
+                cbTipoServico.SelectedValue = dadosOs.TipoServico;
+                _StatusAntigo = dadosOs.Status;
+                cbStatus.SelectedValue = _StatusAntigo;
+                txtDataEntrada.Text = dadosOs.DataEntrada;
+                txtFimPrevisto.Text = dadosOs.FimPrevisto;
+                txtFimReal.Text = dadosOs.FimReal;
+                txtGarantia.Text = dadosOs.Garantia;
+                txtInicioGarantia.Text = dadosOs.InicioGarantia;
+                txtFimGarantia.Text = dadosOs.FimGarantia;
+                txtObservacoes.Text = dadosOs.Observacoes;
+
+                // ORÇAMENTO
+
+                txtMaoObra.Text = dadosOs.MaoObra;
+                txtAcrescimo.Text = dadosOs.Acrescimo;
+                txtDesconto.Text = dadosOs.Desconto;
+                _favorito = dadosOs.Favorito;
+                Favorito();
+
+
+                // ITENS VINCULADOS A OS
+
+                if (dadosOs.ItensOrdemServico != null && dadosOs.ItensOrdemServico.Count > 0)
+                {
+                    ConfiguraCard();
+                    flpItens.Controls.Clear();
+                    _itensOS.Clear();
+
+                    foreach (var item in dadosOs.ItensOrdemServico)
+                    {
+                        CriaCard(item, false);
+                    }
+                }
+
+                btnExportar.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+                EmailError.EnviarEmailErro(ex.ToString());
+                new AlertBox(Color.FromArgb(64, 0, 0), Color.Red, Color.Crimson, Resources.Error, "Um erro ocorreu:", "Entidade: OS", "Erro ao Carregar o dados da OS!", false).ShowDialog();
+            }
         }
 
         private void pcbFavorito_Click(object sender, EventArgs e)
@@ -107,6 +181,53 @@ namespace GRC.Telas
         private void cbStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
             lbStatus.Text = cbStatus.Text;
+
+            if (Convert.ToInt32(cbStatus.SelectedValue) == 6)
+            {
+                PermiteAddItens(true);
+                MudaCorPainel(Color.Gray, Color.DarkGray);
+            }
+            else if (Convert.ToInt32(cbStatus.SelectedValue) == 7)
+            {
+                PermiteAddItens(true);
+                MudaCorPainel(Color.Yellow, Color.Goldenrod);
+            }
+            else if (Convert.ToInt32(cbStatus.SelectedValue) == 8)
+            {
+                PermiteAddItens(true);
+                MudaCorPainel(Color.Orange, Color.DarkOrange);
+            }
+            else if (Convert.ToInt32(cbStatus.SelectedValue) == 9)
+            {
+                PermiteAddItens(true);
+                MudaCorPainel(Color.Cyan, Color.DeepSkyBlue);
+            }
+            else if (Convert.ToInt32(cbStatus.SelectedValue) == 10)
+            {
+                PermiteAddItens(false);
+                MudaCorPainel(Color.Lime, Color.Green);
+            }
+            else if (Convert.ToInt32(cbStatus.SelectedValue) == 11)
+            {
+                PermiteAddItens(false);
+                MudaCorPainel(Color.DarkSalmon, Color.Crimson);
+            }
+        }
+        private void PermiteAddItens(bool ativo)
+        {
+            btnConsultaItem.Enabled = ativo;
+            flpItens.Enabled = ativo;
+
+            if (ativo)
+            {
+                flpItens.BackColor = Color.FromArgb(43, 69, 98);
+                pnItens.BackColor = Color.FromArgb(43, 69, 98);
+            }
+            else
+            {
+                flpItens.BackColor = Color.FromArgb(52, 57, 66);
+                pnItens.BackColor = Color.FromArgb(52, 57, 66);
+            }
         }
 
         private void txtDataEntrada_TextChanged(object sender, EventArgs e)
@@ -196,6 +317,7 @@ namespace GRC.Telas
         private void txtMaoObra_TextChanged(object sender, EventArgs e)
         {
             FormataMoeda(sender);
+            CalculaTotal();
         }
         private void FormataMoeda(object sender)
         {
@@ -247,18 +369,22 @@ namespace GRC.Telas
                     ConfiguraCard();
                     foreach (var comp in frm._item)
                     {
-                        _dadosItem = new Item();
+                        
 
                         if (comp.Quatidade > 0)
                         {
-                            _dadosItem.Id = comp.Id;
-                            _dadosItem.Descricao = comp.Descricao;
-                            _dadosItem.Quatidade = comp.Quatidade;
-                            _dadosItem.CustoUnitario = comp.CustoUnitario;
-                            _dadosItem.FotoItem = comp.FotoItem;
-                            AdicionarItemOS(_dadosItem);
+                            CriaCard(new ItemCard
+                            {
+                                Id = 0,
+                                IdItem = (int)comp.Id > 0 ? (int)comp.Id : 0,
+                                Descricao = comp.Descricao,
+                                Quantidade = 1,
+                                QuantidadeMaxima = comp.Quatidade,
+                                FotoItem = comp.FotoItem,
+                                Custo = comp.CustoUnitario
+                            }, true);
                         }
-                        else 
+                        else
                         {
                             new AlertBox(Color.Goldenrod, Color.Lime, Color.Yellow, Resources.Warning, "Item de Estoque", comp.Descricao.ToString(), "Não pode ser adicionado pois estoque está zerado!", false).ShowDialog();
                         }
@@ -275,58 +401,55 @@ namespace GRC.Telas
 
         }
 
-        private void AdicionarItemOS(Item item)
+        private void CriaCard(ItemCard item, bool validarDuplicado)
         {
-            decimal.TryParse(item.CustoUnitario.ToString(), NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal unit);
+            decimal.TryParse(item.Custo.ToString(), NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal unit);
 
-            // Verifica se o item já está na OS
-            bool jaExiste = _itensOS.Any(i => i.IdItem == item.Id);
+            // Entra no IF se a validação for habilitada (Apenas ao adicionar item novo)
 
-            if (jaExiste)
+            if (validarDuplicado)
             {
-                // Localiza o card já existente
-                var cardExistente = flpItens.Controls
-                    .OfType<CustomPanel>()
-                    .FirstOrDefault(c =>
-                        c.Tag is ItemCard os && os.IdItem == item.Id
-                    );
-
-                if (cardExistente != null)
+                bool jaExiste = _itensOS.Any(i => i.IdItem == item.IdItem);
+                if (jaExiste)
                 {
-                    // Leva o foco até o card
-                    flpItens.ScrollControlIntoView(cardExistente);
+                    var cardExistente = flpItens.Controls
+                        .OfType<CustomPanel>()
+                        .FirstOrDefault(c => c.Tag is ItemCard os && os.IdItem == item.IdItem);
 
-                    // Destaca visualmente
-                    PiscarCard(cardExistente);
+                    if (cardExistente != null)
+                    {
+                        flpItens.ScrollControlIntoView(cardExistente);
+                        PiscarCard(cardExistente);
+                    }
 
+                    new AlertBox(
+                        Color.Goldenrod,
+                        Color.Black,
+                        Color.Yellow,
+                        Resources.Warning,
+                        "Item já adicionado",
+                        item.Descricao,
+                        "Este item já está na ordem de serviço.",
+                        false
+                    ).ShowDialog();
+
+                    return;
                 }
-
-                new AlertBox(
-                    Color.Goldenrod,
-                    Color.Black,
-                    Color.Yellow,
-                    Resources.Warning,
-                    "Item já adicionado",
-                    item.Descricao,
-                    "Este item já está na ordem de serviço. Ajuste a quantidade no card existente.",
-                    false
-                ).ShowDialog();
-
-                return; // BLOQUEIA completamente
             }
-            else
-            {
 
                 // 🔹 cria o item da OS
                 ItemCard itemOS = new ItemCard
                 {
-                    IdItem = Convert.ToInt32(item.Id),
+                    Id = item.Id,
+                    IdItem = (int)item.IdItem,
                     Descricao = item.Descricao,
                     ValorUnitario = unit,
-                    Quantidade = 1
+                    Quantidade = item.Quantidade,
+                    QuantidadeMaxima = item.QuantidadeMaxima,
+                    FotoItem = item.FotoItem,
                 };
-                _itensOS.Add(itemOS);
-                CustomPanel card = new CustomPanel
+
+            CustomPanel card = new CustomPanel
                 {
                     Width = flpItens.Width - 8,
                     Height = 90,
@@ -376,13 +499,13 @@ namespace GRC.Telas
                 // TEXTBOX QUANTIDADE
                 MaterialTextBox txtQuantidade = new MaterialTextBox
                 {
-                    Text = "0",
+                    Text = item.Quantidade.ToString(),
                     Width = 60,
                     Height = 25,
                     Location = new Point(130, 40),
                     //TextAlign = HorizontalAlignment.Center
                     UseTallSize = false,
-                    Cursor = Cursors.Default,
+                    Cursor = Cursors.Default
                 };
 
                 CustomButton btnMais = new CustomButton
@@ -400,7 +523,7 @@ namespace GRC.Telas
 
                 Label lblPreco = new Label
                 {
-                    Text = $"Valor: {item.CustoUnitario}",
+                    Text = $"Valor: {item.Custo}",
                     Location = new Point(240, 47),
                     Font = new Font("Roboto", 10, FontStyle.Bold),
                     ForeColor = Color.FromArgb(43, 69, 98),
@@ -424,7 +547,13 @@ namespace GRC.Telas
                 btnExcluir.FlatAppearance.BorderSize = 0;
                 btnExcluir.FlatAppearance.MouseOverBackColor = Color.FromArgb(43, 69, 98);
 
-                btnExcluir.Click += (s, e) =>
+            void AtualizarSubtotal()
+            {
+                txtQuantidade.Text = itemOS.Quantidade.ToString();
+                lblPreco.Text = $"Valor: {itemOS.Subtotal:C2}";
+                AtualizarTotalOS();
+            }
+            btnExcluir.Click += (s, e) =>
                 {
                     _itensOS.Remove(itemOS);
                     flpItens.Controls.Remove(card);
@@ -444,7 +573,7 @@ namespace GRC.Telas
                 };
                 btnMais.Click += (s, e) =>
                 {
-                    if (itemOS.Quantidade < item.Quatidade)
+                    if (itemOS.Quantidade < item.QuantidadeMaxima)
                     {
                         itemOS.Quantidade++;
                         AtualizarSubtotal();
@@ -464,16 +593,11 @@ namespace GRC.Telas
                 };
                 txtQuantidade.Leave += (s, e) =>
                 {
-                    /*ZeraValorAoDesfocar("1", txtQuantidade);
-                    if(Convert.ToInt32(txtQuantidade.Text) < 1)
-                        txtQuantidade.Text = "1";*/
-
-
                     if (!int.TryParse(txtQuantidade.Text, out int qtd) || qtd < 1)
                         qtd = 1;
 
-                    if (qtd > item.Quatidade)
-                        qtd = item.Quatidade;
+                    if (qtd > item.QuantidadeMaxima)
+                        qtd = item.QuantidadeMaxima;
 
                     itemOS.Quantidade = qtd;
                 };
@@ -484,9 +608,20 @@ namespace GRC.Telas
                 };
                 txtQuantidade.TextChanged += (s, e) =>
                 {
-                    AtualizarSubtotal();
-                };
+                    if (int.TryParse(txtQuantidade.Text, out int qtd))
+                    {
+                        if (qtd < 1) 
+                            qtd = 1;
+                        if (qtd > item.QuantidadeMaxima) 
+                            qtd = item.QuantidadeMaxima;
 
+                        itemOS.Quantidade = qtd;
+                        AtualizarSubtotal();
+                        // Move cursor para o final
+                        txtQuantidade.SelectionStart = txtQuantidade.Text.Length;
+                    }
+                };
+                _itensOS.Add(itemOS);
                 card.Controls.Add(foto);
                 card.Controls.Add(lblNome);
                 card.Controls.Add(btnMenos);
@@ -498,18 +633,17 @@ namespace GRC.Telas
                 AtualizarSubtotal();
 
 
-                void AtualizarSubtotal()
-                {
-                    txtQuantidade.Text = itemOS.Quantidade.ToString();
-                    lblPreco.Text = $"Valor: {itemOS.Subtotal:C2}";
-                    AtualizarTotalOS();
-                }
-            }
+                
+            
         }
         private void AtualizarTotalOS()
         {
             decimal total = _itensOS.Sum(i => i.Subtotal);
             txtTotalPecas.Text = $"{total:C2}";
+        }
+        private void AdicionarItemOS(ItemCard item)
+        {
+            
         }
         private async void PiscarCard(Control card)
         {
@@ -526,7 +660,238 @@ namespace GRC.Telas
             }
         }
 
+        private void txtAcrescimo_KeyDown(object sender, KeyEventArgs e)
+        {
+            VerificaKeyV(sender, e);
+        }
+
+        private void txtAcrescimo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            DesativaCaracteres(sender, e);
+        }
+
+        private void txtAcrescimo_Enter(object sender, EventArgs e)
+        {
+            LimpaValorAoFocar("R$ 0,00", txtMaoObra);
+        }
+
+        private void txtAcrescimo_Leave(object sender, EventArgs e)
+        {
+            ZeraValorAoDesfocar("R$ 0,00", txtMaoObra);
+        }
+
+        private void txtAcrescimo_TextChanged(object sender, EventArgs e)
+        {
+            FormataMoeda(sender);
+            CalculaTotal();
+        }
+
+        private void txtDesconto_KeyDown(object sender, KeyEventArgs e)
+        {
+            VerificaKeyV(sender, e);
+        }
+
+        private void txtDesconto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            DesativaCaracteres(sender, e);
+        }
+
+        private void txtDesconto_Enter(object sender, EventArgs e)
+        {
+            LimpaValorAoFocar("R$ 0,00", txtMaoObra);
+        }
+
+        private void txtDesconto_Leave(object sender, EventArgs e)
+        {
+            ZeraValorAoDesfocar("R$ 0,00", txtMaoObra);
+        }
+
+        private void txtDesconto_TextChanged(object sender, EventArgs e)
+        {
+            FormataMoeda(sender);
+            CalculaTotal();
+        }
+        private void CalculaTotal()
+        {
+            bool MaoObraOk = decimal.TryParse(txtMaoObra.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal mo);
+            bool PecasOk = decimal.TryParse(txtTotalPecas.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal pc);
+            bool AcrescimoOk = decimal.TryParse(txtAcrescimo.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal ac);
+            bool DescontoOk = decimal.TryParse(txtDesconto.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal dc);
+            decimal total = 0;
+
+            if (MaoObraOk)
+                total += mo;
+
+            if (PecasOk)
+                total += pc;
+
+            if (AcrescimoOk)
+                total += ac;
+
+            if (DescontoOk)
+                total -= dc;
+
+            txtTotalServico.Text = total.ToString("C2", CultureInfo.CurrentCulture);
+        }
+
+        private void txtTotalPecas_TextChanged(object sender, EventArgs e)
+        {
+            CalculaTotal();
+        }
+
+        private void txtTotalServico_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtTotalServico.Text))
+            {
+                txtTotalServico.Text = "R$ 0,00";
+            }
+        }
+        private void MudaCorPainel(Color cor1, Color cor2)
+        {
+            pn1.Color1 = cor1;
+            pn2.Color1 = cor1;
+            pn1.Color2 = cor2;
+            pn2.Color2 = cor2;
+        }
 
 
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!ValidaCampos())
+                    return;
+
+                bool fim = false;
+
+                if (_StatusAntigo != Convert.ToInt32(cbStatus.SelectedValue))
+                {
+                    if (Convert.ToInt32(cbStatus.SelectedValue) == 10 || Convert.ToInt32(cbStatus.SelectedValue) == 11)
+                    {
+                        fim = true;
+                    }
+                }
+
+
+                var os = new OrdemServico
+                {
+                    Id = _idOS,
+                    IdCliente = _idCliente,
+                    NomeCliente = !string.IsNullOrWhiteSpace(txtCliente.Text) ? txtCliente.Text : string.Empty,
+                    Descricao = !string.IsNullOrWhiteSpace(txtDescricao.Text) ? txtDescricao.Text : string.Empty,
+                    TipoServico = Convert.ToInt32(cbTipoServico.SelectedValue),
+                    StatusAntigo = _StatusAntigo,
+                    Status = Convert.ToInt32(cbStatus.SelectedValue),
+                    Garantia = !string.IsNullOrWhiteSpace(txtGarantia.Text) ? txtGarantia.Text.Trim() : string.Empty,
+                    DataEntrada = !string.IsNullOrWhiteSpace(txtDataEntrada.Text) ? txtDataEntrada.Text : string.Empty,
+                    FimPrevisto = !string.IsNullOrWhiteSpace(txtFimPrevisto.Text) ? txtFimPrevisto.Text : string.Empty,
+                    FimReal = fim == true ? DateTime.Today.ToString("dd/MM/yyyy") : string.Empty,
+                    InicioGarantia = !string.IsNullOrWhiteSpace(txtInicioGarantia.Text) ? txtInicioGarantia.Text : string.Empty,
+                    FimGarantia = !string.IsNullOrWhiteSpace(txtFimGarantia.Text) ? txtFimGarantia.Text : string.Empty,
+                    MaoObra = !string.IsNullOrWhiteSpace(txtMaoObra.Text) ? txtMaoObra.Text : string.Empty,
+                    Acrescimo = !string.IsNullOrWhiteSpace(txtAcrescimo.Text) ? txtAcrescimo.Text : string.Empty,
+                    Desconto = !string.IsNullOrWhiteSpace(txtDesconto.Text) ? txtDesconto.Text : string.Empty,
+                    Observacoes = txtObservacoes.Text,
+                    Favorito = _favorito == true ? false : true,
+                    ItensOrdemServico = _itensOS.ToList()
+                };
+
+                int? retorno = _service.SalvaOS(os);
+                // Chama a services sem identificar se é criação ou alteração pois o processo de validação é feito lá
+                if (retorno > 0)
+                    new AlertBox(Color.FromArgb(0, 60, 4), Color.LimeGreen, Color.Green, Resources.Confirm, "Ordem de Serviço", $"Do cliente: {os.NomeCliente}", "Foi cadastrado com sucesso!", false).ShowDialog();
+                else if (retorno == 0)
+                    new AlertBox(Color.FromArgb(0, 60, 4), Color.LimeGreen, Color.Green, Resources.Confirm, "Ordem de Serviço", $"Do cliente: {os.NomeCliente}", "Foi alterado com sucesso!", false).ShowDialog();
+
+                LimpaCampos();
+            }
+            catch (Exception ex)
+            {
+                EmailError.EnviarEmailErro(ex.ToString());
+                new AlertBox(Color.FromArgb(64, 0, 0), Color.Red, Color.Crimson, Resources.Error, "Um erro ocorreu:", "Entidade: OS", "Erro ao salvar OS!", false).ShowDialog();
+            }
+        }
+        
+        private void LimpaCampos()
+        {
+            _idOS = 0;
+            _idCliente = 0;
+            _favorito = false;
+
+
+            Favorito();
+            CarregaCombos();
+
+            txtId.Clear();
+            txtCliente.Clear();
+            txtDescricao.Clear();
+            txtGarantia.Clear();
+            txtDataEntrada.Clear();
+            txtFimPrevisto.Clear();
+            txtInicioGarantia.Clear();
+            txtFimGarantia.Clear();
+            txtMaoObra.Clear();
+            txtTotalPecas.Clear();
+            txtAcrescimo.Clear();
+            txtDesconto.Clear();
+            txtObservacoes.Clear();
+            txtTotalServico.Clear();
+
+            // 🔹 REMOVE E DESCARTA OS CARDS
+            foreach (Control ctrl in flpItens.Controls)
+            {
+                ctrl.Dispose();
+            }
+
+            flpItens.Controls.Clear();
+
+            // 🔹 ZERA A LISTA LÓGICA
+            _itensOS.Clear();
+        }
+        private bool ValidaCampos()
+        {
+            // Nome obrigatório
+            if (string.IsNullOrWhiteSpace(txtDescricao.Text))
+            {
+                new AlertBox(Color.Goldenrod, Color.Lime, Color.Yellow, Resources.Warning, "Ordem de Serviço", "Item sem nome válido", "O nome do item é obrigatório", false).ShowDialog();
+                txtDescricao.Focus();
+                return false;
+            }
+            else if ((int)cbTipoServico.SelectedValue < 1)
+            {
+                new AlertBox(Color.Goldenrod, Color.Lime, Color.Yellow, Resources.Warning, "Ordem de Serviço", "Unidade de medida inválida", "Selecione uma das opções", false).ShowDialog();
+                cbTipoServico.Focus();
+                return false;
+            }
+            else if ((int)cbStatus.SelectedValue < 1)
+            {
+                new AlertBox(Color.Goldenrod, Color.Lime, Color.Yellow, Resources.Warning, "Item de Estoque", "Categoria inválida", "Selecione uma das opções", false).ShowDialog();
+                cbStatus.Focus();
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(txtDataEntrada.Text))
+            {
+                new AlertBox(Color.Goldenrod, Color.Lime, Color.Yellow, Resources.Warning, "Item de Estoque", "Item sem quantidade mínima", "A quantidade mínima é obrigatória", false).ShowDialog();
+                txtDataEntrada.Focus();
+                return false;
+            }
+            else if (_idOS == 0 && (Convert.ToInt32(cbStatus.SelectedValue) == 11 || Convert.ToInt32(cbStatus.SelectedValue) == 10)) // Impede a OS de ser cadastrada como Finalizada ou Cancelada
+            {
+                new AlertBox(Color.Goldenrod, Color.Lime, Color.Yellow, Resources.Warning, "Ordem de Serviço", "Status Inválido para Inserção", "O Status da OS deve seguir o fluxo, não pode iniciar como Finalizado ou Cancelado", false).ShowDialog();
+                cbStatus.Focus();
+                return false;
+            }
+
+            else return true;
+
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            List<OrdemServico> os = new List<OrdemServico>();
+            os = _service.BuscaCompleta(_idOS);
+            new SelecaoImpressao(os).ShowDialog();
+        }
     }
 }

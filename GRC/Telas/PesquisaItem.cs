@@ -47,10 +47,11 @@ namespace GRC.Telas
 
             dgvItens.Visible = true;
             dgvItens.Rows.Clear();
-            dgvItens.RowTemplate.Height = 75;
+            dgvItens.RowTemplate.Height = 85;
             dgvItens.AutoGenerateColumns = false;
             dgvItens.ColumnHeadersVisible = true;
             dgvItens.ColumnHeadersHeight = 40;
+            dgvItens.DefaultCellStyle.ForeColor = Color.Black;
 
             var lista = _service.BuscaTelaPesquisaBasica(item, registros);
 
@@ -117,6 +118,11 @@ namespace GRC.Telas
             else cbxQtdRegistros.Text = "10";
 
             RealizaPesquisa();
+        }
+
+        private void PesquisaItem_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Composicao.cs" />
+    <Compile Include="Models\DadosLoja.cs" />
     <Compile Include="Models\Email.cs" />
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\Fornecedores.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Models\ItemCard.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Movimentacao.cs" />
+    <Compile Include="Models\OrdemServico.cs" />
     <Compile Include="Models\Telefone.cs" />
     <Compile Include="Models\Tipo.cs" />
     <Compile Include="Models\ViaCepResponse.cs" />
