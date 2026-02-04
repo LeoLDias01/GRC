@@ -15,7 +15,7 @@ namespace GRC.Telas
 {
     public partial class WorkFlow : Form
     {
-        CriacaoBanco _inicializacao = new CriacaoBanco();
+       /* CriacaoBanco _inicializacao = new CriacaoBanco();*/
         public WorkFlow()
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace GRC.Telas
         private void WorkFlow_Load(object sender, EventArgs e)
         {
             this.Visible = false;
-            _inicializacao.VerificaBanco();
+            /*_inicializacao.VerificaBanco();*/
             new Login().ShowDialog();
             this.Visible = true;
             tdbMenuUsuario.Text = Sessao.UsuarioNome;
@@ -65,7 +65,7 @@ namespace GRC.Telas
 
         private void btnOrdemServiço_Click(object sender, EventArgs e)
         {
-            new CadastroOS().ShowDialog();
+            new PesquisaOS().ShowDialog();
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
@@ -76,6 +76,11 @@ namespace GRC.Telas
         private void btnMovimentacoes_Click(object sender, EventArgs e)
         {
             new Movimentacoes().ShowDialog();
+        }
+
+        private void btnVendas_Click(object sender, EventArgs e)
+        {
+            new Vendas().ShowDialog();
         }
     }
 }

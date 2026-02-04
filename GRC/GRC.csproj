@@ -294,6 +294,12 @@
     <Compile Include="Telas\PesquisaItem.Designer.cs">
       <DependentUpon>PesquisaItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\PesquisaOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\PesquisaOS.Designer.cs">
+      <DependentUpon>PesquisaOS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\PesquisaRapidaCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -387,6 +393,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\PesquisaItem.resx">
       <DependentUpon>PesquisaItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\PesquisaOS.resx">
+      <DependentUpon>PesquisaOS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\PesquisaRapidaCliente.resx">
       <DependentUpon>PesquisaRapidaCliente.cs</DependentUpon>

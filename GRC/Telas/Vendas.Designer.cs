@@ -148,7 +148,7 @@
             this.customPanel2.CorBotao = System.Drawing.Color.AliceBlue;
             this.customPanel2.CorTextoBotao = System.Drawing.Color.White;
             this.customPanel2.ForeColor = System.Drawing.Color.White;
-            this.customPanel2.Location = new System.Drawing.Point(526, 19);
+            this.customPanel2.Location = new System.Drawing.Point(538, 19);
             this.customPanel2.Name = "customPanel2";
             this.customPanel2.Size = new System.Drawing.Size(215, 41);
             this.customPanel2.TabIndex = 85;
@@ -164,7 +164,7 @@
             this.customPanel3.CorBotao = System.Drawing.Color.AliceBlue;
             this.customPanel3.CorTextoBotao = System.Drawing.Color.White;
             this.customPanel3.ForeColor = System.Drawing.Color.White;
-            this.customPanel3.Location = new System.Drawing.Point(264, 19);
+            this.customPanel3.Location = new System.Drawing.Point(270, 19);
             this.customPanel3.Name = "customPanel3";
             this.customPanel3.Size = new System.Drawing.Size(262, 41);
             this.customPanel3.TabIndex = 86;
@@ -181,7 +181,7 @@
             this.customPanel4.ForeColor = System.Drawing.Color.White;
             this.customPanel4.Location = new System.Drawing.Point(0, 19);
             this.customPanel4.Name = "customPanel4";
-            this.customPanel4.Size = new System.Drawing.Size(258, 41);
+            this.customPanel4.Size = new System.Drawing.Size(264, 41);
             this.customPanel4.TabIndex = 86;
             this.customPanel4.TamanhoBorda = 0;
             this.customPanel4.TamanhoRaio = 20;
@@ -273,9 +273,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1161, 534);
+            this.pictureBox1.Location = new System.Drawing.Point(1172, 534);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 57);
+            this.pictureBox1.Size = new System.Drawing.Size(53, 57);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 96;
             this.pictureBox1.TabStop = false;
@@ -573,7 +573,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Roboto", 11F);
             this.groupBox1.Location = new System.Drawing.Point(273, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(747, 69);
+            this.groupBox1.Size = new System.Drawing.Size(759, 69);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 

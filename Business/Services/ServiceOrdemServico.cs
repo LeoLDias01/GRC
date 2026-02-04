@@ -39,6 +39,20 @@ namespace Business.Services
                 return null;
             }
         }
+        public List<OrdemServico> BuscaLimitada(OrdemServico os, int registros)
+        {
+            try
+            {
+                return _database.BuscaLimitada(os, registros);
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao buscar itens Método service: " + ex.Message, "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
 
         #region ..:: SALVA OS ::..
 

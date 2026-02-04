@@ -35,7 +35,7 @@ namespace GRC.Telas
         public CadastroOS(int id = 0)
         {
             InitializeComponent();
-            _idOS = 2;// id;
+            _idOS = id;
         }
 
         private void btnNovoItem_Click(object sender, EventArgs e)

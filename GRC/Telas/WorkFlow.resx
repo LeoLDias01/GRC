@@ -189,7 +189,7 @@
         kPTzOQCk/wDplr9Y5t3iBFub4Lej//rSdFOhPQ95Mtz+HvnG7SuVGzBcAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="customButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnVendas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAALqSURBVFhHvVY9
@@ -273,7 +273,7 @@
   <data name="customPictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABLAAAAH0CAYAAAAt0NQSAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAlVBJREFUeF7t3QmYZUdZ+P9OwvKHsJswMOlM31tVZKZPne6+p6qJgqhsKuhPVBAQ
+        vAAADrwBlbxySQAAlVBJREFUeF7t3QmYZUdZ+P9OwvKHsJswMOlM31tVZKZPne6+p6qJgqhsKuhPVBAQ
         d4zoT1AElMUFiewimwIKiAuiqEGUIDvKIgJGJQgJEAlbAiGBBELWSZiE3/957+1JZt5zZvr03U6dc7+f
         53kfwu3bdd86vdw5b1e9tbQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA

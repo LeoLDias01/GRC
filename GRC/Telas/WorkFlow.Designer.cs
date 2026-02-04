@@ -33,7 +33,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.btnMovimentacoes = new System.Windows.Forms.Button();
             this.btnOrdemServiço = new GRC.Componentes.CustomButton();
-            this.customButton1 = new GRC.Componentes.CustomButton();
+            this.btnVendas = new GRC.Componentes.CustomButton();
             this.btnClientes = new System.Windows.Forms.Button();
             this.pcbLogo = new System.Windows.Forms.PictureBox();
             this.button7 = new System.Windows.Forms.Button();
@@ -102,7 +102,7 @@
             this.tlpMenu.Controls.Add(this.button4, 0, 12);
             this.tlpMenu.Controls.Add(this.btnMovimentacoes, 0, 7);
             this.tlpMenu.Controls.Add(this.btnOrdemServiço, 0, 5);
-            this.tlpMenu.Controls.Add(this.customButton1, 0, 4);
+            this.tlpMenu.Controls.Add(this.btnVendas, 0, 4);
             this.tlpMenu.Controls.Add(this.btnClientes, 0, 8);
             this.tlpMenu.Controls.Add(this.pcbLogo, 0, 0);
             this.tlpMenu.Controls.Add(this.button7, 0, 10);
@@ -200,32 +200,32 @@
             this.btnOrdemServiço.UseVisualStyleBackColor = false;
             this.btnOrdemServiço.Click += new System.EventHandler(this.btnOrdemServiço_Click);
             // 
-            // customButton1
+            // btnVendas
             // 
-            this.customButton1.BackColor = System.Drawing.Color.Transparent;
-            this.customButton1.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.customButton1.CorBotao = System.Drawing.Color.Transparent;
-            this.customButton1.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.customButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customButton1.Enabled = false;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.customButton1.Image = ((System.Drawing.Image)(resources.GetObject("customButton1.Image")));
-            this.customButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customButton1.Location = new System.Drawing.Point(3, 168);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(217, 44);
-            this.customButton1.TabIndex = 6;
-            this.customButton1.TamanhoBorda = 0;
-            this.customButton1.TamanhoRaio = 15;
-            this.customButton1.Text = "        Vendas";
-            this.customButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.customButton1.UseVisualStyleBackColor = false;
+            this.btnVendas.BackColor = System.Drawing.Color.Transparent;
+            this.btnVendas.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnVendas.CorBotao = System.Drawing.Color.Transparent;
+            this.btnVendas.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnVendas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVendas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnVendas.FlatAppearance.BorderSize = 0;
+            this.btnVendas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVendas.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVendas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnVendas.Image = ((System.Drawing.Image)(resources.GetObject("btnVendas.Image")));
+            this.btnVendas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVendas.Location = new System.Drawing.Point(3, 168);
+            this.btnVendas.Name = "btnVendas";
+            this.btnVendas.Size = new System.Drawing.Size(217, 44);
+            this.btnVendas.TabIndex = 6;
+            this.btnVendas.TamanhoBorda = 0;
+            this.btnVendas.TamanhoRaio = 15;
+            this.btnVendas.Text = "        Vendas";
+            this.btnVendas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVendas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVendas.UseVisualStyleBackColor = false;
+            this.btnVendas.Click += new System.EventHandler(this.btnVendas_Click);
             // 
             // btnClientes
             // 
@@ -435,6 +435,9 @@
             // 
             // customPanel3
             // 
+            this.customPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.customPanel3.BackColor = System.Drawing.Color.White;
             this.customPanel3.Controls.Add(this.customPictureBox5);
             this.customPanel3.Controls.Add(this.label8);
@@ -442,11 +445,10 @@
             this.customPanel3.CorBorda = System.Drawing.Color.Black;
             this.customPanel3.CorBotao = System.Drawing.Color.White;
             this.customPanel3.CorTextoBotao = System.Drawing.Color.White;
-            this.customPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.customPanel3.ForeColor = System.Drawing.Color.White;
             this.customPanel3.Location = new System.Drawing.Point(831, 3);
             this.customPanel3.Name = "customPanel3";
-            this.customPanel3.Size = new System.Drawing.Size(270, 125);
+            this.customPanel3.Size = new System.Drawing.Size(270, 87);
             this.customPanel3.TabIndex = 5;
             this.customPanel3.TamanhoBorda = 0;
             this.customPanel3.TamanhoRaio = 15;
@@ -461,7 +463,7 @@
             this.customPictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("customPictureBox5.Image")));
             this.customPictureBox5.Location = new System.Drawing.Point(6, 17);
             this.customPictureBox5.Name = "customPictureBox5";
-            this.customPictureBox5.Size = new System.Drawing.Size(79, 98);
+            this.customPictureBox5.Size = new System.Drawing.Size(60, 60);
             this.customPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.customPictureBox5.TabIndex = 11;
             this.customPictureBox5.TabStop = false;
@@ -472,11 +474,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.label8.Font = new System.Drawing.Font("Roboto", 13F, System.Drawing.FontStyle.Bold);
+            this.label8.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.Crimson;
-            this.label8.Location = new System.Drawing.Point(91, 17);
+            this.label8.Location = new System.Drawing.Point(74, 17);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(117, 22);
+            this.label8.Size = new System.Drawing.Size(106, 19);
             this.label8.TabIndex = 10;
             this.label8.Text = "OS atrasadas";
             // 
@@ -484,11 +486,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.label9.Font = new System.Drawing.Font("Roboto", 36F, System.Drawing.FontStyle.Bold);
+            this.label9.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.Crimson;
-            this.label9.Location = new System.Drawing.Point(91, 60);
+            this.label9.Location = new System.Drawing.Point(74, 48);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 58);
+            this.label9.Size = new System.Drawing.Size(27, 29);
             this.label9.TabIndex = 9;
             this.label9.Text = "5";
             // 
@@ -559,7 +561,7 @@
             this.label10.Font = new System.Drawing.Font("Roboto", 9F);
             this.label10.Location = new System.Drawing.Point(61, 20);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(205, 42);
+            this.label10.Size = new System.Drawing.Size(207, 42);
             this.label10.TabIndex = 0;
             this.label10.Text = "Item: Poco X7\r\n\r\nSituação: Abaixo do estoque mínimo";
             // 
@@ -608,6 +610,9 @@
             // 
             // customPanel1
             // 
+            this.customPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.customPanel1.BackColor = System.Drawing.Color.White;
             this.customPanel1.Controls.Add(this.customPictureBox2);
             this.customPanel1.Controls.Add(this.label3);
@@ -615,11 +620,10 @@
             this.customPanel1.CorBorda = System.Drawing.Color.Black;
             this.customPanel1.CorBotao = System.Drawing.Color.White;
             this.customPanel1.CorTextoBotao = System.Drawing.Color.DarkGreen;
-            this.customPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.customPanel1.ForeColor = System.Drawing.Color.DarkGreen;
             this.customPanel1.Location = new System.Drawing.Point(3, 3);
             this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(270, 125);
+            this.customPanel1.Size = new System.Drawing.Size(270, 87);
             this.customPanel1.TabIndex = 6;
             this.customPanel1.TamanhoBorda = 0;
             this.customPanel1.TamanhoRaio = 15;
@@ -634,7 +638,7 @@
             this.customPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("customPictureBox2.Image")));
             this.customPictureBox2.Location = new System.Drawing.Point(3, 17);
             this.customPictureBox2.Name = "customPictureBox2";
-            this.customPictureBox2.Size = new System.Drawing.Size(79, 98);
+            this.customPictureBox2.Size = new System.Drawing.Size(60, 60);
             this.customPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.customPictureBox2.TabIndex = 2;
             this.customPictureBox2.TabStop = false;
@@ -645,11 +649,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.label3.Font = new System.Drawing.Font("Roboto", 13F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label3.Location = new System.Drawing.Point(88, 17);
+            this.label3.Location = new System.Drawing.Point(70, 17);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(153, 22);
+            this.label3.Size = new System.Drawing.Size(140, 19);
             this.label3.TabIndex = 1;
             this.label3.Text = "Vendas Efetuadas";
             // 
@@ -657,16 +661,19 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.label2.Font = new System.Drawing.Font("Roboto", 36F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label2.Location = new System.Drawing.Point(88, 57);
+            this.label2.Location = new System.Drawing.Point(69, 48);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 58);
+            this.label2.Size = new System.Drawing.Size(55, 29);
             this.label2.TabIndex = 0;
             this.label2.Text = "250";
             // 
             // customPanel2
             // 
+            this.customPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.customPanel2.BackColor = System.Drawing.Color.White;
             this.customPanel2.Controls.Add(this.customPictureBox3);
             this.customPanel2.Controls.Add(this.label4);
@@ -674,11 +681,10 @@
             this.customPanel2.CorBorda = System.Drawing.Color.Black;
             this.customPanel2.CorBotao = System.Drawing.Color.White;
             this.customPanel2.CorTextoBotao = System.Drawing.Color.White;
-            this.customPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.customPanel2.ForeColor = System.Drawing.Color.White;
             this.customPanel2.Location = new System.Drawing.Point(279, 3);
             this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(270, 125);
+            this.customPanel2.Size = new System.Drawing.Size(270, 87);
             this.customPanel2.TabIndex = 6;
             this.customPanel2.TamanhoBorda = 0;
             this.customPanel2.TamanhoRaio = 15;
@@ -693,7 +699,7 @@
             this.customPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("customPictureBox3.Image")));
             this.customPictureBox3.Location = new System.Drawing.Point(8, 17);
             this.customPictureBox3.Name = "customPictureBox3";
-            this.customPictureBox3.Size = new System.Drawing.Size(79, 98);
+            this.customPictureBox3.Size = new System.Drawing.Size(60, 60);
             this.customPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.customPictureBox3.TabIndex = 5;
             this.customPictureBox3.TabStop = false;
@@ -704,11 +710,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.label4.Font = new System.Drawing.Font("Roboto", 13F, System.Drawing.FontStyle.Bold);
+            this.label4.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label4.Location = new System.Drawing.Point(87, 17);
+            this.label4.Location = new System.Drawing.Point(74, 17);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(172, 22);
+            this.label4.Size = new System.Drawing.Size(155, 19);
             this.label4.TabIndex = 4;
             this.label4.Text = "Reparos Finalizados";
             // 
@@ -716,16 +722,19 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.label5.Font = new System.Drawing.Font("Roboto", 36F, System.Drawing.FontStyle.Bold);
+            this.label5.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label5.Location = new System.Drawing.Point(93, 60);
+            this.label5.Location = new System.Drawing.Point(74, 49);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 58);
+            this.label5.Size = new System.Drawing.Size(55, 29);
             this.label5.TabIndex = 3;
             this.label5.Text = "100";
             // 
             // customPanel4
             // 
+            this.customPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.customPanel4.BackColor = System.Drawing.Color.White;
             this.customPanel4.Controls.Add(this.customPictureBox4);
             this.customPanel4.Controls.Add(this.label6);
@@ -733,11 +742,10 @@
             this.customPanel4.CorBorda = System.Drawing.Color.Black;
             this.customPanel4.CorBotao = System.Drawing.Color.White;
             this.customPanel4.CorTextoBotao = System.Drawing.Color.White;
-            this.customPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.customPanel4.ForeColor = System.Drawing.Color.White;
             this.customPanel4.Location = new System.Drawing.Point(555, 3);
             this.customPanel4.Name = "customPanel4";
-            this.customPanel4.Size = new System.Drawing.Size(270, 125);
+            this.customPanel4.Size = new System.Drawing.Size(270, 87);
             this.customPanel4.TabIndex = 6;
             this.customPanel4.TamanhoBorda = 0;
             this.customPanel4.TamanhoRaio = 15;
@@ -752,7 +760,7 @@
             this.customPictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("customPictureBox4.Image")));
             this.customPictureBox4.Location = new System.Drawing.Point(3, 17);
             this.customPictureBox4.Name = "customPictureBox4";
-            this.customPictureBox4.Size = new System.Drawing.Size(79, 98);
+            this.customPictureBox4.Size = new System.Drawing.Size(60, 60);
             this.customPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.customPictureBox4.TabIndex = 8;
             this.customPictureBox4.TabStop = false;
@@ -763,11 +771,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.label6.Font = new System.Drawing.Font("Roboto", 13F, System.Drawing.FontStyle.Bold);
+            this.label6.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label6.Location = new System.Drawing.Point(88, 17);
+            this.label6.Location = new System.Drawing.Point(69, 17);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(133, 22);
+            this.label6.Size = new System.Drawing.Size(124, 19);
             this.label6.TabIndex = 7;
             this.label6.Text = "Reparos a fazer";
             // 
@@ -775,11 +783,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.label7.Font = new System.Drawing.Font("Roboto", 36F, System.Drawing.FontStyle.Bold);
+            this.label7.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label7.Location = new System.Drawing.Point(88, 60);
+            this.label7.Location = new System.Drawing.Point(69, 48);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 58);
+            this.label7.Size = new System.Drawing.Size(41, 29);
             this.label7.TabIndex = 6;
             this.label7.Text = "50";
             // 
@@ -800,7 +808,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1104, 131);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1104, 93);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // panel1
@@ -876,7 +884,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmEncerrar;
         private Componentes.CustomButton btnFornecedor;
         private Componentes.CustomButton btnEstoque;
-        private Componentes.CustomButton customButton1;
+        private Componentes.CustomButton btnVendas;
         private Componentes.CustomButton btnOrdemServiço;
         private Componentes.CustomPictureBox customPictureBox1;
         private Componentes.CustomPanel customPanel3;

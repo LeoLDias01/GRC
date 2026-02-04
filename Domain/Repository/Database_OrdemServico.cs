@@ -533,5 +533,79 @@ namespace Domain.Repository
                 }
             }
         }
+        public List<OrdemServico> BuscaLimitada(OrdemServico os, int registros)
+        {
+
+            using (var conn = new SQLiteConnection(_conn.GetConnections()))
+            {
+                conn.Open();
+                try
+                {
+                    var sql = new StringBuilder();
+                    sql.Append(@"SELECT 
+                                        OS.IDGRC_ORDEM_SERVICO AS Id,
+                                        OS.NOME_CLIENTE AS Nome,
+                                        OS.DATA_ENTRADA AS DataEntrada,
+                                        OS.FAVORITO AS Favorito,
+                                        ST.DESCRICAO AS Status, 
+                                        TP.DESCRICAO AS Tipo
+                                FROM GRC_ORDEM_SERVICO OS
+                                INNER JOIN GRC_TIPO ST ON ST.IDGRC_TIPO = OS.IDGRC_STATUS
+                                                          AND ST.IDGRC_SUBTIPO = 7
+                                                          AND ST.ATIVO = 1
+                                INNER JOIN GRC_TIPO TP ON TP.IDGRC_TIPO = OS.IDGRC_TIPO_SERVICO
+                                                          AND TP.IDGRC_SUBTIPO = 6
+                                                          AND TP.ATIVO = 1
+                                WHERE 1 = 1 ");
+
+                    // Filtros dinâmicos
+                    if (os.Id > 0)
+                        sql.Append(" AND OS.IDGRC_ORDEM_SERVICO = @Id ");
+
+                    if (os.IdCliente > 0)
+                        sql.Append(" AND OS.IDGRC_CLIENTE = @IdCliente ");
+
+                    if (os.TipoServico > 0)
+                        sql.Append(" AND OS.IDGRC_TIPO_SERVICO = @Tipo ");
+
+                    if (os.Status > 0)
+                        sql.Append(" AND OS.IDGRC_STATUS = @Status ");
+
+                    if (os.Favorito)
+                        sql.Append(" AND OS.FAVORITO = @Favorito ");
+
+                    if (!string.IsNullOrWhiteSpace(os.DataEntrada))
+                        sql.Append(" AND OS.DATA_ENTRADA = @Data ");
+
+                    sql.Append(" ORDER BY OS.FAVORITO, OS.NOME_CLIENTE ASC LIMIT @Registros; ");
+
+                    var lista = conn.Query(sql.ToString(), new
+                    {
+                        Id = (int)os.Id,
+                        IdCliente = os.IdCliente > 0 ? os.IdCliente : 0,
+                        Tipo = os.TipoServico > 0 ? os.TipoServico : 0,
+                        Status = os.Status > 0 ? os.Status : 0,
+                        Favorito = os.Favorito == true ? 1 : 0,
+                        Data = os.DataEntrada.ToString(),
+                        Registros = registros
+                    })
+                    .Select(x => new OrdemServico
+                    {
+                        Id = (int)x.Id,
+                        NomeCliente = x.Nome,
+                        DataEntrada = x.DataEntrada,
+                        Favorito = x.Favorito == 1 ? true : false,
+                        DescricaoStatus = x.Status,
+                        DescricaoTipo = x.Tipo
+                    }).ToList();
+
+                    return lista;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Erro ao buscar itens do database: " + ex.Message);
+                }
+            }
+        }
     }
 }

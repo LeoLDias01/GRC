@@ -15,6 +15,8 @@ namespace Data.Models
         public int TipoServico { get; set; }
         public int Status { get; set; }
         public int StatusAntigo { get; set; }
+        public string DescricaoStatus { get; set; }
+        public string DescricaoTipo { get; set; }
         public string Garantia { get; set; }
         public string DataEntrada { get; set; }
         public string FimPrevisto { get; set; }
