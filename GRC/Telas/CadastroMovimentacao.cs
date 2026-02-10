@@ -68,26 +68,7 @@ namespace GRC.Telas
 
         private void btnSelecaoItem_Click(object sender, EventArgs e)
         {
-            using (var frm = new PesquisaItem())
-            {
-                frm.ShowDialog();
-
-                if (frm._item != null && frm._item.Count > 0)
-                {
-                    foreach (var comp in frm._item)
-                    {
-                        _dadosItem.Id = comp.Id;
-                        _dadosItem.Descricao = comp.Descricao;
-                        _dadosItem.Quatidade = comp.Quatidade;
-                        _dadosItem.CustoUnitario = comp.CustoUnitario;
-                        _dadosItem.VendaUnitario = comp.VendaUnitario;
-                        _dadosItem.ItemVenda = comp.ItemVenda;
-                    }
-                    txtItem.Text = _dadosItem.Descricao;
-                    _idItem = Convert.ToInt32(_dadosItem.Id);
-
-                }
-            }
+            
         }
         private void HabilitaCampos()
         {
@@ -356,7 +337,7 @@ namespace GRC.Telas
 
                 _idItem = dadosMov.IdItem;
                 swItemAtivo.Checked = true;
-                btnSelecaoItem.Enabled = false;
+                txtItem.Enabled = false;
                 txtQuantidade.Enabled = false;
                 txtData.Text = dadosMov.DataMovimentacao;
                 cbTipoMovimento.SelectedValue = dadosMov.IdTipoMovimentacao;
@@ -377,6 +358,30 @@ namespace GRC.Telas
             {
                 EmailError.EnviarEmailErro(ex.ToString());
                 new AlertBox(Color.FromArgb(64, 0, 0), Color.Red, Color.Crimson, Resources.Error, "Um erro ocorreu:", "Entidade: Movimentação", "Erro ao Carregar!", false).ShowDialog();
+            }
+        }
+
+        private void txtItem_TrailingIconClick(object sender, EventArgs e)
+        {
+            using (var frm = new PesquisaItem())
+            {
+                frm.ShowDialog();
+
+                if (frm._item != null && frm._item.Count > 0)
+                {
+                    foreach (var comp in frm._item)
+                    {
+                        _dadosItem.Id = comp.Id;
+                        _dadosItem.Descricao = comp.Descricao;
+                        _dadosItem.Quatidade = comp.Quatidade;
+                        _dadosItem.CustoUnitario = comp.CustoUnitario;
+                        _dadosItem.VendaUnitario = comp.VendaUnitario;
+                        _dadosItem.ItemVenda = comp.ItemVenda;
+                    }
+                    txtItem.Text = _dadosItem.Descricao;
+                    _idItem = Convert.ToInt32(_dadosItem.Id);
+
+                }
             }
         }
     }

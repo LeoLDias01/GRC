@@ -9,9 +9,8 @@ namespace Data.Models
     public class OrdemServico
     {
         public int Id { get; set; }
-        public int IdCliente { get; set; }
-        public string NomeCliente { get; set; }
-        public string Descricao { get; set; }
+        public string DescricaoSolucao { get; set; }
+        public string DescricaoProblema { get; set; }
         public int TipoServico { get; set; }
         public int Status { get; set; }
         public int StatusAntigo { get; set; }
@@ -25,11 +24,14 @@ namespace Data.Models
         public string FimGarantia { get; set; }
         public string MaoObra { get; set; }
         public string Acrescimo { get; set; }
+        public string CustoManual { get; set; }
         public string Desconto { get; set; }
+        public string Total { get; set; }
         public string Observacoes { get; set; }
+        public string ObservacoesCliente { get; set; }
         public bool Favorito { get; set; }
-        public bool Ativo { get; set; }
-
+        public Cliente DadosCliente { get; set; } = new Cliente();
+        public List<ItemCard> ItensEsporadicos { get; set; } = new List<ItemCard>();
         public List<ItemCard> ItensOrdemServico { get; set; } = new List<ItemCard>();
     }
 }

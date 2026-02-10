@@ -93,6 +93,7 @@ namespace GRC.Telas
             dgvClientes.ColumnHeadersVisible = true;
             dgvClientes.ColumnHeadersHeight = 50;
 
+            _cliente = _service.BuscaLimitada(cliente, registros);
             var lista = _service.BuscaLimitada(cliente, registros);
 
             if (lista != null)

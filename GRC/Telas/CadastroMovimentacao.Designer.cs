@@ -33,11 +33,9 @@
             this.pcAtivo = new System.Windows.Forms.PictureBox();
             this.swItemAtivo = new MaterialSkin.Controls.MaterialSwitch();
             this.gpbInfoVenda = new System.Windows.Forms.GroupBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.txtData = new MaterialSkin.Controls.MaterialTextBox();
             this.cbTipoMovimento = new MaterialSkin.Controls.MaterialComboBox();
             this.txtItem = new MaterialSkin.Controls.MaterialTextBox();
-            this.btnSelecaoItem = new GRC.Componentes.CustomButton();
             this.txtQuantidade = new MaterialSkin.Controls.MaterialTextBox();
             this.txtMotivo = new MaterialSkin.Controls.MaterialTextBox();
             this.txtCustoUnitario = new MaterialSkin.Controls.MaterialTextBox();
@@ -50,7 +48,6 @@
             this.customPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcAtivo)).BeginInit();
             this.gpbInfoVenda.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // customPanel1
@@ -66,7 +63,7 @@
             this.customPanel1.ForeColor = System.Drawing.Color.White;
             this.customPanel1.Location = new System.Drawing.Point(12, 48);
             this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(901, 379);
+            this.customPanel1.Size = new System.Drawing.Size(768, 313);
             this.customPanel1.TabIndex = 52;
             this.customPanel1.TamanhoBorda = 0;
             this.customPanel1.TamanhoRaio = 20;
@@ -101,31 +98,22 @@
             // 
             // gpbInfoVenda
             // 
-            this.gpbInfoVenda.Controls.Add(this.flowLayoutPanel1);
+            this.gpbInfoVenda.Controls.Add(this.txtData);
+            this.gpbInfoVenda.Controls.Add(this.cbTipoMovimento);
+            this.gpbInfoVenda.Controls.Add(this.txtItem);
+            this.gpbInfoVenda.Controls.Add(this.txtObservacoes);
+            this.gpbInfoVenda.Controls.Add(this.txtQuantidade);
+            this.gpbInfoVenda.Controls.Add(this.txtCustoTotal);
+            this.gpbInfoVenda.Controls.Add(this.txtMotivo);
+            this.gpbInfoVenda.Controls.Add(this.txtCustoUnitario);
             this.gpbInfoVenda.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbInfoVenda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.gpbInfoVenda.Location = new System.Drawing.Point(11, 52);
             this.gpbInfoVenda.Name = "gpbInfoVenda";
-            this.gpbInfoVenda.Size = new System.Drawing.Size(876, 318);
+            this.gpbInfoVenda.Size = new System.Drawing.Size(739, 247);
             this.gpbInfoVenda.TabIndex = 75;
             this.gpbInfoVenda.TabStop = false;
             this.gpbInfoVenda.Text = " Dados da Movimentação";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.txtData);
-            this.flowLayoutPanel1.Controls.Add(this.cbTipoMovimento);
-            this.flowLayoutPanel1.Controls.Add(this.txtItem);
-            this.flowLayoutPanel1.Controls.Add(this.btnSelecaoItem);
-            this.flowLayoutPanel1.Controls.Add(this.txtQuantidade);
-            this.flowLayoutPanel1.Controls.Add(this.txtMotivo);
-            this.flowLayoutPanel1.Controls.Add(this.txtCustoUnitario);
-            this.flowLayoutPanel1.Controls.Add(this.txtCustoTotal);
-            this.flowLayoutPanel1.Controls.Add(this.txtObservacoes);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 23);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(864, 289);
-            this.flowLayoutPanel1.TabIndex = 76;
             // 
             // txtData
             // 
@@ -138,7 +126,7 @@
             this.txtData.Hint = "Data";
             this.txtData.LeadingIcon = null;
             this.txtData.LeaveOnEnterKey = true;
-            this.txtData.Location = new System.Drawing.Point(3, 3);
+            this.txtData.Location = new System.Drawing.Point(9, 26);
             this.txtData.MaxLength = 60;
             this.txtData.MouseState = MaterialSkin.MouseState.OUT;
             this.txtData.Multiline = false;
@@ -167,7 +155,7 @@
             this.cbTipoMovimento.Hint = "Tipo de Movimentação";
             this.cbTipoMovimento.IntegralHeight = false;
             this.cbTipoMovimento.ItemHeight = 43;
-            this.cbTipoMovimento.Location = new System.Drawing.Point(159, 3);
+            this.cbTipoMovimento.Location = new System.Drawing.Point(165, 26);
             this.cbTipoMovimento.MaxDropDownItems = 4;
             this.cbTipoMovimento.MouseState = MaterialSkin.MouseState.OUT;
             this.cbTipoMovimento.Name = "cbTipoMovimento";
@@ -180,7 +168,7 @@
             // txtItem
             // 
             this.txtItem.AcceptsTab = true;
-            this.txtItem.AnimateReadOnly = false;
+            this.txtItem.AnimateReadOnly = true;
             this.txtItem.AutoWordSelection = true;
             this.txtItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtItem.Depth = 0;
@@ -188,37 +176,18 @@
             this.txtItem.Hint = "Item";
             this.txtItem.LeadingIcon = null;
             this.txtItem.LeaveOnEnterKey = true;
-            this.txtItem.Location = new System.Drawing.Point(396, 3);
+            this.txtItem.Location = new System.Drawing.Point(402, 26);
             this.txtItem.MaxLength = 60;
             this.txtItem.MouseState = MaterialSkin.MouseState.OUT;
             this.txtItem.Multiline = false;
             this.txtItem.Name = "txtItem";
-            this.txtItem.Size = new System.Drawing.Size(409, 50);
+            this.txtItem.ReadOnly = true;
+            this.txtItem.Size = new System.Drawing.Size(317, 50);
             this.txtItem.TabIndex = 46;
             this.txtItem.Text = "";
-            this.txtItem.TrailingIcon = null;
+            this.txtItem.TrailingIcon = ((System.Drawing.Image)(resources.GetObject("txtItem.TrailingIcon")));
             this.txtItem.UseAccent = false;
-            // 
-            // btnSelecaoItem
-            // 
-            this.btnSelecaoItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnSelecaoItem.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnSelecaoItem.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnSelecaoItem.CorTextoBotao = System.Drawing.Color.White;
-            this.btnSelecaoItem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSelecaoItem.FlatAppearance.BorderSize = 0;
-            this.btnSelecaoItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnSelecaoItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelecaoItem.ForeColor = System.Drawing.Color.White;
-            this.btnSelecaoItem.Image = ((System.Drawing.Image)(resources.GetObject("btnSelecaoItem.Image")));
-            this.btnSelecaoItem.Location = new System.Drawing.Point(811, 3);
-            this.btnSelecaoItem.Name = "btnSelecaoItem";
-            this.btnSelecaoItem.Size = new System.Drawing.Size(39, 39);
-            this.btnSelecaoItem.TabIndex = 99;
-            this.btnSelecaoItem.TamanhoBorda = 0;
-            this.btnSelecaoItem.TamanhoRaio = 16;
-            this.btnSelecaoItem.UseVisualStyleBackColor = false;
-            this.btnSelecaoItem.Click += new System.EventHandler(this.btnSelecaoItem_Click);
+            this.txtItem.TrailingIconClick += new System.EventHandler(this.txtItem_TrailingIconClick);
             // 
             // txtQuantidade
             // 
@@ -231,7 +200,7 @@
             this.txtQuantidade.Hint = "Qtd";
             this.txtQuantidade.LeadingIcon = null;
             this.txtQuantidade.LeaveOnEnterKey = true;
-            this.txtQuantidade.Location = new System.Drawing.Point(3, 59);
+            this.txtQuantidade.Location = new System.Drawing.Point(9, 81);
             this.txtQuantidade.MaxLength = 60;
             this.txtQuantidade.MouseState = MaterialSkin.MouseState.OUT;
             this.txtQuantidade.Multiline = false;
@@ -253,12 +222,12 @@
             this.txtMotivo.Hint = "Motivo da Transação";
             this.txtMotivo.LeadingIcon = null;
             this.txtMotivo.LeaveOnEnterKey = true;
-            this.txtMotivo.Location = new System.Drawing.Point(159, 59);
+            this.txtMotivo.Location = new System.Drawing.Point(165, 81);
             this.txtMotivo.MaxLength = 60;
             this.txtMotivo.MouseState = MaterialSkin.MouseState.OUT;
             this.txtMotivo.Multiline = false;
             this.txtMotivo.Name = "txtMotivo";
-            this.txtMotivo.Size = new System.Drawing.Size(691, 50);
+            this.txtMotivo.Size = new System.Drawing.Size(554, 50);
             this.txtMotivo.TabIndex = 104;
             this.txtMotivo.Text = "";
             this.txtMotivo.TrailingIcon = null;
@@ -275,7 +244,7 @@
             this.txtCustoUnitario.Hint = "Custo unitário";
             this.txtCustoUnitario.LeadingIcon = null;
             this.txtCustoUnitario.LeaveOnEnterKey = true;
-            this.txtCustoUnitario.Location = new System.Drawing.Point(3, 115);
+            this.txtCustoUnitario.Location = new System.Drawing.Point(9, 137);
             this.txtCustoUnitario.MaxLength = 60;
             this.txtCustoUnitario.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCustoUnitario.Multiline = false;
@@ -302,7 +271,7 @@
             this.txtCustoTotal.Hint = "Custo Total";
             this.txtCustoTotal.LeadingIcon = null;
             this.txtCustoTotal.LeaveOnEnterKey = true;
-            this.txtCustoTotal.Location = new System.Drawing.Point(159, 115);
+            this.txtCustoTotal.Location = new System.Drawing.Point(9, 193);
             this.txtCustoTotal.MaxLength = 60;
             this.txtCustoTotal.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCustoTotal.Multiline = false;
@@ -324,7 +293,7 @@
             this.txtObservacoes.Depth = 0;
             this.txtObservacoes.HideSelection = true;
             this.txtObservacoes.Hint = "Observações";
-            this.txtObservacoes.Location = new System.Drawing.Point(3, 171);
+            this.txtObservacoes.Location = new System.Drawing.Point(165, 137);
             this.txtObservacoes.MaxLength = 300;
             this.txtObservacoes.MouseState = MaterialSkin.MouseState.OUT;
             this.txtObservacoes.Name = "txtObservacoes";
@@ -335,7 +304,7 @@
             this.txtObservacoes.SelectionLength = 0;
             this.txtObservacoes.SelectionStart = 0;
             this.txtObservacoes.ShortcutsEnabled = true;
-            this.txtObservacoes.Size = new System.Drawing.Size(847, 111);
+            this.txtObservacoes.Size = new System.Drawing.Size(554, 106);
             this.txtObservacoes.TabIndex = 83;
             this.txtObservacoes.TabStop = false;
             this.txtObservacoes.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -367,7 +336,7 @@
             this.pnStatus.GradientAngle = 90F;
             this.pnStatus.Location = new System.Drawing.Point(89, 5);
             this.pnStatus.Name = "pnStatus";
-            this.pnStatus.Size = new System.Drawing.Size(673, 37);
+            this.pnStatus.Size = new System.Drawing.Size(540, 37);
             this.pnStatus.TabIndex = 53;
             // 
             // pnStatus2
@@ -397,7 +366,7 @@
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(768, 5);
+            this.btnSalvar.Location = new System.Drawing.Point(635, 5);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnSalvar.Size = new System.Drawing.Size(145, 37);
@@ -415,7 +384,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.ClientSize = new System.Drawing.Size(921, 430);
+            this.ClientSize = new System.Drawing.Size(792, 370);
             this.Controls.Add(this.pnStatus2);
             this.Controls.Add(this.pnStatus);
             this.Controls.Add(this.customPanel1);
@@ -429,7 +398,6 @@
             this.customPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcAtivo)).EndInit();
             this.gpbInfoVenda.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -439,7 +407,6 @@
         private Componentes.CustomPanel customPanel1;
         private System.Windows.Forms.GroupBox gpbInfoVenda;
         private MaterialSkin.Controls.MaterialTextBox txtData;
-        private Componentes.CustomButton btnSelecaoItem;
         private MaterialSkin.Controls.MaterialTextBox txtQuantidade;
         private MaterialSkin.Controls.MaterialTextBox txtItem;
         private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtObservacoes;
@@ -450,7 +417,6 @@
         private MaterialSkin.Controls.MaterialTextBox txtCustoTotal;
         private MaterialSkin.Controls.MaterialTextBox txtCustoUnitario;
         private MaterialSkin.Controls.MaterialTextBox txtMotivo;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private Componentes.RoundedPanel pnStatus2;
         private MaterialSkin.Controls.MaterialSwitch swItemAtivo;
         private System.Windows.Forms.PictureBox pcAtivo;

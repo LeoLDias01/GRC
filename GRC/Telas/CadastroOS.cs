@@ -24,18 +24,17 @@ namespace GRC.Telas
     public partial class CadastroOS : Form
     {
         private int _idOS = 0;
-        private int _idCliente = 0;
         private bool _favorito = false;
         private int _StatusAntigo = 0;
-
+        private Cliente _cliente = new Cliente();
+     
         private List<ItemCard> _itensOS = new List<ItemCard>();
-        //public Item _dadosItem = new Item();
         ServiceOrdemServico _service = new ServiceOrdemServico();
 
         public CadastroOS(int id = 0)
         {
             InitializeComponent();
-            _idOS = id;
+            _idOS = 2;//id;
         }
 
         private void btnNovoItem_Click(object sender, EventArgs e)
@@ -45,12 +44,7 @@ namespace GRC.Telas
 
         private void btnBuscaCliente_Click(object sender, EventArgs e)
         {
-            PesquisaRapidaCliente frm = new PesquisaRapidaCliente();
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                _idCliente = frm._cliente.Id;
-                txtCliente.Text = frm._cliente.Nome;
-            }
+            
         }
 
         private void CadastroOS_Load(object sender, EventArgs e)
@@ -82,10 +76,10 @@ namespace GRC.Telas
                     return;
 
 
-                txtId.Text = dadosOs.Id.ToString();
-                _idCliente = dadosOs.IdCliente;
-                txtCliente.Text = dadosOs.NomeCliente.ToString();
-                txtDescricao.Text = dadosOs.Descricao.ToString();
+                txtId.Text = _idOS.ToString();
+                _cliente = dadosOs.DadosCliente;
+                txtCliente.Text = _cliente.Nome;
+                txtDescricao.Text = dadosOs.DescricaoSolucao.ToString();
                 cbTipoServico.SelectedValue = dadosOs.TipoServico;
                 _StatusAntigo = dadosOs.Status;
                 cbStatus.SelectedValue = _StatusAntigo;
@@ -96,9 +90,11 @@ namespace GRC.Telas
                 txtInicioGarantia.Text = dadosOs.InicioGarantia;
                 txtFimGarantia.Text = dadosOs.FimGarantia;
                 txtObservacoes.Text = dadosOs.Observacoes;
+                txtObservacoesCliente.Text = dadosOs.ObservacoesCliente;
 
                 // ORÇAMENTO
 
+                txtCustoManual.Text = dadosOs.CustoManual;
                 txtMaoObra.Text = dadosOs.MaoObra;
                 txtAcrescimo.Text = dadosOs.Acrescimo;
                 txtDesconto.Text = dadosOs.Desconto;
@@ -106,7 +102,7 @@ namespace GRC.Telas
                 Favorito();
 
 
-                // ITENS VINCULADOS A OS
+                // ITENS VINCULADOS A OS (Com baixa estoque)
 
                 if (dadosOs.ItensOrdemServico != null && dadosOs.ItensOrdemServico.Count > 0)
                 {
@@ -117,6 +113,13 @@ namespace GRC.Telas
                     foreach (var item in dadosOs.ItensOrdemServico)
                     {
                         CriaCard(item, false);
+                    }
+                }
+                if (dadosOs.ItensEsporadicos != null && dadosOs.ItensEsporadicos.Count > 0)
+                {
+                    foreach (var itm in dadosOs.ItensEsporadicos)
+                    {
+                        PreencheGridItemEsporadico(itm.Id, itm.Descricao);
                     }
                 }
 
@@ -269,11 +272,12 @@ namespace GRC.Telas
         private void txtInicioGarantia_TextChanged(object sender, EventArgs e)
         {
             FormataData(txtInicioGarantia);
+            AtualizarFimGarantia();
+
         }
 
         private void txtFimGarantia_TextChanged(object sender, EventArgs e)
         {
-            FormataData(txtFimGarantia);
         }
 
         private void txtMaoObra_KeyDown(object sender, KeyEventArgs e)
@@ -485,7 +489,7 @@ namespace GRC.Telas
 
                 CustomButton btnMenos = new CustomButton
                 {
-                    Text = " ➖",
+                    Text = "➖",
                     Width = 30,
                     Height = 30,
                     TamanhoRaio = 5,
@@ -510,7 +514,7 @@ namespace GRC.Telas
 
                 CustomButton btnMais = new CustomButton
                 {
-                    Text = " ➕",
+                    Text = "➕",
                     Width = 30,
                     Height = 30,
                     TamanhoRaio = 5,
@@ -717,6 +721,7 @@ namespace GRC.Telas
             bool PecasOk = decimal.TryParse(txtTotalPecas.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal pc);
             bool AcrescimoOk = decimal.TryParse(txtAcrescimo.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal ac);
             bool DescontoOk = decimal.TryParse(txtDesconto.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal dc);
+            bool CustoManualOk = decimal.TryParse(txtCustoManual.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal cm);
             decimal total = 0;
 
             if (MaoObraOk)
@@ -727,6 +732,9 @@ namespace GRC.Telas
 
             if (AcrescimoOk)
                 total += ac;
+
+            if(CustoManualOk)
+                total += cm;
 
             if (DescontoOk)
                 total -= dc;
@@ -777,9 +785,9 @@ namespace GRC.Telas
                 var os = new OrdemServico
                 {
                     Id = _idOS,
-                    IdCliente = _idCliente,
-                    NomeCliente = !string.IsNullOrWhiteSpace(txtCliente.Text) ? txtCliente.Text : string.Empty,
-                    Descricao = !string.IsNullOrWhiteSpace(txtDescricao.Text) ? txtDescricao.Text : string.Empty,
+                    DadosCliente = _cliente,
+                    DescricaoProblema = !string.IsNullOrWhiteSpace(txtProblema.Text) ? txtProblema.Text : string.Empty,
+                    DescricaoSolucao = !string.IsNullOrWhiteSpace(txtDescricao.Text) ? txtDescricao.Text : string.Empty,
                     TipoServico = Convert.ToInt32(cbTipoServico.SelectedValue),
                     StatusAntigo = _StatusAntigo,
                     Status = Convert.ToInt32(cbStatus.SelectedValue),
@@ -790,19 +798,34 @@ namespace GRC.Telas
                     InicioGarantia = !string.IsNullOrWhiteSpace(txtInicioGarantia.Text) ? txtInicioGarantia.Text : string.Empty,
                     FimGarantia = !string.IsNullOrWhiteSpace(txtFimGarantia.Text) ? txtFimGarantia.Text : string.Empty,
                     MaoObra = !string.IsNullOrWhiteSpace(txtMaoObra.Text) ? txtMaoObra.Text : string.Empty,
+                    CustoManual = !string.IsNullOrWhiteSpace(txtCustoManual.Text) ? txtCustoManual.Text : string.Empty,
                     Acrescimo = !string.IsNullOrWhiteSpace(txtAcrescimo.Text) ? txtAcrescimo.Text : string.Empty,
                     Desconto = !string.IsNullOrWhiteSpace(txtDesconto.Text) ? txtDesconto.Text : string.Empty,
                     Observacoes = txtObservacoes.Text,
+                    ObservacoesCliente = txtObservacoesCliente.Text,
                     Favorito = _favorito == true ? false : true,
-                    ItensOrdemServico = _itensOS.ToList()
+                    ItensOrdemServico = _itensOS.ToList(),
+                    ItensEsporadicos = dgvItens.Rows.Cast<DataGridViewRow>()
+                    .Where(r => !r.IsNewRow)
+                    .Select(r =>
+                    {
+                        var iditem = r.Cells["colId"].Value;           
+                        var nome = r.Cells["colDescricao"].Value; 
+
+                        return new ItemCard
+                        {
+                            Id = Convert.ToInt32(iditem),
+                            Descricao = nome.ToString()
+                        };
+                    }).ToList()
                 };
 
                 int? retorno = _service.SalvaOS(os);
                 // Chama a services sem identificar se é criação ou alteração pois o processo de validação é feito lá
                 if (retorno > 0)
-                    new AlertBox(Color.FromArgb(0, 60, 4), Color.LimeGreen, Color.Green, Resources.Confirm, "Ordem de Serviço", $"Do cliente: {os.NomeCliente}", "Foi cadastrado com sucesso!", false).ShowDialog();
+                    new AlertBox(Color.FromArgb(0, 60, 4), Color.LimeGreen, Color.Green, Resources.Confirm, "Ordem de Serviço", $"Do cliente: {os.DadosCliente.Nome}", "Foi cadastrado com sucesso!", false).ShowDialog();
                 else if (retorno == 0)
-                    new AlertBox(Color.FromArgb(0, 60, 4), Color.LimeGreen, Color.Green, Resources.Confirm, "Ordem de Serviço", $"Do cliente: {os.NomeCliente}", "Foi alterado com sucesso!", false).ShowDialog();
+                    new AlertBox(Color.FromArgb(0, 60, 4), Color.LimeGreen, Color.Green, Resources.Confirm, "Ordem de Serviço", $"Do cliente: {os.DadosCliente.Nome}", "Foi alterado com sucesso!", false).ShowDialog();
 
                 LimpaCampos();
             }
@@ -816,7 +839,7 @@ namespace GRC.Telas
         private void LimpaCampos()
         {
             _idOS = 0;
-            _idCliente = 0;
+            _cliente = null;
             _favorito = false;
 
 
@@ -837,6 +860,7 @@ namespace GRC.Telas
             txtDesconto.Clear();
             txtObservacoes.Clear();
             txtTotalServico.Clear();
+            dgvItens.Rows.Clear();
 
             // 🔹 REMOVE E DESCARTA OS CARDS
             foreach (Control ctrl in flpItens.Controls)
@@ -852,10 +876,16 @@ namespace GRC.Telas
         private bool ValidaCampos()
         {
             // Nome obrigatório
-            if (string.IsNullOrWhiteSpace(txtDescricao.Text))
+            if (string.IsNullOrWhiteSpace(txtProblema.Text))
             {
                 new AlertBox(Color.Goldenrod, Color.Lime, Color.Yellow, Resources.Warning, "Ordem de Serviço", "Item sem nome válido", "O nome do item é obrigatório", false).ShowDialog();
                 txtDescricao.Focus();
+                return false;
+            }
+            else if (_cliente.Id < 1 && _cliente.Nome != string.Empty)
+            {
+                new AlertBox(Color.Goldenrod, Color.Lime, Color.Yellow, Resources.Warning, "Ordem de Serviço", "Cliente não foi selecioando", "Selecione o cliente", false).ShowDialog();
+                txtCliente.Focus();
                 return false;
             }
             else if ((int)cbTipoServico.SelectedValue < 1)
@@ -892,6 +922,90 @@ namespace GRC.Telas
             List<OrdemServico> os = new List<OrdemServico>();
             os = _service.BuscaCompleta(_idOS);
             new SelecaoImpressao(os).ShowDialog();
+        }
+
+        private void txtCliente_TrailingIconClick(object sender, EventArgs e)
+        {
+            PesquisaRapidaCliente frm = new PesquisaRapidaCliente();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                _cliente.Id = frm._cliente.Id;
+                _cliente.Nome = frm._cliente.Nome;
+                _cliente.Identidade = frm._cliente.Identidade;
+                _cliente.Telefones = frm._cliente.Telefones;
+
+                txtCliente.Text = _cliente.Nome;
+            }
+        }
+        private void AtualizarFimGarantia()
+        {
+            if (!string.IsNullOrWhiteSpace(txtInicioGarantia.Text) && !string.IsNullOrWhiteSpace(txtGarantia.Text))
+            {
+                if (!DateTime.TryParse(txtInicioGarantia.Text, out DateTime dataInicio))
+                    return;
+
+                if (!int.TryParse(txtGarantia.Text, out int diasGarantia))
+                    return;
+
+                var dataFim = dataInicio.AddDays(diasGarantia);
+                txtFimGarantia.Text = dataFim.ToString("dd/MM/yyyy");
+            }
+            else txtFimGarantia.Clear();
+        }
+
+        private void txtGarantia_Leave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtInicioGarantia_Leave(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void txtGarantia_TextChanged(object sender, EventArgs e)
+        {
+            AtualizarFimGarantia();
+        }
+
+        private void txtCustoManual_TextChanged(object sender, EventArgs e)
+        {
+            FormataMoeda(sender);
+            CalculaTotal();
+        }
+
+        private void txtNomeItemEsporadico_TrailingIconClick(object sender, EventArgs e)
+        {
+            PreencheGridItemEsporadico(0, txtNomeItemEsporadico.Text);
+
+            // Limpa campos para próxima entrada
+            txtNomeItemEsporadico.Clear();
+            txtNomeItemEsporadico.Focus();
+        }
+        private void PreencheGridItemEsporadico(int id, string item)
+        {
+            dgvItens.RowTemplate.Height = 35;
+            // Adiciona uma nova linha ao DataGridView
+            dgvItens.Rows.Add(
+                    id,                          // colIdTelefone = 0 (novo registro)
+                    item,                   // colTelefone
+                    Resources.remove
+                );
+        }
+
+        private void dgvItens_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verifica se clicou na coluna de excluir
+            if (dgvItens.Columns[e.ColumnIndex].Name == "colExcluir" && e.RowIndex >= 0)
+            {
+                // Opcional: confirmação
+                var result = new AlertBox(Color.Goldenrod, Color.LimeGreen, Color.Yellow, Resources.Warning, "Aviso de Exclusão", string.Empty, "Deseja realmente excluir o item?", true).ShowDialog();
+                if (result == DialogResult.Yes)
+                {
+                    // Remove a linha
+                    dgvItens.Rows.RemoveAt(e.RowIndex);
+                }
+            }
         }
     }
 }

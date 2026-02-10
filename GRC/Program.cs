@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Data.Models;
 using GRC.Telas;
 namespace GRC
 {
@@ -18,7 +19,7 @@ namespace GRC
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new WorkFlow());
-            Application.Run(new PesquisaOS());
+            Application.Run(new CadastroOS());
             //Application.Run(new CadastroCliente());
 
         }

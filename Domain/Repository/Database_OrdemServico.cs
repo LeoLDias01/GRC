@@ -71,8 +71,8 @@ namespace Domain.Repository
                     {
                         string sqlOrdemServico = @"INSERT INTO GRC_ORDEM_SERVICO
                                                             (IDGRC_CLIENTE, 
-                                                             NOME_CLIENTE, 
-                                                             DESCRICAO, 
+                                                             DESCRICAO_PROBLEMA, 
+                                                             DESCRICAO_SOLUCAO, 
                                                              IDGRC_TIPO_SERVICO, 
                                                              IDGRC_STATUS, 
                                                              DATA_ENTRADA, 
@@ -81,13 +81,15 @@ namespace Domain.Repository
                                                              INICIO_GARANTIA, 
                                                              FIM_GARANTIA, 
                                                              VALOR_MAO_OBRA, 
+                                                             CUSTO_MANUAL,
                                                              ACRESCIMO, 
                                                              DESCONTO,
-                                                             OBSERVACOES, 
+                                                             OBSERVACOES_LOJA, 
+                                                             OBSERVACOES_CLIENTE,
                                                              FAVORITO)
                                 VALUES (@IdCliente, 
-                                        @NomeCliente,
-                                        @Descricao, 
+                                        @DescricaoProblema,
+                                        @DescricaoSolucao, 
                                         @IdTipo, 
                                         @Status, 
                                         @DataEntrada, 
@@ -95,18 +97,20 @@ namespace Domain.Repository
                                         @Garantia, 
                                         @InicioGarantia, 
                                         @FimGarantia, 
-                                        @ValorMaoObra, 
+                                        @ValorMaoObra,
+                                        @CustoManual, 
                                         @Acrescimo, 
                                         @Desconto, 
-                                        @Observacoes, 
+                                        @ObservacoesLoja,
+                                        @ObservacoesCliente,
                                         @Favorito);
                                 SELECT last_insert_rowid();";
 
                         os.Id = conn.ExecuteScalar<int>(sqlOrdemServico, new
                         {
-                            IdCliente = os.IdCliente > 0 ? os.IdCliente : (object)DBNull.Value,
-                            NomeCliente = os.NomeCliente, // Nome é obrigatório, não precisa de tratamento
-                            Descricao = os.Descricao,
+                            IdCliente = os.DadosCliente.Id > 0 ? os.DadosCliente.Id : (object)DBNull.Value,
+                            DescricaoProblema = os.DescricaoProblema, // Nome é obrigatório, não precisa de tratamento
+                            DescricaoSolucao = os.DescricaoSolucao,
                             IdTipo = os.TipoServico > 0 ? os.TipoServico : (object)DBNull.Value,
                             Status = os.Status > 0 ? os.Status : (object)DBNull.Value,
                             DataEntrada = string.IsNullOrWhiteSpace(os.DataEntrada) ? (object)DBNull.Value : os.DataEntrada,
@@ -115,13 +119,15 @@ namespace Domain.Repository
                             InicioGarantia = string.IsNullOrWhiteSpace(os.InicioGarantia) ? (object)DBNull.Value : os.InicioGarantia,
                             FimGarantia = string.IsNullOrWhiteSpace(os.FimGarantia) ? (object)DBNull.Value : os.FimGarantia,
                             ValorMaoObra = string.IsNullOrWhiteSpace(os.MaoObra) ? (object)DBNull.Value : os.MaoObra,
+                            CustoManual = string.IsNullOrWhiteSpace(os.CustoManual) ? (object)DBNull.Value : os.CustoManual,
                             Acrescimo = string.IsNullOrWhiteSpace(os.Acrescimo) ? (object)DBNull.Value : os.Acrescimo,
                             Desconto = string.IsNullOrWhiteSpace(os.Desconto) ? (object)DBNull.Value : os.Desconto,
-                            Observacoes = string.IsNullOrWhiteSpace(os.Observacoes) ? (object)DBNull.Value : os.Observacoes,
+                            ObservacoesLoja = string.IsNullOrWhiteSpace(os.Observacoes) ? (object)DBNull.Value : os.Observacoes,
+                            ObservacoesCliente = string.IsNullOrWhiteSpace(os.ObservacoesCliente) ? (object)DBNull.Value : os.ObservacoesCliente,
                             Favorito = os.Favorito == true ? 1 : 0
 
                         }, tran);
-
+                        
 
 
                         if (os.ItensOrdemServico != null)
@@ -143,6 +149,23 @@ namespace Domain.Repository
                                         Qtd = comp.Quantidade
                                     }, tran);
                                 }
+                            }
+                        }
+
+                        foreach (var esp in os.ItensEsporadicos)
+                        {
+                            if (esp.Id == 0)
+                            {
+                                string sqlEsp = @"
+                                    INSERT INTO GRC_ITEM_OS_ESPORADICO
+                                    (IDGRC_ORDEM_SERVICO, DESCRICAO)
+                                    VALUES (@Id, @Descricao);";
+
+                                conn.Execute(sqlEsp, new
+                                {
+                                    Id = os.Id,
+                                    Descricao = esp.Descricao 
+                                }, tran);
                             }
                         }
 
@@ -197,7 +220,7 @@ namespace Domain.Repository
                             Id = os.Id,
                             IdCliente = os.IdCliente > 0 ? os.IdCliente : (object)DBNull.Value,
                             NomeCliente = os.NomeCliente, // Nome é obrigatório, não precisa de tratamento
-                            Descricao = os.Descricao,
+                            Descricao = os.DescricaoSolucao,
                             IdTipo = os.TipoServico > 0 ? os.TipoServico : (object)DBNull.Value,
                             DataEntrada = string.IsNullOrWhiteSpace(os.DataEntrada) ? (object)DBNull.Value : os.DataEntrada,
                             FimPrevisto = string.IsNullOrWhiteSpace(os.FimPrevisto) ? (object)DBNull.Value : os.FimPrevisto,
@@ -475,7 +498,7 @@ namespace Domain.Repository
                         Id = (int)x.Id,
                         IdCliente = (int)x.Idcliente,
                         NomeCliente = x.NomeCliente,
-                        Descricao = x.Descricao,
+                        DescricaoSolucao = x.Descricao,
                         TipoServico = (int)x.Tipo,
                         Status = (int)x.Status,
                         Garantia = x.Garantia,
