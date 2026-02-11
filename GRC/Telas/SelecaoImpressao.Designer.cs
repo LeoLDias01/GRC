@@ -52,7 +52,7 @@
             this.btnSalvar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.Location = new System.Drawing.Point(35, 235);
+            this.btnSalvar.Location = new System.Drawing.Point(26, 232);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnSalvar.Size = new System.Drawing.Size(158, 47);
@@ -79,7 +79,7 @@
             this.btnExportar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
             this.btnExportar.ForeColor = System.Drawing.Color.White;
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
-            this.btnExportar.Location = new System.Drawing.Point(35, 182);
+            this.btnExportar.Location = new System.Drawing.Point(26, 179);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnExportar.Size = new System.Drawing.Size(158, 47);
@@ -97,11 +97,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(31, 9);
+            this.label1.Location = new System.Drawing.Point(51, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 23);
+            this.label1.Size = new System.Drawing.Size(107, 23);
             this.label1.TabIndex = 60;
-            this.label1.Text = "Tipos de Exportação";
+            this.label1.Text = "Exportação";
             // 
             // customPanel1
             // 
@@ -114,7 +114,7 @@
             this.customPanel1.ForeColor = System.Drawing.Color.White;
             this.customPanel1.Location = new System.Drawing.Point(12, 47);
             this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(213, 116);
+            this.customPanel1.Size = new System.Drawing.Size(181, 116);
             this.customPanel1.TabIndex = 61;
             this.customPanel1.TamanhoBorda = 0;
             this.customPanel1.TamanhoRaio = 20;
@@ -156,7 +156,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.ClientSize = new System.Drawing.Size(242, 303);
+            this.ClientSize = new System.Drawing.Size(220, 303);
             this.ControlBox = false;
             this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.label1);
