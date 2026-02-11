@@ -197,7 +197,6 @@
             this.txtId.AutoWordSelection = true;
             this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtId.Depth = 0;
-            this.txtId.Enabled = false;
             this.txtId.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtId.Hint = "Nº ";
             this.txtId.LeadingIcon = null;
@@ -220,7 +219,6 @@
             this.txtCliente.AutoWordSelection = true;
             this.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCliente.Depth = 0;
-            this.txtCliente.Enabled = false;
             this.txtCliente.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtCliente.Hint = "Cliente";
             this.txtCliente.LeadingIcon = null;
@@ -230,6 +228,7 @@
             this.txtCliente.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCliente.Multiline = false;
             this.txtCliente.Name = "txtCliente";
+            this.txtCliente.ReadOnly = true;
             this.txtCliente.Size = new System.Drawing.Size(505, 50);
             this.txtCliente.TabIndex = 82;
             this.txtCliente.Text = "";

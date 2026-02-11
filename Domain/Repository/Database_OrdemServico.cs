@@ -361,7 +361,7 @@ namespace Domain.Repository
                         #region ... Itens Da OS (Esporádicos) ...
 
                         var itensAtuais = conn.Query<ItemCard>(@"SELECT IDGRC_ITEM_OS_ESPORADICO AS Id, 
-                                                                            DESCRICAO
+                                                                        DESCRICAO
                                                                      FROM GRC_ITEM_OS_ESPORADICO 
                                                                      WHERE IDGRC_ORDEM_SERVICO = @IdOs",
                         new
@@ -379,7 +379,7 @@ namespace Domain.Repository
                             .ToList();
 
                         // INSERIR novos itens
-                        foreach (var it in novos)
+                        foreach (var it in novosItens)
                         {
                             conn.Execute(@" INSERT INTO GRC_ITEM_OS_ESPORADICO
                                     (IDGRC_ORDEM_SERVICO, DESCRICAO)
@@ -393,7 +393,7 @@ namespace Domain.Repository
 
 
                         // EXCLUIR itens removidos
-                        foreach (var it in excluir)
+                        foreach (var it in excluirItens)
                         {
                             conn.Execute(@"UPDATE GRC_ITEM_OS_ESPORADICO
                                              SET ATIVO = 0
@@ -528,6 +528,7 @@ namespace Domain.Repository
                                                     OS.IDGRC_ORDEM_SERVICO     AS Id,
                                                     OS.IDGRC_CLIENTE           AS IdCliente,
                                                     CL.NOME                    AS NomeCliente,
+                                                    CL.IDENTIFICACAO           AS Identidade,
                                                     OS.DESCRICAO_PROBLEMA      AS DescricaoProblema,
                                                     OS.DESCRICAO_SOLUCAO       AS DescricaoSolucao,
 
@@ -578,7 +579,8 @@ namespace Domain.Repository
                         Favorito = Convert.ToBoolean(x.Favorito),
                         DadosCliente = new Cliente
                         {
-                            Id = (int)x.Idcliente,
+                            Id = (int)x.IdCliente,
+                            Identidade = x.Identidade,
                             Nome = x.NomeCliente,
                             Telefones = new List<Telefone>() 
                         },
@@ -660,7 +662,7 @@ namespace Domain.Repository
                             {
                                 Id = (int)z.Id,
                                 Descricao = z.Descricao,
-                                Whatsapp = z.Whatsapp,
+                                Whatsapp = Convert.ToBoolean(z.Whatsapp),
                                 Observacoes = z.Observacoes,
                             }).ToList();
                         }
@@ -687,7 +689,7 @@ namespace Domain.Repository
                     var sql = new StringBuilder();
                     sql.Append(@"SELECT 
                                         OS.IDGRC_ORDEM_SERVICO AS Id,
-                                        CL.NOME_CLIENTE AS Nome,
+                                        CL.NOME AS Nome,
                                         OS.DATA_ENTRADA AS DataEntrada,
                                         OS.FAVORITO AS Favorito,
                                         ST.DESCRICAO AS Status, 
@@ -722,7 +724,7 @@ namespace Domain.Repository
                     if (!string.IsNullOrWhiteSpace(os.DataEntrada))
                         sql.Append(" AND OS.DATA_ENTRADA = @Data ");
 
-                    sql.Append(" ORDER BY OS.FAVORITO, OS.NOME_CLIENTE ASC LIMIT @Registros; ");
+                    sql.Append(" ORDER BY OS.FAVORITO, CL.NOME ASC LIMIT @Registros; ");
 
                     var lista = conn.Query(sql.ToString(), new
                     {

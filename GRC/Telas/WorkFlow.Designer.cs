@@ -41,23 +41,24 @@
             this.btnVendas = new GRC.Componentes.CustomButton();
             this.btnMovimentacoes = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
-            this.customPanel3 = new GRC.Componentes.CustomPanel();
-            this.customPictureBox5 = new GRC.Componentes.CustomPictureBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.customPanel1 = new GRC.Componentes.CustomPanel();
+            this.customButton1 = new GRC.Componentes.CustomButton();
             this.customPictureBox2 = new GRC.Componentes.CustomPictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.customPanel2 = new GRC.Componentes.CustomPanel();
-            this.customPictureBox3 = new GRC.Componentes.CustomPictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.customPanel4 = new GRC.Componentes.CustomPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.painelRadius4 = new GRC.Componentes.PainelRadius();
+            this.customPictureBox5 = new GRC.Componentes.CustomPictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.painelRadius3 = new GRC.Componentes.PainelRadius();
             this.customPictureBox4 = new GRC.Componentes.CustomPictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.painelRadius2 = new GRC.Componentes.PainelRadius();
+            this.customPictureBox3 = new GRC.Componentes.CustomPictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.painelRadius1 = new GRC.Componentes.PainelRadius();
             this.btnUser = new GRC.Componentes.CustomButton();
             this.prUsuario = new GRC.Componentes.PainelRadius();
             this.btnEncerrar = new GRC.Componentes.CustomButton();
@@ -67,19 +68,18 @@
             this.btnMenu = new GRC.Componentes.CustomButton();
             this.btnMinimize = new GRC.Componentes.CustomButton();
             this.btnMaximize = new GRC.Componentes.CustomButton();
-            this.customButton1 = new GRC.Componentes.CustomButton();
             this.tlpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customPictureBox1)).BeginInit();
-            this.customPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox5)).BeginInit();
-            this.customPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customPictureBox2)).BeginInit();
-            this.customPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox3)).BeginInit();
-            this.customPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox4)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            this.painelRadius4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox5)).BeginInit();
+            this.painelRadius3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox4)).BeginInit();
+            this.painelRadius2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox3)).BeginInit();
+            this.painelRadius1.SuspendLayout();
             this.prUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -349,86 +349,29 @@
             this.btnClientes.UseVisualStyleBackColor = false;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
-            // customPanel3
+            // customButton1
             // 
-            this.customPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.customPanel3.BackColor = System.Drawing.Color.White;
-            this.customPanel3.Controls.Add(this.customPictureBox5);
-            this.customPanel3.Controls.Add(this.label8);
-            this.customPanel3.Controls.Add(this.label9);
-            this.customPanel3.CorBorda = System.Drawing.Color.Black;
-            this.customPanel3.CorBotao = System.Drawing.Color.White;
-            this.customPanel3.CorTextoBotao = System.Drawing.Color.White;
-            this.customPanel3.ForeColor = System.Drawing.Color.White;
-            this.customPanel3.Location = new System.Drawing.Point(969, 3);
-            this.customPanel3.Name = "customPanel3";
-            this.customPanel3.Size = new System.Drawing.Size(317, 94);
-            this.customPanel3.TabIndex = 5;
-            this.customPanel3.TamanhoBorda = 0;
-            this.customPanel3.TamanhoRaio = 15;
-            // 
-            // customPictureBox5
-            // 
-            this.customPictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.customPictureBox5.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.customPictureBox5.CorBotao = System.Drawing.Color.Transparent;
-            this.customPictureBox5.CorTextoBotao = System.Drawing.Color.White;
-            this.customPictureBox5.ForeColor = System.Drawing.Color.White;
-            this.customPictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("customPictureBox5.Image")));
-            this.customPictureBox5.Location = new System.Drawing.Point(6, 17);
-            this.customPictureBox5.Name = "customPictureBox5";
-            this.customPictureBox5.Size = new System.Drawing.Size(60, 60);
-            this.customPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.customPictureBox5.TabIndex = 11;
-            this.customPictureBox5.TabStop = false;
-            this.customPictureBox5.TamanhoBorda = 0;
-            this.customPictureBox5.TamanhoRaio = 0;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.label8.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
-            this.label8.ForeColor = System.Drawing.Color.Crimson;
-            this.label8.Location = new System.Drawing.Point(74, 17);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(106, 19);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "OS atrasadas";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.label9.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold);
-            this.label9.ForeColor = System.Drawing.Color.Crimson;
-            this.label9.Location = new System.Drawing.Point(74, 48);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(27, 29);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "5";
-            // 
-            // customPanel1
-            // 
-            this.customPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.customPanel1.BackColor = System.Drawing.Color.White;
-            this.customPanel1.Controls.Add(this.customPictureBox2);
-            this.customPanel1.Controls.Add(this.label3);
-            this.customPanel1.Controls.Add(this.label2);
-            this.customPanel1.CorBorda = System.Drawing.Color.Black;
-            this.customPanel1.CorBotao = System.Drawing.Color.White;
-            this.customPanel1.CorTextoBotao = System.Drawing.Color.DarkGreen;
-            this.customPanel1.ForeColor = System.Drawing.Color.DarkGreen;
-            this.customPanel1.Location = new System.Drawing.Point(3, 3);
-            this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(316, 94);
-            this.customPanel1.TabIndex = 6;
-            this.customPanel1.TamanhoBorda = 0;
-            this.customPanel1.TamanhoRaio = 15;
+            this.customButton1.BackColor = System.Drawing.Color.Transparent;
+            this.customButton1.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.customButton1.CorBotao = System.Drawing.Color.Transparent;
+            this.customButton1.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.customButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customButton1.FlatAppearance.BorderSize = 0;
+            this.customButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.customButton1.Image = ((System.Drawing.Image)(resources.GetObject("customButton1.Image")));
+            this.customButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.customButton1.Location = new System.Drawing.Point(3, 311);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.Size = new System.Drawing.Size(222, 44);
+            this.customButton1.TabIndex = 9;
+            this.customButton1.TamanhoBorda = 0;
+            this.customButton1.TamanhoRaio = 7;
+            this.customButton1.Text = "        Estoque";
+            this.customButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.customButton1.UseVisualStyleBackColor = false;
             // 
             // customPictureBox2
             // 
@@ -438,7 +381,7 @@
             this.customPictureBox2.CorTextoBotao = System.Drawing.Color.White;
             this.customPictureBox2.ForeColor = System.Drawing.Color.White;
             this.customPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("customPictureBox2.Image")));
-            this.customPictureBox2.Location = new System.Drawing.Point(3, 17);
+            this.customPictureBox2.Location = new System.Drawing.Point(3, 19);
             this.customPictureBox2.Name = "customPictureBox2";
             this.customPictureBox2.Size = new System.Drawing.Size(60, 60);
             this.customPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -453,9 +396,9 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
             this.label3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label3.Location = new System.Drawing.Point(70, 17);
+            this.label3.Location = new System.Drawing.Point(69, 19);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 19);
+            this.label3.Size = new System.Drawing.Size(139, 19);
             this.label3.TabIndex = 1;
             this.label3.Text = "Vendas Efetuadas";
             // 
@@ -465,92 +408,107 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
             this.label2.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label2.Location = new System.Drawing.Point(69, 48);
+            this.label2.Location = new System.Drawing.Point(69, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 29);
             this.label2.TabIndex = 0;
             this.label2.Text = "250";
             // 
-            // customPanel2
+            // tableLayoutPanel1
             // 
-            this.customPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.customPanel2.BackColor = System.Drawing.Color.White;
-            this.customPanel2.Controls.Add(this.customPictureBox3);
-            this.customPanel2.Controls.Add(this.label4);
-            this.customPanel2.Controls.Add(this.label5);
-            this.customPanel2.CorBorda = System.Drawing.Color.Black;
-            this.customPanel2.CorBotao = System.Drawing.Color.White;
-            this.customPanel2.CorTextoBotao = System.Drawing.Color.White;
-            this.customPanel2.ForeColor = System.Drawing.Color.White;
-            this.customPanel2.Location = new System.Drawing.Point(325, 3);
-            this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(316, 94);
-            this.customPanel2.TabIndex = 6;
-            this.customPanel2.TamanhoBorda = 0;
-            this.customPanel2.TamanhoRaio = 15;
+            this.tableLayoutPanel1.ColumnCount = 7;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.painelRadius4, 6, 0);
+            this.tableLayoutPanel1.Controls.Add(this.painelRadius3, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.painelRadius2, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.painelRadius1, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(30, 68);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1286, 100);
+            this.tableLayoutPanel1.TabIndex = 7;
             // 
-            // customPictureBox3
+            // painelRadius4
             // 
-            this.customPictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.customPictureBox3.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.customPictureBox3.CorBotao = System.Drawing.Color.Transparent;
-            this.customPictureBox3.CorTextoBotao = System.Drawing.Color.White;
-            this.customPictureBox3.ForeColor = System.Drawing.Color.White;
-            this.customPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("customPictureBox3.Image")));
-            this.customPictureBox3.Location = new System.Drawing.Point(8, 17);
-            this.customPictureBox3.Name = "customPictureBox3";
-            this.customPictureBox3.Size = new System.Drawing.Size(60, 60);
-            this.customPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.customPictureBox3.TabIndex = 5;
-            this.customPictureBox3.TabStop = false;
-            this.customPictureBox3.TamanhoBorda = 0;
-            this.customPictureBox3.TamanhoRaio = 0;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.label4.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label4.Location = new System.Drawing.Point(74, 17);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(155, 19);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Reparos Finalizados";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.label5.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label5.Location = new System.Drawing.Point(74, 49);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 29);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "100";
-            // 
-            // customPanel4
-            // 
-            this.customPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.painelRadius4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.customPanel4.BackColor = System.Drawing.Color.White;
-            this.customPanel4.Controls.Add(this.customPictureBox4);
-            this.customPanel4.Controls.Add(this.label6);
-            this.customPanel4.Controls.Add(this.label7);
-            this.customPanel4.CorBorda = System.Drawing.Color.Black;
-            this.customPanel4.CorBotao = System.Drawing.Color.White;
-            this.customPanel4.CorTextoBotao = System.Drawing.Color.White;
-            this.customPanel4.ForeColor = System.Drawing.Color.White;
-            this.customPanel4.Location = new System.Drawing.Point(647, 3);
-            this.customPanel4.Name = "customPanel4";
-            this.customPanel4.Size = new System.Drawing.Size(316, 94);
-            this.customPanel4.TabIndex = 6;
-            this.customPanel4.TamanhoBorda = 0;
-            this.customPanel4.TamanhoRaio = 15;
+            this.painelRadius4.BackColor = System.Drawing.Color.White;
+            this.painelRadius4.BorderColor = System.Drawing.Color.White;
+            this.painelRadius4.Controls.Add(this.customPictureBox5);
+            this.painelRadius4.Controls.Add(this.label8);
+            this.painelRadius4.Controls.Add(this.label9);
+            this.painelRadius4.Location = new System.Drawing.Point(984, 3);
+            this.painelRadius4.Name = "painelRadius4";
+            this.painelRadius4.Radius = 50;
+            this.painelRadius4.Size = new System.Drawing.Size(299, 94);
+            this.painelRadius4.TabIndex = 3;
+            this.painelRadius4.Thickness = 0F;
+            // 
+            // customPictureBox5
+            // 
+            this.customPictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.customPictureBox5.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.customPictureBox5.CorBotao = System.Drawing.Color.Transparent;
+            this.customPictureBox5.CorTextoBotao = System.Drawing.Color.White;
+            this.customPictureBox5.ForeColor = System.Drawing.Color.White;
+            this.customPictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("customPictureBox5.Image")));
+            this.customPictureBox5.Location = new System.Drawing.Point(3, 17);
+            this.customPictureBox5.Name = "customPictureBox5";
+            this.customPictureBox5.Size = new System.Drawing.Size(60, 60);
+            this.customPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.customPictureBox5.TabIndex = 14;
+            this.customPictureBox5.TabStop = false;
+            this.customPictureBox5.TamanhoBorda = 0;
+            this.customPictureBox5.TamanhoRaio = 0;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.label8.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.Color.Crimson;
+            this.label8.Location = new System.Drawing.Point(71, 17);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(107, 19);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "OS atrasadas";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.label9.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.Color.Crimson;
+            this.label9.Location = new System.Drawing.Point(71, 48);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(27, 29);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "5";
+            // 
+            // painelRadius3
+            // 
+            this.painelRadius3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.painelRadius3.BackColor = System.Drawing.Color.White;
+            this.painelRadius3.BorderColor = System.Drawing.Color.White;
+            this.painelRadius3.Controls.Add(this.customPictureBox4);
+            this.painelRadius3.Controls.Add(this.label6);
+            this.painelRadius3.Controls.Add(this.label7);
+            this.painelRadius3.Location = new System.Drawing.Point(657, 3);
+            this.painelRadius3.Name = "painelRadius3";
+            this.painelRadius3.Radius = 50;
+            this.painelRadius3.Size = new System.Drawing.Size(299, 94);
+            this.painelRadius3.TabIndex = 3;
+            this.painelRadius3.Thickness = 0F;
             // 
             // customPictureBox4
             // 
@@ -564,7 +522,7 @@
             this.customPictureBox4.Name = "customPictureBox4";
             this.customPictureBox4.Size = new System.Drawing.Size(60, 60);
             this.customPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.customPictureBox4.TabIndex = 8;
+            this.customPictureBox4.TabIndex = 11;
             this.customPictureBox4.TabStop = false;
             this.customPictureBox4.TamanhoBorda = 0;
             this.customPictureBox4.TamanhoRaio = 0;
@@ -577,8 +535,8 @@
             this.label6.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label6.Location = new System.Drawing.Point(69, 17);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(124, 19);
-            this.label6.TabIndex = 7;
+            this.label6.Size = new System.Drawing.Size(122, 19);
+            this.label6.TabIndex = 10;
             this.label6.Text = "Reparos a fazer";
             // 
             // label7
@@ -590,28 +548,81 @@
             this.label7.Location = new System.Drawing.Point(69, 48);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 29);
-            this.label7.TabIndex = 6;
+            this.label7.TabIndex = 9;
             this.label7.Text = "50";
             // 
-            // tableLayoutPanel1
+            // painelRadius2
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.painelRadius2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.customPanel1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.customPanel4, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.customPanel3, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.customPanel2, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(49, 59);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1289, 100);
-            this.tableLayoutPanel1.TabIndex = 7;
+            this.painelRadius2.BackColor = System.Drawing.Color.White;
+            this.painelRadius2.BorderColor = System.Drawing.Color.White;
+            this.painelRadius2.Controls.Add(this.customPictureBox3);
+            this.painelRadius2.Controls.Add(this.label4);
+            this.painelRadius2.Controls.Add(this.label5);
+            this.painelRadius2.Location = new System.Drawing.Point(330, 3);
+            this.painelRadius2.Name = "painelRadius2";
+            this.painelRadius2.Radius = 50;
+            this.painelRadius2.Size = new System.Drawing.Size(299, 94);
+            this.painelRadius2.TabIndex = 14;
+            this.painelRadius2.Thickness = 0F;
+            // 
+            // customPictureBox3
+            // 
+            this.customPictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.customPictureBox3.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.customPictureBox3.CorBotao = System.Drawing.Color.Transparent;
+            this.customPictureBox3.CorTextoBotao = System.Drawing.Color.White;
+            this.customPictureBox3.ForeColor = System.Drawing.Color.White;
+            this.customPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("customPictureBox3.Image")));
+            this.customPictureBox3.Location = new System.Drawing.Point(4, 17);
+            this.customPictureBox3.Name = "customPictureBox3";
+            this.customPictureBox3.Size = new System.Drawing.Size(60, 60);
+            this.customPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.customPictureBox3.TabIndex = 8;
+            this.customPictureBox3.TabStop = false;
+            this.customPictureBox3.TamanhoBorda = 0;
+            this.customPictureBox3.TamanhoRaio = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.label4.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.label4.Location = new System.Drawing.Point(70, 17);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(154, 19);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Reparos Finalizados";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.label5.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.label5.Location = new System.Drawing.Point(70, 49);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 29);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "100";
+            // 
+            // painelRadius1
+            // 
+            this.painelRadius1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.painelRadius1.BackColor = System.Drawing.Color.White;
+            this.painelRadius1.BorderColor = System.Drawing.Color.White;
+            this.painelRadius1.Controls.Add(this.label3);
+            this.painelRadius1.Controls.Add(this.customPictureBox2);
+            this.painelRadius1.Controls.Add(this.label2);
+            this.painelRadius1.Location = new System.Drawing.Point(3, 3);
+            this.painelRadius1.Name = "painelRadius1";
+            this.painelRadius1.Radius = 50;
+            this.painelRadius1.Size = new System.Drawing.Size(299, 94);
+            this.painelRadius1.TabIndex = 0;
+            this.painelRadius1.Thickness = 0F;
             // 
             // btnUser
             // 
@@ -708,7 +719,7 @@
             this.lbNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.lbNome.Location = new System.Drawing.Point(60, 25);
             this.lbNome.Name = "lbNome";
-            this.lbNome.Size = new System.Drawing.Size(106, 19);
+            this.lbNome.Size = new System.Drawing.Size(105, 19);
             this.lbNome.TabIndex = 1;
             this.lbNome.Text = "Rayner Bryan";
             // 
@@ -790,30 +801,6 @@
             this.btnMaximize.UseVisualStyleBackColor = false;
             this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
             // 
-            // customButton1
-            // 
-            this.customButton1.BackColor = System.Drawing.Color.Transparent;
-            this.customButton1.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.customButton1.CorBotao = System.Drawing.Color.Transparent;
-            this.customButton1.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.customButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.customButton1.Image = ((System.Drawing.Image)(resources.GetObject("customButton1.Image")));
-            this.customButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customButton1.Location = new System.Drawing.Point(3, 311);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(222, 44);
-            this.customButton1.TabIndex = 9;
-            this.customButton1.TamanhoBorda = 0;
-            this.customButton1.TamanhoRaio = 7;
-            this.customButton1.Text = "        Estoque";
-            this.customButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.customButton1.UseVisualStyleBackColor = false;
-            // 
             // WorkFlow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -839,19 +826,19 @@
             this.tlpMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customPictureBox1)).EndInit();
-            this.customPanel3.ResumeLayout(false);
-            this.customPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox5)).EndInit();
-            this.customPanel1.ResumeLayout(false);
-            this.customPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customPictureBox2)).EndInit();
-            this.customPanel2.ResumeLayout(false);
-            this.customPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox3)).EndInit();
-            this.customPanel4.ResumeLayout(false);
-            this.customPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox4)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.painelRadius4.ResumeLayout(false);
+            this.painelRadius4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox5)).EndInit();
+            this.painelRadius3.ResumeLayout(false);
+            this.painelRadius3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox4)).EndInit();
+            this.painelRadius2.ResumeLayout(false);
+            this.painelRadius2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox3)).EndInit();
+            this.painelRadius1.ResumeLayout(false);
+            this.painelRadius1.PerformLayout();
             this.prUsuario.ResumeLayout(false);
             this.prUsuario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -871,23 +858,10 @@
         private Componentes.CustomButton btnVendas;
         private Componentes.CustomButton btnOrdemServiço;
         private Componentes.CustomPictureBox customPictureBox1;
-        private Componentes.CustomPanel customPanel3;
-        private Componentes.CustomPanel customPanel1;
-        private Componentes.CustomPanel customPanel2;
-        private Componentes.CustomPanel customPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private Componentes.CustomPictureBox customPictureBox2;
-        private Componentes.CustomPictureBox customPictureBox3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private Componentes.CustomPictureBox customPictureBox5;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private Componentes.CustomPictureBox customPictureBox4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnMovimentacoes;
         private Componentes.CustomButton btnFechaMenuLateral;
         private Componentes.CustomButton btnUser;
@@ -900,5 +874,18 @@
         private Componentes.CustomButton btnMinimize;
         private Componentes.CustomButton btnMaximize;
         private Componentes.CustomButton customButton1;
+        private Componentes.PainelRadius painelRadius2;
+        private Componentes.PainelRadius painelRadius1;
+        private Componentes.PainelRadius painelRadius4;
+        private Componentes.CustomPictureBox customPictureBox5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private Componentes.PainelRadius painelRadius3;
+        private Componentes.CustomPictureBox customPictureBox4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private Componentes.CustomPictureBox customPictureBox3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

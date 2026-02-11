@@ -4,6 +4,7 @@ using Business.Services;
 using Data.Models;
 using GRC.Componentes;
 using GRC.Properties;
+using iText.Signatures.Validation;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -34,7 +35,7 @@ namespace GRC.Telas
         public CadastroOS(int id = 0)
         {
             InitializeComponent();
-            _idOS = 2;//id;
+            _idOS = id;
         }
 
         private void btnNovoItem_Click(object sender, EventArgs e)
@@ -76,9 +77,12 @@ namespace GRC.Telas
                     return;
 
 
-                txtId.Text = _idOS.ToString();
                 _cliente = dadosOs.DadosCliente;
                 txtCliente.Text = _cliente.Nome;
+                txtIdentidade.Text = _cliente.Identidade;
+
+                txtId.Text = _idOS.ToString();
+                txtProblema.Text = dadosOs.DescricaoProblema;
                 txtDescricao.Text = dadosOs.DescricaoSolucao.ToString();
                 cbTipoServico.SelectedValue = dadosOs.TipoServico;
                 _StatusAntigo = dadosOs.Status;
@@ -766,6 +770,10 @@ namespace GRC.Telas
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            Salvar();
+        }
+        private void Salvar() 
+        {
             try
             {
                 if (!ValidaCampos())
@@ -780,7 +788,6 @@ namespace GRC.Telas
                         fim = true;
                     }
                 }
-
 
                 var os = new OrdemServico
                 {
@@ -809,8 +816,8 @@ namespace GRC.Telas
                     .Where(r => !r.IsNewRow)
                     .Select(r =>
                     {
-                        var iditem = r.Cells["colId"].Value;           
-                        var nome = r.Cells["colDescricao"].Value; 
+                        var iditem = r.Cells["colId"].Value;
+                        var nome = r.Cells["colDescricao"].Value;
 
                         return new ItemCard
                         {
@@ -834,6 +841,7 @@ namespace GRC.Telas
                 EmailError.EnviarEmailErro(ex.ToString());
                 new AlertBox(Color.FromArgb(64, 0, 0), Color.Red, Color.Crimson, Resources.Error, "Um erro ocorreu:", "Entidade: OS", "Erro ao salvar OS!", false).ShowDialog();
             }
+
         }
         
         private void LimpaCampos()
@@ -919,6 +927,10 @@ namespace GRC.Telas
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
+            Exportar();
+        }
+        private void Exportar ()
+        {
             List<OrdemServico> os = new List<OrdemServico>();
             os = _service.BuscaCompleta(_idOS);
             new SelecaoImpressao(os).ShowDialog();
@@ -931,6 +943,7 @@ namespace GRC.Telas
             {
                 _cliente = frm.ClienteSelecionado;
                 txtCliente.Text = _cliente.Nome;
+                txtIdentidade.Text = _cliente.Identidade;
             }
         }
         private void AtualizarFimGarantia()
@@ -972,11 +985,19 @@ namespace GRC.Telas
 
         private void txtNomeItemEsporadico_TrailingIconClick(object sender, EventArgs e)
         {
-            PreencheGridItemEsporadico(0, txtNomeItemEsporadico.Text);
+            if(!string.IsNullOrWhiteSpace(txtNomeItemEsporadico.Text))
+            {
+                PreencheGridItemEsporadico(0, txtNomeItemEsporadico.Text);
 
-            // Limpa campos para próxima entrada
-            txtNomeItemEsporadico.Clear();
-            txtNomeItemEsporadico.Focus();
+                // Limpa campos para próxima entrada
+                txtNomeItemEsporadico.Clear();
+            }
+            else
+            {
+                new AlertBox(Color.Goldenrod, Color.Lime, Color.Yellow, Resources.Warning, "Ordem de Serviço", "Campo de nome do item vazio", "O nome do item é obrigatório", false).ShowDialog();
+            }
+
+                txtNomeItemEsporadico.Focus();
         }
         private void PreencheGridItemEsporadico(int id, string item)
         {
@@ -1001,6 +1022,21 @@ namespace GRC.Telas
                     // Remove a linha
                     dgvItens.Rows.RemoveAt(e.RowIndex);
                 }
+            }
+        }
+
+        private void CadastroOS_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                Salvar();
+                e.Handled = true;
+            }
+
+            if (e.KeyCode == Keys.Control && e.KeyCode == Keys.P && btnExportar.Enabled == true)
+            {
+                Exportar();
+                e.Handled = true;
             }
         }
     }

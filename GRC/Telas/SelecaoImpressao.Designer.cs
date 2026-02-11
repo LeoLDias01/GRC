@@ -52,15 +52,14 @@
             this.btnSalvar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(12, 266);
+            this.btnSalvar.Location = new System.Drawing.Point(35, 235);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnSalvar.Size = new System.Drawing.Size(242, 47);
+            this.btnSalvar.Size = new System.Drawing.Size(158, 47);
             this.btnSalvar.TabIndex = 23;
             this.btnSalvar.TamanhoBorda = 0;
-            this.btnSalvar.TamanhoRaio = 5;
-            this.btnSalvar.Text = "                Voltar";
+            this.btnSalvar.TamanhoRaio = 20;
+            this.btnSalvar.Text = "  Voltar";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSalvar.UseVisualStyleBackColor = false;
@@ -80,15 +79,14 @@
             this.btnExportar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
             this.btnExportar.ForeColor = System.Drawing.Color.White;
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
-            this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportar.Location = new System.Drawing.Point(12, 204);
+            this.btnExportar.Location = new System.Drawing.Point(35, 182);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnExportar.Size = new System.Drawing.Size(242, 47);
+            this.btnExportar.Size = new System.Drawing.Size(158, 47);
             this.btnExportar.TabIndex = 59;
             this.btnExportar.TamanhoBorda = 0;
-            this.btnExportar.TamanhoRaio = 5;
-            this.btnExportar.Text = "               Gerar PDF";
+            this.btnExportar.TamanhoRaio = 20;
+            this.btnExportar.Text = "    Gerar PDF";
             this.btnExportar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExportar.UseVisualStyleBackColor = false;
@@ -99,7 +97,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(37, 9);
+            this.label1.Location = new System.Drawing.Point(31, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(187, 23);
             this.label1.TabIndex = 60;
@@ -114,9 +112,9 @@
             this.customPanel1.CorBotao = System.Drawing.Color.AliceBlue;
             this.customPanel1.CorTextoBotao = System.Drawing.Color.White;
             this.customPanel1.ForeColor = System.Drawing.Color.White;
-            this.customPanel1.Location = new System.Drawing.Point(12, 44);
+            this.customPanel1.Location = new System.Drawing.Point(12, 47);
             this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(242, 154);
+            this.customPanel1.Size = new System.Drawing.Size(213, 116);
             this.customPanel1.TabIndex = 61;
             this.customPanel1.TamanhoBorda = 0;
             this.customPanel1.TamanhoRaio = 20;
@@ -125,7 +123,7 @@
             // 
             this.chkCliente.AutoSize = true;
             this.chkCliente.Depth = 0;
-            this.chkCliente.Location = new System.Drawing.Point(48, 86);
+            this.chkCliente.Location = new System.Drawing.Point(14, 57);
             this.chkCliente.Margin = new System.Windows.Forms.Padding(0);
             this.chkCliente.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkCliente.MouseState = MaterialSkin.MouseState.HOVER;
@@ -141,7 +139,7 @@
             // 
             this.chkLoja.AutoSize = true;
             this.chkLoja.Depth = 0;
-            this.chkLoja.Location = new System.Drawing.Point(48, 35);
+            this.chkLoja.Location = new System.Drawing.Point(14, 20);
             this.chkLoja.Margin = new System.Windows.Forms.Padding(0);
             this.chkLoja.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkLoja.MouseState = MaterialSkin.MouseState.HOVER;
@@ -158,7 +156,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.ClientSize = new System.Drawing.Size(266, 340);
+            this.ClientSize = new System.Drawing.Size(242, 303);
             this.ControlBox = false;
             this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.label1);

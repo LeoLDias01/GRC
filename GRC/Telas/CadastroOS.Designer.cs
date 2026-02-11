@@ -63,9 +63,6 @@
             this.tbpFinanceiro = new System.Windows.Forms.TabPage();
             this.gpEsporadico = new System.Windows.Forms.GroupBox();
             this.dgvItens = new System.Windows.Forms.DataGridView();
-            this.colIdTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colExcluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.txtNomeItemEsporadico = new MaterialSkin.Controls.MaterialTextBox();
             this.gpEstoque = new System.Windows.Forms.GroupBox();
             this.btnNovoItem = new GRC.Componentes.CustomButton();
@@ -89,6 +86,9 @@
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.btnSalvar = new GRC.Componentes.CustomButton();
             this.ttAjuda = new System.Windows.Forms.ToolTip(this.components);
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colExcluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.pn2.SuspendLayout();
             this.pn1.SuspendLayout();
             this.customPanel1.SuspendLayout();
@@ -704,7 +704,7 @@
             this.dgvItens.ColumnHeadersHeight = 35;
             this.dgvItens.ColumnHeadersVisible = false;
             this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colIdTelefone,
+            this.colId,
             this.colDescricao,
             this.colExcluir});
             this.dgvItens.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -730,28 +730,6 @@
             this.dgvItens.Size = new System.Drawing.Size(275, 324);
             this.dgvItens.TabIndex = 98;
             this.dgvItens.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItens_CellContentClick);
-            // 
-            // colIdTelefone
-            // 
-            this.colIdTelefone.FillWeight = 1F;
-            this.colIdTelefone.HeaderText = "Id";
-            this.colIdTelefone.Name = "colIdTelefone";
-            this.colIdTelefone.ReadOnly = true;
-            this.colIdTelefone.Visible = false;
-            // 
-            // colDescricao
-            // 
-            this.colDescricao.FillWeight = 250F;
-            this.colDescricao.HeaderText = "Nome Item";
-            this.colDescricao.Name = "colDescricao";
-            this.colDescricao.ReadOnly = true;
-            // 
-            // colExcluir
-            // 
-            this.colExcluir.FillWeight = 45F;
-            this.colExcluir.HeaderText = "";
-            this.colExcluir.Name = "colExcluir";
-            this.colExcluir.ReadOnly = true;
             // 
             // txtNomeItemEsporadico
             // 
@@ -1216,6 +1194,28 @@
             this.ttAjuda.ForeColor = System.Drawing.Color.White;
             this.ttAjuda.ToolTipTitle = "Ajuda";
             // 
+            // colId
+            // 
+            this.colId.FillWeight = 1F;
+            this.colId.HeaderText = "Id";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Visible = false;
+            // 
+            // colDescricao
+            // 
+            this.colDescricao.FillWeight = 250F;
+            this.colDescricao.HeaderText = "Nome Item";
+            this.colDescricao.Name = "colDescricao";
+            this.colDescricao.ReadOnly = true;
+            // 
+            // colExcluir
+            // 
+            this.colExcluir.FillWeight = 45F;
+            this.colExcluir.HeaderText = "";
+            this.colExcluir.Name = "colExcluir";
+            this.colExcluir.ReadOnly = true;
+            // 
             // CadastroOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1233,6 +1233,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CadastroOS";
             this.Load += new System.EventHandler(this.CadastroOS_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CadastroOS_KeyDown);
             this.pn2.ResumeLayout(false);
             this.pn2.PerformLayout();
             this.pn1.ResumeLayout(false);
@@ -1313,9 +1314,9 @@
         private System.Windows.Forms.GroupBox gpEsporadico;
         private MaterialSkin.Controls.MaterialTextBox txtNomeItemEsporadico;
         private System.Windows.Forms.DataGridView dgvItens;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIdTelefone;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtObservacoesCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescricao;
         private System.Windows.Forms.DataGridViewImageColumn colExcluir;
-        private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtObservacoesCliente;
     }
 }
