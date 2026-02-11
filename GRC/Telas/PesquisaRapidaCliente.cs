@@ -16,8 +16,9 @@ namespace GRC.Telas
 {
     public partial class PesquisaRapidaCliente : Form
     {
-        public Cliente _cliente = new Cliente();
+        public List<Cliente> _cliente = new List<Cliente>();
         private ServiceCliente _service = new ServiceCliente();
+        public Cliente ClienteSelecionado { get; private set; }
         public PesquisaRapidaCliente()
         {
             InitializeComponent();
@@ -94,19 +95,18 @@ namespace GRC.Telas
             dgvClientes.ColumnHeadersHeight = 50;
 
             _cliente = _service.BuscaLimitada(cliente, registros);
-            var lista = _service.BuscaLimitada(cliente, registros);
 
-            if (lista != null)
+            if (_cliente != null)
             {
-                foreach (var estoque in lista)
+                foreach (var pessoa in _cliente)
                 {
-                    if (estoque.Id > 0)
+                    if (pessoa.Id > 0)
                     {
                         dgvClientes.Rows.Add(
-                            estoque.Id,
-                            estoque.Nome,
-                            estoque.TipoPessoa == 1 ? "Pessoa Física" : "Pessoa Jurídica",
-                            estoque.Identidade
+                            pessoa.Id,
+                            pessoa.Nome,
+                            pessoa.TipoPessoa == 1 ? "Pessoa Física" : "Pessoa Jurídica",
+                            pessoa.Identidade
                         );
                     }
                 }
@@ -117,15 +117,21 @@ namespace GRC.Telas
 
         private void dgvClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Ignora clique no cabeçalho
             if (e.RowIndex < 0)
                 return;
 
             var linha = dgvClientes.Rows[e.RowIndex];
+            int idCliente = Convert.ToInt32(linha.Cells["colIdCliente"].Value);
 
-           _cliente.Id = Convert.ToInt32(linha.Cells["colIdCliente"].Value);
-           _cliente.Nome = linha.Cells["colNome"].Value?.ToString();
-           this.DialogResult = DialogResult.OK;
+            var lista = _service.BuscaCompleta(idCliente);
+
+            ClienteSelecionado = lista?.FirstOrDefault();
+
+            if (ClienteSelecionado == null)
+                return;
+
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void PesquisaRapidaCliente_Load(object sender, EventArgs e)

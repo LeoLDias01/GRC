@@ -41,7 +41,6 @@
             this.txtDataEntrada = new MaterialSkin.Controls.MaterialTextBox();
             this.txtId = new MaterialSkin.Controls.MaterialTextBox();
             this.txtCliente = new MaterialSkin.Controls.MaterialTextBox();
-            this.btnBuscaCliente = new GRC.Componentes.CustomButton();
             this.cbTipoServico = new MaterialSkin.Controls.MaterialComboBox();
             this.cbStatus = new MaterialSkin.Controls.MaterialComboBox();
             this.chkFavorito = new MaterialSkin.Controls.MaterialCheckbox();
@@ -160,7 +159,6 @@
             this.flowLayoutPanel1.Controls.Add(this.txtDataEntrada);
             this.flowLayoutPanel1.Controls.Add(this.txtId);
             this.flowLayoutPanel1.Controls.Add(this.txtCliente);
-            this.flowLayoutPanel1.Controls.Add(this.btnBuscaCliente);
             this.flowLayoutPanel1.Controls.Add(this.cbTipoServico);
             this.flowLayoutPanel1.Controls.Add(this.cbStatus);
             this.flowLayoutPanel1.Controls.Add(this.chkFavorito);
@@ -218,7 +216,7 @@
             // txtCliente
             // 
             this.txtCliente.AcceptsTab = true;
-            this.txtCliente.AnimateReadOnly = false;
+            this.txtCliente.AnimateReadOnly = true;
             this.txtCliente.AutoWordSelection = true;
             this.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCliente.Depth = 0;
@@ -232,31 +230,12 @@
             this.txtCliente.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCliente.Multiline = false;
             this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(449, 50);
+            this.txtCliente.Size = new System.Drawing.Size(505, 50);
             this.txtCliente.TabIndex = 82;
             this.txtCliente.Text = "";
-            this.txtCliente.TrailingIcon = null;
+            this.txtCliente.TrailingIcon = ((System.Drawing.Image)(resources.GetObject("txtCliente.TrailingIcon")));
             this.txtCliente.UseAccent = false;
-            // 
-            // btnBuscaCliente
-            // 
-            this.btnBuscaCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnBuscaCliente.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnBuscaCliente.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnBuscaCliente.CorTextoBotao = System.Drawing.Color.White;
-            this.btnBuscaCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscaCliente.FlatAppearance.BorderSize = 0;
-            this.btnBuscaCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnBuscaCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscaCliente.ForeColor = System.Drawing.Color.White;
-            this.btnBuscaCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscaCliente.Image")));
-            this.btnBuscaCliente.Location = new System.Drawing.Point(766, 3);
-            this.btnBuscaCliente.Name = "btnBuscaCliente";
-            this.btnBuscaCliente.Size = new System.Drawing.Size(39, 41);
-            this.btnBuscaCliente.TabIndex = 84;
-            this.btnBuscaCliente.TamanhoBorda = 0;
-            this.btnBuscaCliente.TamanhoRaio = 15;
-            this.btnBuscaCliente.UseVisualStyleBackColor = false;
+            this.txtCliente.TrailingIconClick += new System.EventHandler(this.txtCliente_TrailingIconClick);
             // 
             // cbTipoServico
             // 
@@ -274,7 +253,7 @@
             this.cbTipoServico.Hint = "Tipo de Serviço";
             this.cbTipoServico.IntegralHeight = false;
             this.cbTipoServico.ItemHeight = 43;
-            this.cbTipoServico.Location = new System.Drawing.Point(811, 3);
+            this.cbTipoServico.Location = new System.Drawing.Point(822, 3);
             this.cbTipoServico.MaxDropDownItems = 4;
             this.cbTipoServico.MouseState = MaterialSkin.MouseState.OUT;
             this.cbTipoServico.Name = "cbTipoServico";
@@ -557,7 +536,6 @@
         private System.Windows.Forms.DataGridView dgvOs;
         private MaterialSkin.Controls.MaterialTextBox txtId;
         private MaterialSkin.Controls.MaterialTextBox txtCliente;
-        private Componentes.CustomButton btnBuscaCliente;
         private MaterialSkin.Controls.MaterialComboBox cbTipoServico;
         private MaterialSkin.Controls.MaterialComboBox cbStatus;
         private MaterialSkin.Controls.MaterialCheckbox chkFavorito;

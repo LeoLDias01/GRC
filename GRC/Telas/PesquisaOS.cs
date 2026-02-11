@@ -105,7 +105,11 @@ namespace GRC.Telas
             {
                 Id = string.IsNullOrWhiteSpace(txtId.Text) ? 0 : Convert.ToInt32(txtId.Text),
                 DataEntrada = string.IsNullOrWhiteSpace(txtDataEntrada.Text) ? string.Empty : txtDataEntrada.Text,
-                IdCliente = _idCliente > 0 ? _idCliente : 0,
+                //DadosCliente = _idCliente > 0 ? _idCliente : 0,
+                DadosCliente = new Cliente 
+                { 
+                    Id = _idCliente > 0 ? _idCliente : 0
+                },
                 Status = status > 0 ? status : 0,
                 TipoServico = tipo > 0 ? tipo : 0,
                 Favorito = chkFavorito.Checked ? true : false
@@ -130,7 +134,7 @@ namespace GRC.Telas
 
                         dadosOrdem.Favorito == true ? Resources.star : Resources.starOff,
                         dadosOrdem.Id.ToString(),
-                        dadosOrdem.NomeCliente,
+                        dadosOrdem.DadosCliente.Nome,
                         dadosOrdem.DataEntrada,
                         dadosOrdem.DescricaoStatus.ToString(),
                         dadosOrdem.DescricaoTipo.ToString()
@@ -201,6 +205,16 @@ namespace GRC.Telas
 
             txt.Text = formatado;
             txt.SelectionStart = txt.Text.Length;
+        }
+
+        private void txtCliente_TrailingIconClick(object sender, EventArgs e)
+        {
+            PesquisaRapidaCliente frm = new PesquisaRapidaCliente();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                _idCliente = frm.ClienteSelecionado.Id;
+                txtCliente.Text = frm.ClienteSelecionado.Nome;
+            }
         }
     }
 }

@@ -929,11 +929,7 @@ namespace GRC.Telas
             PesquisaRapidaCliente frm = new PesquisaRapidaCliente();
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                _cliente.Id = frm._cliente.Id;
-                _cliente.Nome = frm._cliente.Nome;
-                _cliente.Identidade = frm._cliente.Identidade;
-                _cliente.Telefones = frm._cliente.Telefones;
-
+                _cliente = frm.ClienteSelecionado;
                 txtCliente.Text = _cliente.Nome;
             }
         }

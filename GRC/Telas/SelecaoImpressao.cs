@@ -47,7 +47,7 @@ namespace GRC.Telas
                 ofd.Title = "Selecione onde salvar o PDF da Ordem de Serviço";
 
                 // Sugere o nome do arquivo
-                ofd.FileName = $"{DateTime.Today.ToString("dd-MM-yy")}_{_os.FirstOrDefault().Id}-{_os.FirstOrDefault().NomeCliente}.pdf";
+                ofd.FileName = $"{DateTime.Today.ToString("dd-MM-yy")}_{_os.FirstOrDefault().Id}-{_os.FirstOrDefault().DadosCliente.Nome}.pdf";
 
                 // Filtro apenas PDF
                 ofd.Filter = "Arquivo PDF (*.pdf)|*.pdf";
@@ -73,7 +73,7 @@ namespace GRC.Telas
 
         private void SelecaoImpressao_Load(object sender, EventArgs e)
         {
-           int idcliente = _os.FirstOrDefault().IdCliente;
+           int idcliente = _os.FirstOrDefault().DadosCliente.Id;
 
         }
         public void GerarPdfOrdemServico(string caminhoArquivo, bool viaCliente)
@@ -171,7 +171,7 @@ namespace GRC.Telas
 
             var p1 = new Paragraph()
                 .Add(new Text("Cliente: ").SetFont(bold))
-                .Add(new Text(os.NomeCliente).SetFont(regular));
+                .Add(new Text(os.DadosCliente.Nome).SetFont(regular));
 
             var p2 = new Paragraph()
                 .Add(new Text("Descrição do Serviço: ").SetFont(bold))

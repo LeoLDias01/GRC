@@ -190,6 +190,12 @@
     <Compile Include="Componentes\CustomPictureBox.Designer.cs">
       <DependentUpon>CustomPictureBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Componentes\PainelRadius.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Componentes\PainelRadius.Designer.cs">
+      <DependentUpon>PainelRadius.cs</DependentUpon>
+    </Compile>
     <Compile Include="Componentes\RoundedPanel.cs">
       <SubType>Component</SubType>
     </Compile>
