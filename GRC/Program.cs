@@ -19,8 +19,8 @@ namespace GRC
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new WorkFlow());
-            Application.Run(new PesquisaOS());
-            //Application.Run(new PesquisaCliente());
+            Application.Run(new CadastroOS(1));
+            //Application.Run(new CadastroMovimentacao());
 
         }
     }

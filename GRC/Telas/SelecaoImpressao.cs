@@ -2,6 +2,7 @@
 using GRC.Properties;
 using iText.IO.Font.Constants;
 using iText.IO.Image;
+using iText.Kernel.Colors;
 using iText.Kernel.Font;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
@@ -14,10 +15,12 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,6 +32,9 @@ namespace GRC.Telas
     public partial class SelecaoImpressao : Form
     {
         List<OrdemServico> _os = new List<OrdemServico>();
+
+        PdfFont _bold = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
+        PdfFont _regular = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
         public SelecaoImpressao(List<OrdemServico> ordemServico)
         {
             InitializeComponent();
@@ -42,74 +48,195 @@ namespace GRC.Telas
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog ofd = new OpenFileDialog())
+            using (SaveFileDialog sfd = new SaveFileDialog())
             {
-                ofd.Title = "Selecione onde salvar o PDF da Ordem de Serviço";
+                var osPrincipal = _os.FirstOrDefault();
+                // Define o sufixo baseado no tipo de documento
+                string tipoDoc = rbEntrada.Checked ? "ENTRADA" : "SAIDA";
+                string nomeBase = $"{DateTime.Today:dd-MM-yy}_{osPrincipal.Id}_{tipoDoc}_{osPrincipal.DadosCliente.Nome}";
 
-                
-                // Sugere o nome do arquivo
-                ofd.FileName = $"{DateTime.Today.ToString("dd-MM-yy")}_{_os.FirstOrDefault().Id}-{_os.FirstOrDefault().DadosCliente.Nome}.pdf";
+                sfd.Title = "Selecione onde salvar o PDF da Ordem de Serviço";
+                sfd.FileName = nomeBase;
+                sfd.Filter = "Arquivo PDF (*.pdf)|*.pdf";
+                sfd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
 
-                // Filtro apenas PDF
-                ofd.Filter = "Arquivo PDF (*.pdf)|*.pdf";
-
-                // Diretório inicial
-                ofd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
-                // Importante: permite escolher caminho + nome
-                ofd.CheckFileExists = false;
-                ofd.CheckPathExists = true;
-
-                if (ofd.ShowDialog() == DialogResult.OK)
+                if (sfd.ShowDialog() == DialogResult.OK)
                 {
-                    string caminhoCompleto = ofd.FileName;
+                    string caminhoOriginal = sfd.FileName;
 
-                    if (chkCliente.Checked)
-                        GerarPdfOrdemServico(caminhoCompleto, true);
-                    if (chkLoja.Checked)
-                        GerarPdfOrdemServico(caminhoCompleto, false);
+                    // Gera o PDF passando se é via de Entrada ou não
+                    GerarPdfOrdemServico(caminhoOriginal, rbEntrada.Checked);
+
+                    new AlertBox(System.Drawing.Color.FromArgb(0, 60, 4), System.Drawing.Color.LimeGreen, System.Drawing.Color.Green, Resources.Confirm, "Exportação da OS", $"PDF do cliente: {osPrincipal.DadosCliente.Nome}", "Foi gerado com sucesso! Abrindo o documento...", false).ShowDialog();
+
+                    // Lógica de Impressão
+                    if (rbPdfImp.Checked)
+                    {
+                        if (new AlertBox(System.Drawing.Color.FromArgb(0, 60, 4), System.Drawing.Color.LimeGreen, System.Drawing.Color.Green, Resources.Confirm,
+                            "Impressão", "O PDF já pode ser impresso.", "Deseja imprimir agora?", true).ShowDialog() == DialogResult.Yes)
+                        {
+                            ExecutarImpressao(caminhoOriginal);
+                        }
+                    }
                 }
             }
         }
-
+       
         private void SelecaoImpressao_Load(object sender, EventArgs e)
         {
            int idcliente = _os.FirstOrDefault().DadosCliente.Id;
-
+            rbEntrada.Checked = true;
+            rbPdf.Checked = true;
         }
-        public void GerarPdfOrdemServico(string caminhoArquivo, bool viaCliente)
+        public void GerarPdfOrdemServico(string caminhoArquivo, bool ehEntrada)
         {
             DadosLoja dadosLoja = new DadosLoja();
-            var writer = new PdfWriter(caminhoArquivo);
-            var pdf = new PdfDocument(writer);
-            var doc = new Document(pdf, PageSize.A4);
 
-            foreach (var os in _os)
+            using (var writer = new PdfWriter(caminhoArquivo))
             {
-                doc.SetMargins(20, 20, 20, 20);
-
-                AdicionarCabecalho(doc, dadosLoja);
-                AdicionarTitulo(doc, os);
-                AdicionarDadosCliente(doc, os);
-                /*
-                if (!viaCliente)
+                using (var pdf = new PdfDocument(writer))
                 {
-                    AdicionarItens(doc, os);
-                    AdicionarTotais(doc, os);
-                    AdicionarTermo(doc);
-                }
-                else
-                {*/
-                    AdicionarResumoCliente(doc, os);/*
-                }
-               */
-                AdicionarAssinaturas(doc);
-                AdicionarTermoCiencia(doc);
-                doc.Close();
-            }
+                    var doc = new Document(pdf, PageSize.A4);
+                    doc.SetMargins(20, 20, 20, 20);
 
+                    foreach (var os in _os)
+                    {
+                        AdicionarCabecalho(doc, dadosLoja);
+                        AdicionarTitulo(doc, os, ehEntrada);
+                        AdicionarDadosCliente(doc, os);
+
+                        if (ehEntrada)
+                        {
+                            MontarLayoutEntrada(doc, os);
+                        }
+                        else
+                        {
+                            MontarLayoutSaida(doc, os);
+                        }
+                    }
+                    doc.Close();
+                }
+            }
+            Process.Start(new ProcessStartInfo(caminhoArquivo) { UseShellExecute = true });
         }
 
+        private void MontarLayoutEntrada(Document doc, OrdemServico os)
+        {
+            // Título com margem inferior para não "colar" no conteúdo
+            var title = new Paragraph("RELATÓRIO DE ENTRADA / CHECK-IN")
+                .SetFont(_bold)
+                .SetFontSize(12)
+                .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
+                .SetPadding(5)
+                .SetMarginBottom(15);
+            doc.Add(title);
+
+            // Definindo um espaçamento entre linhas (Leading) maior para todo o bloco
+            float espacamentoEntreLinhas = 1.7f;
+
+            // 1. Avaria Relatada
+            doc.Add(new Paragraph()
+                .Add(new Text("Avaria Relatada: ").SetFont(_bold))
+                .Add(new Text(os.DescricaoProblema ?? "Não informado").SetFont(_regular))
+                .SetMultipliedLeading(espacamentoEntreLinhas)
+                .SetMarginBottom(10));
+
+            // 2. Senha do Aparelho (com linha pontilhada fina até o final da página)
+            doc.Add(new Paragraph()
+                .Add(new Text("Senha do Aparelho: ").SetFont(_bold))
+                .Add(new Tab())
+                .AddTabStops(new TabStop(1000, iText.Layout.Properties.TabAlignment.LEFT, new DottedLine(0.5f))) // 0.5f deixa bem fininho
+                .SetMultipliedLeading(espacamentoEntreLinhas)
+                .SetMarginBottom(10));
+            // 3. Datas
+            doc.Add(new Paragraph()
+                .Add(new Text("Data de Entrada: ").SetFont(_bold))
+                .Add(new Text(os.DataEntrada).SetFont(_regular))
+                .SetMultipliedLeading(espacamentoEntreLinhas));
+
+            doc.Add(new Paragraph()
+                .Add(new Text("Previsão de Término: ").SetFont(_bold))
+                .Add(new Text(os.FimPrevisto ?? "A combinar").SetFont(_regular))
+                .SetMultipliedLeading(espacamentoEntreLinhas)
+                .SetMarginBottom(15));
+
+            // 4. Observações com recuo e espaçamento
+            if (!string.IsNullOrWhiteSpace(os.ObservacoesCliente))
+            {
+                doc.Add(new Paragraph().Add(new Text("Observações:").SetFont(_bold)).SetMarginBottom(5));
+                doc.Add(new Paragraph(os.ObservacoesCliente)
+                    .SetFontSize(10)
+                    .SetFont(_regular)
+                    .SetMultipliedLeading(espacamentoEntreLinhas)
+                    .SetMarginBottom(20));
+            }
+
+            // Adiciona uma separação visual antes do termo
+            doc.Add(new LineSeparator(new DashedLine(0.5f)));
+            doc.Add(new Paragraph("\n").SetFixedLeading(10f));
+
+            AdicionarTermoCiencia(doc);
+            AdicionarAssinaturas(doc);
+        }
+
+        private void MontarLayoutSaida(Document doc, OrdemServico os)
+        {
+            float espacamentoEntreLinhas = 1.7f;
+
+            // 1. Solução Técnica (Substituindo descrição do problema)
+            doc.Add(new Paragraph()
+                .Add(new Text("Solução Técnica / Serviço Realizado: ").SetFont(_bold))
+                .Add(new Text(os.DescricaoSolucao ?? "Manutenção técnica concluída.").SetFont(_regular))
+                .SetMultipliedLeading(espacamentoEntreLinhas)
+                .SetMarginBottom(15));
+
+            // 2. Bloco de Garantia (Cálculo de dias e datas)
+
+            doc.Add(new Paragraph()
+                .Add(new Text("Data de Entrada: ").SetFont(_bold))
+                .Add(new Text(os.DataEntrada ?? "---").SetFont(_regular))
+                .SetMultipliedLeading(espacamentoEntreLinhas));
+            doc.Add(new Paragraph()
+                .Add(new Text("Data de Término: ").SetFont(_bold))
+                .Add(new Text(os.FimReal ?? "---").SetFont(_regular))
+                .SetMultipliedLeading(espacamentoEntreLinhas));
+
+            doc.Add(new Paragraph()
+                .Add(new Text("Período de Garantia: ").SetFont(_bold))
+                .Add(new Text($"{os.InicioGarantia} até {os.FimGarantia}").SetFont(_regular))
+                .SetMultipliedLeading(espacamentoEntreLinhas));
+
+            doc.Add(new Paragraph()
+                .Add(new Text("Vigência: ").SetFont(_bold))
+                .Add(new Text($"{os.Garantia} dias").SetFont(_regular))
+                .SetMultipliedLeading(espacamentoEntreLinhas)
+                .SetMarginBottom(20));
+
+            // 3. Tabelas de Itens e Valores (conforme seu original)
+            AdicionarItens(doc, os);
+            AdicionarTotais(doc, os);
+
+            doc.Add(new Paragraph("\n"));
+            doc.Add(new LineSeparator(new SolidLine(0.5f)));
+
+            // Termo de Saída e Assinaturas (Mantidos iguais)
+            AdicionarTermoGarantiaDirecionado(doc, os);
+            AdicionarAssinaturas(doc);
+        }
+
+        private void AdicionarTermoGarantiaDirecionado(Document doc, OrdemServico os)
+        {
+            doc.Add(new Paragraph("CERTIFICADO DE GARANTIA").SetFont(_bold).SetFontSize(14).SetTextAlignment(TextAlignment.CENTER).SetMultipliedLeading(1.7f));
+
+            string dtInicio = DateTime.Now.ToShortDateString();
+            string dtFim = DateTime.Now.AddDays(90).ToShortDateString(); // Exemplo 90 dias
+
+            string texto = $"Pelo presente termo, a empresa garante a qualidade do serviço realizado: ({os.DescricaoSolucao}), " +
+                           $"pelo período legal de 90 dias, iniciando em {dtInicio} e com término em {dtFim}. " +
+                           "\n\nA garantia NÃO cobre: Quedas, contato com líquidos, selos de garantia rompidos ou reparos por terceiros.";
+
+            doc.Add(new Table(1).UseAllAvailableWidth().AddCell(new Cell().Add(new Paragraph(texto).SetTextAlignment(TextAlignment.JUSTIFIED)).SetPadding(10)));
+        }
 
         private void AdicionarCabecalho(Document doc, DadosLoja loja)
         {
@@ -136,9 +263,7 @@ namespace GRC.Telas
             doc.Add(new Paragraph("\n"));
             var line = new SolidLine();
             line.SetLineWidth(0.3f); // espessura da linha (quanto menor, mais fina)
-            var separator = new LineSeparator(line);
-            doc.Add(separator);
-            doc.Add(new Paragraph("\n"));  
+            var separator = new LineSeparator(line); 
         }
         private byte[] BitmapToBytes(Bitmap bitmap)
         {
@@ -146,85 +271,96 @@ namespace GRC.Telas
             bitmap.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
             return ms.ToArray();
         }
-        private void AdicionarTitulo(Document doc, OrdemServico os)
+        private void AdicionarTitulo(Document doc, OrdemServico os, bool ehEntrada)
         {
-            doc.Add(new Paragraph("ORDEM DE SERVIÇO DE MANUTENÇÃO")
-                .SetFontSize(16)
-                .SetTextAlignment(TextAlignment.CENTER));
+            // Define o texto e a cor com base no tipo
+            string textoTitulo = ehEntrada ? "ORDEM DE SERVIÇO" : "COMPROVANTE DE ENTREGA";
 
-            doc.Add(new Paragraph($"OS Nº: {os.Id}")
-                .SetTextAlignment(TextAlignment.CENTER));
+            // Criar uma tabela de uma célula para fazer o efeito de "faixa" no título
+            Table tituloTabela = new Table(1).UseAllAvailableWidth();
 
-            doc.Add(new Paragraph($"Data de Entrada: {os.DataEntrada}")
-                .SetTextAlignment(TextAlignment.CENTER));
-            doc.Add(new Paragraph("\n"));
+            Cell celulaTitulo = new Cell()
+                .Add(new Paragraph(textoTitulo)
+                    .SetFont(_bold)
+                    .SetFontSize(14)
+                    .SetFontColor(ColorConstants.BLACK))
+                .SetTextAlignment(TextAlignment.CENTER)
+                .SetBackgroundColor(new DeviceRgb(240, 240, 240)) // Cinza bem clarinho
+                .SetBorder(new SolidBorder(0.5f));
+
+            tituloTabela.AddCell(celulaTitulo);
+            doc.Add(tituloTabela);
+
+            // Linha de informações rápidas logo abaixo do título
+            var infoRapida = new Paragraph()
+                .SetTextAlignment(TextAlignment.RIGHT)
+                .SetFontSize(9)
+                .Add(new Text($"Nº CONTROLE: ").SetFont(_bold))
+                .Add(new Text(os.Id.ToString().PadLeft(6, '0')).SetFont(_regular))
+                .Add(new Text("  |  ").SetFont(_bold))
+                .Add(new Text($"EMISSÃO: ").SetFont(_bold))
+                .Add(new Text(DateTime.Now.ToString("dd/MM/yyyy HH:mm")).SetFont(_regular));
+
+            doc.Add(infoRapida);
+            doc.Add(new Paragraph("\n").SetFixedLeading(5f));
         }
         private void AdicionarDadosCliente(Document doc, OrdemServico os)
         {
-            var line = new SolidLine();
-            line.SetLineWidth(0.1f); // espessura da linha (quanto menor, mais fina)
-            var separator = new LineSeparator(line);
+            // Tabela de 2 colunas para economizar espaço vertical
+            var table = new Table(new float[] { 3, 2 }).UseAllAvailableWidth();
 
-            var table = new Table(1).UseAllAvailableWidth();
+            string telefones = (os.DadosCliente.Telefones != null && os.DadosCliente.Telefones.Any())
+                ? string.Join(" / ", os.DadosCliente.Telefones.Select(t => t.Descricao))
+                : "N/A";
 
-            PdfFont bold = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
-            PdfFont regular = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
+            // Coluna 1: Nome e Telefones
+            table.AddCell(new Cell().SetBorder(Border.NO_BORDER)
+                .Add(new Paragraph().Add(new Text("CLIENTE: ").SetFont(_bold)).Add(new Text(os.DadosCliente.Nome.ToUpper()).SetFont(_regular)))
+                .Add(new Paragraph().Add(new Text("TEL: ").SetFont(_bold)).Add(new Text(telefones).SetFont(_regular))));
 
-            var p1 = new Paragraph()
-                .Add(new Text("Cliente: ").SetFont(bold))
-                .Add(new Text(os.DadosCliente.Nome).SetFont(regular));
-
-            var p2 = new Paragraph()
-                .Add(new Text("Descrição do Serviço: ").SetFont(bold))
-                .Add(new Text(os.DescricaoSolucao).SetFont(regular));
-
-            table.AddCell(new Cell()
-                .Add(p1)
-                //.Add(new Paragraph("\n"))                
-               // .Add(p2)
-                .SetBorder(Border.NO_BORDER));
+            // Coluna 2: CPF/CNPJ
+            table.AddCell(new Cell().SetBorder(Border.NO_BORDER)
+                .Add(new Paragraph().Add(new Text("CPF/CNPJ: ").SetFont(_bold)).Add(new Text(os.DadosCliente.Identidade ?? "---").SetFont(_regular))));
 
             doc.Add(table);
-            doc.Add(separator);
-            //doc.Add(new Paragraph("\n"));
-            //doc.Add(separator);
-            doc.Add(new Paragraph("\n"));
+            doc.Add(new LineSeparator(new SolidLine(0.5f)));
+            doc.Add(new Paragraph("\n").SetFixedLeading(5f)); // Espaçamento mínimo
         }
         private void AdicionarItens(Document doc, OrdemServico os)
         {
-            var table = new Table(new float[] { 1, 4, 2, 2 })
-                .UseAllAvailableWidth();
+            float espacamentoEntreLinhas = 1.7f;
 
-            table.AddHeaderCell("Qtd");
-            table.AddHeaderCell("Peça / Item");
-            table.AddHeaderCell("Valor Unit.");
-            table.AddHeaderCell("Subtotal");
-
-            foreach (var item in os.ItensOrdemServico)
+            // 1. Serviço Realizado (Solução)
+            if (!string.IsNullOrWhiteSpace(os.DescricaoSolucao))
             {
-                table.AddCell(item.Quantidade.ToString());
-                table.AddCell(item.Descricao);
-                table.AddCell(item.ValorUnitario.ToString("C2"));
-                table.AddCell(item.Subtotal.ToString("C2"));
+                doc.Add(new Paragraph()
+                    .Add(new Text("Serviço realizado: ").SetFont(_bold))
+                    .Add(new Text(os.DescricaoSolucao).SetFont(_regular))
+                    .SetMultipliedLeading(espacamentoEntreLinhas)
+                    .SetMarginBottom(10));
             }
 
-            doc.Add(table);
+            // 2. Observações do Cliente
+            if (!string.IsNullOrWhiteSpace(os.ObservacoesCliente))
+            {
+                doc.Add(new Paragraph()
+                    .Add(new Text("Observações: ").SetFont(_bold))
+                    .Add(new Text(os.ObservacoesCliente).SetFont(_regular))
+                    .SetMultipliedLeading(espacamentoEntreLinhas)
+                    .SetMarginBottom(10));
+            }
         }
         private void AdicionarTotais(Document doc, OrdemServico os)
         {
+            var line = new SolidLine(0.1f);
+            var separator = new LineSeparator(line);
+
             decimal total = os.ItensOrdemServico.Sum(i => i.Subtotal);
 
-            doc.Add(new Paragraph($"\nTotal de Peças: {total:C2}"));
+            doc.Add(separator);
+            doc.Add(new Paragraph($"Total de Peças: {total:C2}").SetMultipliedLeading(1.7f));
         }
-        private void AdicionarTermo(Document doc)
-        {
-            
 
-            doc.Add(new Paragraph(
-                "O cliente autoriza a execução dos serviços descritos acima. " +
-                "A loja não se responsabiliza por dados não informados, peças não aprovadas ou serviços adicionais não autorizados."
-            ).SetFontSize(9));
-        }
         private void AdicionarAssinaturas(Document doc)
         {
             PdfFont bold = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
@@ -250,150 +386,54 @@ namespace GRC.Telas
 
             doc.Add(titulos);
         }
-        
-
-private void AdicionarTermoCiencia(Document doc)
-    {
-        PdfFont bold = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
-        PdfFont regular = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
-
-        // Espaço antes (se vier após outro conteúdo)
-        doc.Add(new Paragraph("\n"));
-
-        // TÍTULO
-        doc.Add(new Paragraph("TERMOS E CONDIÇÕES")
-            .SetFont(bold)
-            .SetTextAlignment(TextAlignment.CENTER)
-            .SetFontSize(12));
-
-        doc.Add(new Paragraph("\n"));
-
-        // 1. ORÇAMENTO
-        doc.Add(new Paragraph()
-            .Add(new Text("1. ORÇAMENTO\n").SetFont(bold))
-            .Add(new Text(
-                "O orçamento é realizado sem custo e não implica obrigação de reparo ou garantia de êxito, " +
-                "tratando-se de avaliação técnica inicial."
-            ).SetFont(regular)));
-
-        doc.Add(new Paragraph("\n"));
-
-        // 2. TENTATIVA DE REPARO
-        doc.Add(new Paragraph()
-            .Add(new Text("2. TENTATIVA DE REPARO\n").SetFont(bold))
-            .Add(new Text(
-                "Em serviços de reparo de placa, poderá haver tentativa de reparo sem garantia de sucesso, " +
-                "ainda que sejam aplicadas técnicas adequadas, em razão da complexidade e das condições do equipamento."
-            ).SetFont(regular)));
-
-        doc.Add(new Paragraph("\n"));
-
-        // 3. GARANTIA
-        doc.Add(new Paragraph()
-            .Add(new Text("3. GARANTIA\n").SetFont(bold))
-            .Add(new Text(
-                "A garantia cobre exclusivamente o serviço executado e/ou a peça substituída, conforme descrito " +
-                "na ordem de serviço no momento da finalização do atendimento."
-            ).SetFont(regular)));
-
-        doc.Add(new Paragraph("\n"));
-
-        // 4. O QUE A GARANTIA NÃO COBRE
-        doc.Add(new Paragraph()
-            .Add(new Text("4. O QUE A GARANTIA NÃO COBRE\n").SetFont(bold))
-            .Add(new Text("A garantia não cobre, em nenhuma hipótese:\n").SetFont(regular))
-            .Add(new Text(
-                "- defeitos em partes ou setores do equipamento não relacionados ao serviço realizado;\n" +
-                "- falhas decorrentes de mau uso, quedas, impactos, oxidação, umidade ou líquidos;\n" +
-                "- problemas causados por intervenção de terceiros após a realização do serviço."
-            ).SetFont(regular)));
-
-        doc.Add(new Paragraph("\n"));
-
-        // 5. EQUIPAMENTOS JÁ MANIPULADOS OU DANIFICADOS
-        doc.Add(new Paragraph()
-            .Add(new Text("5. EQUIPAMENTOS JÁ MANIPULADOS OU DANIFICADOS\n").SetFont(bold))
-            .Add(new Text(
-                "A empresa recebe equipamentos já abertos, reparados por terceiros, com sinais de oxidação, " +
-                "umidade ou inoperantes. Nesses casos, a garantia, quando aplicável, restringe-se apenas ao setor reparado."
-            ).SetFont(regular)));
-
-        doc.Add(new Paragraph("\n"));
-
-        // 6. LIMITAÇÃO DE RESPONSABILIDADE
-        doc.Add(new Paragraph()
-            .Add(new Text("6. LIMITAÇÃO DE RESPONSABILIDADE\n").SetFont(bold))
-            .Add(new Text(
-                "A R&F LabTech não se responsabiliza por defeitos posteriores que não possuam relação direta " +
-                "com o serviço executado, ainda que ocorram durante o período de garantia."
-            ).SetFont(regular)));
-
-        doc.Add(new Paragraph("\n"));
-
-        // 7. PRAZO PARA RETIRADA E DIÁRIA
-        doc.Add(new Paragraph()
-            .Add(new Text("7. PRAZO PARA RETIRADA E DIÁRIA\n").SetFont(bold))
-            .Add(new Text(
-                "Após a comunicação de conclusão do serviço ou liberação do equipamento, o cliente dispõe de " +
-                "20 (vinte) dias corridos para retirada sem custo adicional. Após esse prazo, será cobrada diária " +
-                "de armazenamento no valor de R$ 3,00 (três reais) por dia, até a retirada do equipamento."
-            ).SetFont(regular)));
-
-        doc.Add(new Paragraph("\n"));
-
-        // 8. ABANDONO DE EQUIPAMENTO
-        doc.Add(new Paragraph()
-            .Add(new Text("8. ABANDONO DE EQUIPAMENTO\n").SetFont(bold))
-            .Add(new Text(
-                "Equipamentos não retirados no prazo de 90 (noventa) dias, contados a partir da comunicação ao cliente, " +
-                "serão considerados abandonados, podendo ser destinados à venda ou descarte como forma de compensação " +
-                "dos custos de armazenamento, espaço físico e serviços prestados."
-            ).SetFont(regular)));
-
-        doc.Add(new Paragraph("\n"));
-
-        // 9. CIÊNCIA E ACEITE
-        doc.Add(new Paragraph()
-            .Add(new Text("9. CIÊNCIA E ACEITE\n").SetFont(bold))
-            .Add(new Text(
-                "Ao autorizar o serviço, o cliente declara estar ciente e de acordo com todos os termos acima."
-            ).SetFont(regular)));
-    }
 
 
-    private void AdicionarResumoCliente(Document doc, OrdemServico os)
+        private void AdicionarTermoCiencia(Document doc)
         {
-            decimal total = os.ItensOrdemServico.Sum(i => i.Subtotal);
+            doc.Add(new Paragraph("TERMOS DE SERVIÇO").SetFont(_bold).SetFontSize(14));
 
-            PdfFont bold = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
-            PdfFont regular = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
+            // Texto ultra resumido mas com validade jurídica (CDC)
+            string resumoLegal =
+                "1. O orçamento é gratuito.\n\n2. Em casos de oxidação ou queda, o aparelho pode parar de funcionar " +
+                "totalmente durante a tentativa de reparo devido à instabilidade do hardware. \n\n3. A garantia de 90 dias " +
+                "refere-se apenas ao serviço executado, sendo anulada por mau uso, selo rompido ou contato com líquidos. " +
+                "\n\n4. Aparelhos não retirados em 90 dias serão considerados abandonados (Art. 1.275 CC) e descartados ou " +
+                "vendidos para cobrir custos de armazenamento.";
 
-            var line = new SolidLine();
-            line.SetLineWidth(0.1f);
-            var separator = new LineSeparator(line);
-
-            doc.Add(new Paragraph()
-                .Add(new Text("Descrição do Serviço: ").SetFont(bold))
-                .Add(new Text(os.DescricaoSolucao).SetFont(regular)));
-
-            doc.Add(new Paragraph()
-                .Add(new Text("Data de Entrada: ").SetFont(bold))
-                .Add(new Text(os.DataEntrada).SetFont(regular)));
-
-            doc.Add(new Paragraph()
-                .Add(new Text("Previsão de Entrega: ").SetFont(bold))
-                .Add(new Text(os.FimPrevisto ?? " ").SetFont(regular)));
-
-            doc.Add(new Paragraph("\n"));
-            doc.Add(separator);
-
-            doc.Add(new Paragraph()
-                .Add(new Text("Valor Total: ").SetFont(bold))
-                .Add(new Text(total.ToString("C2")).SetFont(regular)));
-
-            doc.Add(new Paragraph("\n"));
+            doc.Add(new Paragraph(resumoLegal)
+                .SetFontSize(11)
+                .SetTextAlignment(TextAlignment.JUSTIFIED)
+                .SetMultipliedLeading(0.9f)); // Diminui o espaçamento entre linhas
         }
+        private void ExecutarImpressao(string caminho)
+        {
+            using (PrintDialog pd = new PrintDialog())
+            {
+                if (pd.ShowDialog() == DialogResult.OK)
+                {
+                    ProcessStartInfo info = new ProcessStartInfo { Verb = "print", FileName = caminho, CreateNoWindow = true, WindowStyle = ProcessWindowStyle.Hidden };
+                    Process.Start(info);
+                }
+            }
+        }
+        // Importar as DLLs do Windows para mover o formulário
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
 
+        // Constantes para a mensagem de movimento
+        private const int WM_NCLBUTTONDOWN = 0xA1;
+        private const int HT_CAPTION = 0x2;
+
+        private void SelecaoImpressao_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+            }
+        }
     }
 
 }

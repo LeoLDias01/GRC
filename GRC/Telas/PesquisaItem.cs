@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +19,18 @@ namespace GRC.Telas
     {
         public List<Item> _item = new List<Item>();
         ServiceItemEstoque _service = new ServiceItemEstoque();
+
+
+        // Importar as DLLs do Windows para mover o formulário
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        // Constantes para a mensagem de movimento
+        private const int WM_NCLBUTTONDOWN = 0xA1;
+        private const int HT_CAPTION = 0x2;
+
         public PesquisaItem()
         {
             InitializeComponent();
@@ -62,7 +75,7 @@ namespace GRC.Telas
                     if (estoque.Id > 0)
                     {
                         dgvItens.Rows.Add(
-                        !string.IsNullOrWhiteSpace(estoque.FotoItem) ? new Bitmap(CriptoImagem.Base64ToImage(estoque.FotoItem), new Size(100, 100)) : null,
+                        !string.IsNullOrWhiteSpace(estoque.FotoItem) ? new Bitmap(CriptoImagem.Base64ToImage(estoque.FotoItem), new Size(80, 80)) : null,
                         estoque.Id.ToString(),
                         estoque.Descricao,
                         estoque.Quatidade.ToString(),
@@ -123,6 +136,25 @@ namespace GRC.Telas
         private void PesquisaItem_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();   
+        }
+
+        private void PesquisaItem_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+            }
+        }
+
+        private void btnAddItem_Click(object sender, EventArgs e)
+        {
+            new CadastroItem().ShowDialog();
         }
     }
 }

@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +18,16 @@ namespace GRC.Telas
         private int _id = 0;
         ServiceTipo _services = new ServiceTipo();
 
+        // Importar as DLLs do Windows para mover o formulário
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        // Constantes para a mensagem de movimento
+        private const int WM_NCLBUTTONDOWN = 0xA1;
+        private const int HT_CAPTION = 0x2;
+
         public TipoServico()
         {
             InitializeComponent();
@@ -24,16 +35,7 @@ namespace GRC.Telas
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (!ValidaCampo())
-                return;
-
-            Tipo tipo = new Tipo();
-            tipo.Id = _id;
-            tipo.Descricao = txtCategoria.Text;
-            _id = _services.SalvaTipoServico(tipo);
-            if (_id > 0)
-                txtCategoria.Clear();
-            CarregaDados();
+           
         }
         private void CarregaDados()
         {
@@ -91,6 +93,34 @@ namespace GRC.Telas
         private void TipoServico_Load(object sender, EventArgs e)
         {
             CarregaDados();
+        }
+
+        private void txtCategoria_TrailingIconClick(object sender, EventArgs e)
+        {
+            if (!ValidaCampo())
+                return;
+
+            Tipo tipo = new Tipo();
+            tipo.Id = _id;
+            tipo.Descricao = txtCategoria.Text;
+            _id = _services.SalvaTipoServico(tipo);
+            if (_id > 0)
+                txtCategoria.Clear();
+            CarregaDados();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void TipoServico_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+            }
         }
     }
 }

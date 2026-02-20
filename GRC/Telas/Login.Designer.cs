@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.cpnLogin = new GRC.Componentes.CustomPanel();
+            this.pnBaixo = new GRC.Componentes.RoundedPanel();
+            this.lbAviso = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnSuperior = new GRC.Componentes.CustomPanel();
             this.btnSair = new GRC.Componentes.CustomButton();
@@ -38,8 +40,6 @@
             this.txtUsuario = new MaterialSkin.Controls.MaterialTextBox();
             this.pcbImage = new System.Windows.Forms.PictureBox();
             this.pcbLogo = new System.Windows.Forms.PictureBox();
-            this.lbAviso = new System.Windows.Forms.Label();
-            this.pnBaixo = new GRC.Componentes.RoundedPanel();
             this.cpnLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
@@ -68,6 +68,29 @@
             this.cpnLogin.TabIndex = 0;
             this.cpnLogin.TamanhoBorda = 0;
             this.cpnLogin.TamanhoRaio = 15;
+            // 
+            // pnBaixo
+            // 
+            this.pnBaixo.BackColor = System.Drawing.Color.Transparent;
+            this.pnBaixo.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))));
+            this.pnBaixo.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.pnBaixo.CornerRadius = 10;
+            this.pnBaixo.GradientAngle = 45F;
+            this.pnBaixo.Location = new System.Drawing.Point(-14, 564);
+            this.pnBaixo.Name = "pnBaixo";
+            this.pnBaixo.Size = new System.Drawing.Size(962, 10);
+            this.pnBaixo.TabIndex = 11;
+            // 
+            // lbAviso
+            // 
+            this.lbAviso.AutoSize = true;
+            this.lbAviso.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Bold);
+            this.lbAviso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbAviso.Location = new System.Drawing.Point(45, 254);
+            this.lbAviso.Name = "lbAviso";
+            this.lbAviso.Size = new System.Drawing.Size(212, 18);
+            this.lbAviso.TabIndex = 10;
+            this.lbAviso.Text = "Entre com seu usuário e senha";
             // 
             // label1
             // 
@@ -108,9 +131,9 @@
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.Font = new System.Drawing.Font("Roboto", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.ForeColor = System.Drawing.Color.White;
-            this.btnSair.Location = new System.Drawing.Point(66, 481);
+            this.btnSair.Location = new System.Drawing.Point(48, 487);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(242, 43);
+            this.btnSair.Size = new System.Drawing.Size(287, 43);
             this.btnSair.TabIndex = 7;
             this.btnSair.TamanhoBorda = 0;
             this.btnSair.TamanhoRaio = 20;
@@ -132,9 +155,9 @@
             this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEntrar.Font = new System.Drawing.Font("Roboto", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEntrar.ForeColor = System.Drawing.Color.White;
-            this.btnEntrar.Location = new System.Drawing.Point(66, 421);
+            this.btnEntrar.Location = new System.Drawing.Point(48, 429);
             this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(242, 43);
+            this.btnEntrar.Size = new System.Drawing.Size(287, 43);
             this.btnEntrar.TabIndex = 6;
             this.btnEntrar.TamanhoBorda = 0;
             this.btnEntrar.TamanhoRaio = 20;
@@ -213,29 +236,6 @@
             this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbLogo.TabIndex = 0;
             this.pcbLogo.TabStop = false;
-            // 
-            // lbAviso
-            // 
-            this.lbAviso.AutoSize = true;
-            this.lbAviso.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Bold);
-            this.lbAviso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbAviso.Location = new System.Drawing.Point(45, 254);
-            this.lbAviso.Name = "lbAviso";
-            this.lbAviso.Size = new System.Drawing.Size(212, 18);
-            this.lbAviso.TabIndex = 10;
-            this.lbAviso.Text = "Entre com seu usuário e senha";
-            // 
-            // pnBaixo
-            // 
-            this.pnBaixo.BackColor = System.Drawing.Color.Transparent;
-            this.pnBaixo.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))));
-            this.pnBaixo.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.pnBaixo.CornerRadius = 10;
-            this.pnBaixo.GradientAngle = 45F;
-            this.pnBaixo.Location = new System.Drawing.Point(-14, 564);
-            this.pnBaixo.Name = "pnBaixo";
-            this.pnBaixo.Size = new System.Drawing.Size(962, 10);
-            this.pnBaixo.TabIndex = 11;
             // 
             // Login
             // 

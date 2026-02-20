@@ -190,7 +190,7 @@
             this.customPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("customPictureBox1.Image")));
             this.customPictureBox1.Location = new System.Drawing.Point(3, 682);
             this.customPictureBox1.Name = "customPictureBox1";
-            this.customPictureBox1.Size = new System.Drawing.Size(225, 44);
+            this.customPictureBox1.Size = new System.Drawing.Size(243, 44);
             this.customPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.customPictureBox1.TabIndex = 7;
             this.customPictureBox1.TabStop = false;
@@ -398,7 +398,7 @@
             this.label3.ForeColor = System.Drawing.Color.ForestGreen;
             this.label3.Location = new System.Drawing.Point(69, 19);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(139, 19);
+            this.label3.Size = new System.Drawing.Size(140, 19);
             this.label3.TabIndex = 1;
             this.label3.Text = "Vendas Efetuadas";
             // 
@@ -478,7 +478,7 @@
             this.label8.ForeColor = System.Drawing.Color.Crimson;
             this.label8.Location = new System.Drawing.Point(71, 17);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(107, 19);
+            this.label8.Size = new System.Drawing.Size(106, 19);
             this.label8.TabIndex = 13;
             this.label8.Text = "OS atrasadas";
             // 
@@ -535,7 +535,7 @@
             this.label6.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label6.Location = new System.Drawing.Point(69, 17);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(122, 19);
+            this.label6.Size = new System.Drawing.Size(124, 19);
             this.label6.TabIndex = 10;
             this.label6.Text = "Reparos a fazer";
             // 
@@ -592,7 +592,7 @@
             this.label4.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.label4.Location = new System.Drawing.Point(70, 17);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(154, 19);
+            this.label4.Size = new System.Drawing.Size(155, 19);
             this.label4.TabIndex = 7;
             this.label4.Text = "Reparos Finalizados";
             // 
@@ -719,7 +719,7 @@
             this.lbNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.lbNome.Location = new System.Drawing.Point(60, 25);
             this.lbNome.Name = "lbNome";
-            this.lbNome.Size = new System.Drawing.Size(105, 19);
+            this.lbNome.Size = new System.Drawing.Size(106, 19);
             this.lbNome.TabIndex = 1;
             this.lbNome.Text = "Rayner Bryan";
             // 
