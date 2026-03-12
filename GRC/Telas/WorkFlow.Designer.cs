@@ -32,7 +32,6 @@
             this.tlpMenu = new System.Windows.Forms.TableLayoutPanel();
             this.pcbLogo = new System.Windows.Forms.PictureBox();
             this.btnFornecedor = new GRC.Componentes.CustomButton();
-            this.button9 = new System.Windows.Forms.Button();
             this.customPictureBox1 = new GRC.Componentes.CustomPictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnEstoque = new GRC.Componentes.CustomButton();
@@ -91,7 +90,6 @@
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMenu.Controls.Add(this.pcbLogo, 0, 1);
             this.tlpMenu.Controls.Add(this.btnFornecedor, 0, 10);
-            this.tlpMenu.Controls.Add(this.button9, 0, 11);
             this.tlpMenu.Controls.Add(this.customPictureBox1, 0, 14);
             this.tlpMenu.Controls.Add(this.label1, 0, 3);
             this.tlpMenu.Controls.Add(this.btnEstoque, 0, 2);
@@ -142,8 +140,9 @@
             this.btnFornecedor.CorBotao = System.Drawing.Color.Transparent;
             this.btnFornecedor.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
             this.btnFornecedor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFornecedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnFornecedor.FlatAppearance.BorderSize = 0;
-            this.btnFornecedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnFornecedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.btnFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFornecedor.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFornecedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
@@ -151,34 +150,13 @@
             this.btnFornecedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFornecedor.Location = new System.Drawing.Point(3, 411);
             this.btnFornecedor.Name = "btnFornecedor";
-            this.btnFornecedor.Size = new System.Drawing.Size(217, 44);
+            this.btnFornecedor.Size = new System.Drawing.Size(243, 44);
             this.btnFornecedor.TabIndex = 4;
             this.btnFornecedor.TamanhoBorda = 0;
             this.btnFornecedor.TamanhoRaio = 15;
             this.btnFornecedor.Text = "        Fornecedores";
             this.btnFornecedor.UseVisualStyleBackColor = false;
             this.btnFornecedor.Click += new System.EventHandler(this.btnFornecedor_Click);
-            // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.Transparent;
-            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.Enabled = false;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
-            this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(3, 461);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(217, 44);
-            this.button9.TabIndex = 3;
-            this.button9.Text = "        Finalizadores";
-            this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button9.UseMnemonic = false;
-            this.button9.UseVisualStyleBackColor = false;
             // 
             // customPictureBox1
             // 
@@ -263,8 +241,9 @@
             this.btnOrdemServiço.CorBotao = System.Drawing.Color.Transparent;
             this.btnOrdemServiço.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
             this.btnOrdemServiço.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOrdemServiço.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnOrdemServiço.FlatAppearance.BorderSize = 0;
-            this.btnOrdemServiço.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnOrdemServiço.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.btnOrdemServiço.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrdemServiço.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrdemServiço.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
@@ -272,7 +251,7 @@
             this.btnOrdemServiço.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOrdemServiço.Location = new System.Drawing.Point(3, 161);
             this.btnOrdemServiço.Name = "btnOrdemServiço";
-            this.btnOrdemServiço.Size = new System.Drawing.Size(225, 44);
+            this.btnOrdemServiço.Size = new System.Drawing.Size(243, 44);
             this.btnOrdemServiço.TabIndex = 6;
             this.btnOrdemServiço.TamanhoBorda = 0;
             this.btnOrdemServiço.TamanhoRaio = 7;
@@ -288,8 +267,9 @@
             this.btnVendas.CorBotao = System.Drawing.Color.Transparent;
             this.btnVendas.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
             this.btnVendas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVendas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnVendas.FlatAppearance.BorderSize = 0;
-            this.btnVendas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnVendas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.btnVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVendas.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVendas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
@@ -297,7 +277,7 @@
             this.btnVendas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVendas.Location = new System.Drawing.Point(3, 211);
             this.btnVendas.Name = "btnVendas";
-            this.btnVendas.Size = new System.Drawing.Size(217, 44);
+            this.btnVendas.Size = new System.Drawing.Size(243, 44);
             this.btnVendas.TabIndex = 6;
             this.btnVendas.TamanhoBorda = 0;
             this.btnVendas.TamanhoRaio = 15;
@@ -311,8 +291,9 @@
             // 
             this.btnMovimentacoes.BackColor = System.Drawing.Color.Transparent;
             this.btnMovimentacoes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMovimentacoes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnMovimentacoes.FlatAppearance.BorderSize = 0;
-            this.btnMovimentacoes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnMovimentacoes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.btnMovimentacoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMovimentacoes.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
             this.btnMovimentacoes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
@@ -320,7 +301,7 @@
             this.btnMovimentacoes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMovimentacoes.Location = new System.Drawing.Point(3, 361);
             this.btnMovimentacoes.Name = "btnMovimentacoes";
-            this.btnMovimentacoes.Size = new System.Drawing.Size(217, 44);
+            this.btnMovimentacoes.Size = new System.Drawing.Size(243, 44);
             this.btnMovimentacoes.TabIndex = 4;
             this.btnMovimentacoes.Text = "        Movimentações";
             this.btnMovimentacoes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -332,8 +313,9 @@
             // 
             this.btnClientes.BackColor = System.Drawing.Color.Transparent;
             this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClientes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnClientes.FlatAppearance.BorderSize = 0;
-            this.btnClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClientes.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
             this.btnClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
@@ -341,7 +323,7 @@
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClientes.Location = new System.Drawing.Point(3, 261);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(217, 44);
+            this.btnClientes.Size = new System.Drawing.Size(243, 44);
             this.btnClientes.TabIndex = 3;
             this.btnClientes.Text = "        Clientes";
             this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -356,8 +338,9 @@
             this.customButton1.CorBotao = System.Drawing.Color.Transparent;
             this.customButton1.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
             this.customButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customButton1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.customButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
@@ -365,13 +348,14 @@
             this.customButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.customButton1.Location = new System.Drawing.Point(3, 311);
             this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(222, 44);
+            this.customButton1.Size = new System.Drawing.Size(243, 44);
             this.customButton1.TabIndex = 9;
             this.customButton1.TamanhoBorda = 0;
             this.customButton1.TamanhoRaio = 7;
             this.customButton1.Text = "        Estoque";
             this.customButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.customButton1.UseVisualStyleBackColor = false;
+            this.customButton1.Click += new System.EventHandler(this.customButton1_Click);
             // 
             // customPictureBox2
             // 
@@ -806,6 +790,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.btnMaximize);
             this.Controls.Add(this.btnMinimize);
@@ -851,7 +836,6 @@
         private System.Windows.Forms.TableLayoutPanel tlpMenu;
         private System.Windows.Forms.PictureBox pcbLogo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button btnClientes;
         private Componentes.CustomButton btnFornecedor;
         private Componentes.CustomButton btnEstoque;

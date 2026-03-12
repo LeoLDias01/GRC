@@ -37,7 +37,7 @@ namespace GRC.Telas
             /*_inicializacao.VerificaBanco();*/
             new Login().ShowDialog();
             this.Visible = true;
-            //tdbMenuUsuario.Text = Sessao.UsuarioNome;
+            lbNome.Text = Sessao.UsuarioNome;
         }
 
         private void btnFornecedor_Click(object sender, EventArgs e)
@@ -47,7 +47,7 @@ namespace GRC.Telas
 
         private void btnEstoque_Click(object sender, EventArgs e)
         {
-            new ItemEstoque().ShowDialog();
+            
         }
 
         private void btnOrdemServiço_Click(object sender, EventArgs e)
@@ -120,6 +120,11 @@ namespace GRC.Telas
         private void btnMaximize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void customButton1_Click(object sender, EventArgs e)
+        {
+            new ItemEstoque().ShowDialog();
         }
     }
 }

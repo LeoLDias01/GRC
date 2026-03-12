@@ -109,10 +109,6 @@ namespace GRC.Telas
             CarregaDados();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void TipoServico_MouseDown(object sender, MouseEventArgs e)
         {
@@ -121,6 +117,11 @@ namespace GRC.Telas
                 ReleaseCapture(); // Libera o mouse para a operação
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -60,19 +60,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Caixa.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Composicao.cs" />
     <Compile Include="Models\DadosLoja.cs" />
     <Compile Include="Models\Email.cs" />
     <Compile Include="Models\Endereco.cs" />
+    <Compile Include="Models\Finalizadores.cs" />
     <Compile Include="Models\Fornecedores.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\ItemCard.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Movimentacao.cs" />
     <Compile Include="Models\OrdemServico.cs" />
+    <Compile Include="Models\Sangria.cs" />
     <Compile Include="Models\Telefone.cs" />
     <Compile Include="Models\Tipo.cs" />
+    <Compile Include="Models\Venda.cs" />
     <Compile Include="Models\ViaCepResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

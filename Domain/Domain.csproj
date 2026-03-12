@@ -112,6 +112,7 @@
     <Compile Include="Repository\Database_MovimentoEstoque.cs" />
     <Compile Include="Repository\Database_OrdemServico.cs" />
     <Compile Include="Repository\Database_Tipo.cs" />
+    <Compile Include="Repository\Database_Venda.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj">
