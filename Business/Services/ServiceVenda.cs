@@ -12,17 +12,60 @@ namespace Business.Services
     public class ServiceVenda
     {
         private Database_Venda _database = new Database_Venda();
+
+        #region ..:: Dados do Caixa ::..
         public List<Caixa> VerificaCaixa()
         {
             try
             {
                 return _database.VerificaCaixa();
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("Erro ao buscar tipo de serviço: " + ex.Message, "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
+        public int AberturaCaixa(Caixa caixa)
+        {
+            try
+            {
+                return _database.AberturaCaixa(caixa);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao abrir caixa: " + ex.Message, "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1;
+            }
+        }
+        public List<Caixa> CarregaDadosCaixa(int id)
+        {
+            try
+            {
+                return _database.CarregaDadosCaixa(id);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao abrir caixa: " + ex.Message, "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+                
+            }
+        }
+        #endregion
+
+        #region ..:: ItensCaixa ::..
+
+        public List<Tipo> BuscaGruposItens()
+        {
+            try
+            {
+                return _database.BuscaGruposItens();
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        #endregion
     }
 }

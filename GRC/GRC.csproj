@@ -212,11 +212,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Telas\AberturaCaixa.cs">
+    <Compile Include="Telas\CaixaVenda.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Telas\AberturaCaixa.Designer.cs">
-      <DependentUpon>AberturaCaixa.cs</DependentUpon>
+    <Compile Include="Telas\CaixaVenda.Designer.cs">
+      <DependentUpon>CaixaVenda.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\AlertBox.cs">
       <SubType>Form</SubType>
@@ -366,8 +366,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Telas\AberturaCaixa.resx">
-      <DependentUpon>AberturaCaixa.cs</DependentUpon>
+    <EmbeddedResource Include="Telas\CaixaVenda.resx">
+      <DependentUpon>CaixaVenda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\AlertBox.resx">
       <DependentUpon>AlertBox.cs</DependentUpon>

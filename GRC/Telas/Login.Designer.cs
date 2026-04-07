@@ -136,7 +136,7 @@
             this.btnSair.Size = new System.Drawing.Size(287, 43);
             this.btnSair.TabIndex = 7;
             this.btnSair.TamanhoBorda = 0;
-            this.btnSair.TamanhoRaio = 20;
+            this.btnSair.TamanhoRaio = 10;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
@@ -160,7 +160,7 @@
             this.btnEntrar.Size = new System.Drawing.Size(287, 43);
             this.btnEntrar.TabIndex = 6;
             this.btnEntrar.TamanhoBorda = 0;
-            this.btnEntrar.TamanhoRaio = 20;
+            this.btnEntrar.TamanhoRaio = 10;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = false;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
@@ -241,7 +241,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(961, 599);
             this.Controls.Add(this.cpnLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -852,10 +852,10 @@
             // 
             // pnItens
             // 
-            this.pnItens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.pnItens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
             this.pnItens.Controls.Add(this.flpItens);
             this.pnItens.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.pnItens.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.pnItens.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
             this.pnItens.CorTextoBotao = System.Drawing.Color.White;
             this.pnItens.ForeColor = System.Drawing.Color.White;
             this.pnItens.Location = new System.Drawing.Point(6, 67);
@@ -870,7 +870,7 @@
             this.flpItens.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flpItens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.flpItens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
             this.flpItens.Location = new System.Drawing.Point(0, 12);
             this.flpItens.Name = "flpItens";
             this.flpItens.Size = new System.Drawing.Size(535, 338);
@@ -1348,7 +1348,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1138, 706);
             this.Controls.Add(this.painelRadius2);
             this.Controls.Add(this.painelRadius3);

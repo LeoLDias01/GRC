@@ -154,7 +154,7 @@
             this.btnFornecedor.TabIndex = 4;
             this.btnFornecedor.TamanhoBorda = 0;
             this.btnFornecedor.TamanhoRaio = 15;
-            this.btnFornecedor.Text = "        Fornecedores";
+            this.btnFornecedor.Text = " Fornecedores";
             this.btnFornecedor.UseVisualStyleBackColor = false;
             this.btnFornecedor.Click += new System.EventHandler(this.btnFornecedor_Click);
             // 
@@ -789,7 +789,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.btnMaximize);

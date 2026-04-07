@@ -1,6 +1,8 @@
 ﻿using Business.Services;
 using Business.Session;
 using Data.Models;
+using GRC.Componentes;
+using GRC.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -112,25 +114,120 @@ namespace GRC.Telas
 
         private void txtCliente_TrailingIconClick(object sender, EventArgs e)
         {
-            PesquisaRapidaCliente frm = new PesquisaRapidaCliente();
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                _cliente = frm.ClienteSelecionado;
-                txtCliente.Text = _cliente.Nome;
-                txtIdentidade.Text = _cliente.Identidade;
-            }
+            
         }
 
         private void Vendas_Load(object sender, EventArgs e)
         {
-            lbUser.Text = Sessao.UsuarioNome;
-            var dadosCaixa = _service.VerificaCaixa();
+            // Deixo a tela de vendas invisível
+            this.Visible = false;
 
-            if(dadosCaixa == null)
+            // Busca o usuário logado no momento
+            lbUser.Text = Sessao.UsuarioNome;
+
+            #region Verificação de Caixa
+
+            // Buscando do banco dados de caixa aberto, se não houver o retorno é null
+            var validacaoCaixa = _service.VerificaCaixa();
+
+
+            // Caso 1: Nenhum caixa aberto
+            if (validacaoCaixa.FirstOrDefault() == null)
             {
-               new AberturaCaixa().ShowDialog();
+                
+                if (new AlertBox(Color.Goldenrod, Color.Lime, Color.Yellow, Resources.Warning,
+                     "CAIXA", "O caixa está fechado no momento! Para conseguir vender abra o caixa... ", 
+                     "Podemos iniciar a abertura?", true).ShowDialog() == DialogResult.Yes)
+                {
+                    GerenciamentoAbertura(1); // Abertura
+                }
+                else
+                {
+                    this.Close();
+                }
+            }
+            // Caso 2: Caixa aberto com outra data 
+            else if (validacaoCaixa.FirstOrDefault().DataAbertura == DateTime.Today)
+            {
+                if (new AlertBox(Color.Goldenrod, Color.Lime, Color.Yellow, Resources.Warning,
+                      "CAIXA", "O caixa está aberto com uma data diferente\nFeche o caixa anterior e abra um novo com a data de hoje",
+                      "Podemos iniciar o fechamento?", true).ShowDialog() == DialogResult.Yes)
+                {
+                    GerenciamentoAbertura(2); // Fechamento
+
+                    if (new AlertBox(Color.Goldenrod, Color.Lime, Color.Yellow, Resources.Warning,
+                    "CAIXA", "O caixa está fechado no momento! Para conseguir vender abra o caixa... ",
+                    "Podemos iniciar a abertura?", true).ShowDialog() == DialogResult.Yes)
+                    {
+                        GerenciamentoAbertura(1); // Abertura
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    this.Close();
+                }
+            }
+            else
+            {
+                // CENÁRIO: Caixa já está aberto
+                 _caixa.Id = (int)validacaoCaixa.FirstOrDefault().Id;
+                 CarregaDadosCaixa();
+            }
+            #endregion
+
+
+            flpGrupos.Controls.Clear();
+            var gruposItens = _service.BuscaGruposItens();
+
+            // Botão "TODOS" para limpar o filtro
+            AdicionarBotaoGrupo("Todos", Color.SlateGray);
+
+            foreach (var grupo in gruposItens)
+            {
+                AdicionarBotaoGrupo(grupo.Descricao, Color.FromArgb(0, 149, 198), grupo.Id);
+            }
+           
+
+        }
+        private void GerenciamentoAbertura(int operacao)
+        {
+            // Abre a sua tela de abertura de caixa
+            using (var frm = new AberturaCaixa(operacao))
+            {
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    // Se ele abriu o caixa com sucesso, você pega o novo ID e libera a tela
+
+                    _caixa.Id = frm._dadosCaixa.Id;
+                    CarregaDadosCaixa();
+                    this.Visible = true;
+                }
+                else
+                {
+                    this.Close(); // Se ele cancelar a abertura, fecha a tela de vendas
+                }
             }
 
+        }
+
+        private void CarregaDadosCaixa()
+        {
+            var caixa = _service.CarregaDadosCaixa(_caixa.Id);
+            if (caixa != null)
+            {
+
+                foreach (var dados in caixa)
+                {
+                    lbDataAbertura.Text = $"Abertura: {dados.DataAbertura.ToString("dd/MM/yyyy HH:mm")}";
+                    lbSaldo.Text = $"Saldo: {dados.SaldoCaixa.ToString("C2")}";
+                    lbUser.Text = dados.NomeUsuario;
+                }
+
+            }
         }
 
         private void btnNovoItem_Click(object sender, EventArgs e)
@@ -141,6 +238,80 @@ namespace GRC.Telas
         private void btnNovoCliente_Click(object sender, EventArgs e)
         {
             new CadastroCliente().ShowDialog();
+        }
+        private void AdicionarBotaoGrupo(string nome, Color cor, int idGrupo = 0)
+        {
+            CustomButton btn = new CustomButton();
+            btn.Text = nome;
+            btn.Size = new Size(120, 40); // Ajuste conforme seu layout
+            btn.BackColor = cor;
+            btn.ForeColor = Color.White;
+            btn.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            btn.TamanhoRaio = 15;
+            btn.TamanhoBorda = 2;
+            btn.CorBorda = Color.White;
+            btn.Cursor = Cursors.Hand;
+            btn.Tag = idGrupo;
+
+            // Evento de clique
+            btn.Click += (s, e) => {
+                var btnClicado = (CustomButton)s;
+                int idFiltro = (int)btnClicado.Tag;
+
+                // Se o ID for 0, passamos null para o filtro mostrar todos
+                FiltrarItensPorGrupo(idFiltro == 0 ? (int?)null : idFiltro);
+            };
+
+            flpGrupos.Controls.Add(btn);
+        }
+        private void FiltrarItensPorGrupo(int? idGrupoFiltro)
+        {
+          //  flpItens.SuspendLayout();
+
+            foreach (Control ctrl in flpItens.Controls)
+            {
+                // Se idGrupoFiltro for null (Botão TODOS), mostra tudo.
+                // Se não, tenta converter a Tag do Card para int e compara.
+                if (idGrupoFiltro == null)
+                {
+                    ctrl.Visible = true;
+                }
+                else
+                {
+                    // Verifica se a Tag do controle é igual ao ID do grupo clicado
+                    if (ctrl.Tag != null && int.TryParse(ctrl.Tag.ToString(), out int idGrupoCard))
+                    {
+                        ctrl.Visible = (idGrupoCard == idGrupoFiltro);
+                    }
+                    else
+                    {
+                        ctrl.Visible = false;
+                    }
+                }
+            }
+
+            //flpItens.ResumeLayout();
+        }
+
+        private void lbCliente_Click(object sender, EventArgs e)
+        {
+            BuscaCliente();
+        }
+
+        private void lbIdentidadeCliente_Click(object sender, EventArgs e)
+        {
+            BuscaCliente();
+        }
+        private void BuscaCliente()
+        {
+            PesquisaRapidaCliente frm = new PesquisaRapidaCliente(); if (frm.ShowDialog() == DialogResult.OK)
+
+            {
+                _cliente = frm.ClienteSelecionado;
+
+                lbCliente.Text = $"Cliente: {_cliente.Nome}          CPF/CNPJ: {_cliente.Identidade}";
+
+            }      
         }
     }
 }
