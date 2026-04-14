@@ -272,6 +272,12 @@
     <Compile Include="Telas\Fabricante.Designer.cs">
       <DependentUpon>Fabricante.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\Finalizadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Finalizadores.Designer.cs">
+      <DependentUpon>Finalizadores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Fornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -396,6 +402,9 @@
     <EmbeddedResource Include="Telas\Fabricante.resx">
       <DependentUpon>Fabricante.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Finalizadores.resx">
+      <DependentUpon>Finalizadores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\Fornecedor.resx">
       <DependentUpon>Fornecedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -464,6 +473,10 @@
     <None Include="Resources\Confirm.png" />
     <None Include="Resources\Warning.png" />
     <None Include="Resources\Error.png" />
+    <None Include="Resources\logoCredito.png" />
+    <None Include="Resources\logoDebito.png" />
+    <None Include="Resources\logoDinheiro.png" />
+    <None Include="Resources\logoPix.png" />
     <Content Include="RF_Icone.ico" />
   </ItemGroup>
   <ItemGroup>

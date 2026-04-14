@@ -17,6 +17,6 @@ namespace Data.Models
         public decimal Desconto { get; set; }
         public List<OrdemServico> Os { get; set; } = new List<OrdemServico>();
         public List<Item> Itens { get; set; } = new List<Item>();
-        public List<Finalizadores> Finalizadores { get; set; } = new List<Finalizadores>();
+        public List<Finalizador> Finalizadores { get; set; } = new List<Finalizador>();
     }
 }

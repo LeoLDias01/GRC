@@ -42,11 +42,11 @@ namespace GRC.Telas
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HT_CAPTION = 0x2;
 
-        public AberturaCaixa(int operacao = 0)
+        public AberturaCaixa(int operacao = 0, int idCaixa = 0)
         {
             InitializeComponent();
             _operacao = operacao;
-
+            _dadosCaixa.Id = idCaixa;
         }
 
    
@@ -60,6 +60,7 @@ namespace GRC.Telas
         {
             if (_operacao == 1)
             {
+                tbcCaixa.SelectedTab = tbpAbertura;
                 lbTitulo.Text = "Abertura de Caixa";
                 _dadosCaixa.DataAbertura = DateTime.Now;
                 lbData.Text = $"Data de Abertura: {_dadosCaixa.DataAbertura.ToString("dd/MM/yyyy - HH:mm")}";
@@ -70,10 +71,11 @@ namespace GRC.Telas
             }
             else if(_operacao == 2)
             {
+                tbcCaixa.SelectedTab = tbpFechamento;
                 lbTitulo.Text = "Fechamento de Caixa";
                 _dadosCaixa.DataFechamento = DateTime.Now;
-                lbData.Text = $"Data de Fechamento: {_dadosCaixa.DataFechamento.ToString("dd/MM/yyyy - HH:mm")}";
-                lbUser.Text = $"{Sessao.UsuarioNome}";
+                lbDataFechamento.Text = $"Data de Fechamento: {_dadosCaixa.DataFechamento.ToString("dd/MM/yyyy - HH:mm")}";
+                lbUsuarioFe.Text = $"{Sessao.UsuarioNome}";
                 //_dadosCaixa.Id = 0; // ABERTURA NOVA
                 _dadosCaixa.Usuario = Sessao.UsuarioId;
                 _dadosCaixa.PDV = 1;
@@ -102,6 +104,24 @@ namespace GRC.Telas
                 {
                     new AlertBox(Color.FromArgb(64, 0, 0), Color.Red, Color.Crimson, Resources.Error, "Um erro ocorreu:", "Entidade: Abertura de Caixa", "Erro ao abrir o caixa de hoje!", false).ShowDialog();
                     this.DialogResult= DialogResult.Cancel;
+                }
+            }
+
+            if (_operacao == 2 && !string.IsNullOrWhiteSpace(txtSaldoFe.Text))
+            {
+               // _dadosCaixa.Sald = txtSaldo.Text;
+                _dadosCaixa.Observacoes = txtObservacoes.Text;
+                _dadosCaixa.Id = _service.AberturaCaixa(_dadosCaixa);
+
+                if (_dadosCaixa.Id > 0)
+                {
+                    new AlertBox(Color.FromArgb(0, 60, 4), Color.LimeGreen, Color.Green, Resources.Confirm, "ABERTURA DE CAIXA", "A abertura do caixa de hoje foi realizada com sucesso", "Já pode iniciar suas vendas!", false).ShowDialog();
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    new AlertBox(Color.FromArgb(64, 0, 0), Color.Red, Color.Crimson, Resources.Error, "Um erro ocorreu:", "Entidade: Abertura de Caixa", "Erro ao abrir o caixa de hoje!", false).ShowDialog();
+                    this.DialogResult = DialogResult.Cancel;
                 }
             }
 

@@ -183,14 +183,16 @@ namespace GRC.Telas
             flpGrupos.Controls.Clear();
             var gruposItens = _service.BuscaGruposItens();
 
-            // Botão "TODOS" para limpar o filtro
-            AdicionarBotaoGrupo("Todos", Color.SlateGray);
-
-            foreach (var grupo in gruposItens)
+            if (gruposItens != null && gruposItens.Count > 0)
             {
-                AdicionarBotaoGrupo(grupo.Descricao, Color.FromArgb(0, 149, 198), grupo.Id);
+                // Botão "TODOS" para limpar o filtro
+                AdicionarBotaoGrupo("Todos", Color.SlateGray);
+
+                foreach (var grupo in gruposItens)
+                {
+                    AdicionarBotaoGrupo(grupo.Descricao, Color.FromArgb(0, 149, 198), grupo.Id);
+                }
             }
-           
 
         }
         private void GerenciamentoAbertura(int operacao)
@@ -204,7 +206,6 @@ namespace GRC.Telas
 
                     _caixa.Id = frm._dadosCaixa.Id;
                     CarregaDadosCaixa();
-                    this.Visible = true;
                 }
                 else
                 {
@@ -219,7 +220,7 @@ namespace GRC.Telas
             var caixa = _service.CarregaDadosCaixa(_caixa.Id);
             if (caixa != null)
             {
-
+                this.Visible = true;
                 foreach (var dados in caixa)
                 {
                     lbDataAbertura.Text = $"Abertura: {dados.DataAbertura.ToString("dd/MM/yyyy HH:mm")}";
@@ -312,6 +313,16 @@ namespace GRC.Telas
                 lbCliente.Text = $"Cliente: {_cliente.Nome}          CPF/CNPJ: {_cliente.Identidade}";
 
             }      
+        }
+
+        private void btnFecharCaixa_Click(object sender, EventArgs e)
+        {         
+                GerenciamentoAbertura(2); // Fechamento
+        }
+
+        private void btnFinalizadores_Click(object sender, EventArgs e)
+        {
+            new Finalizadores().ShowDialog();
         }
     }
 }

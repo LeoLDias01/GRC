@@ -52,6 +52,60 @@ namespace Business.Services
         }
         #endregion
 
+        #region ..:: Finalizadores ::..
+
+
+        public int? SalvaFinalizador(Finalizador finalizador)
+        {
+            try
+            {
+                if (finalizador.Id == 0)
+                    return _database.InsereFinalizador(finalizador);
+                else
+                {
+                    if (finalizador.Ativo == true)
+                    {
+                        _database.AlteraFinalizador(finalizador);
+                        return 0;
+                    }
+                    else
+                    {
+                        _database.InativaFinalizador(finalizador.Id);
+                        return -1;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao salvar fornecedor: " + ex.Message, "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+        public List<Tipo> BuscaCategoriasFinalizadores()
+        {
+            try
+            {
+                return _database.BuscaCategoriasFinalizadores();
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public List<Finalizador> BuscaDadosFinalizador()
+        {
+            try
+            {
+                return _database.BuscaDadosFinalizador();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao buscar dados de finalizador: " + ex.Message, "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+        #endregion
+
         #region ..:: ItensCaixa ::..
 
         public List<Tipo> BuscaGruposItens()

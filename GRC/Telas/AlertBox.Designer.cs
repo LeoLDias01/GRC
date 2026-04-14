@@ -76,7 +76,7 @@
             // pcImagem
             // 
             this.pcImagem.Image = global::GRC.Properties.Resources.Confirm;
-            this.pcImagem.Location = new System.Drawing.Point(314, 12);
+            this.pcImagem.Location = new System.Drawing.Point(334, 12);
             this.pcImagem.Name = "pcImagem";
             this.pcImagem.Size = new System.Drawing.Size(109, 102);
             this.pcImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -86,17 +86,17 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.lbMsg);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(17, 120);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(17, 131);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(406, 89);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(426, 131);
             this.flowLayoutPanel1.TabIndex = 31;
             // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.lbItem);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(17, 68);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(17, 39);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(291, 46);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(298, 75);
             this.flowLayoutPanel2.TabIndex = 32;
             // 
             // pnStatus
@@ -108,7 +108,7 @@
             this.pnStatus.GradientAngle = 90F;
             this.pnStatus.Location = new System.Drawing.Point(16, 12);
             this.pnStatus.Name = "pnStatus";
-            this.pnStatus.Size = new System.Drawing.Size(239, 10);
+            this.pnStatus.Size = new System.Drawing.Size(299, 11);
             this.pnStatus.TabIndex = 27;
             // 
             // btnNo
@@ -125,10 +125,10 @@
             this.btnNo.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
             this.btnNo.ForeColor = System.Drawing.Color.White;
             this.btnNo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNo.Location = new System.Drawing.Point(277, 215);
+            this.btnNo.Location = new System.Drawing.Point(309, 268);
             this.btnNo.Name = "btnNo";
             this.btnNo.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnNo.Size = new System.Drawing.Size(114, 37);
+            this.btnNo.Size = new System.Drawing.Size(114, 46);
             this.btnNo.TabIndex = 25;
             this.btnNo.TamanhoBorda = 0;
             this.btnNo.TamanhoRaio = 10;
@@ -152,10 +152,10 @@
             this.btnYes.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
             this.btnYes.ForeColor = System.Drawing.Color.White;
             this.btnYes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnYes.Location = new System.Drawing.Point(46, 215);
+            this.btnYes.Location = new System.Drawing.Point(25, 268);
             this.btnYes.Name = "btnYes";
             this.btnYes.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnYes.Size = new System.Drawing.Size(114, 37);
+            this.btnYes.Size = new System.Drawing.Size(114, 46);
             this.btnYes.TabIndex = 24;
             this.btnYes.TamanhoBorda = 0;
             this.btnYes.TamanhoRaio = 10;
@@ -179,10 +179,10 @@
             this.btnOk.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
             this.btnOk.ForeColor = System.Drawing.Color.White;
             this.btnOk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOk.Location = new System.Drawing.Point(136, 215);
+            this.btnOk.Location = new System.Drawing.Point(25, 268);
             this.btnOk.Name = "btnOk";
             this.btnOk.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnOk.Size = new System.Drawing.Size(153, 37);
+            this.btnOk.Size = new System.Drawing.Size(398, 46);
             this.btnOk.TabIndex = 23;
             this.btnOk.TamanhoBorda = 0;
             this.btnOk.TamanhoRaio = 10;
@@ -196,7 +196,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(4)))));
-            this.ClientSize = new System.Drawing.Size(435, 277);
+            this.ClientSize = new System.Drawing.Size(455, 326);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.pcImagem);
