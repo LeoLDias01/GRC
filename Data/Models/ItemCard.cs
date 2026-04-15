@@ -10,6 +10,7 @@ namespace Data.Models
     {
         public int Id { get; set; } // IDGRC_ITEM_OS - Vincula o Item a OS
         public int IdItem { get; set; }
+        public string CodBarras { get; set; }
         public string Descricao { get; set; }
         public decimal ValorUnitario { get; set; }
         public int Quantidade { get; set; }

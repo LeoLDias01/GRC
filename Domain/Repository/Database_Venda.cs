@@ -172,6 +172,40 @@ WHERE CXA.IDGRC_CAIXA = @Id;",
                 }
             }
         }
+        public List<Item> BuscaItens()
+        {
+
+            using (var conn = new SQLiteConnection(_conn.GetConnections()))
+            {
+                conn.Open();
+                try
+                {
+                    var itens = conn.Query($@"SELECT    IDGRC_ITEM_ESTOQUE, 
+                                                        DESCRICAO_VENDA,
+                                                        CODIGO_BARRAS,
+                                                        QUANTIDADE,
+                                                        FOTO,
+                                                        VALOR_UNITARIO_VENDA
+                                              FROM GRC_ITEM_ESTOQUE
+                                              WHERE ITEM_VENDA = 1 AND ATIVO = 1")
+                    .Select(x => new Item
+                    {
+                        Id = (int)x.IDGRC_ITEM_ESTOQUE,
+                        DescricaoVenda = x.DESCRICAO_VENDA,
+                        CodBarras = x.CODIGO_BARRAS,
+                        Quatidade = (int)x.QUANTIDADE,
+                        FotoItem = x.FOTO,
+                        VendaUnitario = x.VALOR_UNITARIO_VENDA
+                    }).ToList();
+
+                    return itens;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Erro ao buscar Clientes: " + ex.Message);
+                }
+            }
+        }
 
 
         #region ..:: Finalizadores ::..

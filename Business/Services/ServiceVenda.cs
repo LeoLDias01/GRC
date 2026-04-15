@@ -119,6 +119,17 @@ namespace Business.Services
                 return null;
             }
         }
+        public List<Item> BuscaItens()
+        {
+            try
+            {
+                return _database.BuscaItens();
+            }
+            catch
+            {
+                return null;
+            }
+        }
 
         #endregion
     }

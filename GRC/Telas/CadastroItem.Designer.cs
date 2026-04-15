@@ -28,18 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroItem));
             this.dgvItemComposicao = new System.Windows.Forms.DataGridView();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIdComposicao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colExcluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtObservacoes = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
             this.painelRadius4 = new GRC.Componentes.PainelRadius();
@@ -53,15 +51,11 @@
             this.chkItemComposto = new MaterialSkin.Controls.MaterialCheckbox();
             this.painelRadius2 = new GRC.Componentes.PainelRadius();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnAddUnidadeMedida = new GRC.Componentes.CustomButton();
-            this.btnAddFabricante = new GRC.Componentes.CustomButton();
             this.cbFabricante = new MaterialSkin.Controls.MaterialComboBox();
             this.cbUnidadeMedida = new MaterialSkin.Controls.MaterialComboBox();
             this.txtQtd = new MaterialSkin.Controls.MaterialTextBox();
             this.txtQtdMinima = new MaterialSkin.Controls.MaterialTextBox();
             this.txtGarantia = new MaterialSkin.Controls.MaterialTextBox();
-            this.btnAddFornecedor = new GRC.Componentes.CustomButton();
-            this.btnAddCategoria = new GRC.Componentes.CustomButton();
             this.txtValidade = new MaterialSkin.Controls.MaterialTextBox();
             this.txtCustoTotal = new MaterialSkin.Controls.MaterialTextBox();
             this.cbFornecedor = new MaterialSkin.Controls.MaterialComboBox();
@@ -70,39 +64,46 @@
             this.txtCodigoBarras = new MaterialSkin.Controls.MaterialTextBox();
             this.txtId = new MaterialSkin.Controls.MaterialTextBox();
             this.txtDescricao = new MaterialSkin.Controls.MaterialTextBox();
-            this.btnExcluiImagem = new GRC.Componentes.CustomButton();
-            this.btnBuscaImagem = new GRC.Componentes.CustomButton();
-            this.painelRadius1 = new GRC.Componentes.PainelRadius();
-            this.pcAtivo = new System.Windows.Forms.PictureBox();
             this.swItemAtivo = new MaterialSkin.Controls.MaterialSwitch();
-            this.btnClose = new GRC.Componentes.CustomButton();
-            this.btnMaximize = new GRC.Componentes.CustomButton();
-            this.btnMinimize = new GRC.Componentes.CustomButton();
-            this.pcbImagemItem = new GRC.Componentes.CustomPictureBox();
-            this.btnSalvar = new GRC.Componentes.CustomButton();
-            this.pnStatus = new GRC.Componentes.RoundedPanel();
-            this.pcbFavorito = new GRC.Componentes.CustomPictureBox();
-            this.btnAddComposicao = new GRC.Componentes.CustomButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.painelRadius5 = new GRC.Componentes.PainelRadius();
             this.painelRadius6 = new GRC.Componentes.PainelRadius();
             this.label2 = new System.Windows.Forms.Label();
             this.painelRadius7 = new GRC.Componentes.PainelRadius();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnStatus = new GRC.Componentes.RoundedPanel();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pcAtivo = new System.Windows.Forms.PictureBox();
+            this.btnMinimize = new GRC.Componentes.CustomButton();
+            this.btnMaximize = new GRC.Componentes.CustomButton();
+            this.btnClose = new GRC.Componentes.CustomButton();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnSalvar = new GRC.Componentes.CustomButton();
+            this.pcbFavorito = new GRC.Componentes.CustomPictureBox();
+            this.pcbImagemItem = new GRC.Componentes.CustomPictureBox();
+            this.btnBuscaImagem = new GRC.Componentes.CustomButton();
+            this.btnExcluiImagem = new GRC.Componentes.CustomButton();
+            this.btnAddComposicao = new GRC.Componentes.CustomButton();
+            this.colExcluir = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnAddUnidadeMedida = new GRC.Componentes.CustomButton();
+            this.btnAddFabricante = new GRC.Componentes.CustomButton();
+            this.btnAddFornecedor = new GRC.Componentes.CustomButton();
+            this.btnAddCategoria = new GRC.Componentes.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItemComposicao)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.painelRadius4.SuspendLayout();
             this.painelRadius3.SuspendLayout();
             this.gpbInfoVenda.SuspendLayout();
             this.painelRadius2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.painelRadius1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcAtivo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbImagemItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbFavorito)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.painelRadius5.SuspendLayout();
             this.painelRadius6.SuspendLayout();
             this.painelRadius7.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcAtivo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbFavorito)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbImagemItem)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvItemComposicao
@@ -115,14 +116,14 @@
             this.dgvItemComposicao.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvItemComposicao.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvItemComposicao.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItemComposicao.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItemComposicao.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvItemComposicao.ColumnHeadersHeight = 35;
             this.dgvItemComposicao.ColumnHeadersVisible = false;
             this.dgvItemComposicao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -132,14 +133,14 @@
             this.colPreco,
             this.colExcluir});
             this.dgvItemComposicao.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SlateGray;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvItemComposicao.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.SlateGray;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvItemComposicao.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvItemComposicao.EnableHeadersVisualStyles = false;
             this.dgvItemComposicao.GridColor = System.Drawing.Color.Black;
             this.dgvItemComposicao.Location = new System.Drawing.Point(870, 238);
@@ -149,10 +150,10 @@
             this.dgvItemComposicao.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvItemComposicao.RowHeadersVisible = false;
             this.dgvItemComposicao.RowHeadersWidth = 62;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvItemComposicao.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvItemComposicao.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvItemComposicao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItemComposicao.Size = new System.Drawing.Size(256, 456);
+            this.dgvItemComposicao.Size = new System.Drawing.Size(256, 406);
             this.dgvItemComposicao.TabIndex = 44;
             this.dgvItemComposicao.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemComposicao_CellContentClick);
             // 
@@ -192,15 +193,6 @@
             this.colPreco.Name = "colPreco";
             this.colPreco.ReadOnly = true;
             // 
-            // colExcluir
-            // 
-            this.colExcluir.FillWeight = 45F;
-            this.colExcluir.HeaderText = "";
-            this.colExcluir.Image = global::GRC.Properties.Resources.remove;
-            this.colExcluir.MinimumWidth = 8;
-            this.colExcluir.Name = "colExcluir";
-            this.colExcluir.ReadOnly = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -212,22 +204,12 @@
             this.label1.TabIndex = 40;
             this.label1.Text = "Imagem do Item";
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(15, 11);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(45, 42);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 120;
-            this.pictureBox3.TabStop = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(66, 24);
+            this.label3.Location = new System.Drawing.Point(59, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(189, 29);
             this.label3.TabIndex = 119;
@@ -262,21 +244,22 @@
             // 
             // painelRadius4
             // 
-            this.painelRadius4.BackColor = System.Drawing.Color.AliceBlue;
-            this.painelRadius4.BorderColor = System.Drawing.Color.AliceBlue;
+            this.painelRadius4.BackColor = System.Drawing.Color.White;
+            this.painelRadius4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
             this.painelRadius4.Controls.Add(this.swItemVenda);
-            this.painelRadius4.Location = new System.Drawing.Point(15, 487);
+            this.painelRadius4.Location = new System.Drawing.Point(4, 470);
             this.painelRadius4.Name = "painelRadius4";
             this.painelRadius4.Radius = 30;
-            this.painelRadius4.Size = new System.Drawing.Size(166, 36);
+            this.painelRadius4.Size = new System.Drawing.Size(198, 53);
             this.painelRadius4.TabIndex = 128;
             this.painelRadius4.Thickness = 5F;
             // 
             // swItemVenda
             // 
             this.swItemVenda.AutoSize = true;
+            this.swItemVenda.BackColor = System.Drawing.Color.Transparent;
             this.swItemVenda.Depth = 0;
-            this.swItemVenda.Location = new System.Drawing.Point(0, 0);
+            this.swItemVenda.Location = new System.Drawing.Point(14, 7);
             this.swItemVenda.Margin = new System.Windows.Forms.Padding(0);
             this.swItemVenda.MouseLocation = new System.Drawing.Point(-1, -1);
             this.swItemVenda.MouseState = MaterialSkin.MouseState.HOVER;
@@ -285,18 +268,18 @@
             this.swItemVenda.Size = new System.Drawing.Size(159, 37);
             this.swItemVenda.TabIndex = 36;
             this.swItemVenda.Text = "Item de Venda";
-            this.swItemVenda.UseVisualStyleBackColor = true;
+            this.swItemVenda.UseVisualStyleBackColor = false;
             this.swItemVenda.CheckedChanged += new System.EventHandler(this.swItemVenda_CheckedChanged);
             // 
             // painelRadius3
             // 
-            this.painelRadius3.BackColor = System.Drawing.Color.AliceBlue;
-            this.painelRadius3.BorderColor = System.Drawing.Color.AliceBlue;
+            this.painelRadius3.BackColor = System.Drawing.Color.White;
+            this.painelRadius3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
             this.painelRadius3.Controls.Add(this.gpbInfoVenda);
-            this.painelRadius3.Location = new System.Drawing.Point(15, 529);
+            this.painelRadius3.Location = new System.Drawing.Point(4, 529);
             this.painelRadius3.Name = "painelRadius3";
             this.painelRadius3.Radius = 30;
-            this.painelRadius3.Size = new System.Drawing.Size(838, 165);
+            this.painelRadius3.Size = new System.Drawing.Size(849, 115);
             this.painelRadius3.TabIndex = 127;
             this.painelRadius3.Thickness = 5F;
             // 
@@ -311,7 +294,7 @@
             this.gpbInfoVenda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.gpbInfoVenda.Location = new System.Drawing.Point(12, 15);
             this.gpbInfoVenda.Name = "gpbInfoVenda";
-            this.gpbInfoVenda.Size = new System.Drawing.Size(815, 144);
+            this.gpbInfoVenda.Size = new System.Drawing.Size(826, 91);
             this.gpbInfoVenda.TabIndex = 34;
             this.gpbInfoVenda.TabStop = false;
             this.gpbInfoVenda.Text = "Informações de Venda";
@@ -328,12 +311,12 @@
             this.txtLucroTotal.Hint = "Lucro Total";
             this.txtLucroTotal.LeadingIcon = null;
             this.txtLucroTotal.LeaveOnEnterKey = true;
-            this.txtLucroTotal.Location = new System.Drawing.Point(181, 88);
+            this.txtLucroTotal.Location = new System.Drawing.Point(660, 26);
             this.txtLucroTotal.MaxLength = 60;
             this.txtLucroTotal.MouseState = MaterialSkin.MouseState.OUT;
             this.txtLucroTotal.Multiline = false;
             this.txtLucroTotal.Name = "txtLucroTotal";
-            this.txtLucroTotal.Size = new System.Drawing.Size(168, 50);
+            this.txtLucroTotal.Size = new System.Drawing.Size(154, 50);
             this.txtLucroTotal.TabIndex = 47;
             this.txtLucroTotal.Text = "";
             this.txtLucroTotal.TrailingIcon = null;
@@ -355,7 +338,7 @@
             this.txtDescricaoItemVenda.MouseState = MaterialSkin.MouseState.OUT;
             this.txtDescricaoItemVenda.Multiline = false;
             this.txtDescricaoItemVenda.Name = "txtDescricaoItemVenda";
-            this.txtDescricaoItemVenda.Size = new System.Drawing.Size(629, 50);
+            this.txtDescricaoItemVenda.Size = new System.Drawing.Size(340, 50);
             this.txtDescricaoItemVenda.TabIndex = 43;
             this.txtDescricaoItemVenda.Text = "";
             this.txtDescricaoItemVenda.TrailingIcon = null;
@@ -373,12 +356,12 @@
             this.txtLucroItem.Hint = "Lucro p/ Produto";
             this.txtLucroItem.LeadingIcon = null;
             this.txtLucroItem.LeaveOnEnterKey = true;
-            this.txtLucroItem.Location = new System.Drawing.Point(7, 88);
+            this.txtLucroItem.Location = new System.Drawing.Point(504, 26);
             this.txtLucroItem.MaxLength = 60;
             this.txtLucroItem.MouseState = MaterialSkin.MouseState.OUT;
             this.txtLucroItem.Multiline = false;
             this.txtLucroItem.Name = "txtLucroItem";
-            this.txtLucroItem.Size = new System.Drawing.Size(168, 50);
+            this.txtLucroItem.Size = new System.Drawing.Size(154, 50);
             this.txtLucroItem.TabIndex = 25;
             this.txtLucroItem.Text = "";
             this.txtLucroItem.TrailingIcon = null;
@@ -395,12 +378,12 @@
             this.txtValorVenda.Hint = "Preço";
             this.txtValorVenda.LeadingIcon = null;
             this.txtValorVenda.LeaveOnEnterKey = true;
-            this.txtValorVenda.Location = new System.Drawing.Point(641, 26);
+            this.txtValorVenda.Location = new System.Drawing.Point(353, 27);
             this.txtValorVenda.MaxLength = 60;
             this.txtValorVenda.MouseState = MaterialSkin.MouseState.OUT;
             this.txtValorVenda.Multiline = false;
             this.txtValorVenda.Name = "txtValorVenda";
-            this.txtValorVenda.Size = new System.Drawing.Size(168, 50);
+            this.txtValorVenda.Size = new System.Drawing.Size(145, 50);
             this.txtValorVenda.TabIndex = 23;
             this.txtValorVenda.Text = "";
             this.txtValorVenda.TrailingIcon = null;
@@ -413,8 +396,9 @@
             // chkItemComposto
             // 
             this.chkItemComposto.AutoSize = true;
+            this.chkItemComposto.BackColor = System.Drawing.Color.Transparent;
             this.chkItemComposto.Depth = 0;
-            this.chkItemComposto.Location = new System.Drawing.Point(0, 0);
+            this.chkItemComposto.Location = new System.Drawing.Point(26, 7);
             this.chkItemComposto.Margin = new System.Windows.Forms.Padding(0);
             this.chkItemComposto.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkItemComposto.MouseState = MaterialSkin.MouseState.HOVER;
@@ -424,18 +408,18 @@
             this.chkItemComposto.Size = new System.Drawing.Size(143, 37);
             this.chkItemComposto.TabIndex = 48;
             this.chkItemComposto.Text = "Item Composto";
-            this.chkItemComposto.UseVisualStyleBackColor = true;
+            this.chkItemComposto.UseVisualStyleBackColor = false;
             this.chkItemComposto.CheckedChanged += new System.EventHandler(this.chkItemComposto_CheckedChanged);
             // 
             // painelRadius2
             // 
-            this.painelRadius2.BackColor = System.Drawing.Color.AliceBlue;
-            this.painelRadius2.BorderColor = System.Drawing.Color.AliceBlue;
+            this.painelRadius2.BackColor = System.Drawing.Color.White;
+            this.painelRadius2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
             this.painelRadius2.Controls.Add(this.groupBox1);
-            this.painelRadius2.Location = new System.Drawing.Point(208, 189);
+            this.painelRadius2.Location = new System.Drawing.Point(208, 182);
             this.painelRadius2.Name = "painelRadius2";
             this.painelRadius2.Radius = 30;
-            this.painelRadius2.Size = new System.Drawing.Size(648, 334);
+            this.painelRadius2.Size = new System.Drawing.Size(648, 341);
             this.painelRadius2.TabIndex = 127;
             this.painelRadius2.Thickness = 5F;
             // 
@@ -464,48 +448,6 @@
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados do Item";
-            // 
-            // btnAddUnidadeMedida
-            // 
-            this.btnAddUnidadeMedida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnAddUnidadeMedida.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnAddUnidadeMedida.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnAddUnidadeMedida.CorTextoBotao = System.Drawing.Color.White;
-            this.btnAddUnidadeMedida.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddUnidadeMedida.FlatAppearance.BorderSize = 0;
-            this.btnAddUnidadeMedida.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnAddUnidadeMedida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddUnidadeMedida.ForeColor = System.Drawing.Color.White;
-            this.btnAddUnidadeMedida.Image = ((System.Drawing.Image)(resources.GetObject("btnAddUnidadeMedida.Image")));
-            this.btnAddUnidadeMedida.Location = new System.Drawing.Point(568, 29);
-            this.btnAddUnidadeMedida.Name = "btnAddUnidadeMedida";
-            this.btnAddUnidadeMedida.Size = new System.Drawing.Size(39, 39);
-            this.btnAddUnidadeMedida.TabIndex = 42;
-            this.btnAddUnidadeMedida.TamanhoBorda = 0;
-            this.btnAddUnidadeMedida.TamanhoRaio = 16;
-            this.btnAddUnidadeMedida.UseVisualStyleBackColor = false;
-            this.btnAddUnidadeMedida.Click += new System.EventHandler(this.btnAddUnidadeMedida_Click);
-            // 
-            // btnAddFabricante
-            // 
-            this.btnAddFabricante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnAddFabricante.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnAddFabricante.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnAddFabricante.CorTextoBotao = System.Drawing.Color.White;
-            this.btnAddFabricante.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddFabricante.FlatAppearance.BorderSize = 0;
-            this.btnAddFabricante.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnAddFabricante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddFabricante.ForeColor = System.Drawing.Color.White;
-            this.btnAddFabricante.Image = ((System.Drawing.Image)(resources.GetObject("btnAddFabricante.Image")));
-            this.btnAddFabricante.Location = new System.Drawing.Point(237, 85);
-            this.btnAddFabricante.Name = "btnAddFabricante";
-            this.btnAddFabricante.Size = new System.Drawing.Size(39, 39);
-            this.btnAddFabricante.TabIndex = 40;
-            this.btnAddFabricante.TamanhoBorda = 0;
-            this.btnAddFabricante.TamanhoRaio = 16;
-            this.btnAddFabricante.UseVisualStyleBackColor = false;
-            this.btnAddFabricante.Click += new System.EventHandler(this.btnAddFabricante_Click);
             // 
             // cbFabricante
             // 
@@ -633,48 +575,6 @@
             this.txtGarantia.Enter += new System.EventHandler(this.txtGarantia_Enter);
             this.txtGarantia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGarantia_KeyPress);
             this.txtGarantia.Leave += new System.EventHandler(this.txtGarantia_Leave);
-            // 
-            // btnAddFornecedor
-            // 
-            this.btnAddFornecedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnAddFornecedor.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnAddFornecedor.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnAddFornecedor.CorTextoBotao = System.Drawing.Color.White;
-            this.btnAddFornecedor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddFornecedor.FlatAppearance.BorderSize = 0;
-            this.btnAddFornecedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnAddFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddFornecedor.ForeColor = System.Drawing.Color.White;
-            this.btnAddFornecedor.Image = ((System.Drawing.Image)(resources.GetObject("btnAddFornecedor.Image")));
-            this.btnAddFornecedor.Location = new System.Drawing.Point(237, 140);
-            this.btnAddFornecedor.Name = "btnAddFornecedor";
-            this.btnAddFornecedor.Size = new System.Drawing.Size(39, 39);
-            this.btnAddFornecedor.TabIndex = 34;
-            this.btnAddFornecedor.TamanhoBorda = 0;
-            this.btnAddFornecedor.TamanhoRaio = 16;
-            this.btnAddFornecedor.UseVisualStyleBackColor = false;
-            this.btnAddFornecedor.Click += new System.EventHandler(this.btnAddFornecedor_Click);
-            // 
-            // btnAddCategoria
-            // 
-            this.btnAddCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnAddCategoria.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnAddCategoria.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnAddCategoria.CorTextoBotao = System.Drawing.Color.White;
-            this.btnAddCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddCategoria.FlatAppearance.BorderSize = 0;
-            this.btnAddCategoria.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnAddCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddCategoria.ForeColor = System.Drawing.Color.White;
-            this.btnAddCategoria.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCategoria.Image")));
-            this.btnAddCategoria.Location = new System.Drawing.Point(237, 29);
-            this.btnAddCategoria.Name = "btnAddCategoria";
-            this.btnAddCategoria.Size = new System.Drawing.Size(39, 39);
-            this.btnAddCategoria.TabIndex = 33;
-            this.btnAddCategoria.TamanhoBorda = 0;
-            this.btnAddCategoria.TamanhoRaio = 16;
-            this.btnAddCategoria.UseVisualStyleBackColor = false;
-            this.btnAddCategoria.Click += new System.EventHandler(this.btnAddCategoria_Click);
             // 
             // txtValidade
             // 
@@ -869,25 +769,279 @@
             this.txtDescricao.UseAccent = false;
             this.txtDescricao.Leave += new System.EventHandler(this.txtDescricao_Leave);
             // 
-            // btnExcluiImagem
+            // swItemAtivo
             // 
-            this.btnExcluiImagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.btnExcluiImagem.CorBorda = System.Drawing.Color.Transparent;
-            this.btnExcluiImagem.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.btnExcluiImagem.CorTextoBotao = System.Drawing.Color.White;
-            this.btnExcluiImagem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExcluiImagem.FlatAppearance.BorderSize = 0;
-            this.btnExcluiImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluiImagem.ForeColor = System.Drawing.Color.White;
-            this.btnExcluiImagem.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluiImagem.Image")));
-            this.btnExcluiImagem.Location = new System.Drawing.Point(152, 232);
-            this.btnExcluiImagem.Name = "btnExcluiImagem";
-            this.btnExcluiImagem.Size = new System.Drawing.Size(32, 32);
-            this.btnExcluiImagem.TabIndex = 35;
-            this.btnExcluiImagem.TamanhoBorda = 0;
-            this.btnExcluiImagem.TamanhoRaio = 0;
-            this.btnExcluiImagem.UseVisualStyleBackColor = false;
-            this.btnExcluiImagem.Click += new System.EventHandler(this.btnExcluiImagem_Click);
+            this.swItemAtivo.AutoSize = true;
+            this.swItemAtivo.BackColor = System.Drawing.Color.Transparent;
+            this.swItemAtivo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.swItemAtivo.Depth = 0;
+            this.swItemAtivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.swItemAtivo.ForeColor = System.Drawing.Color.White;
+            this.swItemAtivo.Location = new System.Drawing.Point(262, 17);
+            this.swItemAtivo.Margin = new System.Windows.Forms.Padding(0);
+            this.swItemAtivo.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.swItemAtivo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.swItemAtivo.Name = "swItemAtivo";
+            this.swItemAtivo.Ripple = true;
+            this.swItemAtivo.Size = new System.Drawing.Size(58, 37);
+            this.swItemAtivo.TabIndex = 35;
+            this.swItemAtivo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.swItemAtivo.UseVisualStyleBackColor = false;
+            this.swItemAtivo.CheckedChanged += new System.EventHandler(this.swItemAtivo_CheckedChanged);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtId);
+            this.groupBox2.Controls.Add(this.txtDescricao);
+            this.groupBox2.Controls.Add(this.txtCodigoBarras);
+            this.groupBox2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.groupBox2.Location = new System.Drawing.Point(11, 9);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1094, 75);
+            this.groupBox2.TabIndex = 43;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Item";
+            // 
+            // painelRadius5
+            // 
+            this.painelRadius5.BackColor = System.Drawing.Color.White;
+            this.painelRadius5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.painelRadius5.Controls.Add(this.groupBox2);
+            this.painelRadius5.Location = new System.Drawing.Point(8, 87);
+            this.painelRadius5.Name = "painelRadius5";
+            this.painelRadius5.Radius = 30;
+            this.painelRadius5.Size = new System.Drawing.Size(1118, 89);
+            this.painelRadius5.TabIndex = 127;
+            this.painelRadius5.Thickness = 5F;
+            // 
+            // painelRadius6
+            // 
+            this.painelRadius6.BackColor = System.Drawing.Color.White;
+            this.painelRadius6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.painelRadius6.Controls.Add(this.chkItemComposto);
+            this.painelRadius6.Location = new System.Drawing.Point(869, 182);
+            this.painelRadius6.Name = "painelRadius6";
+            this.painelRadius6.Radius = 30;
+            this.painelRadius6.Size = new System.Drawing.Size(197, 50);
+            this.painelRadius6.TabIndex = 129;
+            this.painelRadius6.Thickness = 5F;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(75, 242);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 14);
+            this.label2.TabIndex = 130;
+            this.label2.Text = "800x800";
+            // 
+            // painelRadius7
+            // 
+            this.painelRadius7.BackColor = System.Drawing.Color.Transparent;
+            this.painelRadius7.BorderColor = System.Drawing.Color.AliceBlue;
+            this.painelRadius7.Controls.Add(this.label1);
+            this.painelRadius7.Controls.Add(this.label2);
+            this.painelRadius7.Controls.Add(this.pcbImagemItem);
+            this.painelRadius7.Controls.Add(this.btnBuscaImagem);
+            this.painelRadius7.Controls.Add(this.btnExcluiImagem);
+            this.painelRadius7.Location = new System.Drawing.Point(4, 182);
+            this.painelRadius7.Name = "painelRadius7";
+            this.painelRadius7.Radius = 30;
+            this.painelRadius7.Size = new System.Drawing.Size(198, 282);
+            this.painelRadius7.TabIndex = 127;
+            this.painelRadius7.Thickness = 10F;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.panel1.Controls.Add(this.pnStatus);
+            this.panel1.Controls.Add(this.pcAtivo);
+            this.panel1.Controls.Add(this.btnMinimize);
+            this.panel1.Controls.Add(this.swItemAtivo);
+            this.panel1.Controls.Add(this.btnMaximize);
+            this.panel1.Controls.Add(this.btnClose);
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.btnSalvar);
+            this.panel1.Controls.Add(this.pcbFavorito);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1138, 70);
+            this.panel1.TabIndex = 130;
+            // 
+            // pnStatus
+            // 
+            this.pnStatus.BackColor = System.Drawing.Color.Transparent;
+            this.pnStatus.Color1 = System.Drawing.Color.Lime;
+            this.pnStatus.Color2 = System.Drawing.Color.PaleGreen;
+            this.pnStatus.CornerRadius = 10;
+            this.pnStatus.GradientAngle = 90F;
+            this.pnStatus.Location = new System.Drawing.Point(-15, 59);
+            this.pnStatus.Name = "pnStatus";
+            this.pnStatus.Size = new System.Drawing.Size(471, 10);
+            this.pnStatus.TabIndex = 131;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.FillWeight = 45F;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::GRC.Properties.Resources.remove;
+            this.dataGridViewImageColumn1.MinimumWidth = 8;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 22;
+            // 
+            // pcAtivo
+            // 
+            this.pcAtivo.Image = ((System.Drawing.Image)(resources.GetObject("pcAtivo.Image")));
+            this.pcAtivo.Location = new System.Drawing.Point(323, 14);
+            this.pcAtivo.Name = "pcAtivo";
+            this.pcAtivo.Size = new System.Drawing.Size(45, 39);
+            this.pcAtivo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcAtivo.TabIndex = 46;
+            this.pcAtivo.TabStop = false;
+            this.pcAtivo.Visible = false;
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnMinimize.CorBotao = System.Drawing.Color.Transparent;
+            this.btnMinimize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
+            this.btnMinimize.Location = new System.Drawing.Point(998, 15);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(40, 35);
+            this.btnMinimize.TabIndex = 123;
+            this.btnMinimize.TamanhoBorda = 0;
+            this.btnMinimize.TamanhoRaio = 17;
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // btnMaximize
+            // 
+            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMaximize.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnMaximize.CorBotao = System.Drawing.Color.Transparent;
+            this.btnMaximize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaximize.FlatAppearance.BorderSize = 0;
+            this.btnMaximize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximize.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaximize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
+            this.btnMaximize.Location = new System.Drawing.Point(1044, 15);
+            this.btnMaximize.Name = "btnMaximize";
+            this.btnMaximize.Size = new System.Drawing.Size(40, 35);
+            this.btnMaximize.TabIndex = 124;
+            this.btnMaximize.TamanhoBorda = 0;
+            this.btnMaximize.TamanhoRaio = 17;
+            this.btnMaximize.UseVisualStyleBackColor = false;
+            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnClose.CorBotao = System.Drawing.Color.Transparent;
+            this.btnClose.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(1090, 15);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(36, 35);
+            this.btnClose.TabIndex = 125;
+            this.btnClose.TamanhoBorda = 0;
+            this.btnClose.TamanhoRaio = 17;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(8, 14);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(45, 42);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 120;
+            this.pictureBox3.TabStop = false;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSalvar.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnSalvar.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnSalvar.CorTextoBotao = System.Drawing.Color.White;
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvar.FlatAppearance.BorderSize = 0;
+            this.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSalvar.ForeColor = System.Drawing.Color.White;
+            this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
+            this.btnSalvar.Location = new System.Drawing.Point(419, 12);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(41, 41);
+            this.btnSalvar.TabIndex = 121;
+            this.btnSalvar.TamanhoBorda = 0;
+            this.btnSalvar.TamanhoRaio = 10;
+            this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // pcbFavorito
+            // 
+            this.pcbFavorito.BackColor = System.Drawing.Color.Transparent;
+            this.pcbFavorito.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.pcbFavorito.CorBotao = System.Drawing.Color.Transparent;
+            this.pcbFavorito.CorTextoBotao = System.Drawing.Color.White;
+            this.pcbFavorito.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbFavorito.ForeColor = System.Drawing.Color.White;
+            this.pcbFavorito.Image = global::GRC.Properties.Resources.star;
+            this.pcbFavorito.Location = new System.Drawing.Point(374, 14);
+            this.pcbFavorito.Name = "pcbFavorito";
+            this.pcbFavorito.Size = new System.Drawing.Size(39, 38);
+            this.pcbFavorito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbFavorito.TabIndex = 42;
+            this.pcbFavorito.TabStop = false;
+            this.pcbFavorito.TamanhoBorda = 0;
+            this.pcbFavorito.TamanhoRaio = 0;
+            this.pcbFavorito.Click += new System.EventHandler(this.pcbFavorito_Click);
+            // 
+            // pcbImagemItem
+            // 
+            this.pcbImagemItem.BackColor = System.Drawing.Color.White;
+            this.pcbImagemItem.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.pcbImagemItem.CorBotao = System.Drawing.Color.White;
+            this.pcbImagemItem.CorTextoBotao = System.Drawing.Color.White;
+            this.pcbImagemItem.ForeColor = System.Drawing.Color.White;
+            this.pcbImagemItem.Location = new System.Drawing.Point(14, 49);
+            this.pcbImagemItem.Name = "pcbImagemItem";
+            this.pcbImagemItem.Size = new System.Drawing.Size(170, 170);
+            this.pcbImagemItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbImagemItem.TabIndex = 37;
+            this.pcbImagemItem.TabStop = false;
+            this.pcbImagemItem.TamanhoBorda = 0;
+            this.pcbImagemItem.TamanhoRaio = 0;
             // 
             // btnBuscaImagem
             // 
@@ -911,187 +1065,25 @@
             this.btnBuscaImagem.UseVisualStyleBackColor = false;
             this.btnBuscaImagem.Click += new System.EventHandler(this.btnBuscaImagem_Click);
             // 
-            // painelRadius1
+            // btnExcluiImagem
             // 
-            this.painelRadius1.BackColor = System.Drawing.Color.AliceBlue;
-            this.painelRadius1.BorderColor = System.Drawing.Color.AliceBlue;
-            this.painelRadius1.Controls.Add(this.pcAtivo);
-            this.painelRadius1.Controls.Add(this.swItemAtivo);
-            this.painelRadius1.Location = new System.Drawing.Point(308, 24);
-            this.painelRadius1.Name = "painelRadius1";
-            this.painelRadius1.Radius = 30;
-            this.painelRadius1.Size = new System.Drawing.Size(200, 45);
-            this.painelRadius1.TabIndex = 126;
-            this.painelRadius1.Thickness = 5F;
-            // 
-            // pcAtivo
-            // 
-            this.pcAtivo.Image = ((System.Drawing.Image)(resources.GetObject("pcAtivo.Image")));
-            this.pcAtivo.Location = new System.Drawing.Point(152, 3);
-            this.pcAtivo.Name = "pcAtivo";
-            this.pcAtivo.Size = new System.Drawing.Size(45, 39);
-            this.pcAtivo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcAtivo.TabIndex = 46;
-            this.pcAtivo.TabStop = false;
-            this.pcAtivo.Visible = false;
-            // 
-            // swItemAtivo
-            // 
-            this.swItemAtivo.AutoSize = true;
-            this.swItemAtivo.Depth = 0;
-            this.swItemAtivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.swItemAtivo.Location = new System.Drawing.Point(20, 4);
-            this.swItemAtivo.Margin = new System.Windows.Forms.Padding(0);
-            this.swItemAtivo.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.swItemAtivo.MouseState = MaterialSkin.MouseState.HOVER;
-            this.swItemAtivo.Name = "swItemAtivo";
-            this.swItemAtivo.Ripple = true;
-            this.swItemAtivo.Size = new System.Drawing.Size(94, 37);
-            this.swItemAtivo.TabIndex = 35;
-            this.swItemAtivo.Text = "Ativo";
-            this.swItemAtivo.UseVisualStyleBackColor = true;
-            this.swItemAtivo.CheckedChanged += new System.EventHandler(this.swItemAtivo_CheckedChanged);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnClose.CorBotao = System.Drawing.Color.Transparent;
-            this.btnClose.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(1090, 11);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(36, 35);
-            this.btnClose.TabIndex = 125;
-            this.btnClose.TamanhoBorda = 0;
-            this.btnClose.TamanhoRaio = 17;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnMaximize
-            // 
-            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximize.BackColor = System.Drawing.Color.Transparent;
-            this.btnMaximize.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnMaximize.CorBotao = System.Drawing.Color.Transparent;
-            this.btnMaximize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMaximize.FlatAppearance.BorderSize = 0;
-            this.btnMaximize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMaximize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
-            this.btnMaximize.Location = new System.Drawing.Point(1044, 11);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(40, 35);
-            this.btnMaximize.TabIndex = 124;
-            this.btnMaximize.TamanhoBorda = 0;
-            this.btnMaximize.TamanhoRaio = 17;
-            this.btnMaximize.UseVisualStyleBackColor = false;
-            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnMinimize.CorBotao = System.Drawing.Color.Transparent;
-            this.btnMinimize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(998, 11);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(40, 35);
-            this.btnMinimize.TabIndex = 123;
-            this.btnMinimize.TamanhoBorda = 0;
-            this.btnMinimize.TamanhoRaio = 17;
-            this.btnMinimize.UseVisualStyleBackColor = false;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
-            // pcbImagemItem
-            // 
-            this.pcbImagemItem.BackColor = System.Drawing.Color.White;
-            this.pcbImagemItem.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.pcbImagemItem.CorBotao = System.Drawing.Color.White;
-            this.pcbImagemItem.CorTextoBotao = System.Drawing.Color.White;
-            this.pcbImagemItem.ForeColor = System.Drawing.Color.White;
-            this.pcbImagemItem.Location = new System.Drawing.Point(14, 49);
-            this.pcbImagemItem.Name = "pcbImagemItem";
-            this.pcbImagemItem.Size = new System.Drawing.Size(170, 170);
-            this.pcbImagemItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcbImagemItem.TabIndex = 37;
-            this.pcbImagemItem.TabStop = false;
-            this.pcbImagemItem.TamanhoBorda = 0;
-            this.pcbImagemItem.TamanhoRaio = 0;
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnSalvar.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnSalvar.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnSalvar.CorTextoBotao = System.Drawing.Color.White;
-            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalvar.FlatAppearance.BorderSize = 0;
-            this.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(514, 24);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnSalvar.Size = new System.Drawing.Size(53, 43);
-            this.btnSalvar.TabIndex = 121;
-            this.btnSalvar.TamanhoBorda = 0;
-            this.btnSalvar.TamanhoRaio = 10;
-            this.btnSalvar.UseVisualStyleBackColor = false;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // pnStatus
-            // 
-            this.pnStatus.BackColor = System.Drawing.Color.Transparent;
-            this.pnStatus.Color1 = System.Drawing.Color.Ivory;
-            this.pnStatus.Color2 = System.Drawing.Color.Lime;
-            this.pnStatus.CornerRadius = 10;
-            this.pnStatus.GradientAngle = 90F;
-            this.pnStatus.Location = new System.Drawing.Point(-48, 59);
-            this.pnStatus.Name = "pnStatus";
-            this.pnStatus.Size = new System.Drawing.Size(350, 10);
-            this.pnStatus.TabIndex = 2;
-            // 
-            // pcbFavorito
-            // 
-            this.pcbFavorito.BackColor = System.Drawing.Color.Transparent;
-            this.pcbFavorito.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.pcbFavorito.CorBotao = System.Drawing.Color.Transparent;
-            this.pcbFavorito.CorTextoBotao = System.Drawing.Color.White;
-            this.pcbFavorito.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pcbFavorito.ForeColor = System.Drawing.Color.White;
-            this.pcbFavorito.Image = global::GRC.Properties.Resources.star;
-            this.pcbFavorito.Location = new System.Drawing.Point(261, 15);
-            this.pcbFavorito.Name = "pcbFavorito";
-            this.pcbFavorito.Size = new System.Drawing.Size(39, 38);
-            this.pcbFavorito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcbFavorito.TabIndex = 42;
-            this.pcbFavorito.TabStop = false;
-            this.pcbFavorito.TamanhoBorda = 0;
-            this.pcbFavorito.TamanhoRaio = 0;
-            this.pcbFavorito.Click += new System.EventHandler(this.pcbFavorito_Click);
+            this.btnExcluiImagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.btnExcluiImagem.CorBorda = System.Drawing.Color.Transparent;
+            this.btnExcluiImagem.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.btnExcluiImagem.CorTextoBotao = System.Drawing.Color.White;
+            this.btnExcluiImagem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExcluiImagem.FlatAppearance.BorderSize = 0;
+            this.btnExcluiImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluiImagem.ForeColor = System.Drawing.Color.White;
+            this.btnExcluiImagem.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluiImagem.Image")));
+            this.btnExcluiImagem.Location = new System.Drawing.Point(152, 232);
+            this.btnExcluiImagem.Name = "btnExcluiImagem";
+            this.btnExcluiImagem.Size = new System.Drawing.Size(32, 32);
+            this.btnExcluiImagem.TabIndex = 35;
+            this.btnExcluiImagem.TamanhoBorda = 0;
+            this.btnExcluiImagem.TamanhoRaio = 0;
+            this.btnExcluiImagem.UseVisualStyleBackColor = false;
+            this.btnExcluiImagem.Click += new System.EventHandler(this.btnExcluiImagem_Click);
             // 
             // btnAddComposicao
             // 
@@ -1118,77 +1110,106 @@
             this.btnAddComposicao.UseVisualStyleBackColor = false;
             this.btnAddComposicao.Click += new System.EventHandler(this.btnAddComposicao_Click);
             // 
-            // groupBox2
+            // colExcluir
             // 
-            this.groupBox2.Controls.Add(this.txtId);
-            this.groupBox2.Controls.Add(this.txtDescricao);
-            this.groupBox2.Controls.Add(this.txtCodigoBarras);
-            this.groupBox2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.groupBox2.Location = new System.Drawing.Point(6, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1094, 77);
-            this.groupBox2.TabIndex = 43;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Item";
+            this.colExcluir.FillWeight = 45F;
+            this.colExcluir.HeaderText = "";
+            this.colExcluir.Image = global::GRC.Properties.Resources.remove;
+            this.colExcluir.MinimumWidth = 8;
+            this.colExcluir.Name = "colExcluir";
+            this.colExcluir.ReadOnly = true;
             // 
-            // painelRadius5
+            // btnAddUnidadeMedida
             // 
-            this.painelRadius5.BackColor = System.Drawing.Color.AliceBlue;
-            this.painelRadius5.BorderColor = System.Drawing.Color.AliceBlue;
-            this.painelRadius5.Controls.Add(this.groupBox2);
-            this.painelRadius5.Location = new System.Drawing.Point(12, 81);
-            this.painelRadius5.Name = "painelRadius5";
-            this.painelRadius5.Radius = 30;
-            this.painelRadius5.Size = new System.Drawing.Size(1114, 91);
-            this.painelRadius5.TabIndex = 127;
-            this.painelRadius5.Thickness = 5F;
+            this.btnAddUnidadeMedida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnAddUnidadeMedida.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnAddUnidadeMedida.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnAddUnidadeMedida.CorTextoBotao = System.Drawing.Color.White;
+            this.btnAddUnidadeMedida.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddUnidadeMedida.FlatAppearance.BorderSize = 0;
+            this.btnAddUnidadeMedida.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnAddUnidadeMedida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddUnidadeMedida.ForeColor = System.Drawing.Color.White;
+            this.btnAddUnidadeMedida.Image = ((System.Drawing.Image)(resources.GetObject("btnAddUnidadeMedida.Image")));
+            this.btnAddUnidadeMedida.Location = new System.Drawing.Point(568, 29);
+            this.btnAddUnidadeMedida.Name = "btnAddUnidadeMedida";
+            this.btnAddUnidadeMedida.Size = new System.Drawing.Size(39, 39);
+            this.btnAddUnidadeMedida.TabIndex = 42;
+            this.btnAddUnidadeMedida.TamanhoBorda = 0;
+            this.btnAddUnidadeMedida.TamanhoRaio = 16;
+            this.btnAddUnidadeMedida.UseVisualStyleBackColor = false;
+            this.btnAddUnidadeMedida.Click += new System.EventHandler(this.btnAddUnidadeMedida_Click);
             // 
-            // painelRadius6
+            // btnAddFabricante
             // 
-            this.painelRadius6.BackColor = System.Drawing.Color.AliceBlue;
-            this.painelRadius6.BorderColor = System.Drawing.Color.AliceBlue;
-            this.painelRadius6.Controls.Add(this.chkItemComposto);
-            this.painelRadius6.Location = new System.Drawing.Point(869, 189);
-            this.painelRadius6.Name = "painelRadius6";
-            this.painelRadius6.Radius = 30;
-            this.painelRadius6.Size = new System.Drawing.Size(155, 36);
-            this.painelRadius6.TabIndex = 129;
-            this.painelRadius6.Thickness = 5F;
+            this.btnAddFabricante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnAddFabricante.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnAddFabricante.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnAddFabricante.CorTextoBotao = System.Drawing.Color.White;
+            this.btnAddFabricante.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddFabricante.FlatAppearance.BorderSize = 0;
+            this.btnAddFabricante.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnAddFabricante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddFabricante.ForeColor = System.Drawing.Color.White;
+            this.btnAddFabricante.Image = ((System.Drawing.Image)(resources.GetObject("btnAddFabricante.Image")));
+            this.btnAddFabricante.Location = new System.Drawing.Point(237, 85);
+            this.btnAddFabricante.Name = "btnAddFabricante";
+            this.btnAddFabricante.Size = new System.Drawing.Size(39, 39);
+            this.btnAddFabricante.TabIndex = 40;
+            this.btnAddFabricante.TamanhoBorda = 0;
+            this.btnAddFabricante.TamanhoRaio = 16;
+            this.btnAddFabricante.UseVisualStyleBackColor = false;
+            this.btnAddFabricante.Click += new System.EventHandler(this.btnAddFabricante_Click);
             // 
-            // label2
+            // btnAddFornecedor
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(75, 242);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 14);
-            this.label2.TabIndex = 130;
-            this.label2.Text = "800x800";
+            this.btnAddFornecedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnAddFornecedor.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnAddFornecedor.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnAddFornecedor.CorTextoBotao = System.Drawing.Color.White;
+            this.btnAddFornecedor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddFornecedor.FlatAppearance.BorderSize = 0;
+            this.btnAddFornecedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnAddFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddFornecedor.ForeColor = System.Drawing.Color.White;
+            this.btnAddFornecedor.Image = ((System.Drawing.Image)(resources.GetObject("btnAddFornecedor.Image")));
+            this.btnAddFornecedor.Location = new System.Drawing.Point(237, 140);
+            this.btnAddFornecedor.Name = "btnAddFornecedor";
+            this.btnAddFornecedor.Size = new System.Drawing.Size(39, 39);
+            this.btnAddFornecedor.TabIndex = 34;
+            this.btnAddFornecedor.TamanhoBorda = 0;
+            this.btnAddFornecedor.TamanhoRaio = 16;
+            this.btnAddFornecedor.UseVisualStyleBackColor = false;
+            this.btnAddFornecedor.Click += new System.EventHandler(this.btnAddFornecedor_Click);
             // 
-            // painelRadius7
+            // btnAddCategoria
             // 
-            this.painelRadius7.BackColor = System.Drawing.Color.Transparent;
-            this.painelRadius7.BorderColor = System.Drawing.Color.AliceBlue;
-            this.painelRadius7.Controls.Add(this.label1);
-            this.painelRadius7.Controls.Add(this.label2);
-            this.painelRadius7.Controls.Add(this.pcbImagemItem);
-            this.painelRadius7.Controls.Add(this.btnBuscaImagem);
-            this.painelRadius7.Controls.Add(this.btnExcluiImagem);
-            this.painelRadius7.Location = new System.Drawing.Point(4, 189);
-            this.painelRadius7.Name = "painelRadius7";
-            this.painelRadius7.Radius = 30;
-            this.painelRadius7.Size = new System.Drawing.Size(198, 275);
-            this.painelRadius7.TabIndex = 127;
-            this.painelRadius7.Thickness = 10F;
+            this.btnAddCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnAddCategoria.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnAddCategoria.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnAddCategoria.CorTextoBotao = System.Drawing.Color.White;
+            this.btnAddCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddCategoria.FlatAppearance.BorderSize = 0;
+            this.btnAddCategoria.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnAddCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCategoria.ForeColor = System.Drawing.Color.White;
+            this.btnAddCategoria.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCategoria.Image")));
+            this.btnAddCategoria.Location = new System.Drawing.Point(237, 29);
+            this.btnAddCategoria.Name = "btnAddCategoria";
+            this.btnAddCategoria.Size = new System.Drawing.Size(39, 39);
+            this.btnAddCategoria.TabIndex = 33;
+            this.btnAddCategoria.TamanhoBorda = 0;
+            this.btnAddCategoria.TamanhoRaio = 16;
+            this.btnAddCategoria.UseVisualStyleBackColor = false;
+            this.btnAddCategoria.Click += new System.EventHandler(this.btnAddCategoria_Click);
             // 
             // CadastroItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(1138, 706);
+            this.ClientSize = new System.Drawing.Size(1138, 670);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.painelRadius7);
             this.Controls.Add(this.painelRadius6);
             this.Controls.Add(this.painelRadius5);
@@ -1197,18 +1218,9 @@
             this.Controls.Add(this.painelRadius3);
             this.Controls.Add(this.dgvItemComposicao);
             this.Controls.Add(this.painelRadius2);
-            this.Controls.Add(this.painelRadius1);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnMaximize);
-            this.Controls.Add(this.btnMinimize);
-            this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.pnStatus);
-            this.Controls.Add(this.pcbFavorito);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1138, 706);
+            this.MinimumSize = new System.Drawing.Size(1138, 670);
             this.Name = "CadastroItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CadastroItem";
@@ -1216,26 +1228,25 @@
             this.Leave += new System.EventHandler(this.CadastroItem_Leave);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CadastroItem_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItemComposicao)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.painelRadius4.ResumeLayout(false);
             this.painelRadius4.PerformLayout();
             this.painelRadius3.ResumeLayout(false);
             this.gpbInfoVenda.ResumeLayout(false);
             this.painelRadius2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            this.painelRadius1.ResumeLayout(false);
-            this.painelRadius1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcAtivo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbImagemItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbFavorito)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.painelRadius5.ResumeLayout(false);
             this.painelRadius6.ResumeLayout(false);
             this.painelRadius6.PerformLayout();
             this.painelRadius7.ResumeLayout(false);
             this.painelRadius7.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcAtivo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbFavorito)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbImagemItem)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1246,7 +1257,6 @@
         private MaterialSkin.Controls.MaterialTextBox txtValorVenda;
         private MaterialSkin.Controls.MaterialTextBox txtCodigoBarras;
         private MaterialSkin.Controls.MaterialTextBox txtQtdMinima;
-        private Componentes.RoundedPanel pnStatus;
         private MaterialSkin.Controls.MaterialTextBox txtId;
         private MaterialSkin.Controls.MaterialComboBox cbCategoria;
         private System.Windows.Forms.GroupBox gpbInfoVenda;
@@ -1286,7 +1296,6 @@
         private Componentes.CustomButton btnClose;
         private Componentes.CustomButton btnMaximize;
         private Componentes.CustomButton btnMinimize;
-        private Componentes.PainelRadius painelRadius1;
         private Componentes.PainelRadius painelRadius2;
         private Componentes.PainelRadius painelRadius3;
         private Componentes.PainelRadius painelRadius4;
@@ -1296,5 +1305,8 @@
         private Componentes.PainelRadius painelRadius6;
         private System.Windows.Forms.Label label2;
         private Componentes.PainelRadius painelRadius7;
+        private System.Windows.Forms.Panel panel1;
+        private Componentes.RoundedPanel pnStatus;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
     }
 }
