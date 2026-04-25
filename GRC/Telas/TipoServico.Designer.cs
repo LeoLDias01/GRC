@@ -28,60 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TipoServico));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TipoServico));
             this.painelRadius1 = new GRC.Componentes.PainelRadius();
             this.dgvTipo = new System.Windows.Forms.DataGridView();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colExcluir = new System.Windows.Forms.DataGridViewImageColumn();
-            this.roundedPanel1 = new GRC.Componentes.RoundedPanel();
             this.customPanel1 = new GRC.Componentes.CustomPanel();
             this.lbRegistros = new System.Windows.Forms.Label();
             this.customPanel2 = new GRC.Componentes.CustomPanel();
             this.txtCategoria = new MaterialSkin.Controls.MaterialTextBox();
             this.btnClose = new GRC.Componentes.CustomButton();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnSuperior = new System.Windows.Forms.Panel();
+            this.roundedPanel2 = new GRC.Componentes.RoundedPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.painelRadius1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipo)).BeginInit();
             this.customPanel1.SuspendLayout();
             this.customPanel2.SuspendLayout();
+            this.pnSuperior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(16, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 42);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 31;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(67, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 29);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Serviços";
             // 
             // painelRadius1
             // 
-            this.painelRadius1.BackColor = System.Drawing.Color.AliceBlue;
+            this.painelRadius1.BackColor = System.Drawing.Color.White;
             this.painelRadius1.BorderColor = System.Drawing.Color.White;
             this.painelRadius1.Controls.Add(this.dgvTipo);
-            this.painelRadius1.Location = new System.Drawing.Point(12, 141);
+            this.painelRadius1.Location = new System.Drawing.Point(12, 158);
             this.painelRadius1.Name = "painelRadius1";
             this.painelRadius1.Radius = 30;
-            this.painelRadius1.Size = new System.Drawing.Size(385, 337);
+            this.painelRadius1.Size = new System.Drawing.Size(493, 320);
             this.painelRadius1.TabIndex = 34;
             this.painelRadius1.Thickness = 5F;
             // 
@@ -90,7 +71,7 @@
             this.dgvTipo.AllowUserToAddRows = false;
             this.dgvTipo.AllowUserToDeleteRows = false;
             this.dgvTipo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvTipo.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.dgvTipo.BackgroundColor = System.Drawing.Color.White;
             this.dgvTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTipo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvTipo.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
@@ -129,7 +110,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvTipo.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTipo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTipo.Size = new System.Drawing.Size(378, 331);
+            this.dgvTipo.Size = new System.Drawing.Size(486, 331);
             this.dgvTipo.TabIndex = 23;
             this.dgvTipo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTipo_CellContentClick);
             this.dgvTipo.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTipo_CellDoubleClick);
@@ -159,18 +140,6 @@
             this.colExcluir.Name = "colExcluir";
             this.colExcluir.ReadOnly = true;
             // 
-            // roundedPanel1
-            // 
-            this.roundedPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.roundedPanel1.Color1 = System.Drawing.Color.Bisque;
-            this.roundedPanel1.Color2 = System.Drawing.Color.Black;
-            this.roundedPanel1.CornerRadius = 10;
-            this.roundedPanel1.GradientAngle = 180F;
-            this.roundedPanel1.Location = new System.Drawing.Point(-12, 60);
-            this.roundedPanel1.Name = "roundedPanel1";
-            this.roundedPanel1.Size = new System.Drawing.Size(205, 10);
-            this.roundedPanel1.TabIndex = 32;
-            // 
             // customPanel1
             // 
             this.customPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -183,7 +152,7 @@
             this.customPanel1.ForeColor = System.Drawing.Color.White;
             this.customPanel1.Location = new System.Drawing.Point(12, 484);
             this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(383, 37);
+            this.customPanel1.Size = new System.Drawing.Size(492, 37);
             this.customPanel1.TabIndex = 25;
             this.customPanel1.TamanhoBorda = 0;
             this.customPanel1.TamanhoRaio = 10;
@@ -204,15 +173,15 @@
             // 
             // customPanel2
             // 
-            this.customPanel2.BackColor = System.Drawing.Color.AliceBlue;
+            this.customPanel2.BackColor = System.Drawing.Color.White;
             this.customPanel2.Controls.Add(this.txtCategoria);
             this.customPanel2.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.customPanel2.CorBotao = System.Drawing.Color.AliceBlue;
+            this.customPanel2.CorBotao = System.Drawing.Color.White;
             this.customPanel2.CorTextoBotao = System.Drawing.Color.White;
             this.customPanel2.ForeColor = System.Drawing.Color.White;
             this.customPanel2.Location = new System.Drawing.Point(12, 85);
             this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(385, 50);
+            this.customPanel2.Size = new System.Drawing.Size(490, 50);
             this.customPanel2.TabIndex = 22;
             this.customPanel2.TamanhoBorda = 0;
             this.customPanel2.TamanhoRaio = 20;
@@ -233,7 +202,7 @@
             this.txtCategoria.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCategoria.Multiline = false;
             this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(381, 50);
+            this.txtCategoria.Size = new System.Drawing.Size(486, 50);
             this.txtCategoria.TabIndex = 10;
             this.txtCategoria.Text = "";
             this.txtCategoria.TrailingIcon = ((System.Drawing.Image)(resources.GetObject("txtCategoria.TrailingIcon")));
@@ -254,7 +223,7 @@
             this.btnClose.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(373, -1);
+            this.btnClose.Location = new System.Drawing.Point(469, 17);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(36, 35);
             this.btnClose.TabIndex = 127;
@@ -263,17 +232,60 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // pnSuperior
+            // 
+            this.pnSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.pnSuperior.Controls.Add(this.roundedPanel2);
+            this.pnSuperior.Controls.Add(this.btnClose);
+            this.pnSuperior.Controls.Add(this.label2);
+            this.pnSuperior.Controls.Add(this.pictureBox2);
+            this.pnSuperior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnSuperior.Location = new System.Drawing.Point(0, 0);
+            this.pnSuperior.Name = "pnSuperior";
+            this.pnSuperior.Size = new System.Drawing.Size(517, 70);
+            this.pnSuperior.TabIndex = 133;
+            // 
+            // roundedPanel2
+            // 
+            this.roundedPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.roundedPanel2.Color1 = System.Drawing.Color.Bisque;
+            this.roundedPanel2.Color2 = System.Drawing.Color.Black;
+            this.roundedPanel2.CornerRadius = 10;
+            this.roundedPanel2.GradientAngle = 180F;
+            this.roundedPanel2.Location = new System.Drawing.Point(-15, 60);
+            this.roundedPanel2.Name = "roundedPanel2";
+            this.roundedPanel2.Size = new System.Drawing.Size(194, 101);
+            this.roundedPanel2.TabIndex = 122;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(64, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(107, 29);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Serviços";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(45, 42);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 28;
+            this.pictureBox2.TabStop = false;
+            // 
             // TipoServico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(408, 533);
-            this.Controls.Add(this.btnClose);
+            this.ClientSize = new System.Drawing.Size(517, 533);
+            this.Controls.Add(this.pnSuperior);
             this.Controls.Add(this.painelRadius1);
-            this.Controls.Add(this.roundedPanel1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.customPanel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -282,14 +294,15 @@
             this.Text = "Tipo de Serviço";
             this.Load += new System.EventHandler(this.TipoServico_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TipoServico_MouseDown);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.painelRadius1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipo)).EndInit();
             this.customPanel1.ResumeLayout(false);
             this.customPanel1.PerformLayout();
             this.customPanel2.ResumeLayout(false);
+            this.pnSuperior.ResumeLayout(false);
+            this.pnSuperior.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -302,10 +315,11 @@
         private System.Windows.Forms.DataGridViewImageColumn colExcluir;
         private Componentes.CustomPanel customPanel2;
         private MaterialSkin.Controls.MaterialTextBox txtCategoria;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private Componentes.RoundedPanel roundedPanel1;
         private Componentes.PainelRadius painelRadius1;
         private Componentes.CustomButton btnClose;
+        private System.Windows.Forms.Panel pnSuperior;
+        private Componentes.RoundedPanel roundedPanel2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

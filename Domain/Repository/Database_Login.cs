@@ -33,6 +33,7 @@ namespace Domain.Repository
                     Usuario = x.USUARIO
                 }).ToList();
             }
+
         }
     }
 }

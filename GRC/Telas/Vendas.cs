@@ -16,6 +16,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace GRC.Telas
 {
@@ -57,6 +58,12 @@ namespace GRC.Telas
             this.FormBorderStyle = FormBorderStyle.None; // Garante que está sem borda
             this.DoubleBuffered = true; // Melhora a performance visual ao redimensionar
             this.SetStyle(ControlStyles.ResizeRedraw, true);
+        }
+        public static void SetDoubleBuffered(Control control)
+        {
+            typeof(Control).InvokeMember("DoubleBuffered",
+                BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic,
+                null, control, new object[] { true });
         }
 
         protected override void WndProc(ref Message m)
@@ -129,6 +136,8 @@ namespace GRC.Telas
             // Busca o usuário logado no momento
             lbUser.Text = Sessao.UsuarioNome;
 
+            SetDoubleBuffered(flpItens);
+
             #region Verificação de Caixa
 
             // Buscando do banco dados de caixa aberto, se não houver o retorno é null
@@ -185,14 +194,22 @@ namespace GRC.Telas
 
             CarregaItensVenda();
 
+            // Simula o clique no primeiro botão (Todos) para organizar o layout inicial
+            if (flpGrupos.Controls.Count > 0 && flpGrupos.Controls[0] is CustomButton btnTodos)
+            {
+                btnTodos.PerformClick();
+            }
+
         }
         private void CarregaItensVenda()
         {
 
             flpGrupos.Controls.Clear();
+            flpItens.Controls.Clear();
             var gruposItens = _service.BuscaGruposItens();
 
             // Busca todos os itens do estoque
+            _itemEstoque = new List<Item>();
             _itemEstoque = _service.BuscaItens();
             if (gruposItens != null && gruposItens.Count > 0)
             {
@@ -216,6 +233,7 @@ namespace GRC.Telas
                         {
                             Id = 0,
                             IdItem = (int)itm.Id > 0 ? (int)itm.Id : 0,
+                            Categoria = itm.Categoria,
                             Descricao = itm.DescricaoVenda,
                             CodBarras = itm.CodBarras,
                             Quantidade = 1,
@@ -235,11 +253,11 @@ namespace GRC.Telas
         {
             CustomButton btn = new CustomButton();
             btn.Text = nome;
-            btn.Size = new Size(120, 40); // Ajuste conforme seu layout
+            btn.Size = new Size(120, 80); // Ajuste conforme seu layout
             btn.BackColor = cor;
             btn.ForeColor = Color.White;
             btn.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-            btn.TamanhoRaio = 15;
+            btn.TamanhoRaio = 10;
             btn.TamanhoBorda = 2;
             btn.CorBorda = Color.White;
             btn.Cursor = Cursors.Hand;
@@ -282,12 +300,11 @@ namespace GRC.Telas
             }
 
         }
+        private PainelRadius _cardSelecionado = null;
         private List<ItemCard> _itensOS = new List<ItemCard>();
         private void CriaCardItem(ItemCard item, bool validarDuplicado)
         {
             decimal.TryParse(item.ValorUnitario.ToString(), NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal unit);
-
-            // Entra no IF se a validação for habilitada (Apenas ao adicionar item novo)
 
             if (validarDuplicado)
             {
@@ -295,7 +312,7 @@ namespace GRC.Telas
                 if (jaExiste)
                 {
                     var cardExistente = flpItens.Controls
-                        .OfType<CustomPanel>()
+                        .OfType<PainelRadius>()
                         .FirstOrDefault(c => c.Tag is ItemCard os && os.IdItem == item.IdItem);
 
                     if (cardExistente != null)
@@ -304,26 +321,18 @@ namespace GRC.Telas
                         PiscarCard(cardExistente);
                     }
 
-                    new AlertBox(
-                        Color.Goldenrod,
-                        Color.Black,
-                        Color.Yellow,
-                        Resources.Warning,
-                        "Item já adicionado",
-                        item.Descricao,
-                        "Este item já está na ordem de serviço.",
-                        false
-                    ).ShowDialog();
+                    new AlertBox(Color.Goldenrod, Color.Black, Color.Yellow, Resources.Warning,
+                        "Item já adicionado", item.Descricao, "Este item já está na ordem de serviço.", false).ShowDialog();
 
                     return;
                 }
             }
 
-            // 🔹 cria o item da OS
             ItemCard itemOS = new ItemCard
             {
                 Id = item.Id,
                 IdItem = (int)item.IdItem,
+                Categoria = item.Categoria,
                 Descricao = item.Descricao,
                 ValorUnitario = unit,
                 Quantidade = item.Quantidade,
@@ -331,125 +340,51 @@ namespace GRC.Telas
                 FotoItem = item.FotoItem,
             };
 
-            // Criando o Card Principal (Mais alto para caber as informações embaixo)
             PainelRadius card = new PainelRadius
             {
                 Width = 180,
                 Height = 280,
                 Radius = 35,
                 BackColor = Color.White,
-                BorderColor = Color.FromArgb(0, 46, 68),
+                BorderColor = Color.WhiteSmoke,
                 Thickness = 5,
-                Tag = item, // Importante: Guardar o item inteiro para uso posterior
+                Tag = item,
                 Cursor = Cursors.Hand
             };
 
-            // 1. Foto Grande no Topo
+            // Cores para a lógica de seleção
+            Color corBordaNormal = Color.FromArgb(0, 46, 68);
+            Color corBordaSelecao = Color.Orange;
+
+            void SelecionarEsteCard()
+            {
+                if (_cardSelecionado == card) return;
+
+                if (_cardSelecionado != null)
+                {
+                    _cardSelecionado.BorderColor = corBordaNormal;
+                    _cardSelecionado.Invalidate();
+                }
+
+                _cardSelecionado = card;
+                card.BorderColor = corBordaSelecao;
+                card.Invalidate();
+            }
+
+            // --- Criação dos Controles Internos ---
             PictureBox foto = new PictureBox
             {
                 Size = new Size(160, 140),
                 Location = new Point(10, 10),
                 SizeMode = PictureBoxSizeMode.Zoom,
                 BackColor = Color.Transparent,
-                Image =  string.IsNullOrEmpty(item.FotoItem) ? null : CriptoImagem.Base64ToImage(item.FotoItem)
+                Image = string.IsNullOrEmpty(item.FotoItem) ? null : CriptoImagem.Base64ToImage(item.FotoItem)
             };
 
-            // 2. Código de Barras (Pequeno)
-            Label lblCodigo = new Label
-            {
-                Text = item.CodBarras, // Certifique-se que o objeto item tem essa prop
-                Location = new Point(10, 155),
-                Width = 160,
-                Font = new Font("Segoe UI", 7, FontStyle.Regular),
-                ForeColor = Color.Gray,
-                AutoSize = false,
-                TextAlign = ContentAlignment.MiddleLeft
-            };
-           
-            // 3. Nome do Item (Com quebra de linha se necessário)
-            Label lblNome = new Label
-            {
-                Text = item.Descricao,
-                Location = new Point(10, 175),
-                Width = 160,
-                Height = 35,
-                Font = new Font("Segoe UI", 9, FontStyle.Bold),
-                ForeColor = Color.FromArgb(43, 69, 98),
-                AutoEllipsis = true,
-                AutoSize = false
-            };
-
-            // 4. Preço (Destaque)
-            Label lblPreco = new Label
-            {
-                Text = item.ValorUnitario.ToString("C2"),
-                Location = new Point(10, 215),
-                AutoSize = true,
-                Font = new Font("Segoe UI", 12, FontStyle.Bold),
-                ForeColor = Color.ForestGreen
-            };
-
-            // 5. Quantidade Atual (Estoque)
-            Label lblEstoque = new Label
-            {
-                Text = $"Disponível: {item.QuantidadeMaxima}",
-                Location = new Point(10, 245),
-                AutoSize = true,
-                Font = new Font("Segoe UI", 8, FontStyle.Italic),
-                ForeColor = item.QuantidadeMaxima > 0 ? Color.DimGray : Color.Red
-            };
-            // 1. Definição das cores para o efeito
-            Color corBordaNormal = Color.FromArgb(0, 46, 68);
-            Color corBordaHover = Color.FromArgb(0, 149, 198); // Azul mais claro para destaque
-            Color corFundoHover = Color.FromArgb(250, 250, 250); // Cinza bem claro
-            void ResetarEstilo()
-            {
-                card.BackColor = Color.White;
-                card.BorderColor = corBordaNormal;
-            }
-
-            void AplicarEstilo()
-            {
-                card.BackColor = corFundoHover;
-                card.BorderColor = corBordaHover;
-            }
-
-            // 4. Lógica de Hover com verificação de saída real
-            card.MouseEnter += (s, e) => AplicarEstilo();
-            card.MouseLeave += (s, e) => {
-                // Verifica se o mouse saiu mesmo do Card ou se entrou em um controle filho (Label/Foto)
-                if (!card.ClientRectangle.Contains(card.PointToClient(Control.MousePosition)))
-                {
-                    ResetarEstilo();
-                }
-            };
-
-            // 5. Aplicar a mesma lógica para TODOS os controles internos
-            // Isso evita que o card "perca o foco" quando o mouse passar por cima da foto ou do nome
-            foreach (Control c in card.Controls)
-            {
-                c.Cursor = Cursors.Hand;
-
-                c.MouseEnter += (s, e) => AplicarEstilo();
-                c.MouseLeave += (s, e) => {
-                    if (!card.ClientRectangle.Contains(card.PointToClient(Control.MousePosition)))
-                    {
-                        ResetarEstilo();
-                    }
-                };
-
-                // Aproveitando o loop para garantir que o clique em qualquer parte do card selecione o item
-                c.Click += (s, e) => {
-                    // Chame aqui sua função de selecionar o item
-                    // SelecionarItem(item); 
-                };
-            }
-
-
-
-
-
-
+            Label lblCodigo = new Label { Text = item.CodBarras, Location = new Point(10, 155), Width = 160, Font = new Font("Segoe UI", 7), ForeColor = Color.Gray, AutoSize = false, TextAlign = ContentAlignment.MiddleLeft };
+            Label lblNome = new Label { Text = item.Descricao, Location = new Point(10, 175), Width = 160, Height = 35, Font = new Font("Segoe UI", 9, FontStyle.Bold), ForeColor = Color.FromArgb(43, 69, 98), AutoEllipsis = true, AutoSize = false };
+            Label lblPreco = new Label { Text = item.ValorUnitario.ToString("C2"), Location = new Point(10, 215), AutoSize = true, Font = new Font("Segoe UI", 12, FontStyle.Bold), ForeColor = Color.ForestGreen };
+            Label lblEstoque = new Label { Text = $"Disponível: {item.QuantidadeMaxima}", Location = new Point(10, 245), AutoSize = true, Font = new Font("Segoe UI", 8, FontStyle.Italic), ForeColor = item.QuantidadeMaxima > 0 ? Color.DimGray : Color.Red };
 
             // Adiciona os controles ao card
             card.Controls.Add(foto);
@@ -458,33 +393,74 @@ namespace GRC.Telas
             card.Controls.Add(lblPreco);
             card.Controls.Add(lblEstoque);
 
-            // Evento para selecionar o item ao clicar no card ou na foto
-            //card.Click += (s, e) => SelecionarItem(item);
-            //foto.Click += (s, e) => SelecionarItem(item);
+            // Eventos de Clique (Card e Filhos)
+            card.Click += (s, e) => SelecionarEsteCard();
+            foreach (Control c in card.Controls)
+            {
+                c.Cursor = Cursors.Hand;
+                c.Click += (s, e) => SelecionarEsteCard();
+            }
 
             flpItens.Controls.Add(card);
-        
-
-
         }
-        private void AtualizarTotalOS()
-        {
-            decimal total = _itensOS.Sum(i => i.Subtotal);
-            lbSubtotalGeral.Text = $"{total:C2}";
-        }
+ 
         private async void PiscarCard(Control card)
         {
-            Color corOriginal = card.BackColor;
-            Color corDestaque = Color.FromArgb(255, 220, 180); // destaque suave
 
-            for (int i = 0; i < 3; i++)
+            // Pegamos o componente como PainelRadius para poder resetar a borda também
+            var pnl = card as PainelRadius;
+            Color corOriginal = Color.White;
+            Color corBordaOriginal = Color.FromArgb(0, 46, 68);
+            Color corDestaque = Color.FromArgb(255, 220, 180);
+
+            try
             {
-                card.BackColor = corDestaque;
-                await Task.Delay(180);
+                for (int i = 0; i < 3; i++)
+                {
+                    card.BackColor = corDestaque;
+                    if (pnl != null) pnl.BorderColor = Color.Orange; // Opcional: piscar borda
 
-                card.BackColor = corOriginal;
-                await Task.Delay(180);
+                    await Task.Delay(5);
+
+                    card.BackColor = corOriginal;
+                    if (pnl != null) pnl.BorderColor = corBordaOriginal;
+
+                    await Task.Delay(5);
+                }
             }
+            finally
+            {
+                // Garante que o card volte ao estado normal e libera o Hover
+                card.BackColor = corOriginal;
+                if (pnl != null) pnl.BorderColor = corBordaOriginal;
+              
+                card.Refresh();
+            }
+        }
+        private void FiltrarItensPorGrupo(int? idGrupoFiltro)
+        {
+            // Suspende o layout para evitar "piscadeira" enquanto esconde os itens
+            flpItens.SuspendLayout();
+
+            foreach (Control ctrl in flpItens.Controls)
+            {
+                // Tentamos pegar o item guardado na Tag do Card
+                if (ctrl is PainelRadius card && card.Tag is ItemCard item)
+                {
+                    if (idGrupoFiltro == null)
+                    {
+                        // Se o filtro for nulo (Botão Todos), mostra tudo
+                        ctrl.Visible = true;
+                    }
+                    else
+                    {
+                        // Se o ID do grupo do item for igual ao filtro, mostra. Senão, esconde.
+                        ctrl.Visible = (item.Categoria == idGrupoFiltro);
+                    }
+                }
+            }
+
+            flpItens.ResumeLayout();
         }
         private void CarregaDadosCaixa()
         {
@@ -513,7 +489,7 @@ namespace GRC.Telas
             new CadastroCliente().ShowDialog();
         }
         
-        private void FiltrarItensPorGrupo(int? idGrupoFiltro)
+       /* private void FiltrarItensPorGrupo(int? idGrupoFiltro)
         {
           //  flpItens.SuspendLayout();
 
@@ -540,7 +516,7 @@ namespace GRC.Telas
             }
 
             //flpItens.ResumeLayout();
-        }
+        }*/
 
         private void lbCliente_Click(object sender, EventArgs e)
         {

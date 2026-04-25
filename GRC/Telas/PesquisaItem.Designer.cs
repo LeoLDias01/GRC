@@ -67,7 +67,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvItens.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvItens.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.dgvItens.BackgroundColor = System.Drawing.Color.White;
             this.dgvItens.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvItens.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvItens.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -98,7 +98,7 @@
             this.dgvItens.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvItens.EnableHeadersVisualStyles = false;
             this.dgvItens.GridColor = System.Drawing.Color.Silver;
-            this.dgvItens.Location = new System.Drawing.Point(3, 14);
+            this.dgvItens.Location = new System.Drawing.Point(6, 3);
             this.dgvItens.MultiSelect = false;
             this.dgvItens.Name = "dgvItens";
             this.dgvItens.ReadOnly = true;
@@ -107,7 +107,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItens.Size = new System.Drawing.Size(602, 367);
+            this.dgvItens.Size = new System.Drawing.Size(602, 378);
             this.dgvItens.TabIndex = 23;
             this.dgvItens.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItens_CellDoubleClick);
             this.dgvItens.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItens_CellValueChanged);
@@ -211,12 +211,12 @@
             // 
             this.pnPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnPesquisa.BackColor = System.Drawing.Color.AliceBlue;
+            this.pnPesquisa.BackColor = System.Drawing.Color.White;
             this.pnPesquisa.Controls.Add(this.txtItem);
             this.pnPesquisa.Controls.Add(this.txtCodigo);
             this.pnPesquisa.Controls.Add(this.btnSearch);
             this.pnPesquisa.CorBorda = System.Drawing.Color.Black;
-            this.pnPesquisa.CorBotao = System.Drawing.Color.AliceBlue;
+            this.pnPesquisa.CorBotao = System.Drawing.Color.White;
             this.pnPesquisa.CorTextoBotao = System.Drawing.Color.White;
             this.pnPesquisa.ForeColor = System.Drawing.Color.White;
             this.pnPesquisa.Location = new System.Drawing.Point(9, 85);
@@ -316,10 +316,10 @@
             // 
             // customPanel1
             // 
-            this.customPanel1.BackColor = System.Drawing.Color.AliceBlue;
+            this.customPanel1.BackColor = System.Drawing.Color.White;
             this.customPanel1.Controls.Add(this.dgvItens);
             this.customPanel1.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.customPanel1.CorBotao = System.Drawing.Color.AliceBlue;
+            this.customPanel1.CorBotao = System.Drawing.Color.White;
             this.customPanel1.CorTextoBotao = System.Drawing.Color.White;
             this.customPanel1.ForeColor = System.Drawing.Color.White;
             this.customPanel1.Location = new System.Drawing.Point(12, 165);

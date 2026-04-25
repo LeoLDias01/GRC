@@ -31,18 +31,23 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Vendas));
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.flpGrupos = new System.Windows.Forms.FlowLayoutPanel();
             this.lbCliente = new System.Windows.Forms.Label();
             this.lbUser = new System.Windows.Forms.Label();
             this.lbDataAbertura = new System.Windows.Forms.Label();
             this.lbSaldo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pcbLogo = new System.Windows.Forms.PictureBox();
+            this.btnMinimize = new GRC.Componentes.CustomButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btnClose = new GRC.Componentes.CustomButton();
+            this.painelRadius8 = new GRC.Componentes.PainelRadius();
+            this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnMaximize = new GRC.Componentes.CustomButton();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pnItens = new GRC.Componentes.PainelRadius();
+            this.flpGrupos = new System.Windows.Forms.FlowLayoutPanel();
             this.flpItens = new System.Windows.Forms.FlowLayoutPanel();
             this.painelRadius9 = new GRC.Componentes.PainelRadius();
             this.label5 = new System.Windows.Forms.Label();
@@ -55,14 +60,11 @@
             this.label12 = new System.Windows.Forms.Label();
             this.lbDesconto = new System.Windows.Forms.Label();
             this.painelRadius2 = new GRC.Componentes.PainelRadius();
+            this.flpCarrinho = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAcrescimo = new GRC.Componentes.CustomButton();
             this.btnDesconto = new GRC.Componentes.CustomButton();
             this.btnPagamento = new GRC.Componentes.CustomButton();
-            this.btnMinimize = new GRC.Componentes.CustomButton();
-            this.btnClose = new GRC.Componentes.CustomButton();
-            this.painelRadius8 = new GRC.Componentes.PainelRadius();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnMaximize = new GRC.Componentes.CustomButton();
+            this.btnCancelar = new GRC.Componentes.CustomButton();
             this.btnDadosAbertura = new GRC.Componentes.CustomButton();
             this.roundedPanel1 = new GRC.Componentes.RoundedPanel();
             this.roundedPanel2 = new GRC.Componentes.RoundedPanel();
@@ -70,23 +72,22 @@
             this.btnHistorico = new GRC.Componentes.CustomButton();
             this.btnLancaItemAvancado = new GRC.Componentes.CustomButton();
             this.btnNovoItem = new GRC.Componentes.CustomButton();
-            this.btnCancelar = new GRC.Componentes.CustomButton();
-            this.btnNovoCliente = new GRC.Componentes.CustomButton();
             this.btnFinalizadores = new GRC.Componentes.CustomButton();
             this.btnSangria = new GRC.Componentes.CustomButton();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.painelRadius8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnItens.SuspendLayout();
             this.painelRadius9.SuspendLayout();
             this.painelRadius1.SuspendLayout();
-            this.painelRadius8.SuspendLayout();
+            this.painelRadius2.SuspendLayout();
             this.roundedPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,7 +96,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 137);
+            this.label1.Location = new System.Drawing.Point(12, 118);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 23);
             this.label1.TabIndex = 135;
@@ -107,21 +108,11 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(13, 405);
+            this.label6.Location = new System.Drawing.Point(14, 407);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 19);
             this.label6.TabIndex = 146;
             this.label6.Text = "8 Itens";
-            // 
-            // flpGrupos
-            // 
-            this.flpGrupos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flpGrupos.BackColor = System.Drawing.Color.Transparent;
-            this.flpGrupos.Location = new System.Drawing.Point(3, 4);
-            this.flpGrupos.Name = "flpGrupos";
-            this.flpGrupos.Size = new System.Drawing.Size(663, 48);
-            this.flpGrupos.TabIndex = 83;
             // 
             // lbCliente
             // 
@@ -190,43 +181,38 @@
             this.panel1.Size = new System.Drawing.Size(1366, 100);
             this.panel1.TabIndex = 162;
             // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.splitContainer1.Location = new System.Drawing.Point(285, 106);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.flpGrupos);
-            this.splitContainer1.Panel1.Controls.Add(this.pnItens);
-            this.splitContainer1.Panel1MinSize = 75;
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.painelRadius9);
-            this.splitContainer1.Panel2.Controls.Add(this.painelRadius1);
-            this.splitContainer1.Panel2.Controls.Add(this.painelRadius2);
-            this.splitContainer1.Panel2.Controls.Add(this.label6);
-            this.splitContainer1.Panel2.Controls.Add(this.btnAcrescimo);
-            this.splitContainer1.Panel2.Controls.Add(this.btnDesconto);
-            this.splitContainer1.Panel2.Controls.Add(this.btnPagamento);
-            this.splitContainer1.Size = new System.Drawing.Size(1069, 659);
-            this.splitContainer1.SplitterDistance = 669;
-            this.splitContainer1.TabIndex = 163;
-            // 
             // pcbLogo
             // 
             this.pcbLogo.Image = global::GRC.Properties.Resources.RF_LabTech_Logo;
-            this.pcbLogo.Location = new System.Drawing.Point(16, 0);
+            this.pcbLogo.Location = new System.Drawing.Point(12, 0);
             this.pcbLogo.Name = "pcbLogo";
             this.pcbLogo.Size = new System.Drawing.Size(132, 100);
             this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbLogo.TabIndex = 21;
             this.pcbLogo.TabStop = false;
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnMinimize.CorBotao = System.Drawing.Color.Transparent;
+            this.btnMinimize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
+            this.btnMinimize.Location = new System.Drawing.Point(1226, 12);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(40, 35);
+            this.btnMinimize.TabIndex = 123;
+            this.btnMinimize.TamanhoBorda = 0;
+            this.btnMinimize.TamanhoRaio = 17;
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // pictureBox3
             // 
@@ -248,6 +234,52 @@
             this.pictureBox4.TabIndex = 6;
             this.pictureBox4.TabStop = false;
             // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnClose.CorBotao = System.Drawing.Color.Transparent;
+            this.btnClose.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(1318, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(36, 35);
+            this.btnClose.TabIndex = 125;
+            this.btnClose.TamanhoBorda = 0;
+            this.btnClose.TamanhoRaio = 17;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // painelRadius8
+            // 
+            this.painelRadius8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.painelRadius8.BorderColor = System.Drawing.Color.White;
+            this.painelRadius8.Controls.Add(this.label3);
+            this.painelRadius8.Location = new System.Drawing.Point(154, 12);
+            this.painelRadius8.Name = "painelRadius8";
+            this.painelRadius8.Radius = 30;
+            this.painelRadius8.Size = new System.Drawing.Size(164, 37);
+            this.painelRadius8.TabIndex = 89;
+            this.painelRadius8.Thickness = 5F;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(36, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(102, 19);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Caixa Aberto";
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::GRC.Properties.Resources.Usuario_Login;
@@ -258,20 +290,82 @@
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
+            // btnMaximize
+            // 
+            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMaximize.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnMaximize.CorBotao = System.Drawing.Color.Transparent;
+            this.btnMaximize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaximize.FlatAppearance.BorderSize = 0;
+            this.btnMaximize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximize.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaximize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
+            this.btnMaximize.Location = new System.Drawing.Point(1272, 12);
+            this.btnMaximize.Name = "btnMaximize";
+            this.btnMaximize.Size = new System.Drawing.Size(40, 35);
+            this.btnMaximize.TabIndex = 124;
+            this.btnMaximize.TamanhoBorda = 0;
+            this.btnMaximize.TamanhoRaio = 17;
+            this.btnMaximize.UseVisualStyleBackColor = false;
+            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.splitContainer1.Location = new System.Drawing.Point(145, 106);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.pnItens);
+            this.splitContainer1.Panel1MinSize = 75;
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.painelRadius9);
+            this.splitContainer1.Panel2.Controls.Add(this.painelRadius1);
+            this.splitContainer1.Panel2.Controls.Add(this.painelRadius2);
+            this.splitContainer1.Panel2.Controls.Add(this.label6);
+            this.splitContainer1.Panel2.Controls.Add(this.btnAcrescimo);
+            this.splitContainer1.Panel2.Controls.Add(this.btnDesconto);
+            this.splitContainer1.Panel2.Controls.Add(this.btnPagamento);
+            this.splitContainer1.Panel2.Controls.Add(this.btnCancelar);
+            this.splitContainer1.Size = new System.Drawing.Size(1209, 659);
+            this.splitContainer1.SplitterDistance = 809;
+            this.splitContainer1.TabIndex = 163;
+            // 
             // pnItens
             // 
             this.pnItens.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnItens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(68)))));
-            this.pnItens.BorderColor = System.Drawing.Color.White;
+            this.pnItens.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnItens.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.pnItens.Controls.Add(this.flpGrupos);
             this.pnItens.Controls.Add(this.flpItens);
-            this.pnItens.Location = new System.Drawing.Point(3, 58);
+            this.pnItens.Location = new System.Drawing.Point(0, 0);
             this.pnItens.Name = "pnItens";
             this.pnItens.Radius = 30;
-            this.pnItens.Size = new System.Drawing.Size(663, 592);
+            this.pnItens.Size = new System.Drawing.Size(813, 659);
             this.pnItens.TabIndex = 152;
-            this.pnItens.Thickness = 5F;
+            this.pnItens.Thickness = 10F;
+            // 
+            // flpGrupos
+            // 
+            this.flpGrupos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flpGrupos.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.flpGrupos.Location = new System.Drawing.Point(11, 12);
+            this.flpGrupos.Name = "flpGrupos";
+            this.flpGrupos.Size = new System.Drawing.Size(795, 81);
+            this.flpGrupos.TabIndex = 83;
             // 
             // flpItens
             // 
@@ -279,9 +373,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flpItens.BackColor = System.Drawing.Color.Transparent;
-            this.flpItens.Location = new System.Drawing.Point(8, 3);
+            this.flpItens.Location = new System.Drawing.Point(8, 99);
             this.flpItens.Name = "flpItens";
-            this.flpItens.Size = new System.Drawing.Size(652, 586);
+            this.flpItens.Size = new System.Drawing.Size(798, 551);
             this.flpItens.TabIndex = 84;
             // 
             // painelRadius9
@@ -337,7 +431,7 @@
             this.painelRadius1.Controls.Add(this.label8);
             this.painelRadius1.Controls.Add(this.label12);
             this.painelRadius1.Controls.Add(this.lbDesconto);
-            this.painelRadius1.Location = new System.Drawing.Point(6, 438);
+            this.painelRadius1.Location = new System.Drawing.Point(9, 438);
             this.painelRadius1.Name = "painelRadius1";
             this.painelRadius1.Radius = 20;
             this.painelRadius1.Size = new System.Drawing.Size(387, 104);
@@ -427,14 +521,26 @@
             this.painelRadius2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.painelRadius2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(68)))));
-            this.painelRadius2.BorderColor = System.Drawing.Color.White;
+            this.painelRadius2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.painelRadius2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.painelRadius2.Controls.Add(this.flpCarrinho);
             this.painelRadius2.Location = new System.Drawing.Point(3, 0);
             this.painelRadius2.Name = "painelRadius2";
             this.painelRadius2.Radius = 30;
-            this.painelRadius2.Size = new System.Drawing.Size(390, 391);
+            this.painelRadius2.Size = new System.Drawing.Size(390, 393);
             this.painelRadius2.TabIndex = 143;
-            this.painelRadius2.Thickness = 5F;
+            this.painelRadius2.Thickness = 10F;
+            // 
+            // flpCarrinho
+            // 
+            this.flpCarrinho.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flpCarrinho.BackColor = System.Drawing.Color.Transparent;
+            this.flpCarrinho.Location = new System.Drawing.Point(11, 12);
+            this.flpCarrinho.Name = "flpCarrinho";
+            this.flpCarrinho.Size = new System.Drawing.Size(369, 364);
+            this.flpCarrinho.TabIndex = 85;
             // 
             // btnAcrescimo
             // 
@@ -451,7 +557,7 @@
             this.btnAcrescimo.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
             this.btnAcrescimo.ForeColor = System.Drawing.Color.DarkOrange;
             this.btnAcrescimo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAcrescimo.Location = new System.Drawing.Point(177, 397);
+            this.btnAcrescimo.Location = new System.Drawing.Point(178, 399);
             this.btnAcrescimo.Name = "btnAcrescimo";
             this.btnAcrescimo.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnAcrescimo.Size = new System.Drawing.Size(105, 35);
@@ -478,7 +584,7 @@
             this.btnDesconto.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
             this.btnDesconto.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnDesconto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDesconto.Location = new System.Drawing.Point(288, 397);
+            this.btnDesconto.Location = new System.Drawing.Point(289, 399);
             this.btnDesconto.Name = "btnDesconto";
             this.btnDesconto.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnDesconto.Size = new System.Drawing.Size(105, 35);
@@ -507,10 +613,10 @@
             this.btnPagamento.ForeColor = System.Drawing.Color.White;
             this.btnPagamento.Image = ((System.Drawing.Image)(resources.GetObject("btnPagamento.Image")));
             this.btnPagamento.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPagamento.Location = new System.Drawing.Point(3, 597);
+            this.btnPagamento.Location = new System.Drawing.Point(158, 599);
             this.btnPagamento.Name = "btnPagamento";
             this.btnPagamento.Padding = new System.Windows.Forms.Padding(5, 0, 15, 0);
-            this.btnPagamento.Size = new System.Drawing.Size(390, 51);
+            this.btnPagamento.Size = new System.Drawing.Size(238, 51);
             this.btnPagamento.TabIndex = 137;
             this.btnPagamento.TamanhoBorda = 0;
             this.btnPagamento.TamanhoRaio = 15;
@@ -518,97 +624,31 @@
             this.btnPagamento.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnPagamento.UseVisualStyleBackColor = false;
             // 
-            // btnMinimize
+            // btnCancelar
             // 
-            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnMinimize.CorBotao = System.Drawing.Color.Transparent;
-            this.btnMinimize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(1226, 12);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(40, 35);
-            this.btnMinimize.TabIndex = 123;
-            this.btnMinimize.TamanhoBorda = 0;
-            this.btnMinimize.TamanhoRaio = 17;
-            this.btnMinimize.UseVisualStyleBackColor = false;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnClose.CorBotao = System.Drawing.Color.Transparent;
-            this.btnClose.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(1318, 12);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(36, 35);
-            this.btnClose.TabIndex = 125;
-            this.btnClose.TamanhoBorda = 0;
-            this.btnClose.TamanhoRaio = 17;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // painelRadius8
-            // 
-            this.painelRadius8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.painelRadius8.BorderColor = System.Drawing.Color.White;
-            this.painelRadius8.Controls.Add(this.label3);
-            this.painelRadius8.Location = new System.Drawing.Point(154, 12);
-            this.painelRadius8.Name = "painelRadius8";
-            this.painelRadius8.Radius = 30;
-            this.painelRadius8.Size = new System.Drawing.Size(164, 37);
-            this.painelRadius8.TabIndex = 89;
-            this.painelRadius8.Thickness = 5F;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(26, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 19);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Caixa Aberto";
-            // 
-            // btnMaximize
-            // 
-            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximize.BackColor = System.Drawing.Color.Transparent;
-            this.btnMaximize.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnMaximize.CorBotao = System.Drawing.Color.Transparent;
-            this.btnMaximize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMaximize.FlatAppearance.BorderSize = 0;
-            this.btnMaximize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMaximize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
-            this.btnMaximize.Location = new System.Drawing.Point(1272, 12);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(40, 35);
-            this.btnMaximize.TabIndex = 124;
-            this.btnMaximize.TamanhoBorda = 0;
-            this.btnMaximize.TamanhoRaio = 17;
-            this.btnMaximize.UseVisualStyleBackColor = false;
-            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(94)))), ((int)(((byte)(125)))));
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCancelar.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnCancelar.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(94)))), ((int)(((byte)(125)))));
+            this.btnCancelar.CorTextoBotao = System.Drawing.Color.White;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Bold);
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(3, 599);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnCancelar.Size = new System.Drawing.Size(149, 53);
+            this.btnCancelar.TabIndex = 138;
+            this.btnCancelar.TamanhoBorda = 0;
+            this.btnCancelar.TamanhoRaio = 15;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             // 
             // btnDadosAbertura
             // 
@@ -624,7 +664,7 @@
             this.btnDadosAbertura.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
             this.btnDadosAbertura.ForeColor = System.Drawing.Color.White;
             this.btnDadosAbertura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDadosAbertura.Location = new System.Drawing.Point(145, 435);
+            this.btnDadosAbertura.Location = new System.Drawing.Point(4, 498);
             this.btnDadosAbertura.Name = "btnDadosAbertura";
             this.btnDadosAbertura.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnDadosAbertura.Size = new System.Drawing.Size(135, 76);
@@ -643,7 +683,7 @@
             this.roundedPanel1.Controls.Add(this.roundedPanel2);
             this.roundedPanel1.CornerRadius = 10;
             this.roundedPanel1.GradientAngle = 180F;
-            this.roundedPanel1.Location = new System.Drawing.Point(-49, 163);
+            this.roundedPanel1.Location = new System.Drawing.Point(-49, 144);
             this.roundedPanel1.Name = "roundedPanel1";
             this.roundedPanel1.Size = new System.Drawing.Size(136, 10);
             this.roundedPanel1.TabIndex = 134;
@@ -673,7 +713,7 @@
             this.btnFecharCaixa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFecharCaixa.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
             this.btnFecharCaixa.ForeColor = System.Drawing.Color.White;
-            this.btnFecharCaixa.Location = new System.Drawing.Point(4, 189);
+            this.btnFecharCaixa.Location = new System.Drawing.Point(4, 662);
             this.btnFecharCaixa.Name = "btnFecharCaixa";
             this.btnFecharCaixa.Size = new System.Drawing.Size(135, 76);
             this.btnFecharCaixa.TabIndex = 102;
@@ -698,7 +738,7 @@
             this.btnHistorico.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
             this.btnHistorico.ForeColor = System.Drawing.Color.White;
             this.btnHistorico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHistorico.Location = new System.Drawing.Point(4, 435);
+            this.btnHistorico.Location = new System.Drawing.Point(4, 580);
             this.btnHistorico.Name = "btnHistorico";
             this.btnHistorico.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnHistorico.Size = new System.Drawing.Size(135, 76);
@@ -723,7 +763,7 @@
             this.btnLancaItemAvancado.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
             this.btnLancaItemAvancado.ForeColor = System.Drawing.Color.White;
             this.btnLancaItemAvancado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLancaItemAvancado.Location = new System.Drawing.Point(145, 189);
+            this.btnLancaItemAvancado.Location = new System.Drawing.Point(4, 170);
             this.btnLancaItemAvancado.Name = "btnLancaItemAvancado";
             this.btnLancaItemAvancado.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnLancaItemAvancado.Size = new System.Drawing.Size(135, 76);
@@ -748,7 +788,7 @@
             this.btnNovoItem.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
             this.btnNovoItem.ForeColor = System.Drawing.Color.White;
             this.btnNovoItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovoItem.Location = new System.Drawing.Point(4, 271);
+            this.btnNovoItem.Location = new System.Drawing.Point(4, 252);
             this.btnNovoItem.Name = "btnNovoItem";
             this.btnNovoItem.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnNovoItem.Size = new System.Drawing.Size(135, 76);
@@ -759,58 +799,6 @@
             this.btnNovoItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNovoItem.UseVisualStyleBackColor = false;
             this.btnNovoItem.Click += new System.EventHandler(this.btnNovoItem_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(198)))));
-            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnCancelar.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnCancelar.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(198)))));
-            this.btnCancelar.CorTextoBotao = System.Drawing.Color.White;
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Bold);
-            this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(4, 706);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnCancelar.Size = new System.Drawing.Size(276, 51);
-            this.btnCancelar.TabIndex = 138;
-            this.btnCancelar.TamanhoBorda = 0;
-            this.btnCancelar.TamanhoRaio = 15;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            // 
-            // btnNovoCliente
-            // 
-            this.btnNovoCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(198)))));
-            this.btnNovoCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnNovoCliente.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnNovoCliente.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(198)))));
-            this.btnNovoCliente.CorTextoBotao = System.Drawing.Color.White;
-            this.btnNovoCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNovoCliente.FlatAppearance.BorderSize = 0;
-            this.btnNovoCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnNovoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNovoCliente.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.btnNovoCliente.ForeColor = System.Drawing.Color.White;
-            this.btnNovoCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovoCliente.Location = new System.Drawing.Point(145, 271);
-            this.btnNovoCliente.Name = "btnNovoCliente";
-            this.btnNovoCliente.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnNovoCliente.Size = new System.Drawing.Size(135, 76);
-            this.btnNovoCliente.TabIndex = 139;
-            this.btnNovoCliente.TamanhoBorda = 0;
-            this.btnNovoCliente.TamanhoRaio = 15;
-            this.btnNovoCliente.Text = "Novo Cliente";
-            this.btnNovoCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNovoCliente.UseVisualStyleBackColor = false;
-            this.btnNovoCliente.Click += new System.EventHandler(this.btnNovoCliente_Click);
             // 
             // btnFinalizadores
             // 
@@ -826,7 +814,7 @@
             this.btnFinalizadores.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
             this.btnFinalizadores.ForeColor = System.Drawing.Color.White;
             this.btnFinalizadores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFinalizadores.Location = new System.Drawing.Point(4, 353);
+            this.btnFinalizadores.Location = new System.Drawing.Point(4, 416);
             this.btnFinalizadores.Name = "btnFinalizadores";
             this.btnFinalizadores.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnFinalizadores.Size = new System.Drawing.Size(135, 76);
@@ -852,7 +840,7 @@
             this.btnSangria.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
             this.btnSangria.ForeColor = System.Drawing.Color.White;
             this.btnSangria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSangria.Location = new System.Drawing.Point(145, 353);
+            this.btnSangria.Location = new System.Drawing.Point(4, 334);
             this.btnSangria.Name = "btnSangria";
             this.btnSangria.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnSangria.Size = new System.Drawing.Size(135, 76);
@@ -879,36 +867,34 @@
             this.Controls.Add(this.btnHistorico);
             this.Controls.Add(this.btnLancaItemAvancado);
             this.Controls.Add(this.btnNovoItem);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnNovoCliente);
             this.Controls.Add(this.btnFinalizadores);
             this.Controls.Add(this.btnSangria);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Vendas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Vendas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Vendas_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Vendas_MouseDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.painelRadius8.ResumeLayout(false);
+            this.painelRadius8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnItens.ResumeLayout(false);
             this.painelRadius9.ResumeLayout(false);
             this.painelRadius9.PerformLayout();
             this.painelRadius1.ResumeLayout(false);
             this.painelRadius1.PerformLayout();
-            this.painelRadius8.ResumeLayout(false);
-            this.painelRadius8.PerformLayout();
+            this.painelRadius2.ResumeLayout(false);
             this.roundedPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -930,7 +916,6 @@
         private Componentes.CustomButton btnNovoItem;
         private Componentes.CustomButton btnPagamento;
         private Componentes.CustomButton btnCancelar;
-        private Componentes.CustomButton btnNovoCliente;
         private Componentes.CustomButton btnFinalizadores;
         private Componentes.CustomButton btnSangria;
         private System.Windows.Forms.Label lbSaldo;
@@ -945,7 +930,6 @@
         private Componentes.CustomButton btnDesconto;
         private Componentes.CustomButton btnHistorico;
         private System.Windows.Forms.Label lbUser;
-        private Componentes.CustomButton btnDadosAbertura;
         private System.Windows.Forms.PictureBox pcbLogo;
         private System.Windows.Forms.FlowLayoutPanel flpGrupos;
         private System.Windows.Forms.FlowLayoutPanel flpItens;
@@ -961,5 +945,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lbDesconto;
         private Componentes.PainelRadius painelRadius9;
+        private Componentes.CustomButton btnDadosAbertura;
+        private System.Windows.Forms.FlowLayoutPanel flpCarrinho;
     }
 }

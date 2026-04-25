@@ -256,7 +256,10 @@ namespace GRC.Telas
 
         private void btnMaximize_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            if (this.WindowState == FormWindowState.Maximized)
+                this.WindowState = FormWindowState.Normal;
+            else
+                this.WindowState = FormWindowState.Maximized;
         }
 
         private void ItemEstoque_MouseDown(object sender, MouseEventArgs e)
@@ -271,6 +274,15 @@ namespace GRC.Telas
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void pnSuperior_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+            }
         }
     }
 }

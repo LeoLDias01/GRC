@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +18,16 @@ namespace GRC.Telas
     public partial class Fornecedor : Form
     {
         private ServiceFornecedor _serviceFornecedor = new ServiceFornecedor();
+
+        // Importar as DLLs do Windows para mover o formulário
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        // Constantes para a mensagem de movimento
+        private const int WM_NCLBUTTONDOWN = 0xA1;
+        private const int HT_CAPTION = 0x2;
         public Fornecedor()
         {
             InitializeComponent();
@@ -135,7 +146,7 @@ namespace GRC.Telas
         }
         private void btnAddFornecedor_Click(object sender, EventArgs e)
         {
-            new CadastroFornecedor().ShowDialog();
+            
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -146,6 +157,53 @@ namespace GRC.Telas
         private void Fornecedor_Load(object sender, EventArgs e)
         {
             chkAtivo.Checked = true;
+        }
+
+        private void btnNovoFornecedor_Click(object sender, EventArgs e)
+        {
+            new CadastroFornecedor().ShowDialog();
+        }
+
+        private void btnMaximize_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+                //flpMenu.Dock = DockStyle.None;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+                //flpMenu.Dock = DockStyle.Fill;
+            }
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+            }
+        }
+
+        private void Fornecedor_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+            }
         }
     }
 }

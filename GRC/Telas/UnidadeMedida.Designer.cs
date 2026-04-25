@@ -39,18 +39,20 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.roundedPanel1 = new GRC.Componentes.RoundedPanel();
-            this.btnClose = new GRC.Componentes.CustomButton();
             this.customPanel1 = new GRC.Componentes.CustomPanel();
             this.lbRegistros = new System.Windows.Forms.Label();
             this.customPanel2 = new GRC.Componentes.CustomPanel();
             this.txtDescricao = new MaterialSkin.Controls.MaterialTextBox();
             this.painelRadius1 = new GRC.Componentes.PainelRadius();
+            this.pnSuperior = new System.Windows.Forms.Panel();
+            this.roundedPanel2 = new GRC.Componentes.RoundedPanel();
+            this.btnSair = new GRC.Componentes.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.customPanel1.SuspendLayout();
             this.customPanel2.SuspendLayout();
             this.painelRadius1.SuspendLayout();
+            this.pnSuperior.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvTipo
@@ -98,7 +100,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvTipo.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTipo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTipo.Size = new System.Drawing.Size(326, 302);
+            this.dgvTipo.Size = new System.Drawing.Size(413, 341);
             this.dgvTipo.TabIndex = 23;
             this.dgvTipo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTipo_CellContentClick);
             // 
@@ -144,7 +146,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(63, 25);
+            this.label1.Location = new System.Drawing.Point(64, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 29);
             this.label1.TabIndex = 27;
@@ -160,44 +162,6 @@
             this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
             // 
-            // roundedPanel1
-            // 
-            this.roundedPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.roundedPanel1.Color1 = System.Drawing.Color.Pink;
-            this.roundedPanel1.Color2 = System.Drawing.Color.Black;
-            this.roundedPanel1.CornerRadius = 10;
-            this.roundedPanel1.GradientAngle = 180F;
-            this.roundedPanel1.Location = new System.Drawing.Point(-41, 60);
-            this.roundedPanel1.Name = "roundedPanel1";
-            this.roundedPanel1.Size = new System.Drawing.Size(215, 10);
-            this.roundedPanel1.TabIndex = 26;
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnClose.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnClose.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnClose.CorTextoBotao = System.Drawing.Color.White;
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(324, 2);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnClose.Size = new System.Drawing.Size(35, 35);
-            this.btnClose.TabIndex = 20;
-            this.btnClose.TamanhoBorda = 0;
-            this.btnClose.TamanhoRaio = 5;
-            this.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // customPanel1
             // 
             this.customPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -208,9 +172,9 @@
             this.customPanel1.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
             this.customPanel1.CorTextoBotao = System.Drawing.Color.White;
             this.customPanel1.ForeColor = System.Drawing.Color.White;
-            this.customPanel1.Location = new System.Drawing.Point(13, 455);
+            this.customPanel1.Location = new System.Drawing.Point(13, 509);
             this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(335, 37);
+            this.customPanel1.Size = new System.Drawing.Size(420, 37);
             this.customPanel1.TabIndex = 24;
             this.customPanel1.TamanhoBorda = 0;
             this.customPanel1.TamanhoRaio = 10;
@@ -237,9 +201,9 @@
             this.customPanel2.CorBotao = System.Drawing.Color.AliceBlue;
             this.customPanel2.CorTextoBotao = System.Drawing.Color.White;
             this.customPanel2.ForeColor = System.Drawing.Color.White;
-            this.customPanel2.Location = new System.Drawing.Point(12, 85);
+            this.customPanel2.Location = new System.Drawing.Point(13, 87);
             this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(334, 50);
+            this.customPanel2.Size = new System.Drawing.Size(420, 50);
             this.customPanel2.TabIndex = 22;
             this.customPanel2.TamanhoBorda = 0;
             this.customPanel2.TamanhoRaio = 20;
@@ -260,7 +224,7 @@
             this.txtDescricao.MouseState = MaterialSkin.MouseState.OUT;
             this.txtDescricao.Multiline = false;
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(335, 50);
+            this.txtDescricao.Size = new System.Drawing.Size(419, 50);
             this.txtDescricao.TabIndex = 10;
             this.txtDescricao.Text = "";
             this.txtDescricao.TrailingIcon = ((System.Drawing.Image)(resources.GetObject("txtDescricao.TrailingIcon")));
@@ -272,24 +236,69 @@
             this.painelRadius1.BackColor = System.Drawing.Color.AliceBlue;
             this.painelRadius1.BorderColor = System.Drawing.Color.AliceBlue;
             this.painelRadius1.Controls.Add(this.dgvTipo);
-            this.painelRadius1.Location = new System.Drawing.Point(11, 141);
+            this.painelRadius1.Location = new System.Drawing.Point(11, 156);
             this.painelRadius1.Name = "painelRadius1";
             this.painelRadius1.Radius = 30;
-            this.painelRadius1.Size = new System.Drawing.Size(335, 308);
+            this.painelRadius1.Size = new System.Drawing.Size(422, 347);
             this.painelRadius1.TabIndex = 29;
             this.painelRadius1.Thickness = 10F;
+            // 
+            // pnSuperior
+            // 
+            this.pnSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.pnSuperior.Controls.Add(this.roundedPanel2);
+            this.pnSuperior.Controls.Add(this.label1);
+            this.pnSuperior.Controls.Add(this.btnSair);
+            this.pnSuperior.Controls.Add(this.pictureBox1);
+            this.pnSuperior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnSuperior.Location = new System.Drawing.Point(0, 0);
+            this.pnSuperior.Name = "pnSuperior";
+            this.pnSuperior.Size = new System.Drawing.Size(445, 70);
+            this.pnSuperior.TabIndex = 132;
+            // 
+            // roundedPanel2
+            // 
+            this.roundedPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.roundedPanel2.Color1 = System.Drawing.Color.Aqua;
+            this.roundedPanel2.Color2 = System.Drawing.Color.MidnightBlue;
+            this.roundedPanel2.CornerRadius = 10;
+            this.roundedPanel2.GradientAngle = 180F;
+            this.roundedPanel2.Location = new System.Drawing.Point(-15, 60);
+            this.roundedPanel2.Name = "roundedPanel2";
+            this.roundedPanel2.Size = new System.Drawing.Size(180, 101);
+            this.roundedPanel2.TabIndex = 122;
+            // 
+            // btnSair
+            // 
+            this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSair.BackColor = System.Drawing.Color.Transparent;
+            this.btnSair.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnSair.CorBotao = System.Drawing.Color.Transparent;
+            this.btnSair.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSair.FlatAppearance.BorderSize = 0;
+            this.btnSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSair.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
+            this.btnSair.Location = new System.Drawing.Point(401, 17);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(36, 35);
+            this.btnSair.TabIndex = 125;
+            this.btnSair.TamanhoBorda = 0;
+            this.btnSair.TamanhoRaio = 17;
+            this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // UnidadeMedida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(360, 501);
+            this.ClientSize = new System.Drawing.Size(445, 555);
+            this.Controls.Add(this.pnSuperior);
             this.Controls.Add(this.painelRadius1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.roundedPanel1);
-            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.customPanel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -307,8 +316,9 @@
             this.customPanel1.PerformLayout();
             this.customPanel2.ResumeLayout(false);
             this.painelRadius1.ResumeLayout(false);
+            this.pnSuperior.ResumeLayout(false);
+            this.pnSuperior.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -323,10 +333,11 @@
         private Componentes.CustomPanel customPanel2;
         private MaterialSkin.Controls.MaterialTextBox txtDescricao;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private Componentes.RoundedPanel roundedPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Componentes.CustomButton btnClose;
         private Componentes.PainelRadius painelRadius1;
+        private System.Windows.Forms.Panel pnSuperior;
+        private Componentes.RoundedPanel roundedPanel2;
+        private Componentes.CustomButton btnSair;
     }
 }

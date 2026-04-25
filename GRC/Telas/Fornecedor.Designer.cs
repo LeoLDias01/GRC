@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Fornecedor));
             this.dgvFornecedores = new System.Windows.Forms.DataGridView();
             this.colIdFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,48 +40,54 @@
             this.colCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colExcluirFornecedor = new System.Windows.Forms.DataGridViewImageColumn();
-            this.customPanel2 = new GRC.Componentes.CustomPanel();
-            this.cbxQtdRegistros = new System.Windows.Forms.ComboBox();
-            this.lbRegistros = new System.Windows.Forms.Label();
-            this.pnPesquisa = new GRC.Componentes.CustomPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMaximize = new GRC.Componentes.CustomButton();
+            this.btnMinimize = new GRC.Componentes.CustomButton();
+            this.btnSearch = new GRC.Componentes.CustomButton();
+            this.btnNovoFornecedor = new GRC.Componentes.CustomButton();
+            this.btnClose = new GRC.Componentes.CustomButton();
+            this.btnApagar = new GRC.Componentes.CustomButton();
+            this.pn1 = new GRC.Componentes.RoundedPanel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.lbTitulo = new System.Windows.Forms.Label();
+            this.flpMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.txtFornecedor = new MaterialSkin.Controls.MaterialTextBox();
             this.txtRazaoSocial = new MaterialSkin.Controls.MaterialTextBox();
             this.txtCnpj = new MaterialSkin.Controls.MaterialTextBox();
             this.txtCidade = new MaterialSkin.Controls.MaterialTextBox();
             this.txtUf = new MaterialSkin.Controls.MaterialTextBox();
             this.chkAtivo = new MaterialSkin.Controls.MaterialCheckbox();
-            this.btnSearch = new GRC.Componentes.CustomButton();
-            this.btnAddFornecedor = new GRC.Componentes.CustomButton();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.btnApagar = new GRC.Componentes.CustomButton();
-            this.roundedPanel1 = new GRC.Componentes.RoundedPanel();
+            this.cbxQtdRegistros = new System.Windows.Forms.ComboBox();
+            this.lbRegistros = new System.Windows.Forms.Label();
+            this.modernBox1 = new GRC.Componentes.ModernBox();
+            this.modernBox2 = new GRC.Componentes.ModernBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).BeginInit();
-            this.customPanel2.SuspendLayout();
-            this.pnPesquisa.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.flpMenu.SuspendLayout();
+            this.modernBox1.SuspendLayout();
+            this.modernBox2.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvFornecedores
             // 
             this.dgvFornecedores.AllowUserToAddRows = false;
             this.dgvFornecedores.AllowUserToDeleteRows = false;
-            this.dgvFornecedores.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvFornecedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvFornecedores.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.dgvFornecedores.BackgroundColor = System.Drawing.Color.White;
             this.dgvFornecedores.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvFornecedores.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvFornecedores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFornecedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFornecedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvFornecedores.ColumnHeadersHeight = 35;
             this.dgvFornecedores.ColumnHeadersVisible = false;
             this.dgvFornecedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -93,26 +99,27 @@
             this.colUf,
             this.colExcluirFornecedor});
             this.dgvFornecedores.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(218)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFornecedores.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(218)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFornecedores.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvFornecedores.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvFornecedores.EnableHeadersVisualStyles = false;
             this.dgvFornecedores.GridColor = System.Drawing.Color.DarkGray;
-            this.dgvFornecedores.Location = new System.Drawing.Point(12, 233);
+            this.dgvFornecedores.Location = new System.Drawing.Point(10, 10);
             this.dgvFornecedores.MultiSelect = false;
             this.dgvFornecedores.Name = "dgvFornecedores";
             this.dgvFornecedores.ReadOnly = true;
             this.dgvFornecedores.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvFornecedores.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvFornecedores.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvFornecedores.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvFornecedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFornecedores.Size = new System.Drawing.Size(1099, 379);
+            this.dgvFornecedores.Size = new System.Drawing.Size(962, 379);
             this.dgvFornecedores.TabIndex = 11;
             this.dgvFornecedores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFornecedores_CellDoubleClick);
             this.dgvFornecedores.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFornecedores_CellValueChanged);
@@ -171,97 +178,208 @@
             this.colExcluirFornecedor.ReadOnly = true;
             this.colExcluirFornecedor.Visible = false;
             // 
-            // customPanel2
+            // panel1
             // 
-            this.customPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(68)))));
+            this.panel1.Controls.Add(this.btnMaximize);
+            this.panel1.Controls.Add(this.btnMinimize);
+            this.panel1.Controls.Add(this.btnSearch);
+            this.panel1.Controls.Add(this.btnNovoFornecedor);
+            this.panel1.Controls.Add(this.btnClose);
+            this.panel1.Controls.Add(this.btnApagar);
+            this.panel1.Controls.Add(this.pn1);
+            this.panel1.Controls.Add(this.pictureBox4);
+            this.panel1.Controls.Add(this.lbTitulo);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1000, 74);
+            this.panel1.TabIndex = 157;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // btnMaximize
+            // 
+            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMaximize.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnMaximize.CorBotao = System.Drawing.Color.Transparent;
+            this.btnMaximize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaximize.FlatAppearance.BorderSize = 0;
+            this.btnMaximize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximize.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaximize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
+            this.btnMaximize.Location = new System.Drawing.Point(910, 15);
+            this.btnMaximize.Name = "btnMaximize";
+            this.btnMaximize.Size = new System.Drawing.Size(40, 35);
+            this.btnMaximize.TabIndex = 163;
+            this.btnMaximize.TamanhoBorda = 0;
+            this.btnMaximize.TamanhoRaio = 17;
+            this.btnMaximize.UseVisualStyleBackColor = false;
+            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnMinimize.CorBotao = System.Drawing.Color.Transparent;
+            this.btnMinimize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
+            this.btnMinimize.Location = new System.Drawing.Point(864, 15);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(40, 35);
+            this.btnMinimize.TabIndex = 162;
+            this.btnMinimize.TamanhoBorda = 0;
+            this.btnMinimize.TamanhoRaio = 17;
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnSearch.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnSearch.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnSearch.CorTextoBotao = System.Drawing.Color.White;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.Location = new System.Drawing.Point(330, 12);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(43, 43);
+            this.btnSearch.TabIndex = 101;
+            this.btnSearch.TamanhoBorda = 0;
+            this.btnSearch.TamanhoRaio = 10;
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnNovoFornecedor
+            // 
+            this.btnNovoFornecedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnNovoFornecedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnNovoFornecedor.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnNovoFornecedor.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnNovoFornecedor.CorTextoBotao = System.Drawing.Color.White;
+            this.btnNovoFornecedor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNovoFornecedor.FlatAppearance.BorderSize = 0;
+            this.btnNovoFornecedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnNovoFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovoFornecedor.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
+            this.btnNovoFornecedor.ForeColor = System.Drawing.Color.White;
+            this.btnNovoFornecedor.Image = ((System.Drawing.Image)(resources.GetObject("btnNovoFornecedor.Image")));
+            this.btnNovoFornecedor.Location = new System.Drawing.Point(232, 11);
+            this.btnNovoFornecedor.Name = "btnNovoFornecedor";
+            this.btnNovoFornecedor.Size = new System.Drawing.Size(43, 43);
+            this.btnNovoFornecedor.TabIndex = 161;
+            this.btnNovoFornecedor.TamanhoBorda = 0;
+            this.btnNovoFornecedor.TamanhoRaio = 10;
+            this.btnNovoFornecedor.UseVisualStyleBackColor = false;
+            this.btnNovoFornecedor.Click += new System.EventHandler(this.btnNovoFornecedor_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnClose.CorBotao = System.Drawing.Color.Transparent;
+            this.btnClose.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(952, 14);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(36, 35);
+            this.btnClose.TabIndex = 159;
+            this.btnClose.TamanhoBorda = 0;
+            this.btnClose.TamanhoRaio = 17;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnApagar
+            // 
+            this.btnApagar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnApagar.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnApagar.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnApagar.CorTextoBotao = System.Drawing.Color.White;
+            this.btnApagar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnApagar.FlatAppearance.BorderSize = 0;
+            this.btnApagar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApagar.ForeColor = System.Drawing.Color.White;
+            this.btnApagar.Image = ((System.Drawing.Image)(resources.GetObject("btnApagar.Image")));
+            this.btnApagar.Location = new System.Drawing.Point(281, 11);
+            this.btnApagar.Name = "btnApagar";
+            this.btnApagar.Size = new System.Drawing.Size(43, 43);
+            this.btnApagar.TabIndex = 14;
+            this.btnApagar.TamanhoBorda = 0;
+            this.btnApagar.TamanhoRaio = 10;
+            this.btnApagar.UseVisualStyleBackColor = false;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
+            // 
+            // pn1
+            // 
+            this.pn1.BackColor = System.Drawing.Color.Transparent;
+            this.pn1.Color1 = System.Drawing.Color.Bisque;
+            this.pn1.Color2 = System.Drawing.Color.DarkOrange;
+            this.pn1.CornerRadius = 8;
+            this.pn1.GradientAngle = 280F;
+            this.pn1.Location = new System.Drawing.Point(3, 60);
+            this.pn1.Name = "pn1";
+            this.pn1.Size = new System.Drawing.Size(370, 24);
+            this.pn1.TabIndex = 24;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(45, 42);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 140;
+            this.pictureBox4.TabStop = false;
+            // 
+            // lbTitulo
+            // 
+            this.lbTitulo.AutoSize = true;
+            this.lbTitulo.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitulo.ForeColor = System.Drawing.Color.White;
+            this.lbTitulo.Location = new System.Drawing.Point(63, 20);
+            this.lbTitulo.Name = "lbTitulo";
+            this.lbTitulo.Size = new System.Drawing.Size(163, 29);
+            this.lbTitulo.TabIndex = 139;
+            this.lbTitulo.Text = "Fornecedores";
+            // 
+            // flpMenu
+            // 
+            this.flpMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.customPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.customPanel2.Controls.Add(this.cbxQtdRegistros);
-            this.customPanel2.Controls.Add(this.lbRegistros);
-            this.customPanel2.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.customPanel2.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.customPanel2.CorTextoBotao = System.Drawing.Color.White;
-            this.customPanel2.ForeColor = System.Drawing.Color.White;
-            this.customPanel2.Location = new System.Drawing.Point(12, 618);
-            this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(1099, 37);
-            this.customPanel2.TabIndex = 15;
-            this.customPanel2.TamanhoBorda = 0;
-            this.customPanel2.TamanhoRaio = 10;
-            // 
-            // cbxQtdRegistros
-            // 
-            this.cbxQtdRegistros.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.cbxQtdRegistros.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbxQtdRegistros.FormattingEnabled = true;
-            this.cbxQtdRegistros.Items.AddRange(new object[] {
-            "10",
-            "20",
-            "30",
-            "40",
-            "50",
-            "60",
-            "70",
-            "80",
-            "90",
-            "100"});
-            this.cbxQtdRegistros.Location = new System.Drawing.Point(1021, 10);
-            this.cbxQtdRegistros.Name = "cbxQtdRegistros";
-            this.cbxQtdRegistros.Size = new System.Drawing.Size(59, 21);
-            this.cbxQtdRegistros.TabIndex = 2;
-            this.cbxQtdRegistros.Text = "10";
-            this.cbxQtdRegistros.TextChanged += new System.EventHandler(this.cbxQtdRegistros_TextChanged);
-            this.cbxQtdRegistros.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxQtdRegistros_KeyPress);
-            // 
-            // lbRegistros
-            // 
-            this.lbRegistros.AutoSize = true;
-            this.lbRegistros.BackColor = System.Drawing.Color.Transparent;
-            this.lbRegistros.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbRegistros.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRegistros.ForeColor = System.Drawing.Color.White;
-            this.lbRegistros.Location = new System.Drawing.Point(0, 0);
-            this.lbRegistros.Name = "lbRegistros";
-            this.lbRegistros.Padding = new System.Windows.Forms.Padding(5);
-            this.lbRegistros.Size = new System.Drawing.Size(211, 31);
-            this.lbRegistros.TabIndex = 1;
-            this.lbRegistros.Text = "0 Registros Encontrados";
-            // 
-            // pnPesquisa
-            // 
-            this.pnPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnPesquisa.BackColor = System.Drawing.Color.AliceBlue;
-            this.pnPesquisa.Controls.Add(this.flowLayoutPanel1);
-            this.pnPesquisa.Controls.Add(this.btnSearch);
-            this.pnPesquisa.Controls.Add(this.btnAddFornecedor);
-            this.pnPesquisa.Controls.Add(this.materialLabel1);
-            this.pnPesquisa.Controls.Add(this.btnApagar);
-            this.pnPesquisa.CorBorda = System.Drawing.Color.Black;
-            this.pnPesquisa.CorBotao = System.Drawing.Color.AliceBlue;
-            this.pnPesquisa.CorTextoBotao = System.Drawing.Color.White;
-            this.pnPesquisa.ForeColor = System.Drawing.Color.White;
-            this.pnPesquisa.Location = new System.Drawing.Point(12, 12);
-            this.pnPesquisa.Name = "pnPesquisa";
-            this.pnPesquisa.Size = new System.Drawing.Size(1099, 189);
-            this.pnPesquisa.TabIndex = 15;
-            this.pnPesquisa.TamanhoBorda = 0;
-            this.pnPesquisa.TamanhoRaio = 20;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.Controls.Add(this.txtFornecedor);
-            this.flowLayoutPanel1.Controls.Add(this.txtRazaoSocial);
-            this.flowLayoutPanel1.Controls.Add(this.txtCnpj);
-            this.flowLayoutPanel1.Controls.Add(this.txtCidade);
-            this.flowLayoutPanel1.Controls.Add(this.txtUf);
-            this.flowLayoutPanel1.Controls.Add(this.chkAtivo);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 60);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1068, 119);
-            this.flowLayoutPanel1.TabIndex = 103;
+            this.flpMenu.BackColor = System.Drawing.Color.White;
+            this.flpMenu.Controls.Add(this.txtFornecedor);
+            this.flpMenu.Controls.Add(this.txtRazaoSocial);
+            this.flpMenu.Controls.Add(this.txtCnpj);
+            this.flpMenu.Controls.Add(this.txtCidade);
+            this.flpMenu.Controls.Add(this.txtUf);
+            this.flpMenu.Controls.Add(this.chkAtivo);
+            this.flpMenu.Location = new System.Drawing.Point(6, 13);
+            this.flpMenu.Name = "flpMenu";
+            this.flpMenu.Padding = new System.Windows.Forms.Padding(10);
+            this.flpMenu.Size = new System.Drawing.Size(963, 124);
+            this.flpMenu.TabIndex = 103;
             // 
             // txtFornecedor
             // 
@@ -277,12 +395,12 @@
             this.txtFornecedor.Hint = "Fornecedor";
             this.txtFornecedor.LeadingIcon = null;
             this.txtFornecedor.LeaveOnEnterKey = true;
-            this.txtFornecedor.Location = new System.Drawing.Point(3, 3);
+            this.txtFornecedor.Location = new System.Drawing.Point(13, 13);
             this.txtFornecedor.MaxLength = 80;
             this.txtFornecedor.MouseState = MaterialSkin.MouseState.OUT;
             this.txtFornecedor.Multiline = false;
             this.txtFornecedor.Name = "txtFornecedor";
-            this.txtFornecedor.Size = new System.Drawing.Size(388, 50);
+            this.txtFornecedor.Size = new System.Drawing.Size(345, 50);
             this.txtFornecedor.TabIndex = 0;
             this.txtFornecedor.Text = "";
             this.txtFornecedor.TrailingIcon = null;
@@ -301,12 +419,12 @@
             this.txtRazaoSocial.Hint = "Razão Social";
             this.txtRazaoSocial.LeadingIcon = null;
             this.txtRazaoSocial.LeaveOnEnterKey = true;
-            this.txtRazaoSocial.Location = new System.Drawing.Point(397, 3);
+            this.txtRazaoSocial.Location = new System.Drawing.Point(364, 13);
             this.txtRazaoSocial.MaxLength = 18;
             this.txtRazaoSocial.MouseState = MaterialSkin.MouseState.OUT;
             this.txtRazaoSocial.Multiline = false;
             this.txtRazaoSocial.Name = "txtRazaoSocial";
-            this.txtRazaoSocial.Size = new System.Drawing.Size(421, 50);
+            this.txtRazaoSocial.Size = new System.Drawing.Size(379, 50);
             this.txtRazaoSocial.TabIndex = 9;
             this.txtRazaoSocial.Text = "";
             this.txtRazaoSocial.TrailingIcon = null;
@@ -325,12 +443,12 @@
             this.txtCnpj.Hint = "CNPJ";
             this.txtCnpj.LeadingIcon = null;
             this.txtCnpj.LeaveOnEnterKey = true;
-            this.txtCnpj.Location = new System.Drawing.Point(3, 59);
+            this.txtCnpj.Location = new System.Drawing.Point(749, 13);
             this.txtCnpj.MaxLength = 18;
             this.txtCnpj.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCnpj.Multiline = false;
             this.txtCnpj.Name = "txtCnpj";
-            this.txtCnpj.Size = new System.Drawing.Size(247, 50);
+            this.txtCnpj.Size = new System.Drawing.Size(197, 50);
             this.txtCnpj.TabIndex = 8;
             this.txtCnpj.Text = "";
             this.txtCnpj.TrailingIcon = null;
@@ -347,7 +465,7 @@
             this.txtCidade.Hint = "Cidade";
             this.txtCidade.LeadingIcon = null;
             this.txtCidade.LeaveOnEnterKey = true;
-            this.txtCidade.Location = new System.Drawing.Point(256, 59);
+            this.txtCidade.Location = new System.Drawing.Point(13, 69);
             this.txtCidade.MaxLength = 250;
             this.txtCidade.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCidade.Multiline = false;
@@ -369,7 +487,7 @@
             this.txtUf.Hint = "UF";
             this.txtUf.LeadingIcon = null;
             this.txtUf.LeaveOnEnterKey = true;
-            this.txtUf.Location = new System.Drawing.Point(498, 59);
+            this.txtUf.Location = new System.Drawing.Point(255, 69);
             this.txtUf.MaxLength = 2;
             this.txtUf.MouseState = MaterialSkin.MouseState.OUT;
             this.txtUf.Multiline = false;
@@ -386,7 +504,7 @@
             this.chkAtivo.Checked = true;
             this.chkAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkAtivo.Depth = 0;
-            this.chkAtivo.Location = new System.Drawing.Point(571, 56);
+            this.chkAtivo.Location = new System.Drawing.Point(328, 66);
             this.chkAtivo.Margin = new System.Windows.Forms.Padding(0);
             this.chkAtivo.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkAtivo.MouseState = MaterialSkin.MouseState.HOVER;
@@ -398,129 +516,119 @@
             this.chkAtivo.Text = "Ativo";
             this.chkAtivo.UseVisualStyleBackColor = true;
             // 
-            // btnSearch
+            // cbxQtdRegistros
             // 
-            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnSearch.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnSearch.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnSearch.CorTextoBotao = System.Drawing.Color.White;
-            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(1039, 5);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(43, 43);
-            this.btnSearch.TabIndex = 101;
-            this.btnSearch.TamanhoBorda = 0;
-            this.btnSearch.TamanhoRaio = 10;
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.cbxQtdRegistros.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbxQtdRegistros.FormattingEnabled = true;
+            this.cbxQtdRegistros.Items.AddRange(new object[] {
+            "10",
+            "20",
+            "30",
+            "40",
+            "50",
+            "60",
+            "70",
+            "80",
+            "90",
+            "100"});
+            this.cbxQtdRegistros.Location = new System.Drawing.Point(916, 10);
+            this.cbxQtdRegistros.Name = "cbxQtdRegistros";
+            this.cbxQtdRegistros.Size = new System.Drawing.Size(59, 21);
+            this.cbxQtdRegistros.TabIndex = 2;
+            this.cbxQtdRegistros.Text = "10";
+            this.cbxQtdRegistros.TextChanged += new System.EventHandler(this.cbxQtdRegistros_TextChanged);
+            this.cbxQtdRegistros.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxQtdRegistros_KeyPress);
             // 
-            // btnAddFornecedor
+            // lbRegistros
             // 
-            this.btnAddFornecedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnAddFornecedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnAddFornecedor.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnAddFornecedor.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnAddFornecedor.CorTextoBotao = System.Drawing.Color.White;
-            this.btnAddFornecedor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddFornecedor.FlatAppearance.BorderSize = 0;
-            this.btnAddFornecedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnAddFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddFornecedor.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.btnAddFornecedor.ForeColor = System.Drawing.Color.White;
-            this.btnAddFornecedor.Image = ((System.Drawing.Image)(resources.GetObject("btnAddFornecedor.Image")));
-            this.btnAddFornecedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddFornecedor.Location = new System.Drawing.Point(250, 17);
-            this.btnAddFornecedor.Name = "btnAddFornecedor";
-            this.btnAddFornecedor.Size = new System.Drawing.Size(150, 37);
-            this.btnAddFornecedor.TabIndex = 16;
-            this.btnAddFornecedor.TamanhoBorda = 0;
-            this.btnAddFornecedor.TamanhoRaio = 5;
-            this.btnAddFornecedor.Text = " Novo Fornecedor";
-            this.btnAddFornecedor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddFornecedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddFornecedor.UseVisualStyleBackColor = false;
-            this.btnAddFornecedor.Click += new System.EventHandler(this.btnAddFornecedor_Click);
+            this.lbRegistros.AutoSize = true;
+            this.lbRegistros.BackColor = System.Drawing.Color.Transparent;
+            this.lbRegistros.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lbRegistros.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRegistros.ForeColor = System.Drawing.Color.White;
+            this.lbRegistros.Location = new System.Drawing.Point(0, 0);
+            this.lbRegistros.Name = "lbRegistros";
+            this.lbRegistros.Padding = new System.Windows.Forms.Padding(5, 10, 5, 5);
+            this.lbRegistros.Size = new System.Drawing.Size(211, 36);
+            this.lbRegistros.TabIndex = 1;
+            this.lbRegistros.Text = "0 Registros Encontrados";
             // 
-            // materialLabel1
+            // modernBox1
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.BackColor = System.Drawing.Color.SlateGray;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            this.materialLabel1.ForeColor = System.Drawing.Color.Black;
-            this.materialLabel1.Location = new System.Drawing.Point(18, 24);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(216, 24);
-            this.materialLabel1.TabIndex = 11;
-            this.materialLabel1.Text = "Pesquisa de Fornecedor";
-            // 
-            // btnApagar
-            // 
-            this.btnApagar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnApagar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnApagar.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnApagar.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnApagar.CorTextoBotao = System.Drawing.Color.White;
-            this.btnApagar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnApagar.FlatAppearance.BorderSize = 0;
-            this.btnApagar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApagar.ForeColor = System.Drawing.Color.White;
-            this.btnApagar.Image = ((System.Drawing.Image)(resources.GetObject("btnApagar.Image")));
-            this.btnApagar.Location = new System.Drawing.Point(990, 5);
-            this.btnApagar.Name = "btnApagar";
-            this.btnApagar.Size = new System.Drawing.Size(43, 43);
-            this.btnApagar.TabIndex = 14;
-            this.btnApagar.TamanhoBorda = 0;
-            this.btnApagar.TamanhoRaio = 10;
-            this.btnApagar.UseVisualStyleBackColor = false;
-            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
-            // 
-            // roundedPanel1
-            // 
-            this.roundedPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.modernBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.roundedPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.roundedPanel1.Color1 = System.Drawing.Color.Aqua;
-            this.roundedPanel1.Color2 = System.Drawing.Color.Purple;
-            this.roundedPanel1.CornerRadius = 10;
-            this.roundedPanel1.GradientAngle = 45F;
-            this.roundedPanel1.Location = new System.Drawing.Point(16, 207);
-            this.roundedPanel1.Name = "roundedPanel1";
-            this.roundedPanel1.Size = new System.Drawing.Size(1095, 20);
-            this.roundedPanel1.TabIndex = 17;
+            this.modernBox1.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox1.BorderColor = System.Drawing.Color.Transparent;
+            this.modernBox1.BorderRadius = 20;
+            this.modernBox1.BorderSize = 1;
+            this.modernBox1.Controls.Add(this.flpMenu);
+            this.modernBox1.FillColor = System.Drawing.Color.White;
+            this.modernBox1.Location = new System.Drawing.Point(6, 90);
+            this.modernBox1.Name = "modernBox1";
+            this.modernBox1.Padding = new System.Windows.Forms.Padding(10);
+            this.modernBox1.ShadowColor = System.Drawing.Color.Transparent;
+            this.modernBox1.ShadowSize = 0;
+            this.modernBox1.Size = new System.Drawing.Size(982, 150);
+            this.modernBox1.TabIndex = 104;
+            // 
+            // modernBox2
+            // 
+            this.modernBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.modernBox2.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.modernBox2.BorderRadius = 12;
+            this.modernBox2.BorderSize = 1;
+            this.modernBox2.Controls.Add(this.dgvFornecedores);
+            this.modernBox2.FillColor = System.Drawing.Color.White;
+            this.modernBox2.Location = new System.Drawing.Point(6, 246);
+            this.modernBox2.Name = "modernBox2";
+            this.modernBox2.Padding = new System.Windows.Forms.Padding(10);
+            this.modernBox2.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.modernBox2.ShadowSize = 8;
+            this.modernBox2.Size = new System.Drawing.Size(982, 399);
+            this.modernBox2.TabIndex = 158;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.panel2.Controls.Add(this.cbxQtdRegistros);
+            this.panel2.Controls.Add(this.lbRegistros);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 651);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1000, 44);
+            this.panel2.TabIndex = 159;
             // 
             // Fornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(1123, 662);
-            this.Controls.Add(this.roundedPanel1);
-            this.Controls.Add(this.customPanel2);
-            this.Controls.Add(this.pnPesquisa);
-            this.Controls.Add(this.dgvFornecedores);
+            this.ClientSize = new System.Drawing.Size(1000, 695);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.modernBox2);
+            this.Controls.Add(this.modernBox1);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Fornecedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fornecedor";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Fornecedor_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Fornecedor_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).EndInit();
-            this.customPanel2.ResumeLayout(false);
-            this.customPanel2.PerformLayout();
-            this.pnPesquisa.ResumeLayout(false);
-            this.pnPesquisa.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.flpMenu.ResumeLayout(false);
+            this.flpMenu.PerformLayout();
+            this.modernBox1.ResumeLayout(false);
+            this.modernBox2.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -532,18 +640,13 @@
         private System.Windows.Forms.Label lbRegistros;
         private MaterialSkin.Controls.MaterialTextBox txtRazaoSocial;
         private MaterialSkin.Controls.MaterialTextBox txtCnpj;
-        private Componentes.CustomPanel pnPesquisa;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialTextBox txtUf;
         private MaterialSkin.Controls.MaterialTextBox txtCidade;
-        private Componentes.CustomPanel customPanel2;
         private System.Windows.Forms.ComboBox cbxQtdRegistros;
-        private Componentes.CustomButton btnAddFornecedor;
         private Componentes.CustomButton btnApagar;
         private Componentes.CustomButton btnSearch;
         private MaterialSkin.Controls.MaterialCheckbox chkAtivo;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private Componentes.RoundedPanel roundedPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flpMenu;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIdFornecedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNomeFornecedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRazaoSocial;
@@ -551,5 +654,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn colUf;
         private System.Windows.Forms.DataGridViewImageColumn colExcluirFornecedor;
+        private System.Windows.Forms.Panel panel1;
+        private Componentes.CustomButton btnNovoFornecedor;
+        private Componentes.CustomButton btnClose;
+        private Componentes.RoundedPanel pn1;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label lbTitulo;
+        private Componentes.CustomButton btnMaximize;
+        private Componentes.CustomButton btnMinimize;
+        private Componentes.ModernBox modernBox1;
+        private Componentes.ModernBox modernBox2;
+        private System.Windows.Forms.Panel panel2;
     }
 }

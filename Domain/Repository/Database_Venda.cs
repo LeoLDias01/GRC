@@ -180,7 +180,8 @@ WHERE CXA.IDGRC_CAIXA = @Id;",
                 conn.Open();
                 try
                 {
-                    var itens = conn.Query($@"SELECT    IDGRC_ITEM_ESTOQUE, 
+                    var itens = conn.Query($@"SELECT  DISTINCT  IDGRC_ITEM_ESTOQUE, 
+                                                        IDGRC_CATEGORIA,
                                                         DESCRICAO_VENDA,
                                                         CODIGO_BARRAS,
                                                         QUANTIDADE,
@@ -191,6 +192,7 @@ WHERE CXA.IDGRC_CAIXA = @Id;",
                     .Select(x => new Item
                     {
                         Id = (int)x.IDGRC_ITEM_ESTOQUE,
+                        Categoria = (int)x.IDGRC_CATEGORIA,
                         DescricaoVenda = x.DESCRICAO_VENDA,
                         CodBarras = x.CODIGO_BARRAS,
                         Quatidade = (int)x.QUANTIDADE,

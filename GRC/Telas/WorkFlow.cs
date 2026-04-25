@@ -40,35 +40,6 @@ namespace GRC.Telas
             lbNome.Text = Sessao.UsuarioNome;
         }
 
-        private void btnFornecedor_Click(object sender, EventArgs e)
-        {
-            new Fornecedor().ShowDialog();
-        }
-
-        private void btnEstoque_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnOrdemServiço_Click(object sender, EventArgs e)
-        {
-            new PesquisaOS().ShowDialog();
-        }
-
-        private void btnClientes_Click(object sender, EventArgs e)
-        {
-            new PesquisaCliente().ShowDialog();
-        }
-
-        private void btnMovimentacoes_Click(object sender, EventArgs e)
-        {
-            new Movimentacoes().ShowDialog();
-        }
-
-        private void btnVendas_Click(object sender, EventArgs e)
-        {
-            new Vendas().ShowDialog();
-        }
 
         private void btnUser_Click(object sender, EventArgs e)
         {
@@ -106,11 +77,7 @@ namespace GRC.Telas
             btnMenu.Visible = false;
         }
 
-        private void btnFechaMenuLateral_Click(object sender, EventArgs e)
-        {
-            tlpMenu.Visible = false;
-            btnMenu.Visible = true;
-        }
+  
 
         private void btnMinimize_Click(object sender, EventArgs e)
         {
@@ -122,9 +89,15 @@ namespace GRC.Telas
             this.WindowState = FormWindowState.Maximized;
         }
 
-        private void customButton1_Click(object sender, EventArgs e)
+        private void btnFechaMenuLateral_Click(object sender, EventArgs e)
         {
-            new ItemEstoque().ShowDialog();
+            tlpMenu.Visible = false;
+            btnMenu.Visible = true;
+        }
+
+        private void btnFornecedor_Click(object sender, EventArgs e)
+        {
+            new Fornecedor().ShowDialog();
         }
     }
 }

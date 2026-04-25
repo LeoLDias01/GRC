@@ -65,7 +65,7 @@ namespace GRC.Telas
             this.DoubleBuffered = true; // Melhora a performance visual ao redimensionar
             this.SetStyle(ControlStyles.ResizeRedraw, true);
         }
-        protected override void WndProc(ref Message m)
+        /*protected override void WndProc(ref Message m)
         {
             base.WndProc(ref m);
 
@@ -97,7 +97,7 @@ namespace GRC.Telas
                         m.Result = (IntPtr)HTCAPTION;
                 }
             }
-        }
+        }*/
         private void swItemVenda_CheckedChanged(object sender, EventArgs e)
         {
             if (swItemVenda.Checked)
@@ -861,6 +861,15 @@ namespace GRC.Telas
         }
 
         private void CadastroItem_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+            }
+        }
+
+        private void pnSuperior_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {

@@ -10,6 +10,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -326,7 +327,52 @@ namespace GRC.Telas
             }
         }
   
-        private void btnAddTelefone_Click(object sender, EventArgs e)
+   
+        private void PreencheGridTelefone(int id, bool whatsapp, string telefone, string observacoes)
+        {
+            // Evita que apareça o "X" quando não houver imagem
+            dgvTelefones.Columns["colWhatsApp"].DefaultCellStyle.NullValue = null;
+            dgvTelefones.RowTemplate.Height = 30;
+
+                // Adiciona uma nova linha ao DataGridView
+                dgvTelefones.Rows.Add(
+                        id,                          // colIdTelefone = 0 (novo registro)
+                        whatsapp == true ? Resources.whatsapp : null, // colWhatsapp
+                        telefone,                   // colTelefone
+                        observacoes,                // colObservacoes
+                        Resources.remove
+                    );
+        }
+        private void MudaCorPainel(Color cor1, Color cor2)
+        {
+            pn1.Color1 = cor1;
+            pn1.Color2 = cor2;
+        }
+
+ 
+        
+
+        private void swAtivo_CheckedChanged(object sender, EventArgs e)
+        {
+            if(swAtivo.Checked == true)
+            {
+                _ativo = true;
+                pcAtivo.Visible = true;
+                if (_idFornecedor > 0)
+                    MudaCorPainel(Color.LimeGreen, Color.Yellow);
+                
+                else
+                    MudaCorPainel(Color.SpringGreen, Color.Cyan);
+            }
+            else
+            {
+                _ativo = false;
+                pcAtivo.Visible = false;
+                MudaCorPainel(Color.Gray, Color.DarkGray);
+            }
+        }
+
+        private void txtTelefone_TrailingIconClick(object sender, EventArgs e)
         {
             bool whatsapp = chkWhatsapp.Checked;
             string observacoes = txtObservacoesTelefone.Text;
@@ -351,31 +397,10 @@ namespace GRC.Telas
             txtObservacoesTelefone.Clear();
             txtTelefone.Focus();
         }
-        private void PreencheGridTelefone(int id, bool whatsapp, string telefone, string observacoes)
-        {
-            // Evita que apareça o "X" quando não houver imagem
-            dgvTelefones.Columns["colWhatsApp"].DefaultCellStyle.NullValue = null;
-            dgvTelefones.RowTemplate.Height = 30;
 
-                // Adiciona uma nova linha ao DataGridView
-                dgvTelefones.Rows.Add(
-                        id,                          // colIdTelefone = 0 (novo registro)
-                        whatsapp == true ? Resources.whatsapp : null, // colWhatsapp
-                        telefone,                   // colTelefone
-                        observacoes,                // colObservacoes
-                        Resources.remove
-                    );
-        }
-        private void MudaCorPainel(Color cor1, Color cor2)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            pn1.Color1 = cor1;
-            pn1.Color2 = cor2;
-            pn2.Color1 = cor1;
-            pn2.Color2 = cor2;
-            pn3.Color1 = cor1;
-            pn3.Color2 = cor2;
-            pn4.Color1 = cor1;
-            pn4.Color2 = cor2;
+            this.Close();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -398,18 +423,18 @@ namespace GRC.Telas
                     Cnpj = txtCnpj.Text.Trim(),
                     Observacoes = txtObservacoesFornecedor.Text,
                     Ativo = _ativo,
-                     Endereco = chkHabilitaEndereco.Checked ? new Endereco
-                     {
-                         Id = _idEndereco,
-                         Cep = txtCep.Text.Trim(),
-                         Logradouro = txtLogradouro.Text,
-                         Numero = txtNumero.Text.Trim(),
-                         Bairro = txtBairro.Text,
-                         Cidade = txtCidade.Text,
-                         Uf = txtUf.Text.Trim(),
-                         Complemento = txtComplemento.Text,
-                         Observacoes = txtObservacoesEndereco.Text
-                     } : null,
+                    Endereco = chkHabilitaEndereco.Checked ? new Endereco
+                    {
+                        Id = _idEndereco,
+                        Cep = txtCep.Text.Trim(),
+                        Logradouro = txtLogradouro.Text,
+                        Numero = txtNumero.Text.Trim(),
+                        Bairro = txtBairro.Text,
+                        Cidade = txtCidade.Text,
+                        Uf = txtUf.Text.Trim(),
+                        Complemento = txtComplemento.Text,
+                        Observacoes = txtObservacoesEndereco.Text
+                    } : null,
                     Email = chkHabilitaEmail.Checked ? new Email
                     {
                         Id = _idEmail,
@@ -433,13 +458,14 @@ namespace GRC.Telas
             Whatsapp = cellWhatsapp != null && cellWhatsapp is Bitmap,
             Observacoes = cellObs?.ToString() ?? string.Empty
         };
-    }).ToList() };
+    }).ToList()
+                };
 
-                 int? retorno = _serviceFornecedor.SalvaFornecedor(fornecedor);
-                 
-                 if (retorno > 0)
-                     new AlertBox(Color.FromArgb(0, 60, 4), Color.LimeGreen, Color.Green, Resources.Confirm, "Fornecedor", fornecedor.Nome.ToString(), "Foi cadastrado com sucesso!", false).ShowDialog();
-                 else if (retorno == 0)
+                int? retorno = _serviceFornecedor.SalvaFornecedor(fornecedor);
+
+                if (retorno > 0)
+                    new AlertBox(Color.FromArgb(0, 60, 4), Color.LimeGreen, Color.Green, Resources.Confirm, "Fornecedor", fornecedor.Nome.ToString(), "Foi cadastrado com sucesso!", false).ShowDialog();
+                else if (retorno == 0)
                     new AlertBox(Color.FromArgb(0, 60, 4), Color.LimeGreen, Color.Green, Resources.Confirm, "Fornecedor", fornecedor.Nome.ToString(), "Foi alterado com sucesso!", false).ShowDialog();
                 else if (retorno == -1)
                     new AlertBox(Color.FromArgb(0, 60, 4), Color.LimeGreen, Color.Green, Resources.Confirm, "Fornecedor", fornecedor.Nome.ToString(), "Foi inativado!", false).ShowDialog();
@@ -454,24 +480,31 @@ namespace GRC.Telas
                 new AlertBox(Color.FromArgb(64, 0, 0), Color.Red, Color.Crimson, Resources.Error, "Um erro ocorreu:", "Entidade: Fornecedor", "Erro ao salvar fornecedor!", false).ShowDialog();
             }
         }
+        // Importar as DLLs do Windows para mover o formulário
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
 
-        private void swAtivo_CheckedChanged(object sender, EventArgs e)
+        // Constantes para a mensagem de movimento
+        private const int WM_NCLBUTTONDOWN = 0xA1;
+        private const int HT_CAPTION = 0x2;
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
-            if(swAtivo.Checked == true)
+            if (e.Button == MouseButtons.Left)
             {
-                _ativo = true;
-                pcAtivo.Visible = true;
-                if (_idFornecedor > 0)
-                    MudaCorPainel(Color.LimeGreen, Color.Yellow);
-                
-                else
-                    MudaCorPainel(Color.SpringGreen, Color.Cyan);
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
             }
-            else
+        }
+
+        private void CadastroFornecedor_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
             {
-                _ativo = false;
-                pcAtivo.Visible = false;
-                MudaCorPainel(Color.Gray, Color.DarkGray);
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
             }
         }
     }

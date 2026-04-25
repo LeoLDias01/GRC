@@ -292,7 +292,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(319, 22);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnSalvar.Size = new System.Drawing.Size(45, 43);
+            this.btnSalvar.Size = new System.Drawing.Size(43, 43);
             this.btnSalvar.TabIndex = 135;
             this.btnSalvar.TamanhoBorda = 0;
             this.btnSalvar.TamanhoRaio = 10;

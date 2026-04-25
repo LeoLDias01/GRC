@@ -86,7 +86,7 @@
             this.lbAviso.AutoSize = true;
             this.lbAviso.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Bold);
             this.lbAviso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbAviso.Location = new System.Drawing.Point(45, 254);
+            this.lbAviso.Location = new System.Drawing.Point(35, 241);
             this.lbAviso.Name = "lbAviso";
             this.lbAviso.Size = new System.Drawing.Size(212, 18);
             this.lbAviso.TabIndex = 10;
@@ -97,9 +97,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 17F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.label1.Location = new System.Drawing.Point(43, 213);
+            this.label1.Location = new System.Drawing.Point(33, 200);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 28);
+            this.label1.Size = new System.Drawing.Size(70, 28);
             this.label1.TabIndex = 9;
             this.label1.Text = "Login";
             // 
@@ -131,12 +131,12 @@
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.Font = new System.Drawing.Font("Roboto", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.ForeColor = System.Drawing.Color.White;
-            this.btnSair.Location = new System.Drawing.Point(48, 487);
+            this.btnSair.Location = new System.Drawing.Point(38, 487);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(287, 43);
             this.btnSair.TabIndex = 7;
             this.btnSair.TamanhoBorda = 0;
-            this.btnSair.TamanhoRaio = 10;
+            this.btnSair.TamanhoRaio = 5;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
@@ -155,12 +155,12 @@
             this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEntrar.Font = new System.Drawing.Font("Roboto", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEntrar.ForeColor = System.Drawing.Color.White;
-            this.btnEntrar.Location = new System.Drawing.Point(48, 429);
+            this.btnEntrar.Location = new System.Drawing.Point(38, 429);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(287, 43);
             this.btnEntrar.TabIndex = 6;
             this.btnEntrar.TamanhoBorda = 0;
-            this.btnEntrar.TamanhoRaio = 10;
+            this.btnEntrar.TamanhoRaio = 5;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = false;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
@@ -175,7 +175,7 @@
             this.txtSenha.HideSelection = true;
             this.txtSenha.Hint = "Senha";
             this.txtSenha.LeadingIcon = global::GRC.Properties.Resources.Usuario_Senha;
-            this.txtSenha.Location = new System.Drawing.Point(48, 355);
+            this.txtSenha.Location = new System.Drawing.Point(38, 342);
             this.txtSenha.MaxLength = 32767;
             this.txtSenha.MouseState = MaterialSkin.MouseState.OUT;
             this.txtSenha.Name = "txtSenha";
@@ -204,7 +204,7 @@
             this.txtUsuario.Hint = "Usuario";
             this.txtUsuario.LeadingIcon = global::GRC.Properties.Resources.Usuario_Login;
             this.txtUsuario.LeaveOnEnterKey = true;
-            this.txtUsuario.Location = new System.Drawing.Point(48, 286);
+            this.txtUsuario.Location = new System.Drawing.Point(38, 273);
             this.txtUsuario.MaxLength = 50;
             this.txtUsuario.MouseState = MaterialSkin.MouseState.OUT;
             this.txtUsuario.Multiline = false;
@@ -218,9 +218,9 @@
             // pcbImage
             // 
             this.pcbImage.Image = ((System.Drawing.Image)(resources.GetObject("pcbImage.Image")));
-            this.pcbImage.Location = new System.Drawing.Point(360, -61);
+            this.pcbImage.Location = new System.Drawing.Point(371, -135);
             this.pcbImage.Name = "pcbImage";
-            this.pcbImage.Size = new System.Drawing.Size(756, 735);
+            this.pcbImage.Size = new System.Drawing.Size(877, 864);
             this.pcbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbImage.TabIndex = 1;
             this.pcbImage.TabStop = false;
@@ -230,9 +230,9 @@
             this.pcbLogo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pcbLogo.Image = global::GRC.Properties.Resources.RF_LabTech_Logo;
-            this.pcbLogo.Location = new System.Drawing.Point(37, 29);
+            this.pcbLogo.Location = new System.Drawing.Point(70, 70);
             this.pcbLogo.Name = "pcbLogo";
-            this.pcbLogo.Size = new System.Drawing.Size(298, 167);
+            this.pcbLogo.Size = new System.Drawing.Size(215, 92);
             this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbLogo.TabIndex = 0;
             this.pcbLogo.TabStop = false;

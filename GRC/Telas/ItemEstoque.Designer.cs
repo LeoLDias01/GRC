@@ -72,14 +72,14 @@
             this.painelRadius1 = new GRC.Componentes.PainelRadius();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.painelRadius3 = new GRC.Componentes.PainelRadius();
-            this.painelRadius2 = new GRC.Componentes.PainelRadius();
+            this.pnSuperior = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
             this.customPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.painelRadius1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.painelRadius3.SuspendLayout();
-            this.painelRadius2.SuspendLayout();
+            this.pnSuperior.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvItens
@@ -90,7 +90,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvItens.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvItens.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.dgvItens.BackgroundColor = System.Drawing.Color.White;
             this.dgvItens.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvItens.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvItens.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -127,7 +127,7 @@
             this.dgvItens.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvItens.EnableHeadersVisualStyles = false;
             this.dgvItens.GridColor = System.Drawing.Color.Silver;
-            this.dgvItens.Location = new System.Drawing.Point(1, 16);
+            this.dgvItens.Location = new System.Drawing.Point(16, 244);
             this.dgvItens.MultiSelect = false;
             this.dgvItens.Name = "dgvItens";
             this.dgvItens.ReadOnly = true;
@@ -136,7 +136,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItens.Size = new System.Drawing.Size(1206, 419);
+            this.dgvItens.Size = new System.Drawing.Size(1333, 469);
             this.dgvItens.TabIndex = 16;
             this.dgvItens.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItens_CellDoubleClick);
             this.dgvItens.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItens_CellValueChanged);
@@ -302,9 +302,9 @@
             this.customPanel2.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
             this.customPanel2.CorTextoBotao = System.Drawing.Color.White;
             this.customPanel2.ForeColor = System.Drawing.Color.White;
-            this.customPanel2.Location = new System.Drawing.Point(12, 680);
+            this.customPanel2.Location = new System.Drawing.Point(12, 719);
             this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(1210, 37);
+            this.customPanel2.Size = new System.Drawing.Size(1337, 37);
             this.customPanel2.TabIndex = 18;
             this.customPanel2.TamanhoBorda = 0;
             this.customPanel2.TamanhoRaio = 10;
@@ -325,7 +325,7 @@
             "80",
             "90",
             "100"});
-            this.cbxQtdRegistros.Location = new System.Drawing.Point(1132, 10);
+            this.cbxQtdRegistros.Location = new System.Drawing.Point(1259, 10);
             this.cbxQtdRegistros.Name = "cbxQtdRegistros";
             this.cbxQtdRegistros.Size = new System.Drawing.Size(59, 21);
             this.cbxQtdRegistros.TabIndex = 2;
@@ -358,7 +358,7 @@
             this.txtCodigo.Hint = "Código do item";
             this.txtCodigo.LeadingIcon = null;
             this.txtCodigo.LeaveOnEnterKey = true;
-            this.txtCodigo.Location = new System.Drawing.Point(3, 3);
+            this.txtCodigo.Location = new System.Drawing.Point(13, 13);
             this.txtCodigo.MaxLength = 60;
             this.txtCodigo.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCodigo.Multiline = false;
@@ -380,7 +380,7 @@
             this.txtCodigoBarras.Hint = "Código de Barras";
             this.txtCodigoBarras.LeadingIcon = null;
             this.txtCodigoBarras.LeaveOnEnterKey = true;
-            this.txtCodigoBarras.Location = new System.Drawing.Point(150, 3);
+            this.txtCodigoBarras.Location = new System.Drawing.Point(160, 13);
             this.txtCodigoBarras.MaxLength = 60;
             this.txtCodigoBarras.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCodigoBarras.Multiline = false;
@@ -402,7 +402,7 @@
             this.txtItem.Hint = "Nome do Item";
             this.txtItem.LeadingIcon = null;
             this.txtItem.LeaveOnEnterKey = true;
-            this.txtItem.Location = new System.Drawing.Point(524, 3);
+            this.txtItem.Location = new System.Drawing.Point(534, 13);
             this.txtItem.MaxLength = 60;
             this.txtItem.MouseState = MaterialSkin.MouseState.OUT;
             this.txtItem.Multiline = false;
@@ -428,7 +428,7 @@
             this.cbCategoria.Hint = "Categoria";
             this.cbCategoria.IntegralHeight = false;
             this.cbCategoria.ItemHeight = 43;
-            this.cbCategoria.Location = new System.Drawing.Point(3, 59);
+            this.cbCategoria.Location = new System.Drawing.Point(1032, 13);
             this.cbCategoria.MaxDropDownItems = 4;
             this.cbCategoria.MouseState = MaterialSkin.MouseState.OUT;
             this.cbCategoria.Name = "cbCategoria";
@@ -451,7 +451,7 @@
             this.cbFornecedor.Hint = "Fornecedor";
             this.cbFornecedor.IntegralHeight = false;
             this.cbFornecedor.ItemHeight = 43;
-            this.cbFornecedor.Location = new System.Drawing.Point(246, 59);
+            this.cbFornecedor.Location = new System.Drawing.Point(13, 69);
             this.cbFornecedor.MaxDropDownItems = 4;
             this.cbFornecedor.MouseState = MaterialSkin.MouseState.OUT;
             this.cbFornecedor.Name = "cbFornecedor";
@@ -475,7 +475,7 @@
             this.cbFabricante.Hint = "Fabricante";
             this.cbFabricante.IntegralHeight = false;
             this.cbFabricante.ItemHeight = 43;
-            this.cbFabricante.Location = new System.Drawing.Point(641, 59);
+            this.cbFabricante.Location = new System.Drawing.Point(408, 69);
             this.cbFabricante.MaxDropDownItems = 4;
             this.cbFabricante.MouseState = MaterialSkin.MouseState.OUT;
             this.cbFabricante.Name = "cbFabricante";
@@ -488,10 +488,11 @@
             // 
             this.chkAtivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.chkAtivo.AutoSize = true;
+            this.chkAtivo.BackColor = System.Drawing.Color.Transparent;
             this.chkAtivo.Checked = true;
             this.chkAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkAtivo.Depth = 0;
-            this.chkAtivo.Location = new System.Drawing.Point(12, 11);
+            this.chkAtivo.Location = new System.Drawing.Point(56, 9);
             this.chkAtivo.Margin = new System.Windows.Forms.Padding(0);
             this.chkAtivo.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkAtivo.MouseState = MaterialSkin.MouseState.HOVER;
@@ -501,14 +502,15 @@
             this.chkAtivo.Size = new System.Drawing.Size(71, 37);
             this.chkAtivo.TabIndex = 41;
             this.chkAtivo.Text = "Ativo";
-            this.chkAtivo.UseVisualStyleBackColor = true;
+            this.chkAtivo.UseVisualStyleBackColor = false;
             // 
             // chkFavorito
             // 
             this.chkFavorito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.chkFavorito.AutoSize = true;
+            this.chkFavorito.BackColor = System.Drawing.Color.Transparent;
             this.chkFavorito.Depth = 0;
-            this.chkFavorito.Location = new System.Drawing.Point(12, 48);
+            this.chkFavorito.Location = new System.Drawing.Point(148, 9);
             this.chkFavorito.Margin = new System.Windows.Forms.Padding(0);
             this.chkFavorito.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkFavorito.MouseState = MaterialSkin.MouseState.HOVER;
@@ -518,14 +520,15 @@
             this.chkFavorito.Size = new System.Drawing.Size(93, 37);
             this.chkFavorito.TabIndex = 42;
             this.chkFavorito.Text = "Favorito";
-            this.chkFavorito.UseVisualStyleBackColor = true;
+            this.chkFavorito.UseVisualStyleBackColor = false;
             // 
             // chkItemVenda
             // 
             this.chkItemVenda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.chkItemVenda.AutoSize = true;
+            this.chkItemVenda.BackColor = System.Drawing.Color.Transparent;
             this.chkItemVenda.Depth = 0;
-            this.chkItemVenda.Location = new System.Drawing.Point(12, 85);
+            this.chkItemVenda.Location = new System.Drawing.Point(251, 9);
             this.chkItemVenda.Margin = new System.Windows.Forms.Padding(0);
             this.chkItemVenda.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkItemVenda.MouseState = MaterialSkin.MouseState.HOVER;
@@ -535,7 +538,7 @@
             this.chkItemVenda.Size = new System.Drawing.Size(136, 37);
             this.chkItemVenda.TabIndex = 43;
             this.chkItemVenda.Text = "Item de Venda";
-            this.chkItemVenda.UseVisualStyleBackColor = true;
+            this.chkItemVenda.UseVisualStyleBackColor = false;
             // 
             // btnApagar
             // 
@@ -549,7 +552,7 @@
             this.btnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApagar.ForeColor = System.Drawing.Color.White;
             this.btnApagar.Image = ((System.Drawing.Image)(resources.GetObject("btnApagar.Image")));
-            this.btnApagar.Location = new System.Drawing.Point(219, 25);
+            this.btnApagar.Location = new System.Drawing.Point(220, 12);
             this.btnApagar.Name = "btnApagar";
             this.btnApagar.Size = new System.Drawing.Size(43, 43);
             this.btnApagar.TabIndex = 14;
@@ -565,15 +568,15 @@
             this.roundedPanel2.Color2 = System.Drawing.Color.MidnightBlue;
             this.roundedPanel2.CornerRadius = 10;
             this.roundedPanel2.GradientAngle = 180F;
-            this.roundedPanel2.Location = new System.Drawing.Point(-16, 60);
+            this.roundedPanel2.Location = new System.Drawing.Point(-15, 60);
             this.roundedPanel2.Name = "roundedPanel2";
-            this.roundedPanel2.Size = new System.Drawing.Size(177, 10);
+            this.roundedPanel2.Size = new System.Drawing.Size(327, 101);
             this.roundedPanel2.TabIndex = 122;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox3.Location = new System.Drawing.Point(13, 12);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(45, 42);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -585,7 +588,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(63, 25);
+            this.label1.Location = new System.Drawing.Point(64, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 29);
             this.label1.TabIndex = 120;
@@ -605,7 +608,7 @@
             this.btnClose.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(1199, 3);
+            this.btnClose.Location = new System.Drawing.Point(1322, 17);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(36, 35);
             this.btnClose.TabIndex = 125;
@@ -628,7 +631,7 @@
             this.btnMaximize.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMaximize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
-            this.btnMaximize.Location = new System.Drawing.Point(1153, 3);
+            this.btnMaximize.Location = new System.Drawing.Point(1276, 17);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.Size = new System.Drawing.Size(40, 35);
             this.btnMaximize.TabIndex = 124;
@@ -651,7 +654,7 @@
             this.btnMinimize.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(1107, 3);
+            this.btnMinimize.Location = new System.Drawing.Point(1230, 17);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(40, 35);
             this.btnMinimize.TabIndex = 123;
@@ -675,7 +678,7 @@
             this.btnNovoItem.ForeColor = System.Drawing.Color.White;
             this.btnNovoItem.Image = ((System.Drawing.Image)(resources.GetObject("btnNovoItem.Image")));
             this.btnNovoItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNovoItem.Location = new System.Drawing.Point(170, 27);
+            this.btnNovoItem.Location = new System.Drawing.Point(171, 11);
             this.btnNovoItem.Name = "btnNovoItem";
             this.btnNovoItem.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnNovoItem.Size = new System.Drawing.Size(43, 43);
@@ -698,7 +701,7 @@
             this.tbnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tbnSearch.ForeColor = System.Drawing.Color.White;
             this.tbnSearch.Image = ((System.Drawing.Image)(resources.GetObject("tbnSearch.Image")));
-            this.tbnSearch.Location = new System.Drawing.Point(268, 27);
+            this.tbnSearch.Location = new System.Drawing.Point(269, 12);
             this.tbnSearch.Name = "tbnSearch";
             this.tbnSearch.Size = new System.Drawing.Size(43, 43);
             this.tbnSearch.TabIndex = 99;
@@ -711,78 +714,75 @@
             // 
             this.painelRadius1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.painelRadius1.BackColor = System.Drawing.Color.AliceBlue;
-            this.painelRadius1.BorderColor = System.Drawing.Color.AliceBlue;
+            this.painelRadius1.BackColor = System.Drawing.Color.White;
+            this.painelRadius1.BorderColor = System.Drawing.Color.White;
             this.painelRadius1.Controls.Add(this.flowLayoutPanel1);
-            this.painelRadius1.Controls.Add(this.painelRadius3);
-            this.painelRadius1.Location = new System.Drawing.Point(12, 86);
+            this.painelRadius1.Location = new System.Drawing.Point(16, 76);
             this.painelRadius1.Name = "painelRadius1";
             this.painelRadius1.Radius = 30;
-            this.painelRadius1.Size = new System.Drawing.Size(1210, 133);
+            this.painelRadius1.Size = new System.Drawing.Size(1336, 162);
             this.painelRadius1.TabIndex = 127;
-            this.painelRadius1.Thickness = 5F;
+            this.painelRadius1.Thickness = 10F;
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanel1.Controls.Add(this.txtCodigo);
             this.flowLayoutPanel1.Controls.Add(this.txtCodigoBarras);
             this.flowLayoutPanel1.Controls.Add(this.txtItem);
             this.flowLayoutPanel1.Controls.Add(this.cbCategoria);
             this.flowLayoutPanel1.Controls.Add(this.cbFornecedor);
             this.flowLayoutPanel1.Controls.Add(this.cbFabricante);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(178, 14);
+            this.flowLayoutPanel1.Controls.Add(this.painelRadius3);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1032, 110);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(10);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1336, 162);
             this.flowLayoutPanel1.TabIndex = 17;
             // 
             // painelRadius3
             // 
-            this.painelRadius3.BackColor = System.Drawing.Color.AliceBlue;
+            this.painelRadius3.BackColor = System.Drawing.Color.White;
             this.painelRadius3.BorderColor = System.Drawing.Color.DimGray;
             this.painelRadius3.Controls.Add(this.chkItemVenda);
             this.painelRadius3.Controls.Add(this.chkAtivo);
             this.painelRadius3.Controls.Add(this.chkFavorito);
-            this.painelRadius3.Location = new System.Drawing.Point(4, 3);
+            this.painelRadius3.Location = new System.Drawing.Point(789, 69);
             this.painelRadius3.Name = "painelRadius3";
             this.painelRadius3.Radius = 30;
-            this.painelRadius3.Size = new System.Drawing.Size(165, 127);
+            this.painelRadius3.Size = new System.Drawing.Size(452, 58);
             this.painelRadius3.TabIndex = 128;
             this.painelRadius3.Thickness = 6F;
             // 
-            // painelRadius2
+            // pnSuperior
             // 
-            this.painelRadius2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.painelRadius2.BackColor = System.Drawing.Color.AliceBlue;
-            this.painelRadius2.BorderColor = System.Drawing.Color.AliceBlue;
-            this.painelRadius2.Controls.Add(this.dgvItens);
-            this.painelRadius2.Location = new System.Drawing.Point(12, 225);
-            this.painelRadius2.Name = "painelRadius2";
-            this.painelRadius2.Radius = 30;
-            this.painelRadius2.Size = new System.Drawing.Size(1210, 449);
-            this.painelRadius2.TabIndex = 128;
-            this.painelRadius2.Thickness = 5F;
+            this.pnSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.pnSuperior.Controls.Add(this.pictureBox3);
+            this.pnSuperior.Controls.Add(this.label1);
+            this.pnSuperior.Controls.Add(this.roundedPanel2);
+            this.pnSuperior.Controls.Add(this.btnClose);
+            this.pnSuperior.Controls.Add(this.tbnSearch);
+            this.pnSuperior.Controls.Add(this.btnMaximize);
+            this.pnSuperior.Controls.Add(this.btnNovoItem);
+            this.pnSuperior.Controls.Add(this.btnMinimize);
+            this.pnSuperior.Controls.Add(this.btnApagar);
+            this.pnSuperior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnSuperior.Location = new System.Drawing.Point(0, 0);
+            this.pnSuperior.Name = "pnSuperior";
+            this.pnSuperior.Size = new System.Drawing.Size(1366, 70);
+            this.pnSuperior.TabIndex = 131;
+            this.pnSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnSuperior_MouseDown);
             // 
             // ItemEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(1239, 729);
-            this.Controls.Add(this.painelRadius2);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.dgvItens);
+            this.Controls.Add(this.pnSuperior);
             this.Controls.Add(this.painelRadius1);
-            this.Controls.Add(this.tbnSearch);
-            this.Controls.Add(this.btnNovoItem);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnApagar);
-            this.Controls.Add(this.btnMaximize);
-            this.Controls.Add(this.btnMinimize);
-            this.Controls.Add(this.roundedPanel2);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.customPanel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -801,9 +801,9 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.painelRadius3.ResumeLayout(false);
             this.painelRadius3.PerformLayout();
-            this.painelRadius2.ResumeLayout(false);
+            this.pnSuperior.ResumeLayout(false);
+            this.pnSuperior.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -847,8 +847,8 @@
         private Componentes.CustomButton btnNovoItem;
         private Componentes.CustomButton tbnSearch;
         private Componentes.PainelRadius painelRadius1;
-        private Componentes.PainelRadius painelRadius2;
         private Componentes.PainelRadius painelRadius3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel pnSuperior;
     }
 }

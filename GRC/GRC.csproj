@@ -142,6 +142,7 @@
     <Reference Include="System.Formats.Asn1, Version=9.0.0.13, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Formats.Asn1.9.0.13\lib\net462\System.Formats.Asn1.dll</HintPath>
     </Reference>
+    <Reference Include="System.Management" />
     <Reference Include="System.Memory, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Memory.4.6.3\lib\net462\System.Memory.dll</HintPath>
     </Reference>
@@ -168,6 +169,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -198,6 +200,12 @@
     <Compile Include="Componentes\CustomPictureBox.Designer.cs">
       <DependentUpon>CustomPictureBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Componentes\ModernBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Componentes\ModernBox.Designer.cs">
+      <DependentUpon>ModernBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Componentes\PainelRadius.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -209,6 +217,12 @@
     </Compile>
     <Compile Include="Componentes\RoundedPanel.Designer.cs">
       <DependentUpon>RoundedPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes\RoundedTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Componentes\RoundedTextBox.Designer.cs">
+      <DependentUpon>RoundedTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -368,6 +382,9 @@
     <Compile Include="Telas\WorkFlow.Designer.cs">
       <DependentUpon>WorkFlow.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Componentes\RoundedTextBox.resx">
+      <DependentUpon>RoundedTextBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
