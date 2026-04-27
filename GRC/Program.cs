@@ -20,7 +20,7 @@ namespace GRC
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new WorkFlow());
             //Application.Run(new Vendas());
-            //Application.Run(new CadastroMovimentacao());
+            //Application.Run(new CadastroItem());
 
         }
     }

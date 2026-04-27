@@ -236,6 +236,7 @@ namespace GRC.Telas
             if (id.HasValue)
             {
                 new CadastroItem(id.Value).ShowDialog();
+                RealizaPesquisa();
             }
         }
 
@@ -283,6 +284,54 @@ namespace GRC.Telas
                 ReleaseCapture(); // Libera o mouse para a operação
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
             }
+        }
+
+        private void ItemEstoque_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Verifica se o foco NÃO está no campo ou se, mesmo estando, 
+            // queremos tratar o início de uma nova leitura automática
+            if (!txtCodigoBarras.Focused)
+            {
+                if ((e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9) ||
+                    (e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9) ||
+                    (e.KeyCode >= Keys.A && e.KeyCode <= Keys.Z))
+                {
+                    // 1. Foca no campo
+                    txtCodigoBarras.Focus();
+
+                    // 2. Transforma a tecla no caractere
+                    char caractereDigitado = (char)e.KeyValue;
+
+                    // 3. SUBSTITUIÇÃO: Usamos '=' em vez de '+=' para limpar o que existia
+                    // e começar o campo apenas com este primeiro caractere do scanner
+                    txtCodigoBarras.Text = caractereDigitado.ToString();
+
+                    // 4. Posiciona o cursor no final para os próximos caracteres do scanner entrarem na ordem
+                    txtCodigoBarras.SelectionStart = txtCodigoBarras.Text.Length;
+
+                    e.SuppressKeyPress = true;
+                    e.Handled = true;
+                }
+            }
+            else if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+
+                // Chame sua validação aqui
+                // ValidarCodigoBarras();
+
+                // 5. ESTRATÉGIA DE LIMPEZA PARA O PRÓXIMO BIP:
+                // Selecionamos tudo. Se o foco continuar no campo e o scanner disparar de novo,
+                // o comportamento padrão do Windows substituirá o texto selecionado pelo novo.
+                txtCodigoBarras.SelectAll();
+                tbnSearch.Focus();
+                tbnSearch.PerformClick();
+            }
+        }
+
+        private void txtCodigoBarras_Enter(object sender, EventArgs e)
+        {
+            txtCodigoBarras.SelectAll();
         }
     }
 }

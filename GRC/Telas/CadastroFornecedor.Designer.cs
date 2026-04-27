@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroFornecedor));
             this.dgvTelefones = new System.Windows.Forms.DataGridView();
             this.colIdTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +48,7 @@
             this.pn1 = new GRC.Componentes.RoundedPanel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.lbTitulo = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.customPanel5 = new GRC.Componentes.CustomPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -102,14 +103,14 @@
             this.dgvTelefones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvTelefones.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvTelefones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTelefones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTelefones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvTelefones.ColumnHeadersHeight = 35;
             this.dgvTelefones.ColumnHeadersVisible = false;
             this.dgvTelefones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -119,28 +120,29 @@
             this.colObservacoes,
             this.colExcluir});
             this.dgvTelefones.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleTurquoise;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTelefones.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTelefones.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgvTelefones.EnableHeadersVisualStyles = false;
             this.dgvTelefones.GridColor = System.Drawing.Color.Black;
-            this.dgvTelefones.Location = new System.Drawing.Point(726, 291);
+            this.dgvTelefones.Location = new System.Drawing.Point(710, 285);
             this.dgvTelefones.MultiSelect = false;
             this.dgvTelefones.Name = "dgvTelefones";
             this.dgvTelefones.ReadOnly = true;
             this.dgvTelefones.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvTelefones.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvTelefones.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvTelefones.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvTelefones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTelefones.Size = new System.Drawing.Size(347, 189);
             this.dgvTelefones.TabIndex = 14;
             this.dgvTelefones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTelefones_CellClick);
+            this.dgvTelefones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTelefones_CellDoubleClick);
             // 
             // colIdTelefone
             // 
@@ -232,7 +234,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1102, 74);
+            this.panel1.Size = new System.Drawing.Size(1071, 70);
             this.panel1.TabIndex = 156;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
@@ -250,11 +252,9 @@
             this.btnSalvar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSalvar.Location = new System.Drawing.Point(444, 11);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnSalvar.Size = new System.Drawing.Size(53, 43);
+            this.btnSalvar.Size = new System.Drawing.Size(43, 43);
             this.btnSalvar.TabIndex = 160;
             this.btnSalvar.TamanhoBorda = 0;
             this.btnSalvar.TamanhoRaio = 10;
@@ -275,7 +275,7 @@
             this.btnClose.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(1054, 14);
+            this.btnClose.Location = new System.Drawing.Point(1023, 14);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(36, 35);
             this.btnClose.TabIndex = 159;
@@ -291,9 +291,9 @@
             this.pn1.Color2 = System.Drawing.Color.Yellow;
             this.pn1.CornerRadius = 8;
             this.pn1.GradientAngle = 280F;
-            this.pn1.Location = new System.Drawing.Point(3, 60);
+            this.pn1.Location = new System.Drawing.Point(3, 65);
             this.pn1.Name = "pn1";
-            this.pn1.Size = new System.Drawing.Size(494, 28);
+            this.pn1.Size = new System.Drawing.Size(336, 18);
             this.pn1.TabIndex = 24;
             // 
             // pictureBox4
@@ -317,6 +317,15 @@
             this.lbTitulo.TabIndex = 139;
             this.lbTitulo.Text = "Cadastro de Fornecedor";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 740);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1071, 5);
+            this.panel2.TabIndex = 160;
+            // 
             // customPanel5
             // 
             this.customPanel5.BackColor = System.Drawing.Color.White;
@@ -329,7 +338,7 @@
             this.customPanel5.CorBotao = System.Drawing.Color.White;
             this.customPanel5.CorTextoBotao = System.Drawing.Color.White;
             this.customPanel5.ForeColor = System.Drawing.Color.White;
-            this.customPanel5.Location = new System.Drawing.Point(28, 291);
+            this.customPanel5.Location = new System.Drawing.Point(12, 285);
             this.customPanel5.Name = "customPanel5";
             this.customPanel5.Size = new System.Drawing.Size(357, 189);
             this.customPanel5.TabIndex = 5;
@@ -445,7 +454,7 @@
             this.customPanel3.CorBotao = System.Drawing.Color.White;
             this.customPanel3.CorTextoBotao = System.Drawing.Color.White;
             this.customPanel3.ForeColor = System.Drawing.Color.White;
-            this.customPanel3.Location = new System.Drawing.Point(28, 486);
+            this.customPanel3.Location = new System.Drawing.Point(12, 480);
             this.customPanel3.Name = "customPanel3";
             this.customPanel3.Size = new System.Drawing.Size(1045, 244);
             this.customPanel3.TabIndex = 15;
@@ -695,7 +704,7 @@
             this.customPanel2.CorBotao = System.Drawing.Color.White;
             this.customPanel2.CorTextoBotao = System.Drawing.Color.White;
             this.customPanel2.ForeColor = System.Drawing.Color.White;
-            this.customPanel2.Location = new System.Drawing.Point(391, 291);
+            this.customPanel2.Location = new System.Drawing.Point(375, 285);
             this.customPanel2.Name = "customPanel2";
             this.customPanel2.Size = new System.Drawing.Size(329, 189);
             this.customPanel2.TabIndex = 9;
@@ -805,7 +814,7 @@
             this.customPanel1.CorBotao = System.Drawing.Color.White;
             this.customPanel1.CorTextoBotao = System.Drawing.Color.White;
             this.customPanel1.ForeColor = System.Drawing.Color.White;
-            this.customPanel1.Location = new System.Drawing.Point(28, 86);
+            this.customPanel1.Location = new System.Drawing.Point(12, 80);
             this.customPanel1.Name = "customPanel1";
             this.customPanel1.Size = new System.Drawing.Size(1045, 199);
             this.customPanel1.TabIndex = 0;
@@ -944,7 +953,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(1102, 768);
+            this.ClientSize = new System.Drawing.Size(1071, 745);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.customPanel5);
             this.Controls.Add(this.customPanel3);
@@ -1029,5 +1039,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbTelefone;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel2;
     }
 }

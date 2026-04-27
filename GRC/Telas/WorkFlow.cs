@@ -86,7 +86,14 @@ namespace GRC.Telas
 
         private void btnMaximize_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
         }
 
         private void btnFechaMenuLateral_Click(object sender, EventArgs e)
@@ -98,6 +105,26 @@ namespace GRC.Telas
         private void btnFornecedor_Click(object sender, EventArgs e)
         {
             new Fornecedor().ShowDialog();
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            prUsuario.Visible = false;
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+            }
+        }
+
+        private void btnItens_Click(object sender, EventArgs e)
+        {
+            new ItemEstoque().ShowDialog();
+        }
+
+        private void btnMovimentacoes_Click(object sender, EventArgs e)
+        {
+            new Movimentacoes().ShowDialog();
         }
     }
 }

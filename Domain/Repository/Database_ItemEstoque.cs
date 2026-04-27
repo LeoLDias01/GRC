@@ -555,8 +555,14 @@ namespace Domain.Repository
                                                         ITEM_VENDA  AS ItemVenda,
                                                         DESCRICAO_VENDA AS DescricaoVenda,
                                                         VALOR_UNITARIO_VENDA   AS ValorVendaUnitario,
-                                                        ATIVO AS Ativo 
-                                                        FROM GRC_ITEM_ESTOQUE 
+                                                        ATIVO AS Ativo,
+                                                        EXISTS (
+        SELECT 1 
+        FROM GRC_ITEM_MOVIMENTACAO IM
+        WHERE IM.IDGRC_ITEM_ESTOQUE = I.IDGRC_ITEM_ESTOQUE 
+          AND IM.ATIVO = 1
+    ) AS PossuiMovimentoAtivo
+                                                        FROM GRC_ITEM_ESTOQUE I
                                                         WHERE IDGRC_ITEM_ESTOQUE = @Id",
                                                         new { Id = id })
                     .Select(x => new Item
@@ -580,7 +586,7 @@ namespace Domain.Repository
                         DescricaoVenda = x.DescricaoVenda,
                         VendaUnitario = x.ValorVendaUnitario,
                         Ativo = Convert.ToBoolean(x.Ativo),
-
+                        Bloqueado = Convert.ToBoolean(x.PossuiMovimentoAtivo),
                         // Itens de composição podem ser preenchidos depois com outra query
                         ComposicaoItem = new List<Composicao>()
                     }).ToList();

@@ -96,7 +96,19 @@ namespace GRC.Telas
             CarregaDados();
         }
 
-        private void txtDescricao_TrailingIconClick(object sender, EventArgs e)
+
+
+        private void Fabricante_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+            }
+        }
+
+
+        private void txtDescricao_IconClick(object sender, EventArgs e)
         {
             if (!ValidaCampo())
                 return;
@@ -106,11 +118,20 @@ namespace GRC.Telas
             tipo.Descricao = txtDescricao.Text;
             _id = _services.SalvaFabricante(tipo);
             if (_id > 0)
-                txtDescricao.Clear();
+                txtDescricao.Text = null;
             CarregaDados();
         }
 
-        private void Fabricante_MouseDown(object sender, MouseEventArgs e)
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+            }
+        }
+
+        private void lbTitulo_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {

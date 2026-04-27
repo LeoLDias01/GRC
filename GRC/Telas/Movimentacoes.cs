@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,12 +33,7 @@ namespace GRC.Telas
 
         private void btnNovaMovimentacao_Click(object sender, EventArgs e)
         {
-            new CadastroMovimentacao().ShowDialog();
-        }
-
-        private void btnApagar_Click(object sender, EventArgs e)
-        {
-
+            
         }
         private void PreencherCombo<T>(MaterialComboBox cb, List<T> lista, string display, string value)
         {
@@ -62,26 +58,7 @@ namespace GRC.Telas
 
         private void btnSelecaoItem_Click(object sender, EventArgs e)
         {
-            using (var frm = new PesquisaItem())
-            {
-                frm.ShowDialog();
-
-                if (frm._item != null && frm._item.Count > 0)
-                {
-                    foreach (var comp in frm._item)
-                    {
-                        _dadosItem.Id = comp.Id;
-                        _dadosItem.Descricao = comp.Descricao;
-                        _dadosItem.Quatidade = comp.Quatidade;
-                        _dadosItem.CustoUnitario = comp.CustoUnitario;
-                        _dadosItem.VendaUnitario = comp.VendaUnitario;
-                        _dadosItem.ItemVenda = comp.ItemVenda;
-                    }
-                    txtItem.Text = _dadosItem.Descricao;
-                    _idItem = Convert.ToInt32(_dadosItem.Id);
-
-                }
-            }
+            
         }
 
         private void tbnSearch_Click(object sender, EventArgs e)
@@ -167,6 +144,125 @@ namespace GRC.Telas
             {
                 new CadastroMovimentacao(id.Value).ShowDialog();
             }
+        }
+
+        private void btnMaximize_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+                this.WindowState = FormWindowState.Normal;
+            else
+                this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnNovaMovimentacao_Click_1(object sender, EventArgs e)
+        {
+            new CadastroMovimentacao().ShowDialog();
+        }
+
+        private void txtItem_TrailingIconClick(object sender, EventArgs e)
+        {
+            using (var frm = new PesquisaItem())
+            {
+                frm.ShowDialog();
+
+                if (frm._item != null && frm._item.Count > 0)
+                {
+                    foreach (var comp in frm._item)
+                    {
+                        _dadosItem.Id = comp.Id;
+                        _dadosItem.Descricao = comp.Descricao;
+                        _dadosItem.Quatidade = comp.Quatidade;
+                        _dadosItem.CustoUnitario = comp.CustoUnitario;
+                        _dadosItem.VendaUnitario = comp.VendaUnitario;
+                        _dadosItem.ItemVenda = comp.ItemVenda;
+                    }
+                    txtItem.Text = _dadosItem.Descricao;
+                    _idItem = Convert.ToInt32(_dadosItem.Id);
+
+                }
+            }
+        }
+        private void FormataData(MaterialTextBox txt)
+        {
+            // Remove tudo que não é número
+            string apenasNumeros = new string(txt.Text.Where(char.IsDigit).ToArray());
+
+            if (apenasNumeros.Length > 8)
+                apenasNumeros = apenasNumeros.Substring(0, 8);
+
+            string formatado = "";
+
+            if (apenasNumeros.Length <= 2)
+            {
+                formatado = apenasNumeros;
+            }
+            else if (apenasNumeros.Length <= 4)
+            {
+                formatado = apenasNumeros.Insert(2, "/");
+            }
+            else
+            {
+                formatado = apenasNumeros.Insert(2, "/").Insert(5, "/");
+            }
+
+            txt.Text = formatado;
+            txt.SelectionStart = txt.Text.Length;
+        }
+        // Importar as DLLs do Windows para mover o formulário
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        // Constantes para a mensagem de movimento
+        private const int WM_NCLBUTTONDOWN = 0xA1;
+        private const int HT_CAPTION = 0x2;
+
+        private void Movimentacoes_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+            }
+        }
+
+        private void pnSuperior_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+            }
+        }
+
+        private void label1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+            }
+        }
+
+        private void txtDataInicial_TextChanged(object sender, EventArgs e)
+        {
+            FormataData(txtDataInicial);
+        }
+
+        private void txtDataFinal_TextChanged(object sender, EventArgs e)
+        {
+            FormataData(txtDataFinal);
         }
     }
 }

@@ -27,7 +27,7 @@ namespace Data.Models
         public string DescricaoVenda { get; set; }
         public string VendaUnitario { get; set; }
         public bool Ativo {  get; set; }
-
+        public bool Bloqueado { get; set; }
         public List<Composicao> ComposicaoItem { get; set; } = new List<Composicao>();
 
 

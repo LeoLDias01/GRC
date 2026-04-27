@@ -480,6 +480,39 @@ namespace GRC.Telas
                 new AlertBox(Color.FromArgb(64, 0, 0), Color.Red, Color.Crimson, Resources.Error, "Um erro ocorreu:", "Entidade: Fornecedor", "Erro ao salvar fornecedor!", false).ShowDialog();
             }
         }
+
+        private void dgvTelefones_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // evita header
+            {
+                try
+                {
+                    var telefone = dgvTelefones.Rows[e.RowIndex].Cells["colTelefone"].Value.ToString();
+
+                    // limpa o número (remove espaços, traços, etc)
+                    telefone = new string(telefone.Where(char.IsDigit).ToArray());
+
+                    // adiciona código do Brasil se não tiver
+                    if (!telefone.StartsWith("55"))
+                        telefone = "55" + telefone;
+                    string mensagem = Uri.EscapeDataString("Olá, tudo bem? Gostaria de fazer um pedido...");
+
+                    string url = $"https://wa.me/{telefone}?text={mensagem}";
+
+                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                    {
+                        FileName = url,
+                        UseShellExecute = true
+                    });
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao abrir WhatsApp: " + ex.Message);
+                }
+            }
+        }
+
+        #region ..:: Arrasto da Tela ::..
         // Importar as DLLs do Windows para mover o formulário
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
@@ -507,5 +540,6 @@ namespace GRC.Telas
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
             }
         }
+        #endregion
     }
 }

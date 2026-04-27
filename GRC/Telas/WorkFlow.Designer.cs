@@ -30,29 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorkFlow));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tlpMenu = new System.Windows.Forms.TableLayoutPanel();
-            this.pcbLogo = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnMovimentacoes = new System.Windows.Forms.Button();
-            this.btnClientes = new System.Windows.Forms.Button();
-            this.btnFornecedor = new GRC.Componentes.CustomButton();
-            this.customPictureBox1 = new GRC.Componentes.CustomPictureBox();
-            this.btnEstoque = new GRC.Componentes.CustomButton();
-            this.btnOrdemServiço = new GRC.Componentes.CustomButton();
-            this.btnVendas = new GRC.Componentes.CustomButton();
-            this.btnItens = new GRC.Componentes.CustomButton();
-            this.btnFechaMenuLateral = new GRC.Componentes.CustomButton();
-            this.btnMenu = new GRC.Componentes.CustomButton();
-            this.btnUser = new GRC.Componentes.CustomButton();
-            this.roundedTextBox1 = new GRC.Componentes.RoundedTextBox();
-            this.btnMinimize = new GRC.Componentes.CustomButton();
-            this.btnMaximize = new GRC.Componentes.CustomButton();
-            this.prUsuario = new GRC.Componentes.PainelRadius();
-            this.btnEncerrar = new GRC.Componentes.CustomButton();
-            this.btnTrocar = new GRC.Componentes.CustomButton();
-            this.lbNome = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.modernBox4 = new GRC.Componentes.ModernBox();
             this.customPictureBox5 = new GRC.Componentes.CustomPictureBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -69,13 +46,30 @@
             this.customPictureBox3 = new GRC.Componentes.CustomPictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMenu = new GRC.Componentes.CustomButton();
+            this.btnUser = new GRC.Componentes.CustomButton();
+            this.roundedTextBox1 = new GRC.Componentes.RoundedTextBox();
+            this.btnMinimize = new GRC.Componentes.CustomButton();
+            this.btnMaximize = new GRC.Componentes.CustomButton();
+            this.tlpMenu = new System.Windows.Forms.TableLayoutPanel();
+            this.pcbLogo = new System.Windows.Forms.PictureBox();
+            this.btnFornecedor = new GRC.Componentes.CustomButton();
+            this.customPictureBox1 = new GRC.Componentes.CustomPictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnEstoque = new GRC.Componentes.CustomButton();
+            this.btnOrdemServiço = new GRC.Componentes.CustomButton();
+            this.btnVendas = new GRC.Componentes.CustomButton();
+            this.btnMovimentacoes = new System.Windows.Forms.Button();
+            this.btnClientes = new System.Windows.Forms.Button();
+            this.btnItens = new GRC.Componentes.CustomButton();
+            this.btnFechaMenuLateral = new GRC.Componentes.CustomButton();
+            this.prUsuario = new GRC.Componentes.PainelRadius();
+            this.btnEncerrar = new GRC.Componentes.CustomButton();
+            this.btnTrocar = new GRC.Componentes.CustomButton();
+            this.lbNome = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.tlpMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox1)).BeginInit();
-            this.prUsuario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.modernBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customPictureBox5)).BeginInit();
             this.modernBox3.SuspendLayout();
@@ -84,6 +78,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.customPictureBox2)).BeginInit();
             this.modernBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customPictureBox3)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.tlpMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox1)).BeginInit();
+            this.prUsuario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -108,488 +108,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1323, 100);
             this.tableLayoutPanel1.TabIndex = 7;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(68)))));
-            this.panel1.Controls.Add(this.btnMenu);
-            this.panel1.Controls.Add(this.btnUser);
-            this.panel1.Controls.Add(this.roundedTextBox1);
-            this.panel1.Controls.Add(this.btnMinimize);
-            this.panel1.Controls.Add(this.btnMaximize);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1350, 73);
-            this.panel1.TabIndex = 15;
-            // 
-            // tlpMenu
-            // 
-            this.tlpMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.tlpMenu.BackColor = System.Drawing.Color.White;
-            this.tlpMenu.ColumnCount = 1;
-            this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMenu.Controls.Add(this.pcbLogo, 0, 1);
-            this.tlpMenu.Controls.Add(this.btnFornecedor, 0, 10);
-            this.tlpMenu.Controls.Add(this.customPictureBox1, 0, 14);
-            this.tlpMenu.Controls.Add(this.label1, 0, 3);
-            this.tlpMenu.Controls.Add(this.btnEstoque, 0, 2);
-            this.tlpMenu.Controls.Add(this.btnOrdemServiço, 0, 5);
-            this.tlpMenu.Controls.Add(this.btnVendas, 0, 6);
-            this.tlpMenu.Controls.Add(this.btnMovimentacoes, 0, 9);
-            this.tlpMenu.Controls.Add(this.btnClientes, 0, 7);
-            this.tlpMenu.Controls.Add(this.btnItens, 0, 8);
-            this.tlpMenu.Controls.Add(this.btnFechaMenuLateral, 0, 0);
-            this.tlpMenu.Location = new System.Drawing.Point(0, 0);
-            this.tlpMenu.Name = "tlpMenu";
-            this.tlpMenu.RowCount = 15;
-            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlpMenu.Size = new System.Drawing.Size(249, 726);
-            this.tlpMenu.TabIndex = 16;
-            this.tlpMenu.Visible = false;
-            // 
-            // pcbLogo
-            // 
-            this.pcbLogo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pcbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pcbLogo.Image")));
-            this.pcbLogo.Location = new System.Drawing.Point(3, 43);
-            this.pcbLogo.Name = "pcbLogo";
-            this.pcbLogo.Size = new System.Drawing.Size(243, 54);
-            this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcbLogo.TabIndex = 0;
-            this.pcbLogo.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(3, 108);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Módulos";
-            // 
-            // btnMovimentacoes
-            // 
-            this.btnMovimentacoes.BackColor = System.Drawing.Color.Transparent;
-            this.btnMovimentacoes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMovimentacoes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnMovimentacoes.FlatAppearance.BorderSize = 0;
-            this.btnMovimentacoes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.btnMovimentacoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMovimentacoes.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
-            this.btnMovimentacoes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnMovimentacoes.Image = ((System.Drawing.Image)(resources.GetObject("btnMovimentacoes.Image")));
-            this.btnMovimentacoes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMovimentacoes.Location = new System.Drawing.Point(3, 361);
-            this.btnMovimentacoes.Name = "btnMovimentacoes";
-            this.btnMovimentacoes.Size = new System.Drawing.Size(243, 44);
-            this.btnMovimentacoes.TabIndex = 4;
-            this.btnMovimentacoes.Text = "        Movimentações";
-            this.btnMovimentacoes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMovimentacoes.UseMnemonic = false;
-            this.btnMovimentacoes.UseVisualStyleBackColor = false;
-            // 
-            // btnClientes
-            // 
-            this.btnClientes.BackColor = System.Drawing.Color.Transparent;
-            this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnClientes.FlatAppearance.BorderSize = 0;
-            this.btnClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientes.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
-            this.btnClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
-            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(3, 261);
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(243, 44);
-            this.btnClientes.TabIndex = 3;
-            this.btnClientes.Text = "        Clientes";
-            this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnClientes.UseMnemonic = false;
-            this.btnClientes.UseVisualStyleBackColor = false;
-            // 
-            // btnFornecedor
-            // 
-            this.btnFornecedor.BackColor = System.Drawing.Color.Transparent;
-            this.btnFornecedor.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnFornecedor.CorBotao = System.Drawing.Color.Transparent;
-            this.btnFornecedor.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnFornecedor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFornecedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFornecedor.FlatAppearance.BorderSize = 0;
-            this.btnFornecedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.btnFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFornecedor.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFornecedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnFornecedor.Image = ((System.Drawing.Image)(resources.GetObject("btnFornecedor.Image")));
-            this.btnFornecedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFornecedor.Location = new System.Drawing.Point(3, 411);
-            this.btnFornecedor.Name = "btnFornecedor";
-            this.btnFornecedor.Size = new System.Drawing.Size(243, 44);
-            this.btnFornecedor.TabIndex = 4;
-            this.btnFornecedor.TamanhoBorda = 0;
-            this.btnFornecedor.TamanhoRaio = 15;
-            this.btnFornecedor.Text = " Fornecedores";
-            this.btnFornecedor.UseVisualStyleBackColor = false;
-            this.btnFornecedor.Click += new System.EventHandler(this.btnFornecedor_Click);
-            // 
-            // customPictureBox1
-            // 
-            this.customPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.customPictureBox1.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.customPictureBox1.CorBotao = System.Drawing.Color.Transparent;
-            this.customPictureBox1.CorTextoBotao = System.Drawing.SystemColors.ControlText;
-            this.customPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.customPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("customPictureBox1.Image")));
-            this.customPictureBox1.Location = new System.Drawing.Point(3, 679);
-            this.customPictureBox1.Name = "customPictureBox1";
-            this.customPictureBox1.Size = new System.Drawing.Size(243, 44);
-            this.customPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.customPictureBox1.TabIndex = 7;
-            this.customPictureBox1.TabStop = false;
-            this.customPictureBox1.TamanhoBorda = 0;
-            this.customPictureBox1.TamanhoRaio = 0;
-            // 
-            // btnEstoque
-            // 
-            this.btnEstoque.BackColor = System.Drawing.Color.Transparent;
-            this.btnEstoque.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnEstoque.CorBotao = System.Drawing.Color.Transparent;
-            this.btnEstoque.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnEstoque.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEstoque.FlatAppearance.BorderSize = 0;
-            this.btnEstoque.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEstoque.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstoque.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnEstoque.Image = ((System.Drawing.Image)(resources.GetObject("btnEstoque.Image")));
-            this.btnEstoque.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstoque.Location = new System.Drawing.Point(3, 103);
-            this.btnEstoque.Name = "btnEstoque";
-            this.btnEstoque.Size = new System.Drawing.Size(217, 2);
-            this.btnEstoque.TabIndex = 5;
-            this.btnEstoque.TamanhoBorda = 0;
-            this.btnEstoque.TamanhoRaio = 2;
-            this.btnEstoque.Text = "        Estoque";
-            this.btnEstoque.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEstoque.UseVisualStyleBackColor = false;
-            // 
-            // btnOrdemServiço
-            // 
-            this.btnOrdemServiço.BackColor = System.Drawing.Color.Transparent;
-            this.btnOrdemServiço.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnOrdemServiço.CorBotao = System.Drawing.Color.Transparent;
-            this.btnOrdemServiço.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnOrdemServiço.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOrdemServiço.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnOrdemServiço.FlatAppearance.BorderSize = 0;
-            this.btnOrdemServiço.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.btnOrdemServiço.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrdemServiço.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrdemServiço.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnOrdemServiço.Image = ((System.Drawing.Image)(resources.GetObject("btnOrdemServiço.Image")));
-            this.btnOrdemServiço.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrdemServiço.Location = new System.Drawing.Point(3, 161);
-            this.btnOrdemServiço.Name = "btnOrdemServiço";
-            this.btnOrdemServiço.Size = new System.Drawing.Size(243, 44);
-            this.btnOrdemServiço.TabIndex = 6;
-            this.btnOrdemServiço.TamanhoBorda = 0;
-            this.btnOrdemServiço.TamanhoRaio = 7;
-            this.btnOrdemServiço.Text = "        Ordem de Serviço";
-            this.btnOrdemServiço.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnOrdemServiço.UseVisualStyleBackColor = false;
-            // 
-            // btnVendas
-            // 
-            this.btnVendas.BackColor = System.Drawing.Color.Transparent;
-            this.btnVendas.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnVendas.CorBotao = System.Drawing.Color.Transparent;
-            this.btnVendas.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnVendas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVendas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnVendas.FlatAppearance.BorderSize = 0;
-            this.btnVendas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.btnVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVendas.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVendas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnVendas.Image = ((System.Drawing.Image)(resources.GetObject("btnVendas.Image")));
-            this.btnVendas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVendas.Location = new System.Drawing.Point(3, 211);
-            this.btnVendas.Name = "btnVendas";
-            this.btnVendas.Size = new System.Drawing.Size(243, 44);
-            this.btnVendas.TabIndex = 6;
-            this.btnVendas.TamanhoBorda = 0;
-            this.btnVendas.TamanhoRaio = 15;
-            this.btnVendas.Text = "        Vendas";
-            this.btnVendas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVendas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnVendas.UseVisualStyleBackColor = false;
-            // 
-            // btnItens
-            // 
-            this.btnItens.BackColor = System.Drawing.Color.Transparent;
-            this.btnItens.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnItens.CorBotao = System.Drawing.Color.Transparent;
-            this.btnItens.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnItens.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnItens.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnItens.FlatAppearance.BorderSize = 0;
-            this.btnItens.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.btnItens.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnItens.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnItens.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnItens.Image = ((System.Drawing.Image)(resources.GetObject("btnItens.Image")));
-            this.btnItens.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnItens.Location = new System.Drawing.Point(3, 311);
-            this.btnItens.Name = "btnItens";
-            this.btnItens.Size = new System.Drawing.Size(243, 44);
-            this.btnItens.TabIndex = 9;
-            this.btnItens.TamanhoBorda = 0;
-            this.btnItens.TamanhoRaio = 7;
-            this.btnItens.Text = "        Estoque";
-            this.btnItens.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnItens.UseVisualStyleBackColor = false;
-            // 
-            // btnFechaMenuLateral
-            // 
-            this.btnFechaMenuLateral.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFechaMenuLateral.BackColor = System.Drawing.Color.Transparent;
-            this.btnFechaMenuLateral.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnFechaMenuLateral.CorBotao = System.Drawing.Color.Transparent;
-            this.btnFechaMenuLateral.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnFechaMenuLateral.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFechaMenuLateral.FlatAppearance.BorderSize = 0;
-            this.btnFechaMenuLateral.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnFechaMenuLateral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFechaMenuLateral.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFechaMenuLateral.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnFechaMenuLateral.Image = ((System.Drawing.Image)(resources.GetObject("btnFechaMenuLateral.Image")));
-            this.btnFechaMenuLateral.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFechaMenuLateral.Location = new System.Drawing.Point(213, 3);
-            this.btnFechaMenuLateral.Name = "btnFechaMenuLateral";
-            this.btnFechaMenuLateral.Size = new System.Drawing.Size(33, 34);
-            this.btnFechaMenuLateral.TabIndex = 8;
-            this.btnFechaMenuLateral.TamanhoBorda = 0;
-            this.btnFechaMenuLateral.TamanhoRaio = 5;
-            this.btnFechaMenuLateral.UseVisualStyleBackColor = false;
-            this.btnFechaMenuLateral.Click += new System.EventHandler(this.btnFechaMenuLateral_Click);
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.BackColor = System.Drawing.Color.Transparent;
-            this.btnMenu.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnMenu.CorBotao = System.Drawing.Color.Transparent;
-            this.btnMenu.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu.FlatAppearance.BorderSize = 0;
-            this.btnMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.Location = new System.Drawing.Point(18, 12);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(45, 45);
-            this.btnMenu.TabIndex = 11;
-            this.btnMenu.TamanhoBorda = 0;
-            this.btnMenu.TamanhoRaio = 20;
-            this.btnMenu.UseVisualStyleBackColor = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
-            // btnUser
-            // 
-            this.btnUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUser.BackColor = System.Drawing.Color.Transparent;
-            this.btnUser.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnUser.CorBotao = System.Drawing.Color.Transparent;
-            this.btnUser.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUser.FlatAppearance.BorderSize = 0;
-            this.btnUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUser.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnUser.Image = ((System.Drawing.Image)(resources.GetObject("btnUser.Image")));
-            this.btnUser.Location = new System.Drawing.Point(1290, 12);
-            this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(45, 45);
-            this.btnUser.TabIndex = 9;
-            this.btnUser.TamanhoBorda = 0;
-            this.btnUser.TamanhoRaio = 20;
-            this.btnUser.UseVisualStyleBackColor = false;
-            this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
-            // 
-            // roundedTextBox1
-            // 
-            this.roundedTextBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.roundedTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.roundedTextBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.roundedTextBox1.BorderRadius = 12;
-            this.roundedTextBox1.FillColor = System.Drawing.Color.White;
-            this.roundedTextBox1.Icon = ((System.Drawing.Image)(resources.GetObject("roundedTextBox1.Icon")));
-            this.roundedTextBox1.IconPosition = GRC.Componentes.RoundedTextBox.IconPositionEnum.Right;
-            this.roundedTextBox1.Location = new System.Drawing.Point(458, 17);
-            this.roundedTextBox1.Name = "roundedTextBox1";
-            this.roundedTextBox1.Padding = new System.Windows.Forms.Padding(10);
-            this.roundedTextBox1.Placeholder = "Pesquise um assunto";
-            this.roundedTextBox1.Size = new System.Drawing.Size(475, 40);
-            this.roundedTextBox1.TabIndex = 14;
-            this.roundedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.roundedTextBox1.TextColor = System.Drawing.Color.Black;
-            this.roundedTextBox1.TextStyle = System.Drawing.FontStyle.Bold;
-            this.roundedTextBox1.UnderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            this.roundedTextBox1.UnderlineSize = 5;
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnMinimize.CorBotao = System.Drawing.Color.Transparent;
-            this.btnMinimize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(1188, 12);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(45, 45);
-            this.btnMinimize.TabIndex = 12;
-            this.btnMinimize.TamanhoBorda = 0;
-            this.btnMinimize.TamanhoRaio = 20;
-            this.btnMinimize.UseVisualStyleBackColor = false;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
-            // btnMaximize
-            // 
-            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximize.BackColor = System.Drawing.Color.Transparent;
-            this.btnMaximize.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnMaximize.CorBotao = System.Drawing.Color.Transparent;
-            this.btnMaximize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMaximize.FlatAppearance.BorderSize = 0;
-            this.btnMaximize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMaximize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
-            this.btnMaximize.Location = new System.Drawing.Point(1239, 12);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(45, 45);
-            this.btnMaximize.TabIndex = 13;
-            this.btnMaximize.TamanhoBorda = 0;
-            this.btnMaximize.TamanhoRaio = 20;
-            this.btnMaximize.UseVisualStyleBackColor = false;
-            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
-            // 
-            // prUsuario
-            // 
-            this.prUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.prUsuario.BackColor = System.Drawing.Color.White;
-            this.prUsuario.BorderColor = System.Drawing.Color.White;
-            this.prUsuario.Controls.Add(this.btnEncerrar);
-            this.prUsuario.Controls.Add(this.btnTrocar);
-            this.prUsuario.Controls.Add(this.lbNome);
-            this.prUsuario.Controls.Add(this.pictureBox1);
-            this.prUsuario.Location = new System.Drawing.Point(1140, 10);
-            this.prUsuario.Name = "prUsuario";
-            this.prUsuario.Radius = 50;
-            this.prUsuario.Size = new System.Drawing.Size(200, 185);
-            this.prUsuario.TabIndex = 10;
-            this.prUsuario.Thickness = 0F;
-            this.prUsuario.Visible = false;
-            // 
-            // btnEncerrar
-            // 
-            this.btnEncerrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnEncerrar.CorBorda = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnEncerrar.CorBotao = System.Drawing.Color.Transparent;
-            this.btnEncerrar.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnEncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEncerrar.FlatAppearance.BorderSize = 0;
-            this.btnEncerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnEncerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEncerrar.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
-            this.btnEncerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnEncerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnEncerrar.Image")));
-            this.btnEncerrar.Location = new System.Drawing.Point(21, 118);
-            this.btnEncerrar.Name = "btnEncerrar";
-            this.btnEncerrar.Size = new System.Drawing.Size(157, 41);
-            this.btnEncerrar.TabIndex = 10;
-            this.btnEncerrar.TamanhoBorda = 2;
-            this.btnEncerrar.TamanhoRaio = 15;
-            this.btnEncerrar.Text = "          Encerrar";
-            this.btnEncerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEncerrar.UseVisualStyleBackColor = false;
-            this.btnEncerrar.Click += new System.EventHandler(this.btnEncerrar_Click);
-            // 
-            // btnTrocar
-            // 
-            this.btnTrocar.BackColor = System.Drawing.Color.Transparent;
-            this.btnTrocar.CorBorda = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnTrocar.CorBotao = System.Drawing.Color.Transparent;
-            this.btnTrocar.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnTrocar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTrocar.FlatAppearance.BorderSize = 0;
-            this.btnTrocar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnTrocar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTrocar.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
-            this.btnTrocar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnTrocar.Image = ((System.Drawing.Image)(resources.GetObject("btnTrocar.Image")));
-            this.btnTrocar.Location = new System.Drawing.Point(21, 70);
-            this.btnTrocar.Name = "btnTrocar";
-            this.btnTrocar.Size = new System.Drawing.Size(157, 42);
-            this.btnTrocar.TabIndex = 9;
-            this.btnTrocar.TamanhoBorda = 2;
-            this.btnTrocar.TamanhoRaio = 15;
-            this.btnTrocar.Text = "          Trocar";
-            this.btnTrocar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTrocar.UseVisualStyleBackColor = false;
-            this.btnTrocar.Click += new System.EventHandler(this.btnTrocar_Click);
-            // 
-            // lbNome
-            // 
-            this.lbNome.AutoSize = true;
-            this.lbNome.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.lbNome.Location = new System.Drawing.Point(60, 25);
-            this.lbNome.Name = "lbNome";
-            this.lbNome.Size = new System.Drawing.Size(106, 19);
-            this.lbNome.TabIndex = 1;
-            this.lbNome.Text = "Rayner Bryan";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(9, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 38);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // modernBox4
             // 
@@ -831,6 +349,491 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "100";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(68)))));
+            this.panel1.Controls.Add(this.btnMenu);
+            this.panel1.Controls.Add(this.btnUser);
+            this.panel1.Controls.Add(this.roundedTextBox1);
+            this.panel1.Controls.Add(this.btnMinimize);
+            this.panel1.Controls.Add(this.btnMaximize);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1350, 73);
+            this.panel1.TabIndex = 15;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.BackColor = System.Drawing.Color.Transparent;
+            this.btnMenu.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnMenu.CorBotao = System.Drawing.Color.Transparent;
+            this.btnMenu.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenu.FlatAppearance.BorderSize = 0;
+            this.btnMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenu.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
+            this.btnMenu.Location = new System.Drawing.Point(18, 12);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(45, 45);
+            this.btnMenu.TabIndex = 11;
+            this.btnMenu.TamanhoBorda = 0;
+            this.btnMenu.TamanhoRaio = 20;
+            this.btnMenu.UseVisualStyleBackColor = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
+            // btnUser
+            // 
+            this.btnUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUser.BackColor = System.Drawing.Color.Transparent;
+            this.btnUser.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnUser.CorBotao = System.Drawing.Color.Transparent;
+            this.btnUser.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUser.FlatAppearance.BorderSize = 0;
+            this.btnUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUser.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnUser.Image = ((System.Drawing.Image)(resources.GetObject("btnUser.Image")));
+            this.btnUser.Location = new System.Drawing.Point(1290, 12);
+            this.btnUser.Name = "btnUser";
+            this.btnUser.Size = new System.Drawing.Size(45, 45);
+            this.btnUser.TabIndex = 9;
+            this.btnUser.TamanhoBorda = 0;
+            this.btnUser.TamanhoRaio = 20;
+            this.btnUser.UseVisualStyleBackColor = false;
+            this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
+            // 
+            // roundedTextBox1
+            // 
+            this.roundedTextBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.roundedTextBox1.BackColor = System.Drawing.Color.Transparent;
+            this.roundedTextBox1.BorderColor = System.Drawing.Color.Transparent;
+            this.roundedTextBox1.BorderRadius = 12;
+            this.roundedTextBox1.FillColor = System.Drawing.Color.White;
+            this.roundedTextBox1.Icon = ((System.Drawing.Image)(resources.GetObject("roundedTextBox1.Icon")));
+            this.roundedTextBox1.IconPosition = GRC.Componentes.RoundedTextBox.IconPositionEnum.Right;
+            this.roundedTextBox1.Location = new System.Drawing.Point(458, 17);
+            this.roundedTextBox1.Name = "roundedTextBox1";
+            this.roundedTextBox1.Padding = new System.Windows.Forms.Padding(10);
+            this.roundedTextBox1.Placeholder = "Pesquise um assunto";
+            this.roundedTextBox1.Size = new System.Drawing.Size(475, 40);
+            this.roundedTextBox1.TabIndex = 14;
+            this.roundedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.roundedTextBox1.TextColor = System.Drawing.Color.Black;
+            this.roundedTextBox1.TextStyle = System.Drawing.FontStyle.Bold;
+            this.roundedTextBox1.UnderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.roundedTextBox1.UnderlineSize = 5;
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnMinimize.CorBotao = System.Drawing.Color.Transparent;
+            this.btnMinimize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
+            this.btnMinimize.Location = new System.Drawing.Point(1188, 12);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(45, 45);
+            this.btnMinimize.TabIndex = 12;
+            this.btnMinimize.TamanhoBorda = 0;
+            this.btnMinimize.TamanhoRaio = 20;
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // btnMaximize
+            // 
+            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMaximize.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnMaximize.CorBotao = System.Drawing.Color.Transparent;
+            this.btnMaximize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaximize.FlatAppearance.BorderSize = 0;
+            this.btnMaximize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximize.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaximize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
+            this.btnMaximize.Location = new System.Drawing.Point(1239, 12);
+            this.btnMaximize.Name = "btnMaximize";
+            this.btnMaximize.Size = new System.Drawing.Size(45, 45);
+            this.btnMaximize.TabIndex = 13;
+            this.btnMaximize.TamanhoBorda = 0;
+            this.btnMaximize.TamanhoRaio = 20;
+            this.btnMaximize.UseVisualStyleBackColor = false;
+            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
+            // 
+            // tlpMenu
+            // 
+            this.tlpMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.tlpMenu.BackColor = System.Drawing.Color.White;
+            this.tlpMenu.ColumnCount = 1;
+            this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMenu.Controls.Add(this.pcbLogo, 0, 1);
+            this.tlpMenu.Controls.Add(this.btnFornecedor, 0, 10);
+            this.tlpMenu.Controls.Add(this.customPictureBox1, 0, 14);
+            this.tlpMenu.Controls.Add(this.label1, 0, 3);
+            this.tlpMenu.Controls.Add(this.btnEstoque, 0, 2);
+            this.tlpMenu.Controls.Add(this.btnOrdemServiço, 0, 5);
+            this.tlpMenu.Controls.Add(this.btnVendas, 0, 6);
+            this.tlpMenu.Controls.Add(this.btnMovimentacoes, 0, 9);
+            this.tlpMenu.Controls.Add(this.btnClientes, 0, 7);
+            this.tlpMenu.Controls.Add(this.btnItens, 0, 8);
+            this.tlpMenu.Controls.Add(this.btnFechaMenuLateral, 0, 0);
+            this.tlpMenu.Location = new System.Drawing.Point(0, 0);
+            this.tlpMenu.Name = "tlpMenu";
+            this.tlpMenu.RowCount = 15;
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpMenu.Size = new System.Drawing.Size(249, 726);
+            this.tlpMenu.TabIndex = 16;
+            this.tlpMenu.Visible = false;
+            // 
+            // pcbLogo
+            // 
+            this.pcbLogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pcbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pcbLogo.Image")));
+            this.pcbLogo.Location = new System.Drawing.Point(3, 43);
+            this.pcbLogo.Name = "pcbLogo";
+            this.pcbLogo.Size = new System.Drawing.Size(243, 54);
+            this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbLogo.TabIndex = 0;
+            this.pcbLogo.TabStop = false;
+            // 
+            // btnFornecedor
+            // 
+            this.btnFornecedor.BackColor = System.Drawing.Color.Transparent;
+            this.btnFornecedor.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnFornecedor.CorBotao = System.Drawing.Color.Transparent;
+            this.btnFornecedor.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnFornecedor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFornecedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFornecedor.FlatAppearance.BorderSize = 0;
+            this.btnFornecedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.btnFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFornecedor.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFornecedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnFornecedor.Image = ((System.Drawing.Image)(resources.GetObject("btnFornecedor.Image")));
+            this.btnFornecedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFornecedor.Location = new System.Drawing.Point(3, 411);
+            this.btnFornecedor.Name = "btnFornecedor";
+            this.btnFornecedor.Size = new System.Drawing.Size(243, 44);
+            this.btnFornecedor.TabIndex = 4;
+            this.btnFornecedor.TamanhoBorda = 0;
+            this.btnFornecedor.TamanhoRaio = 15;
+            this.btnFornecedor.Text = " Fornecedores";
+            this.btnFornecedor.UseVisualStyleBackColor = false;
+            this.btnFornecedor.Click += new System.EventHandler(this.btnFornecedor_Click);
+            // 
+            // customPictureBox1
+            // 
+            this.customPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.customPictureBox1.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.customPictureBox1.CorBotao = System.Drawing.Color.Transparent;
+            this.customPictureBox1.CorTextoBotao = System.Drawing.SystemColors.ControlText;
+            this.customPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.customPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("customPictureBox1.Image")));
+            this.customPictureBox1.Location = new System.Drawing.Point(3, 679);
+            this.customPictureBox1.Name = "customPictureBox1";
+            this.customPictureBox1.Size = new System.Drawing.Size(243, 44);
+            this.customPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.customPictureBox1.TabIndex = 7;
+            this.customPictureBox1.TabStop = false;
+            this.customPictureBox1.TamanhoBorda = 0;
+            this.customPictureBox1.TamanhoRaio = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Roboto", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(3, 108);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 17);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Módulos";
+            // 
+            // btnEstoque
+            // 
+            this.btnEstoque.BackColor = System.Drawing.Color.Transparent;
+            this.btnEstoque.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnEstoque.CorBotao = System.Drawing.Color.Transparent;
+            this.btnEstoque.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnEstoque.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEstoque.FlatAppearance.BorderSize = 0;
+            this.btnEstoque.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEstoque.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstoque.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnEstoque.Image = ((System.Drawing.Image)(resources.GetObject("btnEstoque.Image")));
+            this.btnEstoque.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEstoque.Location = new System.Drawing.Point(3, 103);
+            this.btnEstoque.Name = "btnEstoque";
+            this.btnEstoque.Size = new System.Drawing.Size(217, 2);
+            this.btnEstoque.TabIndex = 5;
+            this.btnEstoque.TamanhoBorda = 0;
+            this.btnEstoque.TamanhoRaio = 2;
+            this.btnEstoque.Text = "        Estoque";
+            this.btnEstoque.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEstoque.UseVisualStyleBackColor = false;
+            // 
+            // btnOrdemServiço
+            // 
+            this.btnOrdemServiço.BackColor = System.Drawing.Color.Transparent;
+            this.btnOrdemServiço.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnOrdemServiço.CorBotao = System.Drawing.Color.Transparent;
+            this.btnOrdemServiço.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnOrdemServiço.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOrdemServiço.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnOrdemServiço.FlatAppearance.BorderSize = 0;
+            this.btnOrdemServiço.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.btnOrdemServiço.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrdemServiço.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrdemServiço.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnOrdemServiço.Image = ((System.Drawing.Image)(resources.GetObject("btnOrdemServiço.Image")));
+            this.btnOrdemServiço.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrdemServiço.Location = new System.Drawing.Point(3, 161);
+            this.btnOrdemServiço.Name = "btnOrdemServiço";
+            this.btnOrdemServiço.Size = new System.Drawing.Size(243, 44);
+            this.btnOrdemServiço.TabIndex = 6;
+            this.btnOrdemServiço.TamanhoBorda = 0;
+            this.btnOrdemServiço.TamanhoRaio = 7;
+            this.btnOrdemServiço.Text = "        Ordem de Serviço";
+            this.btnOrdemServiço.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnOrdemServiço.UseVisualStyleBackColor = false;
+            // 
+            // btnVendas
+            // 
+            this.btnVendas.BackColor = System.Drawing.Color.Transparent;
+            this.btnVendas.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnVendas.CorBotao = System.Drawing.Color.Transparent;
+            this.btnVendas.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnVendas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVendas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnVendas.FlatAppearance.BorderSize = 0;
+            this.btnVendas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.btnVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVendas.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVendas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnVendas.Image = ((System.Drawing.Image)(resources.GetObject("btnVendas.Image")));
+            this.btnVendas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVendas.Location = new System.Drawing.Point(3, 211);
+            this.btnVendas.Name = "btnVendas";
+            this.btnVendas.Size = new System.Drawing.Size(243, 44);
+            this.btnVendas.TabIndex = 6;
+            this.btnVendas.TamanhoBorda = 0;
+            this.btnVendas.TamanhoRaio = 15;
+            this.btnVendas.Text = "        Vendas";
+            this.btnVendas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVendas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVendas.UseVisualStyleBackColor = false;
+            // 
+            // btnMovimentacoes
+            // 
+            this.btnMovimentacoes.BackColor = System.Drawing.Color.Transparent;
+            this.btnMovimentacoes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMovimentacoes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnMovimentacoes.FlatAppearance.BorderSize = 0;
+            this.btnMovimentacoes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.btnMovimentacoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMovimentacoes.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
+            this.btnMovimentacoes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnMovimentacoes.Image = ((System.Drawing.Image)(resources.GetObject("btnMovimentacoes.Image")));
+            this.btnMovimentacoes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMovimentacoes.Location = new System.Drawing.Point(3, 361);
+            this.btnMovimentacoes.Name = "btnMovimentacoes";
+            this.btnMovimentacoes.Size = new System.Drawing.Size(243, 44);
+            this.btnMovimentacoes.TabIndex = 4;
+            this.btnMovimentacoes.Text = "        Movimentações";
+            this.btnMovimentacoes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMovimentacoes.UseMnemonic = false;
+            this.btnMovimentacoes.UseVisualStyleBackColor = false;
+            this.btnMovimentacoes.Click += new System.EventHandler(this.btnMovimentacoes_Click);
+            // 
+            // btnClientes
+            // 
+            this.btnClientes.BackColor = System.Drawing.Color.Transparent;
+            this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClientes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnClientes.FlatAppearance.BorderSize = 0;
+            this.btnClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClientes.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
+            this.btnClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
+            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClientes.Location = new System.Drawing.Point(3, 261);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(243, 44);
+            this.btnClientes.TabIndex = 3;
+            this.btnClientes.Text = "        Clientes";
+            this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnClientes.UseMnemonic = false;
+            this.btnClientes.UseVisualStyleBackColor = false;
+            // 
+            // btnItens
+            // 
+            this.btnItens.BackColor = System.Drawing.Color.Transparent;
+            this.btnItens.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnItens.CorBotao = System.Drawing.Color.Transparent;
+            this.btnItens.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnItens.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnItens.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnItens.FlatAppearance.BorderSize = 0;
+            this.btnItens.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.btnItens.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnItens.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnItens.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnItens.Image = ((System.Drawing.Image)(resources.GetObject("btnItens.Image")));
+            this.btnItens.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnItens.Location = new System.Drawing.Point(3, 311);
+            this.btnItens.Name = "btnItens";
+            this.btnItens.Size = new System.Drawing.Size(243, 44);
+            this.btnItens.TabIndex = 9;
+            this.btnItens.TamanhoBorda = 0;
+            this.btnItens.TamanhoRaio = 7;
+            this.btnItens.Text = "        Estoque";
+            this.btnItens.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnItens.UseVisualStyleBackColor = false;
+            this.btnItens.Click += new System.EventHandler(this.btnItens_Click);
+            // 
+            // btnFechaMenuLateral
+            // 
+            this.btnFechaMenuLateral.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFechaMenuLateral.BackColor = System.Drawing.Color.Transparent;
+            this.btnFechaMenuLateral.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnFechaMenuLateral.CorBotao = System.Drawing.Color.Transparent;
+            this.btnFechaMenuLateral.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnFechaMenuLateral.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFechaMenuLateral.FlatAppearance.BorderSize = 0;
+            this.btnFechaMenuLateral.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnFechaMenuLateral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechaMenuLateral.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFechaMenuLateral.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnFechaMenuLateral.Image = ((System.Drawing.Image)(resources.GetObject("btnFechaMenuLateral.Image")));
+            this.btnFechaMenuLateral.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFechaMenuLateral.Location = new System.Drawing.Point(213, 3);
+            this.btnFechaMenuLateral.Name = "btnFechaMenuLateral";
+            this.btnFechaMenuLateral.Size = new System.Drawing.Size(33, 34);
+            this.btnFechaMenuLateral.TabIndex = 8;
+            this.btnFechaMenuLateral.TamanhoBorda = 0;
+            this.btnFechaMenuLateral.TamanhoRaio = 5;
+            this.btnFechaMenuLateral.UseVisualStyleBackColor = false;
+            this.btnFechaMenuLateral.Click += new System.EventHandler(this.btnFechaMenuLateral_Click);
+            // 
+            // prUsuario
+            // 
+            this.prUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.prUsuario.BackColor = System.Drawing.Color.White;
+            this.prUsuario.BorderColor = System.Drawing.Color.White;
+            this.prUsuario.Controls.Add(this.btnEncerrar);
+            this.prUsuario.Controls.Add(this.btnTrocar);
+            this.prUsuario.Controls.Add(this.lbNome);
+            this.prUsuario.Controls.Add(this.pictureBox1);
+            this.prUsuario.Location = new System.Drawing.Point(1140, 10);
+            this.prUsuario.Name = "prUsuario";
+            this.prUsuario.Radius = 50;
+            this.prUsuario.Size = new System.Drawing.Size(200, 185);
+            this.prUsuario.TabIndex = 10;
+            this.prUsuario.Thickness = 0F;
+            this.prUsuario.Visible = false;
+            // 
+            // btnEncerrar
+            // 
+            this.btnEncerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnEncerrar.CorBorda = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnEncerrar.CorBotao = System.Drawing.Color.Transparent;
+            this.btnEncerrar.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnEncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEncerrar.FlatAppearance.BorderSize = 0;
+            this.btnEncerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnEncerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEncerrar.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
+            this.btnEncerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnEncerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnEncerrar.Image")));
+            this.btnEncerrar.Location = new System.Drawing.Point(21, 118);
+            this.btnEncerrar.Name = "btnEncerrar";
+            this.btnEncerrar.Size = new System.Drawing.Size(157, 41);
+            this.btnEncerrar.TabIndex = 10;
+            this.btnEncerrar.TamanhoBorda = 2;
+            this.btnEncerrar.TamanhoRaio = 15;
+            this.btnEncerrar.Text = "          Encerrar";
+            this.btnEncerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEncerrar.UseVisualStyleBackColor = false;
+            this.btnEncerrar.Click += new System.EventHandler(this.btnEncerrar_Click);
+            // 
+            // btnTrocar
+            // 
+            this.btnTrocar.BackColor = System.Drawing.Color.Transparent;
+            this.btnTrocar.CorBorda = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnTrocar.CorBotao = System.Drawing.Color.Transparent;
+            this.btnTrocar.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnTrocar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTrocar.FlatAppearance.BorderSize = 0;
+            this.btnTrocar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnTrocar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTrocar.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold);
+            this.btnTrocar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnTrocar.Image = ((System.Drawing.Image)(resources.GetObject("btnTrocar.Image")));
+            this.btnTrocar.Location = new System.Drawing.Point(21, 70);
+            this.btnTrocar.Name = "btnTrocar";
+            this.btnTrocar.Size = new System.Drawing.Size(157, 42);
+            this.btnTrocar.TabIndex = 9;
+            this.btnTrocar.TamanhoBorda = 2;
+            this.btnTrocar.TamanhoRaio = 15;
+            this.btnTrocar.Text = "          Trocar";
+            this.btnTrocar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTrocar.UseVisualStyleBackColor = false;
+            this.btnTrocar.Click += new System.EventHandler(this.btnTrocar_Click);
+            // 
+            // lbNome
+            // 
+            this.lbNome.AutoSize = true;
+            this.lbNome.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.lbNome.Location = new System.Drawing.Point(60, 25);
+            this.lbNome.Name = "lbNome";
+            this.lbNome.Size = new System.Drawing.Size(106, 19);
+            this.lbNome.TabIndex = 1;
+            this.lbNome.Text = "Rayner Bryan";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(9, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(45, 38);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // WorkFlow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -851,14 +854,6 @@
             this.Load += new System.EventHandler(this.WorkFlow_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.WorkFlow_MouseDown);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.tlpMenu.ResumeLayout(false);
-            this.tlpMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox1)).EndInit();
-            this.prUsuario.ResumeLayout(false);
-            this.prUsuario.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.modernBox4.ResumeLayout(false);
             this.modernBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customPictureBox5)).EndInit();
@@ -871,6 +866,14 @@
             this.modernBox2.ResumeLayout(false);
             this.modernBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customPictureBox3)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.tlpMenu.ResumeLayout(false);
+            this.tlpMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox1)).EndInit();
+            this.prUsuario.ResumeLayout(false);
+            this.prUsuario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

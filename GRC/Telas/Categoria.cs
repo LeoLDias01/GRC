@@ -34,10 +34,7 @@ namespace GRC.Telas
             InitializeComponent();
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-            
-        }
+
         private void CarregaDados()
         {
             dgvTipo.DataSource = null;
@@ -96,24 +93,7 @@ namespace GRC.Telas
             CarregaDados();
         }
 
-        private void txtCategoria_TrailingIconClick(object sender, EventArgs e)
-        {
-            if (!ValidaCampo())
-                return;
 
-            Tipo tipo = new Tipo();
-            tipo.Id = _id;
-            tipo.Descricao = txtCategoria.Text;
-            _id = _services.SalvaCategoriaItem(tipo);
-            if (_id > 0)
-                txtCategoria.Clear();
-            CarregaDados();
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void Categoria_MouseDown(object sender, MouseEventArgs e)
         {
@@ -124,9 +104,41 @@ namespace GRC.Telas
             }
         }
 
-        private void btnClose_Click_1(object sender, EventArgs e)
+        private void txtCategoria_IconClick(object sender, EventArgs e)
+        {
+            if (!ValidaCampo())
+                return;
+
+            Tipo tipo = new Tipo();
+            tipo.Id = _id;
+            tipo.Descricao = txtCategoria.Text;
+            _id = _services.SalvaCategoriaItem(tipo);
+            if (_id > 0)
+                txtCategoria.Text = string.Empty;
+            CarregaDados();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+            }
+        }
+
+        private void lbTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+            }
         }
     }
 }

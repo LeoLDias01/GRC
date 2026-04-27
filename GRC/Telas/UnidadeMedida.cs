@@ -37,10 +37,6 @@ namespace GRC.Telas
             CarregaDados();
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-            
-        }
         private bool ValidaCampo()
         {
             if (!string.IsNullOrWhiteSpace(txtDescricao.Text))
@@ -84,23 +80,7 @@ namespace GRC.Telas
             return null;
         }
 
-        private void txtDescricao_TrailingIconClick(object sender, EventArgs e)
-        {
-            if (!ValidaCampo())
-                return;
 
-            Tipo tipo = new Tipo();
-            tipo.Id = _id;
-            tipo.Descricao = txtDescricao.Text;
-            _services.SalvaUnidadeMedida(tipo);
-            txtDescricao.Clear();
-            CarregaDados();
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void UnidadeMedida_MouseDown(object sender, MouseEventArgs e)
         {
@@ -114,6 +94,37 @@ namespace GRC.Telas
         private void btnSair_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void pnSuperior_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+            }
+        }
+
+        private void label1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+            }
+        }
+
+        private void txtDescricao_IconClick(object sender, EventArgs e)
+        {
+            if (!ValidaCampo())
+                return;
+
+            Tipo tipo = new Tipo();
+            tipo.Id = _id;
+            tipo.Descricao = txtDescricao.Text;
+            _services.SalvaUnidadeMedida(tipo);
+            txtDescricao.Text = null;
+            CarregaDados();
         }
     }
 }

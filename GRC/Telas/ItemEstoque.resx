@@ -151,6 +151,17 @@
     <value>True</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="txtCodigoBarras.LeadingIcon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        1AAAANQBhp5IhgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADsSURBVFhH7ZdB
+        CsIwFETnFHoH3SjuPY6gFxLB43QpeAjd6RVEmZCUkgZmMbRxkQcpLa+d/6GLnwCNP+AK4JatDsAqf9Fg
+        HTPzOqyNL4DXxA0wK2+ANVk7XC75FzPAmq2B0MAHwHkgFgCeAPbx+R5ffEe3NH2CNVkbRwCbgdjFDw7x
+        mfdp0bk+wZqsPUIFuF6iAlwvUQGul6gA10tUgOslKsD1EhXgeokKcL1EBbheogJcL1EBrpeoANePOFUa
+        Rts0jErj+FEYp9xC0bk+0Y9jyqobktZA+j9TbstL54J+Wz7HwaR0LuAKB5NGVX6U3SS8YwDKjAAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
   <data name="btnApagar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO

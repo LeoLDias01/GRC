@@ -10,6 +10,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -234,12 +235,6 @@ namespace GRC.Telas
         {
             pn1.Color1 = cor1;
             pn1.Color2 = cor2;
-            pn2.Color1 = cor1;
-            pn2.Color2 = cor2;
-            pn3.Color1 = cor1;
-            pn3.Color2 = cor2;
-            pn4.Color1 = cor1;
-            pn4.Color2 = cor2;
         }
         private void LimpaEndereco()
         {
@@ -360,28 +355,7 @@ namespace GRC.Telas
         
         private void btnAddTelefone_Click(object sender, EventArgs e)
         {
-            bool whatsapp = chkWhatsapp.Checked;
-            string observacoes = txtObservacoesTelefone.Text;
-
-            // Remove tudo que não é número
-            string telefoneNumerico = txtTelefone.Text.Trim();//new string(txtTelefone.Text.Trim().Where(char.IsDigit).ToArray());
-
-            // Validação simples por quantidade de caracteres
-            if (telefoneNumerico.Length < 14 || telefoneNumerico.Length > 15)
-            {
-                new AlertBox(Color.Goldenrod, Color.LimeGreen, Color.Yellow, Resources.Warning, "Entidade: Fornecedor/Telefone", string.Empty, "Informe um telefone válido!", false).ShowDialog();
-                txtTelefone.Focus();
-                return;
-            }
-
-
-            PreencheGridTelefone(0, whatsapp, telefoneNumerico, observacoes);
-
-            // Limpa campos para próxima entrada
-            txtTelefone.Clear();
-            chkWhatsapp.Checked = false;
-            txtObservacoesTelefone.Clear();
-            txtTelefone.Focus();
+           
         }
 
         private void swAtivo_CheckedChanged(object sender, EventArgs e)
@@ -402,6 +376,46 @@ namespace GRC.Telas
                 pcAtivo.Visible = false;
                 MudaCorPainel(Color.Gray, Color.DarkGray);
             }
+        }
+
+
+        private bool ValidaCampos()
+        {
+            // Nome obrigatório
+            if (string.IsNullOrWhiteSpace(txtNome.Text))
+            {
+                new AlertBox(Color.Goldenrod, Color.LimeGreen, Color.Yellow, Resources.Warning, "Entidade: Cliente", string.Empty, "Nome do Cliente é obrigatório", false).ShowDialog();
+                txtNome.Focus();
+                return false;
+            }
+
+            // Validação do e-mail, se habilitado
+            if (chkHabilitaEmail.Checked)
+            {
+                if (string.IsNullOrWhiteSpace(txtEmail.Text) ||
+                    !System.Text.RegularExpressions.Regex.IsMatch(txtEmail.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+                {
+                    new AlertBox(Color.Goldenrod, Color.LimeGreen, Color.Yellow, Resources.Warning, "Entidade: Cliente/e-mail", string.Empty, "Informe um e-mail válido", false).ShowDialog();
+                    txtEmail.Focus();
+                    return false;
+                }
+            }
+
+            // Validação do endereço, se habilitado
+            if (chkHabilitaEndereco.Checked)
+            {
+                if (string.IsNullOrWhiteSpace(txtLogradouro.Text)
+                    || string.IsNullOrWhiteSpace(txtBairro.Text)
+                    || string.IsNullOrWhiteSpace(txtCidade.Text)
+                    || string.IsNullOrWhiteSpace(txtUf.Text))
+                {
+                    new AlertBox(Color.Goldenrod, Color.LimeGreen, Color.Yellow, Resources.Warning, "Entidade: Cliente/Endereço", string.Empty, "O endereço é obrigatório!", false).ShowDialog();
+                    txtLogradouro.Focus();
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -480,43 +494,71 @@ namespace GRC.Telas
                 new AlertBox(Color.FromArgb(64, 0, 0), Color.Red, Color.Crimson, Resources.Error, "Um erro ocorreu:", "Entidade: Cliente", "Erro ao salvar Cliente!", false).ShowDialog();
             }
         }
-        private bool ValidaCampos()
+
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            // Nome obrigatório
-            if (string.IsNullOrWhiteSpace(txtNome.Text))
+            this.Close();
+        }
+        // Importar as DLLs do Windows para mover o formulário
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        // Constantes para a mensagem de movimento
+        private const int WM_NCLBUTTONDOWN = 0xA1;
+        private const int HT_CAPTION = 0x2;
+        private void CadastroCliente_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
             {
-                new AlertBox(Color.Goldenrod, Color.LimeGreen, Color.Yellow, Resources.Warning, "Entidade: Cliente", string.Empty, "Nome do Cliente é obrigatório", false).ShowDialog();
-                txtNome.Focus();
-                return false;
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+            }
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+            }
+        }
+
+        private void lbTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+            }
+        }
+
+        private void txtTelefone_TrailingIconClick(object sender, EventArgs e)
+        {
+            bool whatsapp = chkWhatsapp.Checked;
+            string observacoes = txtObservacoesTelefone.Text;
+
+            // Remove tudo que não é número
+            string telefoneNumerico = txtTelefone.Text.Trim();//new string(txtTelefone.Text.Trim().Where(char.IsDigit).ToArray());
+
+            // Validação simples por quantidade de caracteres
+            if (telefoneNumerico.Length < 14 || telefoneNumerico.Length > 15)
+            {
+                new AlertBox(Color.Goldenrod, Color.LimeGreen, Color.Yellow, Resources.Warning, "Entidade: Fornecedor/Telefone", string.Empty, "Informe um telefone válido!", false).ShowDialog();
+                txtTelefone.Focus();
+                return;
             }
 
-            // Validação do e-mail, se habilitado
-            if (chkHabilitaEmail.Checked)
-            {
-                if (string.IsNullOrWhiteSpace(txtEmail.Text) ||
-                    !System.Text.RegularExpressions.Regex.IsMatch(txtEmail.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
-                {
-                    new AlertBox(Color.Goldenrod, Color.LimeGreen, Color.Yellow, Resources.Warning, "Entidade: Cliente/e-mail", string.Empty, "Informe um e-mail válido", false).ShowDialog();
-                    txtEmail.Focus();
-                    return false;
-                }
-            }
 
-            // Validação do endereço, se habilitado
-            if (chkHabilitaEndereco.Checked)
-            {
-                if (string.IsNullOrWhiteSpace(txtLogradouro.Text)
-                    || string.IsNullOrWhiteSpace(txtBairro.Text)
-                    || string.IsNullOrWhiteSpace(txtCidade.Text)
-                    || string.IsNullOrWhiteSpace(txtUf.Text))
-                {
-                    new AlertBox(Color.Goldenrod, Color.LimeGreen, Color.Yellow, Resources.Warning, "Entidade: Cliente/Endereço", string.Empty, "O endereço é obrigatório!", false).ShowDialog();
-                    txtLogradouro.Focus();
-                    return false;
-                }
-            }
+            PreencheGridTelefone(0, whatsapp, telefoneNumerico, observacoes);
 
-            return true;
+            // Limpa campos para próxima entrada
+            txtTelefone.Clear();
+            chkWhatsapp.Checked = false;
+            txtObservacoesTelefone.Clear();
+            txtTelefone.Focus();
         }
     }
 }
