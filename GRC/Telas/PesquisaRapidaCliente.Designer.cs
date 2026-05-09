@@ -46,26 +46,32 @@
             this.colIdentidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbxQtdRegistros = new System.Windows.Forms.ComboBox();
             this.lbRegistros = new System.Windows.Forms.Label();
-            this.roundedPanel1 = new GRC.Componentes.RoundedPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.painelRadius1 = new GRC.Componentes.PainelRadius();
-            this.painelRadius2 = new GRC.Componentes.PainelRadius();
             this.painelRadius3 = new GRC.Componentes.PainelRadius();
-            this.btnMaximize = new GRC.Componentes.CustomButton();
-            this.btnMinimize = new GRC.Componentes.CustomButton();
             this.btnClose = new GRC.Componentes.CustomButton();
+            this.pnSuperior = new System.Windows.Forms.Panel();
+            this.pn1 = new GRC.Componentes.RoundedPanel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.modernBox1 = new GRC.Componentes.ModernBox();
+            this.painelRadius4 = new GRC.Componentes.PainelRadius();
+            this.flpMenu = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.modernBox2 = new GRC.Componentes.ModernBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.painelRadius1.SuspendLayout();
-            this.painelRadius2.SuspendLayout();
+            this.pnSuperior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.modernBox1.SuspendLayout();
+            this.painelRadius4.SuspendLayout();
+            this.flpMenu.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.modernBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // rbtPF
             // 
             this.rbtPF.AutoSize = true;
             this.rbtPF.Depth = 0;
-            this.rbtPF.Location = new System.Drawing.Point(6, 9);
+            this.rbtPF.Location = new System.Drawing.Point(24, 16);
             this.rbtPF.Margin = new System.Windows.Forms.Padding(0);
             this.rbtPF.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rbtPF.MouseState = MaterialSkin.MouseState.HOVER;
@@ -81,7 +87,7 @@
             // 
             this.rbtPJ.AutoSize = true;
             this.rbtPJ.Depth = 0;
-            this.rbtPJ.Location = new System.Drawing.Point(151, 9);
+            this.rbtPJ.Location = new System.Drawing.Point(24, 53);
             this.rbtPJ.Margin = new System.Windows.Forms.Padding(0);
             this.rbtPJ.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rbtPJ.MouseState = MaterialSkin.MouseState.HOVER;
@@ -104,12 +110,12 @@
             this.txtIdentidade.Hint = "CNPJ/CPF";
             this.txtIdentidade.LeadingIcon = null;
             this.txtIdentidade.LeaveOnEnterKey = true;
-            this.txtIdentidade.Location = new System.Drawing.Point(7, 59);
+            this.txtIdentidade.Location = new System.Drawing.Point(13, 13);
             this.txtIdentidade.MaxLength = 18;
             this.txtIdentidade.MouseState = MaterialSkin.MouseState.OUT;
             this.txtIdentidade.Multiline = false;
             this.txtIdentidade.Name = "txtIdentidade";
-            this.txtIdentidade.Size = new System.Drawing.Size(219, 50);
+            this.txtIdentidade.Size = new System.Drawing.Size(212, 50);
             this.txtIdentidade.TabIndex = 8;
             this.txtIdentidade.Text = "";
             this.txtIdentidade.TrailingIcon = null;
@@ -128,12 +134,12 @@
             this.txtCliente.Hint = "Cliente";
             this.txtCliente.LeadingIcon = null;
             this.txtCliente.LeaveOnEnterKey = true;
-            this.txtCliente.Location = new System.Drawing.Point(232, 59);
+            this.txtCliente.Location = new System.Drawing.Point(13, 69);
             this.txtCliente.MaxLength = 80;
             this.txtCliente.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCliente.Multiline = false;
             this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(370, 50);
+            this.txtCliente.Size = new System.Drawing.Size(374, 50);
             this.txtCliente.TabIndex = 0;
             this.txtCliente.Text = "";
             this.txtCliente.TrailingIcon = null;
@@ -141,7 +147,6 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
             this.btnSearch.CorBorda = System.Drawing.Color.MediumSlateBlue;
             this.btnSearch.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
@@ -152,7 +157,7 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(564, 6);
+            this.btnSearch.Location = new System.Drawing.Point(414, 16);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(43, 43);
             this.btnSearch.TabIndex = 101;
@@ -175,7 +180,7 @@
             this.btnAddCliente.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
             this.btnAddCliente.ForeColor = System.Drawing.Color.White;
             this.btnAddCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCliente.Image")));
-            this.btnAddCliente.Location = new System.Drawing.Point(369, 21);
+            this.btnAddCliente.Location = new System.Drawing.Point(365, 16);
             this.btnAddCliente.Name = "btnAddCliente";
             this.btnAddCliente.Size = new System.Drawing.Size(43, 43);
             this.btnAddCliente.TabIndex = 16;
@@ -196,7 +201,7 @@
             this.btnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApagar.ForeColor = System.Drawing.Color.White;
             this.btnApagar.Image = ((System.Drawing.Image)(resources.GetObject("btnApagar.Image")));
-            this.btnApagar.Location = new System.Drawing.Point(320, 21);
+            this.btnApagar.Location = new System.Drawing.Point(316, 16);
             this.btnApagar.Name = "btnApagar";
             this.btnApagar.Size = new System.Drawing.Size(43, 43);
             this.btnApagar.TabIndex = 14;
@@ -209,11 +214,8 @@
             // 
             this.dgvClientes.AllowUserToAddRows = false;
             this.dgvClientes.AllowUserToDeleteRows = false;
-            this.dgvClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvClientes.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.dgvClientes.BackgroundColor = System.Drawing.Color.White;
             this.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvClientes.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -241,9 +243,10 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvClientes.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvClientes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvClientes.EnableHeadersVisualStyles = false;
             this.dgvClientes.GridColor = System.Drawing.Color.DarkGray;
-            this.dgvClientes.Location = new System.Drawing.Point(15, 225);
+            this.dgvClientes.Location = new System.Drawing.Point(10, 10);
             this.dgvClientes.MultiSelect = false;
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
@@ -252,7 +255,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(605, 350);
+            this.dgvClientes.Size = new System.Drawing.Size(537, 312);
             this.dgvClientes.TabIndex = 21;
             this.dgvClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellDoubleClick);
             this.dgvClientes.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellValueChanged);
@@ -303,7 +306,7 @@
             "80",
             "90",
             "100"});
-            this.cbxQtdRegistros.Location = new System.Drawing.Point(546, 10);
+            this.cbxQtdRegistros.Location = new System.Drawing.Point(929, 11);
             this.cbxQtdRegistros.Name = "cbxQtdRegistros";
             this.cbxQtdRegistros.Size = new System.Drawing.Size(59, 21);
             this.cbxQtdRegistros.TabIndex = 2;
@@ -315,80 +318,15 @@
             // 
             this.lbRegistros.AutoSize = true;
             this.lbRegistros.BackColor = System.Drawing.Color.Transparent;
+            this.lbRegistros.Dock = System.Windows.Forms.DockStyle.Left;
             this.lbRegistros.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRegistros.ForeColor = System.Drawing.Color.White;
-            this.lbRegistros.Location = new System.Drawing.Point(3, 3);
+            this.lbRegistros.Location = new System.Drawing.Point(0, 0);
             this.lbRegistros.Name = "lbRegistros";
-            this.lbRegistros.Padding = new System.Windows.Forms.Padding(5);
-            this.lbRegistros.Size = new System.Drawing.Size(211, 31);
+            this.lbRegistros.Padding = new System.Windows.Forms.Padding(5, 10, 5, 5);
+            this.lbRegistros.Size = new System.Drawing.Size(211, 36);
             this.lbRegistros.TabIndex = 1;
             this.lbRegistros.Text = "0 Registros Encontrados";
-            // 
-            // roundedPanel1
-            // 
-            this.roundedPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.roundedPanel1.Color1 = System.Drawing.Color.SkyBlue;
-            this.roundedPanel1.Color2 = System.Drawing.Color.Black;
-            this.roundedPanel1.CornerRadius = 10;
-            this.roundedPanel1.GradientAngle = 180F;
-            this.roundedPanel1.Location = new System.Drawing.Point(-16, 56);
-            this.roundedPanel1.Name = "roundedPanel1";
-            this.roundedPanel1.Size = new System.Drawing.Size(313, 10);
-            this.roundedPanel1.TabIndex = 38;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 42);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 37;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(63, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(237, 29);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "Pesquisa de Clientes";
-            // 
-            // painelRadius1
-            // 
-            this.painelRadius1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.painelRadius1.BackColor = System.Drawing.Color.AliceBlue;
-            this.painelRadius1.BorderColor = System.Drawing.Color.AliceBlue;
-            this.painelRadius1.Controls.Add(this.txtCliente);
-            this.painelRadius1.Controls.Add(this.rbtPF);
-            this.painelRadius1.Controls.Add(this.rbtPJ);
-            this.painelRadius1.Controls.Add(this.txtIdentidade);
-            this.painelRadius1.Controls.Add(this.btnSearch);
-            this.painelRadius1.Location = new System.Drawing.Point(12, 83);
-            this.painelRadius1.Name = "painelRadius1";
-            this.painelRadius1.Radius = 30;
-            this.painelRadius1.Size = new System.Drawing.Size(610, 121);
-            this.painelRadius1.TabIndex = 105;
-            this.painelRadius1.Thickness = 0F;
-            // 
-            // painelRadius2
-            // 
-            this.painelRadius2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.painelRadius2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.painelRadius2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.painelRadius2.Controls.Add(this.lbRegistros);
-            this.painelRadius2.Controls.Add(this.cbxQtdRegistros);
-            this.painelRadius2.Location = new System.Drawing.Point(12, 581);
-            this.painelRadius2.Name = "painelRadius2";
-            this.painelRadius2.Radius = 20;
-            this.painelRadius2.Size = new System.Drawing.Size(608, 37);
-            this.painelRadius2.TabIndex = 106;
-            this.painelRadius2.Thickness = 5F;
             // 
             // painelRadius3
             // 
@@ -406,52 +344,6 @@
             this.painelRadius3.TabIndex = 107;
             this.painelRadius3.Thickness = 5F;
             // 
-            // btnMaximize
-            // 
-            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximize.BackColor = System.Drawing.Color.Transparent;
-            this.btnMaximize.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnMaximize.CorBotao = System.Drawing.Color.Transparent;
-            this.btnMaximize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMaximize.FlatAppearance.BorderSize = 0;
-            this.btnMaximize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMaximize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
-            this.btnMaximize.Location = new System.Drawing.Point(549, 0);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(40, 35);
-            this.btnMaximize.TabIndex = 111;
-            this.btnMaximize.TamanhoBorda = 0;
-            this.btnMaximize.TamanhoRaio = 17;
-            this.btnMaximize.UseVisualStyleBackColor = false;
-            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnMinimize.CorBotao = System.Drawing.Color.Transparent;
-            this.btnMinimize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(503, 0);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(40, 35);
-            this.btnMinimize.TabIndex = 110;
-            this.btnMinimize.TamanhoBorda = 0;
-            this.btnMinimize.TamanhoRaio = 17;
-            this.btnMinimize.UseVisualStyleBackColor = false;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -466,7 +358,7 @@
             this.btnClose.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(595, 0);
+            this.btnClose.Location = new System.Drawing.Point(953, 19);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(36, 35);
             this.btnClose.TabIndex = 112;
@@ -475,38 +367,161 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // pnSuperior
+            // 
+            this.pnSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.pnSuperior.Controls.Add(this.pn1);
+            this.pnSuperior.Controls.Add(this.pictureBox3);
+            this.pnSuperior.Controls.Add(this.btnSearch);
+            this.pnSuperior.Controls.Add(this.btnClose);
+            this.pnSuperior.Controls.Add(this.label2);
+            this.pnSuperior.Controls.Add(this.btnApagar);
+            this.pnSuperior.Controls.Add(this.btnAddCliente);
+            this.pnSuperior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnSuperior.Location = new System.Drawing.Point(0, 0);
+            this.pnSuperior.Name = "pnSuperior";
+            this.pnSuperior.Size = new System.Drawing.Size(1000, 70);
+            this.pnSuperior.TabIndex = 132;
+            this.pnSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnSuperior_MouseDown);
+            // 
+            // pn1
+            // 
+            this.pn1.BackColor = System.Drawing.Color.Transparent;
+            this.pn1.Color1 = System.Drawing.Color.Black;
+            this.pn1.Color2 = System.Drawing.Color.SkyBlue;
+            this.pn1.CornerRadius = 8;
+            this.pn1.GradientAngle = 360F;
+            this.pn1.Location = new System.Drawing.Point(4, 64);
+            this.pn1.Name = "pn1";
+            this.pn1.Size = new System.Drawing.Size(293, 30);
+            this.pn1.TabIndex = 127;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(13, 12);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(45, 42);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 121;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(64, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(237, 29);
+            this.label2.TabIndex = 120;
+            this.label2.Text = "Pesquisa de Clientes";
+            this.label2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label2_MouseDown);
+            // 
+            // modernBox1
+            // 
+            this.modernBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.modernBox1.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox1.BorderColor = System.Drawing.Color.Transparent;
+            this.modernBox1.BorderRadius = 20;
+            this.modernBox1.BorderSize = 1;
+            this.modernBox1.Controls.Add(this.painelRadius4);
+            this.modernBox1.Controls.Add(this.flpMenu);
+            this.modernBox1.FillColor = System.Drawing.Color.White;
+            this.modernBox1.Location = new System.Drawing.Point(15, 76);
+            this.modernBox1.Name = "modernBox1";
+            this.modernBox1.Padding = new System.Windows.Forms.Padding(10);
+            this.modernBox1.ShadowColor = System.Drawing.Color.Transparent;
+            this.modernBox1.ShadowSize = 0;
+            this.modernBox1.Size = new System.Drawing.Size(410, 317);
+            this.modernBox1.TabIndex = 133;
+            // 
+            // painelRadius4
+            // 
+            this.painelRadius4.BackColor = System.Drawing.Color.White;
+            this.painelRadius4.BorderColor = System.Drawing.Color.White;
+            this.painelRadius4.Controls.Add(this.rbtPF);
+            this.painelRadius4.Controls.Add(this.rbtPJ);
+            this.painelRadius4.Location = new System.Drawing.Point(11, 17);
+            this.painelRadius4.Name = "painelRadius4";
+            this.painelRadius4.Radius = 50;
+            this.painelRadius4.Size = new System.Drawing.Size(333, 94);
+            this.painelRadius4.TabIndex = 129;
+            this.painelRadius4.Thickness = 10F;
+            // 
+            // flpMenu
+            // 
+            this.flpMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flpMenu.BackColor = System.Drawing.Color.White;
+            this.flpMenu.Controls.Add(this.txtIdentidade);
+            this.flpMenu.Controls.Add(this.txtCliente);
+            this.flpMenu.Location = new System.Drawing.Point(11, 125);
+            this.flpMenu.Name = "flpMenu";
+            this.flpMenu.Padding = new System.Windows.Forms.Padding(10);
+            this.flpMenu.Size = new System.Drawing.Size(391, 134);
+            this.flpMenu.TabIndex = 103;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.panel2.Controls.Add(this.cbxQtdRegistros);
+            this.panel2.Controls.Add(this.lbRegistros);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 414);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1000, 44);
+            this.panel2.TabIndex = 161;
+            // 
+            // modernBox2
+            // 
+            this.modernBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.modernBox2.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.modernBox2.BorderRadius = 12;
+            this.modernBox2.BorderSize = 1;
+            this.modernBox2.Controls.Add(this.dgvClientes);
+            this.modernBox2.FillColor = System.Drawing.Color.White;
+            this.modernBox2.Location = new System.Drawing.Point(432, 76);
+            this.modernBox2.Name = "modernBox2";
+            this.modernBox2.Padding = new System.Windows.Forms.Padding(10);
+            this.modernBox2.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.modernBox2.ShadowSize = 8;
+            this.modernBox2.Size = new System.Drawing.Size(557, 332);
+            this.modernBox2.TabIndex = 163;
+            // 
             // PesquisaRapidaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(631, 630);
-            this.Controls.Add(this.dgvClientes);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnMaximize);
-            this.Controls.Add(this.btnMinimize);
+            this.ClientSize = new System.Drawing.Size(1000, 458);
+            this.Controls.Add(this.modernBox2);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.modernBox1);
+            this.Controls.Add(this.pnSuperior);
             this.Controls.Add(this.painelRadius3);
-            this.Controls.Add(this.painelRadius2);
-            this.Controls.Add(this.painelRadius1);
-            this.Controls.Add(this.roundedPanel1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnApagar);
-            this.Controls.Add(this.btnAddCliente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(631, 630);
             this.Name = "PesquisaRapidaCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pesquisa de Clientes";
             this.Load += new System.EventHandler(this.PesquisaRapidaCliente_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PesquisaRapidaCliente_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.painelRadius1.ResumeLayout(false);
-            this.painelRadius1.PerformLayout();
-            this.painelRadius2.ResumeLayout(false);
-            this.painelRadius2.PerformLayout();
+            this.pnSuperior.ResumeLayout(false);
+            this.pnSuperior.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.modernBox1.ResumeLayout(false);
+            this.painelRadius4.ResumeLayout(false);
+            this.painelRadius4.PerformLayout();
+            this.flpMenu.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.modernBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -527,14 +542,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTipoPessoa;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIdentidade;
-        private Componentes.RoundedPanel roundedPanel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private Componentes.PainelRadius painelRadius1;
-        private Componentes.PainelRadius painelRadius2;
         private Componentes.PainelRadius painelRadius3;
-        private Componentes.CustomButton btnMaximize;
-        private Componentes.CustomButton btnMinimize;
         private Componentes.CustomButton btnClose;
+        private System.Windows.Forms.Panel pnSuperior;
+        private Componentes.RoundedPanel pn1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label2;
+        private Componentes.ModernBox modernBox1;
+        private System.Windows.Forms.FlowLayoutPanel flpMenu;
+        private Componentes.PainelRadius painelRadius4;
+        private System.Windows.Forms.Panel panel2;
+        private Componentes.ModernBox modernBox2;
     }
 }

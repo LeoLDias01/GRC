@@ -69,6 +69,7 @@
             this.btnTrocar = new GRC.Componentes.CustomButton();
             this.lbNome = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.modernBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customPictureBox5)).BeginInit();
@@ -153,7 +154,7 @@
             this.label8.ForeColor = System.Drawing.Color.Crimson;
             this.label8.Location = new System.Drawing.Point(81, 13);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(106, 19);
+            this.label8.Size = new System.Drawing.Size(107, 19);
             this.label8.TabIndex = 13;
             this.label8.Text = "OS atrasadas";
             // 
@@ -213,7 +214,7 @@
             this.label6.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label6.Location = new System.Drawing.Point(79, 15);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(124, 19);
+            this.label6.Size = new System.Drawing.Size(122, 19);
             this.label6.TabIndex = 10;
             this.label6.Text = "Reparos a fazer";
             // 
@@ -256,7 +257,7 @@
             this.label3.ForeColor = System.Drawing.Color.ForestGreen;
             this.label3.Location = new System.Drawing.Point(79, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 19);
+            this.label3.Size = new System.Drawing.Size(139, 19);
             this.label3.TabIndex = 1;
             this.label3.Text = "Vendas Efetuadas";
             // 
@@ -333,7 +334,7 @@
             this.label4.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.label4.Location = new System.Drawing.Point(66, 13);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(155, 19);
+            this.label4.Size = new System.Drawing.Size(154, 19);
             this.label4.TabIndex = 7;
             this.label4.Text = "Reparos Finalizados";
             // 
@@ -628,6 +629,7 @@
             this.btnOrdemServiço.Text = "        Ordem de Serviço";
             this.btnOrdemServiço.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnOrdemServiço.UseVisualStyleBackColor = false;
+            this.btnOrdemServiço.Click += new System.EventHandler(this.btnOrdemServiço_Click);
             // 
             // btnVendas
             // 
@@ -637,6 +639,7 @@
             this.btnVendas.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
             this.btnVendas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVendas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnVendas.Enabled = false;
             this.btnVendas.FlatAppearance.BorderSize = 0;
             this.btnVendas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
             this.btnVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -697,6 +700,7 @@
             this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClientes.UseMnemonic = false;
             this.btnClientes.UseVisualStyleBackColor = false;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // btnItens
             // 
@@ -820,7 +824,7 @@
             this.lbNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.lbNome.Location = new System.Drawing.Point(60, 25);
             this.lbNome.Name = "lbNome";
-            this.lbNome.Size = new System.Drawing.Size(106, 19);
+            this.lbNome.Size = new System.Drawing.Size(105, 19);
             this.lbNome.TabIndex = 1;
             this.lbNome.Text = "Rayner Bryan";
             // 
@@ -834,6 +838,19 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.label10.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
+            this.label10.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label10.Location = new System.Drawing.Point(537, 311);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(521, 190);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Release Teste 1.0\r\n\r\n\r\n\r\n\r\nNovidades:\r\n\r\nAbertura automatica do Whatsapp ao clica" +
+    "r duas vezes em um telefone\r\nNovos Layouts\r\nNovo modelo OS para impressão";
+            // 
             // WorkFlow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -841,6 +858,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.tlpMenu);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.prUsuario);
@@ -875,6 +893,7 @@
             this.prUsuario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -919,5 +938,6 @@
         private System.Windows.Forms.Button btnClientes;
         private Componentes.CustomButton btnItens;
         private Componentes.CustomButton btnFechaMenuLateral;
+        private System.Windows.Forms.Label label10;
     }
 }

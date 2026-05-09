@@ -560,5 +560,36 @@ namespace GRC.Telas
             txtObservacoesTelefone.Clear();
             txtTelefone.Focus();
         }
+
+        private void dgvTelefones_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // evita header
+            {
+                try
+                {
+                    var telefone = dgvTelefones.Rows[e.RowIndex].Cells["colTelefone"].Value.ToString();
+
+                    // limpa o número (remove espaços, traços, etc)
+                    telefone = new string(telefone.Where(char.IsDigit).ToArray());
+
+                    // adiciona código do Brasil se não tiver
+                    if (!telefone.StartsWith("55"))
+                        telefone = "55" + telefone;
+                    string mensagem = Uri.EscapeDataString("Olá, tudo bem? Gostaria de falar sobre seu aparelho...");
+
+                    string url = $"https://wa.me/{telefone}?text={mensagem}";
+
+                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                    {
+                        FileName = url,
+                        UseShellExecute = true
+                    });
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao abrir WhatsApp: " + ex.Message);
+                }
+            }
+        }
     }
 }

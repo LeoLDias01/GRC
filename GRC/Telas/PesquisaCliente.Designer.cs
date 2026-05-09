@@ -32,12 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.roundedPanel1 = new GRC.Componentes.RoundedPanel();
-            this.customPanel2 = new GRC.Componentes.CustomPanel();
             this.cbxQtdRegistros = new System.Windows.Forms.ComboBox();
             this.lbRegistros = new System.Windows.Forms.Label();
-            this.pnPesquisa = new GRC.Componentes.CustomPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.txtCliente = new MaterialSkin.Controls.MaterialTextBox();
             this.txtIdentidade = new MaterialSkin.Controls.MaterialTextBox();
             this.txtCidade = new MaterialSkin.Controls.MaterialTextBox();
@@ -46,8 +42,6 @@
             this.rbtPJ = new MaterialSkin.Controls.MaterialRadioButton();
             this.rbtPF = new MaterialSkin.Controls.MaterialRadioButton();
             this.btnSearch = new GRC.Componentes.CustomButton();
-            this.btnAddCliente = new GRC.Componentes.CustomButton();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.btnApagar = new GRC.Componentes.CustomButton();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.colIdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,43 +51,28 @@
             this.colCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colExcluir = new System.Windows.Forms.DataGridViewImageColumn();
-            this.customPanel2.SuspendLayout();
-            this.pnPesquisa.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.pnSuperior = new System.Windows.Forms.Panel();
+            this.pn1 = new GRC.Componentes.RoundedPanel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnClose = new GRC.Componentes.CustomButton();
+            this.btnMaximize = new GRC.Componentes.CustomButton();
+            this.btnNovoCliente = new GRC.Componentes.CustomButton();
+            this.btnMinimize = new GRC.Componentes.CustomButton();
+            this.modernBox1 = new GRC.Componentes.ModernBox();
+            this.painelRadius3 = new GRC.Componentes.PainelRadius();
+            this.flpMenu = new System.Windows.Forms.FlowLayoutPanel();
+            this.modernBox2 = new GRC.Componentes.ModernBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            this.pnSuperior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.modernBox1.SuspendLayout();
+            this.painelRadius3.SuspendLayout();
+            this.flpMenu.SuspendLayout();
+            this.modernBox2.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // roundedPanel1
-            // 
-            this.roundedPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.roundedPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.roundedPanel1.Color1 = System.Drawing.Color.Aqua;
-            this.roundedPanel1.Color2 = System.Drawing.Color.Purple;
-            this.roundedPanel1.CornerRadius = 10;
-            this.roundedPanel1.GradientAngle = 45F;
-            this.roundedPanel1.Location = new System.Drawing.Point(16, 205);
-            this.roundedPanel1.Name = "roundedPanel1";
-            this.roundedPanel1.Size = new System.Drawing.Size(1095, 20);
-            this.roundedPanel1.TabIndex = 21;
-            // 
-            // customPanel2
-            // 
-            this.customPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.customPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.customPanel2.Controls.Add(this.cbxQtdRegistros);
-            this.customPanel2.Controls.Add(this.lbRegistros);
-            this.customPanel2.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.customPanel2.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.customPanel2.CorTextoBotao = System.Drawing.Color.White;
-            this.customPanel2.ForeColor = System.Drawing.Color.White;
-            this.customPanel2.Location = new System.Drawing.Point(12, 616);
-            this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(1099, 37);
-            this.customPanel2.TabIndex = 19;
-            this.customPanel2.TamanhoBorda = 0;
-            this.customPanel2.TamanhoRaio = 10;
             // 
             // cbxQtdRegistros
             // 
@@ -111,7 +90,7 @@
             "80",
             "90",
             "100"});
-            this.cbxQtdRegistros.Location = new System.Drawing.Point(1021, 10);
+            this.cbxQtdRegistros.Location = new System.Drawing.Point(960, 11);
             this.cbxQtdRegistros.Name = "cbxQtdRegistros";
             this.cbxQtdRegistros.Size = new System.Drawing.Size(59, 21);
             this.cbxQtdRegistros.TabIndex = 2;
@@ -123,52 +102,15 @@
             // 
             this.lbRegistros.AutoSize = true;
             this.lbRegistros.BackColor = System.Drawing.Color.Transparent;
-            this.lbRegistros.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbRegistros.Dock = System.Windows.Forms.DockStyle.Left;
             this.lbRegistros.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRegistros.ForeColor = System.Drawing.Color.White;
             this.lbRegistros.Location = new System.Drawing.Point(0, 0);
             this.lbRegistros.Name = "lbRegistros";
-            this.lbRegistros.Padding = new System.Windows.Forms.Padding(5);
-            this.lbRegistros.Size = new System.Drawing.Size(211, 31);
+            this.lbRegistros.Padding = new System.Windows.Forms.Padding(5, 10, 5, 5);
+            this.lbRegistros.Size = new System.Drawing.Size(211, 36);
             this.lbRegistros.TabIndex = 1;
             this.lbRegistros.Text = "0 Registros Encontrados";
-            // 
-            // pnPesquisa
-            // 
-            this.pnPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnPesquisa.BackColor = System.Drawing.Color.AliceBlue;
-            this.pnPesquisa.Controls.Add(this.flowLayoutPanel1);
-            this.pnPesquisa.Controls.Add(this.btnSearch);
-            this.pnPesquisa.Controls.Add(this.btnAddCliente);
-            this.pnPesquisa.Controls.Add(this.materialLabel1);
-            this.pnPesquisa.Controls.Add(this.btnApagar);
-            this.pnPesquisa.CorBorda = System.Drawing.Color.Black;
-            this.pnPesquisa.CorBotao = System.Drawing.Color.AliceBlue;
-            this.pnPesquisa.CorTextoBotao = System.Drawing.Color.White;
-            this.pnPesquisa.ForeColor = System.Drawing.Color.White;
-            this.pnPesquisa.Location = new System.Drawing.Point(12, 10);
-            this.pnPesquisa.Name = "pnPesquisa";
-            this.pnPesquisa.Size = new System.Drawing.Size(1099, 189);
-            this.pnPesquisa.TabIndex = 20;
-            this.pnPesquisa.TamanhoBorda = 0;
-            this.pnPesquisa.TamanhoRaio = 20;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.Controls.Add(this.txtCliente);
-            this.flowLayoutPanel1.Controls.Add(this.txtIdentidade);
-            this.flowLayoutPanel1.Controls.Add(this.txtCidade);
-            this.flowLayoutPanel1.Controls.Add(this.txtUf);
-            this.flowLayoutPanel1.Controls.Add(this.chkAtivo);
-            this.flowLayoutPanel1.Controls.Add(this.rbtPJ);
-            this.flowLayoutPanel1.Controls.Add(this.rbtPF);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 60);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1068, 119);
-            this.flowLayoutPanel1.TabIndex = 103;
             // 
             // txtCliente
             // 
@@ -184,12 +126,12 @@
             this.txtCliente.Hint = "Cliente";
             this.txtCliente.LeadingIcon = null;
             this.txtCliente.LeaveOnEnterKey = true;
-            this.txtCliente.Location = new System.Drawing.Point(3, 3);
+            this.txtCliente.Location = new System.Drawing.Point(266, 13);
             this.txtCliente.MaxLength = 80;
             this.txtCliente.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCliente.Multiline = false;
             this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(388, 50);
+            this.txtCliente.Size = new System.Drawing.Size(377, 50);
             this.txtCliente.TabIndex = 0;
             this.txtCliente.Text = "";
             this.txtCliente.TrailingIcon = null;
@@ -208,7 +150,7 @@
             this.txtIdentidade.Hint = "CNPJ/CPF";
             this.txtIdentidade.LeadingIcon = null;
             this.txtIdentidade.LeaveOnEnterKey = true;
-            this.txtIdentidade.Location = new System.Drawing.Point(397, 3);
+            this.txtIdentidade.Location = new System.Drawing.Point(13, 13);
             this.txtIdentidade.MaxLength = 18;
             this.txtIdentidade.MouseState = MaterialSkin.MouseState.OUT;
             this.txtIdentidade.Multiline = false;
@@ -231,7 +173,7 @@
             this.txtCidade.Hint = "Cidade";
             this.txtCidade.LeadingIcon = null;
             this.txtCidade.LeaveOnEnterKey = true;
-            this.txtCidade.Location = new System.Drawing.Point(650, 3);
+            this.txtCidade.Location = new System.Drawing.Point(649, 13);
             this.txtCidade.MaxLength = 250;
             this.txtCidade.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCidade.Multiline = false;
@@ -253,7 +195,7 @@
             this.txtUf.Hint = "UF";
             this.txtUf.LeadingIcon = null;
             this.txtUf.LeaveOnEnterKey = true;
-            this.txtUf.Location = new System.Drawing.Point(892, 3);
+            this.txtUf.Location = new System.Drawing.Point(891, 13);
             this.txtUf.MaxLength = 2;
             this.txtUf.MouseState = MaterialSkin.MouseState.OUT;
             this.txtUf.Multiline = false;
@@ -270,7 +212,7 @@
             this.chkAtivo.Checked = true;
             this.chkAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkAtivo.Depth = 0;
-            this.chkAtivo.Location = new System.Drawing.Point(965, 0);
+            this.chkAtivo.Location = new System.Drawing.Point(361, 5);
             this.chkAtivo.Margin = new System.Windows.Forms.Padding(0);
             this.chkAtivo.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkAtivo.MouseState = MaterialSkin.MouseState.HOVER;
@@ -286,7 +228,7 @@
             // 
             this.rbtPJ.AutoSize = true;
             this.rbtPJ.Depth = 0;
-            this.rbtPJ.Location = new System.Drawing.Point(0, 56);
+            this.rbtPJ.Location = new System.Drawing.Point(159, 4);
             this.rbtPJ.Margin = new System.Windows.Forms.Padding(0);
             this.rbtPJ.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rbtPJ.MouseState = MaterialSkin.MouseState.HOVER;
@@ -302,7 +244,7 @@
             // 
             this.rbtPF.AutoSize = true;
             this.rbtPF.Depth = 0;
-            this.rbtPF.Location = new System.Drawing.Point(148, 56);
+            this.rbtPF.Location = new System.Drawing.Point(9, 4);
             this.rbtPF.Margin = new System.Windows.Forms.Padding(0);
             this.rbtPF.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rbtPF.MouseState = MaterialSkin.MouseState.HOVER;
@@ -316,7 +258,6 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
             this.btnSearch.CorBorda = System.Drawing.Color.MediumSlateBlue;
             this.btnSearch.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
@@ -327,7 +268,7 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(1039, 5);
+            this.btnSearch.Location = new System.Drawing.Point(268, 17);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(43, 43);
             this.btnSearch.TabIndex = 101;
@@ -336,52 +277,8 @@
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // btnAddCliente
-            // 
-            this.btnAddCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnAddCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnAddCliente.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnAddCliente.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnAddCliente.CorTextoBotao = System.Drawing.Color.White;
-            this.btnAddCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddCliente.FlatAppearance.BorderSize = 0;
-            this.btnAddCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnAddCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddCliente.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.btnAddCliente.ForeColor = System.Drawing.Color.White;
-            this.btnAddCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCliente.Image")));
-            this.btnAddCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddCliente.Location = new System.Drawing.Point(221, 17);
-            this.btnAddCliente.Name = "btnAddCliente";
-            this.btnAddCliente.Size = new System.Drawing.Size(150, 37);
-            this.btnAddCliente.TabIndex = 16;
-            this.btnAddCliente.TamanhoBorda = 0;
-            this.btnAddCliente.TamanhoRaio = 5;
-            this.btnAddCliente.Text = "     Novo Cliente";
-            this.btnAddCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddCliente.UseVisualStyleBackColor = false;
-            this.btnAddCliente.Click += new System.EventHandler(this.btnAddCliente_Click);
-            // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.BackColor = System.Drawing.Color.SlateGray;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            this.materialLabel1.ForeColor = System.Drawing.Color.Black;
-            this.materialLabel1.Location = new System.Drawing.Point(18, 24);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(188, 24);
-            this.materialLabel1.TabIndex = 11;
-            this.materialLabel1.Text = "Pesquisa de Clientes";
-            // 
             // btnApagar
             // 
-            this.btnApagar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnApagar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
             this.btnApagar.CorBorda = System.Drawing.Color.MediumSlateBlue;
             this.btnApagar.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
@@ -392,7 +289,7 @@
             this.btnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApagar.ForeColor = System.Drawing.Color.White;
             this.btnApagar.Image = ((System.Drawing.Image)(resources.GetObject("btnApagar.Image")));
-            this.btnApagar.Location = new System.Drawing.Point(990, 5);
+            this.btnApagar.Location = new System.Drawing.Point(219, 17);
             this.btnApagar.Name = "btnApagar";
             this.btnApagar.Size = new System.Drawing.Size(43, 43);
             this.btnApagar.TabIndex = 14;
@@ -405,11 +302,8 @@
             // 
             this.dgvClientes.AllowUserToAddRows = false;
             this.dgvClientes.AllowUserToDeleteRows = false;
-            this.dgvClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvClientes.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.dgvClientes.BackgroundColor = System.Drawing.Color.White;
             this.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvClientes.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -440,9 +334,10 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvClientes.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvClientes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvClientes.EnableHeadersVisualStyles = false;
             this.dgvClientes.GridColor = System.Drawing.Color.DarkGray;
-            this.dgvClientes.Location = new System.Drawing.Point(12, 231);
+            this.dgvClientes.Location = new System.Drawing.Point(10, 10);
             this.dgvClientes.MultiSelect = false;
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
@@ -451,7 +346,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(1099, 379);
+            this.dgvClientes.Size = new System.Drawing.Size(998, 356);
             this.dgvClientes.TabIndex = 18;
             this.dgvClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellDoubleClick);
             this.dgvClientes.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellValueChanged);
@@ -510,48 +405,274 @@
             this.colExcluir.ReadOnly = true;
             this.colExcluir.Visible = false;
             // 
+            // pnSuperior
+            // 
+            this.pnSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.pnSuperior.Controls.Add(this.pn1);
+            this.pnSuperior.Controls.Add(this.btnSearch);
+            this.pnSuperior.Controls.Add(this.pictureBox3);
+            this.pnSuperior.Controls.Add(this.label1);
+            this.pnSuperior.Controls.Add(this.btnClose);
+            this.pnSuperior.Controls.Add(this.btnApagar);
+            this.pnSuperior.Controls.Add(this.btnMaximize);
+            this.pnSuperior.Controls.Add(this.btnNovoCliente);
+            this.pnSuperior.Controls.Add(this.btnMinimize);
+            this.pnSuperior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnSuperior.Location = new System.Drawing.Point(0, 0);
+            this.pnSuperior.Name = "pnSuperior";
+            this.pnSuperior.Size = new System.Drawing.Size(1042, 70);
+            this.pnSuperior.TabIndex = 132;
+            this.pnSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnSuperior_MouseDown);
+            // 
+            // pn1
+            // 
+            this.pn1.BackColor = System.Drawing.Color.Transparent;
+            this.pn1.Color1 = System.Drawing.Color.Blue;
+            this.pn1.Color2 = System.Drawing.Color.Purple;
+            this.pn1.CornerRadius = 8;
+            this.pn1.GradientAngle = 280F;
+            this.pn1.Location = new System.Drawing.Point(4, 64);
+            this.pn1.Name = "pn1";
+            this.pn1.Size = new System.Drawing.Size(160, 30);
+            this.pn1.TabIndex = 127;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(13, 12);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(45, 42);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 121;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(64, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 29);
+            this.label1.TabIndex = 120;
+            this.label1.Text = "Clientes";
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnClose.CorBotao = System.Drawing.Color.Transparent;
+            this.btnClose.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(998, 17);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(36, 35);
+            this.btnClose.TabIndex = 16;
+            this.btnClose.TamanhoBorda = 0;
+            this.btnClose.TamanhoRaio = 17;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnMaximize
+            // 
+            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMaximize.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnMaximize.CorBotao = System.Drawing.Color.Transparent;
+            this.btnMaximize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaximize.FlatAppearance.BorderSize = 0;
+            this.btnMaximize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximize.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaximize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
+            this.btnMaximize.Location = new System.Drawing.Point(952, 17);
+            this.btnMaximize.Name = "btnMaximize";
+            this.btnMaximize.Size = new System.Drawing.Size(40, 35);
+            this.btnMaximize.TabIndex = 15;
+            this.btnMaximize.TamanhoBorda = 0;
+            this.btnMaximize.TamanhoRaio = 17;
+            this.btnMaximize.UseVisualStyleBackColor = false;
+            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
+            // 
+            // btnNovoCliente
+            // 
+            this.btnNovoCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnNovoCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnNovoCliente.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnNovoCliente.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnNovoCliente.CorTextoBotao = System.Drawing.Color.White;
+            this.btnNovoCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNovoCliente.FlatAppearance.BorderSize = 0;
+            this.btnNovoCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnNovoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovoCliente.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
+            this.btnNovoCliente.ForeColor = System.Drawing.Color.White;
+            this.btnNovoCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnNovoCliente.Image")));
+            this.btnNovoCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNovoCliente.Location = new System.Drawing.Point(170, 17);
+            this.btnNovoCliente.Name = "btnNovoCliente";
+            this.btnNovoCliente.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnNovoCliente.Size = new System.Drawing.Size(43, 43);
+            this.btnNovoCliente.TabIndex = 0;
+            this.btnNovoCliente.TamanhoBorda = 0;
+            this.btnNovoCliente.TamanhoRaio = 10;
+            this.btnNovoCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNovoCliente.UseVisualStyleBackColor = false;
+            this.btnNovoCliente.Click += new System.EventHandler(this.btnNovoCliente_Click);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnMinimize.CorBotao = System.Drawing.Color.Transparent;
+            this.btnMinimize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
+            this.btnMinimize.Location = new System.Drawing.Point(906, 17);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(40, 35);
+            this.btnMinimize.TabIndex = 14;
+            this.btnMinimize.TamanhoBorda = 0;
+            this.btnMinimize.TamanhoRaio = 17;
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // modernBox1
+            // 
+            this.modernBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.modernBox1.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox1.BorderColor = System.Drawing.Color.Transparent;
+            this.modernBox1.BorderRadius = 20;
+            this.modernBox1.BorderSize = 1;
+            this.modernBox1.Controls.Add(this.painelRadius3);
+            this.modernBox1.Controls.Add(this.flpMenu);
+            this.modernBox1.FillColor = System.Drawing.Color.White;
+            this.modernBox1.Location = new System.Drawing.Point(15, 80);
+            this.modernBox1.Name = "modernBox1";
+            this.modernBox1.Padding = new System.Windows.Forms.Padding(10);
+            this.modernBox1.ShadowColor = System.Drawing.Color.Transparent;
+            this.modernBox1.ShadowSize = 0;
+            this.modernBox1.Size = new System.Drawing.Size(1009, 151);
+            this.modernBox1.TabIndex = 162;
+            // 
+            // painelRadius3
+            // 
+            this.painelRadius3.BackColor = System.Drawing.Color.White;
+            this.painelRadius3.BorderColor = System.Drawing.Color.White;
+            this.painelRadius3.Controls.Add(this.rbtPF);
+            this.painelRadius3.Controls.Add(this.rbtPJ);
+            this.painelRadius3.Controls.Add(this.chkAtivo);
+            this.painelRadius3.Location = new System.Drawing.Point(18, 13);
+            this.painelRadius3.Name = "painelRadius3";
+            this.painelRadius3.Radius = 50;
+            this.painelRadius3.Size = new System.Drawing.Size(507, 43);
+            this.painelRadius3.TabIndex = 128;
+            this.painelRadius3.Thickness = 10F;
+            // 
+            // flpMenu
+            // 
+            this.flpMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flpMenu.BackColor = System.Drawing.Color.White;
+            this.flpMenu.Controls.Add(this.txtIdentidade);
+            this.flpMenu.Controls.Add(this.txtCliente);
+            this.flpMenu.Controls.Add(this.txtCidade);
+            this.flpMenu.Controls.Add(this.txtUf);
+            this.flpMenu.Location = new System.Drawing.Point(18, 62);
+            this.flpMenu.Name = "flpMenu";
+            this.flpMenu.Padding = new System.Windows.Forms.Padding(10);
+            this.flpMenu.Size = new System.Drawing.Size(986, 73);
+            this.flpMenu.TabIndex = 103;
+            // 
+            // modernBox2
+            // 
+            this.modernBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.modernBox2.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.modernBox2.BorderRadius = 12;
+            this.modernBox2.BorderSize = 1;
+            this.modernBox2.Controls.Add(this.dgvClientes);
+            this.modernBox2.FillColor = System.Drawing.Color.White;
+            this.modernBox2.Location = new System.Drawing.Point(16, 237);
+            this.modernBox2.Name = "modernBox2";
+            this.modernBox2.Padding = new System.Windows.Forms.Padding(10);
+            this.modernBox2.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.modernBox2.ShadowSize = 8;
+            this.modernBox2.Size = new System.Drawing.Size(1018, 376);
+            this.modernBox2.TabIndex = 163;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.panel2.Controls.Add(this.cbxQtdRegistros);
+            this.panel2.Controls.Add(this.lbRegistros);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 618);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1042, 44);
+            this.panel2.TabIndex = 164;
+            // 
             // PesquisaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(1123, 662);
-            this.Controls.Add(this.roundedPanel1);
-            this.Controls.Add(this.customPanel2);
-            this.Controls.Add(this.pnPesquisa);
-            this.Controls.Add(this.dgvClientes);
+            this.ClientSize = new System.Drawing.Size(1042, 662);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.modernBox2);
+            this.Controls.Add(this.modernBox1);
+            this.Controls.Add(this.pnSuperior);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PesquisaCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pesquisa de Clientes";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PesquisaCliente_Load);
-            this.customPanel2.ResumeLayout(false);
-            this.customPanel2.PerformLayout();
-            this.pnPesquisa.ResumeLayout(false);
-            this.pnPesquisa.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PesquisaCliente_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            this.pnSuperior.ResumeLayout(false);
+            this.pnSuperior.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.modernBox1.ResumeLayout(false);
+            this.painelRadius3.ResumeLayout(false);
+            this.painelRadius3.PerformLayout();
+            this.flpMenu.ResumeLayout(false);
+            this.modernBox2.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Componentes.RoundedPanel roundedPanel1;
-        private Componentes.CustomPanel customPanel2;
         private System.Windows.Forms.ComboBox cbxQtdRegistros;
         private System.Windows.Forms.Label lbRegistros;
-        private Componentes.CustomPanel pnPesquisa;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private MaterialSkin.Controls.MaterialTextBox txtCliente;
         private MaterialSkin.Controls.MaterialTextBox txtIdentidade;
         private MaterialSkin.Controls.MaterialTextBox txtCidade;
         private MaterialSkin.Controls.MaterialTextBox txtUf;
         private MaterialSkin.Controls.MaterialCheckbox chkAtivo;
         private Componentes.CustomButton btnSearch;
-        private Componentes.CustomButton btnAddCliente;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private Componentes.CustomButton btnApagar;
         private System.Windows.Forms.DataGridView dgvClientes;
         private MaterialSkin.Controls.MaterialRadioButton rbtPJ;
@@ -563,5 +684,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn colUf;
         private System.Windows.Forms.DataGridViewImageColumn colExcluir;
+        private System.Windows.Forms.Panel pnSuperior;
+        private Componentes.RoundedPanel pn1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label1;
+        private Componentes.CustomButton btnClose;
+        private Componentes.CustomButton btnMaximize;
+        private Componentes.CustomButton btnNovoCliente;
+        private Componentes.CustomButton btnMinimize;
+        private Componentes.ModernBox modernBox1;
+        private Componentes.PainelRadius painelRadius3;
+        private System.Windows.Forms.FlowLayoutPanel flpMenu;
+        private Componentes.ModernBox modernBox2;
+        private System.Windows.Forms.Panel panel2;
     }
 }

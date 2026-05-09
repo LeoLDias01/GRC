@@ -126,5 +126,15 @@ namespace GRC.Telas
         {
             new Movimentacoes().ShowDialog();
         }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            new PesquisaCliente().ShowDialog();
+        }
+
+        private void btnOrdemServiço_Click(object sender, EventArgs e)
+        {
+            new PesquisaOS().ShowDialog();
+        }
     }
 }

@@ -28,15 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Movimentacoes));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Movimentacoes));
             this.cbxQtdRegistros = new System.Windows.Forms.ComboBox();
             this.lbRegistros = new System.Windows.Forms.Label();
             this.pnSuperior = new System.Windows.Forms.Panel();
+            this.tbnSearch = new GRC.Componentes.CustomButton();
+            this.btnApagar = new GRC.Componentes.CustomButton();
+            this.pn1 = new GRC.Componentes.RoundedPanel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnClose = new GRC.Componentes.CustomButton();
+            this.btnMaximize = new GRC.Componentes.CustomButton();
+            this.btnNovaMovimentacao = new GRC.Componentes.CustomButton();
+            this.btnMinimize = new GRC.Componentes.CustomButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.modernBox2 = new GRC.Componentes.ModernBox();
             this.dgvMov = new System.Windows.Forms.DataGridView();
@@ -51,13 +58,6 @@
             this.txtDataFinal = new MaterialSkin.Controls.MaterialTextBox();
             this.cbTipoMovimento = new MaterialSkin.Controls.MaterialComboBox();
             this.txtItem = new MaterialSkin.Controls.MaterialTextBox();
-            this.tbnSearch = new GRC.Componentes.CustomButton();
-            this.btnApagar = new GRC.Componentes.CustomButton();
-            this.pn1 = new GRC.Componentes.RoundedPanel();
-            this.btnClose = new GRC.Componentes.CustomButton();
-            this.btnMaximize = new GRC.Componentes.CustomButton();
-            this.btnNovaMovimentacao = new GRC.Componentes.CustomButton();
-            this.btnMinimize = new GRC.Componentes.CustomButton();
             this.pnSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
@@ -122,6 +122,60 @@
             this.pnSuperior.TabIndex = 132;
             this.pnSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnSuperior_MouseDown);
             // 
+            // tbnSearch
+            // 
+            this.tbnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.tbnSearch.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.tbnSearch.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.tbnSearch.CorTextoBotao = System.Drawing.Color.White;
+            this.tbnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tbnSearch.FlatAppearance.BorderSize = 0;
+            this.tbnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.tbnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tbnSearch.ForeColor = System.Drawing.Color.White;
+            this.tbnSearch.Image = ((System.Drawing.Image)(resources.GetObject("tbnSearch.Image")));
+            this.tbnSearch.Location = new System.Drawing.Point(498, 17);
+            this.tbnSearch.Name = "tbnSearch";
+            this.tbnSearch.Size = new System.Drawing.Size(43, 43);
+            this.tbnSearch.TabIndex = 8;
+            this.tbnSearch.TamanhoBorda = 0;
+            this.tbnSearch.TamanhoRaio = 10;
+            this.tbnSearch.UseVisualStyleBackColor = false;
+            this.tbnSearch.Click += new System.EventHandler(this.tbnSearch_Click);
+            // 
+            // btnApagar
+            // 
+            this.btnApagar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnApagar.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnApagar.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnApagar.CorTextoBotao = System.Drawing.Color.White;
+            this.btnApagar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnApagar.FlatAppearance.BorderSize = 0;
+            this.btnApagar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApagar.ForeColor = System.Drawing.Color.White;
+            this.btnApagar.Image = ((System.Drawing.Image)(resources.GetObject("btnApagar.Image")));
+            this.btnApagar.Location = new System.Drawing.Point(449, 17);
+            this.btnApagar.Name = "btnApagar";
+            this.btnApagar.Size = new System.Drawing.Size(43, 43);
+            this.btnApagar.TabIndex = 9;
+            this.btnApagar.TamanhoBorda = 0;
+            this.btnApagar.TamanhoRaio = 10;
+            this.btnApagar.UseVisualStyleBackColor = false;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click_1);
+            // 
+            // pn1
+            // 
+            this.pn1.BackColor = System.Drawing.Color.Transparent;
+            this.pn1.Color1 = System.Drawing.Color.Ivory;
+            this.pn1.Color2 = System.Drawing.Color.Aqua;
+            this.pn1.CornerRadius = 8;
+            this.pn1.GradientAngle = 280F;
+            this.pn1.Location = new System.Drawing.Point(4, 64);
+            this.pn1.Name = "pn1";
+            this.pn1.Size = new System.Drawing.Size(385, 30);
+            this.pn1.TabIndex = 127;
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
@@ -143,6 +197,101 @@
             this.label1.TabIndex = 120;
             this.label1.Text = "Movimentações de Estoque";
             this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnClose.CorBotao = System.Drawing.Color.Transparent;
+            this.btnClose.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(1139, 17);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(36, 35);
+            this.btnClose.TabIndex = 12;
+            this.btnClose.TamanhoBorda = 0;
+            this.btnClose.TamanhoRaio = 17;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnMaximize
+            // 
+            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMaximize.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnMaximize.CorBotao = System.Drawing.Color.Transparent;
+            this.btnMaximize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaximize.FlatAppearance.BorderSize = 0;
+            this.btnMaximize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximize.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaximize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
+            this.btnMaximize.Location = new System.Drawing.Point(1093, 17);
+            this.btnMaximize.Name = "btnMaximize";
+            this.btnMaximize.Size = new System.Drawing.Size(40, 35);
+            this.btnMaximize.TabIndex = 11;
+            this.btnMaximize.TamanhoBorda = 0;
+            this.btnMaximize.TamanhoRaio = 17;
+            this.btnMaximize.UseVisualStyleBackColor = false;
+            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
+            // 
+            // btnNovaMovimentacao
+            // 
+            this.btnNovaMovimentacao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnNovaMovimentacao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnNovaMovimentacao.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnNovaMovimentacao.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnNovaMovimentacao.CorTextoBotao = System.Drawing.Color.White;
+            this.btnNovaMovimentacao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNovaMovimentacao.FlatAppearance.BorderSize = 0;
+            this.btnNovaMovimentacao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnNovaMovimentacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovaMovimentacao.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
+            this.btnNovaMovimentacao.ForeColor = System.Drawing.Color.White;
+            this.btnNovaMovimentacao.Image = ((System.Drawing.Image)(resources.GetObject("btnNovaMovimentacao.Image")));
+            this.btnNovaMovimentacao.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNovaMovimentacao.Location = new System.Drawing.Point(400, 17);
+            this.btnNovaMovimentacao.Name = "btnNovaMovimentacao";
+            this.btnNovaMovimentacao.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnNovaMovimentacao.Size = new System.Drawing.Size(43, 43);
+            this.btnNovaMovimentacao.TabIndex = 1;
+            this.btnNovaMovimentacao.TamanhoBorda = 0;
+            this.btnNovaMovimentacao.TamanhoRaio = 10;
+            this.btnNovaMovimentacao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNovaMovimentacao.UseVisualStyleBackColor = false;
+            this.btnNovaMovimentacao.Click += new System.EventHandler(this.btnNovaMovimentacao_Click_1);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnMinimize.CorBotao = System.Drawing.Color.Transparent;
+            this.btnMinimize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
+            this.btnMinimize.Location = new System.Drawing.Point(1047, 17);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(40, 35);
+            this.btnMinimize.TabIndex = 10;
+            this.btnMinimize.TamanhoBorda = 0;
+            this.btnMinimize.TamanhoRaio = 17;
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // panel2
             // 
@@ -390,155 +539,6 @@
             this.txtItem.UseAccent = false;
             this.txtItem.TrailingIconClick += new System.EventHandler(this.txtItem_TrailingIconClick);
             // 
-            // tbnSearch
-            // 
-            this.tbnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.tbnSearch.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.tbnSearch.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.tbnSearch.CorTextoBotao = System.Drawing.Color.White;
-            this.tbnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tbnSearch.FlatAppearance.BorderSize = 0;
-            this.tbnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.tbnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tbnSearch.ForeColor = System.Drawing.Color.White;
-            this.tbnSearch.Image = ((System.Drawing.Image)(resources.GetObject("tbnSearch.Image")));
-            this.tbnSearch.Location = new System.Drawing.Point(498, 17);
-            this.tbnSearch.Name = "tbnSearch";
-            this.tbnSearch.Size = new System.Drawing.Size(43, 43);
-            this.tbnSearch.TabIndex = 8;
-            this.tbnSearch.TamanhoBorda = 0;
-            this.tbnSearch.TamanhoRaio = 10;
-            this.tbnSearch.UseVisualStyleBackColor = false;
-            this.tbnSearch.Click += new System.EventHandler(this.tbnSearch_Click);
-            // 
-            // btnApagar
-            // 
-            this.btnApagar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnApagar.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnApagar.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnApagar.CorTextoBotao = System.Drawing.Color.White;
-            this.btnApagar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnApagar.FlatAppearance.BorderSize = 0;
-            this.btnApagar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApagar.ForeColor = System.Drawing.Color.White;
-            this.btnApagar.Image = ((System.Drawing.Image)(resources.GetObject("btnApagar.Image")));
-            this.btnApagar.Location = new System.Drawing.Point(449, 17);
-            this.btnApagar.Name = "btnApagar";
-            this.btnApagar.Size = new System.Drawing.Size(43, 43);
-            this.btnApagar.TabIndex = 9;
-            this.btnApagar.TamanhoBorda = 0;
-            this.btnApagar.TamanhoRaio = 10;
-            this.btnApagar.UseVisualStyleBackColor = false;
-            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click_1);
-            // 
-            // pn1
-            // 
-            this.pn1.BackColor = System.Drawing.Color.Transparent;
-            this.pn1.Color1 = System.Drawing.Color.Ivory;
-            this.pn1.Color2 = System.Drawing.Color.Aqua;
-            this.pn1.CornerRadius = 8;
-            this.pn1.GradientAngle = 280F;
-            this.pn1.Location = new System.Drawing.Point(4, 64);
-            this.pn1.Name = "pn1";
-            this.pn1.Size = new System.Drawing.Size(385, 30);
-            this.pn1.TabIndex = 127;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnClose.CorBotao = System.Drawing.Color.Transparent;
-            this.btnClose.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(1139, 17);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(36, 35);
-            this.btnClose.TabIndex = 12;
-            this.btnClose.TamanhoBorda = 0;
-            this.btnClose.TamanhoRaio = 17;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnMaximize
-            // 
-            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximize.BackColor = System.Drawing.Color.Transparent;
-            this.btnMaximize.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnMaximize.CorBotao = System.Drawing.Color.Transparent;
-            this.btnMaximize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMaximize.FlatAppearance.BorderSize = 0;
-            this.btnMaximize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMaximize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
-            this.btnMaximize.Location = new System.Drawing.Point(1093, 17);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(40, 35);
-            this.btnMaximize.TabIndex = 11;
-            this.btnMaximize.TamanhoBorda = 0;
-            this.btnMaximize.TamanhoRaio = 17;
-            this.btnMaximize.UseVisualStyleBackColor = false;
-            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
-            // 
-            // btnNovaMovimentacao
-            // 
-            this.btnNovaMovimentacao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnNovaMovimentacao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnNovaMovimentacao.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnNovaMovimentacao.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnNovaMovimentacao.CorTextoBotao = System.Drawing.Color.White;
-            this.btnNovaMovimentacao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNovaMovimentacao.FlatAppearance.BorderSize = 0;
-            this.btnNovaMovimentacao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnNovaMovimentacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNovaMovimentacao.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.btnNovaMovimentacao.ForeColor = System.Drawing.Color.White;
-            this.btnNovaMovimentacao.Image = ((System.Drawing.Image)(resources.GetObject("btnNovaMovimentacao.Image")));
-            this.btnNovaMovimentacao.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNovaMovimentacao.Location = new System.Drawing.Point(400, 17);
-            this.btnNovaMovimentacao.Name = "btnNovaMovimentacao";
-            this.btnNovaMovimentacao.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnNovaMovimentacao.Size = new System.Drawing.Size(43, 43);
-            this.btnNovaMovimentacao.TabIndex = 1;
-            this.btnNovaMovimentacao.TamanhoBorda = 0;
-            this.btnNovaMovimentacao.TamanhoRaio = 10;
-            this.btnNovaMovimentacao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovaMovimentacao.UseVisualStyleBackColor = false;
-            this.btnNovaMovimentacao.Click += new System.EventHandler(this.btnNovaMovimentacao_Click_1);
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnMinimize.CorBotao = System.Drawing.Color.Transparent;
-            this.btnMinimize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(1047, 17);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(40, 35);
-            this.btnMinimize.TabIndex = 10;
-            this.btnMinimize.TamanhoBorda = 0;
-            this.btnMinimize.TamanhoRaio = 17;
-            this.btnMinimize.UseVisualStyleBackColor = false;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
             // Movimentacoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -554,6 +554,7 @@
             this.Name = "Movimentacoes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Movimentações";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Movimentacoes_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Movimentacoes_MouseDown);
             this.pnSuperior.ResumeLayout(false);

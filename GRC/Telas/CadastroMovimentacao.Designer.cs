@@ -56,7 +56,7 @@
             // pcAtivo
             // 
             this.pcAtivo.Image = ((System.Drawing.Image)(resources.GetObject("pcAtivo.Image")));
-            this.pcAtivo.Location = new System.Drawing.Point(243, 20);
+            this.pcAtivo.Location = new System.Drawing.Point(259, 20);
             this.pcAtivo.Name = "pcAtivo";
             this.pcAtivo.Size = new System.Drawing.Size(35, 36);
             this.pcAtivo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -69,7 +69,7 @@
             this.swItemAtivo.AutoSize = true;
             this.swItemAtivo.Depth = 0;
             this.swItemAtivo.ForeColor = System.Drawing.Color.White;
-            this.swItemAtivo.Location = new System.Drawing.Point(285, 20);
+            this.swItemAtivo.Location = new System.Drawing.Point(301, 20);
             this.swItemAtivo.Margin = new System.Windows.Forms.Padding(0);
             this.swItemAtivo.MouseLocation = new System.Drawing.Point(-1, -1);
             this.swItemAtivo.MouseState = MaterialSkin.MouseState.HOVER;
@@ -315,7 +315,7 @@
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(346, 16);
+            this.btnSalvar.Location = new System.Drawing.Point(362, 16);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(43, 43);
             this.btnSalvar.TabIndex = 24;

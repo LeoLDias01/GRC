@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroItem));
             this.dgvItemComposicao = new System.Windows.Forms.DataGridView();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -116,14 +116,14 @@
             this.dgvItemComposicao.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvItemComposicao.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvItemComposicao.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItemComposicao.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItemComposicao.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvItemComposicao.ColumnHeadersHeight = 35;
             this.dgvItemComposicao.ColumnHeadersVisible = false;
             this.dgvItemComposicao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -133,14 +133,14 @@
             this.colPreco,
             this.colExcluir});
             this.dgvItemComposicao.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.SlateGray;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvItemComposicao.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SlateGray;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvItemComposicao.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvItemComposicao.EnableHeadersVisualStyles = false;
             this.dgvItemComposicao.GridColor = System.Drawing.Color.Black;
             this.dgvItemComposicao.Location = new System.Drawing.Point(870, 238);
@@ -150,8 +150,8 @@
             this.dgvItemComposicao.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvItemComposicao.RowHeadersVisible = false;
             this.dgvItemComposicao.RowHeadersWidth = 62;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvItemComposicao.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvItemComposicao.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvItemComposicao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvItemComposicao.Size = new System.Drawing.Size(256, 406);
             this.dgvItemComposicao.TabIndex = 44;
@@ -221,7 +221,7 @@
             this.swItemAtivo.Depth = 0;
             this.swItemAtivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.swItemAtivo.ForeColor = System.Drawing.Color.White;
-            this.swItemAtivo.Location = new System.Drawing.Point(307, 17);
+            this.swItemAtivo.Location = new System.Drawing.Point(313, 17);
             this.swItemAtivo.Margin = new System.Windows.Forms.Padding(0);
             this.swItemAtivo.MouseLocation = new System.Drawing.Point(-1, -1);
             this.swItemAtivo.MouseState = MaterialSkin.MouseState.HOVER;
@@ -266,7 +266,7 @@
             // pcAtivo
             // 
             this.pcAtivo.Image = ((System.Drawing.Image)(resources.GetObject("pcAtivo.Image")));
-            this.pcAtivo.Location = new System.Drawing.Point(259, 17);
+            this.pcAtivo.Location = new System.Drawing.Point(265, 17);
             this.pcAtivo.Name = "pcAtivo";
             this.pcAtivo.Size = new System.Drawing.Size(45, 39);
             this.pcAtivo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -321,7 +321,7 @@
             this.btnSalvar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.Location = new System.Drawing.Point(420, 17);
+            this.btnSalvar.Location = new System.Drawing.Point(426, 17);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(41, 41);
             this.btnSalvar.TabIndex = 26;
@@ -340,7 +340,7 @@
             this.pcbFavorito.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pcbFavorito.ForeColor = System.Drawing.Color.White;
             this.pcbFavorito.Image = global::GRC.Properties.Resources.star;
-            this.pcbFavorito.Location = new System.Drawing.Point(374, 17);
+            this.pcbFavorito.Location = new System.Drawing.Point(380, 17);
             this.pcbFavorito.Name = "pcbFavorito";
             this.pcbFavorito.Size = new System.Drawing.Size(39, 38);
             this.pcbFavorito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

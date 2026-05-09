@@ -128,7 +128,7 @@
             // pcAtivo
             // 
             this.pcAtivo.Image = ((System.Drawing.Image)(resources.GetObject("pcAtivo.Image")));
-            this.pcAtivo.Location = new System.Drawing.Point(289, 18);
+            this.pcAtivo.Location = new System.Drawing.Point(309, 18);
             this.pcAtivo.Name = "pcAtivo";
             this.pcAtivo.Size = new System.Drawing.Size(35, 36);
             this.pcAtivo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -141,7 +141,7 @@
             this.swAtivo.AutoSize = true;
             this.swAtivo.Depth = 0;
             this.swAtivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.swAtivo.Location = new System.Drawing.Point(327, 18);
+            this.swAtivo.Location = new System.Drawing.Point(347, 18);
             this.swAtivo.Margin = new System.Windows.Forms.Padding(0);
             this.swAtivo.MouseLocation = new System.Drawing.Point(-1, -1);
             this.swAtivo.MouseState = MaterialSkin.MouseState.HOVER;
@@ -622,7 +622,7 @@
             this.dgvTelefones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvTelefones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvTelefones.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.dgvTelefones.BackgroundColor = System.Drawing.Color.White;
             this.dgvTelefones.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTelefones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvTelefones.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
@@ -666,6 +666,7 @@
             this.dgvTelefones.Size = new System.Drawing.Size(366, 199);
             this.dgvTelefones.TabIndex = 25;
             this.dgvTelefones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTelefones_CellClick);
+            this.dgvTelefones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTelefones_CellDoubleClick);
             // 
             // colIdTelefone
             // 
@@ -735,7 +736,7 @@
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(388, 14);
+            this.btnSalvar.Location = new System.Drawing.Point(408, 14);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(43, 43);
             this.btnSalvar.TabIndex = 160;

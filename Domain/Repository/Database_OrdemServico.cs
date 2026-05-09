@@ -241,92 +241,95 @@ namespace Domain.Repository
 
                         #region ... Itens Da OS (Estoque) ...
 
+                        if (os.ItensOrdemServico.Count > 0)
+                        {
 
-                        var composicaoAtual = conn.Query(@"         SELECT IDGRC_ITEM_OS AS Id, 
+                            var composicaoAtual = conn.Query(@"         SELECT IDGRC_ITEM_OS AS Id, 
                                                                             IDGRC_ITEM_ESTOQUE AS IdItem,
                                                                             QUANTIDADE AS Qtd
                                                                      FROM GRC_ITEM_OS 
                                                                      WHERE IDGRC_ORDEM_SERVICO = @IdOs",
-                            new
-                            {
-                                IdOs = os.Id
-                            }, tran).Select(x => new ItemCard
-                            {
-                                Id = (int)x.Id,
-                                IdItem = (int)x.IdItem,
-                                Quantidade = (int)x.Qtd
-                            }).ToList();
-
-                        var composicaoForm = os.ItensOrdemServico ?? new List<ItemCard>();
-                        //var composicaoForm = item.ComposicaoItem ?? new List<ItemCard>();
-
-
-                        // novos = os que vieram do grid e têm ID nulo ou zero
-                        var novos = composicaoForm.Where(x => x.IdItem > 0 && x.Id == 0).ToList();
-
-                        // editar = itens que existem no banco e no form, mas com quantidade diferente
-                        var editar = composicaoForm
-                            .Where(form => form.Id > 0)
-                            .Join(
-                                composicaoAtual,
-                                form => form.Id,
-                                db => db.Id,
-                                (form, db) => new
+                                new
                                 {
-                                    IdItemOS = form.Id,
-                                    QuantidadeAntiga = db.Quantidade,
-                                    QuantidadeNova = form.Quantidade
-                                }
-                            )
-                            .Where(x => x.QuantidadeAntiga != x.QuantidadeNova)
-                            .ToList();
+                                    IdOs = os.Id
+                                }, tran).Select(x => new ItemCard
+                                {
+                                    Id = (int)x.Id,
+                                    IdItem = (int)x.IdItem,
+                                    Quantidade = (int)x.Qtd
+                                }).ToList();
 
-                        // excluir = os que estão no banco mas não estão mais no grid
-                        var excluir = composicaoAtual
-                            .Where(db => !composicaoForm.Any(form => form.Id == db.Id))
-                            .ToList();
+                            var composicaoForm = os.ItensOrdemServico ?? new List<ItemCard>();
+                            //var composicaoForm = item.ComposicaoItem ?? new List<ItemCard>();
 
-                        // ===========================================
-                        // 2.1 INSERIR NOVAS COMPOSIÇÕES
-                        // ===========================================
-                        foreach (var comp in novos)
-                        {
-                            conn.Execute(@"
+
+                            // novos = os que vieram do grid e têm ID nulo ou zero
+                            var novos = composicaoForm.Where(x => x.IdItem > 0 && x.Id == 0).ToList();
+
+                            // editar = itens que existem no banco e no form, mas com quantidade diferente
+                            var editar = composicaoForm
+                                .Where(form => form.Id > 0)
+                                .Join(
+                                    composicaoAtual,
+                                    form => form.Id,
+                                    db => db.Id,
+                                    (form, db) => new
+                                    {
+                                        IdItemOS = form.Id,
+                                        QuantidadeAntiga = db.Quantidade,
+                                        QuantidadeNova = form.Quantidade
+                                    }
+                                )
+                                .Where(x => x.QuantidadeAntiga != x.QuantidadeNova)
+                                .ToList();
+
+                            // excluir = os que estão no banco mas não estão mais no grid
+                            var excluir = composicaoAtual
+                                .Where(db => !composicaoForm.Any(form => form.Id == db.Id))
+                                .ToList();
+
+                            // ===========================================
+                            // 2.1 INSERIR NOVAS COMPOSIÇÕES
+                            // ===========================================
+                            foreach (var comp in novos)
+                            {
+                                conn.Execute(@"
                                             INSERT INTO GRC_ITEM_OS
                                                     (IDGRC_ITEM_ESTOQUE, IDGRC_ORDEM_SERVICO, QUANTIDADE)
                                                     VALUES (@IdItem, @Id, @Qtd);",
-                                new
-                                {
-                                    IdItem = comp.IdItem,
-                                    Id = os.Id,
-                                    Qtd = comp.Quantidade
-                                }, tran);
-                        }
+                                    new
+                                    {
+                                        IdItem = comp.IdItem,
+                                        Id = os.Id,
+                                        Qtd = comp.Quantidade
+                                    }, tran);
+                            }
 
-                        // ===========================================
-                        // 2.2 INATIVAR COMPOSIÇÕES REMOVIDAS
-                        // ===========================================
-                        foreach (var comp in excluir)
-                        {
-                            conn.Execute(@"
+                            // ===========================================
+                            // 2.2 INATIVAR COMPOSIÇÕES REMOVIDAS
+                            // ===========================================
+                            foreach (var comp in excluir)
+                            {
+                                conn.Execute(@"
                                             UPDATE GRC_ITEM_OS
                                             SET ATIVO = 0
                                             WHERE IDGRC_ITEM_OS = @Id",
-                                new { Id = comp.Id }, tran);
-                        }
+                                    new { Id = comp.Id }, tran);
+                            }
 
-                        foreach (var item in editar)
-                        {
-                            conn.Execute(@"    UPDATE GRC_ITEM_OS 
+                            foreach (var item in editar)
+                            {
+                                conn.Execute(@"    UPDATE GRC_ITEM_OS 
                                                 SET QUANTIDADE = @QtdNova
                                                 WHERE IDGRC_ITEM_OS = @Id",
-                                new
-                                {
-                                    QtdNova = item.QuantidadeNova,
-                                    Id = item.IdItemOS
-                                },
-                                tran
-                            );
+                                    new
+                                    {
+                                        QtdNova = item.QuantidadeNova,
+                                        Id = item.IdItemOS
+                                    },
+                                    tran
+                                );
+                            }
                         }
 
                         //------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -334,19 +337,22 @@ namespace Domain.Repository
                         //------------------------------------------------------------------------------------------------------------------------------------------------------
                         if (os.StatusAntigo != os.Status && os.StatusAntigo > 0)
                         {
-                            if (os.Status == 10)
+                            if (os.ItensOrdemServico.Count > 0)
                             {
-                                RealizaBaixaEstoque(os);
-                            }
-                            else
-                            {
-                                EstornaEstoque(os);
+                                if (os.Status == 10)
+                                {
+                                    RealizaBaixaEstoque(os);
+                                }
+                                else
+                                {
+                                    EstornaEstoque(os);
+                                }
                             }
 
                             var sqlUpdateStatus = @"
                                                     UPDATE GRC_ORDEM_SERVICO
                                                     SET 
-                                                    STATUS = @Status
+                                                    IDGRC_STATUS = @Status
                                                     WHERE IDGRC_ORDEM_SERVICO = @Id";
                             conn.Execute(sqlUpdateStatus, new
                             {
@@ -582,7 +588,7 @@ namespace Domain.Repository
                             Id = (int)x.IdCliente,
                             Identidade = x.Identidade,
                             Nome = x.NomeCliente,
-                            Telefones = new List<Telefone>() 
+                            Telefones = new List<Telefone>()
                         },
                         ItensEsporadicos = new List<ItemCard>(),
                         ItensOrdemServico = new List<ItemCard>()
@@ -653,9 +659,9 @@ namespace Domain.Repository
                                                                 OBSERVACOES AS Observacoes
                                                             FROM GRC_TELEFONE_CLIENTE
                                                             WHERE IDGRC_CLIENTE = @Id AND ATIVO = 1",
-                                                new 
+                                                new
                                                 {
-                                                    Id = tel.DadosCliente.Id 
+                                                    Id = tel.DadosCliente.Id
                                                 }).ToList();
 
                             tel.DadosCliente.Telefones = telefones.Select(z => new Telefone

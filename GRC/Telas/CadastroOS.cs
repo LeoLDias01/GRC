@@ -33,6 +33,8 @@ namespace GRC.Telas
         private List<ItemCard> _itensOS = new List<ItemCard>();
         ServiceOrdemServico _service = new ServiceOrdemServico();
 
+        private List<OrdemServico> _OSImpressao = new List<OrdemServico>();
+
         // Constantes do Windows API
         private const int WM_NCHITTEST = 0x84;
         private const int HTCLIENT = 1;
@@ -135,10 +137,13 @@ namespace GRC.Telas
                 flpItens.Controls.Clear();
                 _itensOS.Clear();
 
-                var dadosOs = _service.BuscaCompleta(_idOS).FirstOrDefault();
+                 _OSImpressao  = _service.BuscaCompleta(_idOS);
+                
+
+                var dadosOs = _OSImpressao.FirstOrDefault();
+
                 if (dadosOs == null)
                     return;
-
 
                 _cliente = dadosOs.DadosCliente;
                 txtCliente.Text = _cliente.Nome;
@@ -913,7 +918,10 @@ namespace GRC.Telas
 
             txtId.Clear();
             txtCliente.Clear();
+            txtIdentidade.Clear();
             txtDescricao.Clear();
+            txtProblema.Clear();
+            txtObservacoesCliente.Clear();
             txtGarantia.Clear();
             txtDataEntrada.Clear();
             txtFimPrevisto.Clear();
@@ -926,6 +934,7 @@ namespace GRC.Telas
             txtObservacoes.Clear();
             txtTotalServico.Clear();
             dgvItens.Rows.Clear();
+            txtCustoManual.Clear();
 
             // 🔹 REMOVE E DESCARTA OS CARDS
             foreach (Control ctrl in flpItens.Controls)
@@ -989,9 +998,10 @@ namespace GRC.Telas
         private void Exportar ()
         {
             this.Cursor = Cursors.WaitCursor;
-            List<OrdemServico> os = new List<OrdemServico>();
-            os = _service.BuscaCompleta(_idOS);
-            new SelecaoImpressao(os).ShowDialog();
+            //List<OrdemServico> os = new List<OrdemServico>();
+            //os = _service.BuscaCompleta(_idOS);
+            CalculaTotal();
+            new SelecaoImpressao(_OSImpressao, txtTotalServico.Text).ShowDialog();
             this.Cursor = Cursors.Default;
         }
 
@@ -1109,17 +1119,61 @@ namespace GRC.Telas
             this.Close();
         }
 
-        private void btnMaximize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-        }
-
-        private void btnMinimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
         private void CadastroOS_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+            }
+        }
+
+        private void pnSuperior_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+            }
+        }
+
+        private void label3_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+            }
+        }
+
+        private void pn2_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+            }
+        }
+
+        private void lbStatus_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+            }
+        }
+
+        private void pn1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+            }
+        }
+
+        private void lbDataAtual_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {

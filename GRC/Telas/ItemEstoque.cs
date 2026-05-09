@@ -288,7 +288,7 @@ namespace GRC.Telas
 
         private void ItemEstoque_KeyDown(object sender, KeyEventArgs e)
         {
-            // Verifica se o foco NÃO está no campo ou se, mesmo estando, 
+            /*// Verifica se o foco NÃO está no campo ou se, mesmo estando, 
             // queremos tratar o início de uma nova leitura automática
             if (!txtCodigoBarras.Focused)
             {
@@ -326,12 +326,12 @@ namespace GRC.Telas
                 txtCodigoBarras.SelectAll();
                 tbnSearch.Focus();
                 tbnSearch.PerformClick();
-            }
+            }*/
         }
 
         private void txtCodigoBarras_Enter(object sender, EventArgs e)
         {
-            txtCodigoBarras.SelectAll();
+           /* txtCodigoBarras.SelectAll();*/
         }
     }
 }

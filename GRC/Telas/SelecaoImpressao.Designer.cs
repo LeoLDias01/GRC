@@ -178,7 +178,7 @@
             this.btnExportar.Size = new System.Drawing.Size(326, 41);
             this.btnExportar.TabIndex = 59;
             this.btnExportar.TamanhoBorda = 0;
-            this.btnExportar.TamanhoRaio = 20;
+            this.btnExportar.TamanhoRaio = 10;
             this.btnExportar.Text = "    Gerar PDF";
             this.btnExportar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -205,7 +205,7 @@
             this.btnSalvar.Size = new System.Drawing.Size(326, 42);
             this.btnSalvar.TabIndex = 23;
             this.btnSalvar.TamanhoBorda = 3;
-            this.btnSalvar.TamanhoRaio = 20;
+            this.btnSalvar.TamanhoRaio = 10;
             this.btnSalvar.Text = "  Voltar";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -224,6 +224,7 @@
             this.pnSuperior.Name = "pnSuperior";
             this.pnSuperior.Size = new System.Drawing.Size(351, 70);
             this.pnSuperior.TabIndex = 133;
+            this.pnSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnSuperior_MouseDown);
             // 
             // roundedPanel2
             // 
@@ -232,7 +233,7 @@
             this.roundedPanel2.Color2 = System.Drawing.Color.Black;
             this.roundedPanel2.CornerRadius = 10;
             this.roundedPanel2.GradientAngle = 180F;
-            this.roundedPanel2.Location = new System.Drawing.Point(-15, 60);
+            this.roundedPanel2.Location = new System.Drawing.Point(-15, 65);
             this.roundedPanel2.Name = "roundedPanel2";
             this.roundedPanel2.Size = new System.Drawing.Size(285, 101);
             this.roundedPanel2.TabIndex = 122;
@@ -244,9 +245,10 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(64, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(184, 27);
+            this.label2.Size = new System.Drawing.Size(185, 27);
             this.label2.TabIndex = 27;
             this.label2.Text = "Exportação da OS";
+            this.label2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label2_MouseDown);
             // 
             // btnSair
             // 

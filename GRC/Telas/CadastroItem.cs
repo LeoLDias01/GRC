@@ -892,7 +892,7 @@ namespace GRC.Telas
         }
 
         private void CadastroItem_KeyDown(object sender, KeyEventArgs e)
-        {
+        {/*
             // Verifica se o foco NÃO está no campo ou se, mesmo estando, 
             // queremos tratar o início de uma nova leitura automática
             if (!txtCodigoBarras.Focused)
@@ -929,13 +929,12 @@ namespace GRC.Telas
                 // Selecionamos tudo. Se o foco continuar no campo e o scanner disparar de novo,
                 // o comportamento padrão do Windows substituirá o texto selecionado pelo novo.
                 txtCodigoBarras.SelectAll();
-                txtDescricao.Focus();
-            }
+            }*/
         }
 
         private void txtCodigoBarras_Enter(object sender, EventArgs e)
         {
-            txtCodigoBarras.SelectAll();
+            /*txtCodigoBarras.SelectAll();*/
         }
     }
 }
