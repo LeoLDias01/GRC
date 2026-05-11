@@ -106,11 +106,11 @@
             this.lblVersao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblVersao.AutoSize = true;
-            this.lblVersao.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
+            this.lblVersao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblVersao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(65)))), ((int)(((byte)(90)))));
-            this.lblVersao.Location = new System.Drawing.Point(99, 11);
+            this.lblVersao.Location = new System.Drawing.Point(94, 12);
             this.lblVersao.Name = "lblVersao";
-            this.lblVersao.Size = new System.Drawing.Size(115, 19);
+            this.lblVersao.Size = new System.Drawing.Size(126, 20);
             this.lblVersao.TabIndex = 0;
             this.lblVersao.Text = "Versão 1.0.0.0";
             // 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlertBox));
             this.lbGrupo = new System.Windows.Forms.Label();
             this.lbMsg = new System.Windows.Forms.Label();
             this.lbItem = new System.Windows.Forms.Label();
@@ -46,17 +47,17 @@
             // lbGrupo
             // 
             this.lbGrupo.AutoSize = true;
-            this.lbGrupo.Font = new System.Drawing.Font("Roboto", 14F);
+            this.lbGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.lbGrupo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbGrupo.Location = new System.Drawing.Point(13, 39);
             this.lbGrupo.Name = "lbGrupo";
-            this.lbGrupo.Size = new System.Drawing.Size(0, 23);
+            this.lbGrupo.Size = new System.Drawing.Size(0, 24);
             this.lbGrupo.TabIndex = 0;
             // 
             // lbMsg
             // 
             this.lbMsg.AutoSize = true;
-            this.lbMsg.Font = new System.Drawing.Font("Roboto", 18F);
+            this.lbMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.lbMsg.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbMsg.Location = new System.Drawing.Point(3, 0);
             this.lbMsg.Name = "lbMsg";
@@ -66,19 +67,19 @@
             // lbItem
             // 
             this.lbItem.AutoSize = true;
-            this.lbItem.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbItem.Location = new System.Drawing.Point(3, 0);
             this.lbItem.Name = "lbItem";
-            this.lbItem.Size = new System.Drawing.Size(0, 19);
+            this.lbItem.Size = new System.Drawing.Size(0, 20);
             this.lbItem.TabIndex = 29;
             // 
             // pcImagem
             // 
             this.pcImagem.Image = global::GRC.Properties.Resources.Confirm;
-            this.pcImagem.Location = new System.Drawing.Point(331, 12);
+            this.pcImagem.Location = new System.Drawing.Point(360, 29);
             this.pcImagem.Name = "pcImagem";
-            this.pcImagem.Size = new System.Drawing.Size(112, 113);
+            this.pcImagem.Size = new System.Drawing.Size(83, 96);
             this.pcImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcImagem.TabIndex = 30;
             this.pcImagem.TabStop = false;
@@ -94,9 +95,9 @@
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.lbItem);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(17, 39);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(17, 29);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(298, 86);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(337, 96);
             this.flowLayoutPanel2.TabIndex = 32;
             // 
             // pnStatus
@@ -108,7 +109,7 @@
             this.pnStatus.GradientAngle = 90F;
             this.pnStatus.Location = new System.Drawing.Point(16, 12);
             this.pnStatus.Name = "pnStatus";
-            this.pnStatus.Size = new System.Drawing.Size(299, 15);
+            this.pnStatus.Size = new System.Drawing.Size(427, 11);
             this.pnStatus.TabIndex = 27;
             // 
             // btnNo
@@ -125,10 +126,10 @@
             this.btnNo.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
             this.btnNo.ForeColor = System.Drawing.Color.White;
             this.btnNo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNo.Location = new System.Drawing.Point(243, 268);
+            this.btnNo.Location = new System.Drawing.Point(291, 268);
             this.btnNo.Name = "btnNo";
             this.btnNo.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnNo.Size = new System.Drawing.Size(200, 46);
+            this.btnNo.Size = new System.Drawing.Size(152, 46);
             this.btnNo.TabIndex = 25;
             this.btnNo.TamanhoBorda = 0;
             this.btnNo.TamanhoRaio = 10;
@@ -155,7 +156,7 @@
             this.btnYes.Location = new System.Drawing.Point(17, 268);
             this.btnYes.Name = "btnYes";
             this.btnYes.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnYes.Size = new System.Drawing.Size(200, 46);
+            this.btnYes.Size = new System.Drawing.Size(152, 46);
             this.btnYes.TabIndex = 24;
             this.btnYes.TamanhoBorda = 0;
             this.btnYes.TamanhoRaio = 10;
@@ -179,10 +180,10 @@
             this.btnOk.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
             this.btnOk.ForeColor = System.Drawing.Color.White;
             this.btnOk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOk.Location = new System.Drawing.Point(25, 268);
+            this.btnOk.Location = new System.Drawing.Point(122, 268);
             this.btnOk.Name = "btnOk";
             this.btnOk.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnOk.Size = new System.Drawing.Size(398, 46);
+            this.btnOk.Size = new System.Drawing.Size(202, 46);
             this.btnOk.TabIndex = 23;
             this.btnOk.TamanhoBorda = 0;
             this.btnOk.TamanhoRaio = 10;
@@ -196,7 +197,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(4)))));
-            this.ClientSize = new System.Drawing.Size(455, 326);
+            this.ClientSize = new System.Drawing.Size(464, 326);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -206,6 +207,7 @@
             this.Controls.Add(this.btnYes);
             this.Controls.Add(this.btnOk);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AlertBox";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AlertBox";

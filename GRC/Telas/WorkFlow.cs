@@ -70,13 +70,7 @@ namespace GRC.Telas
             this.Visible = true;
         }
 
-        private void btnMenu_Click(object sender, EventArgs e)
-        {
-            tlpMenu.Visible = true;
-            tlpMenu.BringToFront();
-            btnMenu.Visible = false;
-        }
-
+  
   
 
         private void btnMinimize_Click(object sender, EventArgs e)
@@ -96,16 +90,8 @@ namespace GRC.Telas
             }
         }
 
-        private void btnFechaMenuLateral_Click(object sender, EventArgs e)
-        {
-            tlpMenu.Visible = false;
-            btnMenu.Visible = true;
-        }
 
-        private void btnFornecedor_Click(object sender, EventArgs e)
-        {
-            new Fornecedor().ShowDialog();
-        }
+        
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -117,22 +103,31 @@ namespace GRC.Telas
             }
         }
 
-        private void btnItens_Click(object sender, EventArgs e)
+        private void tlpMenuRedux_MouseHover(object sender, EventArgs e)
         {
-            new ItemEstoque().ShowDialog();
+            
+            tlpMenuRedux.Visible = false;
         }
 
-        private void btnMovimentacoes_Click(object sender, EventArgs e)
+
+        private void pictureBox2_MouseHover(object sender, EventArgs e)
         {
-            new Movimentacoes().ShowDialog();
+         
+            tlpMenuRedux.Visible = false;
         }
 
-        private void btnClientes_Click(object sender, EventArgs e)
+        private void customButton4_MouseHover(object sender, EventArgs e)
         {
-            new PesquisaCliente().ShowDialog();
+            
+            tlpMenuRedux.Visible = false;
         }
 
-        private void btnOrdemServiço_Click(object sender, EventArgs e)
+        private void btnCustomFilter_Click(object sender, EventArgs e)
+        {
+            pnCustomFilter.Visible = true;
+        }
+
+        private void btnOS_Click(object sender, EventArgs e)
         {
             new PesquisaOS().ShowDialog();
         }

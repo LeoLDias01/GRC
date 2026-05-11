@@ -84,22 +84,22 @@
             // lbAviso
             // 
             this.lbAviso.AutoSize = true;
-            this.lbAviso.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Bold);
+            this.lbAviso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.lbAviso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lbAviso.Location = new System.Drawing.Point(35, 241);
             this.lbAviso.Name = "lbAviso";
-            this.lbAviso.Size = new System.Drawing.Size(212, 18);
+            this.lbAviso.Size = new System.Drawing.Size(243, 18);
             this.lbAviso.TabIndex = 10;
             this.lbAviso.Text = "Entre com seu usuário e senha";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 17F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.label1.Location = new System.Drawing.Point(33, 200);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 28);
+            this.label1.Size = new System.Drawing.Size(78, 29);
             this.label1.TabIndex = 9;
             this.label1.Text = "Login";
             // 
@@ -129,11 +129,11 @@
             this.btnSair.FlatAppearance.BorderSize = 0;
             this.btnSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSair.Font = new System.Drawing.Font("Roboto", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.ForeColor = System.Drawing.Color.White;
-            this.btnSair.Location = new System.Drawing.Point(38, 487);
+            this.btnSair.Location = new System.Drawing.Point(38, 478);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(287, 43);
+            this.btnSair.Size = new System.Drawing.Size(287, 48);
             this.btnSair.TabIndex = 7;
             this.btnSair.TamanhoBorda = 0;
             this.btnSair.TamanhoRaio = 5;
@@ -153,11 +153,11 @@
             this.btnEntrar.FlatAppearance.BorderSize = 0;
             this.btnEntrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
             this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEntrar.Font = new System.Drawing.Font("Roboto", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEntrar.ForeColor = System.Drawing.Color.White;
-            this.btnEntrar.Location = new System.Drawing.Point(38, 429);
+            this.btnEntrar.Location = new System.Drawing.Point(38, 424);
             this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(287, 43);
+            this.btnEntrar.Size = new System.Drawing.Size(287, 48);
             this.btnEntrar.TabIndex = 6;
             this.btnEntrar.TamanhoBorda = 0;
             this.btnEntrar.TamanhoRaio = 5;
