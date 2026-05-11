@@ -107,11 +107,11 @@
             // lbTitulo
             // 
             this.lbTitulo.AutoSize = true;
-            this.lbTitulo.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitulo.ForeColor = System.Drawing.Color.White;
             this.lbTitulo.Location = new System.Drawing.Point(67, 25);
             this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(246, 29);
+            this.lbTitulo.Size = new System.Drawing.Size(266, 29);
             this.lbTitulo.TabIndex = 33;
             this.lbTitulo.Text = "Fechamento de Caixa";
             // 
@@ -148,22 +148,22 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Bold);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(259, 89);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(153, 23);
+            this.label4.Size = new System.Drawing.Size(164, 24);
             this.label4.TabIndex = 9;
             this.label4.Text = "PDV 001 (Único)";
             // 
             // lbUser
             // 
             this.lbUser.AutoSize = true;
-            this.lbUser.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Bold);
+            this.lbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.lbUser.ForeColor = System.Drawing.Color.White;
             this.lbUser.Location = new System.Drawing.Point(263, 183);
             this.lbUser.Name = "lbUser";
-            this.lbUser.Size = new System.Drawing.Size(125, 23);
+            this.lbUser.Size = new System.Drawing.Size(135, 24);
             this.lbUser.TabIndex = 9;
             this.lbUser.Text = "Rayner Bryan";
             // 
@@ -181,11 +181,11 @@
             // lbData
             // 
             this.lbData.AutoSize = true;
-            this.lbData.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Bold);
+            this.lbData.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.lbData.ForeColor = System.Drawing.Color.White;
             this.lbData.Location = new System.Drawing.Point(263, 135);
             this.lbData.Name = "lbData";
-            this.lbData.Size = new System.Drawing.Size(283, 23);
+            this.lbData.Size = new System.Drawing.Size(292, 24);
             this.lbData.TabIndex = 9;
             this.lbData.Text = "Abertura:  26/02/2026 12:00:00";
             // 
@@ -289,7 +289,7 @@
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(319, 22);
+            this.btnSalvar.Location = new System.Drawing.Point(355, 22);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnSalvar.Size = new System.Drawing.Size(43, 43);
@@ -310,7 +310,7 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.Location = new System.Drawing.Point(835, 12);
@@ -331,7 +331,7 @@
             this.roundedPanel1.GradientAngle = 180F;
             this.roundedPanel1.Location = new System.Drawing.Point(-16, 60);
             this.roundedPanel1.Name = "roundedPanel1";
-            this.roundedPanel1.Size = new System.Drawing.Size(318, 10);
+            this.roundedPanel1.Size = new System.Drawing.Size(344, 10);
             this.roundedPanel1.TabIndex = 35;
             // 
             // tbcCaixa
@@ -396,11 +396,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(50, 203);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(259, 23);
+            this.label1.Size = new System.Drawing.Size(281, 24);
             this.label1.TabIndex = 154;
             this.label1.Text = "Valor Final Diário : R$ 250,00";
             // 
@@ -417,11 +417,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Bold);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(532, 14);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 23);
+            this.label6.Size = new System.Drawing.Size(91, 24);
             this.label6.TabIndex = 152;
             this.label6.Text = "Sangrias";
             // 
@@ -523,11 +523,11 @@
             // lbSaldoFinal
             // 
             this.lbSaldoFinal.AutoSize = true;
-            this.lbSaldoFinal.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Bold);
+            this.lbSaldoFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.lbSaldoFinal.ForeColor = System.Drawing.Color.White;
             this.lbSaldoFinal.Location = new System.Drawing.Point(50, 153);
             this.lbSaldoFinal.Name = "lbSaldoFinal";
-            this.lbSaldoFinal.Size = new System.Drawing.Size(291, 23);
+            this.lbSaldoFinal.Size = new System.Drawing.Size(307, 24);
             this.lbSaldoFinal.TabIndex = 150;
             this.lbSaldoFinal.Text = "Saldo final (sistema) : R$ 250,00";
             // 
@@ -564,22 +564,22 @@
             // lbPdvFe
             // 
             this.lbPdvFe.AutoSize = true;
-            this.lbPdvFe.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Bold);
+            this.lbPdvFe.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.lbPdvFe.ForeColor = System.Drawing.Color.White;
             this.lbPdvFe.Location = new System.Drawing.Point(47, 14);
             this.lbPdvFe.Name = "lbPdvFe";
-            this.lbPdvFe.Size = new System.Drawing.Size(153, 23);
+            this.lbPdvFe.Size = new System.Drawing.Size(164, 24);
             this.lbPdvFe.TabIndex = 140;
             this.lbPdvFe.Text = "PDV 001 (Único)";
             // 
             // lbUsuarioFe
             // 
             this.lbUsuarioFe.AutoSize = true;
-            this.lbUsuarioFe.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Bold);
+            this.lbUsuarioFe.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.lbUsuarioFe.ForeColor = System.Drawing.Color.White;
             this.lbUsuarioFe.Location = new System.Drawing.Point(50, 104);
             this.lbUsuarioFe.Name = "lbUsuarioFe";
-            this.lbUsuarioFe.Size = new System.Drawing.Size(125, 23);
+            this.lbUsuarioFe.Size = new System.Drawing.Size(135, 24);
             this.lbUsuarioFe.TabIndex = 141;
             this.lbUsuarioFe.Text = "Rayner Bryan";
             // 
@@ -596,11 +596,11 @@
             // lbDataFechamento
             // 
             this.lbDataFechamento.AutoSize = true;
-            this.lbDataFechamento.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Bold);
+            this.lbDataFechamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.lbDataFechamento.ForeColor = System.Drawing.Color.White;
             this.lbDataFechamento.Location = new System.Drawing.Point(47, 58);
             this.lbDataFechamento.Name = "lbDataFechamento";
-            this.lbDataFechamento.Size = new System.Drawing.Size(313, 23);
+            this.lbDataFechamento.Size = new System.Drawing.Size(329, 24);
             this.lbDataFechamento.TabIndex = 142;
             this.lbDataFechamento.Text = "Fechamento:  26/02/2026 12:00:00";
             // 

@@ -250,7 +250,7 @@
   <data name="txtTelefone.TrailingIcon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAC8SURBVFhH7Zc7
+        vQAADr0BR/uQrQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAC8SURBVFhH7Zc7
         DsIwEEQjhRMHOAABzgZnQKIin2M8NMgFGigiC8cU+6RtnFF2Cmdn0zQZABvgDEypjkDrumIAez7Zuq4Y
         wNW7AxfXFQO4eXedua4YYSAMhIEwAAzeHXi4bhEpWDTbNV7vC2r0zm/omeu/lXrtXgEGnPwtK9LLwOyn
         KzLLgPK8FoMMaJmoxUEGWi0TFS5hl71F/fQzzOEfBlEYCANhIAxU/zXTMuF0ritGCjClqMJH1ecGyxPQ
@@ -570,7 +570,7 @@
   <data name="pictureBox5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAE7GSURBVHhe7d0L
+        vgAADr4B6kKxwAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAE7GSURBVHhe7d0L
         mFV1vf/xBZLa8VhRnZNZakUnOh4165gVp9T+ptzvYZmw9xpAQIbRFM28sRd3BIQ9gPfjFS8IaIVKAjKD
         ecELoMdEUYRRUCsuCiJ3mO//2QMafr4LmJm99m/9fmt9Ps/zep7z9Jx0t/es33szrNnjeRyXlPW98ite
         2TU/8vygm1c2pL+XHXKVlw0meGW5uzw/eMTzg2c9P1jm+bkVnh+s9Pzg/b0+8vyceGdnxWvti9e6rLZO

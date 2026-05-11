@@ -124,12 +124,49 @@ namespace GRC.Telas
 
         private void btnCustomFilter_Click(object sender, EventArgs e)
         {
+            ConfiguraBtn(btnCustomFilter);
             pnCustomFilter.Visible = true;
         }
 
         private void btnOS_Click(object sender, EventArgs e)
         {
             new PesquisaOS().ShowDialog();
+        }
+
+        private void btnEstoque_Click(object sender, EventArgs e)
+        {
+            new ItemEstoque().ShowDialog();
+        }
+
+        private void btnHoje_Click(object sender, EventArgs e)
+        {
+            ConfiguraBtn(btnHoje);
+        }
+        private void ConfiguraBtn(System.Windows.Forms.Button btn)
+        {
+            pnCustomFilter.Visible = false;
+            btnCustomFilter.BackColor = Color.FromArgb(0, 20, 30);
+            btnHoje.BackColor = Color.FromArgb(0, 20, 30);
+            btnOntem.BackColor = Color.FromArgb(0, 20, 30);
+            btnSemana.BackColor = Color.FromArgb(0, 20, 30);
+            btnMes.BackColor = Color.FromArgb(0, 20, 30);
+
+            btn.BackColor = Color.DarkSlateBlue;  
+        }
+
+        private void btnOntem_Click(object sender, EventArgs e)
+        {
+            ConfiguraBtn(btnOntem);
+        }
+
+        private void btnSemana_Click(object sender, EventArgs e)
+        {
+            ConfiguraBtn(btnSemana);
+        }
+
+        private void btnMes_Click(object sender, EventArgs e)
+        {
+            ConfiguraBtn(btnMes);
         }
     }
 }

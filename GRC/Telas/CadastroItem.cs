@@ -890,51 +890,80 @@ namespace GRC.Telas
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
             }
         }
+        private StringBuilder barcodeBuffer = new StringBuilder();
+        private DateTime lastKeyTime = DateTime.Now;
 
         private void CadastroItem_KeyDown(object sender, KeyEventArgs e)
-        {/*
-            // Verifica se o foco NÃO está no campo ou se, mesmo estando, 
-            // queremos tratar o início de uma nova leitura automática
-            if (!txtCodigoBarras.Focused)
+        {
+            // 1. Ignora se já estiver no campo de código de barras
+            if (txtCodigoBarras.Focused) return;
+
+            TimeSpan elapsed = DateTime.Now - lastKeyTime;
+            lastKeyTime = DateTime.Now;
+
+            bool isDataKey = (e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9) ||
+                             (e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9) ||
+                             (e.KeyCode >= Keys.A && e.KeyCode <= Keys.Z);
+
+            if (isDataKey)
             {
-                if ((e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9) ||
-                    (e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9) ||
-                    (e.KeyCode >= Keys.A && e.KeyCode <= Keys.Z))
+                char c = (char)e.KeyValue;
+
+                // Se for rápido (LEITOR), bloqueamos a tecla para não sujar o campo atual
+                if (elapsed.TotalMilliseconds < 40)
                 {
-                    // 1. Foca no campo
-                    txtCodigoBarras.Focus();
-
-                    // 2. Transforma a tecla no caractere
-                    char caractereDigitado = (char)e.KeyValue;
-
-                    // 3. SUBSTITUIÇÃO: Usamos '=' em vez de '+=' para limpar o que existia
-                    // e começar o campo apenas com este primeiro caractere do scanner
-                    txtCodigoBarras.Text = caractereDigitado.ToString();
-
-                    // 4. Posiciona o cursor no final para os próximos caracteres do scanner entrarem na ordem
-                    txtCodigoBarras.SelectionStart = txtCodigoBarras.Text.Length;
-
-                    e.SuppressKeyPress = true;
+                    barcodeBuffer.Append(c);
                     e.Handled = true;
+                    e.SuppressKeyPress = true;
+                }
+                else
+                {
+                    // Se for a PRIMEIRA tecla de uma possível leitura, ou digitação humana.
+                    // Não damos 'Handled' para não causar lentidão ao digitar.
+                    barcodeBuffer.Clear();
+                    barcodeBuffer.Append(c);
+
+                    // Aqui está o truque: não bloqueamos, mas guardamos quem era o controle 
+                    // que recebeu essa tecla "vazada".
                 }
             }
-            else if (e.KeyCode == Keys.Enter)
+
+            // 2. No Enter (Final da leitura do Tomate)
+            if (e.KeyCode == Keys.Enter)
             {
-                e.SuppressKeyPress = true;
+                if (barcodeBuffer.Length >= 3)
+                {
+                    // --- AÇÃO DE LIMPEZA DO CARACTERE VAZADO ---
+                    // Se o foco está em um TextBox, removemos o último caractere (o primeiro do código)
+                    if (this.ActiveControl is MaterialTextBox currentTxt && currentTxt != txtCodigoBarras)
+                    {
+                        if (currentTxt.Text.Length > 0)
+                        {
+                            currentTxt.Text = currentTxt.Text.Remove(currentTxt.Text.Length - 1);
+                        }
+                    }
 
-                // Chame sua validação aqui
-                // ValidarCodigoBarras();
+                    txtCodigoBarras.SelectAll();
+                    
+                    // Preenche o campo correto
+                    txtCodigoBarras.Text = barcodeBuffer.ToString();
+                    txtCodigoBarras.Focus();
+                    txtCodigoBarras.SelectionStart = txtCodigoBarras.Text.Length;
 
-                // 5. ESTRATÉGIA DE LIMPEZA PARA O PRÓXIMO BIP:
-                // Selecionamos tudo. Se o foco continuar no campo e o scanner disparar de novo,
-                // o comportamento padrão do Windows substituirá o texto selecionado pelo novo.
-                txtCodigoBarras.SelectAll();
-            }*/
+                    barcodeBuffer.Clear();
+                    e.Handled = true;
+                    e.SuppressKeyPress = true;
+                }
+                else
+                {
+                    barcodeBuffer.Clear();
+                }
+            }
         }
 
         private void txtCodigoBarras_Enter(object sender, EventArgs e)
         {
-            /*txtCodigoBarras.SelectAll();*/
+            txtCodigoBarras.SelectAll();
         }
     }
 }

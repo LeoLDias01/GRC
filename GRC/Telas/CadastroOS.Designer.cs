@@ -274,7 +274,7 @@
             // 
             // tbpDadosOS
             // 
-            this.tbpDadosOS.BackColor = System.Drawing.Color.AliceBlue;
+            this.tbpDadosOS.BackColor = System.Drawing.Color.White;
             this.tbpDadosOS.Controls.Add(this.gpbInfoVenda);
             this.tbpDadosOS.Location = new System.Drawing.Point(4, 22);
             this.tbpDadosOS.Name = "tbpDadosOS";
@@ -288,6 +288,7 @@
             this.gpbInfoVenda.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gpbInfoVenda.BackColor = System.Drawing.Color.White;
             this.gpbInfoVenda.Controls.Add(this.txtObservacoesCliente);
             this.gpbInfoVenda.Controls.Add(this.groupBox3);
             this.gpbInfoVenda.Controls.Add(this.txtProblema);
@@ -660,7 +661,7 @@
             // 
             // tbpFinanceiro
             // 
-            this.tbpFinanceiro.BackColor = System.Drawing.Color.AliceBlue;
+            this.tbpFinanceiro.BackColor = System.Drawing.Color.White;
             this.tbpFinanceiro.Controls.Add(this.gpEsporadico);
             this.tbpFinanceiro.Controls.Add(this.gpEstoque);
             this.tbpFinanceiro.Controls.Add(this.groupBox1);
@@ -1237,7 +1238,7 @@
             this.painelRadius3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.painelRadius3.BackColor = System.Drawing.Color.AliceBlue;
+            this.painelRadius3.BackColor = System.Drawing.Color.White;
             this.painelRadius3.BorderColor = System.Drawing.Color.AliceBlue;
             this.painelRadius3.Controls.Add(this.tbcOs);
             this.painelRadius3.Location = new System.Drawing.Point(12, 230);

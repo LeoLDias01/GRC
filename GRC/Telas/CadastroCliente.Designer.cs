@@ -128,7 +128,7 @@
             // pcAtivo
             // 
             this.pcAtivo.Image = ((System.Drawing.Image)(resources.GetObject("pcAtivo.Image")));
-            this.pcAtivo.Location = new System.Drawing.Point(309, 18);
+            this.pcAtivo.Location = new System.Drawing.Point(318, 18);
             this.pcAtivo.Name = "pcAtivo";
             this.pcAtivo.Size = new System.Drawing.Size(35, 36);
             this.pcAtivo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -141,7 +141,7 @@
             this.swAtivo.AutoSize = true;
             this.swAtivo.Depth = 0;
             this.swAtivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.swAtivo.Location = new System.Drawing.Point(347, 18);
+            this.swAtivo.Location = new System.Drawing.Point(356, 18);
             this.swAtivo.Margin = new System.Windows.Forms.Padding(0);
             this.swAtivo.MouseLocation = new System.Drawing.Point(-1, -1);
             this.swAtivo.MouseState = MaterialSkin.MouseState.HOVER;
@@ -365,7 +365,7 @@
             this.txtObservacoesEmail.SelectionLength = 0;
             this.txtObservacoesEmail.SelectionStart = 0;
             this.txtObservacoesEmail.ShortcutsEnabled = true;
-            this.txtObservacoesEmail.Size = new System.Drawing.Size(332, 70);
+            this.txtObservacoesEmail.Size = new System.Drawing.Size(332, 65);
             this.txtObservacoesEmail.TabIndex = 8;
             this.txtObservacoesEmail.TabStop = false;
             this.txtObservacoesEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -654,7 +654,7 @@
             this.dgvTelefones.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTelefones.EnableHeadersVisualStyles = false;
             this.dgvTelefones.GridColor = System.Drawing.Color.Black;
-            this.dgvTelefones.Location = new System.Drawing.Point(693, 281);
+            this.dgvTelefones.Location = new System.Drawing.Point(693, 270);
             this.dgvTelefones.MultiSelect = false;
             this.dgvTelefones.Name = "dgvTelefones";
             this.dgvTelefones.ReadOnly = true;
@@ -663,7 +663,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvTelefones.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTelefones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTelefones.Size = new System.Drawing.Size(366, 199);
+            this.dgvTelefones.Size = new System.Drawing.Size(366, 185);
             this.dgvTelefones.TabIndex = 25;
             this.dgvTelefones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTelefones_CellClick);
             this.dgvTelefones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTelefones_CellDoubleClick);
@@ -706,7 +706,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(46)))), ((int)(((byte)(68)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.panel1.Controls.Add(this.btnSalvar);
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.pcAtivo);
@@ -736,7 +736,7 @@
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(408, 14);
+            this.btnSalvar.Location = new System.Drawing.Point(417, 14);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(43, 43);
             this.btnSalvar.TabIndex = 160;
@@ -756,7 +756,7 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.Location = new System.Drawing.Point(1030, 14);
@@ -781,11 +781,11 @@
             // lbTitulo
             // 
             this.lbTitulo.AutoSize = true;
-            this.lbTitulo.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitulo.ForeColor = System.Drawing.Color.White;
             this.lbTitulo.Location = new System.Drawing.Point(63, 20);
             this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(226, 29);
+            this.lbTitulo.Size = new System.Drawing.Size(245, 29);
             this.lbTitulo.TabIndex = 139;
             this.lbTitulo.Text = "Cadastro de Cliente";
             this.lbTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbTitulo_MouseDown);
@@ -805,7 +805,7 @@
             this.customPanel4.ForeColor = System.Drawing.Color.White;
             this.customPanel4.Location = new System.Drawing.Point(11, 76);
             this.customPanel4.Name = "customPanel4";
-            this.customPanel4.Size = new System.Drawing.Size(1048, 199);
+            this.customPanel4.Size = new System.Drawing.Size(1048, 188);
             this.customPanel4.TabIndex = 158;
             this.customPanel4.TamanhoBorda = 0;
             this.customPanel4.TamanhoRaio = 15;
@@ -813,11 +813,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
             this.label1.Location = new System.Drawing.Point(21, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 25);
+            this.label1.Size = new System.Drawing.Size(193, 25);
             this.label1.TabIndex = 6;
             this.label1.Text = "Dados do Cliente";
             // 
@@ -833,9 +833,9 @@
             this.customPanel1.CorBotao = System.Drawing.Color.White;
             this.customPanel1.CorTextoBotao = System.Drawing.Color.White;
             this.customPanel1.ForeColor = System.Drawing.Color.White;
-            this.customPanel1.Location = new System.Drawing.Point(14, 281);
+            this.customPanel1.Location = new System.Drawing.Point(14, 270);
             this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(357, 199);
+            this.customPanel1.Size = new System.Drawing.Size(357, 185);
             this.customPanel1.TabIndex = 159;
             this.customPanel1.TamanhoBorda = 0;
             this.customPanel1.TamanhoRaio = 15;
@@ -843,11 +843,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
             this.label2.Location = new System.Drawing.Point(22, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 25);
+            this.label2.Size = new System.Drawing.Size(78, 25);
             this.label2.TabIndex = 26;
             this.label2.Text = "E-mail";
             // 
@@ -863,9 +863,9 @@
             this.customPanel5.CorBotao = System.Drawing.Color.White;
             this.customPanel5.CorTextoBotao = System.Drawing.Color.White;
             this.customPanel5.ForeColor = System.Drawing.Color.White;
-            this.customPanel5.Location = new System.Drawing.Point(377, 281);
+            this.customPanel5.Location = new System.Drawing.Point(377, 270);
             this.customPanel5.Name = "customPanel5";
-            this.customPanel5.Size = new System.Drawing.Size(310, 199);
+            this.customPanel5.Size = new System.Drawing.Size(310, 185);
             this.customPanel5.TabIndex = 160;
             this.customPanel5.TamanhoBorda = 0;
             this.customPanel5.TamanhoRaio = 15;
@@ -873,11 +873,11 @@
             // lbTelefone
             // 
             this.lbTelefone.AutoSize = true;
-            this.lbTelefone.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTelefone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
             this.lbTelefone.Location = new System.Drawing.Point(22, 15);
             this.lbTelefone.Name = "lbTelefone";
-            this.lbTelefone.Size = new System.Drawing.Size(96, 25);
+            this.lbTelefone.Size = new System.Drawing.Size(104, 25);
             this.lbTelefone.TabIndex = 27;
             this.lbTelefone.Text = "Telefone";
             // 
@@ -899,7 +899,7 @@
             this.customPanel2.CorBotao = System.Drawing.Color.White;
             this.customPanel2.CorTextoBotao = System.Drawing.Color.White;
             this.customPanel2.ForeColor = System.Drawing.Color.White;
-            this.customPanel2.Location = new System.Drawing.Point(14, 486);
+            this.customPanel2.Location = new System.Drawing.Point(14, 461);
             this.customPanel2.Name = "customPanel2";
             this.customPanel2.Size = new System.Drawing.Size(1045, 269);
             this.customPanel2.TabIndex = 161;
@@ -909,11 +909,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
             this.label3.Location = new System.Drawing.Point(11, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 25);
+            this.label3.Size = new System.Drawing.Size(112, 25);
             this.label3.TabIndex = 28;
             this.label3.Text = "Endereço";
             // 
@@ -921,7 +921,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 762);
+            this.panel2.Location = new System.Drawing.Point(0, 738);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1078, 5);
             this.panel2.TabIndex = 162;
@@ -931,7 +931,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(1078, 767);
+            this.ClientSize = new System.Drawing.Size(1078, 743);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.customPanel2);
             this.Controls.Add(this.customPanel5);

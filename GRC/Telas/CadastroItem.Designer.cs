@@ -55,7 +55,6 @@
             this.pcbImagemItem = new GRC.Componentes.CustomPictureBox();
             this.btnBuscaImagem = new GRC.Componentes.CustomButton();
             this.btnExcluiImagem = new GRC.Componentes.CustomButton();
-            this.painelRadius6 = new GRC.Componentes.PainelRadius();
             this.chkItemComposto = new MaterialSkin.Controls.MaterialCheckbox();
             this.painelRadius5 = new GRC.Componentes.PainelRadius();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -88,7 +87,11 @@
             this.cbFornecedor = new MaterialSkin.Controls.MaterialComboBox();
             this.cbCategoria = new MaterialSkin.Controls.MaterialComboBox();
             this.txtCustoUnitario = new MaterialSkin.Controls.MaterialTextBox();
-            this.painelRadius4 = new GRC.Componentes.PainelRadius();
+            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.tbcItem = new MaterialSkin.Controls.MaterialTabControl();
+            this.tbpDadosItem = new System.Windows.Forms.TabPage();
+            this.tbpComposicao = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItemComposicao)).BeginInit();
             this.pnSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcAtivo)).BeginInit();
@@ -96,14 +99,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcbFavorito)).BeginInit();
             this.painelRadius7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbImagemItem)).BeginInit();
-            this.painelRadius6.SuspendLayout();
             this.painelRadius5.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.painelRadius3.SuspendLayout();
             this.gpbInfoVenda.SuspendLayout();
             this.painelRadius2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.painelRadius4.SuspendLayout();
+            this.tbcItem.SuspendLayout();
+            this.tbpDadosItem.SuspendLayout();
+            this.tbpComposicao.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvItemComposicao
@@ -118,7 +122,7 @@
             this.dgvItemComposicao.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
@@ -135,7 +139,7 @@
             this.dgvItemComposicao.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.SlateGray;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.AliceBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
@@ -143,7 +147,7 @@
             this.dgvItemComposicao.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvItemComposicao.EnableHeadersVisualStyles = false;
             this.dgvItemComposicao.GridColor = System.Drawing.Color.Black;
-            this.dgvItemComposicao.Location = new System.Drawing.Point(870, 238);
+            this.dgvItemComposicao.Location = new System.Drawing.Point(6, 55);
             this.dgvItemComposicao.MultiSelect = false;
             this.dgvItemComposicao.Name = "dgvItemComposicao";
             this.dgvItemComposicao.ReadOnly = true;
@@ -153,7 +157,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvItemComposicao.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvItemComposicao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItemComposicao.Size = new System.Drawing.Size(256, 406);
+            this.dgvItemComposicao.Size = new System.Drawing.Size(1098, 370);
             this.dgvItemComposicao.TabIndex = 44;
             this.dgvItemComposicao.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemComposicao_CellContentClick);
             // 
@@ -205,11 +209,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(59, 25);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(189, 29);
+            this.label3.Size = new System.Drawing.Size(203, 29);
             this.label3.TabIndex = 28;
             this.label3.Text = "Item de Estoque";
             // 
@@ -221,7 +225,7 @@
             this.swItemAtivo.Depth = 0;
             this.swItemAtivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.swItemAtivo.ForeColor = System.Drawing.Color.White;
-            this.swItemAtivo.Location = new System.Drawing.Point(313, 17);
+            this.swItemAtivo.Location = new System.Drawing.Point(325, 17);
             this.swItemAtivo.Margin = new System.Windows.Forms.Padding(0);
             this.swItemAtivo.MouseLocation = new System.Drawing.Point(-1, -1);
             this.swItemAtivo.MouseState = MaterialSkin.MouseState.HOVER;
@@ -235,7 +239,7 @@
             // 
             // pnSuperior
             // 
-            this.pnSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.pnSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.pnSuperior.Controls.Add(this.pnStatus);
             this.pnSuperior.Controls.Add(this.pcAtivo);
             this.pnSuperior.Controls.Add(this.swItemAtivo);
@@ -266,7 +270,7 @@
             // pcAtivo
             // 
             this.pcAtivo.Image = ((System.Drawing.Image)(resources.GetObject("pcAtivo.Image")));
-            this.pcAtivo.Location = new System.Drawing.Point(265, 17);
+            this.pcAtivo.Location = new System.Drawing.Point(277, 17);
             this.pcAtivo.Name = "pcAtivo";
             this.pcAtivo.Size = new System.Drawing.Size(45, 39);
             this.pcAtivo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -285,7 +289,7 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.Location = new System.Drawing.Point(1090, 15);
@@ -321,7 +325,7 @@
             this.btnSalvar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.Location = new System.Drawing.Point(426, 17);
+            this.btnSalvar.Location = new System.Drawing.Point(437, 14);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(41, 41);
             this.btnSalvar.TabIndex = 26;
@@ -340,7 +344,7 @@
             this.pcbFavorito.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pcbFavorito.ForeColor = System.Drawing.Color.White;
             this.pcbFavorito.Image = global::GRC.Properties.Resources.star;
-            this.pcbFavorito.Location = new System.Drawing.Point(380, 17);
+            this.pcbFavorito.Location = new System.Drawing.Point(392, 17);
             this.pcbFavorito.Name = "pcbFavorito";
             this.pcbFavorito.Size = new System.Drawing.Size(39, 38);
             this.pcbFavorito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -363,7 +367,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 655);
+            this.panel2.Location = new System.Drawing.Point(0, 599);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1138, 5);
             this.panel2.TabIndex = 161;
@@ -371,38 +375,38 @@
             // painelRadius7
             // 
             this.painelRadius7.BackColor = System.Drawing.Color.Transparent;
-            this.painelRadius7.BorderColor = System.Drawing.Color.AliceBlue;
+            this.painelRadius7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.painelRadius7.Controls.Add(this.label1);
             this.painelRadius7.Controls.Add(this.label2);
             this.painelRadius7.Controls.Add(this.pcbImagemItem);
             this.painelRadius7.Controls.Add(this.btnBuscaImagem);
             this.painelRadius7.Controls.Add(this.btnExcluiImagem);
-            this.painelRadius7.Location = new System.Drawing.Point(4, 182);
+            this.painelRadius7.Location = new System.Drawing.Point(6, 14);
             this.painelRadius7.Name = "painelRadius7";
             this.painelRadius7.Radius = 30;
-            this.painelRadius7.Size = new System.Drawing.Size(198, 282);
+            this.painelRadius7.Size = new System.Drawing.Size(198, 312);
             this.painelRadius7.TabIndex = 28;
             this.painelRadius7.Thickness = 10F;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(24, 16);
+            this.label1.Location = new System.Drawing.Point(25, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 23);
+            this.label1.Size = new System.Drawing.Size(159, 24);
             this.label1.TabIndex = 28;
             this.label1.Text = "Imagem do Item";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(75, 242);
+            this.label2.Location = new System.Drawing.Point(75, 270);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 14);
+            this.label2.Size = new System.Drawing.Size(62, 15);
             this.label2.TabIndex = 28;
             this.label2.Text = "800x800";
             // 
@@ -413,7 +417,7 @@
             this.pcbImagemItem.CorBotao = System.Drawing.Color.White;
             this.pcbImagemItem.CorTextoBotao = System.Drawing.Color.White;
             this.pcbImagemItem.ForeColor = System.Drawing.Color.White;
-            this.pcbImagemItem.Location = new System.Drawing.Point(14, 49);
+            this.pcbImagemItem.Location = new System.Drawing.Point(14, 72);
             this.pcbImagemItem.Name = "pcbImagemItem";
             this.pcbImagemItem.Size = new System.Drawing.Size(170, 170);
             this.pcbImagemItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -435,7 +439,7 @@
             this.btnBuscaImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscaImagem.ForeColor = System.Drawing.Color.White;
             this.btnBuscaImagem.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscaImagem.Image")));
-            this.btnBuscaImagem.Location = new System.Drawing.Point(14, 230);
+            this.btnBuscaImagem.Location = new System.Drawing.Point(14, 260);
             this.btnBuscaImagem.Name = "btnBuscaImagem";
             this.btnBuscaImagem.Size = new System.Drawing.Size(35, 37);
             this.btnBuscaImagem.TabIndex = 18;
@@ -455,7 +459,7 @@
             this.btnExcluiImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluiImagem.ForeColor = System.Drawing.Color.White;
             this.btnExcluiImagem.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluiImagem.Image")));
-            this.btnExcluiImagem.Location = new System.Drawing.Point(152, 232);
+            this.btnExcluiImagem.Location = new System.Drawing.Point(152, 265);
             this.btnExcluiImagem.Name = "btnExcluiImagem";
             this.btnExcluiImagem.Size = new System.Drawing.Size(32, 32);
             this.btnExcluiImagem.TabIndex = 19;
@@ -464,33 +468,20 @@
             this.btnExcluiImagem.UseVisualStyleBackColor = false;
             this.btnExcluiImagem.Click += new System.EventHandler(this.btnExcluiImagem_Click);
             // 
-            // painelRadius6
-            // 
-            this.painelRadius6.BackColor = System.Drawing.Color.White;
-            this.painelRadius6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.painelRadius6.Controls.Add(this.chkItemComposto);
-            this.painelRadius6.Location = new System.Drawing.Point(869, 182);
-            this.painelRadius6.Name = "painelRadius6";
-            this.painelRadius6.Radius = 30;
-            this.painelRadius6.Size = new System.Drawing.Size(197, 50);
-            this.painelRadius6.TabIndex = 129;
-            this.painelRadius6.Thickness = 5F;
-            // 
             // chkItemComposto
             // 
             this.chkItemComposto.AutoSize = true;
             this.chkItemComposto.BackColor = System.Drawing.Color.Transparent;
             this.chkItemComposto.Depth = 0;
-            this.chkItemComposto.Location = new System.Drawing.Point(26, 7);
+            this.chkItemComposto.Location = new System.Drawing.Point(6, 10);
             this.chkItemComposto.Margin = new System.Windows.Forms.Padding(0);
             this.chkItemComposto.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkItemComposto.MouseState = MaterialSkin.MouseState.HOVER;
             this.chkItemComposto.Name = "chkItemComposto";
             this.chkItemComposto.ReadOnly = false;
             this.chkItemComposto.Ripple = true;
-            this.chkItemComposto.Size = new System.Drawing.Size(143, 37);
+            this.chkItemComposto.Size = new System.Drawing.Size(35, 37);
             this.chkItemComposto.TabIndex = 23;
-            this.chkItemComposto.Text = "Item Composto";
             this.chkItemComposto.UseVisualStyleBackColor = false;
             this.chkItemComposto.CheckedChanged += new System.EventHandler(this.chkItemComposto_CheckedChanged);
             // 
@@ -499,10 +490,10 @@
             this.painelRadius5.BackColor = System.Drawing.Color.White;
             this.painelRadius5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
             this.painelRadius5.Controls.Add(this.groupBox2);
-            this.painelRadius5.Location = new System.Drawing.Point(8, 87);
+            this.painelRadius5.Location = new System.Drawing.Point(210, 14);
             this.painelRadius5.Name = "painelRadius5";
             this.painelRadius5.Radius = 30;
-            this.painelRadius5.Size = new System.Drawing.Size(1118, 89);
+            this.painelRadius5.Size = new System.Drawing.Size(897, 89);
             this.painelRadius5.TabIndex = 28;
             this.painelRadius5.Thickness = 5F;
             // 
@@ -511,11 +502,11 @@
             this.groupBox2.Controls.Add(this.txtId);
             this.groupBox2.Controls.Add(this.txtDescricao);
             this.groupBox2.Controls.Add(this.txtCodigoBarras);
-            this.groupBox2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.groupBox2.Location = new System.Drawing.Point(11, 9);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1094, 75);
+            this.groupBox2.Size = new System.Drawing.Size(869, 75);
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Item";
@@ -559,7 +550,7 @@
             this.txtDescricao.MouseState = MaterialSkin.MouseState.OUT;
             this.txtDescricao.Multiline = false;
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(640, 50);
+            this.txtDescricao.Size = new System.Drawing.Size(406, 50);
             this.txtDescricao.TabIndex = 2;
             this.txtDescricao.Text = "";
             this.txtDescricao.TrailingIcon = null;
@@ -604,7 +595,7 @@
             this.btnAddComposicao.ForeColor = System.Drawing.Color.White;
             this.btnAddComposicao.Image = ((System.Drawing.Image)(resources.GetObject("btnAddComposicao.Image")));
             this.btnAddComposicao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddComposicao.Location = new System.Drawing.Point(1072, 182);
+            this.btnAddComposicao.Location = new System.Drawing.Point(1051, 6);
             this.btnAddComposicao.Name = "btnAddComposicao";
             this.btnAddComposicao.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnAddComposicao.Size = new System.Drawing.Size(53, 43);
@@ -619,7 +610,7 @@
             this.swItemVenda.AutoSize = true;
             this.swItemVenda.BackColor = System.Drawing.Color.Transparent;
             this.swItemVenda.Depth = 0;
-            this.swItemVenda.Location = new System.Drawing.Point(14, 7);
+            this.swItemVenda.Location = new System.Drawing.Point(14, 32);
             this.swItemVenda.Margin = new System.Windows.Forms.Padding(0);
             this.swItemVenda.MouseLocation = new System.Drawing.Point(-1, -1);
             this.swItemVenda.MouseState = MaterialSkin.MouseState.HOVER;
@@ -635,11 +626,12 @@
             // 
             this.painelRadius3.BackColor = System.Drawing.Color.White;
             this.painelRadius3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.painelRadius3.Controls.Add(this.swItemVenda);
             this.painelRadius3.Controls.Add(this.gpbInfoVenda);
-            this.painelRadius3.Location = new System.Drawing.Point(4, 529);
+            this.painelRadius3.Location = new System.Drawing.Point(6, 332);
             this.painelRadius3.Name = "painelRadius3";
             this.painelRadius3.Radius = 30;
-            this.painelRadius3.Size = new System.Drawing.Size(849, 115);
+            this.painelRadius3.Size = new System.Drawing.Size(1098, 96);
             this.painelRadius3.TabIndex = 28;
             this.painelRadius3.Thickness = 5F;
             // 
@@ -650,11 +642,11 @@
             this.gpbInfoVenda.Controls.Add(this.txtLucroItem);
             this.gpbInfoVenda.Controls.Add(this.txtValorVenda);
             this.gpbInfoVenda.Enabled = false;
-            this.gpbInfoVenda.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbInfoVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbInfoVenda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.gpbInfoVenda.Location = new System.Drawing.Point(12, 15);
+            this.gpbInfoVenda.Location = new System.Drawing.Point(191, 5);
             this.gpbInfoVenda.Name = "gpbInfoVenda";
-            this.gpbInfoVenda.Size = new System.Drawing.Size(826, 91);
+            this.gpbInfoVenda.Size = new System.Drawing.Size(893, 83);
             this.gpbInfoVenda.TabIndex = 28;
             this.gpbInfoVenda.TabStop = false;
             this.gpbInfoVenda.Text = "Informações de Venda";
@@ -671,7 +663,7 @@
             this.txtLucroTotal.Hint = "Lucro Total";
             this.txtLucroTotal.LeadingIcon = null;
             this.txtLucroTotal.LeaveOnEnterKey = true;
-            this.txtLucroTotal.Location = new System.Drawing.Point(660, 26);
+            this.txtLucroTotal.Location = new System.Drawing.Point(731, 27);
             this.txtLucroTotal.MaxLength = 60;
             this.txtLucroTotal.MouseState = MaterialSkin.MouseState.OUT;
             this.txtLucroTotal.Multiline = false;
@@ -698,7 +690,7 @@
             this.txtDescricaoItemVenda.MouseState = MaterialSkin.MouseState.OUT;
             this.txtDescricaoItemVenda.Multiline = false;
             this.txtDescricaoItemVenda.Name = "txtDescricaoItemVenda";
-            this.txtDescricaoItemVenda.Size = new System.Drawing.Size(340, 50);
+            this.txtDescricaoItemVenda.Size = new System.Drawing.Size(407, 50);
             this.txtDescricaoItemVenda.TabIndex = 19;
             this.txtDescricaoItemVenda.Text = "";
             this.txtDescricaoItemVenda.TrailingIcon = null;
@@ -716,7 +708,7 @@
             this.txtLucroItem.Hint = "Lucro p/ Produto";
             this.txtLucroItem.LeadingIcon = null;
             this.txtLucroItem.LeaveOnEnterKey = true;
-            this.txtLucroItem.Location = new System.Drawing.Point(504, 26);
+            this.txtLucroItem.Location = new System.Drawing.Point(571, 27);
             this.txtLucroItem.MaxLength = 60;
             this.txtLucroItem.MouseState = MaterialSkin.MouseState.OUT;
             this.txtLucroItem.Multiline = false;
@@ -738,7 +730,7 @@
             this.txtValorVenda.Hint = "Preço";
             this.txtValorVenda.LeadingIcon = null;
             this.txtValorVenda.LeaveOnEnterKey = true;
-            this.txtValorVenda.Location = new System.Drawing.Point(353, 27);
+            this.txtValorVenda.Location = new System.Drawing.Point(420, 27);
             this.txtValorVenda.MaxLength = 60;
             this.txtValorVenda.MouseState = MaterialSkin.MouseState.OUT;
             this.txtValorVenda.Multiline = false;
@@ -758,10 +750,10 @@
             this.painelRadius2.BackColor = System.Drawing.Color.White;
             this.painelRadius2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
             this.painelRadius2.Controls.Add(this.groupBox1);
-            this.painelRadius2.Location = new System.Drawing.Point(208, 182);
+            this.painelRadius2.Location = new System.Drawing.Point(210, 104);
             this.painelRadius2.Name = "painelRadius2";
             this.painelRadius2.Radius = 30;
-            this.painelRadius2.Size = new System.Drawing.Size(648, 341);
+            this.painelRadius2.Size = new System.Drawing.Size(894, 222);
             this.painelRadius2.TabIndex = 28;
             this.painelRadius2.Thickness = 5F;
             // 
@@ -783,11 +775,11 @@
             this.groupBox1.Controls.Add(this.cbFornecedor);
             this.groupBox1.Controls.Add(this.cbCategoria);
             this.groupBox1.Controls.Add(this.txtCustoUnitario);
-            this.groupBox1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(622, 311);
+            this.groupBox1.Size = new System.Drawing.Size(868, 195);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados do Item";
@@ -795,12 +787,12 @@
             // lbAvisoBloqueio
             // 
             this.lbAvisoBloqueio.AutoSize = true;
-            this.lbAvisoBloqueio.BackColor = System.Drawing.Color.DimGray;
-            this.lbAvisoBloqueio.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Bold);
+            this.lbAvisoBloqueio.BackColor = System.Drawing.Color.Tomato;
+            this.lbAvisoBloqueio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.lbAvisoBloqueio.ForeColor = System.Drawing.Color.White;
-            this.lbAvisoBloqueio.Location = new System.Drawing.Point(120, 3);
+            this.lbAvisoBloqueio.Location = new System.Drawing.Point(295, 0);
             this.lbAvisoBloqueio.Name = "lbAvisoBloqueio";
-            this.lbAvisoBloqueio.Size = new System.Drawing.Size(291, 14);
+            this.lbAvisoBloqueio.Size = new System.Drawing.Size(355, 15);
             this.lbAvisoBloqueio.TabIndex = 28;
             this.lbAvisoBloqueio.Text = "O campo de \"Quantidade\" está bloqueado para edição";
             this.lbAvisoBloqueio.Visible = false;
@@ -817,7 +809,7 @@
             this.btnAddUnidadeMedida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddUnidadeMedida.ForeColor = System.Drawing.Color.White;
             this.btnAddUnidadeMedida.Image = ((System.Drawing.Image)(resources.GetObject("btnAddUnidadeMedida.Image")));
-            this.btnAddUnidadeMedida.Location = new System.Drawing.Point(568, 29);
+            this.btnAddUnidadeMedida.Location = new System.Drawing.Point(535, 30);
             this.btnAddUnidadeMedida.Name = "btnAddUnidadeMedida";
             this.btnAddUnidadeMedida.Size = new System.Drawing.Size(39, 39);
             this.btnAddUnidadeMedida.TabIndex = 6;
@@ -835,7 +827,7 @@
             this.txtObservacoes.Depth = 0;
             this.txtObservacoes.HideSelection = true;
             this.txtObservacoes.Hint = "Observações";
-            this.txtObservacoes.Location = new System.Drawing.Point(6, 190);
+            this.txtObservacoes.Location = new System.Drawing.Point(584, 85);
             this.txtObservacoes.MaxLength = 300;
             this.txtObservacoes.MouseState = MaterialSkin.MouseState.OUT;
             this.txtObservacoes.Name = "txtObservacoes";
@@ -846,7 +838,7 @@
             this.txtObservacoes.SelectionLength = 0;
             this.txtObservacoes.SelectionStart = 0;
             this.txtObservacoes.ShortcutsEnabled = true;
-            this.txtObservacoes.Size = new System.Drawing.Size(459, 111);
+            this.txtObservacoes.Size = new System.Drawing.Size(276, 101);
             this.txtObservacoes.TabIndex = 15;
             this.txtObservacoes.TabStop = false;
             this.txtObservacoes.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -915,7 +907,7 @@
             this.cbUnidadeMedida.Hint = "Unidade";
             this.cbUnidadeMedida.IntegralHeight = false;
             this.cbUnidadeMedida.ItemHeight = 43;
-            this.cbUnidadeMedida.Location = new System.Drawing.Point(330, 26);
+            this.cbUnidadeMedida.Location = new System.Drawing.Point(297, 27);
             this.cbUnidadeMedida.MaxDropDownItems = 4;
             this.cbUnidadeMedida.MouseState = MaterialSkin.MouseState.OUT;
             this.cbUnidadeMedida.Name = "cbUnidadeMedida";
@@ -935,7 +927,7 @@
             this.txtQtd.Hint = "Quantidade";
             this.txtQtd.LeadingIcon = null;
             this.txtQtd.LeaveOnEnterKey = true;
-            this.txtQtd.Location = new System.Drawing.Point(472, 78);
+            this.txtQtd.Location = new System.Drawing.Point(439, 79);
             this.txtQtd.MaxLength = 60;
             this.txtQtd.MouseState = MaterialSkin.MouseState.OUT;
             this.txtQtd.Multiline = false;
@@ -961,7 +953,7 @@
             this.txtQtdMinima.Hint = "Qtd Mínima";
             this.txtQtdMinima.LeadingIcon = null;
             this.txtQtdMinima.LeaveOnEnterKey = true;
-            this.txtQtdMinima.Location = new System.Drawing.Point(331, 78);
+            this.txtQtdMinima.Location = new System.Drawing.Point(298, 79);
             this.txtQtdMinima.MaxLength = 60;
             this.txtQtdMinima.MouseState = MaterialSkin.MouseState.OUT;
             this.txtQtdMinima.Multiline = false;
@@ -986,7 +978,7 @@
             this.txtGarantia.Hint = "Garantia";
             this.txtGarantia.LeadingIcon = null;
             this.txtGarantia.LeaveOnEnterKey = true;
-            this.txtGarantia.Location = new System.Drawing.Point(472, 251);
+            this.txtGarantia.Location = new System.Drawing.Point(725, 27);
             this.txtGarantia.MaxLength = 60;
             this.txtGarantia.MouseState = MaterialSkin.MouseState.OUT;
             this.txtGarantia.Multiline = false;
@@ -1054,7 +1046,7 @@
             this.txtValidade.Hint = "Validade";
             this.txtValidade.LeadingIcon = null;
             this.txtValidade.LeaveOnEnterKey = true;
-            this.txtValidade.Location = new System.Drawing.Point(472, 195);
+            this.txtValidade.Location = new System.Drawing.Point(584, 28);
             this.txtValidade.MaxLength = 60;
             this.txtValidade.MouseState = MaterialSkin.MouseState.OUT;
             this.txtValidade.Multiline = false;
@@ -1080,7 +1072,7 @@
             this.txtCustoTotal.Hint = "Custo Total";
             this.txtCustoTotal.LeadingIcon = null;
             this.txtCustoTotal.LeaveOnEnterKey = true;
-            this.txtCustoTotal.Location = new System.Drawing.Point(472, 135);
+            this.txtCustoTotal.Location = new System.Drawing.Point(439, 136);
             this.txtCustoTotal.MaxLength = 60;
             this.txtCustoTotal.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCustoTotal.Multiline = false;
@@ -1152,7 +1144,7 @@
             this.txtCustoUnitario.Hint = "Custo unitário";
             this.txtCustoUnitario.LeadingIcon = null;
             this.txtCustoUnitario.LeaveOnEnterKey = true;
-            this.txtCustoUnitario.Location = new System.Drawing.Point(330, 135);
+            this.txtCustoUnitario.Location = new System.Drawing.Point(297, 136);
             this.txtCustoUnitario.MaxLength = 60;
             this.txtCustoUnitario.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCustoUnitario.Multiline = false;
@@ -1168,38 +1160,91 @@
             this.txtCustoUnitario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCustoUnitario_KeyPress);
             this.txtCustoUnitario.Leave += new System.EventHandler(this.txtCustoUnitario_Leave);
             // 
-            // painelRadius4
+            // materialTabSelector1
             // 
-            this.painelRadius4.BackColor = System.Drawing.Color.White;
-            this.painelRadius4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.painelRadius4.Controls.Add(this.swItemVenda);
-            this.painelRadius4.Location = new System.Drawing.Point(4, 470);
-            this.painelRadius4.Name = "painelRadius4";
-            this.painelRadius4.Radius = 30;
-            this.painelRadius4.Size = new System.Drawing.Size(198, 53);
-            this.painelRadius4.TabIndex = 28;
-            this.painelRadius4.Thickness = 5F;
+            this.materialTabSelector1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialTabSelector1.BaseTabControl = this.tbcItem;
+            this.materialTabSelector1.CharacterCasing = MaterialSkin.Controls.MaterialTabSelector.CustomCharacterCasing.Normal;
+            this.materialTabSelector1.Depth = 0;
+            this.materialTabSelector1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTabSelector1.Location = new System.Drawing.Point(8, 76);
+            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabSelector1.Name = "materialTabSelector1";
+            this.materialTabSelector1.Size = new System.Drawing.Size(1118, 41);
+            this.materialTabSelector1.TabIndex = 162;
+            this.materialTabSelector1.TabIndicatorHeight = 3;
+            this.materialTabSelector1.Text = "materialTabSelector1";
+            // 
+            // tbcItem
+            // 
+            this.tbcItem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbcItem.Controls.Add(this.tbpDadosItem);
+            this.tbcItem.Controls.Add(this.tbpComposicao);
+            this.tbcItem.Depth = 0;
+            this.tbcItem.Location = new System.Drawing.Point(8, 123);
+            this.tbcItem.MouseState = MaterialSkin.MouseState.HOVER;
+            this.tbcItem.Multiline = true;
+            this.tbcItem.Name = "tbcItem";
+            this.tbcItem.SelectedIndex = 0;
+            this.tbcItem.ShowToolTips = true;
+            this.tbcItem.Size = new System.Drawing.Size(1118, 457);
+            this.tbcItem.TabIndex = 163;
+            // 
+            // tbpDadosItem
+            // 
+            this.tbpDadosItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.tbpDadosItem.Controls.Add(this.painelRadius7);
+            this.tbpDadosItem.Controls.Add(this.painelRadius5);
+            this.tbpDadosItem.Controls.Add(this.painelRadius2);
+            this.tbpDadosItem.Controls.Add(this.painelRadius3);
+            this.tbpDadosItem.Location = new System.Drawing.Point(4, 22);
+            this.tbpDadosItem.Name = "tbpDadosItem";
+            this.tbpDadosItem.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpDadosItem.Size = new System.Drawing.Size(1110, 431);
+            this.tbpDadosItem.TabIndex = 0;
+            this.tbpDadosItem.Text = "Dados do Item";
+            // 
+            // tbpComposicao
+            // 
+            this.tbpComposicao.BackColor = System.Drawing.Color.White;
+            this.tbpComposicao.Controls.Add(this.label4);
+            this.tbpComposicao.Controls.Add(this.chkItemComposto);
+            this.tbpComposicao.Controls.Add(this.btnAddComposicao);
+            this.tbpComposicao.Controls.Add(this.dgvItemComposicao);
+            this.tbpComposicao.Location = new System.Drawing.Point(4, 22);
+            this.tbpComposicao.Name = "tbpComposicao";
+            this.tbpComposicao.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpComposicao.Size = new System.Drawing.Size(1110, 431);
+            this.tbpComposicao.TabIndex = 1;
+            this.tbpComposicao.Text = "Composição";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.label4.Location = new System.Drawing.Point(44, 17);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(201, 24);
+            this.label4.TabIndex = 45;
+            this.label4.Text = "Composição de Item";
             // 
             // CadastroItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(1138, 660);
+            this.ClientSize = new System.Drawing.Size(1138, 604);
+            this.Controls.Add(this.tbcItem);
+            this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnSuperior);
-            this.Controls.Add(this.painelRadius7);
-            this.Controls.Add(this.painelRadius6);
-            this.Controls.Add(this.painelRadius5);
-            this.Controls.Add(this.btnAddComposicao);
-            this.Controls.Add(this.painelRadius4);
-            this.Controls.Add(this.painelRadius3);
-            this.Controls.Add(this.dgvItemComposicao);
-            this.Controls.Add(this.painelRadius2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.MinimumSize = new System.Drawing.Size(1138, 660);
             this.Name = "CadastroItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CadastroItem";
@@ -1216,17 +1261,18 @@
             this.painelRadius7.ResumeLayout(false);
             this.painelRadius7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbImagemItem)).EndInit();
-            this.painelRadius6.ResumeLayout(false);
-            this.painelRadius6.PerformLayout();
             this.painelRadius5.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.painelRadius3.ResumeLayout(false);
+            this.painelRadius3.PerformLayout();
             this.gpbInfoVenda.ResumeLayout(false);
             this.painelRadius2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.painelRadius4.ResumeLayout(false);
-            this.painelRadius4.PerformLayout();
+            this.tbcItem.ResumeLayout(false);
+            this.tbpDadosItem.ResumeLayout(false);
+            this.tbpComposicao.ResumeLayout(false);
+            this.tbpComposicao.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1249,7 +1295,6 @@
         private Componentes.CustomButton btnAddCategoria;
         private MaterialSkin.Controls.MaterialSwitch swItemAtivo;
         private MaterialSkin.Controls.MaterialSwitch swItemVenda;
-        private System.Windows.Forms.Label label1;
         private Componentes.CustomButton btnBuscaImagem;
         private Componentes.CustomButton btnExcluiImagem;
         private Componentes.CustomPictureBox pcbImagemItem;
@@ -1280,7 +1325,6 @@
         private Componentes.CustomButton btnAddComposicao;
         private System.Windows.Forms.GroupBox groupBox2;
         private Componentes.PainelRadius painelRadius5;
-        private Componentes.PainelRadius painelRadius6;
         private System.Windows.Forms.Label label2;
         private Componentes.PainelRadius painelRadius7;
         private System.Windows.Forms.Panel pnSuperior;
@@ -1288,6 +1332,11 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbAvisoBloqueio;
-        private Componentes.PainelRadius painelRadius4;
+        private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
+        private MaterialSkin.Controls.MaterialTabControl tbcItem;
+        private System.Windows.Forms.TabPage tbpDadosItem;
+        private System.Windows.Forms.TabPage tbpComposicao;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
     }
 }
