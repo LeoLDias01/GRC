@@ -28,6 +28,8 @@ namespace GRC.Telas
         private int _idOS = 0;
         private bool _favorito = false;
         private int _StatusAntigo = 0;
+
+        private int _padrao = 9;
         private Cliente _cliente = new Cliente();
      
         private List<ItemCard> _itensOS = new List<ItemCard>();
