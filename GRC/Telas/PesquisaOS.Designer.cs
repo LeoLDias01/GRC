@@ -256,7 +256,7 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(474, 18);
+            this.btnSearch.Location = new System.Drawing.Point(482, 18);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(43, 43);
             this.btnSearch.TabIndex = 101;
@@ -277,7 +277,7 @@
             this.btnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApagar.ForeColor = System.Drawing.Color.White;
             this.btnApagar.Image = ((System.Drawing.Image)(resources.GetObject("btnApagar.Image")));
-            this.btnApagar.Location = new System.Drawing.Point(425, 18);
+            this.btnApagar.Location = new System.Drawing.Point(433, 18);
             this.btnApagar.Name = "btnApagar";
             this.btnApagar.Size = new System.Drawing.Size(43, 43);
             this.btnApagar.TabIndex = 14;
@@ -502,7 +502,7 @@
             this.btnNovaOS.ForeColor = System.Drawing.Color.White;
             this.btnNovaOS.Image = ((System.Drawing.Image)(resources.GetObject("btnNovaOS.Image")));
             this.btnNovaOS.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNovaOS.Location = new System.Drawing.Point(376, 17);
+            this.btnNovaOS.Location = new System.Drawing.Point(384, 17);
             this.btnNovaOS.Name = "btnNovaOS";
             this.btnNovaOS.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnNovaOS.Size = new System.Drawing.Size(43, 43);

@@ -136,6 +136,16 @@
   <metadata name="ttAjuda.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="btnCadastraTipoServico.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACqSURBVEhL7ZVB
+        DoIwEEVZwjUM3kcU778AbwBun/mm1WZCaFNoYgwvmU35zF9M/7SqEgHuwAMYgd5+3wTQADNfJqC2umyA
+        Nmjuaa0uG+Bsu+vM6rI5DKL8voG756eV6mx3d2Z1YTW+uRL6tH/vgIJ5k4HiX4pBBtotpXgb9GbP7IX2
+        1dXPoV4YUmzIlwVdWOnLcPM1jXEYRPkLg+JPZtlHX7jEa60Mn4Qm8AJuPItjeyi7qwAAAABJRU5ErkJg
+        gg==
+</value>
+  </data>
   <data name="pcAjuda.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -334,16 +344,6 @@
         ZOru7oX8uGHPqB+r7v/DvztO0hujJHtnVElf1P3xxvqPAwAAVkv3rwvqs882Dfd603BXlhrtDx39zoL/
         Y6zbc/TrCQ789A8AUZIeiJNsNq6k98VJ+u0oSb8YV7MPxUl6ZVTNXjd+ZXpRYdNd6/R/BkC+/X/uWGwL
         n2601AAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="btnCadastraTipoServico.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACqSURBVEhL7ZVB
-        DoIwEEVZwjUM3kcU778AbwBun/mm1WZCaFNoYgwvmU35zF9M/7SqEgHuwAMYgd5+3wTQADNfJqC2umyA
-        Nmjuaa0uG+Bsu+vM6rI5DKL8voG756eV6mx3d2Z1YTW+uRL6tH/vgIJ5k4HiX4pBBtotpXgb9GbP7IX2
-        1dXPoV4YUmzIlwVdWOnLcPM1jXEYRPkLg+JPZtlHX7jEa60Mn4Qm8AJuPItjeyi7qwAAAABJRU5ErkJg
-        gg==
 </value>
   </data>
   <metadata name="colId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

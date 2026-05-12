@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroOS));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pn2 = new GRC.Componentes.RoundedPanel();
             this.lbStatus = new System.Windows.Forms.Label();
             this.btnExportar = new GRC.Componentes.CustomButton();
@@ -95,6 +95,39 @@
             this.pnStatus = new GRC.Componentes.RoundedPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tbpDadosAparelho = new System.Windows.Forms.TabPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.materialMultiLineTextBox21 = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
+            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialTextBox3 = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialTextBox4 = new MaterialSkin.Controls.MaterialTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.materialTextBox5 = new MaterialSkin.Controls.MaterialTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.materialMultiLineTextBox22 = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
+            this.chkItemComposto = new MaterialSkin.Controls.MaterialCheckbox();
+            this.materialCheckbox1 = new MaterialSkin.Controls.MaterialCheckbox();
+            this.materialCheckbox2 = new MaterialSkin.Controls.MaterialCheckbox();
+            this.materialCheckbox3 = new MaterialSkin.Controls.MaterialCheckbox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.materialCheckbox4 = new MaterialSkin.Controls.MaterialCheckbox();
+            this.materialCheckbox5 = new MaterialSkin.Controls.MaterialCheckbox();
+            this.materialCheckbox6 = new MaterialSkin.Controls.MaterialCheckbox();
+            this.materialCheckbox7 = new MaterialSkin.Controls.MaterialCheckbox();
+            this.materialCheckbox8 = new MaterialSkin.Controls.MaterialCheckbox();
+            this.materialCheckbox9 = new MaterialSkin.Controls.MaterialCheckbox();
+            this.materialTextBox6 = new MaterialSkin.Controls.MaterialTextBox();
             this.pn2.SuspendLayout();
             this.pn1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -118,6 +151,11 @@
             this.painelRadius3.SuspendLayout();
             this.painelRadius2.SuspendLayout();
             this.pnSuperior.SuspendLayout();
+            this.tbpDadosAparelho.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pn2
@@ -205,11 +243,13 @@
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.txtId);
+            this.groupBox4.Controls.Add(this.txtDataEntrada);
+            this.groupBox4.Controls.Add(this.txtFimReal);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.groupBox4.Location = new System.Drawing.Point(6, 11);
+            this.groupBox4.Location = new System.Drawing.Point(9, 11);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(317, 85);
+            this.groupBox4.Size = new System.Drawing.Size(449, 85);
             this.groupBox4.TabIndex = 96;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "OS";
@@ -224,7 +264,7 @@
             this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtId.Depth = 0;
             this.txtId.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtId.Hint = "Número da OS";
+            this.txtId.Hint = "Nº OS";
             this.txtId.LeadingIcon = null;
             this.txtId.LeaveOnEnterKey = true;
             this.txtId.Location = new System.Drawing.Point(5, 26);
@@ -233,7 +273,7 @@
             this.txtId.Multiline = false;
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(306, 50);
+            this.txtId.Size = new System.Drawing.Size(143, 50);
             this.txtId.TabIndex = 83;
             this.txtId.Text = "";
             this.txtId.TrailingIcon = null;
@@ -261,6 +301,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbcOs.Controls.Add(this.tbpDadosOS);
+            this.tbcOs.Controls.Add(this.tbpDadosAparelho);
             this.tbcOs.Controls.Add(this.tbpFinanceiro);
             this.tbcOs.Depth = 0;
             this.tbcOs.Location = new System.Drawing.Point(9, 3);
@@ -289,18 +330,16 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gpbInfoVenda.BackColor = System.Drawing.Color.White;
-            this.gpbInfoVenda.Controls.Add(this.txtObservacoesCliente);
-            this.gpbInfoVenda.Controls.Add(this.groupBox3);
-            this.gpbInfoVenda.Controls.Add(this.txtProblema);
-            this.gpbInfoVenda.Controls.Add(this.txtDescricao);
-            this.gpbInfoVenda.Controls.Add(this.txtObservacoes);
-            this.gpbInfoVenda.Controls.Add(this.pcAjuda);
-            this.gpbInfoVenda.Controls.Add(this.txtFimReal);
+            this.gpbInfoVenda.Controls.Add(this.materialTextBox6);
+            this.gpbInfoVenda.Controls.Add(this.groupBox7);
+            this.gpbInfoVenda.Controls.Add(this.cbTipoServico);
             this.gpbInfoVenda.Controls.Add(this.cbStatus);
             this.gpbInfoVenda.Controls.Add(this.txtFimPrevisto);
-            this.gpbInfoVenda.Controls.Add(this.txtDataEntrada);
             this.gpbInfoVenda.Controls.Add(this.btnCadastraTipoServico);
-            this.gpbInfoVenda.Controls.Add(this.cbTipoServico);
+            this.gpbInfoVenda.Controls.Add(this.txtObservacoesCliente);
+            this.gpbInfoVenda.Controls.Add(this.groupBox6);
+            this.gpbInfoVenda.Controls.Add(this.txtObservacoes);
+            this.gpbInfoVenda.Controls.Add(this.pcAjuda);
             this.gpbInfoVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbInfoVenda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.gpbInfoVenda.Location = new System.Drawing.Point(6, 6);
@@ -319,7 +358,7 @@
             this.txtObservacoesCliente.Depth = 0;
             this.txtObservacoesCliente.HideSelection = true;
             this.txtObservacoesCliente.Hint = "Observações (aparece para o cliente)";
-            this.txtObservacoesCliente.Location = new System.Drawing.Point(597, 305);
+            this.txtObservacoesCliente.Location = new System.Drawing.Point(18, 333);
             this.txtObservacoesCliente.MaxLength = 300;
             this.txtObservacoesCliente.MouseState = MaterialSkin.MouseState.OUT;
             this.txtObservacoesCliente.Name = "txtObservacoesCliente";
@@ -330,7 +369,7 @@
             this.txtObservacoesCliente.SelectionLength = 0;
             this.txtObservacoesCliente.SelectionStart = 0;
             this.txtObservacoesCliente.ShortcutsEnabled = true;
-            this.txtObservacoesCliente.Size = new System.Drawing.Size(462, 108);
+            this.txtObservacoesCliente.Size = new System.Drawing.Size(554, 89);
             this.txtObservacoesCliente.TabIndex = 96;
             this.txtObservacoesCliente.TabStop = false;
             this.txtObservacoesCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -344,9 +383,9 @@
             this.groupBox3.Controls.Add(this.txtInicioGarantia);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.groupBox3.Location = new System.Drawing.Point(597, 192);
+            this.groupBox3.Location = new System.Drawing.Point(6, 134);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(472, 107);
+            this.groupBox3.Size = new System.Drawing.Size(479, 107);
             this.groupBox3.TabIndex = 95;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Garantia";
@@ -430,8 +469,8 @@
             this.txtProblema.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtProblema.Depth = 0;
             this.txtProblema.HideSelection = true;
-            this.txtProblema.Hint = "Descrição do problema";
-            this.txtProblema.Location = new System.Drawing.Point(459, 26);
+            this.txtProblema.Hint = "Relatório Técnico";
+            this.txtProblema.Location = new System.Drawing.Point(6, 99);
             this.txtProblema.MaxLength = 300;
             this.txtProblema.MouseState = MaterialSkin.MouseState.OUT;
             this.txtProblema.Name = "txtProblema";
@@ -442,7 +481,7 @@
             this.txtProblema.SelectionLength = 0;
             this.txtProblema.SelectionStart = 0;
             this.txtProblema.ShortcutsEnabled = true;
-            this.txtProblema.Size = new System.Drawing.Size(601, 160);
+            this.txtProblema.Size = new System.Drawing.Size(548, 87);
             this.txtProblema.TabIndex = 94;
             this.txtProblema.TabStop = false;
             this.txtProblema.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -458,7 +497,7 @@
             this.txtDescricao.Depth = 0;
             this.txtDescricao.HideSelection = true;
             this.txtDescricao.Hint = "Descrição do Serviço Realizado";
-            this.txtDescricao.Location = new System.Drawing.Point(18, 192);
+            this.txtDescricao.Location = new System.Drawing.Point(6, 25);
             this.txtDescricao.MaxLength = 300;
             this.txtDescricao.MouseState = MaterialSkin.MouseState.OUT;
             this.txtDescricao.Name = "txtDescricao";
@@ -469,7 +508,7 @@
             this.txtDescricao.SelectionLength = 0;
             this.txtDescricao.SelectionStart = 0;
             this.txtDescricao.ShortcutsEnabled = true;
-            this.txtDescricao.Size = new System.Drawing.Size(579, 107);
+            this.txtDescricao.Size = new System.Drawing.Size(478, 103);
             this.txtDescricao.TabIndex = 79;
             this.txtDescricao.TabStop = false;
             this.txtDescricao.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -485,7 +524,7 @@
             this.txtObservacoes.Depth = 0;
             this.txtObservacoes.HideSelection = true;
             this.txtObservacoes.Hint = "Observações (apenas para a loja)";
-            this.txtObservacoes.Location = new System.Drawing.Point(12, 305);
+            this.txtObservacoes.Location = new System.Drawing.Point(578, 333);
             this.txtObservacoes.MaxLength = 300;
             this.txtObservacoes.MouseState = MaterialSkin.MouseState.OUT;
             this.txtObservacoes.Name = "txtObservacoes";
@@ -496,7 +535,7 @@
             this.txtObservacoes.SelectionLength = 0;
             this.txtObservacoes.SelectionStart = 0;
             this.txtObservacoes.ShortcutsEnabled = true;
-            this.txtObservacoes.Size = new System.Drawing.Size(579, 108);
+            this.txtObservacoes.Size = new System.Drawing.Size(497, 89);
             this.txtObservacoes.TabIndex = 83;
             this.txtObservacoes.TabStop = false;
             this.txtObservacoes.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -527,7 +566,7 @@
             this.txtFimReal.Hint = "Fim Real";
             this.txtFimReal.LeadingIcon = null;
             this.txtFimReal.LeaveOnEnterKey = true;
-            this.txtFimReal.Location = new System.Drawing.Point(306, 26);
+            this.txtFimReal.Location = new System.Drawing.Point(298, 25);
             this.txtFimReal.MaxLength = 60;
             this.txtFimReal.MouseState = MaterialSkin.MouseState.OUT;
             this.txtFimReal.Multiline = false;
@@ -552,14 +591,14 @@
             this.cbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cbStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cbStatus.FormattingEnabled = true;
-            this.cbStatus.Hint = "Status";
+            this.cbStatus.Hint = "Situação Atual";
             this.cbStatus.IntegralHeight = false;
             this.cbStatus.ItemHeight = 43;
-            this.cbStatus.Location = new System.Drawing.Point(12, 82);
+            this.cbStatus.Location = new System.Drawing.Point(347, 24);
             this.cbStatus.MaxDropDownItems = 4;
             this.cbStatus.MouseState = MaterialSkin.MouseState.OUT;
             this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(440, 49);
+            this.cbStatus.Size = new System.Drawing.Size(560, 49);
             this.cbStatus.StartIndex = 0;
             this.cbStatus.TabIndex = 86;
             this.cbStatus.UseAccent = false;
@@ -573,15 +612,15 @@
             this.txtFimPrevisto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFimPrevisto.Depth = 0;
             this.txtFimPrevisto.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtFimPrevisto.Hint = "Fim Previsto";
+            this.txtFimPrevisto.Hint = "Previsão Entrega";
             this.txtFimPrevisto.LeadingIcon = null;
             this.txtFimPrevisto.LeaveOnEnterKey = true;
-            this.txtFimPrevisto.Location = new System.Drawing.Point(159, 26);
+            this.txtFimPrevisto.Location = new System.Drawing.Point(911, 24);
             this.txtFimPrevisto.MaxLength = 60;
             this.txtFimPrevisto.MouseState = MaterialSkin.MouseState.OUT;
             this.txtFimPrevisto.Multiline = false;
             this.txtFimPrevisto.Name = "txtFimPrevisto";
-            this.txtFimPrevisto.Size = new System.Drawing.Size(141, 50);
+            this.txtFimPrevisto.Size = new System.Drawing.Size(158, 50);
             this.txtFimPrevisto.TabIndex = 87;
             this.txtFimPrevisto.Text = "";
             this.txtFimPrevisto.TrailingIcon = null;
@@ -599,7 +638,7 @@
             this.txtDataEntrada.Hint = "Data Entrada";
             this.txtDataEntrada.LeadingIcon = null;
             this.txtDataEntrada.LeaveOnEnterKey = true;
-            this.txtDataEntrada.Location = new System.Drawing.Point(12, 26);
+            this.txtDataEntrada.Location = new System.Drawing.Point(151, 26);
             this.txtDataEntrada.MaxLength = 60;
             this.txtDataEntrada.MouseState = MaterialSkin.MouseState.OUT;
             this.txtDataEntrada.Multiline = false;
@@ -623,7 +662,7 @@
             this.btnCadastraTipoServico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastraTipoServico.ForeColor = System.Drawing.Color.White;
             this.btnCadastraTipoServico.Image = ((System.Drawing.Image)(resources.GetObject("btnCadastraTipoServico.Image")));
-            this.btnCadastraTipoServico.Location = new System.Drawing.Point(413, 137);
+            this.btnCadastraTipoServico.Location = new System.Drawing.Point(288, 25);
             this.btnCadastraTipoServico.Name = "btnCadastraTipoServico";
             this.btnCadastraTipoServico.Size = new System.Drawing.Size(39, 41);
             this.btnCadastraTipoServico.TabIndex = 84;
@@ -650,11 +689,11 @@
             this.cbTipoServico.Hint = "Tipo de Serviço";
             this.cbTipoServico.IntegralHeight = false;
             this.cbTipoServico.ItemHeight = 43;
-            this.cbTipoServico.Location = new System.Drawing.Point(12, 137);
+            this.cbTipoServico.Location = new System.Drawing.Point(6, 25);
             this.cbTipoServico.MaxDropDownItems = 4;
             this.cbTipoServico.MouseState = MaterialSkin.MouseState.OUT;
             this.cbTipoServico.Name = "cbTipoServico";
-            this.cbTipoServico.Size = new System.Drawing.Size(383, 49);
+            this.cbTipoServico.Size = new System.Drawing.Size(276, 49);
             this.cbTipoServico.StartIndex = 0;
             this.cbTipoServico.TabIndex = 80;
             this.cbTipoServico.UseAccent = false;
@@ -698,14 +737,14 @@
             this.dgvItens.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvItens.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvItens.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvItens.ColumnHeadersHeight = 35;
             this.dgvItens.ColumnHeadersVisible = false;
             this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -713,14 +752,14 @@
             this.colDescricao,
             this.colExcluir});
             this.dgvItens.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.MintCream;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleTurquoise;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvItens.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.MintCream;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvItens.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvItens.EnableHeadersVisualStyles = false;
             this.dgvItens.GridColor = System.Drawing.Color.Black;
             this.dgvItens.Location = new System.Drawing.Point(6, 79);
@@ -729,8 +768,8 @@
             this.dgvItens.ReadOnly = true;
             this.dgvItens.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvItens.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvItens.Size = new System.Drawing.Size(275, 349);
             this.dgvItens.TabIndex = 98;
@@ -1069,9 +1108,9 @@
             this.groupBox2.Controls.Add(this.txtCliente);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.groupBox2.Location = new System.Drawing.Point(3, 12);
+            this.groupBox2.Location = new System.Drawing.Point(3, 11);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(773, 85);
+            this.groupBox2.Size = new System.Drawing.Size(643, 85);
             this.groupBox2.TabIndex = 94;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dados do Cliente";
@@ -1087,13 +1126,13 @@
             this.txtIdentidade.Hint = "CPF/CNPJ";
             this.txtIdentidade.LeadingIcon = null;
             this.txtIdentidade.LeaveOnEnterKey = true;
-            this.txtIdentidade.Location = new System.Drawing.Point(537, 25);
-            this.txtIdentidade.MaxLength = 60;
+            this.txtIdentidade.Location = new System.Drawing.Point(462, 24);
+            this.txtIdentidade.MaxLength = 20;
             this.txtIdentidade.MouseState = MaterialSkin.MouseState.OUT;
             this.txtIdentidade.Multiline = false;
             this.txtIdentidade.Name = "txtIdentidade";
             this.txtIdentidade.ReadOnly = true;
-            this.txtIdentidade.Size = new System.Drawing.Size(230, 50);
+            this.txtIdentidade.Size = new System.Drawing.Size(175, 50);
             this.txtIdentidade.TabIndex = 82;
             this.txtIdentidade.Text = "";
             this.txtIdentidade.TrailingIcon = null;
@@ -1123,13 +1162,13 @@
             this.txtCliente.Hint = "Cliente";
             this.txtCliente.LeadingIcon = null;
             this.txtCliente.LeaveOnEnterKey = true;
-            this.txtCliente.Location = new System.Drawing.Point(10, 26);
+            this.txtCliente.Location = new System.Drawing.Point(6, 24);
             this.txtCliente.MaxLength = 60;
             this.txtCliente.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCliente.Multiline = false;
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.ReadOnly = true;
-            this.txtCliente.Size = new System.Drawing.Size(521, 50);
+            this.txtCliente.Size = new System.Drawing.Size(450, 50);
             this.txtCliente.TabIndex = 75;
             this.txtCliente.Text = "";
             this.txtCliente.TrailingIcon = ((System.Drawing.Image)(resources.GetObject("txtCliente.TrailingIcon")));
@@ -1223,13 +1262,13 @@
             // 
             // painelRadius1
             // 
-            this.painelRadius1.BackColor = System.Drawing.Color.AliceBlue;
+            this.painelRadius1.BackColor = System.Drawing.Color.White;
             this.painelRadius1.BorderColor = System.Drawing.Color.AliceBlue;
             this.painelRadius1.Controls.Add(this.groupBox4);
             this.painelRadius1.Location = new System.Drawing.Point(12, 78);
             this.painelRadius1.Name = "painelRadius1";
             this.painelRadius1.Radius = 30;
-            this.painelRadius1.Size = new System.Drawing.Size(330, 99);
+            this.painelRadius1.Size = new System.Drawing.Size(461, 99);
             this.painelRadius1.TabIndex = 123;
             this.painelRadius1.Thickness = 5F;
             // 
@@ -1252,13 +1291,13 @@
             // 
             this.painelRadius2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.painelRadius2.BackColor = System.Drawing.Color.AliceBlue;
+            this.painelRadius2.BackColor = System.Drawing.Color.White;
             this.painelRadius2.BorderColor = System.Drawing.Color.AliceBlue;
             this.painelRadius2.Controls.Add(this.groupBox2);
-            this.painelRadius2.Location = new System.Drawing.Point(349, 78);
+            this.painelRadius2.Location = new System.Drawing.Point(479, 78);
             this.painelRadius2.Name = "painelRadius2";
             this.painelRadius2.Radius = 30;
-            this.painelRadius2.Size = new System.Drawing.Size(779, 100);
+            this.painelRadius2.Size = new System.Drawing.Size(649, 100);
             this.painelRadius2.TabIndex = 125;
             this.painelRadius2.Thickness = 5F;
             // 
@@ -1314,6 +1353,566 @@
             this.panel2.Size = new System.Drawing.Size(1138, 5);
             this.panel2.TabIndex = 163;
             // 
+            // tbpDadosAparelho
+            // 
+            this.tbpDadosAparelho.Controls.Add(this.groupBox5);
+            this.tbpDadosAparelho.Location = new System.Drawing.Point(4, 22);
+            this.tbpDadosAparelho.Name = "tbpDadosAparelho";
+            this.tbpDadosAparelho.Size = new System.Drawing.Size(1087, 440);
+            this.tbpDadosAparelho.TabIndex = 2;
+            this.tbpDadosAparelho.Text = "Dados Aparelho";
+            this.tbpDadosAparelho.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.BackColor = System.Drawing.Color.White;
+            this.groupBox5.Controls.Add(this.materialCheckbox9);
+            this.groupBox5.Controls.Add(this.materialCheckbox8);
+            this.groupBox5.Controls.Add(this.materialCheckbox7);
+            this.groupBox5.Controls.Add(this.materialCheckbox6);
+            this.groupBox5.Controls.Add(this.materialCheckbox5);
+            this.groupBox5.Controls.Add(this.materialCheckbox4);
+            this.groupBox5.Controls.Add(this.label11);
+            this.groupBox5.Controls.Add(this.materialCheckbox3);
+            this.groupBox5.Controls.Add(this.materialCheckbox2);
+            this.groupBox5.Controls.Add(this.materialCheckbox1);
+            this.groupBox5.Controls.Add(this.chkItemComposto);
+            this.groupBox5.Controls.Add(this.materialMultiLineTextBox22);
+            this.groupBox5.Controls.Add(this.panel1);
+            this.groupBox5.Controls.Add(this.materialTextBox5);
+            this.groupBox5.Controls.Add(this.materialTextBox4);
+            this.groupBox5.Controls.Add(this.materialTextBox3);
+            this.groupBox5.Controls.Add(this.materialTextBox2);
+            this.groupBox5.Controls.Add(this.materialTextBox1);
+            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.groupBox5.Location = new System.Drawing.Point(6, 8);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(1075, 425);
+            this.groupBox5.TabIndex = 76;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Dados do Aparelho";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox6.BackColor = System.Drawing.Color.White;
+            this.groupBox6.Controls.Add(this.groupBox3);
+            this.groupBox6.Controls.Add(this.txtDescricao);
+            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.groupBox6.Location = new System.Drawing.Point(578, 80);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(491, 247);
+            this.groupBox6.TabIndex = 84;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Dados de Saída";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox7.BackColor = System.Drawing.Color.White;
+            this.groupBox7.Controls.Add(this.materialMultiLineTextBox21);
+            this.groupBox7.Controls.Add(this.txtProblema);
+            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.groupBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.groupBox7.Location = new System.Drawing.Point(12, 135);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(560, 192);
+            this.groupBox7.TabIndex = 97;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Dados de Entrada";
+            // 
+            // materialMultiLineTextBox21
+            // 
+            this.materialMultiLineTextBox21.AnimateReadOnly = false;
+            this.materialMultiLineTextBox21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.materialMultiLineTextBox21.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.materialMultiLineTextBox21.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.materialMultiLineTextBox21.Depth = 0;
+            this.materialMultiLineTextBox21.HideSelection = true;
+            this.materialMultiLineTextBox21.Hint = "Situação Relatada";
+            this.materialMultiLineTextBox21.Location = new System.Drawing.Point(6, 23);
+            this.materialMultiLineTextBox21.MaxLength = 300;
+            this.materialMultiLineTextBox21.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialMultiLineTextBox21.Name = "materialMultiLineTextBox21";
+            this.materialMultiLineTextBox21.PasswordChar = '\0';
+            this.materialMultiLineTextBox21.ReadOnly = false;
+            this.materialMultiLineTextBox21.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.materialMultiLineTextBox21.SelectedText = "";
+            this.materialMultiLineTextBox21.SelectionLength = 0;
+            this.materialMultiLineTextBox21.SelectionStart = 0;
+            this.materialMultiLineTextBox21.ShortcutsEnabled = true;
+            this.materialMultiLineTextBox21.Size = new System.Drawing.Size(548, 72);
+            this.materialMultiLineTextBox21.TabIndex = 95;
+            this.materialMultiLineTextBox21.TabStop = false;
+            this.materialMultiLineTextBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.materialMultiLineTextBox21.UseAccent = false;
+            this.materialMultiLineTextBox21.UseSystemPasswordChar = false;
+            // 
+            // materialTextBox1
+            // 
+            this.materialTextBox1.AcceptsTab = true;
+            this.materialTextBox1.AnimateReadOnly = false;
+            this.materialTextBox1.AutoWordSelection = true;
+            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTextBox1.Depth = 0;
+            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox1.Hint = "Marca";
+            this.materialTextBox1.LeadingIcon = null;
+            this.materialTextBox1.LeaveOnEnterKey = true;
+            this.materialTextBox1.Location = new System.Drawing.Point(6, 33);
+            this.materialTextBox1.MaxLength = 60;
+            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox1.Multiline = false;
+            this.materialTextBox1.Name = "materialTextBox1";
+            this.materialTextBox1.Size = new System.Drawing.Size(284, 50);
+            this.materialTextBox1.TabIndex = 86;
+            this.materialTextBox1.Text = "";
+            this.materialTextBox1.TrailingIcon = null;
+            this.materialTextBox1.UseAccent = false;
+            // 
+            // materialTextBox2
+            // 
+            this.materialTextBox2.AcceptsTab = true;
+            this.materialTextBox2.AnimateReadOnly = false;
+            this.materialTextBox2.AutoWordSelection = true;
+            this.materialTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTextBox2.Depth = 0;
+            this.materialTextBox2.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox2.Hint = "Modelo";
+            this.materialTextBox2.LeadingIcon = null;
+            this.materialTextBox2.LeaveOnEnterKey = true;
+            this.materialTextBox2.Location = new System.Drawing.Point(296, 33);
+            this.materialTextBox2.MaxLength = 60;
+            this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox2.Multiline = false;
+            this.materialTextBox2.Name = "materialTextBox2";
+            this.materialTextBox2.Size = new System.Drawing.Size(315, 50);
+            this.materialTextBox2.TabIndex = 87;
+            this.materialTextBox2.Text = "";
+            this.materialTextBox2.TrailingIcon = null;
+            this.materialTextBox2.UseAccent = false;
+            // 
+            // materialTextBox3
+            // 
+            this.materialTextBox3.AcceptsTab = true;
+            this.materialTextBox3.AnimateReadOnly = false;
+            this.materialTextBox3.AutoWordSelection = true;
+            this.materialTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTextBox3.Depth = 0;
+            this.materialTextBox3.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox3.Hint = "IMEI";
+            this.materialTextBox3.LeadingIcon = null;
+            this.materialTextBox3.LeaveOnEnterKey = true;
+            this.materialTextBox3.Location = new System.Drawing.Point(6, 89);
+            this.materialTextBox3.MaxLength = 60;
+            this.materialTextBox3.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox3.Multiline = false;
+            this.materialTextBox3.Name = "materialTextBox3";
+            this.materialTextBox3.Size = new System.Drawing.Size(284, 50);
+            this.materialTextBox3.TabIndex = 88;
+            this.materialTextBox3.Text = "";
+            this.materialTextBox3.TrailingIcon = null;
+            this.materialTextBox3.UseAccent = false;
+            // 
+            // materialTextBox4
+            // 
+            this.materialTextBox4.AcceptsTab = true;
+            this.materialTextBox4.AnimateReadOnly = false;
+            this.materialTextBox4.AutoWordSelection = true;
+            this.materialTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTextBox4.Depth = 0;
+            this.materialTextBox4.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox4.Hint = "Nº Série";
+            this.materialTextBox4.LeadingIcon = null;
+            this.materialTextBox4.LeaveOnEnterKey = true;
+            this.materialTextBox4.Location = new System.Drawing.Point(296, 89);
+            this.materialTextBox4.MaxLength = 60;
+            this.materialTextBox4.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox4.Multiline = false;
+            this.materialTextBox4.Name = "materialTextBox4";
+            this.materialTextBox4.Size = new System.Drawing.Size(315, 50);
+            this.materialTextBox4.TabIndex = 89;
+            this.materialTextBox4.Text = "";
+            this.materialTextBox4.TrailingIcon = null;
+            this.materialTextBox4.UseAccent = false;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(40, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(32, 24);
+            this.label1.TabIndex = 90;
+            this.label1.Text = "⚫️";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(100, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 24);
+            this.label2.TabIndex = 91;
+            this.label2.Text = "⚫️";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(156, 23);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(32, 24);
+            this.label4.TabIndex = 92;
+            this.label4.Text = "⚫️";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(156, 78);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 24);
+            this.label5.TabIndex = 95;
+            this.label5.Text = "⚫️";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(100, 78);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 24);
+            this.label6.TabIndex = 94;
+            this.label6.Text = "⚫️";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(40, 77);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(32, 24);
+            this.label7.TabIndex = 93;
+            this.label7.Text = "⚫️";
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(156, 131);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(32, 24);
+            this.label8.TabIndex = 98;
+            this.label8.Text = "⚫️";
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.label9.Location = new System.Drawing.Point(100, 131);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(32, 24);
+            this.label9.TabIndex = 97;
+            this.label9.Text = "⚫️";
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(40, 130);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(32, 24);
+            this.label10.TabIndex = 96;
+            this.label10.Text = "⚫️";
+            // 
+            // materialTextBox5
+            // 
+            this.materialTextBox5.AcceptsTab = true;
+            this.materialTextBox5.AnimateReadOnly = false;
+            this.materialTextBox5.AutoWordSelection = true;
+            this.materialTextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTextBox5.Depth = 0;
+            this.materialTextBox5.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox5.Hint = "PIN/Senha";
+            this.materialTextBox5.LeadingIcon = null;
+            this.materialTextBox5.LeaveOnEnterKey = true;
+            this.materialTextBox5.Location = new System.Drawing.Point(627, 367);
+            this.materialTextBox5.MaxLength = 60;
+            this.materialTextBox5.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox5.Multiline = false;
+            this.materialTextBox5.Name = "materialTextBox5";
+            this.materialTextBox5.Size = new System.Drawing.Size(218, 50);
+            this.materialTextBox5.TabIndex = 100;
+            this.materialTextBox5.Text = "";
+            this.materialTextBox5.TrailingIcon = null;
+            this.materialTextBox5.UseAccent = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Location = new System.Drawing.Point(851, 237);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(218, 182);
+            this.panel1.TabIndex = 104;
+            // 
+            // materialMultiLineTextBox22
+            // 
+            this.materialMultiLineTextBox22.AnimateReadOnly = false;
+            this.materialMultiLineTextBox22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.materialMultiLineTextBox22.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.materialMultiLineTextBox22.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.materialMultiLineTextBox22.Depth = 0;
+            this.materialMultiLineTextBox22.HideSelection = true;
+            this.materialMultiLineTextBox22.Hint = "Descrição da avaliação";
+            this.materialMultiLineTextBox22.Location = new System.Drawing.Point(6, 145);
+            this.materialMultiLineTextBox22.MaxLength = 300;
+            this.materialMultiLineTextBox22.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialMultiLineTextBox22.Name = "materialMultiLineTextBox22";
+            this.materialMultiLineTextBox22.PasswordChar = '\0';
+            this.materialMultiLineTextBox22.ReadOnly = false;
+            this.materialMultiLineTextBox22.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.materialMultiLineTextBox22.SelectedText = "";
+            this.materialMultiLineTextBox22.SelectionLength = 0;
+            this.materialMultiLineTextBox22.SelectionStart = 0;
+            this.materialMultiLineTextBox22.ShortcutsEnabled = true;
+            this.materialMultiLineTextBox22.Size = new System.Drawing.Size(605, 90);
+            this.materialMultiLineTextBox22.TabIndex = 105;
+            this.materialMultiLineTextBox22.TabStop = false;
+            this.materialMultiLineTextBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.materialMultiLineTextBox22.UseAccent = false;
+            this.materialMultiLineTextBox22.UseSystemPasswordChar = false;
+            // 
+            // chkItemComposto
+            // 
+            this.chkItemComposto.AutoSize = true;
+            this.chkItemComposto.BackColor = System.Drawing.Color.Transparent;
+            this.chkItemComposto.Depth = 0;
+            this.chkItemComposto.Location = new System.Drawing.Point(640, 70);
+            this.chkItemComposto.Margin = new System.Windows.Forms.Padding(0);
+            this.chkItemComposto.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkItemComposto.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkItemComposto.Name = "chkItemComposto";
+            this.chkItemComposto.ReadOnly = false;
+            this.chkItemComposto.Ripple = true;
+            this.chkItemComposto.Size = new System.Drawing.Size(66, 37);
+            this.chkItemComposto.TabIndex = 106;
+            this.chkItemComposto.Text = "Tela";
+            this.chkItemComposto.UseVisualStyleBackColor = false;
+            // 
+            // materialCheckbox1
+            // 
+            this.materialCheckbox1.AutoSize = true;
+            this.materialCheckbox1.BackColor = System.Drawing.Color.Transparent;
+            this.materialCheckbox1.Depth = 0;
+            this.materialCheckbox1.Location = new System.Drawing.Point(640, 107);
+            this.materialCheckbox1.Margin = new System.Windows.Forms.Padding(0);
+            this.materialCheckbox1.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialCheckbox1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCheckbox1.Name = "materialCheckbox1";
+            this.materialCheckbox1.ReadOnly = false;
+            this.materialCheckbox1.Ripple = true;
+            this.materialCheckbox1.Size = new System.Drawing.Size(85, 37);
+            this.materialCheckbox1.TabIndex = 107;
+            this.materialCheckbox1.Text = "Bateria";
+            this.materialCheckbox1.UseVisualStyleBackColor = false;
+            // 
+            // materialCheckbox2
+            // 
+            this.materialCheckbox2.AutoSize = true;
+            this.materialCheckbox2.BackColor = System.Drawing.Color.Transparent;
+            this.materialCheckbox2.Depth = 0;
+            this.materialCheckbox2.Location = new System.Drawing.Point(774, 70);
+            this.materialCheckbox2.Margin = new System.Windows.Forms.Padding(0);
+            this.materialCheckbox2.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialCheckbox2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCheckbox2.Name = "materialCheckbox2";
+            this.materialCheckbox2.ReadOnly = false;
+            this.materialCheckbox2.Ripple = true;
+            this.materialCheckbox2.Size = new System.Drawing.Size(93, 37);
+            this.materialCheckbox2.TabIndex = 108;
+            this.materialCheckbox2.Text = "Carcaça";
+            this.materialCheckbox2.UseVisualStyleBackColor = false;
+            // 
+            // materialCheckbox3
+            // 
+            this.materialCheckbox3.AutoSize = true;
+            this.materialCheckbox3.BackColor = System.Drawing.Color.Transparent;
+            this.materialCheckbox3.Depth = 0;
+            this.materialCheckbox3.Location = new System.Drawing.Point(774, 107);
+            this.materialCheckbox3.Margin = new System.Windows.Forms.Padding(0);
+            this.materialCheckbox3.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialCheckbox3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCheckbox3.Name = "materialCheckbox3";
+            this.materialCheckbox3.ReadOnly = false;
+            this.materialCheckbox3.Ripple = true;
+            this.materialCheckbox3.Size = new System.Drawing.Size(93, 37);
+            this.materialCheckbox3.TabIndex = 109;
+            this.materialCheckbox3.Text = "Sistema";
+            this.materialCheckbox3.UseVisualStyleBackColor = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.label11.Location = new System.Drawing.Point(636, 29);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(150, 24);
+            this.label11.TabIndex = 132;
+            this.label11.Text = "Itens Avaliados";
+            // 
+            // materialCheckbox4
+            // 
+            this.materialCheckbox4.AutoSize = true;
+            this.materialCheckbox4.BackColor = System.Drawing.Color.Transparent;
+            this.materialCheckbox4.Depth = 0;
+            this.materialCheckbox4.Location = new System.Drawing.Point(640, 144);
+            this.materialCheckbox4.Margin = new System.Windows.Forms.Padding(0);
+            this.materialCheckbox4.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialCheckbox4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCheckbox4.Name = "materialCheckbox4";
+            this.materialCheckbox4.ReadOnly = false;
+            this.materialCheckbox4.Ripple = true;
+            this.materialCheckbox4.Size = new System.Drawing.Size(90, 37);
+            this.materialCheckbox4.TabIndex = 133;
+            this.materialCheckbox4.Text = "Câmera";
+            this.materialCheckbox4.UseVisualStyleBackColor = false;
+            // 
+            // materialCheckbox5
+            // 
+            this.materialCheckbox5.AutoSize = true;
+            this.materialCheckbox5.BackColor = System.Drawing.Color.Transparent;
+            this.materialCheckbox5.Depth = 0;
+            this.materialCheckbox5.Location = new System.Drawing.Point(774, 144);
+            this.materialCheckbox5.Margin = new System.Windows.Forms.Padding(0);
+            this.materialCheckbox5.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialCheckbox5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCheckbox5.Name = "materialCheckbox5";
+            this.materialCheckbox5.ReadOnly = false;
+            this.materialCheckbox5.Ripple = true;
+            this.materialCheckbox5.Size = new System.Drawing.Size(76, 37);
+            this.materialCheckbox5.TabIndex = 134;
+            this.materialCheckbox5.Text = "Áudio";
+            this.materialCheckbox5.UseVisualStyleBackColor = false;
+            // 
+            // materialCheckbox6
+            // 
+            this.materialCheckbox6.AutoSize = true;
+            this.materialCheckbox6.BackColor = System.Drawing.Color.Transparent;
+            this.materialCheckbox6.Depth = 0;
+            this.materialCheckbox6.Location = new System.Drawing.Point(904, 70);
+            this.materialCheckbox6.Margin = new System.Windows.Forms.Padding(0);
+            this.materialCheckbox6.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialCheckbox6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCheckbox6.Name = "materialCheckbox6";
+            this.materialCheckbox6.ReadOnly = false;
+            this.materialCheckbox6.Ripple = true;
+            this.materialCheckbox6.Size = new System.Drawing.Size(84, 37);
+            this.materialCheckbox6.TabIndex = 135;
+            this.materialCheckbox6.Text = "Botôes";
+            this.materialCheckbox6.UseVisualStyleBackColor = false;
+            // 
+            // materialCheckbox7
+            // 
+            this.materialCheckbox7.AutoSize = true;
+            this.materialCheckbox7.BackColor = System.Drawing.Color.Transparent;
+            this.materialCheckbox7.Depth = 0;
+            this.materialCheckbox7.Location = new System.Drawing.Point(904, 107);
+            this.materialCheckbox7.Margin = new System.Windows.Forms.Padding(0);
+            this.materialCheckbox7.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialCheckbox7.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCheckbox7.Name = "materialCheckbox7";
+            this.materialCheckbox7.ReadOnly = false;
+            this.materialCheckbox7.Ripple = true;
+            this.materialCheckbox7.Size = new System.Drawing.Size(111, 37);
+            this.materialCheckbox7.TabIndex = 136;
+            this.materialCheckbox7.Text = "Segurança";
+            this.materialCheckbox7.UseVisualStyleBackColor = false;
+            // 
+            // materialCheckbox8
+            // 
+            this.materialCheckbox8.AutoSize = true;
+            this.materialCheckbox8.BackColor = System.Drawing.Color.Transparent;
+            this.materialCheckbox8.Depth = 0;
+            this.materialCheckbox8.Location = new System.Drawing.Point(904, 144);
+            this.materialCheckbox8.Margin = new System.Windows.Forms.Padding(0);
+            this.materialCheckbox8.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialCheckbox8.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCheckbox8.Name = "materialCheckbox8";
+            this.materialCheckbox8.ReadOnly = false;
+            this.materialCheckbox8.Ripple = true;
+            this.materialCheckbox8.Size = new System.Drawing.Size(114, 37);
+            this.materialCheckbox8.TabIndex = 137;
+            this.materialCheckbox8.Text = "Conectores";
+            this.materialCheckbox8.UseVisualStyleBackColor = false;
+            // 
+            // materialCheckbox9
+            // 
+            this.materialCheckbox9.AutoSize = true;
+            this.materialCheckbox9.BackColor = System.Drawing.Color.Transparent;
+            this.materialCheckbox9.Depth = 0;
+            this.materialCheckbox9.Location = new System.Drawing.Point(904, 185);
+            this.materialCheckbox9.Margin = new System.Windows.Forms.Padding(0);
+            this.materialCheckbox9.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialCheckbox9.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCheckbox9.Name = "materialCheckbox9";
+            this.materialCheckbox9.ReadOnly = false;
+            this.materialCheckbox9.Ripple = true;
+            this.materialCheckbox9.Size = new System.Drawing.Size(94, 37);
+            this.materialCheckbox9.TabIndex = 138;
+            this.materialCheckbox9.Text = "Outros...";
+            this.materialCheckbox9.UseVisualStyleBackColor = false;
+            // 
+            // materialTextBox6
+            // 
+            this.materialTextBox6.AcceptsTab = true;
+            this.materialTextBox6.AnimateReadOnly = false;
+            this.materialTextBox6.AutoWordSelection = true;
+            this.materialTextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTextBox6.Depth = 0;
+            this.materialTextBox6.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox6.Hint = "Resumo Serviço ex: (Troca de Tela)";
+            this.materialTextBox6.LeadingIcon = null;
+            this.materialTextBox6.LeaveOnEnterKey = true;
+            this.materialTextBox6.Location = new System.Drawing.Point(6, 80);
+            this.materialTextBox6.MaxLength = 60;
+            this.materialTextBox6.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox6.Multiline = false;
+            this.materialTextBox6.Name = "materialTextBox6";
+            this.materialTextBox6.Size = new System.Drawing.Size(566, 50);
+            this.materialTextBox6.TabIndex = 98;
+            this.materialTextBox6.Text = "";
+            this.materialTextBox6.TrailingIcon = null;
+            this.materialTextBox6.UseAccent = false;
+            // 
             // CadastroOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1362,6 +1961,13 @@
             this.painelRadius2.ResumeLayout(false);
             this.pnSuperior.ResumeLayout(false);
             this.pnSuperior.PerformLayout();
+            this.tbpDadosAparelho.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1429,5 +2035,38 @@
         private Componentes.RoundedPanel pnStatus;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TabPage tbpDadosAparelho;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox2 materialMultiLineTextBox21;
+        private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
+        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
+        private MaterialSkin.Controls.MaterialTextBox materialTextBox4;
+        private MaterialSkin.Controls.MaterialTextBox materialTextBox3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private MaterialSkin.Controls.MaterialTextBox materialTextBox5;
+        private System.Windows.Forms.Panel panel1;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox2 materialMultiLineTextBox22;
+        private MaterialSkin.Controls.MaterialCheckbox materialCheckbox2;
+        private MaterialSkin.Controls.MaterialCheckbox materialCheckbox1;
+        private MaterialSkin.Controls.MaterialCheckbox chkItemComposto;
+        private MaterialSkin.Controls.MaterialCheckbox materialCheckbox3;
+        private MaterialSkin.Controls.MaterialCheckbox materialCheckbox4;
+        private System.Windows.Forms.Label label11;
+        private MaterialSkin.Controls.MaterialCheckbox materialCheckbox9;
+        private MaterialSkin.Controls.MaterialCheckbox materialCheckbox8;
+        private MaterialSkin.Controls.MaterialCheckbox materialCheckbox7;
+        private MaterialSkin.Controls.MaterialCheckbox materialCheckbox6;
+        private MaterialSkin.Controls.MaterialCheckbox materialCheckbox5;
+        private MaterialSkin.Controls.MaterialTextBox materialTextBox6;
     }
 }
