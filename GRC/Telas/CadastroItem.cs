@@ -8,9 +8,11 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
+using System.IO.Ports;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -22,6 +24,7 @@ namespace GRC.Telas
 {
     public partial class CadastroItem : Form
     {
+
         private long _idItem = 0;
         private bool _itemVenda = false;
         private bool _favorito = false;
@@ -29,8 +32,30 @@ namespace GRC.Telas
         private string _projecaoVenda;
         private ServiceItemEstoque _service = new ServiceItemEstoque();
 
+        // Importar as DLLs do Windows para mover o formulário
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
 
-        // Constantes do Windows API
+        // Constantes para a mensagem de movimento
+        private const int WM_NCLBUTTONDOWN = 0xA1;
+        private const int HT_CAPTION = 0x2;
+
+        public CadastroItem(long id = 0)
+        {
+            InitializeComponent();
+            _idItem = id;
+
+            // this.FormBorderStyle = FormBorderStyle.None; // Garante que está sem borda
+            //this.DoubleBuffered = true; // Melhora a performance visual ao redimensionar
+            //this.SetStyle(ControlStyles.ResizeRedraw, true);
+
+        }
+        /*
+         * 
+         * 
+         * // Constantes do Windows API
         private const int WM_NCHITTEST = 0x84;
         private const int HTCLIENT = 1;
         private const int HTCAPTION = 2;
@@ -44,28 +69,9 @@ namespace GRC.Telas
         private const int HTBOTTOMRIGHT = 17;
 
         private const int borderSize = 5;
-
-        // Importar as DLLs do Windows para mover o formulário
-        [DllImport("user32.dll")]
-        public static extern bool ReleaseCapture();
-        [DllImport("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-
-        // Constantes para a mensagem de movimento
-        private const int WM_NCLBUTTONDOWN = 0xA1;
-        private const int HT_CAPTION = 0x2;
-
-
-        public CadastroItem(long id = 0)
-        {
-            InitializeComponent();
-            _idItem = id;
-
-            this.FormBorderStyle = FormBorderStyle.None; // Garante que está sem borda
-            this.DoubleBuffered = true; // Melhora a performance visual ao redimensionar
-            this.SetStyle(ControlStyles.ResizeRedraw, true);
-        }
-        /*protected override void WndProc(ref Message m)
+        
+        
+        protected override void WndProc(ref Message m)
         {
             base.WndProc(ref m);
 
@@ -890,80 +896,117 @@ namespace GRC.Telas
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
             }
         }
-        private StringBuilder barcodeBuffer = new StringBuilder();
-        private DateTime lastKeyTime = DateTime.Now;
+        private SerialPort _serialPort; // Objeto instanciado via código
 
-        private void CadastroItem_KeyDown(object sender, KeyEventArgs e)
+        protected override void OnLoad(EventArgs e)
         {
-            // 1. Ignora se já estiver no campo de código de barras
-            if (txtCodigoBarras.Focused) return;
+            base.OnLoad(e);
+            // Chamamos a inicialização assim que o formulário carrega
+            InicializarLeitor();
+        }
 
-            TimeSpan elapsed = DateTime.Now - lastKeyTime;
-            lastKeyTime = DateTime.Now;
+        private void InicializarLeitor()
+        {
+            // Busca a porta usando sua classe de serviço
+            string porta = ScannerSearch.LocalizarPortaLeitor();
 
-            bool isDataKey = (e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9) ||
-                             (e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9) ||
-                             (e.KeyCode >= Keys.A && e.KeyCode <= Keys.Z);
-
-            if (isDataKey)
+            if (!string.IsNullOrEmpty(porta))
             {
-                char c = (char)e.KeyValue;
-
-                // Se for rápido (LEITOR), bloqueamos a tecla para não sujar o campo atual
-                if (elapsed.TotalMilliseconds < 40)
+                // Instanciamos o objeto manualmente já que não há componente no Designer
+                _serialPort = new SerialPort(porta)
                 {
-                    barcodeBuffer.Append(c);
-                    e.Handled = true;
-                    e.SuppressKeyPress = true;
-                }
-                else
-                {
-                    // Se for a PRIMEIRA tecla de uma possível leitura, ou digitação humana.
-                    // Não damos 'Handled' para não causar lentidão ao digitar.
-                    barcodeBuffer.Clear();
-                    barcodeBuffer.Append(c);
+                    BaudRate = 9600,
+                    Parity = Parity.None,
+                    DataBits = 8,
+                    StopBits = StopBits.One,
+                    Handshake = Handshake.None,
+                    ReadTimeout = 500 // Evita que o app trave esperando dados infinitamente
+                };
 
-                    // Aqui está o truque: não bloqueamos, mas guardamos quem era o controle 
-                    // que recebeu essa tecla "vazada".
-                }
-            }
+                // Assinamos o evento de recebimento de dados
+                _serialPort.DataReceived += SerialPort_DataReceived;
 
-            // 2. No Enter (Final da leitura do Tomate)
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (barcodeBuffer.Length >= 3)
+                try
                 {
-                    // --- AÇÃO DE LIMPEZA DO CARACTERE VAZADO ---
-                    // Se o foco está em um TextBox, removemos o último caractere (o primeiro do código)
-                    if (this.ActiveControl is MaterialTextBox currentTxt && currentTxt != txtCodigoBarras)
+                    _serialPort.Open();
+
+                    // Atualiza Label de status se existir
+                    if (lblStatusLeitor != null)
                     {
-                        if (currentTxt.Text.Length > 0)
-                        {
-                            currentTxt.Text = currentTxt.Text.Remove(currentTxt.Text.Length - 1);
-                        }
+                        lblStatusLeitor.BackColor = Color.DarkGreen;
+                        lblStatusLeitor.Text = $"Leitor OK";
                     }
 
-                    txtCodigoBarras.SelectAll();
-                    
-                    // Preenche o campo correto
-                    txtCodigoBarras.Text = barcodeBuffer.ToString();
-                    txtCodigoBarras.Focus();
-                    txtCodigoBarras.SelectionStart = txtCodigoBarras.Text.Length;
-
-                    barcodeBuffer.Clear();
-                    e.Handled = true;
-                    e.SuppressKeyPress = true;
                 }
-                else
+                catch (Exception ex)
                 {
-                    barcodeBuffer.Clear();
+                    MessageBox.Show($"O leitor foi detectado na {porta}, mas o Windows negou o acesso: {ex.Message}", "Erro de Hardware", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                if (lblStatusLeitor != null)
+                {
+                    lblStatusLeitor.Text = "Leitor não encontrado";
+                    lblStatusLeitor.BackColor = Color.DarkRed;
                 }
             }
         }
 
-        private void txtCodigoBarras_Enter(object sender, EventArgs e)
+        private void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            txtCodigoBarras.SelectAll();
+            try
+            {
+                // Aguarda um pequeno instante para garantir que o buffer receba o código completo
+                System.Threading.Thread.Sleep(50);
+
+                if (_serialPort == null || !_serialPort.IsOpen) return;
+
+                string dados = _serialPort.ReadExisting();
+                string codigoLimpo = dados.Trim(); // Remove o \r\n (Enter) que o leitor envia
+
+                if (!string.IsNullOrEmpty(codigoLimpo))
+                {
+                    // Essencial: Porta Serial roda em Thread separada. Usamos Invoke para mexer na UI.
+                    this.Invoke(new Action(() =>
+                    {
+                        ProcessarLeitura(codigoLimpo);
+                    }));
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Falha na leitura serial: " + ex.Message);
+            }
+        }
+
+        private void ProcessarLeitura(string codigo)
+        {
+            // Atribui o código ao TextBox
+            txtCodigoBarras.Text = codigo;
+
+            // Beep opcional para confirmar leitura ao usuário
+            //Console.Beep(1500, 200);
+
+            // Foca no próximo campo de cadastro (Descrição/Nome)
+            txtDescricao.Focus();
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            // Destruição segura do objeto para não travar a porta COM no Windows
+            if (_serialPort != null)
+            {
+                if (_serialPort.IsOpen)
+                {
+                    // Desassina o evento antes de fechar para evitar chamadas em objetos descartados
+                    _serialPort.DataReceived -= SerialPort_DataReceived;
+                    _serialPort.Close();
+                }
+                _serialPort.Dispose();
+                _serialPort = null;
+            }
+            base.OnFormClosing(e);
         }
     }
 }

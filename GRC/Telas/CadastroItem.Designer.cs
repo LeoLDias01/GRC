@@ -92,6 +92,7 @@
             this.tbpDadosItem = new System.Windows.Forms.TabPage();
             this.tbpComposicao = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
+            this.lblStatusLeitor = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItemComposicao)).BeginInit();
             this.pnSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcAtivo)).BeginInit();
@@ -499,6 +500,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblStatusLeitor);
             this.groupBox2.Controls.Add(this.txtId);
             this.groupBox2.Controls.Add(this.txtDescricao);
             this.groupBox2.Controls.Add(this.txtCodigoBarras);
@@ -578,7 +580,6 @@
             this.txtCodigoBarras.Text = "";
             this.txtCodigoBarras.TrailingIcon = null;
             this.txtCodigoBarras.UseAccent = false;
-            this.txtCodigoBarras.Enter += new System.EventHandler(this.txtCodigoBarras_Enter);
             // 
             // btnAddComposicao
             // 
@@ -1232,6 +1233,19 @@
             this.label4.TabIndex = 45;
             this.label4.Text = "Composição de Item";
             // 
+            // lblStatusLeitor
+            // 
+            this.lblStatusLeitor.AutoSize = true;
+            this.lblStatusLeitor.BackColor = System.Drawing.Color.Green;
+            this.lblStatusLeitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.lblStatusLeitor.ForeColor = System.Drawing.Color.White;
+            this.lblStatusLeitor.Location = new System.Drawing.Point(151, 3);
+            this.lblStatusLeitor.Name = "lblStatusLeitor";
+            this.lblStatusLeitor.Size = new System.Drawing.Size(60, 13);
+            this.lblStatusLeitor.TabIndex = 29;
+            this.lblStatusLeitor.Text = "Leitor OK";
+            this.lblStatusLeitor.Visible = false;
+            // 
             // CadastroItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1249,7 +1263,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CadastroItem";
             this.Load += new System.EventHandler(this.CadastroItem_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CadastroItem_KeyDown);
             this.Leave += new System.EventHandler(this.CadastroItem_Leave);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CadastroItem_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItemComposicao)).EndInit();
@@ -1263,6 +1276,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcbImagemItem)).EndInit();
             this.painelRadius5.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.painelRadius3.ResumeLayout(false);
             this.painelRadius3.PerformLayout();
             this.gpbInfoVenda.ResumeLayout(false);
@@ -1338,5 +1352,6 @@
         private System.Windows.Forms.TabPage tbpComposicao;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblStatusLeitor;
     }
 }
