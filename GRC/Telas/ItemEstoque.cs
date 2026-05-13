@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
 using System.Net.Http;
 using System.Runtime.InteropServices;
@@ -288,50 +289,124 @@ namespace GRC.Telas
 
         private void ItemEstoque_KeyDown(object sender, KeyEventArgs e)
         {
-            /*// Verifica se o foco NÃO está no campo ou se, mesmo estando, 
-            // queremos tratar o início de uma nova leitura automática
-            if (!txtCodigoBarras.Focused)
-            {
-                if ((e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9) ||
-                    (e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9) ||
-                    (e.KeyCode >= Keys.A && e.KeyCode <= Keys.Z))
-                {
-                    // 1. Foca no campo
-                    txtCodigoBarras.Focus();
-
-                    // 2. Transforma a tecla no caractere
-                    char caractereDigitado = (char)e.KeyValue;
-
-                    // 3. SUBSTITUIÇÃO: Usamos '=' em vez de '+=' para limpar o que existia
-                    // e começar o campo apenas com este primeiro caractere do scanner
-                    txtCodigoBarras.Text = caractereDigitado.ToString();
-
-                    // 4. Posiciona o cursor no final para os próximos caracteres do scanner entrarem na ordem
-                    txtCodigoBarras.SelectionStart = txtCodigoBarras.Text.Length;
-
-                    e.SuppressKeyPress = true;
-                    e.Handled = true;
-                }
-            }
-            else if (e.KeyCode == Keys.Enter)
-            {
-                e.SuppressKeyPress = true;
-
-                // Chame sua validação aqui
-                // ValidarCodigoBarras();
-
-                // 5. ESTRATÉGIA DE LIMPEZA PARA O PRÓXIMO BIP:
-                // Selecionamos tudo. Se o foco continuar no campo e o scanner disparar de novo,
-                // o comportamento padrão do Windows substituirá o texto selecionado pelo novo.
-                txtCodigoBarras.SelectAll();
-                tbnSearch.Focus();
-                tbnSearch.PerformClick();
-            }*/
+            
         }
 
         private void txtCodigoBarras_Enter(object sender, EventArgs e)
         {
-           /* txtCodigoBarras.SelectAll();*/
+           
+        }
+
+        private SerialPort _serialPort; // Objeto instanciado via código
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            // Chamamos a inicialização assim que o formulário carrega
+            InicializarLeitor();
+        }
+
+        private void InicializarLeitor()
+        {
+            // Busca a porta usando sua classe de serviço
+            string porta = ScannerSearch.LocalizarPortaLeitor();
+
+            if (!string.IsNullOrEmpty(porta))
+            {
+                // Instanciamos o objeto manualmente já que não há componente no Designer
+                _serialPort = new SerialPort(porta)
+                {
+                    BaudRate = 9600,
+                    Parity = Parity.None,
+                    DataBits = 8,
+                    StopBits = StopBits.One,
+                    Handshake = Handshake.None,
+                    ReadTimeout = 500 // Evita que o app trave esperando dados infinitamente
+                };
+
+                // Assinamos o evento de recebimento de dados
+                _serialPort.DataReceived += SerialPort_DataReceived;
+
+                try
+                {
+                    _serialPort.Open();
+
+                    // Atualiza Label de status se existir
+                    if (lblStatusLeitor != null)
+                    {
+                        lblStatusLeitor.BackColor = Color.DarkGreen;
+                        lblStatusLeitor.Text = $"Leitor OK";
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"O leitor foi detectado na {porta}, mas o Windows negou o acesso: {ex.Message}", "Erro de Hardware", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                if (lblStatusLeitor != null)
+                {
+                    lblStatusLeitor.Text = "Leitor não encontrado";
+                    lblStatusLeitor.BackColor = Color.DarkRed;
+                }
+            }
+        }
+
+        private void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            try
+            {
+                // Aguarda um pequeno instante para garantir que o buffer receba o código completo
+                System.Threading.Thread.Sleep(50);
+
+                if (_serialPort == null || !_serialPort.IsOpen) return;
+
+                string dados = _serialPort.ReadExisting();
+                string codigoLimpo = dados.Trim(); // Remove o \r\n (Enter) que o leitor envia
+
+                if (!string.IsNullOrEmpty(codigoLimpo))
+                {
+                    // Essencial: Porta Serial roda em Thread separada. Usamos Invoke para mexer na UI.
+                    this.Invoke(new Action(() =>
+                    {
+                        ProcessarLeitura(codigoLimpo);
+                    }));
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Falha na leitura serial: " + ex.Message);
+            }
+        }
+
+        private void ProcessarLeitura(string codigo)
+        {
+            // Atribui o código ao TextBox
+            txtCodigoBarras.Text = codigo;
+
+            // Beep opcional para confirmar leitura ao usuário
+            //Console.Beep(1500, 200);
+
+            tbnSearch_Click(tbnSearch, EventArgs.Empty);
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            // Destruição segura do objeto para não travar a porta COM no Windows
+            if (_serialPort != null)
+            {
+                if (_serialPort.IsOpen)
+                {
+                    // Desassina o evento antes de fechar para evitar chamadas em objetos descartados
+                    _serialPort.DataReceived -= SerialPort_DataReceived;
+                    _serialPort.Close();
+                }
+                _serialPort.Dispose();
+                _serialPort = null;
+            }
+            base.OnFormClosing(e);
         }
     }
 }

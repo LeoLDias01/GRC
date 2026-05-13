@@ -48,27 +48,22 @@
             this.btnSalvar = new GRC.Componentes.CustomButton();
             this.pcbFavorito = new GRC.Componentes.CustomPictureBox();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.chkItemComposto = new MaterialSkin.Controls.MaterialCheckbox();
+            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.tbcItem = new MaterialSkin.Controls.MaterialTabControl();
+            this.tbpDadosItem = new System.Windows.Forms.TabPage();
             this.painelRadius7 = new GRC.Componentes.PainelRadius();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pcbImagemItem = new GRC.Componentes.CustomPictureBox();
             this.btnBuscaImagem = new GRC.Componentes.CustomButton();
             this.btnExcluiImagem = new GRC.Componentes.CustomButton();
-            this.chkItemComposto = new MaterialSkin.Controls.MaterialCheckbox();
             this.painelRadius5 = new GRC.Componentes.PainelRadius();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblStatusLeitor = new System.Windows.Forms.Label();
             this.txtId = new MaterialSkin.Controls.MaterialTextBox();
             this.txtDescricao = new MaterialSkin.Controls.MaterialTextBox();
             this.txtCodigoBarras = new MaterialSkin.Controls.MaterialTextBox();
-            this.btnAddComposicao = new GRC.Componentes.CustomButton();
-            this.swItemVenda = new MaterialSkin.Controls.MaterialSwitch();
-            this.painelRadius3 = new GRC.Componentes.PainelRadius();
-            this.gpbInfoVenda = new System.Windows.Forms.GroupBox();
-            this.txtLucroTotal = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtDescricaoItemVenda = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtLucroItem = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtValorVenda = new MaterialSkin.Controls.MaterialTextBox();
             this.painelRadius2 = new GRC.Componentes.PainelRadius();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbAvisoBloqueio = new System.Windows.Forms.Label();
@@ -87,27 +82,32 @@
             this.cbFornecedor = new MaterialSkin.Controls.MaterialComboBox();
             this.cbCategoria = new MaterialSkin.Controls.MaterialComboBox();
             this.txtCustoUnitario = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.tbcItem = new MaterialSkin.Controls.MaterialTabControl();
-            this.tbpDadosItem = new System.Windows.Forms.TabPage();
+            this.painelRadius3 = new GRC.Componentes.PainelRadius();
+            this.swItemVenda = new MaterialSkin.Controls.MaterialSwitch();
+            this.gpbInfoVenda = new System.Windows.Forms.GroupBox();
+            this.txtLucroTotal = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtDescricaoItemVenda = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtLucroItem = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtValorVenda = new MaterialSkin.Controls.MaterialTextBox();
             this.tbpComposicao = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
-            this.lblStatusLeitor = new System.Windows.Forms.Label();
+            this.btnAddComposicao = new GRC.Componentes.CustomButton();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItemComposicao)).BeginInit();
             this.pnSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcAtivo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbFavorito)).BeginInit();
+            this.tbcItem.SuspendLayout();
+            this.tbpDadosItem.SuspendLayout();
             this.painelRadius7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbImagemItem)).BeginInit();
             this.painelRadius5.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.painelRadius3.SuspendLayout();
-            this.gpbInfoVenda.SuspendLayout();
             this.painelRadius2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tbcItem.SuspendLayout();
-            this.tbpDadosItem.SuspendLayout();
+            this.painelRadius3.SuspendLayout();
+            this.gpbInfoVenda.SuspendLayout();
             this.tbpComposicao.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -364,19 +364,74 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 22;
             // 
-            // panel2
+            // chkItemComposto
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 599);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1138, 5);
-            this.panel2.TabIndex = 161;
+            this.chkItemComposto.AutoSize = true;
+            this.chkItemComposto.BackColor = System.Drawing.Color.Transparent;
+            this.chkItemComposto.Depth = 0;
+            this.chkItemComposto.Location = new System.Drawing.Point(6, 10);
+            this.chkItemComposto.Margin = new System.Windows.Forms.Padding(0);
+            this.chkItemComposto.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkItemComposto.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkItemComposto.Name = "chkItemComposto";
+            this.chkItemComposto.ReadOnly = false;
+            this.chkItemComposto.Ripple = true;
+            this.chkItemComposto.Size = new System.Drawing.Size(35, 37);
+            this.chkItemComposto.TabIndex = 23;
+            this.chkItemComposto.UseVisualStyleBackColor = false;
+            this.chkItemComposto.CheckedChanged += new System.EventHandler(this.chkItemComposto_CheckedChanged);
+            // 
+            // materialTabSelector1
+            // 
+            this.materialTabSelector1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialTabSelector1.BaseTabControl = this.tbcItem;
+            this.materialTabSelector1.CharacterCasing = MaterialSkin.Controls.MaterialTabSelector.CustomCharacterCasing.Normal;
+            this.materialTabSelector1.Depth = 0;
+            this.materialTabSelector1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTabSelector1.Location = new System.Drawing.Point(8, 76);
+            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabSelector1.Name = "materialTabSelector1";
+            this.materialTabSelector1.Size = new System.Drawing.Size(1118, 41);
+            this.materialTabSelector1.TabIndex = 162;
+            this.materialTabSelector1.TabIndicatorHeight = 3;
+            this.materialTabSelector1.Text = "materialTabSelector1";
+            // 
+            // tbcItem
+            // 
+            this.tbcItem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbcItem.Controls.Add(this.tbpDadosItem);
+            this.tbcItem.Controls.Add(this.tbpComposicao);
+            this.tbcItem.Depth = 0;
+            this.tbcItem.Location = new System.Drawing.Point(8, 123);
+            this.tbcItem.MouseState = MaterialSkin.MouseState.HOVER;
+            this.tbcItem.Multiline = true;
+            this.tbcItem.Name = "tbcItem";
+            this.tbcItem.SelectedIndex = 0;
+            this.tbcItem.ShowToolTips = true;
+            this.tbcItem.Size = new System.Drawing.Size(1118, 481);
+            this.tbcItem.TabIndex = 163;
+            // 
+            // tbpDadosItem
+            // 
+            this.tbpDadosItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.tbpDadosItem.Controls.Add(this.painelRadius7);
+            this.tbpDadosItem.Controls.Add(this.painelRadius5);
+            this.tbpDadosItem.Controls.Add(this.painelRadius2);
+            this.tbpDadosItem.Controls.Add(this.painelRadius3);
+            this.tbpDadosItem.Location = new System.Drawing.Point(4, 22);
+            this.tbpDadosItem.Name = "tbpDadosItem";
+            this.tbpDadosItem.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpDadosItem.Size = new System.Drawing.Size(1110, 455);
+            this.tbpDadosItem.TabIndex = 0;
+            this.tbpDadosItem.Text = "Dados do Item";
             // 
             // painelRadius7
             // 
             this.painelRadius7.BackColor = System.Drawing.Color.Transparent;
-            this.painelRadius7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.painelRadius7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
             this.painelRadius7.Controls.Add(this.label1);
             this.painelRadius7.Controls.Add(this.label2);
             this.painelRadius7.Controls.Add(this.pcbImagemItem);
@@ -469,23 +524,6 @@
             this.btnExcluiImagem.UseVisualStyleBackColor = false;
             this.btnExcluiImagem.Click += new System.EventHandler(this.btnExcluiImagem_Click);
             // 
-            // chkItemComposto
-            // 
-            this.chkItemComposto.AutoSize = true;
-            this.chkItemComposto.BackColor = System.Drawing.Color.Transparent;
-            this.chkItemComposto.Depth = 0;
-            this.chkItemComposto.Location = new System.Drawing.Point(6, 10);
-            this.chkItemComposto.Margin = new System.Windows.Forms.Padding(0);
-            this.chkItemComposto.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkItemComposto.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkItemComposto.Name = "chkItemComposto";
-            this.chkItemComposto.ReadOnly = false;
-            this.chkItemComposto.Ripple = true;
-            this.chkItemComposto.Size = new System.Drawing.Size(35, 37);
-            this.chkItemComposto.TabIndex = 23;
-            this.chkItemComposto.UseVisualStyleBackColor = false;
-            this.chkItemComposto.CheckedChanged += new System.EventHandler(this.chkItemComposto_CheckedChanged);
-            // 
             // painelRadius5
             // 
             this.painelRadius5.BackColor = System.Drawing.Color.White;
@@ -512,6 +550,17 @@
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Item";
+            // 
+            // lblStatusLeitor
+            // 
+            this.lblStatusLeitor.AutoSize = true;
+            this.lblStatusLeitor.BackColor = System.Drawing.Color.Green;
+            this.lblStatusLeitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.lblStatusLeitor.ForeColor = System.Drawing.Color.White;
+            this.lblStatusLeitor.Location = new System.Drawing.Point(151, 3);
+            this.lblStatusLeitor.Name = "lblStatusLeitor";
+            this.lblStatusLeitor.Size = new System.Drawing.Size(0, 13);
+            this.lblStatusLeitor.TabIndex = 29;
             // 
             // txtId
             // 
@@ -580,171 +629,6 @@
             this.txtCodigoBarras.Text = "";
             this.txtCodigoBarras.TrailingIcon = null;
             this.txtCodigoBarras.UseAccent = false;
-            // 
-            // btnAddComposicao
-            // 
-            this.btnAddComposicao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnAddComposicao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnAddComposicao.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnAddComposicao.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnAddComposicao.CorTextoBotao = System.Drawing.Color.White;
-            this.btnAddComposicao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddComposicao.FlatAppearance.BorderSize = 0;
-            this.btnAddComposicao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnAddComposicao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddComposicao.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.btnAddComposicao.ForeColor = System.Drawing.Color.White;
-            this.btnAddComposicao.Image = ((System.Drawing.Image)(resources.GetObject("btnAddComposicao.Image")));
-            this.btnAddComposicao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddComposicao.Location = new System.Drawing.Point(1051, 6);
-            this.btnAddComposicao.Name = "btnAddComposicao";
-            this.btnAddComposicao.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnAddComposicao.Size = new System.Drawing.Size(53, 43);
-            this.btnAddComposicao.TabIndex = 24;
-            this.btnAddComposicao.TamanhoBorda = 0;
-            this.btnAddComposicao.TamanhoRaio = 10;
-            this.btnAddComposicao.UseVisualStyleBackColor = false;
-            this.btnAddComposicao.Click += new System.EventHandler(this.btnAddComposicao_Click);
-            // 
-            // swItemVenda
-            // 
-            this.swItemVenda.AutoSize = true;
-            this.swItemVenda.BackColor = System.Drawing.Color.Transparent;
-            this.swItemVenda.Depth = 0;
-            this.swItemVenda.Location = new System.Drawing.Point(14, 32);
-            this.swItemVenda.Margin = new System.Windows.Forms.Padding(0);
-            this.swItemVenda.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.swItemVenda.MouseState = MaterialSkin.MouseState.HOVER;
-            this.swItemVenda.Name = "swItemVenda";
-            this.swItemVenda.Ripple = true;
-            this.swItemVenda.Size = new System.Drawing.Size(159, 37);
-            this.swItemVenda.TabIndex = 18;
-            this.swItemVenda.Text = "Item de Venda";
-            this.swItemVenda.UseVisualStyleBackColor = false;
-            this.swItemVenda.CheckedChanged += new System.EventHandler(this.swItemVenda_CheckedChanged);
-            // 
-            // painelRadius3
-            // 
-            this.painelRadius3.BackColor = System.Drawing.Color.White;
-            this.painelRadius3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.painelRadius3.Controls.Add(this.swItemVenda);
-            this.painelRadius3.Controls.Add(this.gpbInfoVenda);
-            this.painelRadius3.Location = new System.Drawing.Point(6, 332);
-            this.painelRadius3.Name = "painelRadius3";
-            this.painelRadius3.Radius = 30;
-            this.painelRadius3.Size = new System.Drawing.Size(1098, 96);
-            this.painelRadius3.TabIndex = 28;
-            this.painelRadius3.Thickness = 5F;
-            // 
-            // gpbInfoVenda
-            // 
-            this.gpbInfoVenda.Controls.Add(this.txtLucroTotal);
-            this.gpbInfoVenda.Controls.Add(this.txtDescricaoItemVenda);
-            this.gpbInfoVenda.Controls.Add(this.txtLucroItem);
-            this.gpbInfoVenda.Controls.Add(this.txtValorVenda);
-            this.gpbInfoVenda.Enabled = false;
-            this.gpbInfoVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbInfoVenda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.gpbInfoVenda.Location = new System.Drawing.Point(191, 5);
-            this.gpbInfoVenda.Name = "gpbInfoVenda";
-            this.gpbInfoVenda.Size = new System.Drawing.Size(893, 83);
-            this.gpbInfoVenda.TabIndex = 28;
-            this.gpbInfoVenda.TabStop = false;
-            this.gpbInfoVenda.Text = "Informações de Venda";
-            // 
-            // txtLucroTotal
-            // 
-            this.txtLucroTotal.AcceptsTab = true;
-            this.txtLucroTotal.AnimateReadOnly = false;
-            this.txtLucroTotal.AutoWordSelection = true;
-            this.txtLucroTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLucroTotal.Depth = 0;
-            this.txtLucroTotal.Enabled = false;
-            this.txtLucroTotal.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtLucroTotal.Hint = "Lucro Total";
-            this.txtLucroTotal.LeadingIcon = null;
-            this.txtLucroTotal.LeaveOnEnterKey = true;
-            this.txtLucroTotal.Location = new System.Drawing.Point(731, 27);
-            this.txtLucroTotal.MaxLength = 60;
-            this.txtLucroTotal.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtLucroTotal.Multiline = false;
-            this.txtLucroTotal.Name = "txtLucroTotal";
-            this.txtLucroTotal.Size = new System.Drawing.Size(154, 50);
-            this.txtLucroTotal.TabIndex = 22;
-            this.txtLucroTotal.Text = "";
-            this.txtLucroTotal.TrailingIcon = null;
-            this.txtLucroTotal.UseAccent = false;
-            // 
-            // txtDescricaoItemVenda
-            // 
-            this.txtDescricaoItemVenda.AcceptsTab = true;
-            this.txtDescricaoItemVenda.AnimateReadOnly = false;
-            this.txtDescricaoItemVenda.AutoWordSelection = true;
-            this.txtDescricaoItemVenda.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDescricaoItemVenda.Depth = 0;
-            this.txtDescricaoItemVenda.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtDescricaoItemVenda.Hint = "Descrição do item para venda";
-            this.txtDescricaoItemVenda.LeadingIcon = null;
-            this.txtDescricaoItemVenda.LeaveOnEnterKey = true;
-            this.txtDescricaoItemVenda.Location = new System.Drawing.Point(7, 27);
-            this.txtDescricaoItemVenda.MaxLength = 60;
-            this.txtDescricaoItemVenda.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtDescricaoItemVenda.Multiline = false;
-            this.txtDescricaoItemVenda.Name = "txtDescricaoItemVenda";
-            this.txtDescricaoItemVenda.Size = new System.Drawing.Size(407, 50);
-            this.txtDescricaoItemVenda.TabIndex = 19;
-            this.txtDescricaoItemVenda.Text = "";
-            this.txtDescricaoItemVenda.TrailingIcon = null;
-            this.txtDescricaoItemVenda.UseAccent = false;
-            // 
-            // txtLucroItem
-            // 
-            this.txtLucroItem.AcceptsTab = true;
-            this.txtLucroItem.AnimateReadOnly = false;
-            this.txtLucroItem.AutoWordSelection = true;
-            this.txtLucroItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLucroItem.Depth = 0;
-            this.txtLucroItem.Enabled = false;
-            this.txtLucroItem.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtLucroItem.Hint = "Lucro p/ Produto";
-            this.txtLucroItem.LeadingIcon = null;
-            this.txtLucroItem.LeaveOnEnterKey = true;
-            this.txtLucroItem.Location = new System.Drawing.Point(571, 27);
-            this.txtLucroItem.MaxLength = 60;
-            this.txtLucroItem.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtLucroItem.Multiline = false;
-            this.txtLucroItem.Name = "txtLucroItem";
-            this.txtLucroItem.Size = new System.Drawing.Size(154, 50);
-            this.txtLucroItem.TabIndex = 21;
-            this.txtLucroItem.Text = "";
-            this.txtLucroItem.TrailingIcon = null;
-            this.txtLucroItem.UseAccent = false;
-            // 
-            // txtValorVenda
-            // 
-            this.txtValorVenda.AcceptsTab = true;
-            this.txtValorVenda.AnimateReadOnly = false;
-            this.txtValorVenda.AutoWordSelection = true;
-            this.txtValorVenda.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtValorVenda.Depth = 0;
-            this.txtValorVenda.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtValorVenda.Hint = "Preço";
-            this.txtValorVenda.LeadingIcon = null;
-            this.txtValorVenda.LeaveOnEnterKey = true;
-            this.txtValorVenda.Location = new System.Drawing.Point(420, 27);
-            this.txtValorVenda.MaxLength = 60;
-            this.txtValorVenda.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtValorVenda.Multiline = false;
-            this.txtValorVenda.Name = "txtValorVenda";
-            this.txtValorVenda.Size = new System.Drawing.Size(145, 50);
-            this.txtValorVenda.TabIndex = 20;
-            this.txtValorVenda.Text = "";
-            this.txtValorVenda.TrailingIcon = null;
-            this.txtValorVenda.UseAccent = false;
-            this.txtValorVenda.TextChanged += new System.EventHandler(this.txtValorVenda_TextChanged);
-            this.txtValorVenda.Enter += new System.EventHandler(this.txtValorVenda_Enter);
-            this.txtValorVenda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorVenda_KeyPress);
-            this.txtValorVenda.Leave += new System.EventHandler(this.txtValorVenda_Leave);
             // 
             // painelRadius2
             // 
@@ -1161,64 +1045,157 @@
             this.txtCustoUnitario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCustoUnitario_KeyPress);
             this.txtCustoUnitario.Leave += new System.EventHandler(this.txtCustoUnitario_Leave);
             // 
-            // materialTabSelector1
+            // painelRadius3
             // 
-            this.materialTabSelector1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialTabSelector1.BaseTabControl = this.tbcItem;
-            this.materialTabSelector1.CharacterCasing = MaterialSkin.Controls.MaterialTabSelector.CustomCharacterCasing.Normal;
-            this.materialTabSelector1.Depth = 0;
-            this.materialTabSelector1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTabSelector1.Location = new System.Drawing.Point(8, 76);
-            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(1118, 41);
-            this.materialTabSelector1.TabIndex = 162;
-            this.materialTabSelector1.TabIndicatorHeight = 3;
-            this.materialTabSelector1.Text = "materialTabSelector1";
+            this.painelRadius3.BackColor = System.Drawing.Color.White;
+            this.painelRadius3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.painelRadius3.Controls.Add(this.swItemVenda);
+            this.painelRadius3.Controls.Add(this.gpbInfoVenda);
+            this.painelRadius3.Location = new System.Drawing.Point(6, 332);
+            this.painelRadius3.Name = "painelRadius3";
+            this.painelRadius3.Radius = 30;
+            this.painelRadius3.Size = new System.Drawing.Size(1098, 96);
+            this.painelRadius3.TabIndex = 28;
+            this.painelRadius3.Thickness = 5F;
             // 
-            // tbcItem
+            // swItemVenda
             // 
-            this.tbcItem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbcItem.Controls.Add(this.tbpDadosItem);
-            this.tbcItem.Controls.Add(this.tbpComposicao);
-            this.tbcItem.Depth = 0;
-            this.tbcItem.Location = new System.Drawing.Point(8, 123);
-            this.tbcItem.MouseState = MaterialSkin.MouseState.HOVER;
-            this.tbcItem.Multiline = true;
-            this.tbcItem.Name = "tbcItem";
-            this.tbcItem.SelectedIndex = 0;
-            this.tbcItem.ShowToolTips = true;
-            this.tbcItem.Size = new System.Drawing.Size(1118, 457);
-            this.tbcItem.TabIndex = 163;
+            this.swItemVenda.AutoSize = true;
+            this.swItemVenda.BackColor = System.Drawing.Color.Transparent;
+            this.swItemVenda.Depth = 0;
+            this.swItemVenda.Location = new System.Drawing.Point(14, 32);
+            this.swItemVenda.Margin = new System.Windows.Forms.Padding(0);
+            this.swItemVenda.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.swItemVenda.MouseState = MaterialSkin.MouseState.HOVER;
+            this.swItemVenda.Name = "swItemVenda";
+            this.swItemVenda.Ripple = true;
+            this.swItemVenda.Size = new System.Drawing.Size(159, 37);
+            this.swItemVenda.TabIndex = 18;
+            this.swItemVenda.Text = "Item de Venda";
+            this.swItemVenda.UseVisualStyleBackColor = false;
+            this.swItemVenda.CheckedChanged += new System.EventHandler(this.swItemVenda_CheckedChanged);
             // 
-            // tbpDadosItem
+            // gpbInfoVenda
             // 
-            this.tbpDadosItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.tbpDadosItem.Controls.Add(this.painelRadius7);
-            this.tbpDadosItem.Controls.Add(this.painelRadius5);
-            this.tbpDadosItem.Controls.Add(this.painelRadius2);
-            this.tbpDadosItem.Controls.Add(this.painelRadius3);
-            this.tbpDadosItem.Location = new System.Drawing.Point(4, 22);
-            this.tbpDadosItem.Name = "tbpDadosItem";
-            this.tbpDadosItem.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpDadosItem.Size = new System.Drawing.Size(1110, 431);
-            this.tbpDadosItem.TabIndex = 0;
-            this.tbpDadosItem.Text = "Dados do Item";
+            this.gpbInfoVenda.Controls.Add(this.txtLucroTotal);
+            this.gpbInfoVenda.Controls.Add(this.txtDescricaoItemVenda);
+            this.gpbInfoVenda.Controls.Add(this.txtLucroItem);
+            this.gpbInfoVenda.Controls.Add(this.txtValorVenda);
+            this.gpbInfoVenda.Enabled = false;
+            this.gpbInfoVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbInfoVenda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.gpbInfoVenda.Location = new System.Drawing.Point(191, 5);
+            this.gpbInfoVenda.Name = "gpbInfoVenda";
+            this.gpbInfoVenda.Size = new System.Drawing.Size(893, 83);
+            this.gpbInfoVenda.TabIndex = 28;
+            this.gpbInfoVenda.TabStop = false;
+            this.gpbInfoVenda.Text = "Informações de Venda";
+            // 
+            // txtLucroTotal
+            // 
+            this.txtLucroTotal.AcceptsTab = true;
+            this.txtLucroTotal.AnimateReadOnly = false;
+            this.txtLucroTotal.AutoWordSelection = true;
+            this.txtLucroTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLucroTotal.Depth = 0;
+            this.txtLucroTotal.Enabled = false;
+            this.txtLucroTotal.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtLucroTotal.Hint = "Lucro Total";
+            this.txtLucroTotal.LeadingIcon = null;
+            this.txtLucroTotal.LeaveOnEnterKey = true;
+            this.txtLucroTotal.Location = new System.Drawing.Point(731, 27);
+            this.txtLucroTotal.MaxLength = 60;
+            this.txtLucroTotal.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtLucroTotal.Multiline = false;
+            this.txtLucroTotal.Name = "txtLucroTotal";
+            this.txtLucroTotal.Size = new System.Drawing.Size(154, 50);
+            this.txtLucroTotal.TabIndex = 22;
+            this.txtLucroTotal.Text = "";
+            this.txtLucroTotal.TrailingIcon = null;
+            this.txtLucroTotal.UseAccent = false;
+            // 
+            // txtDescricaoItemVenda
+            // 
+            this.txtDescricaoItemVenda.AcceptsTab = true;
+            this.txtDescricaoItemVenda.AnimateReadOnly = false;
+            this.txtDescricaoItemVenda.AutoWordSelection = true;
+            this.txtDescricaoItemVenda.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDescricaoItemVenda.Depth = 0;
+            this.txtDescricaoItemVenda.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtDescricaoItemVenda.Hint = "Descrição do item para venda";
+            this.txtDescricaoItemVenda.LeadingIcon = null;
+            this.txtDescricaoItemVenda.LeaveOnEnterKey = true;
+            this.txtDescricaoItemVenda.Location = new System.Drawing.Point(7, 27);
+            this.txtDescricaoItemVenda.MaxLength = 60;
+            this.txtDescricaoItemVenda.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtDescricaoItemVenda.Multiline = false;
+            this.txtDescricaoItemVenda.Name = "txtDescricaoItemVenda";
+            this.txtDescricaoItemVenda.Size = new System.Drawing.Size(407, 50);
+            this.txtDescricaoItemVenda.TabIndex = 19;
+            this.txtDescricaoItemVenda.Text = "";
+            this.txtDescricaoItemVenda.TrailingIcon = null;
+            this.txtDescricaoItemVenda.UseAccent = false;
+            // 
+            // txtLucroItem
+            // 
+            this.txtLucroItem.AcceptsTab = true;
+            this.txtLucroItem.AnimateReadOnly = false;
+            this.txtLucroItem.AutoWordSelection = true;
+            this.txtLucroItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLucroItem.Depth = 0;
+            this.txtLucroItem.Enabled = false;
+            this.txtLucroItem.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtLucroItem.Hint = "Lucro p/ Produto";
+            this.txtLucroItem.LeadingIcon = null;
+            this.txtLucroItem.LeaveOnEnterKey = true;
+            this.txtLucroItem.Location = new System.Drawing.Point(571, 27);
+            this.txtLucroItem.MaxLength = 60;
+            this.txtLucroItem.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtLucroItem.Multiline = false;
+            this.txtLucroItem.Name = "txtLucroItem";
+            this.txtLucroItem.Size = new System.Drawing.Size(154, 50);
+            this.txtLucroItem.TabIndex = 21;
+            this.txtLucroItem.Text = "";
+            this.txtLucroItem.TrailingIcon = null;
+            this.txtLucroItem.UseAccent = false;
+            // 
+            // txtValorVenda
+            // 
+            this.txtValorVenda.AcceptsTab = true;
+            this.txtValorVenda.AnimateReadOnly = false;
+            this.txtValorVenda.AutoWordSelection = true;
+            this.txtValorVenda.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtValorVenda.Depth = 0;
+            this.txtValorVenda.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtValorVenda.Hint = "Preço";
+            this.txtValorVenda.LeadingIcon = null;
+            this.txtValorVenda.LeaveOnEnterKey = true;
+            this.txtValorVenda.Location = new System.Drawing.Point(420, 27);
+            this.txtValorVenda.MaxLength = 60;
+            this.txtValorVenda.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtValorVenda.Multiline = false;
+            this.txtValorVenda.Name = "txtValorVenda";
+            this.txtValorVenda.Size = new System.Drawing.Size(145, 50);
+            this.txtValorVenda.TabIndex = 20;
+            this.txtValorVenda.Text = "";
+            this.txtValorVenda.TrailingIcon = null;
+            this.txtValorVenda.UseAccent = false;
+            this.txtValorVenda.TextChanged += new System.EventHandler(this.txtValorVenda_TextChanged);
+            this.txtValorVenda.Enter += new System.EventHandler(this.txtValorVenda_Enter);
+            this.txtValorVenda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorVenda_KeyPress);
+            this.txtValorVenda.Leave += new System.EventHandler(this.txtValorVenda_Leave);
             // 
             // tbpComposicao
             // 
             this.tbpComposicao.BackColor = System.Drawing.Color.White;
             this.tbpComposicao.Controls.Add(this.label4);
             this.tbpComposicao.Controls.Add(this.chkItemComposto);
-            this.tbpComposicao.Controls.Add(this.btnAddComposicao);
             this.tbpComposicao.Controls.Add(this.dgvItemComposicao);
+            this.tbpComposicao.Controls.Add(this.btnAddComposicao);
             this.tbpComposicao.Location = new System.Drawing.Point(4, 22);
             this.tbpComposicao.Name = "tbpComposicao";
             this.tbpComposicao.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpComposicao.Size = new System.Drawing.Size(1110, 431);
+            this.tbpComposicao.Size = new System.Drawing.Size(1110, 455);
             this.tbpComposicao.TabIndex = 1;
             this.tbpComposicao.Text = "Composição";
             // 
@@ -1233,18 +1210,39 @@
             this.label4.TabIndex = 45;
             this.label4.Text = "Composição de Item";
             // 
-            // lblStatusLeitor
+            // btnAddComposicao
             // 
-            this.lblStatusLeitor.AutoSize = true;
-            this.lblStatusLeitor.BackColor = System.Drawing.Color.Green;
-            this.lblStatusLeitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.lblStatusLeitor.ForeColor = System.Drawing.Color.White;
-            this.lblStatusLeitor.Location = new System.Drawing.Point(151, 3);
-            this.lblStatusLeitor.Name = "lblStatusLeitor";
-            this.lblStatusLeitor.Size = new System.Drawing.Size(60, 13);
-            this.lblStatusLeitor.TabIndex = 29;
-            this.lblStatusLeitor.Text = "Leitor OK";
-            this.lblStatusLeitor.Visible = false;
+            this.btnAddComposicao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnAddComposicao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAddComposicao.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnAddComposicao.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnAddComposicao.CorTextoBotao = System.Drawing.Color.White;
+            this.btnAddComposicao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddComposicao.FlatAppearance.BorderSize = 0;
+            this.btnAddComposicao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnAddComposicao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddComposicao.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
+            this.btnAddComposicao.ForeColor = System.Drawing.Color.White;
+            this.btnAddComposicao.Image = ((System.Drawing.Image)(resources.GetObject("btnAddComposicao.Image")));
+            this.btnAddComposicao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddComposicao.Location = new System.Drawing.Point(1051, 6);
+            this.btnAddComposicao.Name = "btnAddComposicao";
+            this.btnAddComposicao.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnAddComposicao.Size = new System.Drawing.Size(53, 43);
+            this.btnAddComposicao.TabIndex = 24;
+            this.btnAddComposicao.TamanhoBorda = 0;
+            this.btnAddComposicao.TamanhoRaio = 10;
+            this.btnAddComposicao.UseVisualStyleBackColor = false;
+            this.btnAddComposicao.Click += new System.EventHandler(this.btnAddComposicao_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 599);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1138, 5);
+            this.panel2.TabIndex = 164;
             // 
             // CadastroItem
             // 
@@ -1252,9 +1250,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1138, 604);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.tbcItem);
             this.Controls.Add(this.materialTabSelector1);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1271,20 +1269,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcAtivo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbFavorito)).EndInit();
+            this.tbcItem.ResumeLayout(false);
+            this.tbpDadosItem.ResumeLayout(false);
             this.painelRadius7.ResumeLayout(false);
             this.painelRadius7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbImagemItem)).EndInit();
             this.painelRadius5.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.painelRadius3.ResumeLayout(false);
-            this.painelRadius3.PerformLayout();
-            this.gpbInfoVenda.ResumeLayout(false);
             this.painelRadius2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tbcItem.ResumeLayout(false);
-            this.tbpDadosItem.ResumeLayout(false);
+            this.painelRadius3.ResumeLayout(false);
+            this.painelRadius3.PerformLayout();
+            this.gpbInfoVenda.ResumeLayout(false);
             this.tbpComposicao.ResumeLayout(false);
             this.tbpComposicao.PerformLayout();
             this.ResumeLayout(false);
@@ -1344,7 +1342,6 @@
         private System.Windows.Forms.Panel pnSuperior;
         private Componentes.RoundedPanel pnStatus;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbAvisoBloqueio;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private MaterialSkin.Controls.MaterialTabControl tbcItem;
@@ -1353,5 +1350,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblStatusLeitor;
+        private System.Windows.Forms.Panel panel2;
     }
 }
