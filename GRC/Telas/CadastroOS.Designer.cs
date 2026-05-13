@@ -65,6 +65,7 @@
             this.pcAjuda = new System.Windows.Forms.PictureBox();
             this.tbpDadosAparelho = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.lbApagar = new System.Windows.Forms.Label();
             this.materialCheckbox9 = new MaterialSkin.Controls.MaterialCheckbox();
             this.materialCheckbox8 = new MaterialSkin.Controls.MaterialCheckbox();
             this.materialCheckbox7 = new MaterialSkin.Controls.MaterialCheckbox();
@@ -419,8 +420,7 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox7.BackColor = System.Drawing.Color.White;
             this.groupBox7.Controls.Add(this.materialMultiLineTextBox21);
@@ -614,8 +614,7 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox6.BackColor = System.Drawing.Color.White;
             this.groupBox6.Controls.Add(this.groupBox3);
@@ -797,6 +796,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox5.BackColor = System.Drawing.Color.White;
+            this.groupBox5.Controls.Add(this.lbApagar);
             this.groupBox5.Controls.Add(this.materialCheckbox9);
             this.groupBox5.Controls.Add(this.materialCheckbox8);
             this.groupBox5.Controls.Add(this.materialCheckbox7);
@@ -823,6 +823,20 @@
             this.groupBox5.TabIndex = 76;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Dados do Aparelho";
+            // 
+            // lbApagar
+            // 
+            this.lbApagar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbApagar.AutoSize = true;
+            this.lbApagar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbApagar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbApagar.Location = new System.Drawing.Point(236, 390);
+            this.lbApagar.Name = "lbApagar";
+            this.lbApagar.Size = new System.Drawing.Size(61, 21);
+            this.lbApagar.TabIndex = 99;
+            this.lbApagar.Text = "Limpar";
+            this.lbApagar.Click += new System.EventHandler(this.lbApagar_Click);
             // 
             // materialCheckbox9
             // 
@@ -1044,7 +1058,7 @@
             this.panel1.Controls.Add(this.lbH);
             this.panel1.Controls.Add(this.lbF);
             this.panel1.Controls.Add(this.lbG);
-            this.panel1.Location = new System.Drawing.Point(851, 237);
+            this.panel1.Location = new System.Drawing.Point(6, 241);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(218, 182);
             this.panel1.TabIndex = 104;
@@ -1059,6 +1073,7 @@
             this.lbI.Size = new System.Drawing.Size(32, 24);
             this.lbI.TabIndex = 98;
             this.lbI.Text = "⚫️";
+            this.lbI.Click += new System.EventHandler(this.lbI_Click);
             // 
             // lbA
             // 
@@ -1070,6 +1085,7 @@
             this.lbA.Size = new System.Drawing.Size(32, 24);
             this.lbA.TabIndex = 90;
             this.lbA.Text = "⚫️";
+            this.lbA.Click += new System.EventHandler(this.lbA_Click);
             // 
             // lbB
             // 
@@ -1081,6 +1097,7 @@
             this.lbB.Size = new System.Drawing.Size(32, 24);
             this.lbB.TabIndex = 91;
             this.lbB.Text = "⚫️";
+            this.lbB.Click += new System.EventHandler(this.lbB_Click);
             // 
             // lbC
             // 
@@ -1092,6 +1109,7 @@
             this.lbC.Size = new System.Drawing.Size(32, 24);
             this.lbC.TabIndex = 92;
             this.lbC.Text = "⚫️";
+            this.lbC.Click += new System.EventHandler(this.lbC_Click);
             // 
             // lbD
             // 
@@ -1103,6 +1121,7 @@
             this.lbD.Size = new System.Drawing.Size(32, 24);
             this.lbD.TabIndex = 93;
             this.lbD.Text = "⚫️";
+            this.lbD.Click += new System.EventHandler(this.lbD_Click);
             // 
             // lbE
             // 
@@ -1114,6 +1133,7 @@
             this.lbE.Size = new System.Drawing.Size(32, 24);
             this.lbE.TabIndex = 94;
             this.lbE.Text = "⚫️";
+            this.lbE.Click += new System.EventHandler(this.lbE_Click);
             // 
             // lbH
             // 
@@ -1125,6 +1145,7 @@
             this.lbH.Size = new System.Drawing.Size(32, 24);
             this.lbH.TabIndex = 97;
             this.lbH.Text = "⚫️";
+            this.lbH.Click += new System.EventHandler(this.lbH_Click);
             // 
             // lbF
             // 
@@ -1136,6 +1157,7 @@
             this.lbF.Size = new System.Drawing.Size(32, 24);
             this.lbF.TabIndex = 95;
             this.lbF.Text = "⚫️";
+            this.lbF.Click += new System.EventHandler(this.lbF_Click);
             // 
             // lbG
             // 
@@ -1147,6 +1169,7 @@
             this.lbG.Size = new System.Drawing.Size(32, 24);
             this.lbG.TabIndex = 96;
             this.lbG.Text = "⚫️";
+            this.lbG.Click += new System.EventHandler(this.lbG_Click);
             // 
             // materialTextBox5
             // 
@@ -1159,12 +1182,12 @@
             this.materialTextBox5.Hint = "PIN/Senha";
             this.materialTextBox5.LeadingIcon = null;
             this.materialTextBox5.LeaveOnEnterKey = true;
-            this.materialTextBox5.Location = new System.Drawing.Point(627, 367);
+            this.materialTextBox5.Location = new System.Drawing.Point(230, 241);
             this.materialTextBox5.MaxLength = 60;
             this.materialTextBox5.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox5.Multiline = false;
             this.materialTextBox5.Name = "materialTextBox5";
-            this.materialTextBox5.Size = new System.Drawing.Size(218, 50);
+            this.materialTextBox5.Size = new System.Drawing.Size(381, 50);
             this.materialTextBox5.TabIndex = 100;
             this.materialTextBox5.Text = "";
             this.materialTextBox5.TrailingIcon = null;
@@ -1863,7 +1886,7 @@
             // 
             // pnSuperior
             // 
-            this.pnSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.pnSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.pnSuperior.Controls.Add(this.pnStatus);
             this.pnSuperior.Controls.Add(this.label3);
             this.pnSuperior.Controls.Add(this.btnClose);
@@ -1887,9 +1910,9 @@
             this.pnStatus.Color2 = System.Drawing.Color.MediumOrchid;
             this.pnStatus.CornerRadius = 10;
             this.pnStatus.GradientAngle = 180F;
-            this.pnStatus.Location = new System.Drawing.Point(3, 65);
+            this.pnStatus.Location = new System.Drawing.Point(-6, 65);
             this.pnStatus.Name = "pnStatus";
-            this.pnStatus.Size = new System.Drawing.Size(318, 22);
+            this.pnStatus.Size = new System.Drawing.Size(352, 22);
             this.pnStatus.TabIndex = 131;
             // 
             // label3
@@ -2068,5 +2091,6 @@
         private MaterialSkin.Controls.MaterialCheckbox materialCheckbox6;
         private MaterialSkin.Controls.MaterialCheckbox materialCheckbox5;
         private MaterialSkin.Controls.MaterialTextBox materialTextBox6;
+        private System.Windows.Forms.Label lbApagar;
     }
 }

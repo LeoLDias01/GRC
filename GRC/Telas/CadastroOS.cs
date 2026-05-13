@@ -29,7 +29,7 @@ namespace GRC.Telas
         private bool _favorito = false;
         private int _StatusAntigo = 0;
 
-        private int _padrao = 9;
+        private int _padrao = 0;
         private Cliente _cliente = new Cliente();
      
         private List<ItemCard> _itensOS = new List<ItemCard>();
@@ -1181,6 +1181,102 @@ namespace GRC.Telas
             {
                 ReleaseCapture(); // Libera o mouse para a operação
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+            }
+        }
+
+        private void lbApagar_Click(object sender, EventArgs e)
+        {
+            lbA.Text = "⚫️";
+            lbB.Text = "⚫️";
+            lbC.Text = "⚫️";
+            lbD.Text = "⚫️";
+            lbE.Text = "⚫️";
+            lbF.Text = "⚫️";
+            lbG.Text = "⚫️";
+            lbH.Text = "⚫️";
+            lbI.Text = "⚫️";
+            _padrao = 0;
+        }
+
+        private void lbA_Click(object sender, EventArgs e)
+        {
+            if (_padrao < 9)
+            {
+                _padrao ++;
+                lbA.Text = _padrao.ToString();
+            }
+        }
+
+        private void lbB_Click(object sender, EventArgs e)
+        {
+            if (_padrao < 9)
+            {
+                _padrao++;
+                lbB.Text = _padrao.ToString();
+            }
+            
+        }
+
+        private void lbC_Click(object sender, EventArgs e)
+        {
+            if (_padrao < 9)
+            {
+                _padrao++;
+                lbC.Text = _padrao.ToString();
+            }
+        }
+
+        private void lbD_Click(object sender, EventArgs e)
+        {
+            if (_padrao < 9)
+            {
+                _padrao++;
+                lbD.Text = _padrao.ToString();
+            }
+        }
+
+        private void lbE_Click(object sender, EventArgs e)
+        {
+            if (_padrao < 9)
+            {
+                _padrao++;
+                lbE.Text = _padrao.ToString();
+            }
+        }
+
+        private void lbF_Click(object sender, EventArgs e)
+        {
+            if (_padrao < 9)
+            {
+                _padrao++;
+                lbF.Text = _padrao.ToString();
+            }
+        }
+
+        private void lbG_Click(object sender, EventArgs e)
+        {
+            if (_padrao < 9)
+            {
+                _padrao++;
+                lbG.Text = _padrao.ToString();
+            }
+        }
+
+        private void lbH_Click(object sender, EventArgs e)
+        {
+            if (_padrao < 9)
+            {
+                _padrao++;
+                lbH.Text = _padrao.ToString();
+            }
+        }
+
+        private void lbI_Click(object sender, EventArgs e)
+        {
+            if (_padrao < 9)
+            {
+                _padrao++;
+                lbI.Text = _padrao.ToString();
             }
         }
     }

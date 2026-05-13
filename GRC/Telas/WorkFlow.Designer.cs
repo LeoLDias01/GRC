@@ -64,17 +64,17 @@
             this.btnCustomFilter = new System.Windows.Forms.Button();
             this.btnMes = new System.Windows.Forms.Button();
             this.tlpMenuRedux = new System.Windows.Forms.TableLayoutPanel();
-            this.customButton2 = new GRC.Componentes.CustomButton();
+            this.btnMovimentacao = new GRC.Componentes.CustomButton();
+            this.btnFornecedores = new GRC.Componentes.CustomButton();
             this.customButton3 = new GRC.Componentes.CustomButton();
             this.btnOS = new GRC.Componentes.CustomButton();
-            this.btnVendas = new GRC.Componentes.CustomButton();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.btnEstoque = new GRC.Componentes.CustomButton();
+            this.btnVendas = new GRC.Componentes.CustomButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnClientes = new GRC.Componentes.CustomButton();
             this.crtDadosProdutividade = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.crtDadosOS = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.totLegendaMenu = new System.Windows.Forms.ToolTip(this.components);
@@ -577,15 +577,15 @@
             this.tlpMenuRedux.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
             this.tlpMenuRedux.ColumnCount = 1;
             this.tlpMenuRedux.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMenuRedux.Controls.Add(this.customButton2, 0, 9);
+            this.tlpMenuRedux.Controls.Add(this.btnMovimentacao, 0, 8);
+            this.tlpMenuRedux.Controls.Add(this.btnFornecedores, 0, 9);
             this.tlpMenuRedux.Controls.Add(this.customButton3, 0, 1);
             this.tlpMenuRedux.Controls.Add(this.btnOS, 0, 4);
-            this.tlpMenuRedux.Controls.Add(this.btnVendas, 0, 5);
-            this.tlpMenuRedux.Controls.Add(this.button6, 0, 8);
-            this.tlpMenuRedux.Controls.Add(this.button7, 0, 6);
             this.tlpMenuRedux.Controls.Add(this.btnEstoque, 0, 7);
+            this.tlpMenuRedux.Controls.Add(this.btnVendas, 0, 5);
             this.tlpMenuRedux.Controls.Add(this.panel2, 0, 13);
             this.tlpMenuRedux.Controls.Add(this.panel3, 0, 0);
+            this.tlpMenuRedux.Controls.Add(this.btnClientes, 0, 6);
             this.tlpMenuRedux.Location = new System.Drawing.Point(0, 0);
             this.tlpMenuRedux.Name = "tlpMenuRedux";
             this.tlpMenuRedux.RowCount = 14;
@@ -607,28 +607,54 @@
             this.tlpMenuRedux.Size = new System.Drawing.Size(90, 726);
             this.tlpMenuRedux.TabIndex = 25;
             // 
-            // customButton2
+            // btnMovimentacao
             // 
-            this.customButton2.BackColor = System.Drawing.Color.Transparent;
-            this.customButton2.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.customButton2.CorBotao = System.Drawing.Color.Transparent;
-            this.customButton2.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(206)))), ((int)(((byte)(255)))));
-            this.customButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customButton2.FlatAppearance.BorderSize = 0;
-            this.customButton2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
-            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(206)))), ((int)(((byte)(255)))));
-            this.customButton2.Image = ((System.Drawing.Image)(resources.GetObject("customButton2.Image")));
-            this.customButton2.Location = new System.Drawing.Point(3, 371);
-            this.customButton2.Name = "customButton2";
-            this.customButton2.Size = new System.Drawing.Size(84, 44);
-            this.customButton2.TabIndex = 4;
-            this.customButton2.TamanhoBorda = 0;
-            this.customButton2.TamanhoRaio = 15;
-            this.totLegendaMenu.SetToolTip(this.customButton2, "Fornecedores");
-            this.customButton2.UseVisualStyleBackColor = false;
+            this.btnMovimentacao.BackColor = System.Drawing.Color.Transparent;
+            this.btnMovimentacao.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnMovimentacao.CorBotao = System.Drawing.Color.Transparent;
+            this.btnMovimentacao.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(206)))), ((int)(((byte)(255)))));
+            this.btnMovimentacao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMovimentacao.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnMovimentacao.FlatAppearance.BorderSize = 0;
+            this.btnMovimentacao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.btnMovimentacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMovimentacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMovimentacao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(206)))), ((int)(((byte)(255)))));
+            this.btnMovimentacao.Image = ((System.Drawing.Image)(resources.GetObject("btnMovimentacao.Image")));
+            this.btnMovimentacao.Location = new System.Drawing.Point(3, 321);
+            this.btnMovimentacao.Name = "btnMovimentacao";
+            this.btnMovimentacao.Size = new System.Drawing.Size(84, 44);
+            this.btnMovimentacao.TabIndex = 30;
+            this.btnMovimentacao.TamanhoBorda = 0;
+            this.btnMovimentacao.TamanhoRaio = 15;
+            this.btnMovimentacao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.totLegendaMenu.SetToolTip(this.btnMovimentacao, "Movimentação de Estoque");
+            this.btnMovimentacao.UseVisualStyleBackColor = false;
+            this.btnMovimentacao.Click += new System.EventHandler(this.btnMovimentacao_Click);
+            // 
+            // btnFornecedores
+            // 
+            this.btnFornecedores.BackColor = System.Drawing.Color.Transparent;
+            this.btnFornecedores.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnFornecedores.CorBotao = System.Drawing.Color.Transparent;
+            this.btnFornecedores.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(206)))), ((int)(((byte)(255)))));
+            this.btnFornecedores.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFornecedores.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFornecedores.FlatAppearance.BorderSize = 0;
+            this.btnFornecedores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.btnFornecedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFornecedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFornecedores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(206)))), ((int)(((byte)(255)))));
+            this.btnFornecedores.Image = ((System.Drawing.Image)(resources.GetObject("btnFornecedores.Image")));
+            this.btnFornecedores.Location = new System.Drawing.Point(3, 371);
+            this.btnFornecedores.Name = "btnFornecedores";
+            this.btnFornecedores.Size = new System.Drawing.Size(84, 44);
+            this.btnFornecedores.TabIndex = 4;
+            this.btnFornecedores.TamanhoBorda = 0;
+            this.btnFornecedores.TamanhoRaio = 15;
+            this.totLegendaMenu.SetToolTip(this.btnFornecedores, "Cadastro de Fornecedores");
+            this.btnFornecedores.UseVisualStyleBackColor = false;
+            this.btnFornecedores.Click += new System.EventHandler(this.btnFornecedores_Click);
             // 
             // customButton3
             // 
@@ -679,71 +705,6 @@
             this.btnOS.UseVisualStyleBackColor = false;
             this.btnOS.Click += new System.EventHandler(this.btnOS_Click);
             // 
-            // btnVendas
-            // 
-            this.btnVendas.BackColor = System.Drawing.Color.Transparent;
-            this.btnVendas.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnVendas.CorBotao = System.Drawing.Color.Transparent;
-            this.btnVendas.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(206)))), ((int)(((byte)(255)))));
-            this.btnVendas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVendas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnVendas.FlatAppearance.BorderSize = 0;
-            this.btnVendas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
-            this.btnVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVendas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(206)))), ((int)(((byte)(255)))));
-            this.btnVendas.Image = ((System.Drawing.Image)(resources.GetObject("btnVendas.Image")));
-            this.btnVendas.Location = new System.Drawing.Point(3, 171);
-            this.btnVendas.Name = "btnVendas";
-            this.btnVendas.Size = new System.Drawing.Size(84, 44);
-            this.btnVendas.TabIndex = 6;
-            this.btnVendas.TamanhoBorda = 0;
-            this.btnVendas.TamanhoRaio = 15;
-            this.btnVendas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVendas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.totLegendaMenu.SetToolTip(this.btnVendas, "Vendas");
-            this.btnVendas.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.Transparent;
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(206)))), ((int)(((byte)(255)))));
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(3, 321);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(84, 44);
-            this.button6.TabIndex = 4;
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.totLegendaMenu.SetToolTip(this.button6, "Movimentações de Estoque");
-            this.button6.UseMnemonic = false;
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.Transparent;
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(206)))), ((int)(((byte)(255)))));
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.Location = new System.Drawing.Point(3, 221);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(84, 44);
-            this.button7.TabIndex = 3;
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.totLegendaMenu.SetToolTip(this.button7, "Clientes");
-            this.button7.UseMnemonic = false;
-            this.button7.UseVisualStyleBackColor = false;
-            // 
             // btnEstoque
             // 
             this.btnEstoque.BackColor = System.Drawing.Color.Transparent;
@@ -768,6 +729,32 @@
             this.totLegendaMenu.SetToolTip(this.btnEstoque, "Controle de Estoque");
             this.btnEstoque.UseVisualStyleBackColor = false;
             this.btnEstoque.Click += new System.EventHandler(this.btnEstoque_Click);
+            // 
+            // btnVendas
+            // 
+            this.btnVendas.BackColor = System.Drawing.Color.Transparent;
+            this.btnVendas.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnVendas.CorBotao = System.Drawing.Color.Transparent;
+            this.btnVendas.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(206)))), ((int)(((byte)(255)))));
+            this.btnVendas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVendas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnVendas.FlatAppearance.BorderSize = 0;
+            this.btnVendas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.btnVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVendas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(206)))), ((int)(((byte)(255)))));
+            this.btnVendas.Image = ((System.Drawing.Image)(resources.GetObject("btnVendas.Image")));
+            this.btnVendas.Location = new System.Drawing.Point(3, 171);
+            this.btnVendas.Name = "btnVendas";
+            this.btnVendas.Size = new System.Drawing.Size(84, 44);
+            this.btnVendas.TabIndex = 6;
+            this.btnVendas.TamanhoBorda = 0;
+            this.btnVendas.TamanhoRaio = 15;
+            this.btnVendas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVendas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.totLegendaMenu.SetToolTip(this.btnVendas, "Vendas");
+            this.btnVendas.UseVisualStyleBackColor = false;
+            this.btnVendas.Click += new System.EventHandler(this.btnVendas_Click);
             // 
             // panel2
             // 
@@ -814,6 +801,31 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
+            // btnClientes
+            // 
+            this.btnClientes.BackColor = System.Drawing.Color.Transparent;
+            this.btnClientes.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnClientes.CorBotao = System.Drawing.Color.Transparent;
+            this.btnClientes.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(206)))), ((int)(((byte)(255)))));
+            this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClientes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnClientes.FlatAppearance.BorderSize = 0;
+            this.btnClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(206)))), ((int)(((byte)(255)))));
+            this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
+            this.btnClientes.Location = new System.Drawing.Point(3, 221);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(84, 44);
+            this.btnClientes.TabIndex = 30;
+            this.btnClientes.TamanhoBorda = 0;
+            this.btnClientes.TamanhoRaio = 15;
+            this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.totLegendaMenu.SetToolTip(this.btnClientes, "Cadastro de Clientes");
+            this.btnClientes.UseVisualStyleBackColor = false;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            // 
             // crtDadosProdutividade
             // 
             this.crtDadosProdutividade.BorderSkin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(30)))));
@@ -857,10 +869,6 @@
             this.crtDadosOS.Size = new System.Drawing.Size(487, 409);
             this.crtDadosOS.TabIndex = 27;
             this.crtDadosOS.Text = "chart4";
-            // 
-            // totLegendaMenu
-            // 
-            this.totLegendaMenu.IsBalloon = true;
             // 
             // splitContainer1
             // 
@@ -969,7 +977,7 @@
             this.prUsuario.Radius = 50;
             this.prUsuario.Size = new System.Drawing.Size(200, 179);
             this.prUsuario.TabIndex = 10;
-            this.prUsuario.Thickness = 0F;
+            this.prUsuario.Thickness = 4F;
             this.prUsuario.Visible = false;
             // 
             // btnEncerrar
@@ -1140,12 +1148,10 @@
         private Componentes.RoundedTextBox roundedTextBox3;
         private System.Windows.Forms.TableLayoutPanel tlpMenuRedux;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private Componentes.CustomButton customButton2;
+        private Componentes.CustomButton btnFornecedores;
         private Componentes.CustomButton customButton3;
         private Componentes.CustomButton btnOS;
         private Componentes.CustomButton btnVendas;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
         private Componentes.CustomButton btnEstoque;
         private System.Windows.Forms.DataVisualization.Charting.Chart crtDadosProdutividade;
         private System.Windows.Forms.DataVisualization.Charting.Chart crtDadosOS;
@@ -1155,5 +1161,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Panel pnCustomFilter;
+        private Componentes.CustomButton btnMovimentacao;
+        private Componentes.CustomButton btnClientes;
     }
 }

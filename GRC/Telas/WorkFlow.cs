@@ -294,5 +294,25 @@ namespace GRC.Telas
 
             crtDadosOS.Titles.Add(titulo);
         }
+
+        private void btnVendas_Click(object sender, EventArgs e)
+        {
+            new Vendas().ShowDialog();
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            new PesquisaCliente().ShowDialog();
+        }
+
+        private void btnMovimentacao_Click(object sender, EventArgs e)
+        {
+            new Movimentacoes().ShowDialog();
+        }
+
+        private void btnFornecedores_Click(object sender, EventArgs e)
+        {
+            new Fornecedor().ShowDialog();
+        }
     }
 }

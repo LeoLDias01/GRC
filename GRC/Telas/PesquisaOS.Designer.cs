@@ -28,20 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PesquisaOS));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbxQtdRegistros = new System.Windows.Forms.ComboBox();
             this.lbRegistros = new System.Windows.Forms.Label();
-            this.txtDataEntrada = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtId = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtCliente = new MaterialSkin.Controls.MaterialTextBox();
-            this.cbTipoServico = new MaterialSkin.Controls.MaterialComboBox();
-            this.cbStatus = new MaterialSkin.Controls.MaterialComboBox();
-            this.chkFavorito = new MaterialSkin.Controls.MaterialCheckbox();
-            this.btnSearch = new GRC.Componentes.CustomButton();
-            this.btnApagar = new GRC.Componentes.CustomButton();
+            this.pnSuperior = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.modernBox2 = new GRC.Componentes.ModernBox();
             this.dgvOs = new System.Windows.Forms.DataGridView();
             this.colFavorito = new System.Windows.Forms.DataGridViewImageColumn();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,25 +46,28 @@
             this.colData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pnSuperior = new System.Windows.Forms.Panel();
+            this.modernBox1 = new GRC.Componentes.ModernBox();
+            this.flpMenu = new System.Windows.Forms.FlowLayoutPanel();
+            this.txtDataEntrada = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtId = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtCliente = new MaterialSkin.Controls.MaterialTextBox();
+            this.cbTipoServico = new MaterialSkin.Controls.MaterialComboBox();
+            this.cbStatus = new MaterialSkin.Controls.MaterialComboBox();
+            this.chkFavorito = new MaterialSkin.Controls.MaterialCheckbox();
             this.pn1 = new GRC.Componentes.RoundedPanel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnSearch = new GRC.Componentes.CustomButton();
             this.btnClose = new GRC.Componentes.CustomButton();
+            this.btnApagar = new GRC.Componentes.CustomButton();
             this.btnMaximize = new GRC.Componentes.CustomButton();
             this.btnNovaOS = new GRC.Componentes.CustomButton();
             this.btnMinimize = new GRC.Componentes.CustomButton();
-            this.modernBox1 = new GRC.Componentes.ModernBox();
-            this.flpMenu = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.modernBox2 = new GRC.Componentes.ModernBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOs)).BeginInit();
             this.pnSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.modernBox1.SuspendLayout();
-            this.flpMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             this.modernBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOs)).BeginInit();
+            this.modernBox1.SuspendLayout();
+            this.flpMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbxQtdRegistros
@@ -107,6 +107,214 @@
             this.lbRegistros.Size = new System.Drawing.Size(211, 36);
             this.lbRegistros.TabIndex = 1;
             this.lbRegistros.Text = "0 Registros Encontrados";
+            // 
+            // pnSuperior
+            // 
+            this.pnSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.pnSuperior.Controls.Add(this.pn1);
+            this.pnSuperior.Controls.Add(this.btnSearch);
+            this.pnSuperior.Controls.Add(this.pictureBox3);
+            this.pnSuperior.Controls.Add(this.label1);
+            this.pnSuperior.Controls.Add(this.btnClose);
+            this.pnSuperior.Controls.Add(this.btnApagar);
+            this.pnSuperior.Controls.Add(this.btnMaximize);
+            this.pnSuperior.Controls.Add(this.btnNovaOS);
+            this.pnSuperior.Controls.Add(this.btnMinimize);
+            this.pnSuperior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnSuperior.Location = new System.Drawing.Point(0, 0);
+            this.pnSuperior.Name = "pnSuperior";
+            this.pnSuperior.Size = new System.Drawing.Size(903, 70);
+            this.pnSuperior.TabIndex = 132;
+            this.pnSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnSuperior_MouseDown);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(13, 12);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(45, 42);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 121;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(64, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(293, 29);
+            this.label1.TabIndex = 120;
+            this.label1.Text = "Ordens de Serviço (OS)";
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.panel2.Controls.Add(this.lbRegistros);
+            this.panel2.Controls.Add(this.cbxQtdRegistros);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 594);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(903, 44);
+            this.panel2.TabIndex = 163;
+            // 
+            // modernBox2
+            // 
+            this.modernBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.modernBox2.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.modernBox2.BorderRadius = 12;
+            this.modernBox2.BorderSize = 1;
+            this.modernBox2.Controls.Add(this.dgvOs);
+            this.modernBox2.FillColor = System.Drawing.Color.White;
+            this.modernBox2.Location = new System.Drawing.Point(13, 238);
+            this.modernBox2.Name = "modernBox2";
+            this.modernBox2.Padding = new System.Windows.Forms.Padding(10);
+            this.modernBox2.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.modernBox2.ShadowSize = 8;
+            this.modernBox2.Size = new System.Drawing.Size(882, 350);
+            this.modernBox2.TabIndex = 164;
+            // 
+            // dgvOs
+            // 
+            this.dgvOs.AllowUserToAddRows = false;
+            this.dgvOs.AllowUserToDeleteRows = false;
+            this.dgvOs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvOs.BackgroundColor = System.Drawing.Color.White;
+            this.dgvOs.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvOs.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvOs.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvOs.ColumnHeadersHeight = 35;
+            this.dgvOs.ColumnHeadersVisible = false;
+            this.dgvOs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colFavorito,
+            this.colId,
+            this.colNome,
+            this.colData,
+            this.colStatus,
+            this.colTipo});
+            this.dgvOs.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(218)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOs.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvOs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvOs.EnableHeadersVisualStyles = false;
+            this.dgvOs.GridColor = System.Drawing.Color.DarkGray;
+            this.dgvOs.Location = new System.Drawing.Point(10, 10);
+            this.dgvOs.MultiSelect = false;
+            this.dgvOs.Name = "dgvOs";
+            this.dgvOs.ReadOnly = true;
+            this.dgvOs.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvOs.RowHeadersVisible = false;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvOs.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvOs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOs.Size = new System.Drawing.Size(862, 330);
+            this.dgvOs.TabIndex = 22;
+            this.dgvOs.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOs_CellDoubleClick);
+            this.dgvOs.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOs_CellValueChanged);
+            // 
+            // colFavorito
+            // 
+            this.colFavorito.DataPropertyName = "Favorito";
+            this.colFavorito.FillWeight = 30F;
+            this.colFavorito.HeaderText = "";
+            this.colFavorito.Image = global::GRC.Properties.Resources.remove;
+            this.colFavorito.Name = "colFavorito";
+            this.colFavorito.ReadOnly = true;
+            this.colFavorito.Visible = false;
+            // 
+            // colId
+            // 
+            this.colId.DataPropertyName = "Id";
+            this.colId.FillWeight = 20.35533F;
+            this.colId.HeaderText = "Id";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            // 
+            // colNome
+            // 
+            this.colNome.DataPropertyName = "NomeCliente";
+            this.colNome.FillWeight = 95.16117F;
+            this.colNome.HeaderText = "Cliente";
+            this.colNome.Name = "colNome";
+            this.colNome.ReadOnly = true;
+            // 
+            // colData
+            // 
+            this.colData.DataPropertyName = "DataEntrada";
+            this.colData.FillWeight = 95.16117F;
+            this.colData.HeaderText = "Data";
+            this.colData.Name = "colData";
+            this.colData.ReadOnly = true;
+            // 
+            // colStatus
+            // 
+            this.colStatus.DataPropertyName = "DescricaoStatus";
+            this.colStatus.FillWeight = 95.16117F;
+            this.colStatus.HeaderText = "Status";
+            this.colStatus.Name = "colStatus";
+            this.colStatus.ReadOnly = true;
+            // 
+            // colTipo
+            // 
+            this.colTipo.DataPropertyName = "DescricaoTipo";
+            this.colTipo.FillWeight = 95.16117F;
+            this.colTipo.HeaderText = "Tipo";
+            this.colTipo.Name = "colTipo";
+            this.colTipo.ReadOnly = true;
+            // 
+            // modernBox1
+            // 
+            this.modernBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.modernBox1.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox1.BorderColor = System.Drawing.Color.Transparent;
+            this.modernBox1.BorderRadius = 20;
+            this.modernBox1.BorderSize = 1;
+            this.modernBox1.Controls.Add(this.flpMenu);
+            this.modernBox1.FillColor = System.Drawing.Color.White;
+            this.modernBox1.Location = new System.Drawing.Point(12, 84);
+            this.modernBox1.Name = "modernBox1";
+            this.modernBox1.Padding = new System.Windows.Forms.Padding(10);
+            this.modernBox1.ShadowColor = System.Drawing.Color.Transparent;
+            this.modernBox1.ShadowSize = 0;
+            this.modernBox1.Size = new System.Drawing.Size(879, 148);
+            this.modernBox1.TabIndex = 162;
+            // 
+            // flpMenu
+            // 
+            this.flpMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flpMenu.BackColor = System.Drawing.Color.White;
+            this.flpMenu.Controls.Add(this.txtDataEntrada);
+            this.flpMenu.Controls.Add(this.txtId);
+            this.flpMenu.Controls.Add(this.txtCliente);
+            this.flpMenu.Controls.Add(this.cbTipoServico);
+            this.flpMenu.Controls.Add(this.cbStatus);
+            this.flpMenu.Controls.Add(this.chkFavorito);
+            this.flpMenu.Location = new System.Drawing.Point(6, 13);
+            this.flpMenu.Name = "flpMenu";
+            this.flpMenu.Padding = new System.Windows.Forms.Padding(10);
+            this.flpMenu.Size = new System.Drawing.Size(860, 124);
+            this.flpMenu.TabIndex = 103;
             // 
             // txtDataEntrada
             // 
@@ -244,6 +452,18 @@
             this.chkFavorito.Text = "Favorito";
             this.chkFavorito.UseVisualStyleBackColor = true;
             // 
+            // pn1
+            // 
+            this.pn1.BackColor = System.Drawing.Color.Transparent;
+            this.pn1.Color1 = System.Drawing.Color.Aqua;
+            this.pn1.Color2 = System.Drawing.Color.DodgerBlue;
+            this.pn1.CornerRadius = 8;
+            this.pn1.GradientAngle = 280F;
+            this.pn1.Location = new System.Drawing.Point(4, 64);
+            this.pn1.Name = "pn1";
+            this.pn1.Size = new System.Drawing.Size(353, 30);
+            this.pn1.TabIndex = 127;
+            // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
@@ -264,182 +484,6 @@
             this.btnSearch.TamanhoRaio = 10;
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // btnApagar
-            // 
-            this.btnApagar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnApagar.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnApagar.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnApagar.CorTextoBotao = System.Drawing.Color.White;
-            this.btnApagar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnApagar.FlatAppearance.BorderSize = 0;
-            this.btnApagar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApagar.ForeColor = System.Drawing.Color.White;
-            this.btnApagar.Image = ((System.Drawing.Image)(resources.GetObject("btnApagar.Image")));
-            this.btnApagar.Location = new System.Drawing.Point(433, 18);
-            this.btnApagar.Name = "btnApagar";
-            this.btnApagar.Size = new System.Drawing.Size(43, 43);
-            this.btnApagar.TabIndex = 14;
-            this.btnApagar.TamanhoBorda = 0;
-            this.btnApagar.TamanhoRaio = 10;
-            this.btnApagar.UseVisualStyleBackColor = false;
-            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
-            // 
-            // dgvOs
-            // 
-            this.dgvOs.AllowUserToAddRows = false;
-            this.dgvOs.AllowUserToDeleteRows = false;
-            this.dgvOs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvOs.BackgroundColor = System.Drawing.Color.White;
-            this.dgvOs.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvOs.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dgvOs.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvOs.ColumnHeadersHeight = 35;
-            this.dgvOs.ColumnHeadersVisible = false;
-            this.dgvOs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colFavorito,
-            this.colId,
-            this.colNome,
-            this.colData,
-            this.colStatus,
-            this.colTipo});
-            this.dgvOs.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(218)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvOs.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvOs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvOs.EnableHeadersVisualStyles = false;
-            this.dgvOs.GridColor = System.Drawing.Color.DarkGray;
-            this.dgvOs.Location = new System.Drawing.Point(10, 10);
-            this.dgvOs.MultiSelect = false;
-            this.dgvOs.Name = "dgvOs";
-            this.dgvOs.ReadOnly = true;
-            this.dgvOs.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvOs.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvOs.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvOs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOs.Size = new System.Drawing.Size(862, 330);
-            this.dgvOs.TabIndex = 22;
-            this.dgvOs.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOs_CellDoubleClick);
-            this.dgvOs.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOs_CellValueChanged);
-            // 
-            // colFavorito
-            // 
-            this.colFavorito.DataPropertyName = "Favorito";
-            this.colFavorito.FillWeight = 30F;
-            this.colFavorito.HeaderText = "";
-            this.colFavorito.Image = global::GRC.Properties.Resources.remove;
-            this.colFavorito.Name = "colFavorito";
-            this.colFavorito.ReadOnly = true;
-            this.colFavorito.Visible = false;
-            // 
-            // colId
-            // 
-            this.colId.DataPropertyName = "Id";
-            this.colId.FillWeight = 20.35533F;
-            this.colId.HeaderText = "Id";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            // 
-            // colNome
-            // 
-            this.colNome.DataPropertyName = "NomeCliente";
-            this.colNome.FillWeight = 95.16117F;
-            this.colNome.HeaderText = "Cliente";
-            this.colNome.Name = "colNome";
-            this.colNome.ReadOnly = true;
-            // 
-            // colData
-            // 
-            this.colData.DataPropertyName = "DataEntrada";
-            this.colData.FillWeight = 95.16117F;
-            this.colData.HeaderText = "Data";
-            this.colData.Name = "colData";
-            this.colData.ReadOnly = true;
-            // 
-            // colStatus
-            // 
-            this.colStatus.DataPropertyName = "DescricaoStatus";
-            this.colStatus.FillWeight = 95.16117F;
-            this.colStatus.HeaderText = "Status";
-            this.colStatus.Name = "colStatus";
-            this.colStatus.ReadOnly = true;
-            // 
-            // colTipo
-            // 
-            this.colTipo.DataPropertyName = "DescricaoTipo";
-            this.colTipo.FillWeight = 95.16117F;
-            this.colTipo.HeaderText = "Tipo";
-            this.colTipo.Name = "colTipo";
-            this.colTipo.ReadOnly = true;
-            // 
-            // pnSuperior
-            // 
-            this.pnSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.pnSuperior.Controls.Add(this.pn1);
-            this.pnSuperior.Controls.Add(this.btnSearch);
-            this.pnSuperior.Controls.Add(this.pictureBox3);
-            this.pnSuperior.Controls.Add(this.label1);
-            this.pnSuperior.Controls.Add(this.btnClose);
-            this.pnSuperior.Controls.Add(this.btnApagar);
-            this.pnSuperior.Controls.Add(this.btnMaximize);
-            this.pnSuperior.Controls.Add(this.btnNovaOS);
-            this.pnSuperior.Controls.Add(this.btnMinimize);
-            this.pnSuperior.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnSuperior.Location = new System.Drawing.Point(0, 0);
-            this.pnSuperior.Name = "pnSuperior";
-            this.pnSuperior.Size = new System.Drawing.Size(903, 70);
-            this.pnSuperior.TabIndex = 132;
-            this.pnSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnSuperior_MouseDown);
-            // 
-            // pn1
-            // 
-            this.pn1.BackColor = System.Drawing.Color.Transparent;
-            this.pn1.Color1 = System.Drawing.Color.Aqua;
-            this.pn1.Color2 = System.Drawing.Color.DodgerBlue;
-            this.pn1.CornerRadius = 8;
-            this.pn1.GradientAngle = 280F;
-            this.pn1.Location = new System.Drawing.Point(4, 64);
-            this.pn1.Name = "pn1";
-            this.pn1.Size = new System.Drawing.Size(353, 30);
-            this.pn1.TabIndex = 127;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(13, 12);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(45, 42);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 121;
-            this.pictureBox3.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(64, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(293, 29);
-            this.label1.TabIndex = 120;
-            this.label1.Text = "Ordens de Serviço (OS)";
-            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
             // 
             // btnClose
             // 
@@ -463,6 +507,27 @@
             this.btnClose.TamanhoRaio = 17;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnApagar
+            // 
+            this.btnApagar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnApagar.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnApagar.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnApagar.CorTextoBotao = System.Drawing.Color.White;
+            this.btnApagar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnApagar.FlatAppearance.BorderSize = 0;
+            this.btnApagar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApagar.ForeColor = System.Drawing.Color.White;
+            this.btnApagar.Image = ((System.Drawing.Image)(resources.GetObject("btnApagar.Image")));
+            this.btnApagar.Location = new System.Drawing.Point(433, 18);
+            this.btnApagar.Name = "btnApagar";
+            this.btnApagar.Size = new System.Drawing.Size(43, 43);
+            this.btnApagar.TabIndex = 14;
+            this.btnApagar.TamanhoBorda = 0;
+            this.btnApagar.TamanhoRaio = 10;
+            this.btnApagar.UseVisualStyleBackColor = false;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
             // btnMaximize
             // 
@@ -536,71 +601,6 @@
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
-            // modernBox1
-            // 
-            this.modernBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.modernBox1.BackColor = System.Drawing.Color.Transparent;
-            this.modernBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.modernBox1.BorderRadius = 20;
-            this.modernBox1.BorderSize = 1;
-            this.modernBox1.Controls.Add(this.flpMenu);
-            this.modernBox1.FillColor = System.Drawing.Color.White;
-            this.modernBox1.Location = new System.Drawing.Point(12, 84);
-            this.modernBox1.Name = "modernBox1";
-            this.modernBox1.Padding = new System.Windows.Forms.Padding(10);
-            this.modernBox1.ShadowColor = System.Drawing.Color.Transparent;
-            this.modernBox1.ShadowSize = 0;
-            this.modernBox1.Size = new System.Drawing.Size(879, 148);
-            this.modernBox1.TabIndex = 162;
-            // 
-            // flpMenu
-            // 
-            this.flpMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flpMenu.BackColor = System.Drawing.Color.White;
-            this.flpMenu.Controls.Add(this.txtDataEntrada);
-            this.flpMenu.Controls.Add(this.txtId);
-            this.flpMenu.Controls.Add(this.txtCliente);
-            this.flpMenu.Controls.Add(this.cbTipoServico);
-            this.flpMenu.Controls.Add(this.cbStatus);
-            this.flpMenu.Controls.Add(this.chkFavorito);
-            this.flpMenu.Location = new System.Drawing.Point(6, 13);
-            this.flpMenu.Name = "flpMenu";
-            this.flpMenu.Padding = new System.Windows.Forms.Padding(10);
-            this.flpMenu.Size = new System.Drawing.Size(860, 124);
-            this.flpMenu.TabIndex = 103;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.panel2.Controls.Add(this.lbRegistros);
-            this.panel2.Controls.Add(this.cbxQtdRegistros);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 594);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(903, 44);
-            this.panel2.TabIndex = 163;
-            // 
-            // modernBox2
-            // 
-            this.modernBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.modernBox2.BackColor = System.Drawing.Color.Transparent;
-            this.modernBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.modernBox2.BorderRadius = 12;
-            this.modernBox2.BorderSize = 1;
-            this.modernBox2.Controls.Add(this.dgvOs);
-            this.modernBox2.FillColor = System.Drawing.Color.White;
-            this.modernBox2.Location = new System.Drawing.Point(13, 238);
-            this.modernBox2.Name = "modernBox2";
-            this.modernBox2.Padding = new System.Windows.Forms.Padding(10);
-            this.modernBox2.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.modernBox2.ShadowSize = 8;
-            this.modernBox2.Size = new System.Drawing.Size(882, 350);
-            this.modernBox2.TabIndex = 164;
-            // 
             // PesquisaOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -619,16 +619,16 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PesquisaOS_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PesquisaOS_MouseDown);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOs)).EndInit();
             this.pnSuperior.ResumeLayout(false);
             this.pnSuperior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.modernBox1.ResumeLayout(false);
-            this.flpMenu.ResumeLayout(false);
-            this.flpMenu.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.modernBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOs)).EndInit();
+            this.modernBox1.ResumeLayout(false);
+            this.flpMenu.ResumeLayout(false);
+            this.flpMenu.PerformLayout();
             this.ResumeLayout(false);
 
         }
