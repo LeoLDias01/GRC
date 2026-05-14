@@ -170,8 +170,7 @@ namespace GRC.Telas
 
                 txtCustoManual.Text = dadosOs.CustoManual;
                 txtMaoObra.Text = dadosOs.MaoObra;
-                txtAcrescimo.Text = dadosOs.Acrescimo;
-                txtDesconto.Text = dadosOs.Desconto;
+                
                 _favorito = dadosOs.Favorito;
                 Favorito();
 
@@ -793,8 +792,7 @@ namespace GRC.Telas
         {
             bool MaoObraOk = decimal.TryParse(txtMaoObra.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal mo);
             bool PecasOk = decimal.TryParse(txtTotalPecas.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal pc);
-            bool AcrescimoOk = decimal.TryParse(txtAcrescimo.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal ac);
-            bool DescontoOk = decimal.TryParse(txtDesconto.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal dc);
+            
             bool CustoManualOk = decimal.TryParse(txtCustoManual.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal cm);
             decimal total = 0;
 
@@ -804,14 +802,12 @@ namespace GRC.Telas
             if (PecasOk)
                 total += pc;
 
-            if (AcrescimoOk)
-                total += ac;
+           
 
             if(CustoManualOk)
                 total += cm;
 
-            if (DescontoOk)
-                total -= dc;
+           
 
             txtTotalServico.Text = total.ToString("C2", CultureInfo.CurrentCulture);
         }
@@ -870,8 +866,7 @@ namespace GRC.Telas
                     FimGarantia = !string.IsNullOrWhiteSpace(txtFimGarantia.Text) ? txtFimGarantia.Text : string.Empty,
                     MaoObra = !string.IsNullOrWhiteSpace(txtMaoObra.Text) ? txtMaoObra.Text : string.Empty,
                     CustoManual = !string.IsNullOrWhiteSpace(txtCustoManual.Text) ? txtCustoManual.Text : string.Empty,
-                    Acrescimo = !string.IsNullOrWhiteSpace(txtAcrescimo.Text) ? txtAcrescimo.Text : string.Empty,
-                    Desconto = !string.IsNullOrWhiteSpace(txtDesconto.Text) ? txtDesconto.Text : string.Empty,
+                    
                     Observacoes = txtObservacoes.Text,
                     ObservacoesCliente = txtObservacoesCliente.Text,
                     Favorito = _favorito == true ? false : true,
@@ -931,8 +926,7 @@ namespace GRC.Telas
             txtFimGarantia.Clear();
             txtMaoObra.Clear();
             txtTotalPecas.Clear();
-            txtAcrescimo.Clear();
-            txtDesconto.Clear();
+           
             txtObservacoes.Clear();
             txtTotalServico.Clear();
             dgvItens.Rows.Clear();
@@ -1196,6 +1190,7 @@ namespace GRC.Telas
             lbH.Text = "⚫️";
             lbI.Text = "⚫️";
             _padrao = 0;
+            txtPass.Text = string.Empty;
         }
 
         private void lbA_Click(object sender, EventArgs e)
