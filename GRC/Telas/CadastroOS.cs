@@ -946,6 +946,12 @@ namespace GRC.Telas
         }
         private bool ValidaCampos()
         {
+            // VALIDAÇÃO DE ENTRADA
+
+
+
+
+
             // Nome obrigatório
             if (string.IsNullOrWhiteSpace(txtRelatorioTecnico.Text))
             {
