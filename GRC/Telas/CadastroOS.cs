@@ -25,6 +25,7 @@ namespace GRC.Telas
 {
     public partial class CadastroOS : Form
     {
+        private int _dicas = 0;
         private int _idOS = 0;
         private bool _favorito = false;
         private int _StatusAntigo = 0;
@@ -152,7 +153,7 @@ namespace GRC.Telas
                 txtIdentidade.Text = _cliente.Identidade;
 
                 txtId.Text = _idOS.ToString();
-                txtProblema.Text = dadosOs.DescricaoProblema;
+                txtRelatorioTecnico.Text = dadosOs.DescricaoProblema;
                 txtDescricao.Text = dadosOs.DescricaoSolucao.ToString();
                 cbTipoServico.SelectedValue = dadosOs.TipoServico;
                 _StatusAntigo = dadosOs.Status;
@@ -169,7 +170,7 @@ namespace GRC.Telas
                 // ORÇAMENTO
 
                 txtCustoManual.Text = dadosOs.CustoManual;
-                txtMaoObra.Text = dadosOs.MaoObra;
+                txtTotalCobrado.Text = dadosOs.MaoObra;
                 
                 _favorito = dadosOs.Favorito;
                 Favorito();
@@ -383,12 +384,12 @@ namespace GRC.Telas
 
         private void txtMaoObra_Enter(object sender, EventArgs e)
         {
-            LimpaValorAoFocar("R$ 0,00", txtMaoObra);
+            LimpaValorAoFocar("R$ 0,00", txtTotalCobrado);
         }
 
         private void txtMaoObra_Leave(object sender, EventArgs e)
         {
-            ZeraValorAoDesfocar("R$ 0,00", txtMaoObra);
+            ZeraValorAoDesfocar("R$ 0,00", txtTotalCobrado);
         }
 
         private void txtMaoObra_TextChanged(object sender, EventArgs e)
@@ -749,12 +750,12 @@ namespace GRC.Telas
 
         private void txtAcrescimo_Enter(object sender, EventArgs e)
         {
-            LimpaValorAoFocar("R$ 0,00", txtMaoObra);
+            LimpaValorAoFocar("R$ 0,00", txtTotalCobrado);
         }
 
         private void txtAcrescimo_Leave(object sender, EventArgs e)
         {
-            ZeraValorAoDesfocar("R$ 0,00", txtMaoObra);
+            ZeraValorAoDesfocar("R$ 0,00", txtTotalCobrado);
         }
 
         private void txtAcrescimo_TextChanged(object sender, EventArgs e)
@@ -775,12 +776,12 @@ namespace GRC.Telas
 
         private void txtDesconto_Enter(object sender, EventArgs e)
         {
-            LimpaValorAoFocar("R$ 0,00", txtMaoObra);
+            LimpaValorAoFocar("R$ 0,00", txtTotalCobrado);
         }
 
         private void txtDesconto_Leave(object sender, EventArgs e)
         {
-            ZeraValorAoDesfocar("R$ 0,00", txtMaoObra);
+            ZeraValorAoDesfocar("R$ 0,00", txtTotalCobrado);
         }
 
         private void txtDesconto_TextChanged(object sender, EventArgs e)
@@ -790,7 +791,7 @@ namespace GRC.Telas
         }
         private void CalculaTotal()
         {
-            bool MaoObraOk = decimal.TryParse(txtMaoObra.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal mo);
+            bool MaoObraOk = decimal.TryParse(txtTotalCobrado.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal mo);
             bool PecasOk = decimal.TryParse(txtTotalPecas.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal pc);
             
             bool CustoManualOk = decimal.TryParse(txtCustoManual.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal cm);
@@ -809,7 +810,7 @@ namespace GRC.Telas
 
            
 
-            txtTotalServico.Text = total.ToString("C2", CultureInfo.CurrentCulture);
+            txtLucro.Text = total.ToString("C2", CultureInfo.CurrentCulture);
         }
 
         private void txtTotalPecas_TextChanged(object sender, EventArgs e)
@@ -819,9 +820,9 @@ namespace GRC.Telas
 
         private void txtTotalServico_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtTotalServico.Text))
+            if (string.IsNullOrWhiteSpace(txtLucro.Text))
             {
-                txtTotalServico.Text = "R$ 0,00";
+                txtLucro.Text = "R$ 0,00";
             }
         }
         private void MudaCorPainel(Color cor1, Color cor2)
@@ -853,7 +854,7 @@ namespace GRC.Telas
                 {
                     Id = _idOS,
                     DadosCliente = _cliente,
-                    DescricaoProblema = !string.IsNullOrWhiteSpace(txtProblema.Text) ? txtProblema.Text : string.Empty,
+                    DescricaoProblema = !string.IsNullOrWhiteSpace(txtRelatorioTecnico.Text) ? txtRelatorioTecnico.Text : string.Empty,
                     DescricaoSolucao = !string.IsNullOrWhiteSpace(txtDescricao.Text) ? txtDescricao.Text : string.Empty,
                     TipoServico = Convert.ToInt32(cbTipoServico.SelectedValue),
                     StatusAntigo = _StatusAntigo,
@@ -864,7 +865,7 @@ namespace GRC.Telas
                     FimReal = fim == true ? DateTime.Today.ToString("dd/MM/yyyy") : string.Empty,
                     InicioGarantia = !string.IsNullOrWhiteSpace(txtInicioGarantia.Text) ? txtInicioGarantia.Text : string.Empty,
                     FimGarantia = !string.IsNullOrWhiteSpace(txtFimGarantia.Text) ? txtFimGarantia.Text : string.Empty,
-                    MaoObra = !string.IsNullOrWhiteSpace(txtMaoObra.Text) ? txtMaoObra.Text : string.Empty,
+                    MaoObra = !string.IsNullOrWhiteSpace(txtTotalCobrado.Text) ? txtTotalCobrado.Text : string.Empty,
                     CustoManual = !string.IsNullOrWhiteSpace(txtCustoManual.Text) ? txtCustoManual.Text : string.Empty,
                     
                     Observacoes = txtObservacoes.Text,
@@ -917,18 +918,18 @@ namespace GRC.Telas
             txtCliente.Clear();
             txtIdentidade.Clear();
             txtDescricao.Clear();
-            txtProblema.Clear();
+            txtRelatorioTecnico.Clear();
             txtObservacoesCliente.Clear();
             txtGarantia.Clear();
             txtDataEntrada.Clear();
             txtFimPrevisto.Clear();
             txtInicioGarantia.Clear();
             txtFimGarantia.Clear();
-            txtMaoObra.Clear();
+            txtTotalCobrado.Clear();
             txtTotalPecas.Clear();
            
             txtObservacoes.Clear();
-            txtTotalServico.Clear();
+            txtLucro.Clear();
             dgvItens.Rows.Clear();
             txtCustoManual.Clear();
 
@@ -946,7 +947,7 @@ namespace GRC.Telas
         private bool ValidaCampos()
         {
             // Nome obrigatório
-            if (string.IsNullOrWhiteSpace(txtProblema.Text))
+            if (string.IsNullOrWhiteSpace(txtRelatorioTecnico.Text))
             {
                 new AlertBox(Color.Goldenrod, Color.Lime, Color.Yellow, Resources.Warning, "Ordem de Serviço", "Item sem nome válido", "O nome do item é obrigatório", false).ShowDialog();
                 txtDescricao.Focus();
@@ -997,7 +998,7 @@ namespace GRC.Telas
             //List<OrdemServico> os = new List<OrdemServico>();
             //os = _service.BuscaCompleta(_idOS);
             CalculaTotal();
-            new SelecaoImpressao(_OSImpressao, txtTotalServico.Text).ShowDialog();
+            new SelecaoImpressao(_OSImpressao, txtLucro.Text).ShowDialog();
             this.Cursor = Cursors.Default;
         }
 
@@ -1092,17 +1093,32 @@ namespace GRC.Telas
 
         private void CadastroOS_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F1)
+            
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            // Atalho: Ctrl + S (Salvar)
+            if (keyData == (Keys.Control | Keys.S))
             {
-                Salvar();
-                e.Handled = true;
+                Salvar(); // Chama o seu método de salvamento
+                return true;      // Intercepta a tecla (evita o "bip" do Windows)
+            }
+            // Atalho: Ctrl + F (Salvar)
+            if (keyData == (Keys.Control | Keys.F))
+            {
+                Favorito();
+                return true;      // Intercepta a tecla (evita o "bip" do Windows)
             }
 
-            if (e.KeyCode == Keys.Control && e.KeyCode == Keys.P && btnExportar.Enabled == true)
+            // Atalho: F1 (Imprimir)
+            if (keyData == Keys.F1 && btnExportar.Enabled == true)
             {
-                Exportar();
-                e.Handled = true;
+                Exportar(); // Chama o seu método de impressão
+                return true;         // Intercepta a tecla (evita abrir a ajuda do Windows)
             }
+
+            // Se não for nenhum dos dois, deixa o Windows processar normalmente nos TextBox, Buttons, etc.
+            return base.ProcessCmdKey(ref msg, keyData);
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -1195,7 +1211,7 @@ namespace GRC.Telas
 
         private void lbA_Click(object sender, EventArgs e)
         {
-            if (_padrao < 9)
+            if (_padrao < 9 && lbA.Text == "⚫️")
             {
                 _padrao ++;
                 lbA.Text = _padrao.ToString();
@@ -1204,7 +1220,7 @@ namespace GRC.Telas
 
         private void lbB_Click(object sender, EventArgs e)
         {
-            if (_padrao < 9)
+            if (_padrao < 9 && lbB.Text == "⚫️")
             {
                 _padrao++;
                 lbB.Text = _padrao.ToString();
@@ -1214,7 +1230,7 @@ namespace GRC.Telas
 
         private void lbC_Click(object sender, EventArgs e)
         {
-            if (_padrao < 9)
+            if (_padrao < 9 && lbC.Text == "⚫️")
             {
                 _padrao++;
                 lbC.Text = _padrao.ToString();
@@ -1223,7 +1239,7 @@ namespace GRC.Telas
 
         private void lbD_Click(object sender, EventArgs e)
         {
-            if (_padrao < 9)
+            if (_padrao < 9 && lbD.Text == "⚫️")
             {
                 _padrao++;
                 lbD.Text = _padrao.ToString();
@@ -1232,7 +1248,7 @@ namespace GRC.Telas
 
         private void lbE_Click(object sender, EventArgs e)
         {
-            if (_padrao < 9)
+            if (_padrao < 9 && lbE.Text == "⚫️")
             {
                 _padrao++;
                 lbE.Text = _padrao.ToString();
@@ -1241,7 +1257,7 @@ namespace GRC.Telas
 
         private void lbF_Click(object sender, EventArgs e)
         {
-            if (_padrao < 9)
+            if (_padrao < 9 && lbF.Text == "⚫️")
             {
                 _padrao++;
                 lbF.Text = _padrao.ToString();
@@ -1250,7 +1266,7 @@ namespace GRC.Telas
 
         private void lbG_Click(object sender, EventArgs e)
         {
-            if (_padrao < 9)
+            if (_padrao < 9 && lbG.Text == "⚫️")
             {
                 _padrao++;
                 lbG.Text = _padrao.ToString();
@@ -1259,7 +1275,7 @@ namespace GRC.Telas
 
         private void lbH_Click(object sender, EventArgs e)
         {
-            if (_padrao < 9)
+            if (_padrao < 9 && lbH.Text == "⚫️")
             {
                 _padrao++;
                 lbH.Text = _padrao.ToString();
@@ -1268,10 +1284,33 @@ namespace GRC.Telas
 
         private void lbI_Click(object sender, EventArgs e)
         {
-            if (_padrao < 9)
+            if (_padrao < 9 && lbI.Text == "⚫️")
             {
                 _padrao++;
                 lbI.Text = _padrao.ToString();
+            }
+        }
+
+        private void chkOutros_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkTela.Checked)
+                txtOutros.Visible = true;
+            else
+                txtOutros.Visible = false;
+        }
+
+        private void pcLogo_Click(object sender, EventArgs e)
+        {
+            _dicas = _dicas + 1;
+                
+            if(_dicas >= 3)
+            {
+                _dicas = 0;
+                new DicasUso(" ATALHOS DA TELA DE OS: \n\n\n" +
+                    " ⚫️ Salvar -> CTRL + S \n\n" +
+                    " ⚫️ Favoritar -> CTRL + F \n\n" +
+                    " ⚫️ Imprimir OS -> F1"
+                    ).ShowDialog();
             }
         }
     }

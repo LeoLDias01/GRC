@@ -853,7 +853,20 @@ namespace GRC.Telas
                 dgvItemComposicao.Enabled = false;
             }
         }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            // Atalho: Ctrl + S (Salvar)
+            if (keyData == (Keys.Control | Keys.S))
+            {
+                Salvar(); // Chama o seu método de salvamento
+                return true;      // Intercepta a tecla (evita o "bip" do Windows)
+            }
 
+
+
+            // Se não for nenhum dos dois, deixa o Windows processar normalmente nos TextBox, Buttons, etc.
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             Salvar();

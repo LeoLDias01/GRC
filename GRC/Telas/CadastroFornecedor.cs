@@ -310,8 +310,8 @@ namespace GRC.Telas
                 {
                     LimpaEmail();
                 }
-                
-                
+
+
                 if (fornecedorDados.Telefones != null && fornecedorDados.Telefones.Count > 0)
                 {
                     foreach (var tel in fornecedorDados.Telefones)
@@ -320,28 +320,28 @@ namespace GRC.Telas
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 EmailError.EnviarEmailErro(ex.ToString());
                 new AlertBox(Color.FromArgb(64, 0, 0), Color.Red, Color.Crimson, Resources.Error, "Um erro ocorreu:", "Entidade: Fornecedor", "Erro ao carregar fornecedor!", false).ShowDialog();
             }
         }
-  
-   
+
+
         private void PreencheGridTelefone(int id, bool whatsapp, string telefone, string observacoes)
         {
             // Evita que apareça o "X" quando não houver imagem
             dgvTelefones.Columns["colWhatsApp"].DefaultCellStyle.NullValue = null;
             dgvTelefones.RowTemplate.Height = 30;
 
-                // Adiciona uma nova linha ao DataGridView
-                dgvTelefones.Rows.Add(
-                        id,                          // colIdTelefone = 0 (novo registro)
-                        whatsapp == true ? Resources.whatsapp : null, // colWhatsapp
-                        telefone,                   // colTelefone
-                        observacoes,                // colObservacoes
-                        Resources.remove
-                    );
+            // Adiciona uma nova linha ao DataGridView
+            dgvTelefones.Rows.Add(
+                    id,                          // colIdTelefone = 0 (novo registro)
+                    whatsapp == true ? Resources.whatsapp : null, // colWhatsapp
+                    telefone,                   // colTelefone
+                    observacoes,                // colObservacoes
+                    Resources.remove
+                );
         }
         private void MudaCorPainel(Color cor1, Color cor2)
         {
@@ -349,18 +349,18 @@ namespace GRC.Telas
             pn1.Color2 = cor2;
         }
 
- 
-        
+
+
 
         private void swAtivo_CheckedChanged(object sender, EventArgs e)
         {
-            if(swAtivo.Checked == true)
+            if (swAtivo.Checked == true)
             {
                 _ativo = true;
                 pcAtivo.Visible = true;
                 if (_idFornecedor > 0)
                     MudaCorPainel(Color.LimeGreen, Color.Yellow);
-                
+
                 else
                     MudaCorPainel(Color.SpringGreen, Color.Cyan);
             }
@@ -402,8 +402,26 @@ namespace GRC.Telas
         {
             this.Close();
         }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            // Atalho: Ctrl + S (Salvar)
+            if (keyData == (Keys.Control | Keys.S))
+            {
+                Salvar(); // Chama o seu método de salvamento
+                return true;      // Intercepta a tecla (evita o "bip" do Windows)
+            }
 
+
+
+            // Se não for nenhum dos dois, deixa o Windows processar normalmente nos TextBox, Buttons, etc.
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
         private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            Salvar();
+        }
+
+        private void Salvar()
         {
             try
             {

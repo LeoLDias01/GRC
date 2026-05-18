@@ -287,6 +287,12 @@
     <Compile Include="Telas\ComposicaoItem.Designer.cs">
       <DependentUpon>ComposicaoItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\DicasUso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\DicasUso.Designer.cs">
+      <DependentUpon>DicasUso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\Fabricante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -425,6 +431,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\ComposicaoItem.resx">
       <DependentUpon>ComposicaoItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\DicasUso.resx">
+      <DependentUpon>DicasUso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\Fabricante.resx">
       <DependentUpon>Fabricante.cs</DependentUpon>

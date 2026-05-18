@@ -411,7 +411,7 @@
             this.tbcItem.Name = "tbcItem";
             this.tbcItem.SelectedIndex = 0;
             this.tbcItem.ShowToolTips = true;
-            this.tbcItem.Size = new System.Drawing.Size(1118, 481);
+            this.tbcItem.Size = new System.Drawing.Size(1118, 494);
             this.tbcItem.TabIndex = 163;
             // 
             // tbpDadosItem
@@ -424,7 +424,7 @@
             this.tbpDadosItem.Location = new System.Drawing.Point(4, 22);
             this.tbpDadosItem.Name = "tbpDadosItem";
             this.tbpDadosItem.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpDadosItem.Size = new System.Drawing.Size(1110, 455);
+            this.tbpDadosItem.Size = new System.Drawing.Size(1110, 468);
             this.tbpDadosItem.TabIndex = 0;
             this.tbpDadosItem.Text = "Dados do Item";
             // 
@@ -1195,7 +1195,7 @@
             this.tbpComposicao.Location = new System.Drawing.Point(4, 22);
             this.tbpComposicao.Name = "tbpComposicao";
             this.tbpComposicao.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpComposicao.Size = new System.Drawing.Size(1110, 455);
+            this.tbpComposicao.Size = new System.Drawing.Size(1110, 468);
             this.tbpComposicao.TabIndex = 1;
             this.tbpComposicao.Text = "Composição";
             // 
@@ -1239,7 +1239,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 599);
+            this.panel2.Location = new System.Drawing.Point(0, 577);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1138, 5);
             this.panel2.TabIndex = 164;
@@ -1249,7 +1249,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(1138, 604);
+            this.ClientSize = new System.Drawing.Size(1138, 582);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.tbcItem);
             this.Controls.Add(this.materialTabSelector1);
