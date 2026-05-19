@@ -33,11 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroFornecedor));
             this.dgvTelefones = new System.Windows.Forms.DataGridView();
-            this.colIdTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colWhatsApp = new System.Windows.Forms.DataGridViewImageColumn();
-            this.colTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colObservacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colExcluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.pcAtivo = new System.Windows.Forms.PictureBox();
             this.swAtivo = new MaterialSkin.Controls.MaterialSwitch();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -80,6 +75,11 @@
             this.txtObservacoesFornecedor = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
             this.txtCnpj = new MaterialSkin.Controls.MaterialTextBox();
             this.txtFornecedor = new MaterialSkin.Controls.MaterialTextBox();
+            this.colIdTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colWhatsApp = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colObservacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colExcluir = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelefones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcAtivo)).BeginInit();
             this.panel1.SuspendLayout();
@@ -143,42 +143,6 @@
             this.dgvTelefones.TabIndex = 14;
             this.dgvTelefones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTelefones_CellClick);
             this.dgvTelefones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTelefones_CellDoubleClick);
-            // 
-            // colIdTelefone
-            // 
-            this.colIdTelefone.FillWeight = 1F;
-            this.colIdTelefone.HeaderText = "Id";
-            this.colIdTelefone.Name = "colIdTelefone";
-            this.colIdTelefone.ReadOnly = true;
-            this.colIdTelefone.Visible = false;
-            // 
-            // colWhatsApp
-            // 
-            this.colWhatsApp.FillWeight = 45F;
-            this.colWhatsApp.HeaderText = "";
-            this.colWhatsApp.Name = "colWhatsApp";
-            this.colWhatsApp.ReadOnly = true;
-            // 
-            // colTelefone
-            // 
-            this.colTelefone.FillWeight = 250F;
-            this.colTelefone.HeaderText = "Telefone";
-            this.colTelefone.Name = "colTelefone";
-            this.colTelefone.ReadOnly = true;
-            // 
-            // colObservacoes
-            // 
-            this.colObservacoes.FillWeight = 230F;
-            this.colObservacoes.HeaderText = "Observações";
-            this.colObservacoes.Name = "colObservacoes";
-            this.colObservacoes.ReadOnly = true;
-            // 
-            // colExcluir
-            // 
-            this.colExcluir.FillWeight = 45F;
-            this.colExcluir.HeaderText = "";
-            this.colExcluir.Name = "colExcluir";
-            this.colExcluir.ReadOnly = true;
             // 
             // pcAtivo
             // 
@@ -948,6 +912,42 @@
             this.txtFornecedor.TrailingIcon = null;
             this.txtFornecedor.UseAccent = false;
             // 
+            // colIdTelefone
+            // 
+            this.colIdTelefone.FillWeight = 1F;
+            this.colIdTelefone.HeaderText = "Id";
+            this.colIdTelefone.Name = "colIdTelefone";
+            this.colIdTelefone.ReadOnly = true;
+            this.colIdTelefone.Visible = false;
+            // 
+            // colWhatsApp
+            // 
+            this.colWhatsApp.FillWeight = 6.638643F;
+            this.colWhatsApp.HeaderText = "";
+            this.colWhatsApp.Name = "colWhatsApp";
+            this.colWhatsApp.ReadOnly = true;
+            // 
+            // colTelefone
+            // 
+            this.colTelefone.FillWeight = 300F;
+            this.colTelefone.HeaderText = "Telefone";
+            this.colTelefone.Name = "colTelefone";
+            this.colTelefone.ReadOnly = true;
+            // 
+            // colObservacoes
+            // 
+            this.colObservacoes.FillWeight = 33.93084F;
+            this.colObservacoes.HeaderText = "Observações";
+            this.colObservacoes.Name = "colObservacoes";
+            this.colObservacoes.ReadOnly = true;
+            // 
+            // colExcluir
+            // 
+            this.colExcluir.FillWeight = 6.638643F;
+            this.colExcluir.HeaderText = "";
+            this.colExcluir.Name = "colExcluir";
+            this.colExcluir.ReadOnly = true;
+            // 
             // CadastroFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1019,11 +1019,6 @@
         private MaterialSkin.Controls.MaterialTextBox txtIE;
         private MaterialSkin.Controls.MaterialCheckbox chkHabilitaEndereco;
         private MaterialSkin.Controls.MaterialCheckbox chkHabilitaEmail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIdTelefone;
-        private System.Windows.Forms.DataGridViewImageColumn colWhatsApp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTelefone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colObservacoes;
-        private System.Windows.Forms.DataGridViewImageColumn colExcluir;
         private MaterialSkin.Controls.MaterialSwitch swAtivo;
         private Componentes.RoundedPanel pn1;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -1040,5 +1035,10 @@
         private System.Windows.Forms.Label lbTelefone;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIdTelefone;
+        private System.Windows.Forms.DataGridViewImageColumn colWhatsApp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTelefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colObservacoes;
+        private System.Windows.Forms.DataGridViewImageColumn colExcluir;
     }
 }

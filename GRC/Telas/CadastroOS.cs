@@ -1319,5 +1319,10 @@ namespace GRC.Telas
                     ).ShowDialog();
             }
         }
+
+        private void chkHabilitaEmail_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
