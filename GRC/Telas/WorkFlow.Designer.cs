@@ -37,25 +37,27 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.modernBox4 = new GRC.Componentes.ModernBox();
-            this.customPictureBox5 = new GRC.Componentes.CustomPictureBox();
+            this.modernBox2 = new GRC.Componentes.ModernBox();
+            this.modernBox8 = new GRC.Componentes.ModernBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.modernBox7 = new GRC.Componentes.ModernBox();
+            this.modernBox5 = new GRC.Componentes.ModernBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.modernBox4 = new GRC.Componentes.ModernBox();
             this.modernBox3 = new GRC.Componentes.ModernBox();
-            this.customPictureBox4 = new GRC.Componentes.CustomPictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.modernBox1 = new GRC.Componentes.ModernBox();
+            this.modernBox6 = new GRC.Componentes.ModernBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.customPictureBox2 = new GRC.Componentes.CustomPictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.modernBox2 = new GRC.Componentes.ModernBox();
-            this.customPictureBox3 = new GRC.Componentes.CustomPictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnUser = new GRC.Componentes.CustomButton();
-            this.roundedTextBox1 = new GRC.Componentes.RoundedTextBox();
             this.btnMinimize = new GRC.Componentes.CustomButton();
             this.btnMaximize = new GRC.Componentes.CustomButton();
             this.btnHoje = new System.Windows.Forms.Button();
@@ -71,10 +73,10 @@
             this.btnEstoque = new GRC.Componentes.CustomButton();
             this.btnVendas = new GRC.Componentes.CustomButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnClientes = new GRC.Componentes.CustomButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.crtDadosProdutividade = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.crtDadosOS = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.totLegendaMenu = new System.Windows.Forms.ToolTip(this.components);
@@ -88,16 +90,24 @@
             this.btnTrocar = new GRC.Componentes.CustomButton();
             this.lbNome = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.btnAddCategoria = new GRC.Componentes.CustomButton();
+            this.customButton2 = new GRC.Componentes.CustomButton();
+            this.customButton4 = new GRC.Componentes.CustomButton();
             this.tableLayoutPanel1.SuspendLayout();
-            this.modernBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox5)).BeginInit();
-            this.modernBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox4)).BeginInit();
-            this.modernBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox2)).BeginInit();
             this.modernBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox3)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.modernBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.modernBox7.SuspendLayout();
+            this.modernBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.modernBox4.SuspendLayout();
+            this.modernBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.modernBox1.SuspendLayout();
+            this.modernBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tlpMenuRedux.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -119,276 +129,310 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 7;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.modernBox4, 6, 0);
-            this.tableLayoutPanel1.Controls.Add(this.modernBox3, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.modernBox2, 6, 0);
+            this.tableLayoutPanel1.Controls.Add(this.modernBox7, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.modernBox4, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.modernBox1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.modernBox2, 2, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(109, 156);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(97, 79);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1231, 116);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1231, 109);
             this.tableLayoutPanel1.TabIndex = 7;
-            // 
-            // modernBox4
-            // 
-            this.modernBox4.BackColor = System.Drawing.Color.Transparent;
-            this.modernBox4.BorderColor = System.Drawing.Color.Transparent;
-            this.modernBox4.BorderRadius = 15;
-            this.modernBox4.BorderSize = 1;
-            this.modernBox4.Controls.Add(this.customPictureBox5);
-            this.modernBox4.Controls.Add(this.label8);
-            this.modernBox4.Controls.Add(this.label9);
-            this.modernBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.modernBox4.FillColor = System.Drawing.Color.White;
-            this.modernBox4.Location = new System.Drawing.Point(942, 3);
-            this.modernBox4.Name = "modernBox4";
-            this.modernBox4.Padding = new System.Windows.Forms.Padding(10);
-            this.modernBox4.ShadowColor = System.Drawing.Color.DimGray;
-            this.modernBox4.ShadowSize = 8;
-            this.modernBox4.Size = new System.Drawing.Size(286, 110);
-            this.modernBox4.TabIndex = 1;
-            // 
-            // customPictureBox5
-            // 
-            this.customPictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.customPictureBox5.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.customPictureBox5.CorBotao = System.Drawing.Color.Transparent;
-            this.customPictureBox5.CorTextoBotao = System.Drawing.Color.White;
-            this.customPictureBox5.ForeColor = System.Drawing.Color.White;
-            this.customPictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("customPictureBox5.Image")));
-            this.customPictureBox5.Location = new System.Drawing.Point(13, 39);
-            this.customPictureBox5.Name = "customPictureBox5";
-            this.customPictureBox5.Size = new System.Drawing.Size(50, 50);
-            this.customPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.customPictureBox5.TabIndex = 14;
-            this.customPictureBox5.TabStop = false;
-            this.customPictureBox5.TamanhoBorda = 0;
-            this.customPictureBox5.TamanhoRaio = 0;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label8.ForeColor = System.Drawing.Color.Crimson;
-            this.label8.Location = new System.Drawing.Point(13, 10);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(119, 20);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "OS atrasadas";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
-            this.label9.ForeColor = System.Drawing.Color.Crimson;
-            this.label9.Location = new System.Drawing.Point(69, 48);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(30, 31);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "5";
-            // 
-            // modernBox3
-            // 
-            this.modernBox3.BackColor = System.Drawing.Color.Transparent;
-            this.modernBox3.BorderColor = System.Drawing.Color.Transparent;
-            this.modernBox3.BorderRadius = 15;
-            this.modernBox3.BorderSize = 1;
-            this.modernBox3.Controls.Add(this.customPictureBox4);
-            this.modernBox3.Controls.Add(this.label6);
-            this.modernBox3.Controls.Add(this.label7);
-            this.modernBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.modernBox3.FillColor = System.Drawing.Color.White;
-            this.modernBox3.Location = new System.Drawing.Point(629, 3);
-            this.modernBox3.Name = "modernBox3";
-            this.modernBox3.Padding = new System.Windows.Forms.Padding(10);
-            this.modernBox3.ShadowColor = System.Drawing.Color.DimGray;
-            this.modernBox3.ShadowSize = 8;
-            this.modernBox3.Size = new System.Drawing.Size(285, 110);
-            this.modernBox3.TabIndex = 1;
-            // 
-            // customPictureBox4
-            // 
-            this.customPictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.customPictureBox4.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.customPictureBox4.CorBotao = System.Drawing.Color.Transparent;
-            this.customPictureBox4.CorTextoBotao = System.Drawing.Color.White;
-            this.customPictureBox4.ForeColor = System.Drawing.Color.White;
-            this.customPictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("customPictureBox4.Image")));
-            this.customPictureBox4.Location = new System.Drawing.Point(13, 39);
-            this.customPictureBox4.Name = "customPictureBox4";
-            this.customPictureBox4.Size = new System.Drawing.Size(50, 50);
-            this.customPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.customPictureBox4.TabIndex = 11;
-            this.customPictureBox4.TabStop = false;
-            this.customPictureBox4.TamanhoBorda = 0;
-            this.customPictureBox4.TamanhoRaio = 0;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label6.Location = new System.Drawing.Point(13, 10);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(138, 20);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Reparos a fazer";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label7.Location = new System.Drawing.Point(69, 48);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 31);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "50";
-            // 
-            // modernBox1
-            // 
-            this.modernBox1.BackColor = System.Drawing.Color.Transparent;
-            this.modernBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.modernBox1.BorderRadius = 15;
-            this.modernBox1.BorderSize = 1;
-            this.modernBox1.Controls.Add(this.label3);
-            this.modernBox1.Controls.Add(this.customPictureBox2);
-            this.modernBox1.Controls.Add(this.label2);
-            this.modernBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.modernBox1.FillColor = System.Drawing.Color.White;
-            this.modernBox1.Location = new System.Drawing.Point(3, 3);
-            this.modernBox1.Name = "modernBox1";
-            this.modernBox1.Padding = new System.Windows.Forms.Padding(10);
-            this.modernBox1.ShadowColor = System.Drawing.Color.DimGray;
-            this.modernBox1.ShadowSize = 8;
-            this.modernBox1.Size = new System.Drawing.Size(285, 110);
-            this.modernBox1.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label3.Location = new System.Drawing.Point(18, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(158, 20);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Vendas Efetuadas";
-            // 
-            // customPictureBox2
-            // 
-            this.customPictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.customPictureBox2.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.customPictureBox2.CorBotao = System.Drawing.Color.Transparent;
-            this.customPictureBox2.CorTextoBotao = System.Drawing.Color.White;
-            this.customPictureBox2.ForeColor = System.Drawing.Color.White;
-            this.customPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("customPictureBox2.Image")));
-            this.customPictureBox2.Location = new System.Drawing.Point(13, 39);
-            this.customPictureBox2.Name = "customPictureBox2";
-            this.customPictureBox2.Size = new System.Drawing.Size(50, 50);
-            this.customPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.customPictureBox2.TabIndex = 2;
-            this.customPictureBox2.TabStop = false;
-            this.customPictureBox2.TamanhoBorda = 0;
-            this.customPictureBox2.TamanhoRaio = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label2.Location = new System.Drawing.Point(69, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 31);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "250";
             // 
             // modernBox2
             // 
             this.modernBox2.BackColor = System.Drawing.Color.Transparent;
             this.modernBox2.BorderColor = System.Drawing.Color.Transparent;
-            this.modernBox2.BorderRadius = 15;
+            this.modernBox2.BorderRadius = 12;
             this.modernBox2.BorderSize = 1;
-            this.modernBox2.Controls.Add(this.customPictureBox3);
+            this.modernBox2.Controls.Add(this.modernBox8);
             this.modernBox2.Controls.Add(this.label4);
             this.modernBox2.Controls.Add(this.label5);
             this.modernBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.modernBox2.FillColor = System.Drawing.Color.White;
-            this.modernBox2.Location = new System.Drawing.Point(316, 3);
+            this.modernBox2.Location = new System.Drawing.Point(930, 3);
             this.modernBox2.Name = "modernBox2";
-            this.modernBox2.Padding = new System.Windows.Forms.Padding(10);
-            this.modernBox2.ShadowColor = System.Drawing.Color.DimGray;
-            this.modernBox2.ShadowSize = 8;
-            this.modernBox2.Size = new System.Drawing.Size(285, 110);
-            this.modernBox2.TabIndex = 1;
+            this.modernBox2.Padding = new System.Windows.Forms.Padding(6);
+            this.modernBox2.ShadowAngle = 50;
+            this.modernBox2.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.modernBox2.ShadowSize = 1;
+            this.modernBox2.Size = new System.Drawing.Size(298, 103);
+            this.modernBox2.TabIndex = 33;
             // 
-            // customPictureBox3
+            // modernBox8
             // 
-            this.customPictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.customPictureBox3.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.customPictureBox3.CorBotao = System.Drawing.Color.Transparent;
-            this.customPictureBox3.CorTextoBotao = System.Drawing.Color.White;
-            this.customPictureBox3.ForeColor = System.Drawing.Color.White;
-            this.customPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("customPictureBox3.Image")));
-            this.customPictureBox3.Location = new System.Drawing.Point(13, 39);
-            this.customPictureBox3.Name = "customPictureBox3";
-            this.customPictureBox3.Size = new System.Drawing.Size(50, 50);
-            this.customPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.customPictureBox3.TabIndex = 8;
-            this.customPictureBox3.TabStop = false;
-            this.customPictureBox3.TamanhoBorda = 0;
-            this.customPictureBox3.TamanhoRaio = 0;
+            this.modernBox8.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox8.BorderColor = System.Drawing.Color.Transparent;
+            this.modernBox8.BorderRadius = 8;
+            this.modernBox8.BorderSize = 1;
+            this.modernBox8.Controls.Add(this.pictureBox6);
+            this.modernBox8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(57)))), ((int)(((byte)(92)))));
+            this.modernBox8.Location = new System.Drawing.Point(226, 29);
+            this.modernBox8.Name = "modernBox8";
+            this.modernBox8.Padding = new System.Windows.Forms.Padding(6);
+            this.modernBox8.ShadowAngle = 50;
+            this.modernBox8.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.modernBox8.ShadowSize = 1;
+            this.modernBox8.Size = new System.Drawing.Size(50, 50);
+            this.modernBox8.TabIndex = 33;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(6, 6);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(38, 38);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 0;
+            this.pictureBox6.TabStop = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label4.Location = new System.Drawing.Point(13, 10);
+            this.label4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.label4.Location = new System.Drawing.Point(20, 17);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(173, 20);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Reparos Finalizados";
+            this.label4.Size = new System.Drawing.Size(152, 23);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Total em Vendas";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.label5.Location = new System.Drawing.Point(69, 48);
+            this.label5.Font = new System.Drawing.Font("Roboto Cn", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.label5.Location = new System.Drawing.Point(27, 41);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 31);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "100";
+            this.label5.Size = new System.Drawing.Size(68, 38);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "250";
             // 
-            // panel1
+            // modernBox7
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
-            this.panel1.Controls.Add(this.btnUser);
-            this.panel1.Controls.Add(this.roundedTextBox1);
-            this.panel1.Controls.Add(this.btnMinimize);
-            this.panel1.Controls.Add(this.btnMaximize);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1350, 73);
-            this.panel1.TabIndex = 15;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.modernBox7.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox7.BorderColor = System.Drawing.Color.Transparent;
+            this.modernBox7.BorderRadius = 12;
+            this.modernBox7.BorderSize = 1;
+            this.modernBox7.Controls.Add(this.modernBox5);
+            this.modernBox7.Controls.Add(this.label8);
+            this.modernBox7.Controls.Add(this.label9);
+            this.modernBox7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.modernBox7.FillColor = System.Drawing.Color.White;
+            this.modernBox7.Location = new System.Drawing.Point(621, 3);
+            this.modernBox7.Name = "modernBox7";
+            this.modernBox7.Padding = new System.Windows.Forms.Padding(6);
+            this.modernBox7.ShadowAngle = 50;
+            this.modernBox7.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.modernBox7.ShadowSize = 1;
+            this.modernBox7.Size = new System.Drawing.Size(295, 103);
+            this.modernBox7.TabIndex = 34;
+            // 
+            // modernBox5
+            // 
+            this.modernBox5.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox5.BorderColor = System.Drawing.Color.Transparent;
+            this.modernBox5.BorderRadius = 8;
+            this.modernBox5.BorderSize = 1;
+            this.modernBox5.Controls.Add(this.pictureBox5);
+            this.modernBox5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(57)))), ((int)(((byte)(92)))));
+            this.modernBox5.Location = new System.Drawing.Point(227, 29);
+            this.modernBox5.Name = "modernBox5";
+            this.modernBox5.Padding = new System.Windows.Forms.Padding(6);
+            this.modernBox5.ShadowAngle = 50;
+            this.modernBox5.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.modernBox5.ShadowSize = 1;
+            this.modernBox5.Size = new System.Drawing.Size(50, 50);
+            this.modernBox5.TabIndex = 33;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(6, 6);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(38, 38);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 0;
+            this.pictureBox5.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.label8.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.label8.Location = new System.Drawing.Point(20, 17);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(152, 23);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Total em Vendas";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.label9.Font = new System.Drawing.Font("Roboto Cn", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.label9.Location = new System.Drawing.Point(27, 41);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(68, 38);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "250";
+            // 
+            // modernBox4
+            // 
+            this.modernBox4.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox4.BorderColor = System.Drawing.Color.Transparent;
+            this.modernBox4.BorderRadius = 12;
+            this.modernBox4.BorderSize = 1;
+            this.modernBox4.Controls.Add(this.modernBox3);
+            this.modernBox4.Controls.Add(this.label6);
+            this.modernBox4.Controls.Add(this.label7);
+            this.modernBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.modernBox4.FillColor = System.Drawing.Color.White;
+            this.modernBox4.Location = new System.Drawing.Point(312, 3);
+            this.modernBox4.Name = "modernBox4";
+            this.modernBox4.Padding = new System.Windows.Forms.Padding(6);
+            this.modernBox4.ShadowAngle = 50;
+            this.modernBox4.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.modernBox4.ShadowSize = 1;
+            this.modernBox4.Size = new System.Drawing.Size(295, 103);
+            this.modernBox4.TabIndex = 34;
+            // 
+            // modernBox3
+            // 
+            this.modernBox3.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox3.BorderColor = System.Drawing.Color.Transparent;
+            this.modernBox3.BorderRadius = 8;
+            this.modernBox3.BorderSize = 1;
+            this.modernBox3.Controls.Add(this.pictureBox4);
+            this.modernBox3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(57)))), ((int)(((byte)(92)))));
+            this.modernBox3.Location = new System.Drawing.Point(225, 29);
+            this.modernBox3.Name = "modernBox3";
+            this.modernBox3.Padding = new System.Windows.Forms.Padding(6);
+            this.modernBox3.ShadowAngle = 50;
+            this.modernBox3.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.modernBox3.ShadowSize = 1;
+            this.modernBox3.Size = new System.Drawing.Size(50, 50);
+            this.modernBox3.TabIndex = 33;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(6, 6);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(38, 38);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.label6.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.label6.Location = new System.Drawing.Point(20, 17);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(152, 23);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Total em Vendas";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.label7.Font = new System.Drawing.Font("Roboto Cn", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.label7.Location = new System.Drawing.Point(27, 41);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(68, 38);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "250";
+            // 
+            // modernBox1
+            // 
+            this.modernBox1.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox1.BorderColor = System.Drawing.Color.Transparent;
+            this.modernBox1.BorderRadius = 12;
+            this.modernBox1.BorderSize = 1;
+            this.modernBox1.Controls.Add(this.modernBox6);
+            this.modernBox1.Controls.Add(this.label3);
+            this.modernBox1.Controls.Add(this.label2);
+            this.modernBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.modernBox1.FillColor = System.Drawing.Color.White;
+            this.modernBox1.Location = new System.Drawing.Point(3, 3);
+            this.modernBox1.Name = "modernBox1";
+            this.modernBox1.Padding = new System.Windows.Forms.Padding(6);
+            this.modernBox1.ShadowAngle = 50;
+            this.modernBox1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.modernBox1.ShadowSize = 1;
+            this.modernBox1.Size = new System.Drawing.Size(295, 103);
+            this.modernBox1.TabIndex = 0;
+            // 
+            // modernBox6
+            // 
+            this.modernBox6.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox6.BorderColor = System.Drawing.Color.Transparent;
+            this.modernBox6.BorderRadius = 8;
+            this.modernBox6.BorderSize = 1;
+            this.modernBox6.Controls.Add(this.pictureBox3);
+            this.modernBox6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(57)))), ((int)(((byte)(92)))));
+            this.modernBox6.Location = new System.Drawing.Point(226, 29);
+            this.modernBox6.Name = "modernBox6";
+            this.modernBox6.Padding = new System.Windows.Forms.Padding(6);
+            this.modernBox6.ShadowAngle = 50;
+            this.modernBox6.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.modernBox6.ShadowSize = 1;
+            this.modernBox6.Size = new System.Drawing.Size(50, 50);
+            this.modernBox6.TabIndex = 32;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(6, 6);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(38, 38);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.label3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.label3.Location = new System.Drawing.Point(20, 17);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(152, 23);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Total em Vendas";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.label2.Font = new System.Drawing.Font("Roboto Cn", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.label2.Location = new System.Drawing.Point(27, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 38);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "250";
             // 
             // btnUser
             // 
@@ -404,40 +448,21 @@
             this.btnUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.btnUser.Image = ((System.Drawing.Image)(resources.GetObject("btnUser.Image")));
-            this.btnUser.Location = new System.Drawing.Point(1290, 12);
+            this.btnUser.Location = new System.Drawing.Point(9, -1);
             this.btnUser.Name = "btnUser";
             this.btnUser.Size = new System.Drawing.Size(45, 45);
             this.btnUser.TabIndex = 9;
             this.btnUser.TamanhoBorda = 0;
-            this.btnUser.TamanhoRaio = 20;
+            this.btnUser.TamanhoRaio = 2;
             this.btnUser.UseVisualStyleBackColor = false;
             this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
-            // 
-            // roundedTextBox1
-            // 
-            this.roundedTextBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.roundedTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.roundedTextBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.roundedTextBox1.BorderRadius = 12;
-            this.roundedTextBox1.FillColor = System.Drawing.Color.White;
-            this.roundedTextBox1.Icon = ((System.Drawing.Image)(resources.GetObject("roundedTextBox1.Icon")));
-            this.roundedTextBox1.IconPosition = GRC.Componentes.RoundedTextBox.IconPositionEnum.Right;
-            this.roundedTextBox1.Location = new System.Drawing.Point(279, 17);
-            this.roundedTextBox1.Name = "roundedTextBox1";
-            this.roundedTextBox1.Padding = new System.Windows.Forms.Padding(10);
-            this.roundedTextBox1.Placeholder = "Pesquise um assunto";
-            this.roundedTextBox1.Size = new System.Drawing.Size(767, 40);
-            this.roundedTextBox1.TabIndex = 14;
-            this.roundedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.roundedTextBox1.TextColor = System.Drawing.Color.Black;
-            this.roundedTextBox1.TextStyle = System.Drawing.FontStyle.Bold;
-            this.roundedTextBox1.UnderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            this.roundedTextBox1.UnderlineSize = 5;
             // 
             // btnMinimize
             // 
             this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMinimize.BackgroundImage")));
+            this.btnMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMinimize.CorBorda = System.Drawing.Color.MediumSlateBlue;
             this.btnMinimize.CorBotao = System.Drawing.Color.Transparent;
             this.btnMinimize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
@@ -447,13 +472,12 @@
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(1188, 12);
+            this.btnMinimize.Location = new System.Drawing.Point(1268, 3);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(45, 45);
+            this.btnMinimize.Size = new System.Drawing.Size(20, 18);
             this.btnMinimize.TabIndex = 12;
             this.btnMinimize.TamanhoBorda = 0;
-            this.btnMinimize.TamanhoRaio = 20;
+            this.btnMinimize.TamanhoRaio = 2;
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
@@ -461,6 +485,8 @@
             // 
             this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMaximize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMaximize.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMaximize.BackgroundImage")));
+            this.btnMaximize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnMaximize.CorBorda = System.Drawing.Color.MediumSlateBlue;
             this.btnMaximize.CorBotao = System.Drawing.Color.Transparent;
             this.btnMaximize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
@@ -470,13 +496,12 @@
             this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMaximize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
-            this.btnMaximize.Location = new System.Drawing.Point(1239, 12);
+            this.btnMaximize.Location = new System.Drawing.Point(1294, 3);
             this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(45, 45);
+            this.btnMaximize.Size = new System.Drawing.Size(22, 18);
             this.btnMaximize.TabIndex = 13;
             this.btnMaximize.TamanhoBorda = 0;
-            this.btnMaximize.TamanhoRaio = 20;
+            this.btnMaximize.TamanhoRaio = 2;
             this.btnMaximize.UseVisualStyleBackColor = false;
             this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
             // 
@@ -490,7 +515,7 @@
             this.btnHoje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHoje.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btnHoje.ForeColor = System.Drawing.Color.White;
-            this.btnHoje.Location = new System.Drawing.Point(800, 91);
+            this.btnHoje.Location = new System.Drawing.Point(819, 30);
             this.btnHoje.Name = "btnHoje";
             this.btnHoje.Size = new System.Drawing.Size(134, 43);
             this.btnHoje.TabIndex = 18;
@@ -508,7 +533,7 @@
             this.btnOntem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOntem.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btnOntem.ForeColor = System.Drawing.Color.White;
-            this.btnOntem.Location = new System.Drawing.Point(931, 91);
+            this.btnOntem.Location = new System.Drawing.Point(950, 30);
             this.btnOntem.Name = "btnOntem";
             this.btnOntem.Size = new System.Drawing.Size(134, 43);
             this.btnOntem.TabIndex = 19;
@@ -526,7 +551,7 @@
             this.btnSemana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSemana.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btnSemana.ForeColor = System.Drawing.Color.White;
-            this.btnSemana.Location = new System.Drawing.Point(1060, 91);
+            this.btnSemana.Location = new System.Drawing.Point(1079, 30);
             this.btnSemana.Name = "btnSemana";
             this.btnSemana.Size = new System.Drawing.Size(134, 43);
             this.btnSemana.TabIndex = 20;
@@ -544,7 +569,7 @@
             this.btnCustomFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomFilter.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btnCustomFilter.ForeColor = System.Drawing.Color.White;
-            this.btnCustomFilter.Location = new System.Drawing.Point(672, 91);
+            this.btnCustomFilter.Location = new System.Drawing.Point(691, 30);
             this.btnCustomFilter.Name = "btnCustomFilter";
             this.btnCustomFilter.Size = new System.Drawing.Size(134, 43);
             this.btnCustomFilter.TabIndex = 21;
@@ -562,7 +587,7 @@
             this.btnMes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMes.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btnMes.ForeColor = System.Drawing.Color.White;
-            this.btnMes.Location = new System.Drawing.Point(1192, 91);
+            this.btnMes.Location = new System.Drawing.Point(1211, 30);
             this.btnMes.Name = "btnMes";
             this.btnMes.Size = new System.Drawing.Size(134, 43);
             this.btnMes.TabIndex = 22;
@@ -604,7 +629,7 @@
             this.tlpMenuRedux.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMenuRedux.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tlpMenuRedux.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpMenuRedux.Size = new System.Drawing.Size(90, 726);
+            this.tlpMenuRedux.Size = new System.Drawing.Size(70, 726);
             this.tlpMenuRedux.TabIndex = 25;
             // 
             // btnMovimentacao
@@ -623,7 +648,7 @@
             this.btnMovimentacao.Image = ((System.Drawing.Image)(resources.GetObject("btnMovimentacao.Image")));
             this.btnMovimentacao.Location = new System.Drawing.Point(3, 321);
             this.btnMovimentacao.Name = "btnMovimentacao";
-            this.btnMovimentacao.Size = new System.Drawing.Size(84, 44);
+            this.btnMovimentacao.Size = new System.Drawing.Size(64, 44);
             this.btnMovimentacao.TabIndex = 30;
             this.btnMovimentacao.TamanhoBorda = 0;
             this.btnMovimentacao.TamanhoRaio = 15;
@@ -648,7 +673,7 @@
             this.btnFornecedores.Image = ((System.Drawing.Image)(resources.GetObject("btnFornecedores.Image")));
             this.btnFornecedores.Location = new System.Drawing.Point(3, 371);
             this.btnFornecedores.Name = "btnFornecedores";
-            this.btnFornecedores.Size = new System.Drawing.Size(84, 44);
+            this.btnFornecedores.Size = new System.Drawing.Size(64, 44);
             this.btnFornecedores.TabIndex = 4;
             this.btnFornecedores.TamanhoBorda = 0;
             this.btnFornecedores.TamanhoRaio = 15;
@@ -672,7 +697,7 @@
             this.customButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.customButton3.Location = new System.Drawing.Point(3, 75);
             this.customButton3.Name = "customButton3";
-            this.customButton3.Size = new System.Drawing.Size(72, 2);
+            this.customButton3.Size = new System.Drawing.Size(64, 2);
             this.customButton3.TabIndex = 5;
             this.customButton3.TamanhoBorda = 0;
             this.customButton3.TamanhoRaio = 2;
@@ -696,7 +721,7 @@
             this.btnOS.Image = ((System.Drawing.Image)(resources.GetObject("btnOS.Image")));
             this.btnOS.Location = new System.Drawing.Point(3, 121);
             this.btnOS.Name = "btnOS";
-            this.btnOS.Size = new System.Drawing.Size(84, 44);
+            this.btnOS.Size = new System.Drawing.Size(64, 44);
             this.btnOS.TabIndex = 6;
             this.btnOS.TamanhoBorda = 0;
             this.btnOS.TamanhoRaio = 15;
@@ -721,7 +746,7 @@
             this.btnEstoque.Image = ((System.Drawing.Image)(resources.GetObject("btnEstoque.Image")));
             this.btnEstoque.Location = new System.Drawing.Point(3, 271);
             this.btnEstoque.Name = "btnEstoque";
-            this.btnEstoque.Size = new System.Drawing.Size(84, 44);
+            this.btnEstoque.Size = new System.Drawing.Size(64, 44);
             this.btnEstoque.TabIndex = 9;
             this.btnEstoque.TamanhoBorda = 0;
             this.btnEstoque.TamanhoRaio = 15;
@@ -746,7 +771,7 @@
             this.btnVendas.Image = ((System.Drawing.Image)(resources.GetObject("btnVendas.Image")));
             this.btnVendas.Location = new System.Drawing.Point(3, 171);
             this.btnVendas.Name = "btnVendas";
-            this.btnVendas.Size = new System.Drawing.Size(84, 44);
+            this.btnVendas.Size = new System.Drawing.Size(64, 44);
             this.btnVendas.TabIndex = 6;
             this.btnVendas.TamanhoBorda = 0;
             this.btnVendas.TamanhoRaio = 15;
@@ -758,25 +783,12 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.btnUser);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 679);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(84, 44);
+            this.panel2.Size = new System.Drawing.Size(64, 44);
             this.panel2.TabIndex = 16;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(9, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 23);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "PDV 01";
             // 
             // panel3
             // 
@@ -784,7 +796,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(84, 66);
+            this.panel3.Size = new System.Drawing.Size(64, 66);
             this.panel3.TabIndex = 17;
             // 
             // pictureBox2
@@ -796,7 +808,7 @@
             this.pictureBox2.Location = new System.Drawing.Point(9, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Padding = new System.Windows.Forms.Padding(10);
-            this.pictureBox2.Size = new System.Drawing.Size(69, 57);
+            this.pictureBox2.Size = new System.Drawing.Size(49, 57);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -817,7 +829,7 @@
             this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
             this.btnClientes.Location = new System.Drawing.Point(3, 221);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(84, 44);
+            this.btnClientes.Size = new System.Drawing.Size(64, 44);
             this.btnClientes.TabIndex = 30;
             this.btnClientes.TamanhoBorda = 0;
             this.btnClientes.TamanhoRaio = 15;
@@ -825,6 +837,18 @@
             this.totLegendaMenu.SetToolTip(this.btnClientes, "Cadastro de Clientes");
             this.btnClientes.UseVisualStyleBackColor = false;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.BackColor = System.Drawing.Color.Black;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(1186, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 25);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "PDV 01";
             // 
             // crtDadosProdutividade
             // 
@@ -844,7 +868,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.crtDadosProdutividade.Series.Add(series1);
-            this.crtDadosProdutividade.Size = new System.Drawing.Size(740, 409);
+            this.crtDadosProdutividade.Size = new System.Drawing.Size(740, 344);
             this.crtDadosProdutividade.TabIndex = 26;
             this.crtDadosProdutividade.Text = "chart3";
             // 
@@ -866,7 +890,7 @@
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.crtDadosOS.Series.Add(series2);
-            this.crtDadosOS.Size = new System.Drawing.Size(487, 409);
+            this.crtDadosOS.Size = new System.Drawing.Size(487, 344);
             this.crtDadosOS.TabIndex = 27;
             this.crtDadosOS.Text = "chart4";
             // 
@@ -875,7 +899,7 @@
             this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer1.Location = new System.Drawing.Point(107, 293);
+            this.splitContainer1.Location = new System.Drawing.Point(97, 194);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -885,7 +909,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.crtDadosOS);
-            this.splitContainer1.Size = new System.Drawing.Size(1231, 409);
+            this.splitContainer1.Size = new System.Drawing.Size(1231, 344);
             this.splitContainer1.SplitterDistance = 740;
             this.splitContainer1.TabIndex = 28;
             // 
@@ -894,7 +918,7 @@
             this.pnCustomFilter.Controls.Add(this.customButton1);
             this.pnCustomFilter.Controls.Add(this.roundedTextBox3);
             this.pnCustomFilter.Controls.Add(this.roundedTextBox2);
-            this.pnCustomFilter.Location = new System.Drawing.Point(112, 86);
+            this.pnCustomFilter.Location = new System.Drawing.Point(937, 83);
             this.pnCustomFilter.Name = "pnCustomFilter";
             this.pnCustomFilter.Size = new System.Drawing.Size(399, 51);
             this.pnCustomFilter.TabIndex = 29;
@@ -965,14 +989,14 @@
             // 
             // prUsuario
             // 
-            this.prUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.prUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.prUsuario.BackColor = System.Drawing.Color.White;
             this.prUsuario.BorderColor = System.Drawing.Color.White;
             this.prUsuario.Controls.Add(this.btnEncerrar);
             this.prUsuario.Controls.Add(this.btnTrocar);
             this.prUsuario.Controls.Add(this.lbNome);
             this.prUsuario.Controls.Add(this.pictureBox1);
-            this.prUsuario.Location = new System.Drawing.Point(1140, 10);
+            this.prUsuario.Location = new System.Drawing.Point(88, 544);
             this.prUsuario.Name = "prUsuario";
             this.prUsuario.Radius = 50;
             this.prUsuario.Size = new System.Drawing.Size(200, 179);
@@ -1052,22 +1076,110 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.label10.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold);
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.label10.Location = new System.Drawing.Point(112, 9);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(131, 29);
+            this.label10.TabIndex = 33;
+            this.label10.Text = "Dashboard";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.label11.Font = new System.Drawing.Font("Roboto Cn", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label11.Location = new System.Drawing.Point(113, 44);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(155, 19);
+            this.label11.TabIndex = 34;
+            this.label11.Text = "Visão geral do sistema";
+            // 
+            // btnAddCategoria
+            // 
+            this.btnAddCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(57)))), ((int)(((byte)(92)))));
+            this.btnAddCategoria.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnAddCategoria.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(57)))), ((int)(((byte)(92)))));
+            this.btnAddCategoria.CorTextoBotao = System.Drawing.Color.White;
+            this.btnAddCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddCategoria.FlatAppearance.BorderSize = 0;
+            this.btnAddCategoria.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnAddCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCategoria.ForeColor = System.Drawing.Color.White;
+            this.btnAddCategoria.Location = new System.Drawing.Point(1003, 38);
+            this.btnAddCategoria.Name = "btnAddCategoria";
+            this.btnAddCategoria.Size = new System.Drawing.Size(107, 39);
+            this.btnAddCategoria.TabIndex = 35;
+            this.btnAddCategoria.TamanhoBorda = 0;
+            this.btnAddCategoria.TamanhoRaio = 16;
+            this.btnAddCategoria.UseVisualStyleBackColor = false;
+            // 
+            // customButton2
+            // 
+            this.customButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(57)))), ((int)(((byte)(92)))));
+            this.customButton2.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.customButton2.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(57)))), ((int)(((byte)(92)))));
+            this.customButton2.CorTextoBotao = System.Drawing.Color.White;
+            this.customButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customButton2.FlatAppearance.BorderSize = 0;
+            this.customButton2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton2.ForeColor = System.Drawing.Color.White;
+            this.customButton2.Location = new System.Drawing.Point(1116, 38);
+            this.customButton2.Name = "customButton2";
+            this.customButton2.Size = new System.Drawing.Size(107, 39);
+            this.customButton2.TabIndex = 36;
+            this.customButton2.TamanhoBorda = 0;
+            this.customButton2.TamanhoRaio = 16;
+            this.customButton2.UseVisualStyleBackColor = false;
+            // 
+            // customButton4
+            // 
+            this.customButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(57)))), ((int)(((byte)(92)))));
+            this.customButton4.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.customButton4.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(57)))), ((int)(((byte)(92)))));
+            this.customButton4.CorTextoBotao = System.Drawing.Color.White;
+            this.customButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customButton4.FlatAppearance.BorderSize = 0;
+            this.customButton4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.customButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton4.ForeColor = System.Drawing.Color.White;
+            this.customButton4.Location = new System.Drawing.Point(1229, 38);
+            this.customButton4.Name = "customButton4";
+            this.customButton4.Size = new System.Drawing.Size(107, 39);
+            this.customButton4.TabIndex = 37;
+            this.customButton4.TamanhoBorda = 0;
+            this.customButton4.TamanhoRaio = 16;
+            this.customButton4.UseVisualStyleBackColor = false;
+            // 
             // WorkFlow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(20)))), ((int)(((byte)(30)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.customButton4);
+            this.Controls.Add(this.customButton2);
+            this.Controls.Add(this.btnAddCategoria);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pnCustomFilter);
+            this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.tlpMenuRedux);
+            this.Controls.Add(this.btnMaximize);
             this.Controls.Add(this.btnMes);
             this.Controls.Add(this.btnCustomFilter);
             this.Controls.Add(this.btnSemana);
             this.Controls.Add(this.btnOntem);
             this.Controls.Add(this.btnHoje);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.prUsuario);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1079,19 +1191,22 @@
             this.Load += new System.EventHandler(this.WorkFlow_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.WorkFlow_MouseDown);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.modernBox4.ResumeLayout(false);
-            this.modernBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox5)).EndInit();
-            this.modernBox3.ResumeLayout(false);
-            this.modernBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox4)).EndInit();
-            this.modernBox1.ResumeLayout(false);
-            this.modernBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox2)).EndInit();
             this.modernBox2.ResumeLayout(false);
             this.modernBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customPictureBox3)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.modernBox8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.modernBox7.ResumeLayout(false);
+            this.modernBox7.PerformLayout();
+            this.modernBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.modernBox4.ResumeLayout(false);
+            this.modernBox4.PerformLayout();
+            this.modernBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.modernBox1.ResumeLayout(false);
+            this.modernBox1.PerformLayout();
+            this.modernBox6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tlpMenuRedux.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -1107,6 +1222,7 @@
             this.prUsuario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1114,7 +1230,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private Componentes.CustomPictureBox customPictureBox2;
         private Componentes.CustomButton btnUser;
         private Componentes.PainelRadius prUsuario;
         private System.Windows.Forms.Label lbNome;
@@ -1123,21 +1238,7 @@
         private Componentes.CustomButton btnTrocar;
         private Componentes.CustomButton btnMinimize;
         private Componentes.CustomButton btnMaximize;
-        private Componentes.CustomPictureBox customPictureBox5;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private Componentes.CustomPictureBox customPictureBox4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private Componentes.CustomPictureBox customPictureBox3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private Componentes.RoundedTextBox roundedTextBox1;
-        private Componentes.ModernBox modernBox4;
-        private Componentes.ModernBox modernBox3;
         private Componentes.ModernBox modernBox1;
-        private Componentes.ModernBox modernBox2;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnHoje;
         private System.Windows.Forms.Button btnOntem;
         private System.Windows.Forms.Button btnSemana;
@@ -1163,5 +1264,27 @@
         private System.Windows.Forms.Panel pnCustomFilter;
         private Componentes.CustomButton btnMovimentacao;
         private Componentes.CustomButton btnClientes;
+        private Componentes.ModernBox modernBox6;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private Componentes.ModernBox modernBox2;
+        private Componentes.ModernBox modernBox8;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private Componentes.ModernBox modernBox7;
+        private Componentes.ModernBox modernBox5;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private Componentes.ModernBox modernBox4;
+        private Componentes.ModernBox modernBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private Componentes.CustomButton btnAddCategoria;
+        private Componentes.CustomButton customButton2;
+        private Componentes.CustomButton customButton4;
     }
 }

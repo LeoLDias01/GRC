@@ -29,27 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroOS));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.ttAjuda = new System.Windows.Forms.ToolTip(this.components);
-            this.pnSuperior = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pcLogo = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.customPanel2 = new GRC.Componentes.CustomPanel();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.txtId = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtDataEntrada = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtFimReal = new MaterialSkin.Controls.MaterialTextBox();
-            this.customPanel1 = new GRC.Componentes.CustomPanel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtIdentidade = new MaterialSkin.Controls.MaterialTextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.txtCliente = new MaterialSkin.Controls.MaterialTextBox();
-            this.customPanel5 = new GRC.Componentes.CustomPanel();
             this.tbcOs = new MaterialSkin.Controls.MaterialTabControl();
             this.tbpDadosOS = new System.Windows.Forms.TabPage();
             this.gpbInfoVenda = new System.Windows.Forms.GroupBox();
@@ -137,23 +121,31 @@
             this.pcbImagemItem = new GRC.Componentes.CustomPictureBox();
             this.btnBuscaImagem = new GRC.Componentes.CustomButton();
             this.btnExcluiImagem = new GRC.Componentes.CustomButton();
+            this.ttAjuda = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnSalvar = new GRC.Componentes.CustomButton();
+            this.btnExportar = new GRC.Componentes.CustomButton();
+            this.pcbFavorito = new GRC.Componentes.CustomPictureBox();
+            this.pnSuperior = new System.Windows.Forms.Panel();
             this.pnStatus = new GRC.Componentes.RoundedPanel();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnClose = new GRC.Componentes.CustomButton();
+            this.pcLogo = new System.Windows.Forms.PictureBox();
             this.pn2 = new GRC.Componentes.RoundedPanel();
             this.lbStatus = new System.Windows.Forms.Label();
             this.pn1 = new GRC.Componentes.RoundedPanel();
             this.lbDataAtual = new System.Windows.Forms.Label();
-            this.btnSalvar = new GRC.Componentes.CustomButton();
-            this.btnExportar = new GRC.Componentes.CustomButton();
-            this.pcbFavorito = new GRC.Componentes.CustomPictureBox();
-            this.pnSuperior.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcLogo)).BeginInit();
-            this.customPanel2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.customPanel1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.customPanel5.SuspendLayout();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.customPanel2 = new GRC.Componentes.CustomPanel();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtId = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtDataEntrada = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtFimReal = new MaterialSkin.Controls.MaterialTextBox();
+            this.customPanel1 = new GRC.Componentes.CustomPanel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtIdentidade = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtCliente = new MaterialSkin.Controls.MaterialTextBox();
+            this.customPanel5 = new GRC.Componentes.CustomPanel();
             this.tbcOs.SuspendLayout();
             this.tbpDadosOS.SuspendLayout();
             this.gpbInfoVenda.SuspendLayout();
@@ -175,9 +167,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tbpTermos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbImagemItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbFavorito)).BeginInit();
+            this.pnSuperior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcLogo)).BeginInit();
             this.pn2.SuspendLayout();
             this.pn1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbFavorito)).BeginInit();
+            this.customPanel2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.customPanel1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.customPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTabSelector1
@@ -195,272 +195,6 @@
             this.materialTabSelector1.TabIndex = 96;
             this.materialTabSelector1.TabIndicatorHeight = 3;
             this.materialTabSelector1.Text = "materialTabSelector1";
-            // 
-            // ttAjuda
-            // 
-            this.ttAjuda.AutomaticDelay = 1000;
-            this.ttAjuda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.ttAjuda.ForeColor = System.Drawing.Color.White;
-            this.ttAjuda.ToolTipTitle = "Ajuda";
-            // 
-            // pnSuperior
-            // 
-            this.pnSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
-            this.pnSuperior.Controls.Add(this.pnStatus);
-            this.pnSuperior.Controls.Add(this.label3);
-            this.pnSuperior.Controls.Add(this.btnClose);
-            this.pnSuperior.Controls.Add(this.pcLogo);
-            this.pnSuperior.Controls.Add(this.pn2);
-            this.pnSuperior.Controls.Add(this.pn1);
-            this.pnSuperior.Controls.Add(this.btnSalvar);
-            this.pnSuperior.Controls.Add(this.btnExportar);
-            this.pnSuperior.Controls.Add(this.pcbFavorito);
-            this.pnSuperior.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnSuperior.Location = new System.Drawing.Point(0, 0);
-            this.pnSuperior.Name = "pnSuperior";
-            this.pnSuperior.Size = new System.Drawing.Size(1138, 70);
-            this.pnSuperior.TabIndex = 131;
-            this.pnSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnSuperior_MouseDown);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(59, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(287, 29);
-            this.label3.TabIndex = 119;
-            this.label3.Text = "Ordem de Serviço (OS)";
-            this.label3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label3_MouseDown);
-            // 
-            // pcLogo
-            // 
-            this.pcLogo.Image = ((System.Drawing.Image)(resources.GetObject("pcLogo.Image")));
-            this.pcLogo.Location = new System.Drawing.Point(8, 11);
-            this.pcLogo.Name = "pcLogo";
-            this.pcLogo.Size = new System.Drawing.Size(45, 42);
-            this.pcLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcLogo.TabIndex = 117;
-            this.pcLogo.TabStop = false;
-            this.pcLogo.Click += new System.EventHandler(this.pcLogo_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 726);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1138, 5);
-            this.panel2.TabIndex = 163;
-            // 
-            // customPanel2
-            // 
-            this.customPanel2.BackColor = System.Drawing.Color.White;
-            this.customPanel2.Controls.Add(this.groupBox4);
-            this.customPanel2.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.customPanel2.CorBotao = System.Drawing.Color.White;
-            this.customPanel2.CorTextoBotao = System.Drawing.Color.White;
-            this.customPanel2.ForeColor = System.Drawing.Color.White;
-            this.customPanel2.Location = new System.Drawing.Point(8, 76);
-            this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(462, 101);
-            this.customPanel2.TabIndex = 166;
-            this.customPanel2.TamanhoBorda = 0;
-            this.customPanel2.TamanhoRaio = 15;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox4.Controls.Add(this.txtId);
-            this.groupBox4.Controls.Add(this.txtDataEntrada);
-            this.groupBox4.Controls.Add(this.txtFimReal);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.groupBox4.Location = new System.Drawing.Point(7, 13);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(449, 80);
-            this.groupBox4.TabIndex = 96;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "OS";
-            // 
-            // txtId
-            // 
-            this.txtId.AcceptsTab = true;
-            this.txtId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtId.AnimateReadOnly = true;
-            this.txtId.AutoWordSelection = true;
-            this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtId.Depth = 0;
-            this.txtId.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtId.Hint = "Nº OS";
-            this.txtId.LeadingIcon = null;
-            this.txtId.LeaveOnEnterKey = true;
-            this.txtId.Location = new System.Drawing.Point(5, 26);
-            this.txtId.MaxLength = 60;
-            this.txtId.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtId.Multiline = false;
-            this.txtId.Name = "txtId";
-            this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(143, 50);
-            this.txtId.TabIndex = 83;
-            this.txtId.Text = "";
-            this.txtId.TrailingIcon = null;
-            this.txtId.UseAccent = false;
-            // 
-            // txtDataEntrada
-            // 
-            this.txtDataEntrada.AcceptsTab = true;
-            this.txtDataEntrada.AnimateReadOnly = false;
-            this.txtDataEntrada.AutoWordSelection = true;
-            this.txtDataEntrada.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDataEntrada.Depth = 0;
-            this.txtDataEntrada.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtDataEntrada.Hint = "Data Entrada";
-            this.txtDataEntrada.LeadingIcon = null;
-            this.txtDataEntrada.LeaveOnEnterKey = true;
-            this.txtDataEntrada.Location = new System.Drawing.Point(151, 26);
-            this.txtDataEntrada.MaxLength = 60;
-            this.txtDataEntrada.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtDataEntrada.Multiline = false;
-            this.txtDataEntrada.Name = "txtDataEntrada";
-            this.txtDataEntrada.Size = new System.Drawing.Size(141, 50);
-            this.txtDataEntrada.TabIndex = 85;
-            this.txtDataEntrada.Text = "";
-            this.txtDataEntrada.TrailingIcon = null;
-            this.txtDataEntrada.UseAccent = false;
-            this.txtDataEntrada.TextChanged += new System.EventHandler(this.txtDataEntrada_TextChanged);
-            // 
-            // txtFimReal
-            // 
-            this.txtFimReal.AcceptsTab = true;
-            this.txtFimReal.AnimateReadOnly = true;
-            this.txtFimReal.AutoWordSelection = true;
-            this.txtFimReal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFimReal.Depth = 0;
-            this.txtFimReal.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtFimReal.Hint = "Fim Real";
-            this.txtFimReal.LeadingIcon = null;
-            this.txtFimReal.LeaveOnEnterKey = true;
-            this.txtFimReal.Location = new System.Drawing.Point(298, 25);
-            this.txtFimReal.MaxLength = 60;
-            this.txtFimReal.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtFimReal.Multiline = false;
-            this.txtFimReal.Name = "txtFimReal";
-            this.txtFimReal.ReadOnly = true;
-            this.txtFimReal.Size = new System.Drawing.Size(146, 50);
-            this.txtFimReal.TabIndex = 93;
-            this.txtFimReal.Text = "";
-            this.txtFimReal.TrailingIcon = null;
-            this.txtFimReal.UseAccent = false;
-            // 
-            // customPanel1
-            // 
-            this.customPanel1.BackColor = System.Drawing.Color.White;
-            this.customPanel1.Controls.Add(this.groupBox2);
-            this.customPanel1.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.customPanel1.CorBotao = System.Drawing.Color.White;
-            this.customPanel1.CorTextoBotao = System.Drawing.Color.White;
-            this.customPanel1.ForeColor = System.Drawing.Color.White;
-            this.customPanel1.Location = new System.Drawing.Point(476, 76);
-            this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(649, 101);
-            this.customPanel1.TabIndex = 165;
-            this.customPanel1.TamanhoBorda = 0;
-            this.customPanel1.TamanhoRaio = 15;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.txtIdentidade);
-            this.groupBox2.Controls.Add(this.pictureBox2);
-            this.groupBox2.Controls.Add(this.txtCliente);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.groupBox2.Location = new System.Drawing.Point(3, 13);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(643, 80);
-            this.groupBox2.TabIndex = 94;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Dados do Cliente";
-            // 
-            // txtIdentidade
-            // 
-            this.txtIdentidade.AcceptsTab = true;
-            this.txtIdentidade.AnimateReadOnly = true;
-            this.txtIdentidade.AutoWordSelection = true;
-            this.txtIdentidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIdentidade.Depth = 0;
-            this.txtIdentidade.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtIdentidade.Hint = "CPF/CNPJ";
-            this.txtIdentidade.LeadingIcon = null;
-            this.txtIdentidade.LeaveOnEnterKey = true;
-            this.txtIdentidade.Location = new System.Drawing.Point(462, 24);
-            this.txtIdentidade.MaxLength = 20;
-            this.txtIdentidade.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtIdentidade.Multiline = false;
-            this.txtIdentidade.Name = "txtIdentidade";
-            this.txtIdentidade.ReadOnly = true;
-            this.txtIdentidade.Size = new System.Drawing.Size(175, 50);
-            this.txtIdentidade.TabIndex = 82;
-            this.txtIdentidade.Text = "";
-            this.txtIdentidade.TrailingIcon = null;
-            this.txtIdentidade.UseAccent = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(162, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(20, 18);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 81;
-            this.pictureBox2.TabStop = false;
-            this.ttAjuda.SetToolTip(this.pictureBox2, "Pesquise o cliente na lupa e os dados serão preenchidos atutomaticamente,\r\ncampos" +
-        " não editáveis");
-            // 
-            // txtCliente
-            // 
-            this.txtCliente.AcceptsTab = true;
-            this.txtCliente.AnimateReadOnly = true;
-            this.txtCliente.AutoWordSelection = true;
-            this.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCliente.Depth = 0;
-            this.txtCliente.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtCliente.Hint = "Cliente";
-            this.txtCliente.LeadingIcon = null;
-            this.txtCliente.LeaveOnEnterKey = true;
-            this.txtCliente.Location = new System.Drawing.Point(6, 24);
-            this.txtCliente.MaxLength = 60;
-            this.txtCliente.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtCliente.Multiline = false;
-            this.txtCliente.Name = "txtCliente";
-            this.txtCliente.ReadOnly = true;
-            this.txtCliente.Size = new System.Drawing.Size(450, 50);
-            this.txtCliente.TabIndex = 75;
-            this.txtCliente.Text = "";
-            this.txtCliente.TrailingIcon = ((System.Drawing.Image)(resources.GetObject("txtCliente.TrailingIcon")));
-            this.txtCliente.UseAccent = false;
-            this.txtCliente.TrailingIconClick += new System.EventHandler(this.txtCliente_TrailingIconClick);
-            // 
-            // customPanel5
-            // 
-            this.customPanel5.BackColor = System.Drawing.Color.White;
-            this.customPanel5.Controls.Add(this.tbcOs);
-            this.customPanel5.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.customPanel5.CorBotao = System.Drawing.Color.White;
-            this.customPanel5.CorTextoBotao = System.Drawing.Color.White;
-            this.customPanel5.ForeColor = System.Drawing.Color.White;
-            this.customPanel5.Location = new System.Drawing.Point(12, 230);
-            this.customPanel5.Name = "customPanel5";
-            this.customPanel5.Size = new System.Drawing.Size(1116, 489);
-            this.customPanel5.TabIndex = 164;
-            this.customPanel5.TamanhoBorda = 0;
-            this.customPanel5.TamanhoRaio = 15;
             // 
             // tbcOs
             // 
@@ -1576,14 +1310,14 @@
             this.dgvItens.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvItens.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvItens.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvItens.ColumnHeadersHeight = 35;
             this.dgvItens.ColumnHeadersVisible = false;
             this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1591,14 +1325,14 @@
             this.colDescricao,
             this.colExcluir});
             this.dgvItens.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.MintCream;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.PaleTurquoise;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvItens.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.MintCream;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvItens.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvItens.EnableHeadersVisualStyles = false;
             this.dgvItens.GridColor = System.Drawing.Color.Black;
             this.dgvItens.Location = new System.Drawing.Point(6, 79);
@@ -1607,8 +1341,8 @@
             this.dgvItens.ReadOnly = true;
             this.dgvItens.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvItens.RowHeadersVisible = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvItens.Size = new System.Drawing.Size(522, 346);
             this.dgvItens.TabIndex = 98;
@@ -2041,94 +1775,25 @@
             this.btnExcluiImagem.TamanhoRaio = 0;
             this.btnExcluiImagem.UseVisualStyleBackColor = false;
             // 
-            // pnStatus
+            // ttAjuda
             // 
-            this.pnStatus.BackColor = System.Drawing.Color.Transparent;
-            this.pnStatus.Color1 = System.Drawing.Color.DodgerBlue;
-            this.pnStatus.Color2 = System.Drawing.Color.MediumOrchid;
-            this.pnStatus.CornerRadius = 10;
-            this.pnStatus.GradientAngle = 180F;
-            this.pnStatus.Location = new System.Drawing.Point(-6, 65);
-            this.pnStatus.Name = "pnStatus";
-            this.pnStatus.Size = new System.Drawing.Size(352, 22);
-            this.pnStatus.TabIndex = 131;
+            this.ttAjuda.AutomaticDelay = 1000;
+            this.ttAjuda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.ttAjuda.ForeColor = System.Drawing.Color.White;
+            this.ttAjuda.ToolTipTitle = "Ajuda";
             // 
-            // btnClose
+            // pictureBox2
             // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnClose.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnClose.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnClose.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(1101, 21);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(27, 29);
-            this.btnClose.TabIndex = 122;
-            this.btnClose.TamanhoBorda = 0;
-            this.btnClose.TamanhoRaio = 5;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // pn2
-            // 
-            this.pn2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pn2.BackColor = System.Drawing.Color.Transparent;
-            this.pn2.Color1 = System.Drawing.Color.Cyan;
-            this.pn2.Color2 = System.Drawing.Color.DeepSkyBlue;
-            this.pn2.Controls.Add(this.lbStatus);
-            this.pn2.CornerRadius = 10;
-            this.pn2.GradientAngle = 90F;
-            this.pn2.Location = new System.Drawing.Point(644, 17);
-            this.pn2.Name = "pn2";
-            this.pn2.Size = new System.Drawing.Size(429, 41);
-            this.pn2.TabIndex = 6;
-            this.pn2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pn2_MouseDown);
-            // 
-            // lbStatus
-            // 
-            this.lbStatus.AutoSize = true;
-            this.lbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lbStatus.ForeColor = System.Drawing.Color.Black;
-            this.lbStatus.Location = new System.Drawing.Point(12, 11);
-            this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(109, 20);
-            this.lbStatus.TabIndex = 0;
-            this.lbStatus.Text = "Não Iniciado";
-            this.lbStatus.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbStatus_MouseDown);
-            // 
-            // pn1
-            // 
-            this.pn1.BackColor = System.Drawing.Color.Transparent;
-            this.pn1.Color1 = System.Drawing.Color.Aquamarine;
-            this.pn1.Color2 = System.Drawing.Color.Aqua;
-            this.pn1.Controls.Add(this.lbDataAtual);
-            this.pn1.CornerRadius = 10;
-            this.pn1.GradientAngle = 90F;
-            this.pn1.Location = new System.Drawing.Point(514, 17);
-            this.pn1.Name = "pn1";
-            this.pn1.Size = new System.Drawing.Size(124, 41);
-            this.pn1.TabIndex = 5;
-            this.pn1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pn1_MouseDown);
-            // 
-            // lbDataAtual
-            // 
-            this.lbDataAtual.AutoSize = true;
-            this.lbDataAtual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lbDataAtual.ForeColor = System.Drawing.Color.Black;
-            this.lbDataAtual.Location = new System.Drawing.Point(12, 11);
-            this.lbDataAtual.Name = "lbDataAtual";
-            this.lbDataAtual.Size = new System.Drawing.Size(99, 20);
-            this.lbDataAtual.TabIndex = 1;
-            this.lbDataAtual.Text = "15/01/2026";
-            this.lbDataAtual.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbDataAtual_MouseDown);
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(162, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(20, 18);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 81;
+            this.pictureBox2.TabStop = false;
+            this.ttAjuda.SetToolTip(this.pictureBox2, "Pesquise o cliente na lupa e os dados serão preenchidos atutomaticamente,\r\ncampos" +
+        " não editáveis");
             // 
             // btnSalvar
             // 
@@ -2201,11 +1866,346 @@
             this.ttAjuda.SetToolTip(this.pcbFavorito, "Favoritar a OS permite que apareça primeiro ao pesquisar ");
             this.pcbFavorito.Click += new System.EventHandler(this.pcbFavorito_Click);
             // 
+            // pnSuperior
+            // 
+            this.pnSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.pnSuperior.Controls.Add(this.pnStatus);
+            this.pnSuperior.Controls.Add(this.label3);
+            this.pnSuperior.Controls.Add(this.btnClose);
+            this.pnSuperior.Controls.Add(this.pcLogo);
+            this.pnSuperior.Controls.Add(this.pn2);
+            this.pnSuperior.Controls.Add(this.pn1);
+            this.pnSuperior.Controls.Add(this.btnSalvar);
+            this.pnSuperior.Controls.Add(this.btnExportar);
+            this.pnSuperior.Controls.Add(this.pcbFavorito);
+            this.pnSuperior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnSuperior.Location = new System.Drawing.Point(0, 0);
+            this.pnSuperior.Name = "pnSuperior";
+            this.pnSuperior.Size = new System.Drawing.Size(1138, 70);
+            this.pnSuperior.TabIndex = 131;
+            this.pnSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnSuperior_MouseDown);
+            // 
+            // pnStatus
+            // 
+            this.pnStatus.BackColor = System.Drawing.Color.Transparent;
+            this.pnStatus.Color1 = System.Drawing.Color.DodgerBlue;
+            this.pnStatus.Color2 = System.Drawing.Color.MediumOrchid;
+            this.pnStatus.CornerRadius = 10;
+            this.pnStatus.GradientAngle = 180F;
+            this.pnStatus.Location = new System.Drawing.Point(-6, 65);
+            this.pnStatus.Name = "pnStatus";
+            this.pnStatus.Size = new System.Drawing.Size(352, 22);
+            this.pnStatus.TabIndex = 131;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(59, 24);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(287, 29);
+            this.label3.TabIndex = 119;
+            this.label3.Text = "Ordem de Serviço (OS)";
+            this.label3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label3_MouseDown);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnClose.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnClose.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnClose.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(1101, 21);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(27, 29);
+            this.btnClose.TabIndex = 122;
+            this.btnClose.TamanhoBorda = 0;
+            this.btnClose.TamanhoRaio = 5;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // pcLogo
+            // 
+            this.pcLogo.Image = ((System.Drawing.Image)(resources.GetObject("pcLogo.Image")));
+            this.pcLogo.Location = new System.Drawing.Point(8, 11);
+            this.pcLogo.Name = "pcLogo";
+            this.pcLogo.Size = new System.Drawing.Size(45, 42);
+            this.pcLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcLogo.TabIndex = 117;
+            this.pcLogo.TabStop = false;
+            this.pcLogo.Click += new System.EventHandler(this.pcLogo_Click);
+            // 
+            // pn2
+            // 
+            this.pn2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pn2.BackColor = System.Drawing.Color.Transparent;
+            this.pn2.Color1 = System.Drawing.Color.Cyan;
+            this.pn2.Color2 = System.Drawing.Color.DeepSkyBlue;
+            this.pn2.Controls.Add(this.lbStatus);
+            this.pn2.CornerRadius = 10;
+            this.pn2.GradientAngle = 90F;
+            this.pn2.Location = new System.Drawing.Point(644, 17);
+            this.pn2.Name = "pn2";
+            this.pn2.Size = new System.Drawing.Size(429, 41);
+            this.pn2.TabIndex = 6;
+            this.pn2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pn2_MouseDown);
+            // 
+            // lbStatus
+            // 
+            this.lbStatus.AutoSize = true;
+            this.lbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.lbStatus.ForeColor = System.Drawing.Color.Black;
+            this.lbStatus.Location = new System.Drawing.Point(12, 11);
+            this.lbStatus.Name = "lbStatus";
+            this.lbStatus.Size = new System.Drawing.Size(109, 20);
+            this.lbStatus.TabIndex = 0;
+            this.lbStatus.Text = "Não Iniciado";
+            this.lbStatus.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbStatus_MouseDown);
+            // 
+            // pn1
+            // 
+            this.pn1.BackColor = System.Drawing.Color.Transparent;
+            this.pn1.Color1 = System.Drawing.Color.Aquamarine;
+            this.pn1.Color2 = System.Drawing.Color.Aqua;
+            this.pn1.Controls.Add(this.lbDataAtual);
+            this.pn1.CornerRadius = 10;
+            this.pn1.GradientAngle = 90F;
+            this.pn1.Location = new System.Drawing.Point(514, 17);
+            this.pn1.Name = "pn1";
+            this.pn1.Size = new System.Drawing.Size(124, 41);
+            this.pn1.TabIndex = 5;
+            this.pn1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pn1_MouseDown);
+            // 
+            // lbDataAtual
+            // 
+            this.lbDataAtual.AutoSize = true;
+            this.lbDataAtual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.lbDataAtual.ForeColor = System.Drawing.Color.Black;
+            this.lbDataAtual.Location = new System.Drawing.Point(12, 11);
+            this.lbDataAtual.Name = "lbDataAtual";
+            this.lbDataAtual.Size = new System.Drawing.Size(99, 20);
+            this.lbDataAtual.TabIndex = 1;
+            this.lbDataAtual.Text = "15/01/2026";
+            this.lbDataAtual.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbDataAtual_MouseDown);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 726);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1138, 5);
+            this.panel2.TabIndex = 163;
+            // 
+            // customPanel2
+            // 
+            this.customPanel2.BackColor = System.Drawing.Color.White;
+            this.customPanel2.Controls.Add(this.groupBox4);
+            this.customPanel2.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.customPanel2.CorBotao = System.Drawing.Color.White;
+            this.customPanel2.CorTextoBotao = System.Drawing.Color.White;
+            this.customPanel2.ForeColor = System.Drawing.Color.White;
+            this.customPanel2.Location = new System.Drawing.Point(8, 76);
+            this.customPanel2.Name = "customPanel2";
+            this.customPanel2.Size = new System.Drawing.Size(462, 101);
+            this.customPanel2.TabIndex = 166;
+            this.customPanel2.TamanhoBorda = 0;
+            this.customPanel2.TamanhoRaio = 15;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Controls.Add(this.txtId);
+            this.groupBox4.Controls.Add(this.txtDataEntrada);
+            this.groupBox4.Controls.Add(this.txtFimReal);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.groupBox4.Location = new System.Drawing.Point(7, 13);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(449, 80);
+            this.groupBox4.TabIndex = 96;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "OS";
+            // 
+            // txtId
+            // 
+            this.txtId.AcceptsTab = true;
+            this.txtId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtId.AnimateReadOnly = true;
+            this.txtId.AutoWordSelection = true;
+            this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtId.Depth = 0;
+            this.txtId.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtId.Hint = "Nº OS";
+            this.txtId.LeadingIcon = null;
+            this.txtId.LeaveOnEnterKey = true;
+            this.txtId.Location = new System.Drawing.Point(5, 26);
+            this.txtId.MaxLength = 60;
+            this.txtId.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtId.Multiline = false;
+            this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(143, 50);
+            this.txtId.TabIndex = 83;
+            this.txtId.Text = "";
+            this.txtId.TrailingIcon = null;
+            this.txtId.UseAccent = false;
+            // 
+            // txtDataEntrada
+            // 
+            this.txtDataEntrada.AcceptsTab = true;
+            this.txtDataEntrada.AnimateReadOnly = false;
+            this.txtDataEntrada.AutoWordSelection = true;
+            this.txtDataEntrada.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDataEntrada.Depth = 0;
+            this.txtDataEntrada.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtDataEntrada.Hint = "Data Entrada";
+            this.txtDataEntrada.LeadingIcon = null;
+            this.txtDataEntrada.LeaveOnEnterKey = true;
+            this.txtDataEntrada.Location = new System.Drawing.Point(151, 26);
+            this.txtDataEntrada.MaxLength = 60;
+            this.txtDataEntrada.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtDataEntrada.Multiline = false;
+            this.txtDataEntrada.Name = "txtDataEntrada";
+            this.txtDataEntrada.Size = new System.Drawing.Size(141, 50);
+            this.txtDataEntrada.TabIndex = 85;
+            this.txtDataEntrada.Text = "";
+            this.txtDataEntrada.TrailingIcon = null;
+            this.txtDataEntrada.UseAccent = false;
+            this.txtDataEntrada.TextChanged += new System.EventHandler(this.txtDataEntrada_TextChanged);
+            // 
+            // txtFimReal
+            // 
+            this.txtFimReal.AcceptsTab = true;
+            this.txtFimReal.AnimateReadOnly = true;
+            this.txtFimReal.AutoWordSelection = true;
+            this.txtFimReal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFimReal.Depth = 0;
+            this.txtFimReal.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtFimReal.Hint = "Fim Real";
+            this.txtFimReal.LeadingIcon = null;
+            this.txtFimReal.LeaveOnEnterKey = true;
+            this.txtFimReal.Location = new System.Drawing.Point(298, 25);
+            this.txtFimReal.MaxLength = 60;
+            this.txtFimReal.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtFimReal.Multiline = false;
+            this.txtFimReal.Name = "txtFimReal";
+            this.txtFimReal.ReadOnly = true;
+            this.txtFimReal.Size = new System.Drawing.Size(146, 50);
+            this.txtFimReal.TabIndex = 93;
+            this.txtFimReal.Text = "";
+            this.txtFimReal.TrailingIcon = null;
+            this.txtFimReal.UseAccent = false;
+            // 
+            // customPanel1
+            // 
+            this.customPanel1.BackColor = System.Drawing.Color.White;
+            this.customPanel1.Controls.Add(this.groupBox2);
+            this.customPanel1.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.customPanel1.CorBotao = System.Drawing.Color.White;
+            this.customPanel1.CorTextoBotao = System.Drawing.Color.White;
+            this.customPanel1.ForeColor = System.Drawing.Color.White;
+            this.customPanel1.Location = new System.Drawing.Point(476, 76);
+            this.customPanel1.Name = "customPanel1";
+            this.customPanel1.Size = new System.Drawing.Size(649, 101);
+            this.customPanel1.TabIndex = 165;
+            this.customPanel1.TamanhoBorda = 0;
+            this.customPanel1.TamanhoRaio = 15;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.txtIdentidade);
+            this.groupBox2.Controls.Add(this.pictureBox2);
+            this.groupBox2.Controls.Add(this.txtCliente);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.groupBox2.Location = new System.Drawing.Point(3, 13);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(643, 80);
+            this.groupBox2.TabIndex = 94;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Dados do Cliente";
+            // 
+            // txtIdentidade
+            // 
+            this.txtIdentidade.AcceptsTab = true;
+            this.txtIdentidade.AnimateReadOnly = true;
+            this.txtIdentidade.AutoWordSelection = true;
+            this.txtIdentidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIdentidade.Depth = 0;
+            this.txtIdentidade.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtIdentidade.Hint = "CPF/CNPJ";
+            this.txtIdentidade.LeadingIcon = null;
+            this.txtIdentidade.LeaveOnEnterKey = true;
+            this.txtIdentidade.Location = new System.Drawing.Point(462, 24);
+            this.txtIdentidade.MaxLength = 20;
+            this.txtIdentidade.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtIdentidade.Multiline = false;
+            this.txtIdentidade.Name = "txtIdentidade";
+            this.txtIdentidade.ReadOnly = true;
+            this.txtIdentidade.Size = new System.Drawing.Size(175, 50);
+            this.txtIdentidade.TabIndex = 82;
+            this.txtIdentidade.Text = "";
+            this.txtIdentidade.TrailingIcon = null;
+            this.txtIdentidade.UseAccent = false;
+            // 
+            // txtCliente
+            // 
+            this.txtCliente.AcceptsTab = true;
+            this.txtCliente.AnimateReadOnly = true;
+            this.txtCliente.AutoWordSelection = true;
+            this.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCliente.Depth = 0;
+            this.txtCliente.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCliente.Hint = "Cliente";
+            this.txtCliente.LeadingIcon = null;
+            this.txtCliente.LeaveOnEnterKey = true;
+            this.txtCliente.Location = new System.Drawing.Point(6, 24);
+            this.txtCliente.MaxLength = 60;
+            this.txtCliente.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtCliente.Multiline = false;
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.ReadOnly = true;
+            this.txtCliente.Size = new System.Drawing.Size(450, 50);
+            this.txtCliente.TabIndex = 75;
+            this.txtCliente.Text = "";
+            this.txtCliente.TrailingIcon = ((System.Drawing.Image)(resources.GetObject("txtCliente.TrailingIcon")));
+            this.txtCliente.UseAccent = false;
+            this.txtCliente.TrailingIconClick += new System.EventHandler(this.txtCliente_TrailingIconClick);
+            // 
+            // customPanel5
+            // 
+            this.customPanel5.BackColor = System.Drawing.Color.White;
+            this.customPanel5.Controls.Add(this.tbcOs);
+            this.customPanel5.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.customPanel5.CorBotao = System.Drawing.Color.White;
+            this.customPanel5.CorTextoBotao = System.Drawing.Color.White;
+            this.customPanel5.ForeColor = System.Drawing.Color.White;
+            this.customPanel5.Location = new System.Drawing.Point(12, 230);
+            this.customPanel5.Name = "customPanel5";
+            this.customPanel5.Size = new System.Drawing.Size(1116, 489);
+            this.customPanel5.TabIndex = 164;
+            this.customPanel5.TamanhoBorda = 0;
+            this.customPanel5.TamanhoRaio = 15;
+            // 
             // CadastroOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1138, 731);
             this.Controls.Add(this.customPanel2);
             this.Controls.Add(this.customPanel1);
@@ -2223,15 +2223,6 @@
             this.Load += new System.EventHandler(this.CadastroOS_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CadastroOS_KeyDown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CadastroOS_MouseDown);
-            this.pnSuperior.ResumeLayout(false);
-            this.pnSuperior.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcLogo)).EndInit();
-            this.customPanel2.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.customPanel1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.customPanel5.ResumeLayout(false);
             this.tbcOs.ResumeLayout(false);
             this.tbpDadosOS.ResumeLayout(false);
             this.gpbInfoVenda.ResumeLayout(false);
@@ -2257,11 +2248,20 @@
             this.tbpTermos.ResumeLayout(false);
             this.tbpTermos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbImagemItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbFavorito)).EndInit();
+            this.pnSuperior.ResumeLayout(false);
+            this.pnSuperior.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcLogo)).EndInit();
             this.pn2.ResumeLayout(false);
             this.pn2.PerformLayout();
             this.pn1.ResumeLayout(false);
             this.pn1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbFavorito)).EndInit();
+            this.customPanel2.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.customPanel1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.customPanel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
