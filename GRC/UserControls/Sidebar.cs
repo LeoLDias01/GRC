@@ -56,5 +56,25 @@ namespace GRC.UserControls
 
             this.Width = expandido ? tlpMenu.Width : tlpMenuRedux.Width;
         }
+
+        private void btnDashboardEx_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnOSEx_Click(object sender, EventArgs e)
+        {
+            new PesquisaOS().ShowDialog();
+        }
+
+        private void btnVendasEx_Click(object sender, EventArgs e)
+        {
+            new Vendas().ShowDialog();
+        }
+
+        private void btnClientesEx_Click(object sender, EventArgs e)
+        {
+            new PesquisaCliente().ShowDialog();
+        }
     }
 }
