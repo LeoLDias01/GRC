@@ -359,6 +359,12 @@
     <Compile Include="Telas\PesquisaRapidaCliente.Designer.cs">
       <DependentUpon>PesquisaRapidaCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\PopUpUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\PopUpUsuario.Designer.cs">
+      <DependentUpon>PopUpUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\SelecaoImpressao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -388,6 +394,12 @@
     </Compile>
     <Compile Include="Telas\WorkFlow.Designer.cs">
       <DependentUpon>WorkFlow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Sidebar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Sidebar.Designer.cs">
+      <DependentUpon>Sidebar.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Componentes\RoundedTextBox.resx">
       <DependentUpon>RoundedTextBox.cs</DependentUpon>
@@ -468,6 +480,9 @@
     <EmbeddedResource Include="Telas\PesquisaRapidaCliente.resx">
       <DependentUpon>PesquisaRapidaCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Telas\PopUpUsuario.resx">
+      <DependentUpon>PopUpUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\SelecaoImpressao.resx">
       <DependentUpon>SelecaoImpressao.cs</DependentUpon>
     </EmbeddedResource>
@@ -482,6 +497,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\WorkFlow.resx">
       <DependentUpon>WorkFlow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Sidebar.resx">
+      <DependentUpon>Sidebar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

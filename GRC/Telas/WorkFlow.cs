@@ -36,23 +36,29 @@ namespace GRC.Telas
         private const int HT_CAPTION = 0x2;
         private void WorkFlow_Load(object sender, EventArgs e)
         {
-            this.Visible = false;
-            /*_inicializacao.VerificaBanco();*/
-            new Login().ShowDialog();
-            this.Visible = true;
-            lbNome.Text = Sessao.UsuarioNome;
+            FazerLogin();
+            
         }
-
-
-        private void btnUser_Click(object sender, EventArgs e)
+        private void FazerLogin()
         {
-            prUsuario.Visible = true;
-            prUsuario.BringToFront(); // garante que fique por cima
+            this.Hide();
+
+            if (new Login().ShowDialog() == DialogResult.OK)
+            {
+                this.Show();
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
+
+
+       
 
         private void WorkFlow_MouseDown(object sender, MouseEventArgs e)
         {
-            prUsuario.Visible = false;
+            
             if (e.Button == MouseButtons.Left)
             {
                 ReleaseCapture(); // Libera o mouse para a operação
@@ -60,10 +66,7 @@ namespace GRC.Telas
             }
         }
 
-        private void btnEncerrar_Click(object sender, EventArgs e)
-        {
-            Environment.Exit(0);
-        }
+   
 
         private void btnTrocar_Click(object sender, EventArgs e)
         {
@@ -96,82 +99,22 @@ namespace GRC.Telas
 
         
 
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            prUsuario.Visible = false;
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture(); // Libera o mouse para a operação
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
-            }
-        }
+      
 
-        private void tlpMenuRedux_MouseHover(object sender, EventArgs e)
-        {
-            
-            tlpMenuRedux.Visible = false;
-        }
-
-
-        private void pictureBox2_MouseHover(object sender, EventArgs e)
-        {
-         
-            tlpMenuRedux.Visible = false;
-        }
-
-        private void customButton4_MouseHover(object sender, EventArgs e)
-        {
-            
-            tlpMenuRedux.Visible = false;
-        }
-
-        private void btnCustomFilter_Click(object sender, EventArgs e)
-        {
-            ConfiguraBtn(btnCustomFilter);
-            pnCustomFilter.Visible = true;
-        }
-
-        private void btnOS_Click(object sender, EventArgs e)
-        {
-            new PesquisaOS().ShowDialog();
-        }
-
-        private void btnEstoque_Click(object sender, EventArgs e)
-        {
-            new ItemEstoque().ShowDialog();
-        }
-
-        private void btnHoje_Click(object sender, EventArgs e)
-        {
-            ConfiguraBtn(btnHoje);
-        }
+       
         private void ConfiguraBtn(System.Windows.Forms.Button btn)
         {
             pnCustomFilter.Visible = false;
-            btnCustomFilter.BackColor = Color.FromArgb(0, 20, 30);
+            btnFiltroPersonalizado.BackColor = Color.FromArgb(0, 20, 30);
             btnHoje.BackColor = Color.FromArgb(0, 20, 30);
-            btnOntem.BackColor = Color.FromArgb(0, 20, 30);
+            btn.BackColor = Color.FromArgb(0, 20, 30);
             btnSemana.BackColor = Color.FromArgb(0, 20, 30);
             btnMes.BackColor = Color.FromArgb(0, 20, 30);
 
             btn.BackColor = Color.DarkSlateBlue;  
         }
 
-        private void btnOntem_Click(object sender, EventArgs e)
-        {
-            ConfiguraBtn(btnOntem);
-        }
-
-        private void btnSemana_Click(object sender, EventArgs e)
-        {
-            ConfiguraBtn(btnSemana);
-        }
-
-        private void btnMes_Click(object sender, EventArgs e)
-        {
-            ConfiguraBtn(btnMes);
-        }
-
+     
 
 
 
@@ -295,24 +238,38 @@ namespace GRC.Telas
             crtDadosOS.Titles.Add(titulo);
         }
 
-        private void btnVendas_Click(object sender, EventArgs e)
+
+        private void btnEncerrarJanelas_Click(object sender, EventArgs e)
         {
-            new Vendas().ShowDialog();
+            System.Environment.Exit(0);
         }
 
-        private void btnClientes_Click(object sender, EventArgs e)
+    
+
+        private void btnFiltroPersonalizado_Click(object sender, EventArgs e)
         {
-            new PesquisaCliente().ShowDialog();
+            ConfiguraBtn(btnFiltroPersonalizado);
+            pnCustomFilter.Visible = true;
         }
 
-        private void btnMovimentacao_Click(object sender, EventArgs e)
+        private void btnHoje_Click(object sender, EventArgs e)
         {
-            new Movimentacoes().ShowDialog();
+            ConfiguraBtn(btnHoje);
         }
 
-        private void btnFornecedores_Click(object sender, EventArgs e)
+        private void btnOntem_Click(object sender, EventArgs e)
         {
-            new Fornecedor().ShowDialog();
+            ConfiguraBtn(btnOntem);
+        }
+
+        private void btnSemana_Click(object sender, EventArgs e)
+        {
+            ConfiguraBtn(btnSemana);
+        }
+
+        private void btnMes_Click(object sender, EventArgs e)
+        {
+            ConfiguraBtn(btnMes);
         }
     }
 }

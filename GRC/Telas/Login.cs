@@ -53,6 +53,7 @@ namespace GRC.Telas
             {
                 if (_service.VerificaLogin(_usuario, _senha) != false)
                 {
+                    this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
                 else
@@ -60,8 +61,8 @@ namespace GRC.Telas
                     lbAviso.Text = "Usuário ou Senha Inválidos";
                     lbAviso.ForeColor = Color.Crimson;
                     pnSuperior.BackColor = Color.Crimson;
-                    pnBaixo.Color1 = Color.Crimson;
-                    pnBaixo.Color2 = Color.Red;
+                    pnBaixo.BackColor = Color.Crimson;
+
                     MessageBox.Show("Usuário ou Senha inválidos!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }

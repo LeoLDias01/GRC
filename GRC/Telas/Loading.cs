@@ -22,7 +22,7 @@ namespace GRC.Telas
         private void Loading_Load(object sender, EventArgs e)
         {
             lblVersao.Text = "Versão: " + System.Windows.Forms.Application.ProductVersion;
-            DirectorySaveGameCreate();
+           // DirectorySaveGameCreate();
             LoadTimer.Start();
         }
         private void LoadTimer_Tick(object sender, EventArgs e)
