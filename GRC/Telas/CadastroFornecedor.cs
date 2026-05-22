@@ -277,7 +277,7 @@ namespace GRC.Telas
                 txtIE.Text = fornecedorDados.IE;
                 txtCnpj.Text = fornecedorDados.Cnpj;
                 txtObservacoesFornecedor.Text = fornecedorDados.Observacoes;
-                swAtivo.Checked = fornecedorDados.Ativo;
+                swAtivo.Checked = (bool)fornecedorDados.Ativo;
 
                 // Preenche o endereço se existir
                 if (fornecedorDados.Endereco != null)

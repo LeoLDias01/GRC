@@ -38,27 +38,28 @@
             this.btnMais = new GRC.Componentes.CustomButton();
             this.btnUser = new GRC.Componentes.CustomButton();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.customPictureBox1 = new GRC.Componentes.CustomPictureBox();
             this.btnMovimentacao = new GRC.Componentes.CustomButton();
             this.btnEstoque = new GRC.Componentes.CustomButton();
             this.btnClientes = new GRC.Componentes.CustomButton();
             this.btnVendas = new GRC.Componentes.CustomButton();
             this.btnOS = new GRC.Componentes.CustomButton();
-            this.customPictureBox1 = new GRC.Componentes.CustomPictureBox();
             this.lbPDVex = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.customPictureBox2 = new GRC.Componentes.CustomPictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbNomeUser = new System.Windows.Forms.Label();
             this.btnUserEx = new GRC.Componentes.CustomButton();
             this.btnMenos = new GRC.Componentes.CustomButton();
-            this.btnDashboardEx = new GRC.Componentes.CustomButton();
-            this.customButton4 = new GRC.Componentes.CustomButton();
             this.tlpMenu = new System.Windows.Forms.TableLayoutPanel();
             this.btnFornecedoresEx = new GRC.Componentes.CustomButton();
+            this.btnDashboardEx = new GRC.Componentes.CustomButton();
             this.btnMovimentacoesEx = new GRC.Componentes.CustomButton();
             this.btnEstoqueEx = new GRC.Componentes.CustomButton();
             this.btnClientesEx = new GRC.Componentes.CustomButton();
             this.btnVendasEx = new GRC.Componentes.CustomButton();
             this.btnOSEx = new GRC.Componentes.CustomButton();
+            this.customButton4 = new GRC.Componentes.CustomButton();
             this.tlpMenuRedux.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -174,6 +175,7 @@
             this.btnFornecedores.TamanhoBorda = 0;
             this.btnFornecedores.TamanhoRaio = 2;
             this.btnFornecedores.UseVisualStyleBackColor = false;
+            this.btnFornecedores.Click += new System.EventHandler(this.btnFornecedoresEx_Click);
             // 
             // lbPDV
             // 
@@ -253,6 +255,23 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(64, 94);
             this.panel3.TabIndex = 17;
+            // 
+            // customPictureBox1
+            // 
+            this.customPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.customPictureBox1.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.customPictureBox1.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.customPictureBox1.CorTextoBotao = System.Drawing.SystemColors.ControlText;
+            this.customPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.customPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("customPictureBox1.Image")));
+            this.customPictureBox1.Location = new System.Drawing.Point(3, 18);
+            this.customPictureBox1.Name = "customPictureBox1";
+            this.customPictureBox1.Size = new System.Drawing.Size(58, 60);
+            this.customPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.customPictureBox1.TabIndex = 27;
+            this.customPictureBox1.TabStop = false;
+            this.customPictureBox1.TamanhoBorda = 0;
+            this.customPictureBox1.TamanhoRaio = 20;
             // 
             // btnMovimentacao
             // 
@@ -373,23 +392,6 @@
             this.btnOS.UseVisualStyleBackColor = false;
             this.btnOS.Click += new System.EventHandler(this.btnOSEx_Click);
             // 
-            // customPictureBox1
-            // 
-            this.customPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.customPictureBox1.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.customPictureBox1.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.customPictureBox1.CorTextoBotao = System.Drawing.SystemColors.ControlText;
-            this.customPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.customPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("customPictureBox1.Image")));
-            this.customPictureBox1.Location = new System.Drawing.Point(3, 18);
-            this.customPictureBox1.Name = "customPictureBox1";
-            this.customPictureBox1.Size = new System.Drawing.Size(58, 60);
-            this.customPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.customPictureBox1.TabIndex = 27;
-            this.customPictureBox1.TabStop = false;
-            this.customPictureBox1.TamanhoBorda = 0;
-            this.customPictureBox1.TamanhoRaio = 20;
-            // 
             // lbPDVex
             // 
             this.lbPDVex.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -431,6 +433,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lbNomeUser);
             this.panel1.Controls.Add(this.btnUserEx);
             this.panel1.Controls.Add(this.btnMenos);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -438,6 +441,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(279, 44);
             this.panel1.TabIndex = 16;
+            // 
+            // lbNomeUser
+            // 
+            this.lbNomeUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbNomeUser.BackColor = System.Drawing.Color.Transparent;
+            this.lbNomeUser.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.lbNomeUser.ForeColor = System.Drawing.Color.White;
+            this.lbNomeUser.Location = new System.Drawing.Point(48, 7);
+            this.lbNomeUser.Name = "lbNomeUser";
+            this.lbNomeUser.Padding = new System.Windows.Forms.Padding(5);
+            this.lbNomeUser.Size = new System.Drawing.Size(207, 30);
+            this.lbNomeUser.TabIndex = 29;
+            this.lbNomeUser.Text = "Teste";
             // 
             // btnUserEx
             // 
@@ -461,6 +477,7 @@
             this.btnUserEx.TamanhoBorda = 0;
             this.btnUserEx.TamanhoRaio = 2;
             this.btnUserEx.UseVisualStyleBackColor = false;
+            this.btnUserEx.Click += new System.EventHandler(this.btnUser_Click);
             // 
             // btnMenos
             // 
@@ -484,57 +501,6 @@
             this.btnMenos.TamanhoRaio = 5;
             this.btnMenos.UseVisualStyleBackColor = false;
             this.btnMenos.Click += new System.EventHandler(this.btnMenos_Click);
-            // 
-            // btnDashboardEx
-            // 
-            this.btnDashboardEx.BackColor = System.Drawing.Color.Transparent;
-            this.btnDashboardEx.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnDashboardEx.CorBotao = System.Drawing.Color.Transparent;
-            this.btnDashboardEx.CorTextoBotao = System.Drawing.Color.White;
-            this.btnDashboardEx.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDashboardEx.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDashboardEx.FlatAppearance.BorderSize = 0;
-            this.btnDashboardEx.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
-            this.btnDashboardEx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashboardEx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDashboardEx.ForeColor = System.Drawing.Color.White;
-            this.btnDashboardEx.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboardEx.Image")));
-            this.btnDashboardEx.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashboardEx.Location = new System.Drawing.Point(3, 149);
-            this.btnDashboardEx.Name = "btnDashboardEx";
-            this.btnDashboardEx.Padding = new System.Windows.Forms.Padding(20, 5, 5, 5);
-            this.btnDashboardEx.Size = new System.Drawing.Size(279, 44);
-            this.btnDashboardEx.TabIndex = 6;
-            this.btnDashboardEx.TamanhoBorda = 0;
-            this.btnDashboardEx.TamanhoRaio = 2;
-            this.btnDashboardEx.Text = "        Dashboard";
-            this.btnDashboardEx.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDashboardEx.UseVisualStyleBackColor = false;
-            this.btnDashboardEx.Click += new System.EventHandler(this.btnDashboardEx_Click);
-            // 
-            // customButton4
-            // 
-            this.customButton4.BackColor = System.Drawing.Color.Transparent;
-            this.customButton4.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.customButton4.CorBotao = System.Drawing.Color.Transparent;
-            this.customButton4.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.customButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customButton4.FlatAppearance.BorderSize = 0;
-            this.customButton4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.customButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.customButton4.Image = ((System.Drawing.Image)(resources.GetObject("customButton4.Image")));
-            this.customButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customButton4.Location = new System.Drawing.Point(3, 103);
-            this.customButton4.Name = "customButton4";
-            this.customButton4.Size = new System.Drawing.Size(64, 2);
-            this.customButton4.TabIndex = 5;
-            this.customButton4.TamanhoBorda = 0;
-            this.customButton4.TamanhoRaio = 2;
-            this.customButton4.Text = "        Estoque";
-            this.customButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.customButton4.UseVisualStyleBackColor = false;
             // 
             // tlpMenu
             // 
@@ -599,6 +565,34 @@
             this.btnFornecedoresEx.Text = "        Fornecedores";
             this.btnFornecedoresEx.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFornecedoresEx.UseVisualStyleBackColor = false;
+            this.btnFornecedoresEx.Click += new System.EventHandler(this.btnFornecedoresEx_Click);
+            // 
+            // btnDashboardEx
+            // 
+            this.btnDashboardEx.BackColor = System.Drawing.Color.Transparent;
+            this.btnDashboardEx.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnDashboardEx.CorBotao = System.Drawing.Color.Transparent;
+            this.btnDashboardEx.CorTextoBotao = System.Drawing.Color.White;
+            this.btnDashboardEx.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDashboardEx.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDashboardEx.FlatAppearance.BorderSize = 0;
+            this.btnDashboardEx.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.btnDashboardEx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboardEx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboardEx.ForeColor = System.Drawing.Color.White;
+            this.btnDashboardEx.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboardEx.Image")));
+            this.btnDashboardEx.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashboardEx.Location = new System.Drawing.Point(3, 149);
+            this.btnDashboardEx.Name = "btnDashboardEx";
+            this.btnDashboardEx.Padding = new System.Windows.Forms.Padding(20, 5, 5, 5);
+            this.btnDashboardEx.Size = new System.Drawing.Size(279, 44);
+            this.btnDashboardEx.TabIndex = 6;
+            this.btnDashboardEx.TamanhoBorda = 0;
+            this.btnDashboardEx.TamanhoRaio = 2;
+            this.btnDashboardEx.Text = "        Dashboard";
+            this.btnDashboardEx.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDashboardEx.UseVisualStyleBackColor = false;
+            this.btnDashboardEx.Click += new System.EventHandler(this.btnDashboardEx_Click);
             // 
             // btnMovimentacoesEx
             // 
@@ -733,6 +727,30 @@
             this.btnOSEx.UseVisualStyleBackColor = false;
             this.btnOSEx.Click += new System.EventHandler(this.btnOSEx_Click);
             // 
+            // customButton4
+            // 
+            this.customButton4.BackColor = System.Drawing.Color.Transparent;
+            this.customButton4.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.customButton4.CorBotao = System.Drawing.Color.Transparent;
+            this.customButton4.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.customButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customButton4.FlatAppearance.BorderSize = 0;
+            this.customButton4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.customButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.customButton4.Image = ((System.Drawing.Image)(resources.GetObject("customButton4.Image")));
+            this.customButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.customButton4.Location = new System.Drawing.Point(3, 103);
+            this.customButton4.Name = "customButton4";
+            this.customButton4.Size = new System.Drawing.Size(64, 2);
+            this.customButton4.TabIndex = 5;
+            this.customButton4.TamanhoBorda = 0;
+            this.customButton4.TamanhoRaio = 2;
+            this.customButton4.Text = "        Estoque";
+            this.customButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.customButton4.UseVisualStyleBackColor = false;
+            // 
             // Sidebar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -741,7 +759,8 @@
             this.Controls.Add(this.tlpMenu);
             this.Controls.Add(this.tlpMenuRedux);
             this.Name = "Sidebar";
-            this.Size = new System.Drawing.Size(584, 734);
+            this.Size = new System.Drawing.Size(639, 734);
+            this.Load += new System.EventHandler(this.Sidebar_Load);
             this.tlpMenuRedux.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -786,5 +805,6 @@
         private Componentes.CustomButton btnClientesEx;
         private Componentes.CustomButton btnVendasEx;
         private Componentes.CustomButton btnOSEx;
+        private System.Windows.Forms.Label lbNomeUser;
     }
 }

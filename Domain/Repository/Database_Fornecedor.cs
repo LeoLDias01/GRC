@@ -388,15 +388,8 @@ namespace Domain.Repository
         #region .....::::: PESQUISA :::::.....
 
 
-        /// <summary>
-        /// Busca os dados de fornecedor no banco apenas para exibir, sendo uma busca limitada
-        /// </summary>
-        /// <param name="fornecedor"> dados do fornecedor para busca</param>
-        /// <param name="registros"> quantidade de registros a serem buscados</param>
-        /// <returns>Retorna uma lista com dados do banco para preencher o datagrid</returns>
         public List<Fornecedores> BuscaLimitada(Fornecedores fornecedor, int registros)
         {
-
             using (var conn = new SQLiteConnection(_conn.GetConnections()))
             {
                 conn.Open();
@@ -412,42 +405,37 @@ namespace Domain.Repository
                     ENDE.CIDADE AS Cidade,
                     ENDE.UF AS Uf
                 FROM GRC_FORNECEDOR FORN
-                LEFT JOIN GRC_ENDERECO ENDE ON FORN.IDGRC_ENDERECO = ENDE.IDGRC_ENDERECO 
-                                                    AND ENDE.ATIVO = 1
-    
+                LEFT JOIN GRC_ENDERECO ENDE ON FORN.IDGRC_ENDERECO = ENDE.IDGRC_ENDERECO AND ENDE.ATIVO = 1
                 WHERE 1 = 1 ");
 
-                    // Filtros dinâmicos
-                    if (!string.IsNullOrWhiteSpace(fornecedor.Nome))
-                        sql.Append(" AND FORN.DESCRICAO LIKE @Nome ");
-
-                    if (!string.IsNullOrWhiteSpace(fornecedor.RazaoSocial))
-                        sql.Append(" AND FORN.RAZAO_SOCIAL LIKE @RazaoSocial ");
-
-                    if (!string.IsNullOrWhiteSpace(fornecedor.Cnpj))
-                        sql.Append(" AND FORN.CNPJ LIKE @Cnpj ");
-
-                    sql.Append(" AND FORN.ATIVO = @Ativo ");
-
-                    if (fornecedor.Endereco != null)
+                    // 1. Filtro de Status (Ativo/Inativo) - Se for nulo (filtro "Todos"), não aplica o WHERE do ativo
+                    if (fornecedor.Ativo.HasValue)
                     {
-                        if (!string.IsNullOrWhiteSpace(fornecedor.Endereco.Cidade))
-                            sql.Append(" AND ENDE.CIDADE LIKE @Cidade ");
+                        sql.Append(" AND FORN.ATIVO = @Ativo ");
+                    }
 
-                        if (!string.IsNullOrWhiteSpace(fornecedor.Endereco.Uf))
-                            sql.Append(" AND ENDE.UF LIKE @Uf ");
+                    // 2. Filtro Unificado (Valida o termo em qualquer uma das colunas)
+                    // Usamos o campo 'Nome' do objeto para carregar o termo que veio do txtPesquisa
+                    if (!string.IsNullOrWhiteSpace(fornecedor.Nome))
+                    {
+                        sql.Append(@" AND (
+                    FORN.DESCRICAO LIKE @Termo 
+                    OR FORN.RAZAO_SOCIAL LIKE @Termo 
+                    OR FORN.CNPJ LIKE @Termo 
+                    OR ENDE.CIDADE LIKE @Termo 
+                    OR ENDE.UF LIKE @Termo
+                ) ");
                     }
 
                     sql.Append(" ORDER BY FORN.DESCRICAO ASC LIMIT @Registros; ");
 
+                    // Formata o termo colocando as porcentagens para o LIKE do SQLite
+                    string termoFormatado = $"%{fornecedor.Nome?.Trim()}%";
+
                     var lista = conn.Query(sql.ToString(), new
                     {
-                        Nome = $"%{fornecedor.Nome}%",
-                        RazaoSocial = $"%{fornecedor.RazaoSocial}%",
-                        Cnpj = $"%{fornecedor.Cnpj}%",
                         Ativo = fornecedor.Ativo,
-                        Cidade = fornecedor.Endereco != null ? $"%{fornecedor.Endereco.Cidade}%" : null,
-                        Uf = fornecedor.Endereco != null ? $"%{fornecedor.Endereco.Uf}%" : null,
+                        Termo = termoFormatado,
                         Registros = registros
                     })
                     .Select(x => new Fornecedores
@@ -456,7 +444,6 @@ namespace Domain.Repository
                         Nome = x.Nome,
                         RazaoSocial = x.RazaoSocial,
                         Cnpj = x.Cnpj,
-                        //Observacoes = x.Observacoes,
                         Endereco = new Endereco
                         {
                             Cidade = x.Cidade,

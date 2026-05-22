@@ -401,6 +401,18 @@
     <Compile Include="UserControls\Sidebar.Designer.cs">
       <DependentUpon>Sidebar.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\usrDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usrDashboard.Designer.cs">
+      <DependentUpon>usrDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usrFornecedores.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usrFornecedores.Designer.cs">
+      <DependentUpon>usrFornecedores.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Componentes\RoundedTextBox.resx">
       <DependentUpon>RoundedTextBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -501,6 +513,12 @@
     <EmbeddedResource Include="UserControls\Sidebar.resx">
       <DependentUpon>Sidebar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usrDashboard.resx">
+      <DependentUpon>usrDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usrFornecedores.resx">
+      <DependentUpon>usrFornecedores.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -543,5 +561,6 @@
       <Name>Data</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

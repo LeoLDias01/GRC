@@ -28,18 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Fornecedor));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Fornecedor));
-            this.dgvFornecedores = new System.Windows.Forms.DataGridView();
-            this.colIdFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNomeFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRazaoSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCnpj = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colExcluirFornecedor = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnMaximize = new GRC.Componentes.CustomButton();
             this.btnMinimize = new GRC.Componentes.CustomButton();
@@ -50,6 +42,18 @@
             this.pn1 = new GRC.Componentes.RoundedPanel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.lbTitulo = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.cbxQtdRegistros = new System.Windows.Forms.ComboBox();
+            this.lbRegistros = new System.Windows.Forms.Label();
+            this.modernBox2 = new GRC.Componentes.ModernBox();
+            this.dgvFornecedores = new System.Windows.Forms.DataGridView();
+            this.colIdFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNomeFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRazaoSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCnpj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colExcluirFornecedor = new System.Windows.Forms.DataGridViewImageColumn();
             this.flpMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.txtFornecedor = new MaterialSkin.Controls.MaterialTextBox();
             this.txtRazaoSocial = new MaterialSkin.Controls.MaterialTextBox();
@@ -57,126 +61,15 @@
             this.txtCidade = new MaterialSkin.Controls.MaterialTextBox();
             this.txtUf = new MaterialSkin.Controls.MaterialTextBox();
             this.chkAtivo = new MaterialSkin.Controls.MaterialCheckbox();
-            this.cbxQtdRegistros = new System.Windows.Forms.ComboBox();
-            this.lbRegistros = new System.Windows.Forms.Label();
             this.modernBox1 = new GRC.Componentes.ModernBox();
-            this.modernBox2 = new GRC.Componentes.ModernBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.modernBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).BeginInit();
             this.flpMenu.SuspendLayout();
             this.modernBox1.SuspendLayout();
-            this.modernBox2.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dgvFornecedores
-            // 
-            this.dgvFornecedores.AllowUserToAddRows = false;
-            this.dgvFornecedores.AllowUserToDeleteRows = false;
-            this.dgvFornecedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvFornecedores.BackgroundColor = System.Drawing.Color.White;
-            this.dgvFornecedores.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvFornecedores.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dgvFornecedores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFornecedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvFornecedores.ColumnHeadersHeight = 35;
-            this.dgvFornecedores.ColumnHeadersVisible = false;
-            this.dgvFornecedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colIdFornecedor,
-            this.colNomeFornecedor,
-            this.colRazaoSocial,
-            this.colCnpj,
-            this.colCidade,
-            this.colUf,
-            this.colExcluirFornecedor});
-            this.dgvFornecedores.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(218)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFornecedores.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvFornecedores.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvFornecedores.EnableHeadersVisualStyles = false;
-            this.dgvFornecedores.GridColor = System.Drawing.Color.DarkGray;
-            this.dgvFornecedores.Location = new System.Drawing.Point(10, 10);
-            this.dgvFornecedores.MultiSelect = false;
-            this.dgvFornecedores.Name = "dgvFornecedores";
-            this.dgvFornecedores.ReadOnly = true;
-            this.dgvFornecedores.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvFornecedores.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvFornecedores.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvFornecedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFornecedores.Size = new System.Drawing.Size(962, 379);
-            this.dgvFornecedores.TabIndex = 11;
-            this.dgvFornecedores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFornecedores_CellDoubleClick);
-            this.dgvFornecedores.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFornecedores_CellValueChanged);
-            // 
-            // colIdFornecedor
-            // 
-            this.colIdFornecedor.DataPropertyName = "Id";
-            this.colIdFornecedor.FillWeight = 1F;
-            this.colIdFornecedor.HeaderText = "Id";
-            this.colIdFornecedor.Name = "colIdFornecedor";
-            this.colIdFornecedor.ReadOnly = true;
-            this.colIdFornecedor.Visible = false;
-            // 
-            // colNomeFornecedor
-            // 
-            this.colNomeFornecedor.DataPropertyName = "Nome";
-            this.colNomeFornecedor.HeaderText = "Fornecedor";
-            this.colNomeFornecedor.Name = "colNomeFornecedor";
-            this.colNomeFornecedor.ReadOnly = true;
-            // 
-            // colRazaoSocial
-            // 
-            this.colRazaoSocial.DataPropertyName = "RazaoSocial";
-            this.colRazaoSocial.HeaderText = "Razão Social";
-            this.colRazaoSocial.Name = "colRazaoSocial";
-            this.colRazaoSocial.ReadOnly = true;
-            // 
-            // colCnpj
-            // 
-            this.colCnpj.DataPropertyName = "Cnpj";
-            this.colCnpj.HeaderText = "CNPJ";
-            this.colCnpj.Name = "colCnpj";
-            this.colCnpj.ReadOnly = true;
-            // 
-            // colCidade
-            // 
-            this.colCidade.DataPropertyName = "Cidade";
-            this.colCidade.HeaderText = "Cidade";
-            this.colCidade.Name = "colCidade";
-            this.colCidade.ReadOnly = true;
-            // 
-            // colUf
-            // 
-            this.colUf.DataPropertyName = "Uf";
-            this.colUf.FillWeight = 40F;
-            this.colUf.HeaderText = "UF";
-            this.colUf.Name = "colUf";
-            this.colUf.ReadOnly = true;
-            // 
-            // colExcluirFornecedor
-            // 
-            this.colExcluirFornecedor.FillWeight = 30F;
-            this.colExcluirFornecedor.HeaderText = "";
-            this.colExcluirFornecedor.Image = global::GRC.Properties.Resources.remove;
-            this.colExcluirFornecedor.Name = "colExcluirFornecedor";
-            this.colExcluirFornecedor.ReadOnly = true;
-            this.colExcluirFornecedor.Visible = false;
             // 
             // panel1
             // 
@@ -364,6 +257,178 @@
             this.lbTitulo.TabIndex = 139;
             this.lbTitulo.Text = "Fornecedores";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.panel2.Controls.Add(this.cbxQtdRegistros);
+            this.panel2.Controls.Add(this.lbRegistros);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 651);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1000, 44);
+            this.panel2.TabIndex = 159;
+            // 
+            // cbxQtdRegistros
+            // 
+            this.cbxQtdRegistros.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbxQtdRegistros.FormattingEnabled = true;
+            this.cbxQtdRegistros.Items.AddRange(new object[] {
+            "10",
+            "20",
+            "30",
+            "40",
+            "50",
+            "60",
+            "70",
+            "80",
+            "90",
+            "100"});
+            this.cbxQtdRegistros.Location = new System.Drawing.Point(916, 10);
+            this.cbxQtdRegistros.Name = "cbxQtdRegistros";
+            this.cbxQtdRegistros.Size = new System.Drawing.Size(59, 21);
+            this.cbxQtdRegistros.TabIndex = 2;
+            this.cbxQtdRegistros.Text = "10";
+            this.cbxQtdRegistros.TextChanged += new System.EventHandler(this.cbxQtdRegistros_TextChanged);
+            this.cbxQtdRegistros.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxQtdRegistros_KeyPress);
+            // 
+            // lbRegistros
+            // 
+            this.lbRegistros.AutoSize = true;
+            this.lbRegistros.BackColor = System.Drawing.Color.Transparent;
+            this.lbRegistros.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lbRegistros.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRegistros.ForeColor = System.Drawing.Color.White;
+            this.lbRegistros.Location = new System.Drawing.Point(0, 0);
+            this.lbRegistros.Name = "lbRegistros";
+            this.lbRegistros.Padding = new System.Windows.Forms.Padding(5, 10, 5, 5);
+            this.lbRegistros.Size = new System.Drawing.Size(211, 36);
+            this.lbRegistros.TabIndex = 1;
+            this.lbRegistros.Text = "0 Registros Encontrados";
+            // 
+            // modernBox2
+            // 
+            this.modernBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.modernBox2.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.modernBox2.BorderRadius = 12;
+            this.modernBox2.BorderSize = 1;
+            this.modernBox2.Controls.Add(this.dgvFornecedores);
+            this.modernBox2.FillColor = System.Drawing.Color.White;
+            this.modernBox2.Location = new System.Drawing.Point(9, 226);
+            this.modernBox2.Name = "modernBox2";
+            this.modernBox2.Padding = new System.Windows.Forms.Padding(13);
+            this.modernBox2.ShadowAngle = 135;
+            this.modernBox2.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.modernBox2.ShadowSize = 8;
+            this.modernBox2.Size = new System.Drawing.Size(982, 399);
+            this.modernBox2.TabIndex = 161;
+            // 
+            // dgvFornecedores
+            // 
+            this.dgvFornecedores.AllowUserToAddRows = false;
+            this.dgvFornecedores.AllowUserToDeleteRows = false;
+            this.dgvFornecedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvFornecedores.BackgroundColor = System.Drawing.Color.White;
+            this.dgvFornecedores.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvFornecedores.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvFornecedores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFornecedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvFornecedores.ColumnHeadersHeight = 35;
+            this.dgvFornecedores.ColumnHeadersVisible = false;
+            this.dgvFornecedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colIdFornecedor,
+            this.colNomeFornecedor,
+            this.colRazaoSocial,
+            this.colCnpj,
+            this.colCidade,
+            this.colUf,
+            this.colExcluirFornecedor});
+            this.dgvFornecedores.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(218)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFornecedores.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvFornecedores.EnableHeadersVisualStyles = false;
+            this.dgvFornecedores.GridColor = System.Drawing.Color.DarkGray;
+            this.dgvFornecedores.Location = new System.Drawing.Point(13, 13);
+            this.dgvFornecedores.MultiSelect = false;
+            this.dgvFornecedores.Name = "dgvFornecedores";
+            this.dgvFornecedores.ReadOnly = true;
+            this.dgvFornecedores.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvFornecedores.RowHeadersVisible = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvFornecedores.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvFornecedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvFornecedores.Size = new System.Drawing.Size(956, 373);
+            this.dgvFornecedores.TabIndex = 11;
+            // 
+            // colIdFornecedor
+            // 
+            this.colIdFornecedor.DataPropertyName = "Id";
+            this.colIdFornecedor.FillWeight = 1F;
+            this.colIdFornecedor.HeaderText = "Id";
+            this.colIdFornecedor.Name = "colIdFornecedor";
+            this.colIdFornecedor.ReadOnly = true;
+            this.colIdFornecedor.Visible = false;
+            // 
+            // colNomeFornecedor
+            // 
+            this.colNomeFornecedor.DataPropertyName = "Nome";
+            this.colNomeFornecedor.HeaderText = "Fornecedor";
+            this.colNomeFornecedor.Name = "colNomeFornecedor";
+            this.colNomeFornecedor.ReadOnly = true;
+            // 
+            // colRazaoSocial
+            // 
+            this.colRazaoSocial.DataPropertyName = "RazaoSocial";
+            this.colRazaoSocial.HeaderText = "Razão Social";
+            this.colRazaoSocial.Name = "colRazaoSocial";
+            this.colRazaoSocial.ReadOnly = true;
+            // 
+            // colCnpj
+            // 
+            this.colCnpj.DataPropertyName = "Cnpj";
+            this.colCnpj.HeaderText = "CNPJ";
+            this.colCnpj.Name = "colCnpj";
+            this.colCnpj.ReadOnly = true;
+            // 
+            // colCidade
+            // 
+            this.colCidade.DataPropertyName = "Cidade";
+            this.colCidade.HeaderText = "Cidade";
+            this.colCidade.Name = "colCidade";
+            this.colCidade.ReadOnly = true;
+            // 
+            // colUf
+            // 
+            this.colUf.DataPropertyName = "Uf";
+            this.colUf.FillWeight = 40F;
+            this.colUf.HeaderText = "UF";
+            this.colUf.Name = "colUf";
+            this.colUf.ReadOnly = true;
+            // 
+            // colExcluirFornecedor
+            // 
+            this.colExcluirFornecedor.FillWeight = 30F;
+            this.colExcluirFornecedor.HeaderText = "";
+            this.colExcluirFornecedor.Image = global::GRC.Properties.Resources.remove;
+            this.colExcluirFornecedor.Name = "colExcluirFornecedor";
+            this.colExcluirFornecedor.ReadOnly = true;
+            this.colExcluirFornecedor.Visible = false;
+            // 
             // flpMenu
             // 
             this.flpMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -516,43 +581,6 @@
             this.chkAtivo.Text = "Ativo";
             this.chkAtivo.UseVisualStyleBackColor = true;
             // 
-            // cbxQtdRegistros
-            // 
-            this.cbxQtdRegistros.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbxQtdRegistros.FormattingEnabled = true;
-            this.cbxQtdRegistros.Items.AddRange(new object[] {
-            "10",
-            "20",
-            "30",
-            "40",
-            "50",
-            "60",
-            "70",
-            "80",
-            "90",
-            "100"});
-            this.cbxQtdRegistros.Location = new System.Drawing.Point(916, 10);
-            this.cbxQtdRegistros.Name = "cbxQtdRegistros";
-            this.cbxQtdRegistros.Size = new System.Drawing.Size(59, 21);
-            this.cbxQtdRegistros.TabIndex = 2;
-            this.cbxQtdRegistros.Text = "10";
-            this.cbxQtdRegistros.TextChanged += new System.EventHandler(this.cbxQtdRegistros_TextChanged);
-            this.cbxQtdRegistros.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxQtdRegistros_KeyPress);
-            // 
-            // lbRegistros
-            // 
-            this.lbRegistros.AutoSize = true;
-            this.lbRegistros.BackColor = System.Drawing.Color.Transparent;
-            this.lbRegistros.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lbRegistros.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRegistros.ForeColor = System.Drawing.Color.White;
-            this.lbRegistros.Location = new System.Drawing.Point(0, 0);
-            this.lbRegistros.Name = "lbRegistros";
-            this.lbRegistros.Padding = new System.Windows.Forms.Padding(5, 10, 5, 5);
-            this.lbRegistros.Size = new System.Drawing.Size(211, 36);
-            this.lbRegistros.TabIndex = 1;
-            this.lbRegistros.Text = "0 Registros Encontrados";
-            // 
             // modernBox1
             // 
             this.modernBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -563,43 +591,14 @@
             this.modernBox1.BorderSize = 1;
             this.modernBox1.Controls.Add(this.flpMenu);
             this.modernBox1.FillColor = System.Drawing.Color.White;
-            this.modernBox1.Location = new System.Drawing.Point(6, 90);
+            this.modernBox1.Location = new System.Drawing.Point(9, 70);
             this.modernBox1.Name = "modernBox1";
-            this.modernBox1.Padding = new System.Windows.Forms.Padding(10);
+            this.modernBox1.Padding = new System.Windows.Forms.Padding(5);
+            this.modernBox1.ShadowAngle = 135;
             this.modernBox1.ShadowColor = System.Drawing.Color.Transparent;
             this.modernBox1.ShadowSize = 0;
             this.modernBox1.Size = new System.Drawing.Size(982, 150);
-            this.modernBox1.TabIndex = 104;
-            // 
-            // modernBox2
-            // 
-            this.modernBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.modernBox2.BackColor = System.Drawing.Color.Transparent;
-            this.modernBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.modernBox2.BorderRadius = 12;
-            this.modernBox2.BorderSize = 1;
-            this.modernBox2.Controls.Add(this.dgvFornecedores);
-            this.modernBox2.FillColor = System.Drawing.Color.White;
-            this.modernBox2.Location = new System.Drawing.Point(6, 246);
-            this.modernBox2.Name = "modernBox2";
-            this.modernBox2.Padding = new System.Windows.Forms.Padding(10);
-            this.modernBox2.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.modernBox2.ShadowSize = 8;
-            this.modernBox2.Size = new System.Drawing.Size(982, 399);
-            this.modernBox2.TabIndex = 158;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.panel2.Controls.Add(this.cbxQtdRegistros);
-            this.panel2.Controls.Add(this.lbRegistros);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 651);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1000, 44);
-            this.panel2.TabIndex = 159;
+            this.modernBox1.TabIndex = 160;
             // 
             // Fornecedor
             // 
@@ -607,9 +606,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1000, 695);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.modernBox2);
             this.Controls.Add(this.modernBox1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -619,41 +618,23 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Fornecedor_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Fornecedor_MouseDown);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.modernBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).EndInit();
             this.flpMenu.ResumeLayout(false);
             this.flpMenu.PerformLayout();
             this.modernBox1.ResumeLayout(false);
-            this.modernBox2.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvFornecedores;
-        private MaterialSkin.Controls.MaterialTextBox txtFornecedor;
-        private System.Windows.Forms.Label lbRegistros;
-        private MaterialSkin.Controls.MaterialTextBox txtRazaoSocial;
-        private MaterialSkin.Controls.MaterialTextBox txtCnpj;
-        private MaterialSkin.Controls.MaterialTextBox txtUf;
-        private MaterialSkin.Controls.MaterialTextBox txtCidade;
-        private System.Windows.Forms.ComboBox cbxQtdRegistros;
         private Componentes.CustomButton btnApagar;
         private Componentes.CustomButton btnSearch;
-        private MaterialSkin.Controls.MaterialCheckbox chkAtivo;
-        private System.Windows.Forms.FlowLayoutPanel flpMenu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIdFornecedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNomeFornecedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRazaoSocial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCnpj;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colUf;
-        private System.Windows.Forms.DataGridViewImageColumn colExcluirFornecedor;
         private System.Windows.Forms.Panel panel1;
         private Componentes.CustomButton btnNovoFornecedor;
         private Componentes.CustomButton btnClose;
@@ -662,8 +643,25 @@
         private System.Windows.Forms.Label lbTitulo;
         private Componentes.CustomButton btnMaximize;
         private Componentes.CustomButton btnMinimize;
-        private Componentes.ModernBox modernBox1;
-        private Componentes.ModernBox modernBox2;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ComboBox cbxQtdRegistros;
+        private System.Windows.Forms.Label lbRegistros;
+        private Componentes.ModernBox modernBox2;
+        private System.Windows.Forms.DataGridView dgvFornecedores;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIdFornecedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNomeFornecedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRazaoSocial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCnpj;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUf;
+        private System.Windows.Forms.DataGridViewImageColumn colExcluirFornecedor;
+        private System.Windows.Forms.FlowLayoutPanel flpMenu;
+        private MaterialSkin.Controls.MaterialTextBox txtFornecedor;
+        private MaterialSkin.Controls.MaterialTextBox txtRazaoSocial;
+        private MaterialSkin.Controls.MaterialTextBox txtCnpj;
+        private MaterialSkin.Controls.MaterialTextBox txtCidade;
+        private MaterialSkin.Controls.MaterialTextBox txtUf;
+        private MaterialSkin.Controls.MaterialCheckbox chkAtivo;
+        private Componentes.ModernBox modernBox1;
     }
 }

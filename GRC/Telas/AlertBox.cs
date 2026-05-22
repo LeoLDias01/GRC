@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,6 +21,18 @@ namespace GRC.Telas
         string _item;
         string _mensagem;
         bool _yesNo;
+
+        // Importa a função nativa do Windows responsável por criar regiões arredondadas
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coord do canto superior esquerdo
+            int nTopRect,      // y-coord do canto superior esquerdo
+            int nRightRect,    // x-coord do canto inferior direito
+            int nBottomRect,   // y-coord do canto inferior direito
+            int nWidthEllipse, // largura da elipse (quanto maior, mais arredondado)
+            int nHeightEllipse // altura da elipse (quanto maior, mais arredondado)
+        );
         public AlertBox(Color background, Color pnColor1, Color pnColor2, Image img, string grupo, string item, string msg, bool yesNo)
         {
             InitializeComponent();
@@ -31,6 +44,10 @@ namespace GRC.Telas
             _item = item;
             _mensagem = msg;
             _yesNo = yesNo;
+
+
+            // Aplica os cantos arredondados (ajuste os dois últimos números para mudar o raio)
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
         }
 
         private void AlertBox_Load(object sender, EventArgs e)
