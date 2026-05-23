@@ -35,5 +35,18 @@ namespace Domain.Repository
             }
 
         }
+        public void IniciaSessao(int id)
+        {
+
+            using (var conn = new SQLiteConnection(_conn.GetConnections()))
+            {
+                conn.Query($@"DELETE FROM GRC_SESSAO",
+                    param: new { Id = id });
+
+                conn.Query($@"INSERT INTO GRC_SESSAO (IDGRC_USUARIO) VALUES (@Id)",
+                    param: new { Id = id});
+            }
+
+        }
     }
 }

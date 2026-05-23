@@ -99,10 +99,17 @@ namespace GRC.Telas
 
             // 3. Adiciona a nova tela dentro do painel e joga ela para a frente
             pnWorkflow.Controls.Add(novaTela);
-            novaTela.BringToFront();
+          //  novaTela.BringToFront();
             sidebar1.BringToFront(); 
         }
 
-
+        private void pnWorkflow_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture(); // Libera o mouse para a operação
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+            }
+        }
     }
 }

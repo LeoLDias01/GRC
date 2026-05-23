@@ -29,6 +29,7 @@ namespace Business.Services
 
                     
                     Sessao.IniciarSessao(login.Id, login.Nome, login.Usuario);
+                    _database.IniciaSessao(login.Id);
 
                     return true;
                 }

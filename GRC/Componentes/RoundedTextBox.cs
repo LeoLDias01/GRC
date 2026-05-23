@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GRC.Componentes
 {
+    [DefaultEvent("TextChanged")] // Define TextChanged como o evento padrão no duplo clique no Designer
     public partial class RoundedTextBox : UserControl
     {
         private TextBox textBox = new TextBox();
@@ -51,6 +47,7 @@ namespace GRC.Componentes
             set { iconPosition = value; UpdateLayout(); }
         }
 
+        [Browsable(true)] // Garante que a propriedade Text apareça no Designer
         public override string Text
         {
             get => isPlaceholder ? "" : textBox.Text;
@@ -110,6 +107,19 @@ namespace GRC.Componentes
             textBox.ForeColor = TextColor;
             textBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
 
+            // --- REPASSE DE EVENTOS DO TEXTBOX INTERNO PARA O USERCONTROL ---
+            textBox.TextChanged += (s, e) =>
+            {
+                if (!isPlaceholder)
+                    this.OnTextChanged(e);
+            };
+            textBox.KeyDown += (s, e) => this.OnKeyDown(e);
+            textBox.KeyPress += (s, e) => this.OnKeyPress(e);
+            textBox.KeyUp += (s, e) => this.OnKeyUp(e);
+            textBox.Click += (s, e) => this.OnClick(e);
+            textBox.DoubleClick += (s, e) => this.OnDoubleClick(e);
+            // ----------------------------------------------------------------
+
             textBox.Enter += (s, e) =>
             {
                 isFocused = true;
@@ -166,7 +176,7 @@ namespace GRC.Componentes
 
         private void SetPlaceholder()
         {
-            if (string.IsNullOrWhiteSpace(textBox.Text))
+            if (string.IsNullOrWhiteSpace(textBox.Text) && !isFocused)
             {
                 isPlaceholder = true;
                 textBox.Text = placeholder;
@@ -178,8 +188,8 @@ namespace GRC.Componentes
         {
             if (isPlaceholder)
             {
+                textBox.Text = ""; // Limpa antes de mudar a flag para evitar evento fantasma
                 isPlaceholder = false;
-                textBox.Text = "";
                 textBox.ForeColor = TextColor;
             }
         }

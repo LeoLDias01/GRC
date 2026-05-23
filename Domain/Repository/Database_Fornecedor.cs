@@ -54,12 +54,9 @@ namespace Domain.Repository
                         // -------------------------------------------------------
                         if (fornecedor.Email != null)
                         {
-                            string sqlEmail = @"INSERT INTO GRC_EMAIL
-                                (EMAIL, OBSERVACOES)
-                                VALUES (@Descricao, @Observacoes);
-                                SELECT last_insert_rowid();";
-
-                            fornecedor.Email.Id = conn.ExecuteScalar<int>(sqlEmail, fornecedor.Email, tran);
+                            fornecedor.Email.Id = conn.ExecuteScalar<int>(@"INSERT INTO GRC_EMAIL (EMAIL) VALUES (@Descricao);
+                                SELECT last_insert_rowid();", 
+                                param: new { Descricao = fornecedor.Email.Descricao }, tran);
                         }
 
 
@@ -77,7 +74,7 @@ namespace Domain.Repository
                             RazaoSocial = string.IsNullOrWhiteSpace(fornecedor.RazaoSocial) ? (object)DBNull.Value : fornecedor.RazaoSocial,
                             InscricaoEstadual = string.IsNullOrWhiteSpace(fornecedor.IE) ? (object)DBNull.Value : fornecedor.IE,
                             Cnpj = string.IsNullOrWhiteSpace(fornecedor.Cnpj) ? (object)DBNull.Value : fornecedor.Cnpj,
-                            EmailId = fornecedor.Email != null && fornecedor.Email.Id > 0 ? fornecedor.Email.Id : (object)DBNull.Value,
+                            EmailId = fornecedor.Email != null && fornecedor.Email.Id != null && fornecedor.Email.Id > 0 ? fornecedor.Email.Id : (object)DBNull.Value,
                             EnderecoId = fornecedor.Endereco != null && fornecedor.Endereco.Id > 0 ? fornecedor.Endereco.Id : (object)DBNull.Value,
                             Observacoes = string.IsNullOrWhiteSpace(fornecedor.Observacoes) ? (object)DBNull.Value : fornecedor.Observacoes
                         }, tran);
@@ -92,23 +89,24 @@ namespace Domain.Repository
                             {
                                 string sqlTel = @"
                                     INSERT INTO GRC_TELEFONE_FORNECEDOR
-                                    (IDGRC_FORNECEDOR, DESCRICAO, WHATSAPP, OBSERVACOES)
-                                    VALUES (@FornecedorId, @Descricao, @Whatsapp, @Observacoes);";
+                                    (IDGRC_FORNECEDOR, DESCRICAO, WHATSAPP)
+                                    VALUES (@FornecedorId, @Descricao, @Whatsapp);";
 
                                 conn.Execute(sqlTel, new
                                 {
                                     FornecedorId = fornecedor.Id,
                                     Descricao = tel.Descricao,
-                                    Whatsapp = tel.Whatsapp ? 1 : 0,
-                                    Observacoes = string.IsNullOrWhiteSpace(tel.Observacoes) ? (object)DBNull.Value : tel.Observacoes
+                                    Whatsapp = tel.Whatsapp ? 1 : 0
                                 }, tran);
                             }
                         }
 
                         tran.Commit();
+
+
                         return fornecedor.Id;
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         tran.Rollback();
                         throw;
@@ -247,7 +245,7 @@ namespace Domain.Repository
                             if (fornecedor.Email.Id == 0)
                             {
                                 string sqlEmail = @"
-                                                    INSERT INTO GRC_EMAIL (EMAIL, OBSERVACOES) VALUES (@Descricao, @Observacoes);
+                                                    INSERT INTO GRC_EMAIL (EMAIL) VALUES (@Descricao);
                                                     SELECT last_insert_rowid();";
 
                                 fornecedor.Email.Id = conn.ExecuteScalar<int>(sqlEmail, fornecedor.Email, tran);
@@ -265,15 +263,13 @@ namespace Domain.Repository
                             {
                                 var sqlUpdateEmail = @"
                                                         UPDATE GRC_EMAIL
-                                                        SET EMAIL = @Descricao,
-                                                        OBSERVACOES = @Observacoes
+                                                        SET EMAIL = @Descricao
                                                         WHERE IDGRC_EMAIL = @Id";
                                 conn.Execute(sqlUpdateEmail,
                                     new
                                     {
                                         Descricao = fornecedor.Email.Descricao,
-                                        Observacoes = fornecedor.Email.Observacoes,
-                                        Id = fornecedor.Email.Id,
+                                        Id = fornecedor.Email.Id
                                     }, tran);
                             }
                         }
@@ -300,8 +296,7 @@ namespace Domain.Repository
                         // Telefones atuais no banco
                         var telefonesAtuais = conn.Query<Telefone>(@"SELECT IDGRC_TELEFONE_FORNECEDOR AS Id, 
                                                                             DESCRICAO, 
-                                                                            WHATSAPP, 
-                                                                            OBSERVACOES 
+                                                                            WHATSAPP
                                                                      FROM GRC_TELEFONE_FORNECEDOR 
                                                                      WHERE IDGRC_FORNECEDOR = @IdFornecedor",
                             new
@@ -324,14 +319,13 @@ namespace Domain.Repository
                         foreach (var tel in novos)
                         {
                             conn.Execute(@" INSERT INTO GRC_TELEFONE_FORNECEDOR
-                                    (IDGRC_FORNECEDOR, DESCRICAO, WHATSAPP, OBSERVACOES)
-                                    VALUES (@FornecedorId, @Descricao, @Whatsapp, @Observacoes);",
+                                    (IDGRC_FORNECEDOR, DESCRICAO, WHATSAPP)
+                                    VALUES (@FornecedorId, @Descricao, @Whatsapp);",
                                 new
                                 {
                                     FornecedorId = fornecedor.Id,
                                     Descricao = tel.Descricao,
-                                    Whatsapp = tel.Whatsapp,
-                                    Observacoes = tel.Observacoes
+                                    Whatsapp = tel.Whatsapp
                                 }, tran);
                         }
 
@@ -341,14 +335,12 @@ namespace Domain.Repository
                             conn.Execute(@"
                                             UPDATE GRC_TELEFONE_FORNECEDOR
                                             SET DESCRICAO = @Descricao,
-                                                WHATSAPP = @Whatsapp,
-                                                OBSERVACOES = @Observacoes
+                                                WHATSAPP = @Whatsapp
                                                 WHERE IDGRC_TELEFONE_FORNECEDOR = @Id AND IDGRC_FORNECEDOR = @IdFornecedor",
                                 new
                                 {
                                     Descricao = tel.Descricao,
                                     Whatsapp = tel.Whatsapp,
-                                    Observacoes = tel.Observacoes,
                                     Id = tel.Id,
                                     IdFornecedor = fornecedor.Id
                                 }, tran);
@@ -487,7 +479,6 @@ namespace Domain.Repository
                 ENDE.OBSERVACOES AS ObservacoesEndereco,
                 EM.IDGRC_EMAIL AS EmailId,
                 EM.EMAIL AS DescricaoEmail,
-                EM.OBSERVACOES AS ObservacoesEmail,
                 FORN.ATIVO AS Ativo
             FROM GRC_FORNECEDOR FORN
             LEFT JOIN GRC_ENDERECO ENDE ON FORN.IDGRC_ENDERECO = ENDE.IDGRC_ENDERECO AND ENDE.ATIVO = 1
@@ -517,8 +508,7 @@ namespace Domain.Repository
                         Email = x.EmailId != null ? new Email
                         {
                             Id = (int)x.EmailId,
-                            Descricao = x.DescricaoEmail,
-                            Observacoes = x.ObservacoesEmail
+                            Descricao = x.DescricaoEmail
                         } : null,
                         // Telefones podem ser preenchidos depois com outra query
                         Telefones = new List<Telefone>()
@@ -531,8 +521,7 @@ namespace Domain.Repository
                 IDGRC_TELEFONE_FORNECEDOR AS Id,
                 IDGRC_FORNECEDOR AS FornecedorId,
                 DESCRICAO AS Descricao,
-                WHATSAPP AS Whatsapp,
-                OBSERVACOES AS Observacoes
+                WHATSAPP AS Whatsapp
             FROM GRC_TELEFONE_FORNECEDOR
             WHERE IDGRC_FORNECEDOR = @Id AND ATIVO = 1",
             new { Id = idFornecedor })
@@ -547,8 +536,7 @@ namespace Domain.Repository
                                     Id = (int)(t.Id),
                                     Descricao = t.Descricao?.ToString(),
                                     // Conversão manual de long → bool
-                                    Whatsapp = Convert.ToBoolean(t.Whatsapp),
-                                    Observacoes = t.Observacoes?.ToString()
+                                    Whatsapp = Convert.ToBoolean(t.Whatsapp)
                                 }).ToList();
                         }
                     }

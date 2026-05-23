@@ -85,7 +85,7 @@ namespace GRC.UserControls
 
         private void Sidebar_Load(object sender, EventArgs e)
         {
-            
+            MudaForm(new usrDashboard());
         }
 
         private void btnFornecedoresEx_Click(object sender, EventArgs e)

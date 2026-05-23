@@ -75,6 +75,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.modernBox13.SuspendLayout();
             this.modernBox12.SuspendLayout();
             this.modernBox11.SuspendLayout();
@@ -100,6 +101,7 @@
             this.modernBox1.SuspendLayout();
             this.modernBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // modernBox13
@@ -110,7 +112,7 @@
             this.modernBox13.BorderSize = 1;
             this.modernBox13.Controls.Add(this.btnFiltroPersonalizado);
             this.modernBox13.FillColor = System.Drawing.Color.White;
-            this.modernBox13.Location = new System.Drawing.Point(1115, 33);
+            this.modernBox13.Location = new System.Drawing.Point(367, 6);
             this.modernBox13.Name = "modernBox13";
             this.modernBox13.Padding = new System.Windows.Forms.Padding(6);
             this.modernBox13.ShadowAngle = 50;
@@ -149,7 +151,7 @@
             this.modernBox12.BorderSize = 1;
             this.modernBox12.Controls.Add(this.btnMes);
             this.modernBox12.FillColor = System.Drawing.Color.White;
-            this.modernBox12.Location = new System.Drawing.Point(1024, 33);
+            this.modernBox12.Location = new System.Drawing.Point(276, 6);
             this.modernBox12.Name = "modernBox12";
             this.modernBox12.Padding = new System.Windows.Forms.Padding(6);
             this.modernBox12.ShadowAngle = 50;
@@ -188,7 +190,7 @@
             this.modernBox11.BorderSize = 1;
             this.modernBox11.Controls.Add(this.btnSemana);
             this.modernBox11.FillColor = System.Drawing.Color.White;
-            this.modernBox11.Location = new System.Drawing.Point(933, 33);
+            this.modernBox11.Location = new System.Drawing.Point(185, 6);
             this.modernBox11.Name = "modernBox11";
             this.modernBox11.Padding = new System.Windows.Forms.Padding(6);
             this.modernBox11.ShadowAngle = 50;
@@ -227,7 +229,7 @@
             this.modernBox10.BorderSize = 1;
             this.modernBox10.Controls.Add(this.btnOntem);
             this.modernBox10.FillColor = System.Drawing.Color.White;
-            this.modernBox10.Location = new System.Drawing.Point(842, 33);
+            this.modernBox10.Location = new System.Drawing.Point(94, 6);
             this.modernBox10.Name = "modernBox10";
             this.modernBox10.Padding = new System.Windows.Forms.Padding(6);
             this.modernBox10.ShadowAngle = 50;
@@ -266,7 +268,7 @@
             this.modernBox9.BorderSize = 1;
             this.modernBox9.Controls.Add(this.btnHoje);
             this.modernBox9.FillColor = System.Drawing.Color.White;
-            this.modernBox9.Location = new System.Drawing.Point(751, 33);
+            this.modernBox9.Location = new System.Drawing.Point(3, 6);
             this.modernBox9.Name = "modernBox9";
             this.modernBox9.Padding = new System.Windows.Forms.Padding(6);
             this.modernBox9.ShadowAngle = 50;
@@ -326,7 +328,7 @@
             this.pnCustomFilter.Controls.Add(this.roundedTextBox3);
             this.pnCustomFilter.Controls.Add(this.roundedTextBox2);
             this.pnCustomFilter.Controls.Add(this.customButton1);
-            this.pnCustomFilter.Location = new System.Drawing.Point(358, 25);
+            this.pnCustomFilter.Location = new System.Drawing.Point(357, 19);
             this.pnCustomFilter.Name = "pnCustomFilter";
             this.pnCustomFilter.Size = new System.Drawing.Size(387, 51);
             this.pnCustomFilter.TabIndex = 44;
@@ -768,17 +770,27 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "250";
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.modernBox9);
+            this.panel1.Controls.Add(this.modernBox13);
+            this.panel1.Controls.Add(this.modernBox10);
+            this.panel1.Controls.Add(this.modernBox12);
+            this.panel1.Controls.Add(this.modernBox11);
+            this.panel1.Location = new System.Drawing.Point(747, 19);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(497, 51);
+            this.panel1.TabIndex = 45;
+            this.panel1.Visible = false;
+            // 
             // usrDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.modernBox13);
-            this.Controls.Add(this.modernBox12);
-            this.Controls.Add(this.modernBox11);
-            this.Controls.Add(this.modernBox10);
-            this.Controls.Add(this.modernBox9);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.pnCustomFilter);
@@ -815,6 +827,7 @@
             this.modernBox1.PerformLayout();
             this.modernBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -862,5 +875,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

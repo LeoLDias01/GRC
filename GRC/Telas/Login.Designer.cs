@@ -48,7 +48,7 @@
             this.lbAviso.AutoSize = true;
             this.lbAviso.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAviso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbAviso.Location = new System.Drawing.Point(46, 239);
+            this.lbAviso.Location = new System.Drawing.Point(32, 200);
             this.lbAviso.Name = "lbAviso";
             this.lbAviso.Size = new System.Drawing.Size(195, 17);
             this.lbAviso.TabIndex = 10;
@@ -59,7 +59,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.label1.Location = new System.Drawing.Point(44, 199);
+            this.label1.Location = new System.Drawing.Point(30, 160);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 30);
             this.label1.TabIndex = 9;
@@ -75,7 +75,7 @@
             this.txtSenha.HideSelection = true;
             this.txtSenha.Hint = "Senha";
             this.txtSenha.LeadingIcon = global::GRC.Properties.Resources.Usuario_Senha;
-            this.txtSenha.Location = new System.Drawing.Point(49, 340);
+            this.txtSenha.Location = new System.Drawing.Point(35, 301);
             this.txtSenha.MaxLength = 32767;
             this.txtSenha.MouseState = MaterialSkin.MouseState.OUT;
             this.txtSenha.Name = "txtSenha";
@@ -104,7 +104,7 @@
             this.txtUsuario.Hint = "Usuario";
             this.txtUsuario.LeadingIcon = global::GRC.Properties.Resources.Usuario_Login;
             this.txtUsuario.LeaveOnEnterKey = true;
-            this.txtUsuario.Location = new System.Drawing.Point(49, 272);
+            this.txtUsuario.Location = new System.Drawing.Point(35, 233);
             this.txtUsuario.MaxLength = 50;
             this.txtUsuario.MouseState = MaterialSkin.MouseState.OUT;
             this.txtUsuario.Multiline = false;
@@ -118,7 +118,7 @@
             // pcbLogo
             // 
             this.pcbLogo.Image = global::GRC.Properties.Resources.RF_LabTech_Logo;
-            this.pcbLogo.Location = new System.Drawing.Point(117, 89);
+            this.pcbLogo.Location = new System.Drawing.Point(103, 50);
             this.pcbLogo.Name = "pcbLogo";
             this.pcbLogo.Size = new System.Drawing.Size(137, 75);
             this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -137,7 +137,7 @@
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.btnSair.ForeColor = System.Drawing.Color.White;
-            this.btnSair.Location = new System.Drawing.Point(51, 462);
+            this.btnSair.Location = new System.Drawing.Point(37, 423);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(272, 48);
             this.btnSair.TabIndex = 7;
@@ -159,7 +159,7 @@
             this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.btnEntrar.ForeColor = System.Drawing.Color.White;
-            this.btnEntrar.Location = new System.Drawing.Point(50, 408);
+            this.btnEntrar.Location = new System.Drawing.Point(36, 369);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(273, 48);
             this.btnEntrar.TabIndex = 6;
@@ -182,7 +182,7 @@
             // 
             this.pnBaixo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
             this.pnBaixo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnBaixo.Location = new System.Drawing.Point(0, 594);
+            this.pnBaixo.Location = new System.Drawing.Point(0, 512);
             this.pnBaixo.Name = "pnBaixo";
             this.pnBaixo.Size = new System.Drawing.Size(961, 5);
             this.pnBaixo.TabIndex = 12;
@@ -190,9 +190,9 @@
             // pcbImage
             // 
             this.pcbImage.Image = ((System.Drawing.Image)(resources.GetObject("pcbImage.Image")));
-            this.pcbImage.Location = new System.Drawing.Point(389, -141);
+            this.pcbImage.Location = new System.Drawing.Point(346, -133);
             this.pcbImage.Name = "pcbImage";
-            this.pcbImage.Size = new System.Drawing.Size(923, 891);
+            this.pcbImage.Size = new System.Drawing.Size(784, 781);
             this.pcbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbImage.TabIndex = 35;
             this.pcbImage.TabStop = false;
@@ -202,7 +202,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(961, 599);
+            this.ClientSize = new System.Drawing.Size(961, 517);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.lbAviso);

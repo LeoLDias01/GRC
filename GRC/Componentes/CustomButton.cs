@@ -94,7 +94,8 @@ namespace GRC.Componentes
                 _tamanhoRadius = this.Height;
         }
 
-        private GraphicsPath GetFigurePath(Rectangle retangulo, float raio)
+        // Alterado de Rectangle para RectangleF para permitir cálculos decimais (floats)
+        private GraphicsPath GetFigurePath(RectangleF retangulo, float raio)
         {
             GraphicsPath raphicsPath = new GraphicsPath();
             float tamanhoCurva = raio * 2F;
@@ -110,33 +111,47 @@ namespace GRC.Componentes
         protected override void OnPaint(PaintEventArgs pEvento)
         {
             base.OnPaint(pEvento);
-            Rectangle superficieRetangulo = this.ClientRectangle;
-            Rectangle bordaRetangulo = Rectangle.Inflate(superficieRetangulo, -_tamanhoBorda, -_tamanhoBorda);
-            int suavidadeBorda = 2;
-            if (_tamanhoBorda > 0)
-                suavidadeBorda = _tamanhoBorda;
+
+            pEvento.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+
+            // Retângulo externo do botão
+            RectangleF superficieRetangulo = new RectangleF(0, 0, this.Width, this.Height);
+
+            // O SEGREDO: Recuar exatamente a metade do tamanho da borda.
+            // Isso garante que a caneta (que pinta pelo meio) encoste perfeitamente na borda externa.
+            float ajusteBorda = _tamanhoBorda / 2f;
+            RectangleF bordaRetangulo = new RectangleF(ajusteBorda, ajusteBorda, this.Width - _tamanhoBorda, this.Height - _tamanhoBorda);
+
             if (_tamanhoRadius > 2)
             {
+                // Proteção matemática para a borda não ficar maior que o raio
+                float raioBorda = _tamanhoRadius - ajusteBorda;
+                if (raioBorda <= 0) raioBorda = 1F;
+
                 using (GraphicsPath gpSuperficie = GetFigurePath(superficieRetangulo, _tamanhoRadius))
-                using (GraphicsPath pBorda = GetFigurePath(bordaRetangulo, _tamanhoRadius - _tamanhoBorda))
-                using (Pen penSuperficie = new Pen(this.Parent.BackColor, suavidadeBorda))
-                using (Pen penBorda = new Pen(_corBorda, _tamanhoBorda))
+                using (GraphicsPath pBorda = GetFigurePath(bordaRetangulo, raioBorda))
                 {
-                    pEvento.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                    // Proteção de nulidade caso o Parent ainda não exista no Form Designer
+                    Color corParent = this.Parent != null ? this.Parent.BackColor : Color.White;
 
-                    this.Region = new Region(gpSuperficie);
+                    using (Pen penSuperficie = new Pen(corParent, 2))
+                    using (Pen penBorda = new Pen(_corBorda, _tamanhoBorda))
+                    {
+                        this.Region = new Region(gpSuperficie);
 
-                    pEvento.Graphics.DrawPath(penSuperficie, gpSuperficie);
+                        // Desenha uma falsa linha externa usando a cor de fundo do Form para "esconder" o pixelado do Region
+                        pEvento.Graphics.DrawPath(penSuperficie, gpSuperficie);
 
-                    if (_tamanhoBorda >= 1)
-                        pEvento.Graphics.DrawPath(penBorda, pBorda);
+                        // Desenha a borda de fato, agora sem vazar o BackColor!
+                        if (_tamanhoBorda >= 1)
+                            pEvento.Graphics.DrawPath(penBorda, pBorda);
+                    }
                 }
             }
             else
             {
                 pEvento.Graphics.SmoothingMode = SmoothingMode.None;
-
-                this.Region = new Region(superficieRetangulo);
+                this.Region = new Region(this.ClientRectangle);
 
                 if (_tamanhoBorda >= 1)
                 {
@@ -152,8 +167,12 @@ namespace GRC.Componentes
         protected override void OnHandleCreated(EventArgs e)
         {
             base.OnHandleCreated(e);
-            this.Parent.BackColorChanged += new EventHandler(Container_BackColorChanged);
+            if (this.Parent != null)
+            {
+                this.Parent.BackColorChanged += new EventHandler(Container_BackColorChanged);
+            }
         }
+
         private void Container_BackColorChanged(object sender, EventArgs e)
         {
             this.Invalidate();

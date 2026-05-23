@@ -11,6 +11,5 @@ namespace Data.Models
         public int Id { get; set; }
         public string Descricao { get; set; }
         public bool Whatsapp { get; set; }
-        public string Observacoes { get; set; }
     }
 }

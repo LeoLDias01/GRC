@@ -48,6 +48,7 @@
             this.pnWorkflow.Name = "pnWorkflow";
             this.pnWorkflow.Size = new System.Drawing.Size(1271, 702);
             this.pnWorkflow.TabIndex = 43;
+            this.pnWorkflow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnWorkflow_MouseDown);
             // 
             // sidebar1
             // 

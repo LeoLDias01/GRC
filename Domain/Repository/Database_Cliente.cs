@@ -98,7 +98,7 @@ namespace Domain.Repository
                                     ClienteId = cliente.Id,
                                     Descricao = tel.Descricao,
                                     Whatsapp = tel.Whatsapp ? 1 : 0,
-                                    Observacoes = string.IsNullOrWhiteSpace(tel.Observacoes) ? (object)DBNull.Value : tel.Observacoes
+                                    //Observacoes = string.IsNullOrWhiteSpace(tel.Observacoes) ? (object)DBNull.Value : tel.Observacoes
                                 }, tran);
                             }
                         }
@@ -268,7 +268,6 @@ namespace Domain.Repository
                                     new
                                     {
                                         Descricao = Cliente.Email.Descricao,
-                                        Observacoes = Cliente.Email.Observacoes,
                                         Id = Cliente.Email.Id,
                                     }, tran);
                             }
@@ -327,7 +326,7 @@ namespace Domain.Repository
                                     IdCliente = Cliente.Id,
                                     Descricao = tel.Descricao,
                                     Whatsapp = tel.Whatsapp,
-                                    Observacoes = tel.Observacoes
+                                 //   Observacoes = tel.Observacoes
                                 }, tran);
                         }
 
@@ -344,7 +343,7 @@ namespace Domain.Repository
                                 {
                                     Descricao = tel.Descricao,
                                     Whatsapp = tel.Whatsapp,
-                                    Observacoes = tel.Observacoes,
+                                  //  Observacoes = tel.Observacoes,
                                     Id = tel.Id,
                                     IdCliente = Cliente.Id
                                 }, tran);
@@ -450,7 +449,6 @@ namespace Domain.Repository
                         Nome = x.Nome,
                         TipoPessoa = (int)x.Tipo,
                         Identidade = x.Identificacao,
-                        //Observacoes = x.Observacoes,
                         Endereco = new Endereco
                         {
                             Cidade = x.Cidade,
@@ -522,8 +520,7 @@ namespace Domain.Repository
                         Email = x.EmailId != null ? new Email
                         {
                             Id = (int)x.EmailId,
-                            Descricao = x.DescricaoEmail,
-                            Observacoes = x.ObservacoesEmail
+                            Descricao = x.DescricaoEmail
                         } : null,
                         // Telefones podem ser preenchidos depois com outra query
                         Telefones = new List<Telefone>()
@@ -553,7 +550,7 @@ namespace Domain.Repository
                                     Descricao = t.Descricao?.ToString(),
                                     // Conversão manual de long → bool
                                     Whatsapp = Convert.ToBoolean(t.Whatsapp),
-                                    Observacoes = t.Observacoes?.ToString()
+                                  //  Observacoes = t.Observacoes?.ToString()
                                 }).ToList();
                         }
                     }

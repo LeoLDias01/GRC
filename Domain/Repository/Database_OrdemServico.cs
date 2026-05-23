@@ -669,7 +669,7 @@ namespace Domain.Repository
                                 Id = (int)z.Id,
                                 Descricao = z.Descricao,
                                 Whatsapp = Convert.ToBoolean(z.Whatsapp),
-                                Observacoes = z.Observacoes,
+                                //Observacoes = z.Observacoes,
                             }).ToList();
                         }
                         #endregion

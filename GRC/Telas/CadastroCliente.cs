@@ -194,7 +194,6 @@ namespace GRC.Telas
                     _idEmail = clienteDados.Email.Id == null ? 0 : (int)clienteDados.Email.Id;
                     chkHabilitaEmail.Checked = true;
                     txtEmail.Text = clienteDados.Email.Descricao;
-                    txtObservacoesEmail.Text = clienteDados.Email.Observacoes;
                 }
                 else
                 {
@@ -206,7 +205,7 @@ namespace GRC.Telas
                 {
                     foreach (var tel in clienteDados.Telefones)
                     {
-                        PreencheGridTelefone(tel.Id, tel.Whatsapp, tel.Descricao, tel.Observacoes);
+                        PreencheGridTelefone(tel.Id, tel.Whatsapp, tel.Descricao);
                     }
                 }
             }
@@ -216,7 +215,7 @@ namespace GRC.Telas
                 new AlertBox(Color.FromArgb(64, 0, 0), Color.Red, Color.Crimson, Resources.Error, "Um erro ocorreu:", "Entidade: Fornecedor", "Erro ao carregar fornecedor!", false).ShowDialog();
             }
         }
-        private void PreencheGridTelefone(int id, bool whatsapp, string telefone, string observacoes)
+        private void PreencheGridTelefone(int id, bool whatsapp, string telefone)
         {
             // Evita que apareça o "X" quando não houver imagem
             dgvTelefones.Columns["colWhatsApp"].DefaultCellStyle.NullValue = null;
@@ -227,7 +226,6 @@ namespace GRC.Telas
                     id,                          // colIdTelefone = 0 (novo registro)
                     whatsapp == true ? Resources.whatsapp : null, // colWhatsapp
                     telefone,                   // colTelefone
-                    observacoes,                // colObservacoes
                     Resources.remove
                 );
         }
@@ -470,8 +468,7 @@ namespace GRC.Telas
                     Email = chkHabilitaEmail.Checked ? new Email
                     {
                         Id = _idEmail,
-                        Descricao = txtEmail.Text.Trim(),
-                        Observacoes = txtObservacoesEmail.Text.Trim()
+                        Descricao = txtEmail.Text.Trim()
                     } : null,
                     Telefones = dgvTelefones.Rows.Cast<DataGridViewRow>()
     .Where(r => !r.IsNewRow)
@@ -488,7 +485,7 @@ namespace GRC.Telas
             Descricao = cellTelefone?.ToString() ?? string.Empty,
             // se houver imagem de WhatsApp, considera true
             Whatsapp = cellWhatsapp != null && cellWhatsapp is Bitmap,
-            Observacoes = cellObs?.ToString() ?? string.Empty
+            //Observacoes = cellObs?.ToString() ?? string.Empty
         };
     }).ToList()
                 };
@@ -556,7 +553,6 @@ namespace GRC.Telas
         private void txtTelefone_TrailingIconClick(object sender, EventArgs e)
         {
             bool whatsapp = chkWhatsapp.Checked;
-            string observacoes = txtObservacoesTelefone.Text;
 
             // Remove tudo que não é número
             string telefoneNumerico = txtTelefone.Text.Trim();//new string(txtTelefone.Text.Trim().Where(char.IsDigit).ToArray());
@@ -570,12 +566,11 @@ namespace GRC.Telas
             }
 
 
-            PreencheGridTelefone(0, whatsapp, telefoneNumerico, observacoes);
+            PreencheGridTelefone(0, whatsapp, telefoneNumerico);
 
             // Limpa campos para próxima entrada
             txtTelefone.Clear();
             chkWhatsapp.Checked = false;
-            txtObservacoesTelefone.Clear();
             txtTelefone.Focus();
         }
 

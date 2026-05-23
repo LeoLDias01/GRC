@@ -28,10 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(usrFornecedores));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(usrFornecedores));
+            this.btnFiltroAtivos = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnFiltroTodos = new GRC.Componentes.CustomButton();
+            this.btnFiltroInativos = new GRC.Componentes.CustomButton();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnNovoFornecedor = new GRC.Componentes.CustomButton();
+            this.modernBox3 = new GRC.Componentes.ModernBox();
+            this.cbRegistros = new System.Windows.Forms.ComboBox();
+            this.lbRegistros = new System.Windows.Forms.Label();
             this.modernBox2 = new GRC.Componentes.ModernBox();
             this.dgvFornecedores = new System.Windows.Forms.DataGridView();
             this.colIdFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,24 +50,194 @@
             this.colCnpj = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modernBox3 = new GRC.Componentes.ModernBox();
-            this.cbRegistros = new System.Windows.Forms.ComboBox();
-            this.lbRegistros = new System.Windows.Forms.Label();
-            this.txtPesquisa = new GRC.Componentes.RoundedTextBox();
             this.modernBox1 = new GRC.Componentes.ModernBox();
-            this.btnFiltroTodos = new GRC.Componentes.CustomButton();
-            this.btnFiltroInativos = new GRC.Componentes.CustomButton();
-            this.btnFiltroAtivos = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnNovoFornecedor = new GRC.Componentes.CustomButton();
+            this.txtPesquisa = new GRC.Componentes.RoundedTextBox();
+            this.panel1.SuspendLayout();
+            this.modernBox3.SuspendLayout();
             this.modernBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).BeginInit();
-            this.modernBox3.SuspendLayout();
             this.modernBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // btnFiltroAtivos
+            // 
+            this.btnFiltroAtivos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.btnFiltroAtivos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFiltroAtivos.FlatAppearance.BorderSize = 5;
+            this.btnFiltroAtivos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnFiltroAtivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltroAtivos.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.btnFiltroAtivos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.btnFiltroAtivos.Location = new System.Drawing.Point(82, 8);
+            this.btnFiltroAtivos.Name = "btnFiltroAtivos";
+            this.btnFiltroAtivos.Size = new System.Drawing.Size(93, 42);
+            this.btnFiltroAtivos.TabIndex = 167;
+            this.btnFiltroAtivos.Text = "Ativo";
+            this.btnFiltroAtivos.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.btnFiltroAtivos);
+            this.panel1.Controls.Add(this.btnFiltroTodos);
+            this.panel1.Controls.Add(this.btnFiltroInativos);
+            this.panel1.Location = new System.Drawing.Point(735, 76);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(262, 57);
+            this.panel1.TabIndex = 169;
+            // 
+            // btnFiltroTodos
+            // 
+            this.btnFiltroTodos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.btnFiltroTodos.CorBorda = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.btnFiltroTodos.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.btnFiltroTodos.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.btnFiltroTodos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFiltroTodos.FlatAppearance.BorderSize = 0;
+            this.btnFiltroTodos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnFiltroTodos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltroTodos.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.btnFiltroTodos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.btnFiltroTodos.Location = new System.Drawing.Point(16, 7);
+            this.btnFiltroTodos.Name = "btnFiltroTodos";
+            this.btnFiltroTodos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnFiltroTodos.Size = new System.Drawing.Size(159, 43);
+            this.btnFiltroTodos.TabIndex = 35;
+            this.btnFiltroTodos.TamanhoBorda = 5;
+            this.btnFiltroTodos.TamanhoRaio = 20;
+            this.btnFiltroTodos.Text = "Todos";
+            this.btnFiltroTodos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFiltroTodos.UseVisualStyleBackColor = false;
+            // 
+            // btnFiltroInativos
+            // 
+            this.btnFiltroInativos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.btnFiltroInativos.CorBorda = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.btnFiltroInativos.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.btnFiltroInativos.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.btnFiltroInativos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFiltroInativos.FlatAppearance.BorderSize = 0;
+            this.btnFiltroInativos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnFiltroInativos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltroInativos.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.btnFiltroInativos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.btnFiltroInativos.Location = new System.Drawing.Point(82, 7);
+            this.btnFiltroInativos.Name = "btnFiltroInativos";
+            this.btnFiltroInativos.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
+            this.btnFiltroInativos.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnFiltroInativos.Size = new System.Drawing.Size(168, 42);
+            this.btnFiltroInativos.TabIndex = 166;
+            this.btnFiltroInativos.TamanhoBorda = 5;
+            this.btnFiltroInativos.TamanhoRaio = 20;
+            this.btnFiltroInativos.Text = "Inativo";
+            this.btnFiltroInativos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFiltroInativos.UseVisualStyleBackColor = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label11.Location = new System.Drawing.Point(6, 40);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(271, 20);
+            this.label11.TabIndex = 171;
+            this.label11.Text = "Pesquisa de cadastros de fornecedores";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold);
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.label10.Location = new System.Drawing.Point(3, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(292, 37);
+            this.label10.TabIndex = 170;
+            this.label10.Text = "Busca de fornecedores";
+            // 
+            // btnNovoFornecedor
+            // 
+            this.btnNovoFornecedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.btnNovoFornecedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnNovoFornecedor.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnNovoFornecedor.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.btnNovoFornecedor.CorTextoBotao = System.Drawing.Color.White;
+            this.btnNovoFornecedor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNovoFornecedor.FlatAppearance.BorderSize = 0;
+            this.btnNovoFornecedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnNovoFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovoFornecedor.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
+            this.btnNovoFornecedor.ForeColor = System.Drawing.Color.White;
+            this.btnNovoFornecedor.Image = ((System.Drawing.Image)(resources.GetObject("btnNovoFornecedor.Image")));
+            this.btnNovoFornecedor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNovoFornecedor.Location = new System.Drawing.Point(301, 3);
+            this.btnNovoFornecedor.Name = "btnNovoFornecedor";
+            this.btnNovoFornecedor.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.btnNovoFornecedor.Size = new System.Drawing.Size(179, 34);
+            this.btnNovoFornecedor.TabIndex = 172;
+            this.btnNovoFornecedor.TamanhoBorda = 0;
+            this.btnNovoFornecedor.TamanhoRaio = 8;
+            this.btnNovoFornecedor.Text = "Novo Fornecedor   ";
+            this.btnNovoFornecedor.UseVisualStyleBackColor = false;
+            // 
+            // modernBox3
+            // 
+            this.modernBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.modernBox3.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.modernBox3.BorderRadius = 10;
+            this.modernBox3.BorderSize = 3;
+            this.modernBox3.Controls.Add(this.cbRegistros);
+            this.modernBox3.Controls.Add(this.lbRegistros);
+            this.modernBox3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.modernBox3.Location = new System.Drawing.Point(0, 605);
+            this.modernBox3.Name = "modernBox3";
+            this.modernBox3.Padding = new System.Windows.Forms.Padding(15);
+            this.modernBox3.ShadowAngle = 135;
+            this.modernBox3.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.modernBox3.ShadowSize = 8;
+            this.modernBox3.Size = new System.Drawing.Size(1000, 64);
+            this.modernBox3.TabIndex = 162;
+            // 
+            // cbRegistros
+            // 
+            this.cbRegistros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbRegistros.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbRegistros.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbRegistros.FormattingEnabled = true;
+            this.cbRegistros.Items.AddRange(new object[] {
+            "10",
+            "20",
+            "30",
+            "40",
+            "50",
+            "60",
+            "70",
+            "80",
+            "90",
+            "100"});
+            this.cbRegistros.Location = new System.Drawing.Point(902, 18);
+            this.cbRegistros.Name = "cbRegistros";
+            this.cbRegistros.Size = new System.Drawing.Size(76, 29);
+            this.cbRegistros.TabIndex = 2;
+            this.cbRegistros.Text = "10";
+            // 
+            // lbRegistros
+            // 
+            this.lbRegistros.AutoSize = true;
+            this.lbRegistros.BackColor = System.Drawing.Color.Transparent;
+            this.lbRegistros.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lbRegistros.Font = new System.Drawing.Font("Segoe UI Symbol", 13F, System.Drawing.FontStyle.Bold);
+            this.lbRegistros.ForeColor = System.Drawing.Color.White;
+            this.lbRegistros.Location = new System.Drawing.Point(15, 15);
+            this.lbRegistros.Name = "lbRegistros";
+            this.lbRegistros.Padding = new System.Windows.Forms.Padding(5);
+            this.lbRegistros.Size = new System.Drawing.Size(238, 35);
+            this.lbRegistros.TabIndex = 1;
+            this.lbRegistros.Text = "0 Registros Encontrados";
             // 
             // modernBox2
             // 
@@ -175,62 +355,22 @@
             this.colUf.Name = "colUf";
             this.colUf.ReadOnly = true;
             // 
-            // modernBox3
+            // modernBox1
             // 
-            this.modernBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.modernBox3.BackColor = System.Drawing.Color.Transparent;
-            this.modernBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.modernBox3.BorderRadius = 10;
-            this.modernBox3.BorderSize = 3;
-            this.modernBox3.Controls.Add(this.cbRegistros);
-            this.modernBox3.Controls.Add(this.lbRegistros);
-            this.modernBox3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.modernBox3.Location = new System.Drawing.Point(0, 605);
-            this.modernBox3.Name = "modernBox3";
-            this.modernBox3.Padding = new System.Windows.Forms.Padding(15);
-            this.modernBox3.ShadowAngle = 135;
-            this.modernBox3.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.modernBox3.ShadowSize = 8;
-            this.modernBox3.Size = new System.Drawing.Size(1000, 64);
-            this.modernBox3.TabIndex = 162;
-            // 
-            // cbRegistros
-            // 
-            this.cbRegistros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbRegistros.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbRegistros.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbRegistros.FormattingEnabled = true;
-            this.cbRegistros.Items.AddRange(new object[] {
-            "10",
-            "20",
-            "30",
-            "40",
-            "50",
-            "60",
-            "70",
-            "80",
-            "90",
-            "100"});
-            this.cbRegistros.Location = new System.Drawing.Point(902, 18);
-            this.cbRegistros.Name = "cbRegistros";
-            this.cbRegistros.Size = new System.Drawing.Size(76, 29);
-            this.cbRegistros.TabIndex = 2;
-            this.cbRegistros.Text = "10";
-            // 
-            // lbRegistros
-            // 
-            this.lbRegistros.AutoSize = true;
-            this.lbRegistros.BackColor = System.Drawing.Color.Transparent;
-            this.lbRegistros.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lbRegistros.Font = new System.Drawing.Font("Segoe UI Symbol", 13F, System.Drawing.FontStyle.Bold);
-            this.lbRegistros.ForeColor = System.Drawing.Color.White;
-            this.lbRegistros.Location = new System.Drawing.Point(15, 15);
-            this.lbRegistros.Name = "lbRegistros";
-            this.lbRegistros.Padding = new System.Windows.Forms.Padding(5);
-            this.lbRegistros.Size = new System.Drawing.Size(238, 35);
-            this.lbRegistros.TabIndex = 1;
-            this.lbRegistros.Text = "0 Registros Encontrados";
+            this.modernBox1.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox1.BorderColor = System.Drawing.Color.Transparent;
+            this.modernBox1.BorderRadius = 20;
+            this.modernBox1.BorderSize = 1;
+            this.modernBox1.Controls.Add(this.txtPesquisa);
+            this.modernBox1.FillColor = System.Drawing.Color.White;
+            this.modernBox1.Location = new System.Drawing.Point(10, 76);
+            this.modernBox1.Name = "modernBox1";
+            this.modernBox1.Padding = new System.Windows.Forms.Padding(8);
+            this.modernBox1.ShadowAngle = 50;
+            this.modernBox1.ShadowColor = System.Drawing.Color.Gainsboro;
+            this.modernBox1.ShadowSize = 3;
+            this.modernBox1.Size = new System.Drawing.Size(713, 50);
+            this.modernBox1.TabIndex = 159;
             // 
             // txtPesquisa
             // 
@@ -253,146 +393,6 @@
             this.txtPesquisa.UnderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
             this.txtPesquisa.UnderlineSize = 5;
             // 
-            // modernBox1
-            // 
-            this.modernBox1.BackColor = System.Drawing.Color.Transparent;
-            this.modernBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.modernBox1.BorderRadius = 20;
-            this.modernBox1.BorderSize = 1;
-            this.modernBox1.Controls.Add(this.txtPesquisa);
-            this.modernBox1.FillColor = System.Drawing.Color.White;
-            this.modernBox1.Location = new System.Drawing.Point(10, 76);
-            this.modernBox1.Name = "modernBox1";
-            this.modernBox1.Padding = new System.Windows.Forms.Padding(8);
-            this.modernBox1.ShadowAngle = 50;
-            this.modernBox1.ShadowColor = System.Drawing.Color.Gainsboro;
-            this.modernBox1.ShadowSize = 3;
-            this.modernBox1.Size = new System.Drawing.Size(713, 50);
-            this.modernBox1.TabIndex = 159;
-            // 
-            // btnFiltroTodos
-            // 
-            this.btnFiltroTodos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.btnFiltroTodos.CorBorda = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.btnFiltroTodos.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.btnFiltroTodos.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.btnFiltroTodos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFiltroTodos.FlatAppearance.BorderSize = 0;
-            this.btnFiltroTodos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnFiltroTodos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltroTodos.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.btnFiltroTodos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.btnFiltroTodos.Location = new System.Drawing.Point(4, 3);
-            this.btnFiltroTodos.Name = "btnFiltroTodos";
-            this.btnFiltroTodos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnFiltroTodos.Size = new System.Drawing.Size(124, 50);
-            this.btnFiltroTodos.TabIndex = 35;
-            this.btnFiltroTodos.TamanhoBorda = 5;
-            this.btnFiltroTodos.TamanhoRaio = 20;
-            this.btnFiltroTodos.Text = "Todos";
-            this.btnFiltroTodos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFiltroTodos.UseVisualStyleBackColor = false;
-            // 
-            // btnFiltroInativos
-            // 
-            this.btnFiltroInativos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.btnFiltroInativos.CorBorda = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.btnFiltroInativos.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.btnFiltroInativos.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.btnFiltroInativos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFiltroInativos.FlatAppearance.BorderSize = 0;
-            this.btnFiltroInativos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnFiltroInativos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltroInativos.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.btnFiltroInativos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.btnFiltroInativos.Location = new System.Drawing.Point(134, 3);
-            this.btnFiltroInativos.Name = "btnFiltroInativos";
-            this.btnFiltroInativos.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
-            this.btnFiltroInativos.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnFiltroInativos.Size = new System.Drawing.Size(124, 50);
-            this.btnFiltroInativos.TabIndex = 166;
-            this.btnFiltroInativos.TamanhoBorda = 5;
-            this.btnFiltroInativos.TamanhoRaio = 20;
-            this.btnFiltroInativos.Text = "Inativo";
-            this.btnFiltroInativos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFiltroInativos.UseVisualStyleBackColor = false;
-            // 
-            // btnFiltroAtivos
-            // 
-            this.btnFiltroAtivos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.btnFiltroAtivos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFiltroAtivos.FlatAppearance.BorderSize = 5;
-            this.btnFiltroAtivos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnFiltroAtivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltroAtivos.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.btnFiltroAtivos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.btnFiltroAtivos.Location = new System.Drawing.Point(82, 6);
-            this.btnFiltroAtivos.Name = "btnFiltroAtivos";
-            this.btnFiltroAtivos.Size = new System.Drawing.Size(93, 45);
-            this.btnFiltroAtivos.TabIndex = 167;
-            this.btnFiltroAtivos.Text = "Ativo";
-            this.btnFiltroAtivos.UseVisualStyleBackColor = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.btnFiltroAtivos);
-            this.panel1.Controls.Add(this.btnFiltroTodos);
-            this.panel1.Controls.Add(this.btnFiltroInativos);
-            this.panel1.Location = new System.Drawing.Point(735, 76);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(262, 57);
-            this.panel1.TabIndex = 169;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label11.Location = new System.Drawing.Point(6, 40);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(161, 20);
-            this.label11.TabIndex = 171;
-            this.label11.Text = "Visão geral do sistema";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold);
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
-            this.label10.Location = new System.Drawing.Point(3, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(292, 37);
-            this.label10.TabIndex = 170;
-            this.label10.Text = "Busca de fornecedores";
-            // 
-            // btnNovoFornecedor
-            // 
-            this.btnNovoFornecedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.btnNovoFornecedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnNovoFornecedor.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnNovoFornecedor.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.btnNovoFornecedor.CorTextoBotao = System.Drawing.Color.White;
-            this.btnNovoFornecedor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNovoFornecedor.FlatAppearance.BorderSize = 0;
-            this.btnNovoFornecedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnNovoFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNovoFornecedor.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.btnNovoFornecedor.ForeColor = System.Drawing.Color.White;
-            this.btnNovoFornecedor.Image = ((System.Drawing.Image)(resources.GetObject("btnNovoFornecedor.Image")));
-            this.btnNovoFornecedor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNovoFornecedor.Location = new System.Drawing.Point(301, 3);
-            this.btnNovoFornecedor.Name = "btnNovoFornecedor";
-            this.btnNovoFornecedor.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.btnNovoFornecedor.Size = new System.Drawing.Size(146, 34);
-            this.btnNovoFornecedor.TabIndex = 172;
-            this.btnNovoFornecedor.TamanhoBorda = 0;
-            this.btnNovoFornecedor.TamanhoRaio = 8;
-            this.btnNovoFornecedor.Text = "Fornecedor   ";
-            this.btnNovoFornecedor.UseVisualStyleBackColor = false;
-            // 
             // usrFornecedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -407,12 +407,12 @@
             this.Controls.Add(this.modernBox1);
             this.Name = "usrFornecedores";
             this.Size = new System.Drawing.Size(1000, 669);
-            this.modernBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.modernBox3.ResumeLayout(false);
             this.modernBox3.PerformLayout();
+            this.modernBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).EndInit();
             this.modernBox1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

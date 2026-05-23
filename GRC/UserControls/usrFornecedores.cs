@@ -1,4 +1,5 @@
-﻿using Business.Services;
+﻿using Business.Helper;
+using Business.Services;
 using Data.Models;
 using GRC.Telas;
 using System;
@@ -49,15 +50,14 @@ namespace GRC.UserControls
             btnFiltroAtivos.Click += (s, e) => { _statusSelecionado = true; AtualizarVisualFiltros(); RealizaPesquisa(); };
             btnFiltroInativos.Click += (s, e) => { _statusSelecionado = false; AtualizarVisualFiltros(); RealizaPesquisa(); };
 
-        
+
+            btnNovoFornecedor.Click += btnNovoFornecedor_Click;
+
+
 
             ConfigurarEstiloGrid();
         }
-        private void UcFornecedor_Load(object sender, EventArgs e)
-        {
-            cbRegistros.Text = "10";
-            RealizaPesquisa();
-        }
+
         private void ConfigurarEstiloGrid()
         {
             // 1. Configurações Gerais de Comportamento e Bordas
@@ -149,15 +149,7 @@ namespace GRC.UserControls
             lbRegistros.Text = $"{dgvFornecedores.Rows.Count} registros encontrados!";
         }
 
-        private void btnNovoFornecedor_Click(object sender, EventArgs e)
-        {
-            using (CadastroFornecedor cadForm = new CadastroFornecedor())
-            {
-                cadForm.StartPosition = FormStartPosition.CenterParent;
-                cadForm.ShowDialog(this.FindForm());
-                RealizaPesquisa();
-            }
-        }
+
 
         private void dgvFornecedores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -179,7 +171,7 @@ namespace GRC.UserControls
 
             var fornecedor = new Fornecedores
             {
-                Nome = termo, // O seu método do banco lê essa propriedade como o filtro global
+                Nome = Identidade.RetiraFormatacao(termo), // O seu método do banco lê essa propriedade como o filtro global
                 Ativo = _statusSelecionado // Usa a nossa variável de controle de estado
             };
 
@@ -190,17 +182,17 @@ namespace GRC.UserControls
 
             if (lista != null)
             {
-                foreach (var estoque in lista)
+                foreach (var forn in lista)
                 {
-                    if (estoque.Id > 0)
+                    if (forn.Id > 0)
                     {
                         dgvFornecedores.Rows.Add(
-                            estoque.Id,
-                            estoque.Nome,
-                            estoque.RazaoSocial,
-                            estoque.Cnpj,
-                            estoque.Endereco.Cidade,
-                            estoque.Endereco.Uf
+                            forn.Id,
+                            forn.Nome,
+                            forn.RazaoSocial,
+                            Identidade.FormataIdentidade(forn.Cnpj),
+                            forn.Endereco.Cidade,
+                            forn.Endereco.Uf
                         );
                     }
                 }
@@ -263,6 +255,12 @@ namespace GRC.UserControls
             {
                 btnFiltroInativos.BackColor = CorFiltroAtivo;
             }
+        }
+        private void btnNovoFornecedor_Click(object sender, EventArgs e)
+        {
+            txtPesquisa.Text = string.Empty;
+            new CadastroFornecedor().ShowDialog();
+            RealizaPesquisa();
         }
     }
 }
