@@ -28,10 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemEstoque));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemEstoque));
+            this.materialCheckbox1 = new MaterialSkin.Controls.MaterialCheckbox();
+            this.materialCheckbox2 = new MaterialSkin.Controls.MaterialCheckbox();
+            this.materialCheckbox3 = new MaterialSkin.Controls.MaterialCheckbox();
+            this.materialCheckbox4 = new MaterialSkin.Controls.MaterialCheckbox();
+            this.cbxQtdRegistros = new System.Windows.Forms.ComboBox();
+            this.lbRegistros = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pnSuperior = new System.Windows.Forms.Panel();
+            this.lblStatusLeitor = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.modernBox2 = new GRC.Componentes.ModernBox();
             this.dgvItens = new System.Windows.Forms.DataGridView();
             this.colFavorito = new System.Windows.Forms.DataGridViewImageColumn();
             this.colImagem = new System.Windows.Forms.DataGridViewImageColumn();
@@ -44,193 +56,34 @@
             this.colFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProduto = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.materialCheckbox1 = new MaterialSkin.Controls.MaterialCheckbox();
-            this.materialCheckbox2 = new MaterialSkin.Controls.MaterialCheckbox();
-            this.materialCheckbox3 = new MaterialSkin.Controls.MaterialCheckbox();
-            this.materialCheckbox4 = new MaterialSkin.Controls.MaterialCheckbox();
-            this.cbxQtdRegistros = new System.Windows.Forms.ComboBox();
-            this.lbRegistros = new System.Windows.Forms.Label();
-            this.txtCodigo = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtCodigoBarras = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtItem = new MaterialSkin.Controls.MaterialTextBox();
-            this.cbCategoria = new MaterialSkin.Controls.MaterialComboBox();
-            this.cbFornecedor = new MaterialSkin.Controls.MaterialComboBox();
-            this.cbFabricante = new MaterialSkin.Controls.MaterialComboBox();
+            this.modernBox1 = new GRC.Componentes.ModernBox();
+            this.painelRadius3 = new GRC.Componentes.PainelRadius();
+            this.chkItemVenda = new MaterialSkin.Controls.MaterialCheckbox();
             this.chkAtivo = new MaterialSkin.Controls.MaterialCheckbox();
             this.chkFavorito = new MaterialSkin.Controls.MaterialCheckbox();
-            this.chkItemVenda = new MaterialSkin.Controls.MaterialCheckbox();
-            this.btnApagar = new GRC.Componentes.CustomButton();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnClose = new GRC.Componentes.CustomButton();
-            this.btnMaximize = new GRC.Componentes.CustomButton();
-            this.btnMinimize = new GRC.Componentes.CustomButton();
-            this.btnNovoItem = new GRC.Componentes.CustomButton();
-            this.tbnSearch = new GRC.Componentes.CustomButton();
-            this.painelRadius3 = new GRC.Componentes.PainelRadius();
-            this.pnSuperior = new System.Windows.Forms.Panel();
-            this.pn1 = new GRC.Componentes.RoundedPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.modernBox1 = new GRC.Componentes.ModernBox();
-            this.lblStatusLeitor = new System.Windows.Forms.Label();
             this.flpMenu = new System.Windows.Forms.FlowLayoutPanel();
-            this.modernBox2 = new GRC.Componentes.ModernBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.painelRadius3.SuspendLayout();
+            this.txtCodigo = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtCodigoBarras = new MaterialSkin.Controls.MaterialTextBox();
+            this.cbFabricante = new MaterialSkin.Controls.MaterialComboBox();
+            this.cbFornecedor = new MaterialSkin.Controls.MaterialComboBox();
+            this.cbCategoria = new MaterialSkin.Controls.MaterialComboBox();
+            this.txtItem = new MaterialSkin.Controls.MaterialTextBox();
+            this.pn1 = new GRC.Componentes.RoundedPanel();
+            this.btnClose = new GRC.Componentes.CustomButton();
+            this.tbnSearch = new GRC.Componentes.CustomButton();
+            this.btnMaximize = new GRC.Componentes.CustomButton();
+            this.btnNovoItem = new GRC.Componentes.CustomButton();
+            this.btnMinimize = new GRC.Componentes.CustomButton();
+            this.btnApagar = new GRC.Componentes.CustomButton();
             this.pnSuperior.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.modernBox1.SuspendLayout();
-            this.flpMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.modernBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
+            this.modernBox1.SuspendLayout();
+            this.painelRadius3.SuspendLayout();
+            this.flpMenu.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dgvItens
-            // 
-            this.dgvItens.AllowUserToAddRows = false;
-            this.dgvItens.AllowUserToDeleteRows = false;
-            this.dgvItens.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvItens.BackgroundColor = System.Drawing.Color.White;
-            this.dgvItens.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvItens.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dgvItens.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvItens.ColumnHeadersHeight = 35;
-            this.dgvItens.ColumnHeadersVisible = false;
-            this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colFavorito,
-            this.colImagem,
-            this.colId,
-            this.colDescricao,
-            this.colCodigoBarras,
-            this.colQtd,
-            this.colCategoria,
-            this.colFabricante,
-            this.colFornecedor,
-            this.colProduto,
-            this.colAtivo});
-            this.dgvItens.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(218)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvItens.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvItens.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvItens.EnableHeadersVisualStyles = false;
-            this.dgvItens.GridColor = System.Drawing.Color.Silver;
-            this.dgvItens.Location = new System.Drawing.Point(10, 10);
-            this.dgvItens.MultiSelect = false;
-            this.dgvItens.Name = "dgvItens";
-            this.dgvItens.ReadOnly = true;
-            this.dgvItens.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvItens.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItens.Size = new System.Drawing.Size(1198, 362);
-            this.dgvItens.TabIndex = 10;
-            this.dgvItens.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItens_CellDoubleClick);
-            this.dgvItens.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItens_CellValueChanged);
-            // 
-            // colFavorito
-            // 
-            this.colFavorito.DataPropertyName = "Favorito";
-            this.colFavorito.FillWeight = 6.146037F;
-            this.colFavorito.HeaderText = "";
-            this.colFavorito.Name = "colFavorito";
-            this.colFavorito.ReadOnly = true;
-            // 
-            // colImagem
-            // 
-            this.colImagem.DataPropertyName = "FotoItem";
-            this.colImagem.FillWeight = 12.98365F;
-            this.colImagem.HeaderText = "Foto";
-            this.colImagem.Name = "colImagem";
-            this.colImagem.ReadOnly = true;
-            // 
-            // colId
-            // 
-            this.colId.DataPropertyName = "Id";
-            this.colId.FillWeight = 0.6504041F;
-            this.colId.HeaderText = "Id";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.Visible = false;
-            // 
-            // colDescricao
-            // 
-            this.colDescricao.DataPropertyName = "Descricao";
-            this.colDescricao.FillWeight = 35.69515F;
-            this.colDescricao.HeaderText = "Item";
-            this.colDescricao.Name = "colDescricao";
-            this.colDescricao.ReadOnly = true;
-            // 
-            // colCodigoBarras
-            // 
-            this.colCodigoBarras.DataPropertyName = "CodBarras";
-            this.colCodigoBarras.FillWeight = 35.01702F;
-            this.colCodigoBarras.HeaderText = "Código de Barras";
-            this.colCodigoBarras.Name = "colCodigoBarras";
-            this.colCodigoBarras.ReadOnly = true;
-            this.colCodigoBarras.Visible = false;
-            // 
-            // colQtd
-            // 
-            this.colQtd.DataPropertyName = "Quantidade";
-            this.colQtd.FillWeight = 10.428F;
-            this.colQtd.HeaderText = "Qtd";
-            this.colQtd.Name = "colQtd";
-            this.colQtd.ReadOnly = true;
-            // 
-            // colCategoria
-            // 
-            this.colCategoria.DataPropertyName = "DescricaoCategoria";
-            this.colCategoria.FillWeight = 16.20491F;
-            this.colCategoria.HeaderText = "Categoria";
-            this.colCategoria.Name = "colCategoria";
-            this.colCategoria.ReadOnly = true;
-            // 
-            // colFabricante
-            // 
-            this.colFabricante.DataPropertyName = "DescricaoFabricante";
-            this.colFabricante.FillWeight = 25.27785F;
-            this.colFabricante.HeaderText = "Marca";
-            this.colFabricante.Name = "colFabricante";
-            this.colFabricante.ReadOnly = true;
-            // 
-            // colFornecedor
-            // 
-            this.colFornecedor.DataPropertyName = "Fornecedor";
-            this.colFornecedor.FillWeight = 21.87452F;
-            this.colFornecedor.HeaderText = "Fornecedor";
-            this.colFornecedor.Name = "colFornecedor";
-            this.colFornecedor.ReadOnly = true;
-            // 
-            // colProduto
-            // 
-            this.colProduto.DataPropertyName = "ItemVenda";
-            this.colProduto.FillWeight = 21.22982F;
-            this.colProduto.HeaderText = "Produto";
-            this.colProduto.Name = "colProduto";
-            this.colProduto.ReadOnly = true;
-            // 
-            // colAtivo
-            // 
-            this.colAtivo.DataPropertyName = "Ativo";
-            this.colAtivo.FillWeight = 20.67864F;
-            this.colAtivo.HeaderText = "Ativo";
-            this.colAtivo.Name = "colAtivo";
-            this.colAtivo.ReadOnly = true;
             // 
             // materialCheckbox1
             // 
@@ -330,6 +183,344 @@
             this.lbRegistros.TabIndex = 1;
             this.lbRegistros.Text = "0 Registros Encontrados";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(64, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(253, 29);
+            this.label1.TabIndex = 120;
+            this.label1.Text = "Controle de Estoque";
+            // 
+            // pnSuperior
+            // 
+            this.pnSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.pnSuperior.Controls.Add(this.lblStatusLeitor);
+            this.pnSuperior.Controls.Add(this.pn1);
+            this.pnSuperior.Controls.Add(this.pictureBox3);
+            this.pnSuperior.Controls.Add(this.label1);
+            this.pnSuperior.Controls.Add(this.btnClose);
+            this.pnSuperior.Controls.Add(this.tbnSearch);
+            this.pnSuperior.Controls.Add(this.btnMaximize);
+            this.pnSuperior.Controls.Add(this.btnNovoItem);
+            this.pnSuperior.Controls.Add(this.btnMinimize);
+            this.pnSuperior.Controls.Add(this.btnApagar);
+            this.pnSuperior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnSuperior.Location = new System.Drawing.Point(0, 0);
+            this.pnSuperior.Name = "pnSuperior";
+            this.pnSuperior.Size = new System.Drawing.Size(1239, 70);
+            this.pnSuperior.TabIndex = 131;
+            this.pnSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnSuperior_MouseDown);
+            // 
+            // lblStatusLeitor
+            // 
+            this.lblStatusLeitor.AutoSize = true;
+            this.lblStatusLeitor.BackColor = System.Drawing.Color.RosyBrown;
+            this.lblStatusLeitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.lblStatusLeitor.ForeColor = System.Drawing.Color.White;
+            this.lblStatusLeitor.Location = new System.Drawing.Point(481, 37);
+            this.lblStatusLeitor.Name = "lblStatusLeitor";
+            this.lblStatusLeitor.Size = new System.Drawing.Size(11, 15);
+            this.lblStatusLeitor.TabIndex = 128;
+            this.lblStatusLeitor.Text = ".";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.panel2.Controls.Add(this.cbxQtdRegistros);
+            this.panel2.Controls.Add(this.lbRegistros);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 685);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1239, 44);
+            this.panel2.TabIndex = 160;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(13, 12);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(45, 42);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 121;
+            this.pictureBox3.TabStop = false;
+            // 
+            // modernBox2
+            // 
+            this.modernBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.modernBox2.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.modernBox2.BorderRadius = 12;
+            this.modernBox2.BorderSize = 1;
+            this.modernBox2.Controls.Add(this.dgvItens);
+            this.modernBox2.FillColor = System.Drawing.Color.White;
+            this.modernBox2.Location = new System.Drawing.Point(13, 300);
+            this.modernBox2.Name = "modernBox2";
+            this.modernBox2.Padding = new System.Windows.Forms.Padding(13);
+            this.modernBox2.ShadowAngle = 135;
+            this.modernBox2.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.modernBox2.ShadowSize = 8;
+            this.modernBox2.Size = new System.Drawing.Size(1218, 382);
+            this.modernBox2.TabIndex = 162;
+            // 
+            // dgvItens
+            // 
+            this.dgvItens.AllowUserToAddRows = false;
+            this.dgvItens.AllowUserToDeleteRows = false;
+            this.dgvItens.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvItens.BackgroundColor = System.Drawing.Color.White;
+            this.dgvItens.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvItens.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvItens.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvItens.ColumnHeadersHeight = 35;
+            this.dgvItens.ColumnHeadersVisible = false;
+            this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colFavorito,
+            this.colImagem,
+            this.colId,
+            this.colDescricao,
+            this.colCodigoBarras,
+            this.colQtd,
+            this.colCategoria,
+            this.colFabricante,
+            this.colFornecedor,
+            this.colProduto,
+            this.colAtivo});
+            this.dgvItens.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(218)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvItens.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvItens.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvItens.EnableHeadersVisualStyles = false;
+            this.dgvItens.GridColor = System.Drawing.Color.Silver;
+            this.dgvItens.Location = new System.Drawing.Point(13, 13);
+            this.dgvItens.MultiSelect = false;
+            this.dgvItens.Name = "dgvItens";
+            this.dgvItens.ReadOnly = true;
+            this.dgvItens.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvItens.RowHeadersVisible = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvItens.Size = new System.Drawing.Size(1192, 356);
+            this.dgvItens.TabIndex = 10;
+            this.dgvItens.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItens_CellDoubleClick);
+            this.dgvItens.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItens_CellValueChanged);
+            // 
+            // colFavorito
+            // 
+            this.colFavorito.DataPropertyName = "Favorito";
+            this.colFavorito.FillWeight = 6.146037F;
+            this.colFavorito.HeaderText = "";
+            this.colFavorito.Name = "colFavorito";
+            this.colFavorito.ReadOnly = true;
+            // 
+            // colImagem
+            // 
+            this.colImagem.DataPropertyName = "FotoItem";
+            this.colImagem.FillWeight = 12.98365F;
+            this.colImagem.HeaderText = "Foto";
+            this.colImagem.Name = "colImagem";
+            this.colImagem.ReadOnly = true;
+            // 
+            // colId
+            // 
+            this.colId.DataPropertyName = "Id";
+            this.colId.FillWeight = 0.6504041F;
+            this.colId.HeaderText = "Id";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Visible = false;
+            // 
+            // colDescricao
+            // 
+            this.colDescricao.DataPropertyName = "Descricao";
+            this.colDescricao.FillWeight = 35.69515F;
+            this.colDescricao.HeaderText = "Item";
+            this.colDescricao.Name = "colDescricao";
+            this.colDescricao.ReadOnly = true;
+            // 
+            // colCodigoBarras
+            // 
+            this.colCodigoBarras.DataPropertyName = "CodBarras";
+            this.colCodigoBarras.FillWeight = 35.01702F;
+            this.colCodigoBarras.HeaderText = "Código de Barras";
+            this.colCodigoBarras.Name = "colCodigoBarras";
+            this.colCodigoBarras.ReadOnly = true;
+            this.colCodigoBarras.Visible = false;
+            // 
+            // colQtd
+            // 
+            this.colQtd.DataPropertyName = "Quantidade";
+            this.colQtd.FillWeight = 10.428F;
+            this.colQtd.HeaderText = "Qtd";
+            this.colQtd.Name = "colQtd";
+            this.colQtd.ReadOnly = true;
+            // 
+            // colCategoria
+            // 
+            this.colCategoria.DataPropertyName = "DescricaoCategoria";
+            this.colCategoria.FillWeight = 16.20491F;
+            this.colCategoria.HeaderText = "Categoria";
+            this.colCategoria.Name = "colCategoria";
+            this.colCategoria.ReadOnly = true;
+            // 
+            // colFabricante
+            // 
+            this.colFabricante.DataPropertyName = "DescricaoFabricante";
+            this.colFabricante.FillWeight = 25.27785F;
+            this.colFabricante.HeaderText = "Marca";
+            this.colFabricante.Name = "colFabricante";
+            this.colFabricante.ReadOnly = true;
+            // 
+            // colFornecedor
+            // 
+            this.colFornecedor.DataPropertyName = "Fornecedor";
+            this.colFornecedor.FillWeight = 21.87452F;
+            this.colFornecedor.HeaderText = "Fornecedor";
+            this.colFornecedor.Name = "colFornecedor";
+            this.colFornecedor.ReadOnly = true;
+            // 
+            // colProduto
+            // 
+            this.colProduto.DataPropertyName = "ItemVenda";
+            this.colProduto.FillWeight = 21.22982F;
+            this.colProduto.HeaderText = "Produto";
+            this.colProduto.Name = "colProduto";
+            this.colProduto.ReadOnly = true;
+            // 
+            // colAtivo
+            // 
+            this.colAtivo.DataPropertyName = "Ativo";
+            this.colAtivo.FillWeight = 20.67864F;
+            this.colAtivo.HeaderText = "Ativo";
+            this.colAtivo.Name = "colAtivo";
+            this.colAtivo.ReadOnly = true;
+            // 
+            // modernBox1
+            // 
+            this.modernBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.modernBox1.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox1.BorderColor = System.Drawing.Color.Transparent;
+            this.modernBox1.BorderRadius = 20;
+            this.modernBox1.BorderSize = 1;
+            this.modernBox1.Controls.Add(this.painelRadius3);
+            this.modernBox1.Controls.Add(this.flpMenu);
+            this.modernBox1.FillColor = System.Drawing.Color.White;
+            this.modernBox1.Location = new System.Drawing.Point(12, 87);
+            this.modernBox1.Name = "modernBox1";
+            this.modernBox1.Padding = new System.Windows.Forms.Padding(5);
+            this.modernBox1.ShadowAngle = 135;
+            this.modernBox1.ShadowColor = System.Drawing.Color.Transparent;
+            this.modernBox1.ShadowSize = 0;
+            this.modernBox1.Size = new System.Drawing.Size(1219, 207);
+            this.modernBox1.TabIndex = 161;
+            // 
+            // painelRadius3
+            // 
+            this.painelRadius3.BackColor = System.Drawing.Color.White;
+            this.painelRadius3.BorderColor = System.Drawing.Color.White;
+            this.painelRadius3.Controls.Add(this.chkItemVenda);
+            this.painelRadius3.Controls.Add(this.chkAtivo);
+            this.painelRadius3.Controls.Add(this.chkFavorito);
+            this.painelRadius3.Location = new System.Drawing.Point(18, 13);
+            this.painelRadius3.Name = "painelRadius3";
+            this.painelRadius3.Radius = 50;
+            this.painelRadius3.Size = new System.Drawing.Size(365, 58);
+            this.painelRadius3.TabIndex = 128;
+            this.painelRadius3.Thickness = 10F;
+            // 
+            // chkItemVenda
+            // 
+            this.chkItemVenda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkItemVenda.AutoSize = true;
+            this.chkItemVenda.BackColor = System.Drawing.Color.Transparent;
+            this.chkItemVenda.Depth = 0;
+            this.chkItemVenda.Location = new System.Drawing.Point(208, 10);
+            this.chkItemVenda.Margin = new System.Windows.Forms.Padding(0);
+            this.chkItemVenda.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkItemVenda.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkItemVenda.Name = "chkItemVenda";
+            this.chkItemVenda.ReadOnly = false;
+            this.chkItemVenda.Ripple = true;
+            this.chkItemVenda.Size = new System.Drawing.Size(136, 37);
+            this.chkItemVenda.TabIndex = 3;
+            this.chkItemVenda.Text = "Item de Venda";
+            this.chkItemVenda.UseVisualStyleBackColor = false;
+            // 
+            // chkAtivo
+            // 
+            this.chkAtivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkAtivo.AutoSize = true;
+            this.chkAtivo.BackColor = System.Drawing.Color.Transparent;
+            this.chkAtivo.Checked = true;
+            this.chkAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkAtivo.Depth = 0;
+            this.chkAtivo.Location = new System.Drawing.Point(13, 10);
+            this.chkAtivo.Margin = new System.Windows.Forms.Padding(0);
+            this.chkAtivo.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkAtivo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkAtivo.Name = "chkAtivo";
+            this.chkAtivo.ReadOnly = false;
+            this.chkAtivo.Ripple = true;
+            this.chkAtivo.Size = new System.Drawing.Size(71, 37);
+            this.chkAtivo.TabIndex = 1;
+            this.chkAtivo.Text = "Ativo";
+            this.chkAtivo.UseVisualStyleBackColor = false;
+            // 
+            // chkFavorito
+            // 
+            this.chkFavorito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkFavorito.AutoSize = true;
+            this.chkFavorito.BackColor = System.Drawing.Color.Transparent;
+            this.chkFavorito.Depth = 0;
+            this.chkFavorito.Location = new System.Drawing.Point(105, 10);
+            this.chkFavorito.Margin = new System.Windows.Forms.Padding(0);
+            this.chkFavorito.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkFavorito.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkFavorito.Name = "chkFavorito";
+            this.chkFavorito.ReadOnly = false;
+            this.chkFavorito.Ripple = true;
+            this.chkFavorito.Size = new System.Drawing.Size(93, 37);
+            this.chkFavorito.TabIndex = 2;
+            this.chkFavorito.Text = "Favorito";
+            this.chkFavorito.UseVisualStyleBackColor = false;
+            // 
+            // flpMenu
+            // 
+            this.flpMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flpMenu.BackColor = System.Drawing.Color.White;
+            this.flpMenu.Controls.Add(this.txtCodigo);
+            this.flpMenu.Controls.Add(this.txtCodigoBarras);
+            this.flpMenu.Controls.Add(this.cbFabricante);
+            this.flpMenu.Controls.Add(this.cbFornecedor);
+            this.flpMenu.Controls.Add(this.cbCategoria);
+            this.flpMenu.Controls.Add(this.txtItem);
+            this.flpMenu.Location = new System.Drawing.Point(6, 77);
+            this.flpMenu.Name = "flpMenu";
+            this.flpMenu.Padding = new System.Windows.Forms.Padding(10);
+            this.flpMenu.Size = new System.Drawing.Size(1200, 124);
+            this.flpMenu.TabIndex = 103;
+            // 
             // txtCodigo
             // 
             this.txtCodigo.AcceptsTab = true;
@@ -375,74 +566,6 @@
             this.txtCodigoBarras.UseAccent = false;
             this.txtCodigoBarras.Enter += new System.EventHandler(this.txtCodigoBarras_Enter);
             // 
-            // txtItem
-            // 
-            this.txtItem.AcceptsTab = true;
-            this.txtItem.AnimateReadOnly = false;
-            this.txtItem.AutoWordSelection = true;
-            this.txtItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtItem.Depth = 0;
-            this.txtItem.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtItem.Hint = "Nome do Item";
-            this.txtItem.LeadingIcon = null;
-            this.txtItem.LeaveOnEnterKey = true;
-            this.txtItem.Location = new System.Drawing.Point(256, 69);
-            this.txtItem.MaxLength = 60;
-            this.txtItem.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtItem.Multiline = false;
-            this.txtItem.Name = "txtItem";
-            this.txtItem.Size = new System.Drawing.Size(492, 50);
-            this.txtItem.TabIndex = 9;
-            this.txtItem.Text = "";
-            this.txtItem.TrailingIcon = null;
-            this.txtItem.UseAccent = false;
-            // 
-            // cbCategoria
-            // 
-            this.cbCategoria.AutoResize = false;
-            this.cbCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbCategoria.Depth = 0;
-            this.cbCategoria.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cbCategoria.DropDownHeight = 174;
-            this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCategoria.DropDownWidth = 121;
-            this.cbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cbCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cbCategoria.FormattingEnabled = true;
-            this.cbCategoria.Hint = "Categoria";
-            this.cbCategoria.IntegralHeight = false;
-            this.cbCategoria.ItemHeight = 43;
-            this.cbCategoria.Location = new System.Drawing.Point(13, 69);
-            this.cbCategoria.MaxDropDownItems = 4;
-            this.cbCategoria.MouseState = MaterialSkin.MouseState.OUT;
-            this.cbCategoria.Name = "cbCategoria";
-            this.cbCategoria.Size = new System.Drawing.Size(237, 49);
-            this.cbCategoria.StartIndex = 0;
-            this.cbCategoria.TabIndex = 8;
-            // 
-            // cbFornecedor
-            // 
-            this.cbFornecedor.AutoResize = false;
-            this.cbFornecedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbFornecedor.Depth = 0;
-            this.cbFornecedor.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cbFornecedor.DropDownHeight = 174;
-            this.cbFornecedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbFornecedor.DropDownWidth = 121;
-            this.cbFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cbFornecedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cbFornecedor.FormattingEnabled = true;
-            this.cbFornecedor.Hint = "Fornecedor";
-            this.cbFornecedor.IntegralHeight = false;
-            this.cbFornecedor.ItemHeight = 43;
-            this.cbFornecedor.Location = new System.Drawing.Point(817, 13);
-            this.cbFornecedor.MaxDropDownItems = 4;
-            this.cbFornecedor.MouseState = MaterialSkin.MouseState.OUT;
-            this.cbFornecedor.Name = "cbFornecedor";
-            this.cbFornecedor.Size = new System.Drawing.Size(368, 49);
-            this.cbFornecedor.StartIndex = 0;
-            this.cbFornecedor.TabIndex = 7;
-            // 
             // cbFabricante
             // 
             this.cbFabricante.AutoResize = false;
@@ -468,103 +591,85 @@
             this.cbFabricante.TabIndex = 6;
             this.cbFabricante.UseAccent = false;
             // 
-            // chkAtivo
+            // cbFornecedor
             // 
-            this.chkAtivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkAtivo.AutoSize = true;
-            this.chkAtivo.BackColor = System.Drawing.Color.Transparent;
-            this.chkAtivo.Checked = true;
-            this.chkAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkAtivo.Depth = 0;
-            this.chkAtivo.Location = new System.Drawing.Point(13, 10);
-            this.chkAtivo.Margin = new System.Windows.Forms.Padding(0);
-            this.chkAtivo.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkAtivo.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkAtivo.Name = "chkAtivo";
-            this.chkAtivo.ReadOnly = false;
-            this.chkAtivo.Ripple = true;
-            this.chkAtivo.Size = new System.Drawing.Size(71, 37);
-            this.chkAtivo.TabIndex = 1;
-            this.chkAtivo.Text = "Ativo";
-            this.chkAtivo.UseVisualStyleBackColor = false;
+            this.cbFornecedor.AutoResize = false;
+            this.cbFornecedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbFornecedor.Depth = 0;
+            this.cbFornecedor.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbFornecedor.DropDownHeight = 174;
+            this.cbFornecedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFornecedor.DropDownWidth = 121;
+            this.cbFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbFornecedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbFornecedor.FormattingEnabled = true;
+            this.cbFornecedor.Hint = "Fornecedor";
+            this.cbFornecedor.IntegralHeight = false;
+            this.cbFornecedor.ItemHeight = 43;
+            this.cbFornecedor.Location = new System.Drawing.Point(817, 13);
+            this.cbFornecedor.MaxDropDownItems = 4;
+            this.cbFornecedor.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbFornecedor.Name = "cbFornecedor";
+            this.cbFornecedor.Size = new System.Drawing.Size(368, 49);
+            this.cbFornecedor.StartIndex = 0;
+            this.cbFornecedor.TabIndex = 7;
             // 
-            // chkFavorito
+            // cbCategoria
             // 
-            this.chkFavorito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkFavorito.AutoSize = true;
-            this.chkFavorito.BackColor = System.Drawing.Color.Transparent;
-            this.chkFavorito.Depth = 0;
-            this.chkFavorito.Location = new System.Drawing.Point(105, 10);
-            this.chkFavorito.Margin = new System.Windows.Forms.Padding(0);
-            this.chkFavorito.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkFavorito.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkFavorito.Name = "chkFavorito";
-            this.chkFavorito.ReadOnly = false;
-            this.chkFavorito.Ripple = true;
-            this.chkFavorito.Size = new System.Drawing.Size(93, 37);
-            this.chkFavorito.TabIndex = 2;
-            this.chkFavorito.Text = "Favorito";
-            this.chkFavorito.UseVisualStyleBackColor = false;
+            this.cbCategoria.AutoResize = false;
+            this.cbCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbCategoria.Depth = 0;
+            this.cbCategoria.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbCategoria.DropDownHeight = 174;
+            this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategoria.DropDownWidth = 121;
+            this.cbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbCategoria.FormattingEnabled = true;
+            this.cbCategoria.Hint = "Categoria";
+            this.cbCategoria.IntegralHeight = false;
+            this.cbCategoria.ItemHeight = 43;
+            this.cbCategoria.Location = new System.Drawing.Point(13, 69);
+            this.cbCategoria.MaxDropDownItems = 4;
+            this.cbCategoria.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbCategoria.Name = "cbCategoria";
+            this.cbCategoria.Size = new System.Drawing.Size(237, 49);
+            this.cbCategoria.StartIndex = 0;
+            this.cbCategoria.TabIndex = 8;
             // 
-            // chkItemVenda
+            // txtItem
             // 
-            this.chkItemVenda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkItemVenda.AutoSize = true;
-            this.chkItemVenda.BackColor = System.Drawing.Color.Transparent;
-            this.chkItemVenda.Depth = 0;
-            this.chkItemVenda.Location = new System.Drawing.Point(208, 10);
-            this.chkItemVenda.Margin = new System.Windows.Forms.Padding(0);
-            this.chkItemVenda.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkItemVenda.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkItemVenda.Name = "chkItemVenda";
-            this.chkItemVenda.ReadOnly = false;
-            this.chkItemVenda.Ripple = true;
-            this.chkItemVenda.Size = new System.Drawing.Size(136, 37);
-            this.chkItemVenda.TabIndex = 3;
-            this.chkItemVenda.Text = "Item de Venda";
-            this.chkItemVenda.UseVisualStyleBackColor = false;
+            this.txtItem.AcceptsTab = true;
+            this.txtItem.AnimateReadOnly = false;
+            this.txtItem.AutoWordSelection = true;
+            this.txtItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtItem.Depth = 0;
+            this.txtItem.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtItem.Hint = "Nome do Item";
+            this.txtItem.LeadingIcon = null;
+            this.txtItem.LeaveOnEnterKey = true;
+            this.txtItem.Location = new System.Drawing.Point(256, 69);
+            this.txtItem.MaxLength = 60;
+            this.txtItem.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtItem.Multiline = false;
+            this.txtItem.Name = "txtItem";
+            this.txtItem.Size = new System.Drawing.Size(492, 50);
+            this.txtItem.TabIndex = 9;
+            this.txtItem.Text = "";
+            this.txtItem.TrailingIcon = null;
+            this.txtItem.UseAccent = false;
             // 
-            // btnApagar
+            // pn1
             // 
-            this.btnApagar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnApagar.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnApagar.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnApagar.CorTextoBotao = System.Drawing.Color.White;
-            this.btnApagar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnApagar.FlatAppearance.BorderSize = 0;
-            this.btnApagar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApagar.ForeColor = System.Drawing.Color.White;
-            this.btnApagar.Image = ((System.Drawing.Image)(resources.GetObject("btnApagar.Image")));
-            this.btnApagar.Location = new System.Drawing.Point(380, 19);
-            this.btnApagar.Name = "btnApagar";
-            this.btnApagar.Size = new System.Drawing.Size(43, 43);
-            this.btnApagar.TabIndex = 12;
-            this.btnApagar.TamanhoBorda = 0;
-            this.btnApagar.TamanhoRaio = 15;
-            this.btnApagar.UseVisualStyleBackColor = false;
-            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(13, 12);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(45, 42);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 121;
-            this.pictureBox3.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(64, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(253, 29);
-            this.label1.TabIndex = 120;
-            this.label1.Text = "Controle de Estoque";
+            this.pn1.BackColor = System.Drawing.Color.Transparent;
+            this.pn1.Color1 = System.Drawing.Color.Lime;
+            this.pn1.Color2 = System.Drawing.Color.Blue;
+            this.pn1.CornerRadius = 8;
+            this.pn1.GradientAngle = 280F;
+            this.pn1.Location = new System.Drawing.Point(4, 64);
+            this.pn1.Name = "pn1";
+            this.pn1.Size = new System.Drawing.Size(313, 30);
+            this.pn1.TabIndex = 127;
             // 
             // btnClose
             // 
@@ -589,6 +694,27 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // tbnSearch
+            // 
+            this.tbnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.tbnSearch.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.tbnSearch.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.tbnSearch.CorTextoBotao = System.Drawing.Color.White;
+            this.tbnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tbnSearch.FlatAppearance.BorderSize = 0;
+            this.tbnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.tbnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tbnSearch.ForeColor = System.Drawing.Color.White;
+            this.tbnSearch.Image = ((System.Drawing.Image)(resources.GetObject("tbnSearch.Image")));
+            this.tbnSearch.Location = new System.Drawing.Point(429, 19);
+            this.tbnSearch.Name = "tbnSearch";
+            this.tbnSearch.Size = new System.Drawing.Size(43, 43);
+            this.tbnSearch.TabIndex = 13;
+            this.tbnSearch.TamanhoBorda = 0;
+            this.tbnSearch.TamanhoRaio = 15;
+            this.tbnSearch.UseVisualStyleBackColor = false;
+            this.tbnSearch.Click += new System.EventHandler(this.tbnSearch_Click);
+            // 
             // btnMaximize
             // 
             this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -611,29 +737,6 @@
             this.btnMaximize.TamanhoRaio = 17;
             this.btnMaximize.UseVisualStyleBackColor = false;
             this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnMinimize.CorBotao = System.Drawing.Color.Transparent;
-            this.btnMinimize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(1103, 17);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(40, 35);
-            this.btnMinimize.TabIndex = 14;
-            this.btnMinimize.TamanhoBorda = 0;
-            this.btnMinimize.TamanhoRaio = 17;
-            this.btnMinimize.UseVisualStyleBackColor = false;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // btnNovoItem
             // 
@@ -661,150 +764,49 @@
             this.btnNovoItem.UseVisualStyleBackColor = false;
             this.btnNovoItem.Click += new System.EventHandler(this.btnNovoItem_Click);
             // 
-            // tbnSearch
+            // btnMinimize
             // 
-            this.tbnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.tbnSearch.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.tbnSearch.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.tbnSearch.CorTextoBotao = System.Drawing.Color.White;
-            this.tbnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tbnSearch.FlatAppearance.BorderSize = 0;
-            this.tbnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.tbnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tbnSearch.ForeColor = System.Drawing.Color.White;
-            this.tbnSearch.Image = ((System.Drawing.Image)(resources.GetObject("tbnSearch.Image")));
-            this.tbnSearch.Location = new System.Drawing.Point(429, 19);
-            this.tbnSearch.Name = "tbnSearch";
-            this.tbnSearch.Size = new System.Drawing.Size(43, 43);
-            this.tbnSearch.TabIndex = 13;
-            this.tbnSearch.TamanhoBorda = 0;
-            this.tbnSearch.TamanhoRaio = 15;
-            this.tbnSearch.UseVisualStyleBackColor = false;
-            this.tbnSearch.Click += new System.EventHandler(this.tbnSearch_Click);
+            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnMinimize.CorBotao = System.Drawing.Color.Transparent;
+            this.btnMinimize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
+            this.btnMinimize.Location = new System.Drawing.Point(1103, 17);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(40, 35);
+            this.btnMinimize.TabIndex = 14;
+            this.btnMinimize.TamanhoBorda = 0;
+            this.btnMinimize.TamanhoRaio = 17;
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
-            // painelRadius3
+            // btnApagar
             // 
-            this.painelRadius3.BackColor = System.Drawing.Color.White;
-            this.painelRadius3.BorderColor = System.Drawing.Color.White;
-            this.painelRadius3.Controls.Add(this.chkItemVenda);
-            this.painelRadius3.Controls.Add(this.chkAtivo);
-            this.painelRadius3.Controls.Add(this.chkFavorito);
-            this.painelRadius3.Location = new System.Drawing.Point(18, 13);
-            this.painelRadius3.Name = "painelRadius3";
-            this.painelRadius3.Radius = 50;
-            this.painelRadius3.Size = new System.Drawing.Size(365, 58);
-            this.painelRadius3.TabIndex = 128;
-            this.painelRadius3.Thickness = 10F;
-            // 
-            // pnSuperior
-            // 
-            this.pnSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.pnSuperior.Controls.Add(this.lblStatusLeitor);
-            this.pnSuperior.Controls.Add(this.pn1);
-            this.pnSuperior.Controls.Add(this.pictureBox3);
-            this.pnSuperior.Controls.Add(this.label1);
-            this.pnSuperior.Controls.Add(this.btnClose);
-            this.pnSuperior.Controls.Add(this.tbnSearch);
-            this.pnSuperior.Controls.Add(this.btnMaximize);
-            this.pnSuperior.Controls.Add(this.btnNovoItem);
-            this.pnSuperior.Controls.Add(this.btnMinimize);
-            this.pnSuperior.Controls.Add(this.btnApagar);
-            this.pnSuperior.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnSuperior.Location = new System.Drawing.Point(0, 0);
-            this.pnSuperior.Name = "pnSuperior";
-            this.pnSuperior.Size = new System.Drawing.Size(1239, 70);
-            this.pnSuperior.TabIndex = 131;
-            this.pnSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnSuperior_MouseDown);
-            // 
-            // pn1
-            // 
-            this.pn1.BackColor = System.Drawing.Color.Transparent;
-            this.pn1.Color1 = System.Drawing.Color.Lime;
-            this.pn1.Color2 = System.Drawing.Color.Blue;
-            this.pn1.CornerRadius = 8;
-            this.pn1.GradientAngle = 280F;
-            this.pn1.Location = new System.Drawing.Point(4, 64);
-            this.pn1.Name = "pn1";
-            this.pn1.Size = new System.Drawing.Size(313, 30);
-            this.pn1.TabIndex = 127;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.panel2.Controls.Add(this.cbxQtdRegistros);
-            this.panel2.Controls.Add(this.lbRegistros);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 685);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1239, 44);
-            this.panel2.TabIndex = 160;
-            // 
-            // modernBox1
-            // 
-            this.modernBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.modernBox1.BackColor = System.Drawing.Color.Transparent;
-            this.modernBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.modernBox1.BorderRadius = 20;
-            this.modernBox1.BorderSize = 1;
-            this.modernBox1.Controls.Add(this.painelRadius3);
-            this.modernBox1.Controls.Add(this.flpMenu);
-            this.modernBox1.FillColor = System.Drawing.Color.White;
-            this.modernBox1.Location = new System.Drawing.Point(12, 87);
-            this.modernBox1.Name = "modernBox1";
-            this.modernBox1.Padding = new System.Windows.Forms.Padding(10);
-            this.modernBox1.ShadowColor = System.Drawing.Color.Transparent;
-            this.modernBox1.ShadowSize = 0;
-            this.modernBox1.Size = new System.Drawing.Size(1219, 207);
-            this.modernBox1.TabIndex = 161;
-            // 
-            // lblStatusLeitor
-            // 
-            this.lblStatusLeitor.AutoSize = true;
-            this.lblStatusLeitor.BackColor = System.Drawing.Color.RosyBrown;
-            this.lblStatusLeitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.lblStatusLeitor.ForeColor = System.Drawing.Color.White;
-            this.lblStatusLeitor.Location = new System.Drawing.Point(481, 37);
-            this.lblStatusLeitor.Name = "lblStatusLeitor";
-            this.lblStatusLeitor.Size = new System.Drawing.Size(11, 15);
-            this.lblStatusLeitor.TabIndex = 128;
-            this.lblStatusLeitor.Text = ".";
-            // 
-            // flpMenu
-            // 
-            this.flpMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flpMenu.BackColor = System.Drawing.Color.White;
-            this.flpMenu.Controls.Add(this.txtCodigo);
-            this.flpMenu.Controls.Add(this.txtCodigoBarras);
-            this.flpMenu.Controls.Add(this.cbFabricante);
-            this.flpMenu.Controls.Add(this.cbFornecedor);
-            this.flpMenu.Controls.Add(this.cbCategoria);
-            this.flpMenu.Controls.Add(this.txtItem);
-            this.flpMenu.Location = new System.Drawing.Point(6, 77);
-            this.flpMenu.Name = "flpMenu";
-            this.flpMenu.Padding = new System.Windows.Forms.Padding(10);
-            this.flpMenu.Size = new System.Drawing.Size(1200, 124);
-            this.flpMenu.TabIndex = 103;
-            // 
-            // modernBox2
-            // 
-            this.modernBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.modernBox2.BackColor = System.Drawing.Color.Transparent;
-            this.modernBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.modernBox2.BorderRadius = 12;
-            this.modernBox2.BorderSize = 1;
-            this.modernBox2.Controls.Add(this.dgvItens);
-            this.modernBox2.FillColor = System.Drawing.Color.White;
-            this.modernBox2.Location = new System.Drawing.Point(13, 300);
-            this.modernBox2.Name = "modernBox2";
-            this.modernBox2.Padding = new System.Windows.Forms.Padding(10);
-            this.modernBox2.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.modernBox2.ShadowSize = 8;
-            this.modernBox2.Size = new System.Drawing.Size(1218, 382);
-            this.modernBox2.TabIndex = 162;
+            this.btnApagar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnApagar.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnApagar.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnApagar.CorTextoBotao = System.Drawing.Color.White;
+            this.btnApagar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnApagar.FlatAppearance.BorderSize = 0;
+            this.btnApagar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApagar.ForeColor = System.Drawing.Color.White;
+            this.btnApagar.Image = ((System.Drawing.Image)(resources.GetObject("btnApagar.Image")));
+            this.btnApagar.Location = new System.Drawing.Point(380, 19);
+            this.btnApagar.Name = "btnApagar";
+            this.btnApagar.Size = new System.Drawing.Size(43, 43);
+            this.btnApagar.TabIndex = 12;
+            this.btnApagar.TamanhoBorda = 0;
+            this.btnApagar.TamanhoRaio = 15;
+            this.btnApagar.UseVisualStyleBackColor = false;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
             // ItemEstoque
             // 
@@ -827,17 +829,17 @@
             this.Load += new System.EventHandler(this.ItemEstoque_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ItemEstoque_KeyDown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ItemEstoque_MouseDown);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.painelRadius3.ResumeLayout(false);
-            this.painelRadius3.PerformLayout();
             this.pnSuperior.ResumeLayout(false);
             this.pnSuperior.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.modernBox1.ResumeLayout(false);
-            this.flpMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.modernBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).EndInit();
+            this.modernBox1.ResumeLayout(false);
+            this.painelRadius3.ResumeLayout(false);
+            this.painelRadius3.PerformLayout();
+            this.flpMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

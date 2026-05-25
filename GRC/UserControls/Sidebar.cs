@@ -101,5 +101,10 @@ namespace GRC.UserControls
                 formPrincipal.AlterarTela(tela);
             }
         }
+
+        private void btnEstoqueEx_Click(object sender, EventArgs e)
+        {
+            MudaForm(new usrEstoque());
+        }
     }
 }

@@ -213,6 +213,12 @@
     <Compile Include="Componentes\PainelRadius.Designer.cs">
       <DependentUpon>PainelRadius.cs</DependentUpon>
     </Compile>
+    <Compile Include="Componentes\RoundedComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Componentes\RoundedComboBox.Designer.cs">
+      <DependentUpon>RoundedComboBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Componentes\RoundedPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -407,12 +413,21 @@
     <Compile Include="UserControls\usrDashboard.Designer.cs">
       <DependentUpon>usrDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\usrEstoque.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usrEstoque.Designer.cs">
+      <DependentUpon>usrEstoque.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\usrFornecedores.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\usrFornecedores.Designer.cs">
       <DependentUpon>usrFornecedores.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Componentes\RoundedComboBox.resx">
+      <DependentUpon>RoundedComboBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Componentes\RoundedTextBox.resx">
       <DependentUpon>RoundedTextBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -515,6 +530,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\usrDashboard.resx">
       <DependentUpon>usrDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usrEstoque.resx">
+      <DependentUpon>usrEstoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\usrFornecedores.resx">
       <DependentUpon>usrFornecedores.cs</DependentUpon>

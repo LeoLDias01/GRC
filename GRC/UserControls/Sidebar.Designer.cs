@@ -318,6 +318,7 @@
             this.btnEstoque.TamanhoRaio = 15;
             this.btnEstoque.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEstoque.UseVisualStyleBackColor = false;
+            this.btnEstoque.Click += new System.EventHandler(this.btnEstoqueEx_Click);
             // 
             // btnClientes
             // 
@@ -645,6 +646,7 @@
             this.btnEstoqueEx.Text = "        Estoque";
             this.btnEstoqueEx.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEstoqueEx.UseVisualStyleBackColor = false;
+            this.btnEstoqueEx.Click += new System.EventHandler(this.btnEstoqueEx_Click);
             // 
             // btnClientesEx
             // 
