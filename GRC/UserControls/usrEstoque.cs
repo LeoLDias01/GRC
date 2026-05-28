@@ -47,6 +47,13 @@ namespace GRC.UserControls
             dgvItens.CellValueChanged += dgvItens_CellValueChanged;
             dgvItens.CellDoubleClick += dgvItens_CellDoubleClick;
             btnNovoItem.Click += btnNovoItem_Click;
+            cbCategoria.DropDownClosed += cbCategoria_DropDownClosed;
+            cbMarca.SelectedIndexChanged += cbMarca_DropDownClosed;
+
+            // Eventos de clique que mudam o estado do filtro
+            btnFiltroTodos.Click += (s, e) => { _statusSelecionado = null; AtualizarVisualFiltros(); RealizaPesquisa(); };
+            btnFiltroAtivos.Click += (s, e) => { _statusSelecionado = true; AtualizarVisualFiltros(); RealizaPesquisa(); };
+            btnFiltroInativos.Click += (s, e) => { _statusSelecionado = false; AtualizarVisualFiltros(); RealizaPesquisa(); };
         }
         private void usrEstoque_Load(object sender, EventArgs e)
         {
@@ -55,6 +62,14 @@ namespace GRC.UserControls
             _statusSelecionado = null; // Começa exibindo Todos
             AtualizarVisualFiltros();
             RealizaPesquisa();
+        }
+        private void cbCategoria_DropDownClosed(object sender, EventArgs e)
+        {
+           chkItemVenda.Focus();
+        }
+        private void cbMarca_DropDownClosed(object sender, EventArgs e)
+        {
+            cbCategoria.Focus();
         }
         private void AtualizarVisualFiltros()
         {
@@ -126,7 +141,7 @@ namespace GRC.UserControls
             RealizaPesquisa();
         }
 
-        private void cbxQtdRegistros_KeyPress(object sender, KeyPressEventArgs e)
+        private void cbRegistros_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Permite apenas dígitos e a tecla Backspace
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -137,7 +152,7 @@ namespace GRC.UserControls
 
         private void dgvItens_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-
+            lbRegistros.Text = $"{dgvItens.Rows.Count} registros encontrados!";
         }
         private void btnNovoItem_Click(object sender, EventArgs e)
         {
@@ -165,11 +180,12 @@ namespace GRC.UserControls
 
             int registros = Convert.ToInt32(cbRegistros.Text);
 
-
+            ConfigurarEstiloGrid();
 
             var lista = _service.BuscaLimitada(item, registros);
             if (lista != null)
             {
+                dgvItens.Rows.Clear();
                 foreach (var estoque in lista)
                 {
                     if (estoque.Id > 0)
@@ -207,56 +223,261 @@ namespace GRC.UserControls
         }
         private void ConfigurarEstiloGrid()
         {
-            // 1. Configurações Gerais de Comportamento e Bordas
-            dgvItens.BackgroundColor = Color.FromArgb(244, 246, 249); // Mesma cor do fundo da tela
+            dgvItens.SuspendLayout();
+
+            // =====================================================
+            // GRID
+            // =====================================================
+            dgvItens.BackgroundColor = Color.FromArgb(245, 247, 250);
+
             dgvItens.BorderStyle = BorderStyle.None;
-            dgvItens.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvItens.GridColor = Color.FromArgb(226, 232, 240); // Linha divisória suave
 
-            // Garante a seleção da linha inteira de forma limpa
-            dgvItens.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvItens.CellBorderStyle =
+                DataGridViewCellBorderStyle.SingleHorizontal;
+
+            dgvItens.GridColor = Color.FromArgb(235, 238, 242);
+
+            dgvItens.RowHeadersVisible = false;
+
+            dgvItens.SelectionMode =
+                DataGridViewSelectionMode.FullRowSelect;
+
             dgvItens.MultiSelect = false;
-            dgvItens.RowHeadersVisible = false; // Remove aquela primeira coluna vazia da esquerda
+
             dgvItens.AllowUserToResizeRows = false;
+            dgvItens.AllowUserToResizeColumns = false;
 
-            // 2. Configuração e Estilização do Header Nativo
-            dgvItens.ColumnHeadersVisible = true;
-            dgvItens.ColumnHeadersHeight = 48;    // Aumentado ligeiramente para dar mais destaque
-            dgvItens.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvItens.EnableHeadersVisualStyles = false; // OBRIGATÓRIO para aceitar cores personalizadas
+            dgvItens.EnableHeadersVisualStyles = false;
 
-            DataGridViewCellStyle estiloHeader = new DataGridViewCellStyle();
-            estiloHeader.BackColor = Color.FromArgb(44, 62, 80); // Seu azul escuro acinzentado do sistema
-            estiloHeader.ForeColor = Color.White;                // Texto branco para alto contraste
-            estiloHeader.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            dgvItens.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
 
-            estiloHeader.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            // Tira o efeito visual de seleção do Header (mantém a cor original mesmo clicado)
-            estiloHeader.SelectionBackColor = Color.FromArgb(44, 62, 80);
-            estiloHeader.SelectionForeColor = Color.White;
+            dgvItens.ScrollBars = ScrollBars.Vertical;
 
-            // Aplica o estilo ao cabeçalho
-            dgvItens.ColumnHeadersDefaultCellStyle = estiloHeader;
+            dgvItens.Cursor = Cursors.Hand;
 
-            // 3. Estilo Padrão das Linhas (DefaultCellStyle)
-            DataGridViewCellStyle estiloLinha = new DataGridViewCellStyle();
+            dgvItens.DefaultCellStyle.WrapMode =
+                DataGridViewTriState.False;
+
+            // Altura maior para visual SaaS
+            dgvItens.RowTemplate.Height = 96;
+
+            // =====================================================
+            // REMOVE VISUAL ANTIGO
+            // =====================================================
+            dgvItens.AdvancedCellBorderStyle.Left =
+                DataGridViewAdvancedCellBorderStyle.None;
+
+            dgvItens.AdvancedCellBorderStyle.Right =
+                DataGridViewAdvancedCellBorderStyle.None;
+
+            dgvItens.AdvancedCellBorderStyle.Top =
+                DataGridViewAdvancedCellBorderStyle.None;
+
+            dgvItens.AdvancedCellBorderStyle.Bottom =
+                DataGridViewAdvancedCellBorderStyle.Single;
+
+            // =====================================================
+            // HEADER
+            // =====================================================
+            dgvItens.ColumnHeadersBorderStyle =
+                DataGridViewHeaderBorderStyle.None;
+
+            dgvItens.ColumnHeadersHeight = 52;
+
+            dgvItens.ColumnHeadersHeightSizeMode =
+                DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+
+            DataGridViewCellStyle estiloHeader =
+                new DataGridViewCellStyle();
+
+            estiloHeader.BackColor = Color.FromArgb(44, 62, 80);
+
+            estiloHeader.ForeColor = Color.White;
+
+            estiloHeader.Font =
+                new Font("Segoe UI Semibold", 10.5f);
+
+            // Centralizado corretamente
+            estiloHeader.Alignment =
+                DataGridViewContentAlignment.MiddleCenter;
+
+            estiloHeader.Padding = Padding.Empty;
+
+            estiloHeader.SelectionBackColor =
+                Color.FromArgb(44, 62, 80);
+
+            estiloHeader.SelectionForeColor =
+                Color.White;
+
+            dgvItens.ColumnHeadersDefaultCellStyle =
+                estiloHeader;
+
+            // =====================================================
+            // LINHAS
+            // =====================================================
+            DataGridViewCellStyle estiloLinha =
+                new DataGridViewCellStyle();
+
             estiloLinha.BackColor = Color.White;
-            estiloLinha.ForeColor = Color.FromArgb(45, 52, 54); // Grafite escuro
-            estiloLinha.Font = new Font("Segoe UI", 10F, FontStyle.Regular);
-            estiloLinha.SelectionBackColor = Color.FromArgb(213, 225, 237); // Azul claro acinzentado para seleção
-            estiloLinha.SelectionForeColor = Color.FromArgb(30, 39, 46);   // Texto escuro na seleção
+
+            estiloLinha.ForeColor =
+                Color.FromArgb(33, 37, 41);
+
+            estiloLinha.Font =
+                new Font("Segoe UI", 10F);
+
+            // Padding mais equilibrado
+            estiloLinha.Padding =
+                new Padding(12, 6, 12, 6);
+
+            estiloLinha.SelectionBackColor =
+                Color.FromArgb(226, 236, 248);
+
+            estiloLinha.SelectionForeColor =
+                Color.FromArgb(20, 20, 20);
+
+            estiloLinha.Alignment =
+                DataGridViewContentAlignment.MiddleLeft;
+
             dgvItens.DefaultCellStyle = estiloLinha;
 
-            // 4. Estilo das Linhas Alternadas (Zebrado)
-            DataGridViewCellStyle estiloAlternado = new DataGridViewCellStyle();
-            estiloAlternado.BackColor = Color.FromArgb(250, 250, 250); // Cinza quase branco
-            estiloAlternado.ForeColor = Color.FromArgb(45, 52, 54);
-            estiloAlternado.SelectionBackColor = Color.FromArgb(213, 225, 237);
-            estiloAlternado.SelectionForeColor = Color.FromArgb(30, 39, 46);
-            dgvItens.AlternatingRowsDefaultCellStyle = estiloAlternado;
+            // =====================================================
+            // LINHAS ALTERNADAS
+            // =====================================================
+            DataGridViewCellStyle estiloAlternado =
+                new DataGridViewCellStyle();
 
-            // 5. Altura das linhas (dá "respiro" para o visual)
-            dgvItens.RowTemplate.Height = 50;
+            estiloAlternado.BackColor =
+                Color.FromArgb(250, 251, 252);
+
+            estiloAlternado.ForeColor =
+                Color.FromArgb(33, 37, 41);
+
+            estiloAlternado.SelectionBackColor =
+                Color.FromArgb(226, 236, 248);
+
+            estiloAlternado.SelectionForeColor =
+                Color.FromArgb(20, 20, 20);
+
+            estiloAlternado.Padding =
+                new Padding(12, 6, 12, 6);
+
+            dgvItens.AlternatingRowsDefaultCellStyle =
+                estiloAlternado;
+
+            // =====================================================
+            // CONFIGURAÇÃO DAS COLUNAS
+            // =====================================================
+            foreach (DataGridViewColumn coluna in dgvItens.Columns)
+            {
+                // Centraliza títulos
+                coluna.HeaderCell.Style.Alignment =
+                    DataGridViewContentAlignment.MiddleCenter;
+
+                // Conteúdo padrão
+                coluna.DefaultCellStyle.Alignment =
+                    DataGridViewContentAlignment.MiddleLeft;
+
+                // =================================================
+                // IMAGEM PRINCIPAL DO PRODUTO
+                // =================================================
+                if (coluna.Name == "colImagem")
+                {
+                    if (coluna is DataGridViewImageColumn imgProduto)
+                    {
+                        imgProduto.ImageLayout =
+                            DataGridViewImageCellLayout.Zoom;
+
+                        // Coluna fixa
+                        imgProduto.AutoSizeMode =
+                            DataGridViewAutoSizeColumnMode.None;
+
+                        // Tamanho maior
+                        imgProduto.Width = 115;
+
+                        imgProduto.DefaultCellStyle.NullValue = null;
+
+                        imgProduto.DefaultCellStyle.Alignment =
+                            DataGridViewContentAlignment.MiddleCenter;
+
+                        // Padding pequeno para imagem crescer
+                        imgProduto.DefaultCellStyle.Padding =
+                            new Padding(2);
+                    }
+                }
+
+                // =================================================
+                // FAVORITO (ESTRELA)
+                // =================================================
+                if (coluna.Name == "colFavorito")
+                {
+                    if (coluna is DataGridViewImageColumn imgFavorito)
+                    {
+                        // Melhor para ícones pequenos
+                        imgFavorito.ImageLayout =
+                            DataGridViewImageCellLayout.Zoom;
+
+                        imgFavorito.AutoSizeMode =
+                            DataGridViewAutoSizeColumnMode.None;
+
+                        // Coluna pequena
+                        imgFavorito.Width = 32;
+
+                        // Espaço interno controlado
+                        imgFavorito.DefaultCellStyle.Padding =
+                            new Padding(6);
+
+                        imgFavorito.DefaultCellStyle.Alignment =
+                            DataGridViewContentAlignment.MiddleCenter;
+
+                        imgFavorito.DefaultCellStyle.NullValue = null;
+                    }
+                }
+
+                // =====================================================
+                // SELEÇÃO
+                // =====================================================
+                dgvItens.DefaultCellStyle.SelectionBackColor =
+                Color.FromArgb(226, 236, 248);
+
+                dgvItens.DefaultCellStyle.SelectionForeColor =
+                    Color.FromArgb(20, 20, 20);
+
+                dgvItens.ClearSelection();
+
+                dgvItens.ResumeLayout();
+            }
+        }
+        private void cbRegistros_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(cbRegistros.Text))
+            {
+                if (Convert.ToInt32(cbRegistros.Text) > 100)
+                    cbRegistros.Text = "100";
+            }
+            else cbRegistros.Text = "10";
+
+            RealizaPesquisa();
+        }
+        
+        private void dgvItens_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            long? id = PegaId(e);
+            if (id.HasValue)
+            {
+                new CadastroItem(id.Value).ShowDialog();
+                RealizaPesquisa();
+            }
+        }
+        private long? PegaId(DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var row = dgvItens.Rows[e.RowIndex];
+                return Convert.ToInt32(row.Cells["colId"].Value);
+            }
+            return null;
         }
     }
 }

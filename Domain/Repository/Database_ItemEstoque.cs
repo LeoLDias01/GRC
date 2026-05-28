@@ -461,8 +461,6 @@ namespace Domain.Repository
                                 WHERE 1 = 1 ");
 
                     // Filtros dinâmicos
-                    if (item.Id > 0)
-                        sql.Append(" AND ITM.IDGRC_ITEM_ESTOQUE = @Id ");
 
                     if (!string.IsNullOrWhiteSpace(item.CodBarras))
                         sql.Append(" AND ITM.CODIGO_BARRAS LIKE @CodBarras ");
@@ -476,17 +474,11 @@ namespace Domain.Repository
                     if (item.Fabricante > 0)
                         sql.Append(" AND ITM.IDGRC_FABRICANTE = @Fabricante ");
 
-                    if (item.Fornecedor > 0)
-                        sql.Append(" AND ITM.IDGRC_FORNECEDOR = @Fornecedor ");
-
-                    if (item.Favorito)
-                        sql.Append(" AND ITM.FAVORITO = @Favorito ");
-
                     if (item.ItemVenda)
                         sql.Append(" AND ITM.ITEM_VENDA = @ItemVenda ");
 
-                    //if (!item.Ativo)
-                    sql.Append(" AND ITM.ATIVO = @Ativo "); // se você permitir filtrar inativos
+                    if (item.Ativo != null)
+                    sql.Append(" AND ITM.ATIVO = @Ativo "); 
 
                     sql.Append(" ORDER BY ITM.FAVORITO, ITM.DESCRICAO ASC LIMIT @Registros; ");
 

@@ -763,7 +763,7 @@ namespace GRC.Telas
                     lbAvisoBloqueio.Visible = false;
                 }
 
-                swItemAtivo.Checked = dadosItem.Ativo;
+              //  swItemAtivo.Checked = dadosItem.Ativo;
                 txtId.Text = dadosItem.Id.ToString();
                 txtCodigoBarras.Text = dadosItem.CodBarras != null ? dadosItem.CodBarras.ToString() : string.Empty;
                 txtDescricao.Text = dadosItem.Descricao.ToString();

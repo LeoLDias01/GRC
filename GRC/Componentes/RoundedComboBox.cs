@@ -231,14 +231,17 @@ namespace GRC.Componentes
             comboBox.BackColor = Color.White;
             comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
+            // Eventos com a remoção da seleção azul integrada
             comboBox.SelectedIndexChanged += (s, e) =>
             {
                 SelectedIndexChanged?.Invoke(this, e);
+                RemoveTextSelection();
             };
 
             comboBox.SelectedValueChanged += (s, e) =>
             {
-                SelectedValueChanged?.Invoke(this, e);
+                OnSelectedValueChanged(e);
+                RemoveTextSelection();
             };
 
             comboBox.TextChanged += (s, e) =>
@@ -254,6 +257,7 @@ namespace GRC.Componentes
             comboBox.DropDownClosed += (s, e) =>
             {
                 DropDownClosed?.Invoke(this, e);
+                RemoveTextSelection();
             };
 
             comboBox.Click += (s, e) => OnClick(e);
@@ -267,6 +271,7 @@ namespace GRC.Componentes
             {
                 isFocused = true;
                 animationTimer.Start();
+                RemoveTextSelection();
             };
 
             comboBox.Leave += (s, e) =>
@@ -306,6 +311,26 @@ namespace GRC.Componentes
         }
 
         #region METHODS
+
+        // Remove a seleção de texto de forma assíncrona para evitar falhas visuais do WinForms
+        private void RemoveTextSelection()
+        {
+            if (comboBox.DropDownStyle == ComboBoxStyle.DropDownList)
+            {
+                this.BeginInvoke(new Action(() =>
+                {
+                    if (!comboBox.IsDisposed)
+                    {
+                        comboBox.Select(0, 0);
+                    }
+                }));
+            }
+        }
+
+        protected virtual void OnSelectedValueChanged(EventArgs e)
+        {
+            SelectedValueChanged?.Invoke(this, e);
+        }
 
         public void AddItem(object item)
         {

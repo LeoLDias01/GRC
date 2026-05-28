@@ -43,6 +43,7 @@
             this.cbRegistros = new System.Windows.Forms.ComboBox();
             this.lbRegistros = new System.Windows.Forms.Label();
             this.modernBox2 = new GRC.Componentes.ModernBox();
+            this.dgvItens = new System.Windows.Forms.DataGridView();
             this.modernBox1 = new GRC.Componentes.ModernBox();
             this.txtPesquisa = new GRC.Componentes.RoundedTextBox();
             this.chkItemVenda = new MaterialSkin.Controls.MaterialCheckbox();
@@ -52,7 +53,7 @@
             this.cbCategoria = new GRC.Componentes.RoundedComboBox();
             this.modernBox4 = new GRC.Componentes.ModernBox();
             this.lbCódigoBarras = new System.Windows.Forms.Label();
-            this.dgvItens = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.colFavorito = new System.Windows.Forms.DataGridViewImageColumn();
             this.colImagem = new System.Windows.Forms.DataGridViewImageColumn();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,10 +68,11 @@
             this.panel1.SuspendLayout();
             this.modernBox3.SuspendLayout();
             this.modernBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
             this.modernBox1.SuspendLayout();
             this.modernBox5.SuspendLayout();
             this.modernBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label11
@@ -273,189 +275,6 @@
             this.modernBox2.Size = new System.Drawing.Size(994, 452);
             this.modernBox2.TabIndex = 177;
             // 
-            // modernBox1
-            // 
-            this.modernBox1.BackColor = System.Drawing.Color.Transparent;
-            this.modernBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.modernBox1.BorderRadius = 20;
-            this.modernBox1.BorderSize = 1;
-            this.modernBox1.Controls.Add(this.txtPesquisa);
-            this.modernBox1.FillColor = System.Drawing.Color.White;
-            this.modernBox1.Location = new System.Drawing.Point(10, 93);
-            this.modernBox1.Name = "modernBox1";
-            this.modernBox1.Padding = new System.Windows.Forms.Padding(8);
-            this.modernBox1.ShadowAngle = 50;
-            this.modernBox1.ShadowColor = System.Drawing.Color.Gainsboro;
-            this.modernBox1.ShadowSize = 3;
-            this.modernBox1.Size = new System.Drawing.Size(472, 50);
-            this.modernBox1.TabIndex = 176;
-            // 
-            // txtPesquisa
-            // 
-            this.txtPesquisa.BackColor = System.Drawing.Color.Transparent;
-            this.txtPesquisa.BorderColor = System.Drawing.Color.White;
-            this.txtPesquisa.BorderRadius = 12;
-            this.txtPesquisa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPesquisa.FillColor = System.Drawing.Color.White;
-            this.txtPesquisa.Icon = ((System.Drawing.Image)(resources.GetObject("txtPesquisa.Icon")));
-            this.txtPesquisa.IconPosition = GRC.Componentes.RoundedTextBox.IconPositionEnum.Right;
-            this.txtPesquisa.Location = new System.Drawing.Point(8, 8);
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Padding = new System.Windows.Forms.Padding(10);
-            this.txtPesquisa.Placeholder = "Busque por Nome do Item...";
-            this.txtPesquisa.Size = new System.Drawing.Size(456, 34);
-            this.txtPesquisa.TabIndex = 104;
-            this.txtPesquisa.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtPesquisa.TextColor = System.Drawing.Color.Black;
-            this.txtPesquisa.TextStyle = System.Drawing.FontStyle.Regular;
-            this.txtPesquisa.UnderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            this.txtPesquisa.UnderlineSize = 5;
-            // 
-            // chkItemVenda
-            // 
-            this.chkItemVenda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkItemVenda.AutoSize = true;
-            this.chkItemVenda.BackColor = System.Drawing.Color.Transparent;
-            this.chkItemVenda.Depth = 0;
-            this.chkItemVenda.Location = new System.Drawing.Point(861, 56);
-            this.chkItemVenda.Margin = new System.Windows.Forms.Padding(0);
-            this.chkItemVenda.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkItemVenda.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkItemVenda.Name = "chkItemVenda";
-            this.chkItemVenda.ReadOnly = false;
-            this.chkItemVenda.Ripple = true;
-            this.chkItemVenda.Size = new System.Drawing.Size(136, 37);
-            this.chkItemVenda.TabIndex = 3;
-            this.chkItemVenda.Text = "Item de Venda";
-            this.chkItemVenda.UseVisualStyleBackColor = false;
-            // 
-            // lblStatusLeitor
-            // 
-            this.lblStatusLeitor.AutoSize = true;
-            this.lblStatusLeitor.BackColor = System.Drawing.Color.MediumVioletRed;
-            this.lblStatusLeitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.lblStatusLeitor.ForeColor = System.Drawing.Color.White;
-            this.lblStatusLeitor.Location = new System.Drawing.Point(15, 74);
-            this.lblStatusLeitor.Name = "lblStatusLeitor";
-            this.lblStatusLeitor.Size = new System.Drawing.Size(148, 15);
-            this.lblStatusLeitor.TabIndex = 180;
-            this.lblStatusLeitor.Text = "Leitor não encontrado";
-            // 
-            // modernBox5
-            // 
-            this.modernBox5.BackColor = System.Drawing.Color.Transparent;
-            this.modernBox5.BorderColor = System.Drawing.Color.Transparent;
-            this.modernBox5.BorderRadius = 20;
-            this.modernBox5.BorderSize = 1;
-            this.modernBox5.Controls.Add(this.cbMarca);
-            this.modernBox5.FillColor = System.Drawing.Color.White;
-            this.modernBox5.Location = new System.Drawing.Point(488, 93);
-            this.modernBox5.Name = "modernBox5";
-            this.modernBox5.Padding = new System.Windows.Forms.Padding(8);
-            this.modernBox5.ShadowAngle = 50;
-            this.modernBox5.ShadowColor = System.Drawing.Color.Gainsboro;
-            this.modernBox5.ShadowSize = 3;
-            this.modernBox5.Size = new System.Drawing.Size(257, 50);
-            this.modernBox5.TabIndex = 182;
-            // 
-            // cbMarca
-            // 
-            this.cbMarca.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.cbMarca.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.cbMarca.BackColor = System.Drawing.Color.Transparent;
-            this.cbMarca.BorderColor = System.Drawing.Color.White;
-            this.cbMarca.BorderRadius = 12;
-            this.cbMarca.DataSource = null;
-            this.cbMarca.DisplayMember = "";
-            this.cbMarca.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbMarca.DrawMode = System.Windows.Forms.DrawMode.Normal;
-            this.cbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMarca.DropDownWidth = 146;
-            this.cbMarca.DroppedDown = false;
-            this.cbMarca.FillColor = System.Drawing.Color.White;
-            this.cbMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbMarca.Icon = null;
-            this.cbMarca.IconPosition = GRC.Componentes.RoundedComboBox.IconPositionEnum.Right;
-            this.cbMarca.ItemHeight = 17;
-            this.cbMarca.Location = new System.Drawing.Point(8, 8);
-            this.cbMarca.MaxDropDownItems = 8;
-            this.cbMarca.Name = "cbMarca";
-            this.cbMarca.Padding = new System.Windows.Forms.Padding(10);
-            this.cbMarca.SelectedIndex = -1;
-            this.cbMarca.SelectedItem = null;
-            this.cbMarca.SelectedValue = null;
-            this.cbMarca.Size = new System.Drawing.Size(241, 34);
-            this.cbMarca.TabIndex = 181;
-            this.cbMarca.TextColor = System.Drawing.Color.Black;
-            this.cbMarca.TextStyle = System.Drawing.FontStyle.Regular;
-            this.cbMarca.UnderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            this.cbMarca.UnderlineSize = 2;
-            this.cbMarca.ValueMember = "";
-            // 
-            // cbCategoria
-            // 
-            this.cbCategoria.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.cbCategoria.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.cbCategoria.BackColor = System.Drawing.Color.Transparent;
-            this.cbCategoria.BorderColor = System.Drawing.Color.White;
-            this.cbCategoria.BorderRadius = 12;
-            this.cbCategoria.DataSource = null;
-            this.cbCategoria.DisplayMember = "";
-            this.cbCategoria.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbCategoria.DrawMode = System.Windows.Forms.DrawMode.Normal;
-            this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCategoria.DropDownWidth = 147;
-            this.cbCategoria.DroppedDown = false;
-            this.cbCategoria.FillColor = System.Drawing.Color.White;
-            this.cbCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbCategoria.Icon = null;
-            this.cbCategoria.IconPosition = GRC.Componentes.RoundedComboBox.IconPositionEnum.Right;
-            this.cbCategoria.ItemHeight = 17;
-            this.cbCategoria.Location = new System.Drawing.Point(8, 8);
-            this.cbCategoria.MaxDropDownItems = 8;
-            this.cbCategoria.Name = "cbCategoria";
-            this.cbCategoria.Padding = new System.Windows.Forms.Padding(10);
-            this.cbCategoria.SelectedIndex = -1;
-            this.cbCategoria.SelectedItem = null;
-            this.cbCategoria.SelectedValue = null;
-            this.cbCategoria.Size = new System.Drawing.Size(230, 34);
-            this.cbCategoria.TabIndex = 181;
-            this.cbCategoria.TextColor = System.Drawing.Color.Black;
-            this.cbCategoria.TextStyle = System.Drawing.FontStyle.Regular;
-            this.cbCategoria.UnderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            this.cbCategoria.UnderlineSize = 2;
-            this.cbCategoria.ValueMember = "";
-            // 
-            // modernBox4
-            // 
-            this.modernBox4.BackColor = System.Drawing.Color.Transparent;
-            this.modernBox4.BorderColor = System.Drawing.Color.Transparent;
-            this.modernBox4.BorderRadius = 20;
-            this.modernBox4.BorderSize = 1;
-            this.modernBox4.Controls.Add(this.cbCategoria);
-            this.modernBox4.FillColor = System.Drawing.Color.White;
-            this.modernBox4.Location = new System.Drawing.Point(751, 93);
-            this.modernBox4.Name = "modernBox4";
-            this.modernBox4.Padding = new System.Windows.Forms.Padding(8);
-            this.modernBox4.ShadowAngle = 50;
-            this.modernBox4.ShadowColor = System.Drawing.Color.Gainsboro;
-            this.modernBox4.ShadowSize = 3;
-            this.modernBox4.Size = new System.Drawing.Size(246, 50);
-            this.modernBox4.TabIndex = 177;
-            // 
-            // lbCódigoBarras
-            // 
-            this.lbCódigoBarras.AutoSize = true;
-            this.lbCódigoBarras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.lbCódigoBarras.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.lbCódigoBarras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbCódigoBarras.Location = new System.Drawing.Point(169, 71);
-            this.lbCódigoBarras.Name = "lbCódigoBarras";
-            this.lbCódigoBarras.Size = new System.Drawing.Size(126, 20);
-            this.lbCódigoBarras.TabIndex = 183;
-            this.lbCódigoBarras.Text = "Código de Barras";
-            this.lbCódigoBarras.Visible = false;
-            // 
             // dgvItens
             // 
             this.dgvItens.AllowUserToAddRows = false;
@@ -511,6 +330,200 @@
             this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvItens.Size = new System.Drawing.Size(961, 420);
             this.dgvItens.TabIndex = 11;
+            // 
+            // modernBox1
+            // 
+            this.modernBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.modernBox1.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox1.BorderColor = System.Drawing.Color.Transparent;
+            this.modernBox1.BorderRadius = 20;
+            this.modernBox1.BorderSize = 1;
+            this.modernBox1.Controls.Add(this.txtPesquisa);
+            this.modernBox1.FillColor = System.Drawing.Color.White;
+            this.modernBox1.Location = new System.Drawing.Point(0, 23);
+            this.modernBox1.Name = "modernBox1";
+            this.modernBox1.Padding = new System.Windows.Forms.Padding(8);
+            this.modernBox1.ShadowAngle = 50;
+            this.modernBox1.ShadowColor = System.Drawing.Color.Gainsboro;
+            this.modernBox1.ShadowSize = 3;
+            this.modernBox1.Size = new System.Drawing.Size(483, 50);
+            this.modernBox1.TabIndex = 176;
+            // 
+            // txtPesquisa
+            // 
+            this.txtPesquisa.BackColor = System.Drawing.Color.Transparent;
+            this.txtPesquisa.BorderColor = System.Drawing.Color.White;
+            this.txtPesquisa.BorderRadius = 12;
+            this.txtPesquisa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPesquisa.FillColor = System.Drawing.Color.White;
+            this.txtPesquisa.Icon = ((System.Drawing.Image)(resources.GetObject("txtPesquisa.Icon")));
+            this.txtPesquisa.IconPosition = GRC.Componentes.RoundedTextBox.IconPositionEnum.Right;
+            this.txtPesquisa.Location = new System.Drawing.Point(8, 8);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Padding = new System.Windows.Forms.Padding(10);
+            this.txtPesquisa.Placeholder = "Busque por Nome do Item...";
+            this.txtPesquisa.Size = new System.Drawing.Size(467, 34);
+            this.txtPesquisa.TabIndex = 104;
+            this.txtPesquisa.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtPesquisa.TextColor = System.Drawing.Color.Black;
+            this.txtPesquisa.TextStyle = System.Drawing.FontStyle.Regular;
+            this.txtPesquisa.UnderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.txtPesquisa.UnderlineSize = 5;
+            // 
+            // chkItemVenda
+            // 
+            this.chkItemVenda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkItemVenda.AutoSize = true;
+            this.chkItemVenda.BackColor = System.Drawing.Color.Transparent;
+            this.chkItemVenda.Depth = 0;
+            this.chkItemVenda.Location = new System.Drawing.Point(861, 56);
+            this.chkItemVenda.Margin = new System.Windows.Forms.Padding(0);
+            this.chkItemVenda.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkItemVenda.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkItemVenda.Name = "chkItemVenda";
+            this.chkItemVenda.ReadOnly = false;
+            this.chkItemVenda.Ripple = true;
+            this.chkItemVenda.Size = new System.Drawing.Size(136, 37);
+            this.chkItemVenda.TabIndex = 3;
+            this.chkItemVenda.Text = "Item de Venda";
+            this.chkItemVenda.UseVisualStyleBackColor = false;
+            // 
+            // lblStatusLeitor
+            // 
+            this.lblStatusLeitor.AutoSize = true;
+            this.lblStatusLeitor.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.lblStatusLeitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.lblStatusLeitor.ForeColor = System.Drawing.Color.White;
+            this.lblStatusLeitor.Location = new System.Drawing.Point(5, 4);
+            this.lblStatusLeitor.Name = "lblStatusLeitor";
+            this.lblStatusLeitor.Size = new System.Drawing.Size(148, 15);
+            this.lblStatusLeitor.TabIndex = 180;
+            this.lblStatusLeitor.Text = "Leitor não encontrado";
+            // 
+            // modernBox5
+            // 
+            this.modernBox5.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox5.BorderColor = System.Drawing.Color.Transparent;
+            this.modernBox5.BorderRadius = 20;
+            this.modernBox5.BorderSize = 1;
+            this.modernBox5.Controls.Add(this.cbMarca);
+            this.modernBox5.FillColor = System.Drawing.Color.White;
+            this.modernBox5.Location = new System.Drawing.Point(488, 93);
+            this.modernBox5.Name = "modernBox5";
+            this.modernBox5.Padding = new System.Windows.Forms.Padding(8);
+            this.modernBox5.ShadowAngle = 50;
+            this.modernBox5.ShadowColor = System.Drawing.Color.Gainsboro;
+            this.modernBox5.ShadowSize = 3;
+            this.modernBox5.Size = new System.Drawing.Size(257, 50);
+            this.modernBox5.TabIndex = 182;
+            // 
+            // cbMarca
+            // 
+            this.cbMarca.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.cbMarca.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.cbMarca.BackColor = System.Drawing.Color.Transparent;
+            this.cbMarca.BorderColor = System.Drawing.Color.White;
+            this.cbMarca.BorderRadius = 12;
+            this.cbMarca.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbMarca.DataSource = null;
+            this.cbMarca.DisplayMember = "";
+            this.cbMarca.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbMarca.DrawMode = System.Windows.Forms.DrawMode.Normal;
+            this.cbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMarca.DropDownWidth = 146;
+            this.cbMarca.DroppedDown = false;
+            this.cbMarca.FillColor = System.Drawing.Color.White;
+            this.cbMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbMarca.Icon = null;
+            this.cbMarca.IconPosition = GRC.Componentes.RoundedComboBox.IconPositionEnum.Right;
+            this.cbMarca.ItemHeight = 17;
+            this.cbMarca.Location = new System.Drawing.Point(8, 8);
+            this.cbMarca.MaxDropDownItems = 10;
+            this.cbMarca.Name = "cbMarca";
+            this.cbMarca.Padding = new System.Windows.Forms.Padding(10);
+            this.cbMarca.SelectedIndex = -1;
+            this.cbMarca.SelectedItem = null;
+            this.cbMarca.SelectedValue = null;
+            this.cbMarca.Size = new System.Drawing.Size(241, 34);
+            this.cbMarca.TabIndex = 181;
+            this.cbMarca.TextColor = System.Drawing.Color.Black;
+            this.cbMarca.TextStyle = System.Drawing.FontStyle.Regular;
+            this.cbMarca.UnderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.cbMarca.UnderlineSize = 2;
+            this.cbMarca.ValueMember = "";
+            // 
+            // cbCategoria
+            // 
+            this.cbCategoria.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.cbCategoria.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.cbCategoria.BackColor = System.Drawing.Color.Transparent;
+            this.cbCategoria.BorderColor = System.Drawing.Color.White;
+            this.cbCategoria.BorderRadius = 12;
+            this.cbCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbCategoria.DataSource = null;
+            this.cbCategoria.DisplayMember = "";
+            this.cbCategoria.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbCategoria.DrawMode = System.Windows.Forms.DrawMode.Normal;
+            this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategoria.DropDownWidth = 147;
+            this.cbCategoria.DroppedDown = false;
+            this.cbCategoria.FillColor = System.Drawing.Color.White;
+            this.cbCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbCategoria.Icon = null;
+            this.cbCategoria.IconPosition = GRC.Componentes.RoundedComboBox.IconPositionEnum.Right;
+            this.cbCategoria.ItemHeight = 17;
+            this.cbCategoria.Location = new System.Drawing.Point(8, 8);
+            this.cbCategoria.MaxDropDownItems = 10;
+            this.cbCategoria.Name = "cbCategoria";
+            this.cbCategoria.Padding = new System.Windows.Forms.Padding(10);
+            this.cbCategoria.SelectedIndex = -1;
+            this.cbCategoria.SelectedItem = null;
+            this.cbCategoria.SelectedValue = null;
+            this.cbCategoria.Size = new System.Drawing.Size(230, 34);
+            this.cbCategoria.TabIndex = 181;
+            this.cbCategoria.TextColor = System.Drawing.Color.Black;
+            this.cbCategoria.TextStyle = System.Drawing.FontStyle.Regular;
+            this.cbCategoria.UnderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.cbCategoria.UnderlineSize = 2;
+            this.cbCategoria.ValueMember = "";
+            // 
+            // modernBox4
+            // 
+            this.modernBox4.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox4.BorderColor = System.Drawing.Color.Transparent;
+            this.modernBox4.BorderRadius = 20;
+            this.modernBox4.BorderSize = 1;
+            this.modernBox4.Controls.Add(this.cbCategoria);
+            this.modernBox4.FillColor = System.Drawing.Color.White;
+            this.modernBox4.Location = new System.Drawing.Point(751, 93);
+            this.modernBox4.Name = "modernBox4";
+            this.modernBox4.Padding = new System.Windows.Forms.Padding(8);
+            this.modernBox4.ShadowAngle = 50;
+            this.modernBox4.ShadowColor = System.Drawing.Color.Gainsboro;
+            this.modernBox4.ShadowSize = 3;
+            this.modernBox4.Size = new System.Drawing.Size(246, 50);
+            this.modernBox4.TabIndex = 177;
+            // 
+            // lbCódigoBarras
+            // 
+            this.lbCódigoBarras.AutoSize = true;
+            this.lbCódigoBarras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbCódigoBarras.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.lbCódigoBarras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbCódigoBarras.Location = new System.Drawing.Point(190, 70);
+            this.lbCódigoBarras.Name = "lbCódigoBarras";
+            this.lbCódigoBarras.Size = new System.Drawing.Size(0, 20);
+            this.lbCódigoBarras.TabIndex = 183;
+            this.lbCódigoBarras.Visible = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.modernBox1);
+            this.panel2.Controls.Add(this.lblStatusLeitor);
+            this.panel2.Location = new System.Drawing.Point(4, 70);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(486, 76);
+            this.panel2.TabIndex = 180;
             // 
             // colFavorito
             // 
@@ -590,7 +603,7 @@
             // 
             this.colProduto.DataPropertyName = "ItemVenda";
             this.colProduto.FillWeight = 21.22982F;
-            this.colProduto.HeaderText = "Produto";
+            this.colProduto.HeaderText = "Item/Venda";
             this.colProduto.Name = "colProduto";
             this.colProduto.ReadOnly = true;
             // 
@@ -606,15 +619,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.lbCódigoBarras);
             this.Controls.Add(this.modernBox5);
             this.Controls.Add(this.modernBox4);
-            this.Controls.Add(this.lblStatusLeitor);
             this.Controls.Add(this.chkItemVenda);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.modernBox3);
             this.Controls.Add(this.modernBox2);
-            this.Controls.Add(this.modernBox1);
             this.Controls.Add(this.btnNovoItem);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.lbTitulo);
@@ -624,10 +636,12 @@
             this.modernBox3.ResumeLayout(false);
             this.modernBox3.PerformLayout();
             this.modernBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).EndInit();
             this.modernBox1.ResumeLayout(false);
             this.modernBox5.ResumeLayout(false);
             this.modernBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -656,6 +670,7 @@
         private Componentes.ModernBox modernBox4;
         private System.Windows.Forms.Label lbCódigoBarras;
         private System.Windows.Forms.DataGridView dgvItens;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridViewImageColumn colFavorito;
         private System.Windows.Forms.DataGridViewImageColumn colImagem;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;

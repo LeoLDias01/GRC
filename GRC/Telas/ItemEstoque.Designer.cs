@@ -51,6 +51,18 @@
             this.btnApagar = new GRC.Componentes.CustomButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.modernBox2 = new GRC.Componentes.ModernBox();
+            this.dgvItens = new System.Windows.Forms.DataGridView();
+            this.colFavorito = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colImagem = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCodigoBarras = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFabricante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProduto = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.modernBox1 = new GRC.Componentes.ModernBox();
             this.painelRadius3 = new GRC.Componentes.PainelRadius();
             this.chkItemVenda = new MaterialSkin.Controls.MaterialCheckbox();
@@ -63,26 +75,14 @@
             this.cbFornecedor = new MaterialSkin.Controls.MaterialComboBox();
             this.cbCategoria = new MaterialSkin.Controls.MaterialComboBox();
             this.txtItem = new MaterialSkin.Controls.MaterialTextBox();
-            this.colAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colProduto = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFabricante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCodigoBarras = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colImagem = new System.Windows.Forms.DataGridViewImageColumn();
-            this.colFavorito = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dgvItens = new System.Windows.Forms.DataGridView();
             this.pnSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
             this.modernBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
             this.modernBox1.SuspendLayout();
             this.painelRadius3.SuspendLayout();
             this.flpMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
             this.SuspendLayout();
             // 
             // materialCheckbox1
@@ -416,6 +416,152 @@
             this.modernBox2.Size = new System.Drawing.Size(1218, 382);
             this.modernBox2.TabIndex = 162;
             // 
+            // dgvItens
+            // 
+            this.dgvItens.AllowUserToAddRows = false;
+            this.dgvItens.AllowUserToDeleteRows = false;
+            this.dgvItens.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvItens.BackgroundColor = System.Drawing.Color.White;
+            this.dgvItens.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvItens.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvItens.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvItens.ColumnHeadersHeight = 35;
+            this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colFavorito,
+            this.colImagem,
+            this.colId,
+            this.colDescricao,
+            this.colCodigoBarras,
+            this.colQtd,
+            this.colCategoria,
+            this.colFabricante,
+            this.colFornecedor,
+            this.colProduto,
+            this.colAtivo});
+            this.dgvItens.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(218)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvItens.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvItens.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvItens.EnableHeadersVisualStyles = false;
+            this.dgvItens.GridColor = System.Drawing.Color.Silver;
+            this.dgvItens.Location = new System.Drawing.Point(13, 13);
+            this.dgvItens.MultiSelect = false;
+            this.dgvItens.Name = "dgvItens";
+            this.dgvItens.ReadOnly = true;
+            this.dgvItens.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvItens.RowHeadersVisible = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvItens.Size = new System.Drawing.Size(1192, 356);
+            this.dgvItens.TabIndex = 10;
+            this.dgvItens.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItens_CellDoubleClick);
+            this.dgvItens.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItens_CellValueChanged);
+            // 
+            // colFavorito
+            // 
+            this.colFavorito.DataPropertyName = "Favorito";
+            this.colFavorito.FillWeight = 6.146037F;
+            this.colFavorito.HeaderText = "";
+            this.colFavorito.Name = "colFavorito";
+            this.colFavorito.ReadOnly = true;
+            // 
+            // colImagem
+            // 
+            this.colImagem.DataPropertyName = "FotoItem";
+            this.colImagem.FillWeight = 12.98365F;
+            this.colImagem.HeaderText = "Foto";
+            this.colImagem.Name = "colImagem";
+            this.colImagem.ReadOnly = true;
+            // 
+            // colId
+            // 
+            this.colId.DataPropertyName = "Id";
+            this.colId.FillWeight = 0.6504041F;
+            this.colId.HeaderText = "Id";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Visible = false;
+            // 
+            // colDescricao
+            // 
+            this.colDescricao.DataPropertyName = "Descricao";
+            this.colDescricao.FillWeight = 35.69515F;
+            this.colDescricao.HeaderText = "Item";
+            this.colDescricao.Name = "colDescricao";
+            this.colDescricao.ReadOnly = true;
+            // 
+            // colCodigoBarras
+            // 
+            this.colCodigoBarras.DataPropertyName = "CodBarras";
+            this.colCodigoBarras.FillWeight = 35.01702F;
+            this.colCodigoBarras.HeaderText = "Código de Barras";
+            this.colCodigoBarras.Name = "colCodigoBarras";
+            this.colCodigoBarras.ReadOnly = true;
+            this.colCodigoBarras.Visible = false;
+            // 
+            // colQtd
+            // 
+            this.colQtd.DataPropertyName = "Quantidade";
+            this.colQtd.FillWeight = 10.428F;
+            this.colQtd.HeaderText = "Qtd";
+            this.colQtd.Name = "colQtd";
+            this.colQtd.ReadOnly = true;
+            // 
+            // colCategoria
+            // 
+            this.colCategoria.DataPropertyName = "DescricaoCategoria";
+            this.colCategoria.FillWeight = 16.20491F;
+            this.colCategoria.HeaderText = "Categoria";
+            this.colCategoria.Name = "colCategoria";
+            this.colCategoria.ReadOnly = true;
+            // 
+            // colFabricante
+            // 
+            this.colFabricante.DataPropertyName = "DescricaoFabricante";
+            this.colFabricante.FillWeight = 25.27785F;
+            this.colFabricante.HeaderText = "Marca";
+            this.colFabricante.Name = "colFabricante";
+            this.colFabricante.ReadOnly = true;
+            // 
+            // colFornecedor
+            // 
+            this.colFornecedor.DataPropertyName = "Fornecedor";
+            this.colFornecedor.FillWeight = 21.87452F;
+            this.colFornecedor.HeaderText = "Fornecedor";
+            this.colFornecedor.Name = "colFornecedor";
+            this.colFornecedor.ReadOnly = true;
+            // 
+            // colProduto
+            // 
+            this.colProduto.DataPropertyName = "ItemVenda";
+            this.colProduto.FillWeight = 21.22982F;
+            this.colProduto.HeaderText = "Produto";
+            this.colProduto.Name = "colProduto";
+            this.colProduto.ReadOnly = true;
+            // 
+            // colAtivo
+            // 
+            this.colAtivo.DataPropertyName = "Ativo";
+            this.colAtivo.FillWeight = 20.67864F;
+            this.colAtivo.HeaderText = "Ativo";
+            this.colAtivo.Name = "colAtivo";
+            this.colAtivo.ReadOnly = true;
+            // 
             // modernBox1
             // 
             this.modernBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -661,152 +807,6 @@
             this.txtItem.TrailingIcon = null;
             this.txtItem.UseAccent = false;
             // 
-            // colAtivo
-            // 
-            this.colAtivo.DataPropertyName = "Ativo";
-            this.colAtivo.FillWeight = 20.67864F;
-            this.colAtivo.HeaderText = "Ativo";
-            this.colAtivo.Name = "colAtivo";
-            this.colAtivo.ReadOnly = true;
-            // 
-            // colProduto
-            // 
-            this.colProduto.DataPropertyName = "ItemVenda";
-            this.colProduto.FillWeight = 21.22982F;
-            this.colProduto.HeaderText = "Produto";
-            this.colProduto.Name = "colProduto";
-            this.colProduto.ReadOnly = true;
-            // 
-            // colFornecedor
-            // 
-            this.colFornecedor.DataPropertyName = "Fornecedor";
-            this.colFornecedor.FillWeight = 21.87452F;
-            this.colFornecedor.HeaderText = "Fornecedor";
-            this.colFornecedor.Name = "colFornecedor";
-            this.colFornecedor.ReadOnly = true;
-            // 
-            // colFabricante
-            // 
-            this.colFabricante.DataPropertyName = "DescricaoFabricante";
-            this.colFabricante.FillWeight = 25.27785F;
-            this.colFabricante.HeaderText = "Marca";
-            this.colFabricante.Name = "colFabricante";
-            this.colFabricante.ReadOnly = true;
-            // 
-            // colCategoria
-            // 
-            this.colCategoria.DataPropertyName = "DescricaoCategoria";
-            this.colCategoria.FillWeight = 16.20491F;
-            this.colCategoria.HeaderText = "Categoria";
-            this.colCategoria.Name = "colCategoria";
-            this.colCategoria.ReadOnly = true;
-            // 
-            // colQtd
-            // 
-            this.colQtd.DataPropertyName = "Quantidade";
-            this.colQtd.FillWeight = 10.428F;
-            this.colQtd.HeaderText = "Qtd";
-            this.colQtd.Name = "colQtd";
-            this.colQtd.ReadOnly = true;
-            // 
-            // colCodigoBarras
-            // 
-            this.colCodigoBarras.DataPropertyName = "CodBarras";
-            this.colCodigoBarras.FillWeight = 35.01702F;
-            this.colCodigoBarras.HeaderText = "Código de Barras";
-            this.colCodigoBarras.Name = "colCodigoBarras";
-            this.colCodigoBarras.ReadOnly = true;
-            this.colCodigoBarras.Visible = false;
-            // 
-            // colDescricao
-            // 
-            this.colDescricao.DataPropertyName = "Descricao";
-            this.colDescricao.FillWeight = 35.69515F;
-            this.colDescricao.HeaderText = "Item";
-            this.colDescricao.Name = "colDescricao";
-            this.colDescricao.ReadOnly = true;
-            // 
-            // colId
-            // 
-            this.colId.DataPropertyName = "Id";
-            this.colId.FillWeight = 0.6504041F;
-            this.colId.HeaderText = "Id";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.Visible = false;
-            // 
-            // colImagem
-            // 
-            this.colImagem.DataPropertyName = "FotoItem";
-            this.colImagem.FillWeight = 12.98365F;
-            this.colImagem.HeaderText = "Foto";
-            this.colImagem.Name = "colImagem";
-            this.colImagem.ReadOnly = true;
-            // 
-            // colFavorito
-            // 
-            this.colFavorito.DataPropertyName = "Favorito";
-            this.colFavorito.FillWeight = 6.146037F;
-            this.colFavorito.HeaderText = "";
-            this.colFavorito.Name = "colFavorito";
-            this.colFavorito.ReadOnly = true;
-            // 
-            // dgvItens
-            // 
-            this.dgvItens.AllowUserToAddRows = false;
-            this.dgvItens.AllowUserToDeleteRows = false;
-            this.dgvItens.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvItens.BackgroundColor = System.Drawing.Color.White;
-            this.dgvItens.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvItens.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dgvItens.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvItens.ColumnHeadersHeight = 35;
-            this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colFavorito,
-            this.colImagem,
-            this.colId,
-            this.colDescricao,
-            this.colCodigoBarras,
-            this.colQtd,
-            this.colCategoria,
-            this.colFabricante,
-            this.colFornecedor,
-            this.colProduto,
-            this.colAtivo});
-            this.dgvItens.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(218)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvItens.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvItens.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvItens.EnableHeadersVisualStyles = false;
-            this.dgvItens.GridColor = System.Drawing.Color.Silver;
-            this.dgvItens.Location = new System.Drawing.Point(13, 13);
-            this.dgvItens.MultiSelect = false;
-            this.dgvItens.Name = "dgvItens";
-            this.dgvItens.ReadOnly = true;
-            this.dgvItens.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvItens.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItens.Size = new System.Drawing.Size(1192, 356);
-            this.dgvItens.TabIndex = 10;
-            this.dgvItens.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItens_CellDoubleClick);
-            this.dgvItens.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItens_CellValueChanged);
-            // 
             // ItemEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -834,11 +834,11 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.modernBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).EndInit();
             this.modernBox1.ResumeLayout(false);
             this.painelRadius3.ResumeLayout(false);
             this.painelRadius3.PerformLayout();
             this.flpMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).EndInit();
             this.ResumeLayout(false);
 
         }
