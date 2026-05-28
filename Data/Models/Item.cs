@@ -26,7 +26,7 @@ namespace Data.Models
         public bool ItemVenda {  get; set; }
         public string DescricaoVenda { get; set; }
         public string VendaUnitario { get; set; }
-        public bool Ativo {  get; set; }
+        public bool? Ativo {  get; set; }
         public bool Bloqueado { get; set; }
         public List<Composicao> ComposicaoItem { get; set; } = new List<Composicao>();
 

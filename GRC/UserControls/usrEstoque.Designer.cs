@@ -33,7 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lbTitulo = new System.Windows.Forms.Label();
             this.btnNovoItem = new GRC.Componentes.CustomButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnFiltroAtivos = new System.Windows.Forms.Button();
@@ -43,28 +43,34 @@
             this.cbRegistros = new System.Windows.Forms.ComboBox();
             this.lbRegistros = new System.Windows.Forms.Label();
             this.modernBox2 = new GRC.Componentes.ModernBox();
-            this.dgvItens = new System.Windows.Forms.DataGridView();
-            this.colIdFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNomeFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRazaoSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCnpj = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modernBox1 = new GRC.Componentes.ModernBox();
             this.txtPesquisa = new GRC.Componentes.RoundedTextBox();
             this.chkItemVenda = new MaterialSkin.Controls.MaterialCheckbox();
             this.lblStatusLeitor = new System.Windows.Forms.Label();
-            this.modernBox4 = new GRC.Componentes.ModernBox();
-            this.cbCategoria = new GRC.Componentes.RoundedComboBox();
             this.modernBox5 = new GRC.Componentes.ModernBox();
             this.cbMarca = new GRC.Componentes.RoundedComboBox();
+            this.cbCategoria = new GRC.Componentes.RoundedComboBox();
+            this.modernBox4 = new GRC.Componentes.ModernBox();
+            this.lbCódigoBarras = new System.Windows.Forms.Label();
+            this.dgvItens = new System.Windows.Forms.DataGridView();
+            this.colFavorito = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colImagem = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCodigoBarras = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFabricante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProduto = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             this.modernBox3.SuspendLayout();
             this.modernBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
             this.modernBox1.SuspendLayout();
-            this.modernBox4.SuspendLayout();
             this.modernBox5.SuspendLayout();
+            this.modernBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
             this.SuspendLayout();
             // 
             // label11
@@ -79,17 +85,17 @@
             this.label11.TabIndex = 174;
             this.label11.Text = "Pesquisa de itens do estoque";
             // 
-            // label10
+            // lbTitulo
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold);
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
-            this.label10.Location = new System.Drawing.Point(3, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(232, 37);
-            this.label10.TabIndex = 173;
-            this.label10.Text = "Busca no Estoque";
+            this.lbTitulo.AutoSize = true;
+            this.lbTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.lbTitulo.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold);
+            this.lbTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.lbTitulo.Location = new System.Drawing.Point(3, 0);
+            this.lbTitulo.Name = "lbTitulo";
+            this.lbTitulo.Size = new System.Drawing.Size(232, 37);
+            this.lbTitulo.TabIndex = 173;
+            this.lbTitulo.Text = "Busca no Estoque";
             // 
             // btnNovoItem
             // 
@@ -267,102 +273,6 @@
             this.modernBox2.Size = new System.Drawing.Size(994, 452);
             this.modernBox2.TabIndex = 177;
             // 
-            // dgvItens
-            // 
-            this.dgvItens.AllowUserToAddRows = false;
-            this.dgvItens.AllowUserToDeleteRows = false;
-            this.dgvItens.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvItens.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvItens.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.dgvItens.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvItens.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dgvItens.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvItens.ColumnHeadersHeight = 35;
-            this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colIdFornecedor,
-            this.colNomeFornecedor,
-            this.colRazaoSocial,
-            this.colCnpj,
-            this.colCidade,
-            this.colUf});
-            this.dgvItens.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(218)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvItens.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvItens.EnableHeadersVisualStyles = false;
-            this.dgvItens.GridColor = System.Drawing.Color.DarkGray;
-            this.dgvItens.Location = new System.Drawing.Point(17, 16);
-            this.dgvItens.MultiSelect = false;
-            this.dgvItens.Name = "dgvItens";
-            this.dgvItens.ReadOnly = true;
-            this.dgvItens.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvItens.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItens.Size = new System.Drawing.Size(965, 420);
-            this.dgvItens.TabIndex = 11;
-            // 
-            // colIdFornecedor
-            // 
-            this.colIdFornecedor.DataPropertyName = "Id";
-            this.colIdFornecedor.FillWeight = 1F;
-            this.colIdFornecedor.HeaderText = "Id";
-            this.colIdFornecedor.Name = "colIdFornecedor";
-            this.colIdFornecedor.ReadOnly = true;
-            this.colIdFornecedor.Visible = false;
-            // 
-            // colNomeFornecedor
-            // 
-            this.colNomeFornecedor.DataPropertyName = "Nome";
-            this.colNomeFornecedor.HeaderText = "Fornecedor";
-            this.colNomeFornecedor.Name = "colNomeFornecedor";
-            this.colNomeFornecedor.ReadOnly = true;
-            // 
-            // colRazaoSocial
-            // 
-            this.colRazaoSocial.DataPropertyName = "RazaoSocial";
-            this.colRazaoSocial.HeaderText = "Razão Social";
-            this.colRazaoSocial.Name = "colRazaoSocial";
-            this.colRazaoSocial.ReadOnly = true;
-            // 
-            // colCnpj
-            // 
-            this.colCnpj.DataPropertyName = "Cnpj";
-            this.colCnpj.HeaderText = "CNPJ";
-            this.colCnpj.Name = "colCnpj";
-            this.colCnpj.ReadOnly = true;
-            // 
-            // colCidade
-            // 
-            this.colCidade.DataPropertyName = "Cidade";
-            this.colCidade.HeaderText = "Cidade";
-            this.colCidade.Name = "colCidade";
-            this.colCidade.ReadOnly = true;
-            // 
-            // colUf
-            // 
-            this.colUf.DataPropertyName = "Uf";
-            this.colUf.FillWeight = 40F;
-            this.colUf.HeaderText = "UF";
-            this.colUf.Name = "colUf";
-            this.colUf.ReadOnly = true;
-            // 
             // modernBox1
             // 
             this.modernBox1.BackColor = System.Drawing.Color.Transparent;
@@ -392,7 +302,7 @@
             this.txtPesquisa.Location = new System.Drawing.Point(8, 8);
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Padding = new System.Windows.Forms.Padding(10);
-            this.txtPesquisa.Placeholder = "Busque por Nome do Item ou Id...";
+            this.txtPesquisa.Placeholder = "Busque por Nome do Item...";
             this.txtPesquisa.Size = new System.Drawing.Size(456, 34);
             this.txtPesquisa.TabIndex = 104;
             this.txtPesquisa.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -407,7 +317,7 @@
             this.chkItemVenda.AutoSize = true;
             this.chkItemVenda.BackColor = System.Drawing.Color.Transparent;
             this.chkItemVenda.Depth = 0;
-            this.chkItemVenda.Location = new System.Drawing.Point(346, 53);
+            this.chkItemVenda.Location = new System.Drawing.Point(861, 56);
             this.chkItemVenda.Margin = new System.Windows.Forms.Padding(0);
             this.chkItemVenda.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkItemVenda.MouseState = MaterialSkin.MouseState.HOVER;
@@ -430,57 +340,6 @@
             this.lblStatusLeitor.Size = new System.Drawing.Size(148, 15);
             this.lblStatusLeitor.TabIndex = 180;
             this.lblStatusLeitor.Text = "Leitor não encontrado";
-            // 
-            // modernBox4
-            // 
-            this.modernBox4.BackColor = System.Drawing.Color.Transparent;
-            this.modernBox4.BorderColor = System.Drawing.Color.Transparent;
-            this.modernBox4.BorderRadius = 20;
-            this.modernBox4.BorderSize = 1;
-            this.modernBox4.Controls.Add(this.cbCategoria);
-            this.modernBox4.FillColor = System.Drawing.Color.White;
-            this.modernBox4.Location = new System.Drawing.Point(751, 93);
-            this.modernBox4.Name = "modernBox4";
-            this.modernBox4.Padding = new System.Windows.Forms.Padding(8);
-            this.modernBox4.ShadowAngle = 50;
-            this.modernBox4.ShadowColor = System.Drawing.Color.Gainsboro;
-            this.modernBox4.ShadowSize = 3;
-            this.modernBox4.Size = new System.Drawing.Size(246, 50);
-            this.modernBox4.TabIndex = 177;
-            // 
-            // cbCategoria
-            // 
-            this.cbCategoria.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.cbCategoria.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.cbCategoria.BackColor = System.Drawing.Color.Transparent;
-            this.cbCategoria.BorderColor = System.Drawing.Color.White;
-            this.cbCategoria.BorderRadius = 12;
-            this.cbCategoria.DataSource = null;
-            this.cbCategoria.DisplayMember = "";
-            this.cbCategoria.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbCategoria.DrawMode = System.Windows.Forms.DrawMode.Normal;
-            this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCategoria.DropDownWidth = 147;
-            this.cbCategoria.DroppedDown = false;
-            this.cbCategoria.FillColor = System.Drawing.Color.White;
-            this.cbCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbCategoria.Icon = null;
-            this.cbCategoria.IconPosition = GRC.Componentes.RoundedComboBox.IconPositionEnum.Right;
-            this.cbCategoria.ItemHeight = 17;
-            this.cbCategoria.Location = new System.Drawing.Point(8, 8);
-            this.cbCategoria.MaxDropDownItems = 8;
-            this.cbCategoria.Name = "cbCategoria";
-            this.cbCategoria.Padding = new System.Windows.Forms.Padding(10);
-            this.cbCategoria.SelectedIndex = -1;
-            this.cbCategoria.SelectedItem = null;
-            this.cbCategoria.SelectedValue = null;
-            this.cbCategoria.Size = new System.Drawing.Size(230, 34);
-            this.cbCategoria.TabIndex = 181;
-            this.cbCategoria.TextColor = System.Drawing.Color.Black;
-            this.cbCategoria.TextStyle = System.Drawing.FontStyle.Regular;
-            this.cbCategoria.UnderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            this.cbCategoria.UnderlineSize = 2;
-            this.cbCategoria.ValueMember = "";
             // 
             // modernBox5
             // 
@@ -533,10 +392,221 @@
             this.cbMarca.UnderlineSize = 2;
             this.cbMarca.ValueMember = "";
             // 
+            // cbCategoria
+            // 
+            this.cbCategoria.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.cbCategoria.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.cbCategoria.BackColor = System.Drawing.Color.Transparent;
+            this.cbCategoria.BorderColor = System.Drawing.Color.White;
+            this.cbCategoria.BorderRadius = 12;
+            this.cbCategoria.DataSource = null;
+            this.cbCategoria.DisplayMember = "";
+            this.cbCategoria.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbCategoria.DrawMode = System.Windows.Forms.DrawMode.Normal;
+            this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategoria.DropDownWidth = 147;
+            this.cbCategoria.DroppedDown = false;
+            this.cbCategoria.FillColor = System.Drawing.Color.White;
+            this.cbCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbCategoria.Icon = null;
+            this.cbCategoria.IconPosition = GRC.Componentes.RoundedComboBox.IconPositionEnum.Right;
+            this.cbCategoria.ItemHeight = 17;
+            this.cbCategoria.Location = new System.Drawing.Point(8, 8);
+            this.cbCategoria.MaxDropDownItems = 8;
+            this.cbCategoria.Name = "cbCategoria";
+            this.cbCategoria.Padding = new System.Windows.Forms.Padding(10);
+            this.cbCategoria.SelectedIndex = -1;
+            this.cbCategoria.SelectedItem = null;
+            this.cbCategoria.SelectedValue = null;
+            this.cbCategoria.Size = new System.Drawing.Size(230, 34);
+            this.cbCategoria.TabIndex = 181;
+            this.cbCategoria.TextColor = System.Drawing.Color.Black;
+            this.cbCategoria.TextStyle = System.Drawing.FontStyle.Regular;
+            this.cbCategoria.UnderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.cbCategoria.UnderlineSize = 2;
+            this.cbCategoria.ValueMember = "";
+            // 
+            // modernBox4
+            // 
+            this.modernBox4.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox4.BorderColor = System.Drawing.Color.Transparent;
+            this.modernBox4.BorderRadius = 20;
+            this.modernBox4.BorderSize = 1;
+            this.modernBox4.Controls.Add(this.cbCategoria);
+            this.modernBox4.FillColor = System.Drawing.Color.White;
+            this.modernBox4.Location = new System.Drawing.Point(751, 93);
+            this.modernBox4.Name = "modernBox4";
+            this.modernBox4.Padding = new System.Windows.Forms.Padding(8);
+            this.modernBox4.ShadowAngle = 50;
+            this.modernBox4.ShadowColor = System.Drawing.Color.Gainsboro;
+            this.modernBox4.ShadowSize = 3;
+            this.modernBox4.Size = new System.Drawing.Size(246, 50);
+            this.modernBox4.TabIndex = 177;
+            // 
+            // lbCódigoBarras
+            // 
+            this.lbCódigoBarras.AutoSize = true;
+            this.lbCódigoBarras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.lbCódigoBarras.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.lbCódigoBarras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbCódigoBarras.Location = new System.Drawing.Point(169, 71);
+            this.lbCódigoBarras.Name = "lbCódigoBarras";
+            this.lbCódigoBarras.Size = new System.Drawing.Size(126, 20);
+            this.lbCódigoBarras.TabIndex = 183;
+            this.lbCódigoBarras.Text = "Código de Barras";
+            this.lbCódigoBarras.Visible = false;
+            // 
+            // dgvItens
+            // 
+            this.dgvItens.AllowUserToAddRows = false;
+            this.dgvItens.AllowUserToDeleteRows = false;
+            this.dgvItens.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvItens.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvItens.BackgroundColor = System.Drawing.Color.White;
+            this.dgvItens.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvItens.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvItens.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvItens.ColumnHeadersHeight = 35;
+            this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colFavorito,
+            this.colImagem,
+            this.colId,
+            this.colDescricao,
+            this.colCodigoBarras,
+            this.colQtd,
+            this.colCategoria,
+            this.colFabricante,
+            this.colFornecedor,
+            this.colProduto,
+            this.colAtivo});
+            this.dgvItens.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(218)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvItens.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvItens.EnableHeadersVisualStyles = false;
+            this.dgvItens.GridColor = System.Drawing.Color.Silver;
+            this.dgvItens.Location = new System.Drawing.Point(17, 16);
+            this.dgvItens.MultiSelect = false;
+            this.dgvItens.Name = "dgvItens";
+            this.dgvItens.ReadOnly = true;
+            this.dgvItens.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvItens.RowHeadersVisible = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvItens.Size = new System.Drawing.Size(961, 420);
+            this.dgvItens.TabIndex = 11;
+            // 
+            // colFavorito
+            // 
+            this.colFavorito.DataPropertyName = "Favorito";
+            this.colFavorito.FillWeight = 6.146037F;
+            this.colFavorito.HeaderText = "";
+            this.colFavorito.Name = "colFavorito";
+            this.colFavorito.ReadOnly = true;
+            // 
+            // colImagem
+            // 
+            this.colImagem.DataPropertyName = "FotoItem";
+            this.colImagem.FillWeight = 12.98365F;
+            this.colImagem.HeaderText = "Foto";
+            this.colImagem.Name = "colImagem";
+            this.colImagem.ReadOnly = true;
+            // 
+            // colId
+            // 
+            this.colId.DataPropertyName = "Id";
+            this.colId.FillWeight = 0.6504041F;
+            this.colId.HeaderText = "Id";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Visible = false;
+            // 
+            // colDescricao
+            // 
+            this.colDescricao.DataPropertyName = "Descricao";
+            this.colDescricao.FillWeight = 35.69515F;
+            this.colDescricao.HeaderText = "Item";
+            this.colDescricao.Name = "colDescricao";
+            this.colDescricao.ReadOnly = true;
+            // 
+            // colCodigoBarras
+            // 
+            this.colCodigoBarras.DataPropertyName = "CodBarras";
+            this.colCodigoBarras.FillWeight = 35.01702F;
+            this.colCodigoBarras.HeaderText = "Código de Barras";
+            this.colCodigoBarras.Name = "colCodigoBarras";
+            this.colCodigoBarras.ReadOnly = true;
+            this.colCodigoBarras.Visible = false;
+            // 
+            // colQtd
+            // 
+            this.colQtd.DataPropertyName = "Quantidade";
+            this.colQtd.FillWeight = 10.428F;
+            this.colQtd.HeaderText = "Qtd";
+            this.colQtd.Name = "colQtd";
+            this.colQtd.ReadOnly = true;
+            // 
+            // colCategoria
+            // 
+            this.colCategoria.DataPropertyName = "DescricaoCategoria";
+            this.colCategoria.FillWeight = 16.20491F;
+            this.colCategoria.HeaderText = "Categoria";
+            this.colCategoria.Name = "colCategoria";
+            this.colCategoria.ReadOnly = true;
+            // 
+            // colFabricante
+            // 
+            this.colFabricante.DataPropertyName = "DescricaoFabricante";
+            this.colFabricante.FillWeight = 25.27785F;
+            this.colFabricante.HeaderText = "Marca";
+            this.colFabricante.Name = "colFabricante";
+            this.colFabricante.ReadOnly = true;
+            // 
+            // colFornecedor
+            // 
+            this.colFornecedor.DataPropertyName = "Fornecedor";
+            this.colFornecedor.FillWeight = 21.87452F;
+            this.colFornecedor.HeaderText = "Fornecedor";
+            this.colFornecedor.Name = "colFornecedor";
+            this.colFornecedor.ReadOnly = true;
+            // 
+            // colProduto
+            // 
+            this.colProduto.DataPropertyName = "ItemVenda";
+            this.colProduto.FillWeight = 21.22982F;
+            this.colProduto.HeaderText = "Produto";
+            this.colProduto.Name = "colProduto";
+            this.colProduto.ReadOnly = true;
+            // 
+            // colAtivo
+            // 
+            this.colAtivo.DataPropertyName = "Ativo";
+            this.colAtivo.FillWeight = 20.67864F;
+            this.colAtivo.HeaderText = "Ativo";
+            this.colAtivo.Name = "colAtivo";
+            this.colAtivo.ReadOnly = true;
+            // 
             // usrEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lbCódigoBarras);
             this.Controls.Add(this.modernBox5);
             this.Controls.Add(this.modernBox4);
             this.Controls.Add(this.lblStatusLeitor);
@@ -547,17 +617,17 @@
             this.Controls.Add(this.modernBox1);
             this.Controls.Add(this.btnNovoItem);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.lbTitulo);
             this.Name = "usrEstoque";
             this.Size = new System.Drawing.Size(1000, 669);
             this.panel1.ResumeLayout(false);
             this.modernBox3.ResumeLayout(false);
             this.modernBox3.PerformLayout();
             this.modernBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).EndInit();
             this.modernBox1.ResumeLayout(false);
-            this.modernBox4.ResumeLayout(false);
             this.modernBox5.ResumeLayout(false);
+            this.modernBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -567,7 +637,7 @@
 
         private Componentes.CustomButton btnNovoItem;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lbTitulo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnFiltroAtivos;
         private Componentes.CustomButton btnFiltroTodos;
@@ -576,20 +646,26 @@
         private System.Windows.Forms.ComboBox cbRegistros;
         private System.Windows.Forms.Label lbRegistros;
         private Componentes.ModernBox modernBox2;
-        private System.Windows.Forms.DataGridView dgvItens;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIdFornecedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNomeFornecedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRazaoSocial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCnpj;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colUf;
         private Componentes.ModernBox modernBox1;
         private Componentes.RoundedTextBox txtPesquisa;
         private MaterialSkin.Controls.MaterialCheckbox chkItemVenda;
         private System.Windows.Forms.Label lblStatusLeitor;
-        private Componentes.ModernBox modernBox4;
-        private Componentes.RoundedComboBox cbCategoria;
         private Componentes.ModernBox modernBox5;
         private Componentes.RoundedComboBox cbMarca;
+        private Componentes.RoundedComboBox cbCategoria;
+        private Componentes.ModernBox modernBox4;
+        private System.Windows.Forms.Label lbCódigoBarras;
+        private System.Windows.Forms.DataGridView dgvItens;
+        private System.Windows.Forms.DataGridViewImageColumn colFavorito;
+        private System.Windows.Forms.DataGridViewImageColumn colImagem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDescricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCodigoBarras;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colQtd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCategoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFabricante;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFornecedor;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colProduto;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colAtivo;
     }
 }

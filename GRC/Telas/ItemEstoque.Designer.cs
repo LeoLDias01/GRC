@@ -41,21 +41,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnSuperior = new System.Windows.Forms.Panel();
             this.lblStatusLeitor = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pn1 = new GRC.Componentes.RoundedPanel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnClose = new GRC.Componentes.CustomButton();
+            this.tbnSearch = new GRC.Componentes.CustomButton();
+            this.btnMaximize = new GRC.Componentes.CustomButton();
+            this.btnNovoItem = new GRC.Componentes.CustomButton();
+            this.btnMinimize = new GRC.Componentes.CustomButton();
+            this.btnApagar = new GRC.Componentes.CustomButton();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.modernBox2 = new GRC.Componentes.ModernBox();
-            this.dgvItens = new System.Windows.Forms.DataGridView();
-            this.colFavorito = new System.Windows.Forms.DataGridViewImageColumn();
-            this.colImagem = new System.Windows.Forms.DataGridViewImageColumn();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCodigoBarras = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFabricante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProduto = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.modernBox1 = new GRC.Componentes.ModernBox();
             this.painelRadius3 = new GRC.Componentes.PainelRadius();
             this.chkItemVenda = new MaterialSkin.Controls.MaterialCheckbox();
@@ -68,21 +63,26 @@
             this.cbFornecedor = new MaterialSkin.Controls.MaterialComboBox();
             this.cbCategoria = new MaterialSkin.Controls.MaterialComboBox();
             this.txtItem = new MaterialSkin.Controls.MaterialTextBox();
-            this.pn1 = new GRC.Componentes.RoundedPanel();
-            this.btnClose = new GRC.Componentes.CustomButton();
-            this.tbnSearch = new GRC.Componentes.CustomButton();
-            this.btnMaximize = new GRC.Componentes.CustomButton();
-            this.btnNovoItem = new GRC.Componentes.CustomButton();
-            this.btnMinimize = new GRC.Componentes.CustomButton();
-            this.btnApagar = new GRC.Componentes.CustomButton();
+            this.colAtivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colProduto = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFabricante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCodigoBarras = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colImagem = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colFavorito = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dgvItens = new System.Windows.Forms.DataGridView();
             this.pnSuperior.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel2.SuspendLayout();
             this.modernBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
             this.modernBox1.SuspendLayout();
             this.painelRadius3.SuspendLayout();
             this.flpMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
             this.SuspendLayout();
             // 
             // materialCheckbox1
@@ -226,16 +226,17 @@
             this.lblStatusLeitor.TabIndex = 128;
             this.lblStatusLeitor.Text = ".";
             // 
-            // panel2
+            // pn1
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.panel2.Controls.Add(this.cbxQtdRegistros);
-            this.panel2.Controls.Add(this.lbRegistros);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 685);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1239, 44);
-            this.panel2.TabIndex = 160;
+            this.pn1.BackColor = System.Drawing.Color.Transparent;
+            this.pn1.Color1 = System.Drawing.Color.Lime;
+            this.pn1.Color2 = System.Drawing.Color.Blue;
+            this.pn1.CornerRadius = 8;
+            this.pn1.GradientAngle = 280F;
+            this.pn1.Location = new System.Drawing.Point(4, 64);
+            this.pn1.Name = "pn1";
+            this.pn1.Size = new System.Drawing.Size(313, 30);
+            this.pn1.TabIndex = 127;
             // 
             // pictureBox3
             // 
@@ -246,6 +247,154 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 121;
             this.pictureBox3.TabStop = false;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnClose.CorBotao = System.Drawing.Color.Transparent;
+            this.btnClose.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(1195, 17);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(36, 35);
+            this.btnClose.TabIndex = 16;
+            this.btnClose.TamanhoBorda = 0;
+            this.btnClose.TamanhoRaio = 17;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // tbnSearch
+            // 
+            this.tbnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.tbnSearch.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.tbnSearch.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.tbnSearch.CorTextoBotao = System.Drawing.Color.White;
+            this.tbnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tbnSearch.FlatAppearance.BorderSize = 0;
+            this.tbnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.tbnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tbnSearch.ForeColor = System.Drawing.Color.White;
+            this.tbnSearch.Image = ((System.Drawing.Image)(resources.GetObject("tbnSearch.Image")));
+            this.tbnSearch.Location = new System.Drawing.Point(429, 19);
+            this.tbnSearch.Name = "tbnSearch";
+            this.tbnSearch.Size = new System.Drawing.Size(43, 43);
+            this.tbnSearch.TabIndex = 13;
+            this.tbnSearch.TamanhoBorda = 0;
+            this.tbnSearch.TamanhoRaio = 15;
+            this.tbnSearch.UseVisualStyleBackColor = false;
+            this.tbnSearch.Click += new System.EventHandler(this.tbnSearch_Click);
+            // 
+            // btnMaximize
+            // 
+            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMaximize.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnMaximize.CorBotao = System.Drawing.Color.Transparent;
+            this.btnMaximize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaximize.FlatAppearance.BorderSize = 0;
+            this.btnMaximize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaximize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
+            this.btnMaximize.Location = new System.Drawing.Point(1149, 17);
+            this.btnMaximize.Name = "btnMaximize";
+            this.btnMaximize.Size = new System.Drawing.Size(40, 35);
+            this.btnMaximize.TabIndex = 15;
+            this.btnMaximize.TamanhoBorda = 0;
+            this.btnMaximize.TamanhoRaio = 17;
+            this.btnMaximize.UseVisualStyleBackColor = false;
+            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
+            // 
+            // btnNovoItem
+            // 
+            this.btnNovoItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnNovoItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnNovoItem.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnNovoItem.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnNovoItem.CorTextoBotao = System.Drawing.Color.White;
+            this.btnNovoItem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNovoItem.FlatAppearance.BorderSize = 0;
+            this.btnNovoItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnNovoItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovoItem.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
+            this.btnNovoItem.ForeColor = System.Drawing.Color.White;
+            this.btnNovoItem.Image = ((System.Drawing.Image)(resources.GetObject("btnNovoItem.Image")));
+            this.btnNovoItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNovoItem.Location = new System.Drawing.Point(331, 18);
+            this.btnNovoItem.Name = "btnNovoItem";
+            this.btnNovoItem.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnNovoItem.Size = new System.Drawing.Size(43, 43);
+            this.btnNovoItem.TabIndex = 0;
+            this.btnNovoItem.TamanhoBorda = 0;
+            this.btnNovoItem.TamanhoRaio = 15;
+            this.btnNovoItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNovoItem.UseVisualStyleBackColor = false;
+            this.btnNovoItem.Click += new System.EventHandler(this.btnNovoItem_Click);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnMinimize.CorBotao = System.Drawing.Color.Transparent;
+            this.btnMinimize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
+            this.btnMinimize.Location = new System.Drawing.Point(1103, 17);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(40, 35);
+            this.btnMinimize.TabIndex = 14;
+            this.btnMinimize.TamanhoBorda = 0;
+            this.btnMinimize.TamanhoRaio = 17;
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // btnApagar
+            // 
+            this.btnApagar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnApagar.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnApagar.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnApagar.CorTextoBotao = System.Drawing.Color.White;
+            this.btnApagar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnApagar.FlatAppearance.BorderSize = 0;
+            this.btnApagar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApagar.ForeColor = System.Drawing.Color.White;
+            this.btnApagar.Image = ((System.Drawing.Image)(resources.GetObject("btnApagar.Image")));
+            this.btnApagar.Location = new System.Drawing.Point(380, 19);
+            this.btnApagar.Name = "btnApagar";
+            this.btnApagar.Size = new System.Drawing.Size(43, 43);
+            this.btnApagar.TabIndex = 12;
+            this.btnApagar.TamanhoBorda = 0;
+            this.btnApagar.TamanhoRaio = 15;
+            this.btnApagar.UseVisualStyleBackColor = false;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.panel2.Controls.Add(this.cbxQtdRegistros);
+            this.panel2.Controls.Add(this.lbRegistros);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 685);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1239, 44);
+            this.panel2.TabIndex = 160;
             // 
             // modernBox2
             // 
@@ -266,153 +415,6 @@
             this.modernBox2.ShadowSize = 8;
             this.modernBox2.Size = new System.Drawing.Size(1218, 382);
             this.modernBox2.TabIndex = 162;
-            // 
-            // dgvItens
-            // 
-            this.dgvItens.AllowUserToAddRows = false;
-            this.dgvItens.AllowUserToDeleteRows = false;
-            this.dgvItens.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvItens.BackgroundColor = System.Drawing.Color.White;
-            this.dgvItens.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvItens.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dgvItens.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvItens.ColumnHeadersHeight = 35;
-            this.dgvItens.ColumnHeadersVisible = false;
-            this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colFavorito,
-            this.colImagem,
-            this.colId,
-            this.colDescricao,
-            this.colCodigoBarras,
-            this.colQtd,
-            this.colCategoria,
-            this.colFabricante,
-            this.colFornecedor,
-            this.colProduto,
-            this.colAtivo});
-            this.dgvItens.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(218)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvItens.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvItens.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvItens.EnableHeadersVisualStyles = false;
-            this.dgvItens.GridColor = System.Drawing.Color.Silver;
-            this.dgvItens.Location = new System.Drawing.Point(13, 13);
-            this.dgvItens.MultiSelect = false;
-            this.dgvItens.Name = "dgvItens";
-            this.dgvItens.ReadOnly = true;
-            this.dgvItens.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvItens.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItens.Size = new System.Drawing.Size(1192, 356);
-            this.dgvItens.TabIndex = 10;
-            this.dgvItens.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItens_CellDoubleClick);
-            this.dgvItens.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItens_CellValueChanged);
-            // 
-            // colFavorito
-            // 
-            this.colFavorito.DataPropertyName = "Favorito";
-            this.colFavorito.FillWeight = 6.146037F;
-            this.colFavorito.HeaderText = "";
-            this.colFavorito.Name = "colFavorito";
-            this.colFavorito.ReadOnly = true;
-            // 
-            // colImagem
-            // 
-            this.colImagem.DataPropertyName = "FotoItem";
-            this.colImagem.FillWeight = 12.98365F;
-            this.colImagem.HeaderText = "Foto";
-            this.colImagem.Name = "colImagem";
-            this.colImagem.ReadOnly = true;
-            // 
-            // colId
-            // 
-            this.colId.DataPropertyName = "Id";
-            this.colId.FillWeight = 0.6504041F;
-            this.colId.HeaderText = "Id";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.Visible = false;
-            // 
-            // colDescricao
-            // 
-            this.colDescricao.DataPropertyName = "Descricao";
-            this.colDescricao.FillWeight = 35.69515F;
-            this.colDescricao.HeaderText = "Item";
-            this.colDescricao.Name = "colDescricao";
-            this.colDescricao.ReadOnly = true;
-            // 
-            // colCodigoBarras
-            // 
-            this.colCodigoBarras.DataPropertyName = "CodBarras";
-            this.colCodigoBarras.FillWeight = 35.01702F;
-            this.colCodigoBarras.HeaderText = "Código de Barras";
-            this.colCodigoBarras.Name = "colCodigoBarras";
-            this.colCodigoBarras.ReadOnly = true;
-            this.colCodigoBarras.Visible = false;
-            // 
-            // colQtd
-            // 
-            this.colQtd.DataPropertyName = "Quantidade";
-            this.colQtd.FillWeight = 10.428F;
-            this.colQtd.HeaderText = "Qtd";
-            this.colQtd.Name = "colQtd";
-            this.colQtd.ReadOnly = true;
-            // 
-            // colCategoria
-            // 
-            this.colCategoria.DataPropertyName = "DescricaoCategoria";
-            this.colCategoria.FillWeight = 16.20491F;
-            this.colCategoria.HeaderText = "Categoria";
-            this.colCategoria.Name = "colCategoria";
-            this.colCategoria.ReadOnly = true;
-            // 
-            // colFabricante
-            // 
-            this.colFabricante.DataPropertyName = "DescricaoFabricante";
-            this.colFabricante.FillWeight = 25.27785F;
-            this.colFabricante.HeaderText = "Marca";
-            this.colFabricante.Name = "colFabricante";
-            this.colFabricante.ReadOnly = true;
-            // 
-            // colFornecedor
-            // 
-            this.colFornecedor.DataPropertyName = "Fornecedor";
-            this.colFornecedor.FillWeight = 21.87452F;
-            this.colFornecedor.HeaderText = "Fornecedor";
-            this.colFornecedor.Name = "colFornecedor";
-            this.colFornecedor.ReadOnly = true;
-            // 
-            // colProduto
-            // 
-            this.colProduto.DataPropertyName = "ItemVenda";
-            this.colProduto.FillWeight = 21.22982F;
-            this.colProduto.HeaderText = "Produto";
-            this.colProduto.Name = "colProduto";
-            this.colProduto.ReadOnly = true;
-            // 
-            // colAtivo
-            // 
-            this.colAtivo.DataPropertyName = "Ativo";
-            this.colAtivo.FillWeight = 20.67864F;
-            this.colAtivo.HeaderText = "Ativo";
-            this.colAtivo.Name = "colAtivo";
-            this.colAtivo.ReadOnly = true;
             // 
             // modernBox1
             // 
@@ -659,154 +661,151 @@
             this.txtItem.TrailingIcon = null;
             this.txtItem.UseAccent = false;
             // 
-            // pn1
+            // colAtivo
             // 
-            this.pn1.BackColor = System.Drawing.Color.Transparent;
-            this.pn1.Color1 = System.Drawing.Color.Lime;
-            this.pn1.Color2 = System.Drawing.Color.Blue;
-            this.pn1.CornerRadius = 8;
-            this.pn1.GradientAngle = 280F;
-            this.pn1.Location = new System.Drawing.Point(4, 64);
-            this.pn1.Name = "pn1";
-            this.pn1.Size = new System.Drawing.Size(313, 30);
-            this.pn1.TabIndex = 127;
+            this.colAtivo.DataPropertyName = "Ativo";
+            this.colAtivo.FillWeight = 20.67864F;
+            this.colAtivo.HeaderText = "Ativo";
+            this.colAtivo.Name = "colAtivo";
+            this.colAtivo.ReadOnly = true;
             // 
-            // btnClose
+            // colProduto
             // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnClose.CorBotao = System.Drawing.Color.Transparent;
-            this.btnClose.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(1195, 17);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(36, 35);
-            this.btnClose.TabIndex = 16;
-            this.btnClose.TamanhoBorda = 0;
-            this.btnClose.TamanhoRaio = 17;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.colProduto.DataPropertyName = "ItemVenda";
+            this.colProduto.FillWeight = 21.22982F;
+            this.colProduto.HeaderText = "Produto";
+            this.colProduto.Name = "colProduto";
+            this.colProduto.ReadOnly = true;
             // 
-            // tbnSearch
+            // colFornecedor
             // 
-            this.tbnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.tbnSearch.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.tbnSearch.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.tbnSearch.CorTextoBotao = System.Drawing.Color.White;
-            this.tbnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tbnSearch.FlatAppearance.BorderSize = 0;
-            this.tbnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.tbnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tbnSearch.ForeColor = System.Drawing.Color.White;
-            this.tbnSearch.Image = ((System.Drawing.Image)(resources.GetObject("tbnSearch.Image")));
-            this.tbnSearch.Location = new System.Drawing.Point(429, 19);
-            this.tbnSearch.Name = "tbnSearch";
-            this.tbnSearch.Size = new System.Drawing.Size(43, 43);
-            this.tbnSearch.TabIndex = 13;
-            this.tbnSearch.TamanhoBorda = 0;
-            this.tbnSearch.TamanhoRaio = 15;
-            this.tbnSearch.UseVisualStyleBackColor = false;
-            this.tbnSearch.Click += new System.EventHandler(this.tbnSearch_Click);
+            this.colFornecedor.DataPropertyName = "Fornecedor";
+            this.colFornecedor.FillWeight = 21.87452F;
+            this.colFornecedor.HeaderText = "Fornecedor";
+            this.colFornecedor.Name = "colFornecedor";
+            this.colFornecedor.ReadOnly = true;
             // 
-            // btnMaximize
+            // colFabricante
             // 
-            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximize.BackColor = System.Drawing.Color.Transparent;
-            this.btnMaximize.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnMaximize.CorBotao = System.Drawing.Color.Transparent;
-            this.btnMaximize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMaximize.FlatAppearance.BorderSize = 0;
-            this.btnMaximize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMaximize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
-            this.btnMaximize.Location = new System.Drawing.Point(1149, 17);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(40, 35);
-            this.btnMaximize.TabIndex = 15;
-            this.btnMaximize.TamanhoBorda = 0;
-            this.btnMaximize.TamanhoRaio = 17;
-            this.btnMaximize.UseVisualStyleBackColor = false;
-            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
+            this.colFabricante.DataPropertyName = "DescricaoFabricante";
+            this.colFabricante.FillWeight = 25.27785F;
+            this.colFabricante.HeaderText = "Marca";
+            this.colFabricante.Name = "colFabricante";
+            this.colFabricante.ReadOnly = true;
             // 
-            // btnNovoItem
+            // colCategoria
             // 
-            this.btnNovoItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnNovoItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnNovoItem.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnNovoItem.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnNovoItem.CorTextoBotao = System.Drawing.Color.White;
-            this.btnNovoItem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNovoItem.FlatAppearance.BorderSize = 0;
-            this.btnNovoItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnNovoItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNovoItem.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.btnNovoItem.ForeColor = System.Drawing.Color.White;
-            this.btnNovoItem.Image = ((System.Drawing.Image)(resources.GetObject("btnNovoItem.Image")));
-            this.btnNovoItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNovoItem.Location = new System.Drawing.Point(331, 18);
-            this.btnNovoItem.Name = "btnNovoItem";
-            this.btnNovoItem.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnNovoItem.Size = new System.Drawing.Size(43, 43);
-            this.btnNovoItem.TabIndex = 0;
-            this.btnNovoItem.TamanhoBorda = 0;
-            this.btnNovoItem.TamanhoRaio = 15;
-            this.btnNovoItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovoItem.UseVisualStyleBackColor = false;
-            this.btnNovoItem.Click += new System.EventHandler(this.btnNovoItem_Click);
+            this.colCategoria.DataPropertyName = "DescricaoCategoria";
+            this.colCategoria.FillWeight = 16.20491F;
+            this.colCategoria.HeaderText = "Categoria";
+            this.colCategoria.Name = "colCategoria";
+            this.colCategoria.ReadOnly = true;
             // 
-            // btnMinimize
+            // colQtd
             // 
-            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnMinimize.CorBotao = System.Drawing.Color.Transparent;
-            this.btnMinimize.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMinimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(1103, 17);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(40, 35);
-            this.btnMinimize.TabIndex = 14;
-            this.btnMinimize.TamanhoBorda = 0;
-            this.btnMinimize.TamanhoRaio = 17;
-            this.btnMinimize.UseVisualStyleBackColor = false;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            this.colQtd.DataPropertyName = "Quantidade";
+            this.colQtd.FillWeight = 10.428F;
+            this.colQtd.HeaderText = "Qtd";
+            this.colQtd.Name = "colQtd";
+            this.colQtd.ReadOnly = true;
             // 
-            // btnApagar
+            // colCodigoBarras
             // 
-            this.btnApagar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnApagar.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnApagar.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnApagar.CorTextoBotao = System.Drawing.Color.White;
-            this.btnApagar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnApagar.FlatAppearance.BorderSize = 0;
-            this.btnApagar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApagar.ForeColor = System.Drawing.Color.White;
-            this.btnApagar.Image = ((System.Drawing.Image)(resources.GetObject("btnApagar.Image")));
-            this.btnApagar.Location = new System.Drawing.Point(380, 19);
-            this.btnApagar.Name = "btnApagar";
-            this.btnApagar.Size = new System.Drawing.Size(43, 43);
-            this.btnApagar.TabIndex = 12;
-            this.btnApagar.TamanhoBorda = 0;
-            this.btnApagar.TamanhoRaio = 15;
-            this.btnApagar.UseVisualStyleBackColor = false;
-            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
+            this.colCodigoBarras.DataPropertyName = "CodBarras";
+            this.colCodigoBarras.FillWeight = 35.01702F;
+            this.colCodigoBarras.HeaderText = "Código de Barras";
+            this.colCodigoBarras.Name = "colCodigoBarras";
+            this.colCodigoBarras.ReadOnly = true;
+            this.colCodigoBarras.Visible = false;
+            // 
+            // colDescricao
+            // 
+            this.colDescricao.DataPropertyName = "Descricao";
+            this.colDescricao.FillWeight = 35.69515F;
+            this.colDescricao.HeaderText = "Item";
+            this.colDescricao.Name = "colDescricao";
+            this.colDescricao.ReadOnly = true;
+            // 
+            // colId
+            // 
+            this.colId.DataPropertyName = "Id";
+            this.colId.FillWeight = 0.6504041F;
+            this.colId.HeaderText = "Id";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Visible = false;
+            // 
+            // colImagem
+            // 
+            this.colImagem.DataPropertyName = "FotoItem";
+            this.colImagem.FillWeight = 12.98365F;
+            this.colImagem.HeaderText = "Foto";
+            this.colImagem.Name = "colImagem";
+            this.colImagem.ReadOnly = true;
+            // 
+            // colFavorito
+            // 
+            this.colFavorito.DataPropertyName = "Favorito";
+            this.colFavorito.FillWeight = 6.146037F;
+            this.colFavorito.HeaderText = "";
+            this.colFavorito.Name = "colFavorito";
+            this.colFavorito.ReadOnly = true;
+            // 
+            // dgvItens
+            // 
+            this.dgvItens.AllowUserToAddRows = false;
+            this.dgvItens.AllowUserToDeleteRows = false;
+            this.dgvItens.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvItens.BackgroundColor = System.Drawing.Color.White;
+            this.dgvItens.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvItens.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvItens.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvItens.ColumnHeadersHeight = 35;
+            this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colFavorito,
+            this.colImagem,
+            this.colId,
+            this.colDescricao,
+            this.colCodigoBarras,
+            this.colQtd,
+            this.colCategoria,
+            this.colFabricante,
+            this.colFornecedor,
+            this.colProduto,
+            this.colAtivo});
+            this.dgvItens.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(218)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvItens.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvItens.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvItens.EnableHeadersVisualStyles = false;
+            this.dgvItens.GridColor = System.Drawing.Color.Silver;
+            this.dgvItens.Location = new System.Drawing.Point(13, 13);
+            this.dgvItens.MultiSelect = false;
+            this.dgvItens.Name = "dgvItens";
+            this.dgvItens.ReadOnly = true;
+            this.dgvItens.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvItens.RowHeadersVisible = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvItens.Size = new System.Drawing.Size(1192, 356);
+            this.dgvItens.TabIndex = 10;
+            this.dgvItens.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItens_CellDoubleClick);
+            this.dgvItens.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItens_CellValueChanged);
             // 
             // ItemEstoque
             // 
@@ -831,15 +830,15 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ItemEstoque_MouseDown);
             this.pnSuperior.ResumeLayout(false);
             this.pnSuperior.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.modernBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).EndInit();
             this.modernBox1.ResumeLayout(false);
             this.painelRadius3.ResumeLayout(false);
             this.painelRadius3.PerformLayout();
             this.flpMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -848,7 +847,6 @@
         private System.Windows.Forms.ComboBox cbxQtdRegistros;
         private System.Windows.Forms.Label lbRegistros;
         private Componentes.CustomButton btnApagar;
-        private System.Windows.Forms.DataGridView dgvItens;
         private MaterialSkin.Controls.MaterialComboBox cbFornecedor;
         private MaterialSkin.Controls.MaterialComboBox cbCategoria;
         private MaterialSkin.Controls.MaterialTextBox txtItem;
@@ -862,17 +860,6 @@
         private MaterialSkin.Controls.MaterialCheckbox materialCheckbox3;
         private MaterialSkin.Controls.MaterialCheckbox materialCheckbox4;
         private MaterialSkin.Controls.MaterialTextBox txtCodigoBarras;
-        private System.Windows.Forms.DataGridViewImageColumn colFavorito;
-        private System.Windows.Forms.DataGridViewImageColumn colImagem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDescricao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCodigoBarras;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colQtd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCategoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFabricante;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFornecedor;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colProduto;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colAtivo;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label1;
         private Componentes.CustomButton btnClose;
@@ -888,5 +875,17 @@
         private Componentes.RoundedPanel pn1;
         private Componentes.ModernBox modernBox2;
         private System.Windows.Forms.Label lblStatusLeitor;
+        private System.Windows.Forms.DataGridView dgvItens;
+        private System.Windows.Forms.DataGridViewImageColumn colFavorito;
+        private System.Windows.Forms.DataGridViewImageColumn colImagem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDescricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCodigoBarras;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colQtd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCategoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFabricante;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFornecedor;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colProduto;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colAtivo;
     }
 }
