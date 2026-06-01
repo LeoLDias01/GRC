@@ -567,6 +567,9 @@
     <None Include="Resources\logoDebito.png" />
     <None Include="Resources\logoDinheiro.png" />
     <None Include="Resources\logoPix.png" />
+    <None Include="Resources\Marca_Venda.png" />
+    <None Include="Resources\Marca_Ativo.png" />
+    <None Include="Resources\Marca_Inativo.png" />
     <Content Include="RF_Icone.ico" />
   </ItemGroup>
   <ItemGroup>
