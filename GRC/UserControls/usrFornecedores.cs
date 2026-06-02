@@ -20,9 +20,9 @@ namespace GRC.UserControls
 
         // Cores para o efeito de filtro ativo/inativo
         private readonly Color CorFiltroAtivo = Color.FromArgb(74, 101, 114);   // Azul bem claro esbranquiçado
-        private readonly Color CorFiltroInativo = Color.Transparent;             // Se funde totalmente com o fundo
+        private readonly Color CorFiltroInativo = Color.FromArgb(6, 31, 48);             // Se funde totalmente com o fundo
         private readonly Color CorTextoAtivo = Color.FromArgb(44, 62, 80);       // Seu azul escuro acinzentado
-        private readonly Color CorTextoInativo = Color.FromArgb(127, 140, 141);  // Cinza fosco para o que está desligado
+        private readonly Color CorTextoInativo = Color.White;  // Cinza fosco para o que está desligado
 
         // Estado do filtro atual: null = Todos, true = Ativos, false = Inativos
         private bool? _statusSelecionado = null;

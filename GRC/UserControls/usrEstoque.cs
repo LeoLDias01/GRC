@@ -50,6 +50,7 @@ namespace GRC.UserControls
             btnNovoItem.Click += btnNovoItem_Click;
             cbCategoria.DropDownClosed += cbCategoria_DropDownClosed;
             cbMarca.SelectedIndexChanged += cbMarca_DropDownClosed;
+            chkItemVenda.CheckedChanged += chkItemVenda_CheckedChanged;
 
             // Eventos de clique que mudam o estado do filtro
             btnFiltroTodos.Click += (s, e) => { _statusSelecionado = null; AtualizarVisualFiltros(); RealizaPesquisa(); };
@@ -72,10 +73,16 @@ namespace GRC.UserControls
         private void cbCategoria_DropDownClosed(object sender, EventArgs e)
         {
             chkItemVenda.Focus();
+            RealizaPesquisa();
         }
         private void cbMarca_DropDownClosed(object sender, EventArgs e)
         {
             cbCategoria.Focus();
+            RealizaPesquisa();
+        }
+        private void chkItemVenda_CheckedChanged(object sender, EventArgs e)
+        {
+            RealizaPesquisa();
         }
         private void AtualizarVisualFiltros()
         {

@@ -45,6 +45,7 @@
             this.cbMarca = new GRC.Componentes.RoundedComboBox();
             this.modernBox4 = new GRC.Componentes.ModernBox();
             this.cbCategoria = new GRC.Componentes.RoundedComboBox();
+            this.btnFiltroAtivos = new GRC.Componentes.CustomButton();
             this.btnFiltroTodos = new GRC.Componentes.CustomButton();
             this.btnFiltroInativos = new GRC.Componentes.CustomButton();
             this.modernBox3 = new GRC.Componentes.ModernBox();
@@ -64,7 +65,6 @@
             this.colQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAtivo = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnNovoItem = new GRC.Componentes.CustomButton();
-            this.btnFiltroAtivos = new GRC.Componentes.CustomButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.modernBox1.SuspendLayout();
@@ -105,18 +105,17 @@
             this.panel1.Controls.Add(this.btnFiltroAtivos);
             this.panel1.Controls.Add(this.btnFiltroTodos);
             this.panel1.Controls.Add(this.btnFiltroInativos);
-            this.panel1.Location = new System.Drawing.Point(735, 3);
+            this.panel1.Location = new System.Drawing.Point(889, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(262, 57);
             this.panel1.TabIndex = 179;
             // 
             // chkItemVenda
             // 
-            this.chkItemVenda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkItemVenda.AutoSize = true;
             this.chkItemVenda.BackColor = System.Drawing.Color.Transparent;
             this.chkItemVenda.Depth = 0;
-            this.chkItemVenda.Location = new System.Drawing.Point(853, 56);
+            this.chkItemVenda.Location = new System.Drawing.Point(1012, 106);
             this.chkItemVenda.Margin = new System.Windows.Forms.Padding(0);
             this.chkItemVenda.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkItemVenda.MouseState = MaterialSkin.MouseState.HOVER;
@@ -304,6 +303,29 @@
             this.cbCategoria.UnderlineSize = 2;
             this.cbCategoria.ValueMember = "";
             // 
+            // btnFiltroAtivos
+            // 
+            this.btnFiltroAtivos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.btnFiltroAtivos.CorBorda = System.Drawing.Color.White;
+            this.btnFiltroAtivos.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.btnFiltroAtivos.CorTextoBotao = System.Drawing.Color.White;
+            this.btnFiltroAtivos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFiltroAtivos.FlatAppearance.BorderSize = 0;
+            this.btnFiltroAtivos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnFiltroAtivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltroAtivos.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.btnFiltroAtivos.ForeColor = System.Drawing.Color.White;
+            this.btnFiltroAtivos.Location = new System.Drawing.Point(79, 7);
+            this.btnFiltroAtivos.Name = "btnFiltroAtivos";
+            this.btnFiltroAtivos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnFiltroAtivos.Size = new System.Drawing.Size(103, 43);
+            this.btnFiltroAtivos.TabIndex = 9;
+            this.btnFiltroAtivos.TamanhoBorda = 5;
+            this.btnFiltroAtivos.TamanhoRaio = 20;
+            this.btnFiltroAtivos.Text = "  Ativo";
+            this.btnFiltroAtivos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFiltroAtivos.UseVisualStyleBackColor = false;
+            // 
             // btnFiltroTodos
             // 
             this.btnFiltroTodos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
@@ -362,13 +384,13 @@
             this.modernBox3.Controls.Add(this.cbRegistros);
             this.modernBox3.Controls.Add(this.lbRegistros);
             this.modernBox3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.modernBox3.Location = new System.Drawing.Point(0, 607);
+            this.modernBox3.Location = new System.Drawing.Point(0, 615);
             this.modernBox3.Name = "modernBox3";
             this.modernBox3.Padding = new System.Windows.Forms.Padding(15);
             this.modernBox3.ShadowAngle = 135;
             this.modernBox3.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.modernBox3.ShadowSize = 8;
-            this.modernBox3.Size = new System.Drawing.Size(1000, 64);
+            this.modernBox3.Size = new System.Drawing.Size(1154, 64);
             this.modernBox3.TabIndex = 178;
             // 
             // cbRegistros
@@ -388,7 +410,7 @@
             "80",
             "90",
             "100"});
-            this.cbRegistros.Location = new System.Drawing.Point(902, 18);
+            this.cbRegistros.Location = new System.Drawing.Point(1056, 18);
             this.cbRegistros.Name = "cbRegistros";
             this.cbRegistros.Size = new System.Drawing.Size(76, 29);
             this.cbRegistros.TabIndex = 9;
@@ -425,7 +447,7 @@
             this.modernBox2.ShadowAngle = 135;
             this.modernBox2.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.modernBox2.ShadowSize = 8;
-            this.modernBox2.Size = new System.Drawing.Size(994, 452);
+            this.modernBox2.Size = new System.Drawing.Size(1148, 460);
             this.modernBox2.TabIndex = 177;
             // 
             // dgvItens
@@ -472,7 +494,7 @@
             this.dgvItens.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvItens.EnableHeadersVisualStyles = false;
             this.dgvItens.GridColor = System.Drawing.Color.Silver;
-            this.dgvItens.Location = new System.Drawing.Point(9, 16);
+            this.dgvItens.Location = new System.Drawing.Point(17, 16);
             this.dgvItens.MultiSelect = false;
             this.dgvItens.Name = "dgvItens";
             this.dgvItens.ReadOnly = true;
@@ -481,7 +503,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItens.Size = new System.Drawing.Size(977, 420);
+            this.dgvItens.Size = new System.Drawing.Size(1115, 428);
             this.dgvItens.TabIndex = 4;
             // 
             // colFavorito
@@ -602,33 +624,11 @@
             this.btnNovoItem.Text = "Novo Item";
             this.btnNovoItem.UseVisualStyleBackColor = false;
             // 
-            // btnFiltroAtivos
-            // 
-            this.btnFiltroAtivos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.btnFiltroAtivos.CorBorda = System.Drawing.Color.White;
-            this.btnFiltroAtivos.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.btnFiltroAtivos.CorTextoBotao = System.Drawing.Color.White;
-            this.btnFiltroAtivos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFiltroAtivos.FlatAppearance.BorderSize = 0;
-            this.btnFiltroAtivos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnFiltroAtivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltroAtivos.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.btnFiltroAtivos.ForeColor = System.Drawing.Color.White;
-            this.btnFiltroAtivos.Location = new System.Drawing.Point(79, 7);
-            this.btnFiltroAtivos.Name = "btnFiltroAtivos";
-            this.btnFiltroAtivos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnFiltroAtivos.Size = new System.Drawing.Size(103, 43);
-            this.btnFiltroAtivos.TabIndex = 9;
-            this.btnFiltroAtivos.TamanhoBorda = 5;
-            this.btnFiltroAtivos.TamanhoRaio = 20;
-            this.btnFiltroAtivos.Text = "  Todos";
-            this.btnFiltroAtivos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFiltroAtivos.UseVisualStyleBackColor = false;
-            // 
             // usrEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lbCódigoBarras);
             this.Controls.Add(this.modernBox5);
@@ -641,7 +641,7 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.lbTitulo);
             this.Name = "usrEstoque";
-            this.Size = new System.Drawing.Size(1000, 669);
+            this.Size = new System.Drawing.Size(1154, 677);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

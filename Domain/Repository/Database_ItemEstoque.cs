@@ -435,40 +435,38 @@ namespace Domain.Repository
                 try
                 {
                     var sql = new StringBuilder();
-                    sql.Append(@"SELECT 
-                                        ITM.IDGRC_ITEM_ESTOQUE AS Id,
-                                        ITM.DESCRICAO AS Descricao,
-                                        ITM.CODIGO_BARRAS AS CodigoBarras,
-                                        ITM.QUANTIDADE_MINIMA AS Minima,
-                                        ITM.QUANTIDADE AS Quantidade,
-                                        FCT.DESCRICAO AS Fabricante,
-                                        FORN.DESCRICAO AS Fornecedor,
-                                        CAT.DESCRICAO AS Categoria,
-                                        ITM.FAVORITO AS Favorito,
-                                        ITM.FOTO  AS Foto,
-                                        ITM.ITEM_VENDA AS ItemVenda,
-                                        ITM.ATIVO AS Ativo
-                                FROM GRC_ITEM_ESTOQUE ITM
-                                INNER JOIN GRC_TIPO FCT ON FCT.IDGRC_TIPO = ITM.IDGRC_FABRICANTE
-                                                          AND FCT.IDGRC_SUBTIPO = 4
-                                                          AND FCT.ATIVO = 1
-                                INNER JOIN GRC_TIPO CAT ON CAT.IDGRC_TIPO = ITM.IDGRC_CATEGORIA
-                                                          AND CAT.IDGRC_SUBTIPO = 1
-                                                          AND CAT.ATIVO = 1
-                                INNER JOIN GRC_FORNECEDOR FORN ON FORN.IDGRC_FORNECEDOR = ITM.IDGRC_FORNECEDOR
-                                                                    AND FORN.ATIVO = 1
-                                
-    
-                                WHERE 1 = 1 ");
+                    sql.Append(@"
+            SELECT 
+                ITM.IDGRC_ITEM_ESTOQUE AS Id,
+                ITM.DESCRICAO AS Descricao,
+                ITM.CODIGO_BARRAS AS CodigoBarras,
+                ITM.QUANTIDADE_MINIMA AS Minima,
+                ITM.QUANTIDADE AS Quantidade,
+                FCT.DESCRICAO AS Fabricante,
+                FORN.DESCRICAO AS Fornecedor,
+                CAT.DESCRICAO AS Categoria,
+                ITM.FAVORITO AS Favorito,
+                ITM.FOTO AS Foto,
+                ITM.ITEM_VENDA AS ItemVenda,
+                ITM.ATIVO AS Ativo
+            FROM GRC_ITEM_ESTOQUE ITM
+            INNER JOIN GRC_TIPO FCT ON FCT.IDGRC_TIPO = ITM.IDGRC_FABRICANTE 
+                                      AND FCT.IDGRC_SUBTIPO = 4 
+                                      AND FCT.ATIVO = 1
+            INNER JOIN GRC_TIPO CAT ON CAT.IDGRC_TIPO = ITM.IDGRC_CATEGORIA 
+                                      AND CAT.IDGRC_SUBTIPO = 1 
+                                      AND CAT.ATIVO = 1
+            INNER JOIN GRC_FORNECEDOR FORN ON FORN.IDGRC_FORNECEDOR = ITM.IDGRC_FORNECEDOR 
+                                              AND FORN.ATIVO = 1
+            WHERE 1 = 1 ");
 
-                    // Filtros dinâmicos
+                    // 1. Filtro de Status (Ativo/Inativo) - Se for nulo, traz todos
+                    if (item.Ativo.HasValue)
+                    {
+                        sql.Append(" AND ITM.ATIVO = @Ativo ");
+                    }
 
-                    if (!string.IsNullOrWhiteSpace(item.CodBarras))
-                        sql.Append(" AND ITM.CODIGO_BARRAS LIKE @CodBarras ");
-
-                    if (!string.IsNullOrWhiteSpace(item.Descricao))
-                        sql.Append(" AND ITM.DESCRICAO LIKE @Descricao ");
-
+                    // 2. Filtros Combo Estruturais (Se selecionados, filtram especificamente)
                     if (item.Categoria > 0)
                         sql.Append(" AND ITM.IDGRC_CATEGORIA = @Categoria ");
 
@@ -478,22 +476,26 @@ namespace Domain.Repository
                     if (item.ItemVenda)
                         sql.Append(" AND ITM.ITEM_VENDA = @ItemVenda ");
 
-                    if (item.Ativo != null)
-                    sql.Append(" AND ITM.ATIVO = @Ativo "); 
+                    // 3. Filtro Unificado (Valida o termo em qualquer uma das colunas textuais importantes)
+                    // Usamos o campo 'Descricao' do objeto para carregar o termo que veio do txtPesquisa
+                    if (!string.IsNullOrWhiteSpace(item.Descricao))
+                    {
+                        sql.Append(@" AND (
+                ITM.DESCRICAO LIKE @Termo) ");
+                    }
 
-                    sql.Append(" ORDER BY ITM.FAVORITO, ITM.DESCRICAO ASC LIMIT @Registros; ");
+                    sql.Append(" ORDER BY ITM.FAVORITO DESC, ITM.DESCRICAO ASC LIMIT @Registros; ");
+
+                    // Formata o termo colocando as porcentagens para o LIKE do SQLite
+                    string termoFormatado = $"%{item.Descricao?.Trim()}%";
 
                     var lista = conn.Query(sql.ToString(), new
                     {
-                        Id = (int)item.Id,
-                        CodBarras = $"%{item.CodBarras.ToString()}%",
-                        Descricao = $"%{item.Descricao.ToString()}%",
+                        Ativo = item.Ativo,
                         Categoria = item.Categoria > 0 ? item.Categoria : 0,
                         Fabricante = item.Fabricante > 0 ? item.Fabricante : 0,
-                        Fornecedor = item.Fornecedor > 0 ? item.Fornecedor : 0,
-                        Favorito = item.Favorito == true ? 1 : 0,
-                        ItemVenda = item.ItemVenda == true ? 1 : 0,
-                        Ativo = item.Ativo == true ? 1 : 0,
+                        ItemVenda = item.ItemVenda ? 1 : 0,
+                        Termo = termoFormatado,
                         Registros = registros
                     })
                     .Select(x => new Item
