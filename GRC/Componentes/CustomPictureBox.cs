@@ -15,13 +15,37 @@ namespace GRC.Componentes
     {
         #region ..:: Variáveis ::..
 
-
         private int _tamanhoBorda = 0;
         private int _tamanhoRadius = 0;
         private Color _corBorda = Color.MediumSlateBlue;
+
         #endregion ..:: Variáveis ::..
 
+        #region ..:: Eventos ::..
+
+        [Category("Custom Properties")]
+        [Description("Disparado quando a propriedade Image do controle é alterada.")]
+        public event EventHandler ImageChanged;
+
+        #endregion ..:: Eventos ::..
+
         #region ..:: Propriedades ::..
+
+        // Sobrescreve a propriedade Image original para capturar a mudança
+        [Category("Custom Properties")]
+        public new Image Image
+        {
+            get { return base.Image; }
+            set
+            {
+                // Verifica se a imagem realmente mudou para evitar disparos duplicados
+                if (base.Image != value)
+                {
+                    base.Image = value;
+                    OnImageChanged(EventArgs.Empty);
+                }
+            }
+        }
 
         [Category("Custom Properties")]
         public int TamanhoBorda
@@ -81,6 +105,12 @@ namespace GRC.Componentes
         #endregion
 
         #region ..:: Métodos ::..
+
+        // Método seguro que dispara o evento
+        protected virtual void OnImageChanged(EventArgs e)
+        {
+            ImageChanged?.Invoke(this, e);
+        }
 
         private void Button_Resize(object sender, EventArgs e)
         {

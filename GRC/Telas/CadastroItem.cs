@@ -32,78 +32,42 @@ namespace GRC.Telas
         private string _projecaoVenda;
         private ServiceItemEstoque _service = new ServiceItemEstoque();
 
-        // Importar as DLLs do Windows para mover o formulário
+
+        #region ..:: Importação de APIs do Windows (Estética e Movimentação) ::..
+
+        // Importa a função nativa do Windows responsável por criar regiões arredondadas no formulário
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coord do canto superior esquerdo
+            int nTopRect,      // y-coord do canto superior esquerdo
+            int nRightRect,    // x-coord do canto inferior direito
+            int nBottomRect,   // y-coord do canto inferior direito
+            int nWidthEllipse, // largura da elipse (quanto maior, mais arredondado)
+            int nHeightEllipse // altura da elipse (quanto maior, mais arredondado)
+        );
+
+        // Importa as funções nativas para permitir o arrasto da tela sem usar a barra de título padrão
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
+
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
 
-        // Constantes para a mensagem de movimento
+        // Constantes numéricas exigidas pela API do Windows para capturar o movimento do mouse
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HT_CAPTION = 0x2;
+
+        #endregion
 
         public CadastroItem(long id = 0)
         {
             InitializeComponent();
             _idItem = id;
-
-            // this.FormBorderStyle = FormBorderStyle.None; // Garante que está sem borda
-            //this.DoubleBuffered = true; // Melhora a performance visual ao redimensionar
-            //this.SetStyle(ControlStyles.ResizeRedraw, true);
+            // Aplica os cantos arredondados na janela do formulário (raio de 30px)
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
 
         }
-        /*
-         * 
-         * 
-         * // Constantes do Windows API
-        private const int WM_NCHITTEST = 0x84;
-        private const int HTCLIENT = 1;
-        private const int HTCAPTION = 2;
-        private const int HTLEFT = 10;
-        private const int HTRIGHT = 11;
-        private const int HTTOP = 12;
-        private const int HTTOPLEFT = 13;
-        private const int HTTOPRIGHT = 14;
-        private const int HTBOTTOM = 15;
-        private const int HTBOTTOMLEFT = 16;
-        private const int HTBOTTOMRIGHT = 17;
-
-        private const int borderSize = 5;
-        
-        
-        protected override void WndProc(ref Message m)
-        {
-            base.WndProc(ref m);
-
-            if (m.Msg == WM_NCHITTEST)
-            {
-                // Obtém a posição do mouse em coordenadas de tela
-                Point pos = new Point(m.LParam.ToInt32());
-                pos = this.PointToClient(pos);
-
-                // Verifica se o mouse está nas extremidades para redimensionar
-                if (pos.X <= borderSize)
-                {
-                    if (pos.Y <= borderSize) m.Result = (IntPtr)HTTOPLEFT;
-                    else if (pos.Y >= this.ClientSize.Height - borderSize) m.Result = (IntPtr)HTBOTTOMLEFT;
-                    else m.Result = (IntPtr)HTLEFT;
-                }
-                else if (pos.X >= this.ClientSize.Width - borderSize)
-                {
-                    if (pos.Y <= borderSize) m.Result = (IntPtr)HTTOPRIGHT;
-                    else if (pos.Y >= this.ClientSize.Height - borderSize) m.Result = (IntPtr)HTBOTTOMRIGHT;
-                    else m.Result = (IntPtr)HTRIGHT;
-                }
-                else if (pos.Y <= borderSize) m.Result = (IntPtr)HTTOP;
-                else if (pos.Y >= this.ClientSize.Height - borderSize) m.Result = (IntPtr)HTBOTTOM;
-                else
-                {
-                    // Se não estiver nas bordas, permite arrastar o form clicando em qualquer lugar "vazio"
-                    if (m.Result == (IntPtr)HTCLIENT)
-                        m.Result = (IntPtr)HTCAPTION;
-                }
-            }
-        }*/
         private void swItemVenda_CheckedChanged(object sender, EventArgs e)
         {
             if (swItemVenda.Checked)
@@ -117,11 +81,7 @@ namespace GRC.Telas
             }
         }
 
-        private void pcbFavorito_Click(object sender, EventArgs e)
-        {
-            Favorito();
-        }
-
+ 
         private void CadastroItem_Load(object sender, EventArgs e)
         {
             _favorito = false;
@@ -195,12 +155,12 @@ namespace GRC.Telas
         {
             if (_favorito == true)
             {
-                pcbFavorito.Image = Resources.star;
+                pcFavorito.Image = Resources.star;
                 _favorito = false;
             }
             else
             {
-                pcbFavorito.Image = Resources.starOff;
+                pcFavorito.Image = Resources.starOff;
                 _favorito = true;
             }
         }
@@ -493,30 +453,13 @@ namespace GRC.Telas
 
         private void btnBuscaImagem_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog ofd = new OpenFileDialog())
-            {
-                ofd.Filter = "Imagens|*.jpg;*.jpeg;*.png;";
-                if (ofd.ShowDialog() == DialogResult.OK)
-                {
-                    try
-                    {
-                        _base64Imagem = CriptoImagem.ImagemParaBase64(ofd.FileName).ToString();
-                        pcbImagemItem.Image = CriptoImagem.Base64ToImage(_base64Imagem);
-                    }
-                    catch (Exception ex)
-                    {
-                        EmailError.EnviarEmailErro(ex.ToString());
-                        new AlertBox(Color.FromArgb(64, 0, 0), Color.Red, Color.Crimson, Resources.Error, "Um erro ocorreu:", "Entidade: Item de Estoque", "Erro ao subir imagem!", false).ShowDialog();
-                    }
-                }
-                else
-                    pcbImagemItem.Image = null;
-            }
+           
         }
 
         private void btnExcluiImagem_Click(object sender, EventArgs e)
         {
-            pcbImagemItem.Image = null;
+            pcbImagemItem.Image = Resources.no_image;
+            btnExcluiImagem.Visible = false;
         }
 
         private void Salvar()
@@ -544,7 +487,7 @@ namespace GRC.Telas
                     Fornecedor = Convert.ToInt32(cbFornecedor.SelectedValue),
                     Observacoes = txtObservacoes.Text,
                     ItemVenda = swItemVenda.Checked == true ? true : false,
-                    DescricaoVenda = txtDescricaoItemVenda.Text,
+                   //escricaoVenda = txtDescricaoItemVenda.Text,
                     VendaUnitario = _itemVenda == true && !string.IsNullOrWhiteSpace(txtValorVenda.Text) ? txtValorVenda.Text : string.Empty,
                     FotoItem = string.IsNullOrEmpty(_base64Imagem) ? string.Empty : _base64Imagem,
                     Favorito = _favorito == true ? false : true,
@@ -641,12 +584,7 @@ namespace GRC.Telas
                     txtValorVenda.Focus();
                     return false;
                 }
-                else if (string.IsNullOrWhiteSpace(txtDescricaoItemVenda.Text))
-                {
-                    new AlertBox(Color.Goldenrod, Color.Lime, Color.Yellow, Resources.Warning, "Item de Estoque", "Nome do produto inválido", "Campo é obrigatório", false).ShowDialog();
-                    txtDescricaoItemVenda.Focus();
-                    return false;
-                }
+
                 else return true;
             }
             else return true;
@@ -682,7 +620,7 @@ namespace GRC.Telas
             txtGarantia.Clear();
             txtValidade.Clear();
             txtObservacoes.Clear();
-            txtDescricaoItemVenda.Clear();
+           //xtDescricaoItemVenda.Clear();
             dgvItemComposicao.DataSource = null;
         }
 
@@ -694,8 +632,7 @@ namespace GRC.Telas
 
         private void txtDescricao_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtDescricaoItemVenda.Text) && !string.IsNullOrWhiteSpace(txtDescricao.Text))
-                txtDescricaoItemVenda.Text = txtDescricao.Text;
+            
         }
 
         public List<Composicao> ItensSelecionados { get; private set; } = new List<Composicao>();
@@ -786,7 +723,7 @@ namespace GRC.Telas
                 if (dadosItem.ItemVenda == true)
                 {
                     swItemVenda.Checked = dadosItem.ItemVenda;
-                    txtDescricaoItemVenda.Text = dadosItem.DescricaoVenda.ToString();
+                   
                     txtValorVenda.Text = dadosItem.VendaUnitario.ToString();
                     CalculaVendaTotal();
                     CalculaLucroPorItem();
@@ -822,7 +759,7 @@ namespace GRC.Telas
                 pnStatus.Color1 = Color.Ivory;
                 pnStatus.Color2 = Color.Lime;
                 if (_idItem > 0)
-                    MudaCorPainel(Color.LimeGreen, Color.Yellow);
+                    MudaCorPainel(Color.LimeGreen, Color.Goldenrod);
                 else
                     MudaCorPainel(Color.SpringGreen, Color.Blue);
 
@@ -877,20 +814,7 @@ namespace GRC.Telas
             AddComposicao();
         }
 
-        private void btnMaximize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-        }
 
-        private void btnMinimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void CadastroItem_MouseDown(object sender, MouseEventArgs e)
         {
@@ -901,14 +825,7 @@ namespace GRC.Telas
             }
         }
 
-        private void pnSuperior_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture(); // Libera o mouse para a operação
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
-            }
-        }
+
         private SerialPort _serialPort; // Objeto instanciado via código
 
         protected override void OnLoad(EventArgs e)
@@ -1020,6 +937,43 @@ namespace GRC.Telas
                 _serialPort = null;
             }
             base.OnFormClosing(e);
+        }
+
+        private void pcbImagemItem_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "Imagens|*.jpg;*.jpeg;*.png;";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        _base64Imagem = CriptoImagem.ImagemParaBase64(ofd.FileName).ToString();
+                        pcbImagemItem.Image = CriptoImagem.Base64ToImage(_base64Imagem);
+                        btnExcluiImagem.Visible = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        EmailError.EnviarEmailErro(ex.ToString());
+                        new AlertBox(Color.FromArgb(64, 0, 0), Color.Red, Color.Crimson, Resources.Error, "Um erro ocorreu:", "Entidade: Item de Estoque", "Erro ao subir imagem!", false).ShowDialog();
+                    }
+                }
+                else
+                {
+                    pcbImagemItem.Image = Resources.no_image;
+                    btnExcluiImagem.Visible = false;
+                }
+            }
+        }
+
+        private void btnEncerrarJanelas_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pcFavorito_Click(object sender, EventArgs e)
+        {
+            Favorito();
         }
     }
 }

@@ -570,6 +570,7 @@
     <None Include="Resources\Marca_Venda.png" />
     <None Include="Resources\Marca_Ativo.png" />
     <None Include="Resources\Marca_Inativo.png" />
+    <None Include="Resources\no_image.png" />
     <Content Include="RF_Icone.ico" />
   </ItemGroup>
   <ItemGroup>
