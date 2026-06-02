@@ -322,7 +322,7 @@
             this.btnFiltroAtivos.TabIndex = 9;
             this.btnFiltroAtivos.TamanhoBorda = 5;
             this.btnFiltroAtivos.TamanhoRaio = 20;
-            this.btnFiltroAtivos.Text = "  Ativo";
+            this.btnFiltroAtivos.Text = "   Ativo";
             this.btnFiltroAtivos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFiltroAtivos.UseVisualStyleBackColor = false;
             // 
@@ -436,11 +436,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.modernBox2.BackColor = System.Drawing.Color.Transparent;
-            this.modernBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.modernBox2.BorderColor = System.Drawing.Color.White;
             this.modernBox2.BorderRadius = 12;
             this.modernBox2.BorderSize = 1;
             this.modernBox2.Controls.Add(this.dgvItens);
-            this.modernBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.modernBox2.FillColor = System.Drawing.Color.White;
             this.modernBox2.Location = new System.Drawing.Point(3, 149);
             this.modernBox2.Name = "modernBox2";
             this.modernBox2.Padding = new System.Windows.Forms.Padding(13);

@@ -101,9 +101,9 @@
             this.tlpMenuRedux.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tlpMenuRedux.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tlpMenuRedux.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlpMenuRedux.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 179F));
+            this.tlpMenuRedux.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 166F));
             this.tlpMenuRedux.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMenuRedux.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpMenuRedux.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
             this.tlpMenuRedux.Size = new System.Drawing.Size(70, 734);
             this.tlpMenuRedux.TabIndex = 26;
             // 
@@ -195,9 +195,9 @@
             this.panel2.Controls.Add(this.btnMais);
             this.panel2.Controls.Add(this.btnUser);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 687);
+            this.panel2.Location = new System.Drawing.Point(3, 674);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(64, 44);
+            this.panel2.Size = new System.Drawing.Size(64, 57);
             this.panel2.TabIndex = 16;
             // 
             // btnMais
@@ -214,7 +214,7 @@
             this.btnMais.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMais.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.btnMais.Image = ((System.Drawing.Image)(resources.GetObject("btnMais.Image")));
-            this.btnMais.Location = new System.Drawing.Point(46, 12);
+            this.btnMais.Location = new System.Drawing.Point(46, 17);
             this.btnMais.Name = "btnMais";
             this.btnMais.Size = new System.Drawing.Size(18, 21);
             this.btnMais.TabIndex = 41;
@@ -240,10 +240,10 @@
             this.btnUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.btnUser.Location = new System.Drawing.Point(10, 7);
             this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(30, 30);
+            this.btnUser.Size = new System.Drawing.Size(30, 40);
             this.btnUser.TabIndex = 9;
             this.btnUser.TamanhoBorda = 0;
-            this.btnUser.TamanhoRaio = 2;
+            this.btnUser.TamanhoRaio = 15;
             this.btnUser.UseVisualStyleBackColor = false;
             this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
             // 
@@ -423,9 +423,9 @@
             this.customPictureBox2.CorTextoBotao = System.Drawing.SystemColors.ControlText;
             this.customPictureBox2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.customPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("customPictureBox2.Image")));
-            this.customPictureBox2.Location = new System.Drawing.Point(93, 12);
+            this.customPictureBox2.Location = new System.Drawing.Point(99, 12);
             this.customPictureBox2.Name = "customPictureBox2";
-            this.customPictureBox2.Size = new System.Drawing.Size(99, 71);
+            this.customPictureBox2.Size = new System.Drawing.Size(74, 66);
             this.customPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.customPictureBox2.TabIndex = 28;
             this.customPictureBox2.TabStop = false;
@@ -438,9 +438,9 @@
             this.panel1.Controls.Add(this.btnUserEx);
             this.panel1.Controls.Add(this.btnMenos);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 687);
+            this.panel1.Location = new System.Drawing.Point(3, 674);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(279, 44);
+            this.panel1.Size = new System.Drawing.Size(279, 57);
             this.panel1.TabIndex = 16;
             // 
             // lbNomeUser
@@ -449,21 +449,20 @@
             this.lbNomeUser.BackColor = System.Drawing.Color.Transparent;
             this.lbNomeUser.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.lbNomeUser.ForeColor = System.Drawing.Color.White;
-            this.lbNomeUser.Location = new System.Drawing.Point(48, 7);
+            this.lbNomeUser.Location = new System.Drawing.Point(67, 12);
             this.lbNomeUser.Name = "lbNomeUser";
             this.lbNomeUser.Padding = new System.Windows.Forms.Padding(5);
-            this.lbNomeUser.Size = new System.Drawing.Size(207, 30);
+            this.lbNomeUser.Size = new System.Drawing.Size(188, 30);
             this.lbNomeUser.TabIndex = 29;
             this.lbNomeUser.Text = "Teste";
             // 
             // btnUserEx
             // 
             this.btnUserEx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUserEx.BackColor = System.Drawing.Color.Transparent;
-            this.btnUserEx.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUserEx.BackgroundImage")));
+            this.btnUserEx.BackColor = System.Drawing.Color.DimGray;
             this.btnUserEx.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnUserEx.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnUserEx.CorBotao = System.Drawing.Color.Transparent;
+            this.btnUserEx.CorBotao = System.Drawing.Color.DimGray;
             this.btnUserEx.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.btnUserEx.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUserEx.FlatAppearance.BorderSize = 0;
@@ -471,12 +470,12 @@
             this.btnUserEx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserEx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUserEx.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnUserEx.Location = new System.Drawing.Point(12, 7);
+            this.btnUserEx.Location = new System.Drawing.Point(12, 10);
             this.btnUserEx.Name = "btnUserEx";
-            this.btnUserEx.Size = new System.Drawing.Size(30, 30);
+            this.btnUserEx.Size = new System.Drawing.Size(35, 35);
             this.btnUserEx.TabIndex = 42;
             this.btnUserEx.TamanhoBorda = 0;
-            this.btnUserEx.TamanhoRaio = 2;
+            this.btnUserEx.TamanhoRaio = 15;
             this.btnUserEx.UseVisualStyleBackColor = false;
             this.btnUserEx.Click += new System.EventHandler(this.btnUser_Click);
             // 
@@ -494,7 +493,7 @@
             this.btnMenos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.btnMenos.Image = ((System.Drawing.Image)(resources.GetObject("btnMenos.Image")));
-            this.btnMenos.Location = new System.Drawing.Point(261, 12);
+            this.btnMenos.Location = new System.Drawing.Point(261, 17);
             this.btnMenos.Name = "btnMenos";
             this.btnMenos.Size = new System.Drawing.Size(18, 21);
             this.btnMenos.TabIndex = 41;
@@ -534,9 +533,9 @@
             this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 179F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 166F));
             this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
             this.tlpMenu.Size = new System.Drawing.Size(285, 734);
             this.tlpMenu.TabIndex = 28;
             this.tlpMenu.Visible = false;
@@ -761,7 +760,7 @@
             this.Controls.Add(this.tlpMenu);
             this.Controls.Add(this.tlpMenuRedux);
             this.Name = "Sidebar";
-            this.Size = new System.Drawing.Size(639, 734);
+            this.Size = new System.Drawing.Size(457, 734);
             this.Load += new System.EventHandler(this.Sidebar_Load);
             this.tlpMenuRedux.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

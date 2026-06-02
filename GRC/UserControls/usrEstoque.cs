@@ -32,7 +32,7 @@ namespace GRC.UserControls
 
 
         // Cores para o efeito de filtro ativo/inativo
-        private readonly Color CorFiltroAtivo = Color.DarkGray;   // Azul bem claro esbranquiçado
+        private readonly Color CorFiltroAtivo = Color.DarkSlateBlue;   // Azul bem claro esbranquiçado
         private readonly Color CorFiltroInativo = Color.FromArgb(6, 31, 48);             // Se funde totalmente com o fundo
         private readonly Color CorTextoAtivo = Color.FromArgb(44, 62, 80);       // Seu azul escuro acinzentado
         private readonly Color CorTextoInativo = Color.FromArgb(127, 140, 141);  // Cinza fosco para o que está desligado
@@ -56,8 +56,21 @@ namespace GRC.UserControls
             btnFiltroTodos.Click += (s, e) => { _statusSelecionado = null; AtualizarVisualFiltros(); RealizaPesquisa(); };
             btnFiltroAtivos.Click += (s, e) => { _statusSelecionado = true; AtualizarVisualFiltros(); RealizaPesquisa(); };
             btnFiltroInativos.Click += (s, e) => { _statusSelecionado = false; AtualizarVisualFiltros(); RealizaPesquisa(); };
-
+            dgvItens.Paint += dgvItens_Paint;
             dgvItens.CellFormatting += dgvItens_CellFormatting;
+        }
+        private void dgvItens_Paint(object sender, PaintEventArgs e)
+        {
+            int alturaFaixa = 1;
+
+            Rectangle headerRect = dgvItens.DisplayRectangle;
+            headerRect.Y = dgvItens.ColumnHeadersHeight - alturaFaixa;
+            headerRect.Height = alturaFaixa;
+
+            using (Brush brush = new SolidBrush(Color.DarkGray))
+            {
+                e.Graphics.FillRectangle(brush, headerRect);
+            }
         }
         private void usrEstoque_Load(object sender, EventArgs e)
         {
@@ -456,11 +469,17 @@ namespace GRC.UserControls
 
             DataGridViewCellStyle estiloHeader = new DataGridViewCellStyle
             {
-                BackColor = Color.FromArgb(44, 62, 80),
-                ForeColor = Color.White,
+                //BackColor = Color.FromArgb(44, 62, 80),
+                // ForeColor = Color.White,
+
+                BackColor = Color.White,
+                ForeColor = Color.FromArgb(44, 62, 80),
                 Font = new Font("Segoe UI Semibold", 10.5f),
-                SelectionBackColor = Color.FromArgb(44, 62, 80),
-                SelectionForeColor = Color.White
+                // SelectionBackColor = Color.FromArgb(44, 62, 80),
+                // SelectionForeColor = Color.White
+
+                 SelectionBackColor = Color.White,
+                 SelectionForeColor = Color.FromArgb(44, 62, 80)
             };
             dgvItens.ColumnHeadersDefaultCellStyle = estiloHeader;
 

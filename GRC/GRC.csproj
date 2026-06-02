@@ -207,6 +207,12 @@
     <Compile Include="Componentes\ModernBox.Designer.cs">
       <DependentUpon>ModernBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Componentes\ModernComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Componentes\ModernComboBox.Designer.cs">
+      <DependentUpon>ModernComboBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Componentes\PainelRadius.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -425,6 +431,9 @@
     <Compile Include="UserControls\usrFornecedores.Designer.cs">
       <DependentUpon>usrFornecedores.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Componentes\ModernComboBox.resx">
+      <DependentUpon>ModernComboBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Componentes\RoundedComboBox.resx">
       <DependentUpon>RoundedComboBox.cs</DependentUpon>
     </EmbeddedResource>
