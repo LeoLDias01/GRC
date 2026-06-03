@@ -566,7 +566,7 @@
             // 
             this.modernBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.modernBox1.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox1.BackColor = System.Drawing.Color.Gray;
             this.modernBox1.BorderColor = System.Drawing.Color.Transparent;
             this.modernBox1.BorderRadius = 20;
             this.modernBox1.BorderSize = 1;

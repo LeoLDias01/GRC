@@ -42,7 +42,6 @@
             this.modernBox1 = new GRC.Componentes.ModernBox();
             this.txtPesquisa = new GRC.Componentes.RoundedTextBox();
             this.modernBox5 = new GRC.Componentes.ModernBox();
-            this.cbMarca = new GRC.Componentes.RoundedComboBox();
             this.modernBox4 = new GRC.Componentes.ModernBox();
             this.cbCategoria = new GRC.Componentes.RoundedComboBox();
             this.btnFiltroAtivos = new GRC.Componentes.CustomButton();
@@ -65,10 +64,10 @@
             this.colQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAtivo = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnNovoItem = new GRC.Componentes.CustomButton();
+            this.cbMarca = new GRC.Componentes.ModernComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.modernBox1.SuspendLayout();
-            this.modernBox5.SuspendLayout();
             this.modernBox4.SuspendLayout();
             this.modernBox3.SuspendLayout();
             this.modernBox2.SuspendLayout();
@@ -205,7 +204,6 @@
             this.modernBox5.BorderColor = System.Drawing.Color.Transparent;
             this.modernBox5.BorderRadius = 20;
             this.modernBox5.BorderSize = 1;
-            this.modernBox5.Controls.Add(this.cbMarca);
             this.modernBox5.FillColor = System.Drawing.Color.White;
             this.modernBox5.Location = new System.Drawing.Point(488, 93);
             this.modernBox5.Name = "modernBox5";
@@ -215,41 +213,6 @@
             this.modernBox5.ShadowSize = 3;
             this.modernBox5.Size = new System.Drawing.Size(257, 50);
             this.modernBox5.TabIndex = 182;
-            // 
-            // cbMarca
-            // 
-            this.cbMarca.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.cbMarca.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.cbMarca.BackColor = System.Drawing.Color.Transparent;
-            this.cbMarca.BorderColor = System.Drawing.Color.White;
-            this.cbMarca.BorderRadius = 12;
-            this.cbMarca.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbMarca.DataSource = null;
-            this.cbMarca.DisplayMember = "";
-            this.cbMarca.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbMarca.DrawMode = System.Windows.Forms.DrawMode.Normal;
-            this.cbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMarca.DropDownWidth = 146;
-            this.cbMarca.DroppedDown = false;
-            this.cbMarca.FillColor = System.Drawing.Color.White;
-            this.cbMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbMarca.Icon = null;
-            this.cbMarca.IconPosition = GRC.Componentes.RoundedComboBox.IconPositionEnum.Right;
-            this.cbMarca.ItemHeight = 17;
-            this.cbMarca.Location = new System.Drawing.Point(8, 8);
-            this.cbMarca.MaxDropDownItems = 10;
-            this.cbMarca.Name = "cbMarca";
-            this.cbMarca.Padding = new System.Windows.Forms.Padding(10);
-            this.cbMarca.SelectedIndex = -1;
-            this.cbMarca.SelectedItem = null;
-            this.cbMarca.SelectedValue = null;
-            this.cbMarca.Size = new System.Drawing.Size(241, 34);
-            this.cbMarca.TabIndex = 3;
-            this.cbMarca.TextColor = System.Drawing.Color.Black;
-            this.cbMarca.TextStyle = System.Drawing.FontStyle.Regular;
-            this.cbMarca.UnderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            this.cbMarca.UnderlineSize = 2;
-            this.cbMarca.ValueMember = "";
             // 
             // modernBox4
             // 
@@ -624,11 +587,33 @@
             this.btnNovoItem.Text = "Novo Item";
             this.btnNovoItem.UseVisualStyleBackColor = false;
             // 
+            // cbMarca
+            // 
+            this.cbMarca.ArrowImage = null;
+            this.cbMarca.ArrowSide = GRC.Componentes.ArrowPosition.Right;
+            this.cbMarca.BackColor = System.Drawing.Color.White;
+            this.cbMarca.BorderColor = System.Drawing.Color.Silver;
+            this.cbMarca.BorderRadius = 12;
+            this.cbMarca.BorderSize = 1;
+            this.cbMarca.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbMarca.DataSource = null;
+            this.cbMarca.DisplayMember = "";
+            this.cbMarca.Location = new System.Drawing.Point(496, 40);
+            this.cbMarca.Name = "cbMarca";
+            this.cbMarca.PlaceholderColor = System.Drawing.Color.Silver;
+            this.cbMarca.PlaceholderText = "Teste";
+            this.cbMarca.SelectedIndex = -1;
+            this.cbMarca.SelectedItem = null;
+            this.cbMarca.Size = new System.Drawing.Size(378, 40);
+            this.cbMarca.TabIndex = 0;
+            this.cbMarca.ValueMember = "";
+            // 
             // usrEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.Controls.Add(this.cbMarca);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lbCódigoBarras);
             this.Controls.Add(this.modernBox5);
@@ -646,7 +631,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.modernBox1.ResumeLayout(false);
-            this.modernBox5.ResumeLayout(false);
             this.modernBox4.ResumeLayout(false);
             this.modernBox3.ResumeLayout(false);
             this.modernBox3.PerformLayout();
@@ -674,7 +658,6 @@
         private MaterialSkin.Controls.MaterialCheckbox chkItemVenda;
         private System.Windows.Forms.Label lblStatusLeitor;
         private Componentes.ModernBox modernBox5;
-        private Componentes.RoundedComboBox cbMarca;
         private Componentes.RoundedComboBox cbCategoria;
         private Componentes.ModernBox modernBox4;
         private System.Windows.Forms.Label lbCódigoBarras;
@@ -692,5 +675,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colQtd;
         private System.Windows.Forms.DataGridViewImageColumn colAtivo;
         private Componentes.CustomButton btnFiltroAtivos;
+        private Componentes.ModernComboBox cbMarca;
     }
 }

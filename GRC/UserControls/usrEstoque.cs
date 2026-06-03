@@ -124,28 +124,15 @@ namespace GRC.UserControls
         }
         private void CarregaCombos()
         {
-            PreencherCombo(cbCategoria, _service.BuscaCategoriaItem(), "Descricao", "Id");
+            //PreencherCombo(cbCategoria, _service.BuscaCategoriaItem(), "Descricao", "Id");
             PreencherCombo(cbMarca, _service.BuscaFabricante(), "Descricao", "Id");
         }
-        private void PreencherCombo<T>(RoundedComboBox cb, List<T> lista, string display, string value)
+        private void PreencherCombo<T>(ModernComboBox cb, List<T> lista, string display, string value)
         {
-            // Cria dinamicamente o item "Selecione..."
-            var itemSelecione = Activator.CreateInstance<T>();
-
-            var propId = typeof(T).GetProperty(value);
-            var propDesc = typeof(T).GetProperty(display);
-
-            propId?.SetValue(itemSelecione, 0);
-            propDesc?.SetValue(itemSelecione, "Selecione...");
-
-            // Adiciona como primeiro item da lista
-            lista.Insert(0, itemSelecione);
-
-            // Configura o ComboBox
             cb.DisplayMember = display;
             cb.ValueMember = value;
             cb.DataSource = lista;
-            cb.SelectedIndex = 0;
+            cb.SelectedIndex = -1; // nenhum item selecionado — exibe o placeholder
         }
         private void btnApagar_Click(object sender, EventArgs e)
         {
