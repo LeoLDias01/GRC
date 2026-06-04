@@ -317,7 +317,8 @@
             this.modernBox2.FillColor = System.Drawing.Color.White;
             this.modernBox2.Location = new System.Drawing.Point(21, 194);
             this.modernBox2.Name = "modernBox2";
-            this.modernBox2.Padding = new System.Windows.Forms.Padding(10);
+            this.modernBox2.Padding = new System.Windows.Forms.Padding(13);
+            this.modernBox2.ShadowAngle = 135;
             this.modernBox2.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.modernBox2.ShadowSize = 8;
             this.modernBox2.Size = new System.Drawing.Size(1150, 485);
@@ -360,7 +361,7 @@
             this.dgvMov.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMov.EnableHeadersVisualStyles = false;
             this.dgvMov.GridColor = System.Drawing.Color.Silver;
-            this.dgvMov.Location = new System.Drawing.Point(10, 10);
+            this.dgvMov.Location = new System.Drawing.Point(13, 13);
             this.dgvMov.MultiSelect = false;
             this.dgvMov.Name = "dgvMov";
             this.dgvMov.ReadOnly = true;
@@ -369,7 +370,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvMov.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvMov.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMov.Size = new System.Drawing.Size(1130, 465);
+            this.dgvMov.Size = new System.Drawing.Size(1124, 459);
             this.dgvMov.TabIndex = 52;
             this.dgvMov.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMov_CellDoubleClick);
             this.dgvMov.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMov_CellValueChanged);
@@ -423,7 +424,8 @@
             this.modernBox1.FillColor = System.Drawing.Color.White;
             this.modernBox1.Location = new System.Drawing.Point(21, 87);
             this.modernBox1.Name = "modernBox1";
-            this.modernBox1.Padding = new System.Windows.Forms.Padding(10);
+            this.modernBox1.Padding = new System.Windows.Forms.Padding(5);
+            this.modernBox1.ShadowAngle = 135;
             this.modernBox1.ShadowColor = System.Drawing.Color.Transparent;
             this.modernBox1.ShadowSize = 0;
             this.modernBox1.Size = new System.Drawing.Size(1140, 101);

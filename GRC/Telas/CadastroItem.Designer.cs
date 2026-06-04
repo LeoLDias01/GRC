@@ -1044,7 +1044,7 @@
             this.btnExcluiImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluiImagem.ForeColor = System.Drawing.Color.White;
             this.btnExcluiImagem.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluiImagem.Image")));
-            this.btnExcluiImagem.Location = new System.Drawing.Point(92, 79);
+            this.btnExcluiImagem.Location = new System.Drawing.Point(90, 85);
             this.btnExcluiImagem.Name = "btnExcluiImagem";
             this.btnExcluiImagem.Size = new System.Drawing.Size(20, 20);
             this.btnExcluiImagem.TabIndex = 19;

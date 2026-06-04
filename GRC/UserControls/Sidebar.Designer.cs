@@ -214,7 +214,7 @@
             this.btnMais.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMais.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.btnMais.Image = ((System.Drawing.Image)(resources.GetObject("btnMais.Image")));
-            this.btnMais.Location = new System.Drawing.Point(46, 17);
+            this.btnMais.Location = new System.Drawing.Point(43, 17);
             this.btnMais.Name = "btnMais";
             this.btnMais.Size = new System.Drawing.Size(18, 21);
             this.btnMais.TabIndex = 41;
@@ -227,7 +227,6 @@
             // 
             this.btnUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUser.BackColor = System.Drawing.Color.Transparent;
-            this.btnUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUser.BackgroundImage")));
             this.btnUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnUser.CorBorda = System.Drawing.Color.MediumSlateBlue;
             this.btnUser.CorBotao = System.Drawing.Color.Transparent;
@@ -238,9 +237,10 @@
             this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnUser.Location = new System.Drawing.Point(10, 7);
+            this.btnUser.Image = ((System.Drawing.Image)(resources.GetObject("btnUser.Image")));
+            this.btnUser.Location = new System.Drawing.Point(10, 12);
             this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(30, 40);
+            this.btnUser.Size = new System.Drawing.Size(30, 31);
             this.btnUser.TabIndex = 9;
             this.btnUser.TamanhoBorda = 0;
             this.btnUser.TamanhoRaio = 15;
@@ -397,12 +397,12 @@
             // 
             this.lbPDVex.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbPDVex.BackColor = System.Drawing.Color.Transparent;
-            this.lbPDVex.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.lbPDVex.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.lbPDVex.ForeColor = System.Drawing.Color.White;
-            this.lbPDVex.Location = new System.Drawing.Point(108, 108);
+            this.lbPDVex.Location = new System.Drawing.Point(102, 108);
             this.lbPDVex.Name = "lbPDVex";
             this.lbPDVex.Padding = new System.Windows.Forms.Padding(5);
-            this.lbPDVex.Size = new System.Drawing.Size(174, 25);
+            this.lbPDVex.Size = new System.Drawing.Size(158, 25);
             this.lbPDVex.TabIndex = 15;
             this.lbPDVex.Text = "PDV 01";
             // 
@@ -412,7 +412,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(279, 94);
+            this.panel4.Size = new System.Drawing.Size(257, 94);
             this.panel4.TabIndex = 17;
             // 
             // customPictureBox2
@@ -440,29 +440,29 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 674);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(279, 57);
+            this.panel1.Size = new System.Drawing.Size(257, 57);
             this.panel1.TabIndex = 16;
             // 
             // lbNomeUser
             // 
             this.lbNomeUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbNomeUser.BackColor = System.Drawing.Color.Transparent;
-            this.lbNomeUser.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.lbNomeUser.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lbNomeUser.ForeColor = System.Drawing.Color.White;
-            this.lbNomeUser.Location = new System.Drawing.Point(67, 12);
+            this.lbNomeUser.Location = new System.Drawing.Point(51, 10);
             this.lbNomeUser.Name = "lbNomeUser";
             this.lbNomeUser.Padding = new System.Windows.Forms.Padding(5);
-            this.lbNomeUser.Size = new System.Drawing.Size(188, 30);
+            this.lbNomeUser.Size = new System.Drawing.Size(167, 35);
             this.lbNomeUser.TabIndex = 29;
             this.lbNomeUser.Text = "Teste";
             // 
             // btnUserEx
             // 
             this.btnUserEx.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUserEx.BackColor = System.Drawing.Color.DimGray;
+            this.btnUserEx.BackColor = System.Drawing.Color.Transparent;
             this.btnUserEx.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnUserEx.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnUserEx.CorBotao = System.Drawing.Color.DimGray;
+            this.btnUserEx.CorBotao = System.Drawing.Color.Transparent;
             this.btnUserEx.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.btnUserEx.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUserEx.FlatAppearance.BorderSize = 0;
@@ -470,7 +470,8 @@
             this.btnUserEx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserEx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUserEx.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnUserEx.Location = new System.Drawing.Point(12, 10);
+            this.btnUserEx.Image = ((System.Drawing.Image)(resources.GetObject("btnUserEx.Image")));
+            this.btnUserEx.Location = new System.Drawing.Point(10, 10);
             this.btnUserEx.Name = "btnUserEx";
             this.btnUserEx.Size = new System.Drawing.Size(35, 35);
             this.btnUserEx.TabIndex = 42;
@@ -493,7 +494,7 @@
             this.btnMenos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.btnMenos.Image = ((System.Drawing.Image)(resources.GetObject("btnMenos.Image")));
-            this.btnMenos.Location = new System.Drawing.Point(261, 17);
+            this.btnMenos.Location = new System.Drawing.Point(236, 17);
             this.btnMenos.Name = "btnMenos";
             this.btnMenos.Size = new System.Drawing.Size(18, 21);
             this.btnMenos.TabIndex = 41;
@@ -536,7 +537,7 @@
             this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 166F));
             this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
-            this.tlpMenu.Size = new System.Drawing.Size(285, 734);
+            this.tlpMenu.Size = new System.Drawing.Size(263, 734);
             this.tlpMenu.TabIndex = 28;
             this.tlpMenu.Visible = false;
             // 
@@ -551,14 +552,14 @@
             this.btnFornecedoresEx.FlatAppearance.BorderSize = 0;
             this.btnFornecedoresEx.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.btnFornecedoresEx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFornecedoresEx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFornecedoresEx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnFornecedoresEx.ForeColor = System.Drawing.Color.White;
             this.btnFornecedoresEx.Image = ((System.Drawing.Image)(resources.GetObject("btnFornecedoresEx.Image")));
             this.btnFornecedoresEx.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFornecedoresEx.Location = new System.Drawing.Point(3, 449);
             this.btnFornecedoresEx.Name = "btnFornecedoresEx";
             this.btnFornecedoresEx.Padding = new System.Windows.Forms.Padding(20, 5, 5, 5);
-            this.btnFornecedoresEx.Size = new System.Drawing.Size(279, 44);
+            this.btnFornecedoresEx.Size = new System.Drawing.Size(257, 44);
             this.btnFornecedoresEx.TabIndex = 29;
             this.btnFornecedoresEx.TamanhoBorda = 0;
             this.btnFornecedoresEx.TamanhoRaio = 2;
@@ -578,14 +579,14 @@
             this.btnDashboardEx.FlatAppearance.BorderSize = 0;
             this.btnDashboardEx.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.btnDashboardEx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashboardEx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboardEx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnDashboardEx.ForeColor = System.Drawing.Color.White;
             this.btnDashboardEx.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboardEx.Image")));
             this.btnDashboardEx.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDashboardEx.Location = new System.Drawing.Point(3, 149);
             this.btnDashboardEx.Name = "btnDashboardEx";
             this.btnDashboardEx.Padding = new System.Windows.Forms.Padding(20, 5, 5, 5);
-            this.btnDashboardEx.Size = new System.Drawing.Size(279, 44);
+            this.btnDashboardEx.Size = new System.Drawing.Size(257, 44);
             this.btnDashboardEx.TabIndex = 6;
             this.btnDashboardEx.TamanhoBorda = 0;
             this.btnDashboardEx.TamanhoRaio = 2;
@@ -605,14 +606,14 @@
             this.btnMovimentacoesEx.FlatAppearance.BorderSize = 0;
             this.btnMovimentacoesEx.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.btnMovimentacoesEx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMovimentacoesEx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMovimentacoesEx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnMovimentacoesEx.ForeColor = System.Drawing.Color.White;
             this.btnMovimentacoesEx.Image = ((System.Drawing.Image)(resources.GetObject("btnMovimentacoesEx.Image")));
             this.btnMovimentacoesEx.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMovimentacoesEx.Location = new System.Drawing.Point(3, 399);
             this.btnMovimentacoesEx.Name = "btnMovimentacoesEx";
             this.btnMovimentacoesEx.Padding = new System.Windows.Forms.Padding(20, 5, 5, 5);
-            this.btnMovimentacoesEx.Size = new System.Drawing.Size(279, 44);
+            this.btnMovimentacoesEx.Size = new System.Drawing.Size(257, 44);
             this.btnMovimentacoesEx.TabIndex = 29;
             this.btnMovimentacoesEx.TamanhoBorda = 0;
             this.btnMovimentacoesEx.TamanhoRaio = 2;
@@ -631,14 +632,14 @@
             this.btnEstoqueEx.FlatAppearance.BorderSize = 0;
             this.btnEstoqueEx.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.btnEstoqueEx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEstoqueEx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstoqueEx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnEstoqueEx.ForeColor = System.Drawing.Color.White;
             this.btnEstoqueEx.Image = ((System.Drawing.Image)(resources.GetObject("btnEstoqueEx.Image")));
             this.btnEstoqueEx.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEstoqueEx.Location = new System.Drawing.Point(3, 349);
             this.btnEstoqueEx.Name = "btnEstoqueEx";
             this.btnEstoqueEx.Padding = new System.Windows.Forms.Padding(20, 5, 5, 5);
-            this.btnEstoqueEx.Size = new System.Drawing.Size(279, 44);
+            this.btnEstoqueEx.Size = new System.Drawing.Size(257, 44);
             this.btnEstoqueEx.TabIndex = 29;
             this.btnEstoqueEx.TamanhoBorda = 0;
             this.btnEstoqueEx.TamanhoRaio = 2;
@@ -658,14 +659,14 @@
             this.btnClientesEx.FlatAppearance.BorderSize = 0;
             this.btnClientesEx.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.btnClientesEx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientesEx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClientesEx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnClientesEx.ForeColor = System.Drawing.Color.White;
             this.btnClientesEx.Image = ((System.Drawing.Image)(resources.GetObject("btnClientesEx.Image")));
             this.btnClientesEx.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClientesEx.Location = new System.Drawing.Point(3, 299);
             this.btnClientesEx.Name = "btnClientesEx";
             this.btnClientesEx.Padding = new System.Windows.Forms.Padding(20, 5, 5, 5);
-            this.btnClientesEx.Size = new System.Drawing.Size(279, 44);
+            this.btnClientesEx.Size = new System.Drawing.Size(257, 44);
             this.btnClientesEx.TabIndex = 29;
             this.btnClientesEx.TamanhoBorda = 0;
             this.btnClientesEx.TamanhoRaio = 2;
@@ -685,14 +686,14 @@
             this.btnVendasEx.FlatAppearance.BorderSize = 0;
             this.btnVendasEx.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.btnVendasEx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVendasEx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVendasEx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnVendasEx.ForeColor = System.Drawing.Color.White;
             this.btnVendasEx.Image = ((System.Drawing.Image)(resources.GetObject("btnVendasEx.Image")));
             this.btnVendasEx.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVendasEx.Location = new System.Drawing.Point(3, 249);
             this.btnVendasEx.Name = "btnVendasEx";
             this.btnVendasEx.Padding = new System.Windows.Forms.Padding(20, 5, 5, 5);
-            this.btnVendasEx.Size = new System.Drawing.Size(279, 44);
+            this.btnVendasEx.Size = new System.Drawing.Size(257, 44);
             this.btnVendasEx.TabIndex = 29;
             this.btnVendasEx.TamanhoBorda = 0;
             this.btnVendasEx.TamanhoRaio = 2;
@@ -712,14 +713,14 @@
             this.btnOSEx.FlatAppearance.BorderSize = 0;
             this.btnOSEx.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
             this.btnOSEx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOSEx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOSEx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnOSEx.ForeColor = System.Drawing.Color.White;
             this.btnOSEx.Image = ((System.Drawing.Image)(resources.GetObject("btnOSEx.Image")));
             this.btnOSEx.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOSEx.Location = new System.Drawing.Point(3, 199);
             this.btnOSEx.Name = "btnOSEx";
             this.btnOSEx.Padding = new System.Windows.Forms.Padding(20, 5, 5, 5);
-            this.btnOSEx.Size = new System.Drawing.Size(279, 44);
+            this.btnOSEx.Size = new System.Drawing.Size(257, 44);
             this.btnOSEx.TabIndex = 29;
             this.btnOSEx.TamanhoBorda = 0;
             this.btnOSEx.TamanhoRaio = 2;

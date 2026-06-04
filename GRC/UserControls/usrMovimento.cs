@@ -2,9 +2,7 @@
 using Business.Services;
 using Data.Models;
 using GRC.Componentes;
-using GRC.Properties;
 using GRC.Telas;
-using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,13 +14,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace GRC.UserControls
 {
-    public partial class usrEstoque : UserControl
+    public partial class usrMovimento : UserControl
     {
-        private ServiceItemEstoque _service = new ServiceItemEstoque();
+        private int _IdMovimentacao = 0;
+        private int _idItem = 0;
+        ServiceMovimentacao _service = new ServiceMovimentacao();
+        Item _dadosItem = new Item();
+
+
         private SerialPort _serialPort;
 
         // Estado do filtro atual: null = Todos, true = Ativos, false = Inativos
@@ -36,18 +38,17 @@ namespace GRC.UserControls
         private readonly Color CorFiltroInativo = Color.FromArgb(6, 31, 48);             // Se funde totalmente com o fundo
         private readonly Color CorTextoAtivo = Color.FromArgb(44, 62, 80);       // Seu azul escuro acinzentado
         private readonly Color CorTextoInativo = Color.FromArgb(127, 140, 141);  // Cinza fosco para o que está desligado
-        public usrEstoque()
+        public usrMovimento()
         {
             InitializeComponent();
-
             // Registra os eventos dos novos componentes via código
-            this.Load += usrEstoque_Load;
+            this.Load += usrMovimento_Load;
             lbTitulo.DoubleClick += lbTitulo_DoubleClick;
             cbRegistros.TextChanged += cbRegistros_TextChanged;
             cbRegistros.KeyPress += cbRegistros_KeyPress;
-            dgvItens.CellValueChanged += dgvItens_CellValueChanged;
-            dgvItens.CellDoubleClick += dgvItens_CellDoubleClick;
-            btnNovoItem.Click += btnNovoItem_Click;
+            dgvMovimentacoes.CellValueChanged += dgvItens_CellValueChanged;
+            dgvMovimentacoes.CellDoubleClick += dgvItens_CellDoubleClick;
+            btnMovimentar.Click += btnNovoItem_Click;
             cbCategoria.DropDownClosed += cbCategoria_DropDownClosed;
             cbMarca.SelectedIndexChanged += cbMarca_DropDownClosed;
             chkItemVenda.CheckedChanged += chkItemVenda_CheckedChanged;
@@ -56,15 +57,15 @@ namespace GRC.UserControls
             btnFiltroTodos.Click += (s, e) => { _statusSelecionado = null; AtualizarVisualFiltros(); RealizaPesquisa(); };
             btnFiltroAtivos.Click += (s, e) => { _statusSelecionado = true; AtualizarVisualFiltros(); RealizaPesquisa(); };
             btnFiltroInativos.Click += (s, e) => { _statusSelecionado = false; AtualizarVisualFiltros(); RealizaPesquisa(); };
-            dgvItens.Paint += dgvItens_Paint;
-            dgvItens.CellFormatting += dgvItens_CellFormatting;
+            dgvMovimentacoes.Paint += dgvItens_Paint;
+            dgvMovimentacoes.CellFormatting += dgvItens_CellFormatting;
         }
         private void dgvItens_Paint(object sender, PaintEventArgs e)
         {
             int alturaFaixa = 1;
 
-            Rectangle headerRect = dgvItens.DisplayRectangle;
-            headerRect.Y = dgvItens.ColumnHeadersHeight - alturaFaixa;
+            Rectangle headerRect = dgvMovimentacoes.DisplayRectangle;
+            headerRect.Y = dgvMovimentacoes.ColumnHeadersHeight - alturaFaixa;
             headerRect.Height = alturaFaixa;
 
             using (Brush brush = new SolidBrush(Color.DarkGray))
@@ -72,23 +73,22 @@ namespace GRC.UserControls
                 e.Graphics.FillRectangle(brush, headerRect);
             }
         }
-        private void usrEstoque_Load(object sender, EventArgs e)
+        private void usrMovimento_Load(object sender, EventArgs e)
         {
-            
             CarregaCombos();
             cbRegistros.Text = "10";
             _statusSelecionado = null; // Começa exibindo Todos
             AtualizarVisualFiltros();
             InicializarColunasGrid();
             RealizaPesquisa();
-            btnNovoItem.Focus();
+            btnMovimentar.Focus();
         }
         private void cbCategoria_DropDownClosed(object sender, EventArgs e)
         {
             RealizaPesquisa();
         }
         private void cbMarca_DropDownClosed(object sender, EventArgs e)
-        {
+        { 
             RealizaPesquisa();
         }
         private void chkItemVenda_CheckedChanged(object sender, EventArgs e)
@@ -122,8 +122,7 @@ namespace GRC.UserControls
         }
         private void CarregaCombos()
         {
-            PreencherCombo(cbCategoria, _service.BuscaCategoriaItem(), "Descricao", "Id");
-            PreencherCombo(cbMarca, _service.BuscaFabricante(), "Descricao", "Id");
+            PreencherCombo(cbTipoMovimento, _service.BuscaTipoMovimentacao(), "Descricao", "Id");
         }
         private void PreencherCombo<T>(ModernComboBox cb, List<T> lista, string display, string value)
         {
@@ -163,7 +162,7 @@ namespace GRC.UserControls
 
         private void dgvItens_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            lbRegistros.Text = $"{dgvItens.Rows.Count} registros encontrados!";
+            lbRegistros.Text = $"{dgvMovimentacoes.Rows.Count} registros encontrados!";
         }
         private void btnNovoItem_Click(object sender, EventArgs e)
         {
@@ -173,46 +172,46 @@ namespace GRC.UserControls
         }
         private void InicializarColunasGrid()
         {
-            dgvItens.Columns.Clear();
-            dgvItens.AutoGenerateColumns = false;
+            dgvMovimentacoes.Columns.Clear();
+            dgvMovimentacoes.AutoGenerateColumns = false;
 
             // 1. Favorito (Imagem)
             var colFavorito = new DataGridViewImageColumn { Name = "colFavorito", HeaderText = "★", Width = 60, ImageLayout = DataGridViewImageCellLayout.Normal };
-            dgvItens.Columns.Add(colFavorito);
+            dgvMovimentacoes.Columns.Add(colFavorito);
 
             // 2. ID (Invisível)
             var colId = new DataGridViewTextBoxColumn { Name = "colId", HeaderText = "ID", Visible = false };
-            dgvItens.Columns.Add(colId);
+            dgvMovimentacoes.Columns.Add(colId);
 
             // 3. Foto do Item (Imagem)
             var colImagem = new DataGridViewImageColumn { Name = "colImagem", HeaderText = "Foto", Width = 110, ImageLayout = DataGridViewImageCellLayout.Zoom };
-            dgvItens.Columns.Add(colImagem);
+            dgvMovimentacoes.Columns.Add(colImagem);
 
             // 4. Marcação de Vendas/Estoque (Botão)
             var colTipoVenda = new DataGridViewImageColumn { Name = "colProduto", HeaderText = "Tipo", Width = 100, ImageLayout = DataGridViewImageCellLayout.Normal };
-            dgvItens.Columns.Add(colTipoVenda);
+            dgvMovimentacoes.Columns.Add(colTipoVenda);
 
             // 5. Nome / Descrição
-            dgvItens.Columns.Add(new DataGridViewTextBoxColumn { Name = "colDescricao", HeaderText = "Nome", Width = 200 });
+            dgvMovimentacoes.Columns.Add(new DataGridViewTextBoxColumn { Name = "colDescricao", HeaderText = "Nome", Width = 200 });
 
             // 6. Código de Barras
-            dgvItens.Columns.Add(new DataGridViewTextBoxColumn { Name = "colCodigoBarras", HeaderText = "Cód. Barras", Width = 130 });
+            dgvMovimentacoes.Columns.Add(new DataGridViewTextBoxColumn { Name = "colCodigoBarras", HeaderText = "Cód. Barras", Width = 130 });
 
             // 7. Marca
-            dgvItens.Columns.Add(new DataGridViewTextBoxColumn { Name = "colFabricante", HeaderText = "Marca", Width = 110 });
+            dgvMovimentacoes.Columns.Add(new DataGridViewTextBoxColumn { Name = "colFabricante", HeaderText = "Marca", Width = 110 });
 
             // 8. Categoria
-            dgvItens.Columns.Add(new DataGridViewTextBoxColumn { Name = "colCategoria", HeaderText = "Categoria", Width = 110 });
+            dgvMovimentacoes.Columns.Add(new DataGridViewTextBoxColumn { Name = "colCategoria", HeaderText = "Categoria", Width = 110 });
 
             // 9. Quantidade Mínima
-            dgvItens.Columns.Add(new DataGridViewTextBoxColumn { Name = "colQtdMinima", HeaderText = "Qtd Mín.", Width = 90 });
+            dgvMovimentacoes.Columns.Add(new DataGridViewTextBoxColumn { Name = "colQtdMinima", HeaderText = "Qtd Mín.", Width = 90 });
 
             // 10. Quantidade Atual
-            dgvItens.Columns.Add(new DataGridViewTextBoxColumn { Name = "colQtd", HeaderText = "Estoque", Width = 90 });
+            dgvMovimentacoes.Columns.Add(new DataGridViewTextBoxColumn { Name = "colQtd", HeaderText = "Estoque", Width = 90 });
 
             // 11. Marcação Ativo/Inativo (Botão)
             var colAtivo = new DataGridViewImageColumn { Name = "colAtivo", HeaderText = "Status", Width = 100, ImageLayout = DataGridViewImageCellLayout.Normal };
-            dgvItens.Columns.Add(colAtivo); ;
+            dgvMovimentacoes.Columns.Add(colAtivo); ;
         }
         private void RealizaPesquisa()
         {
@@ -235,7 +234,7 @@ namespace GRC.UserControls
 
             var lista = _service.BuscaLimitada(item, registros);
 
-            dgvItens.Rows.Clear();
+            dgvMovimentacoes.Rows.Clear();
 
             if (lista != null)
             {
@@ -251,7 +250,7 @@ namespace GRC.UserControls
 
                         // IMPORTANTE: Agora passamos os valores booleanos originais ou strings puras, 
                         // e deixaremos o CellFormatting desenhar a imagem correspondente!
-                        dgvItens.Rows.Add(
+                        dgvMovimentacoes.Rows.Add(
                             estoque.Favorito == true ? Resources.star : Resources.starOff, // 1. colFavorito
                             estoque.Id.ToString(),                                         // 2. colId (Invisível)
                             foto,                                                          // 3. colImagem
@@ -268,18 +267,18 @@ namespace GRC.UserControls
                 }
             }
 
-            lbRegistros.Text = $"{dgvItens.Rows.Count} registros encontrados!";
+            lbRegistros.Text = $"{dgvMovimentacoes.Rows.Count} registros encontrados!";
         }
         private void dgvItens_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.RowIndex < 0) return;
 
-            DataGridViewRow row = dgvItens.Rows[e.RowIndex];
+            DataGridViewRow row = dgvMovimentacoes.Rows[e.RowIndex];
 
             // =================================================================
             // 1. QUANTIDADE (Preto vs Laranja) - Usando seus novos nomes
             // =================================================================
-            if (dgvItens.Columns[e.ColumnIndex].Name == "colQtd")
+            if (dgvMovimentacoes.Columns[e.ColumnIndex].Name == "colQtd")
             {
                 decimal qtdAtual = row.Cells["colQtd"].Value != null ? Convert.ToDecimal(row.Cells["colQtd"].Value) : 0;
                 decimal qtdMinima = row.Cells["colQtdMinima"].Value != null ? Convert.ToDecimal(row.Cells["colQtdMinima"].Value) : 0;
@@ -288,20 +287,20 @@ namespace GRC.UserControls
                 {
                     e.CellStyle.ForeColor = Color.OrangeRed;
                     e.CellStyle.SelectionForeColor = Color.OrangeRed;
-                    e.CellStyle.Font = new Font(dgvItens.Font, FontStyle.Bold); // Dá um leve destaque extra
+                    e.CellStyle.Font = new Font(dgvMovimentacoes.Font, FontStyle.Bold); // Dá um leve destaque extra
                 }
                 else
                 {
                     e.CellStyle.ForeColor = Color.FromArgb(33, 37, 41);
                     e.CellStyle.SelectionForeColor = Color.FromArgb(20, 20, 20);
-                    e.CellStyle.Font = new Font(dgvItens.Font, FontStyle.Regular);
+                    e.CellStyle.Font = new Font(dgvMovimentacoes.Font, FontStyle.Regular);
                 }
             }
 
             // =================================================================
             // 2. STATUS (Ativo [Verde] / Inativo [Vermelho]) - Gerando Tag/Imagem
             // =================================================================
-            if (dgvItens.Columns[e.ColumnIndex].Name == "colAtivo" && e.Value != null)
+            if (dgvMovimentacoes.Columns[e.ColumnIndex].Name == "colAtivo" && e.Value != null)
             {
                 string status = e.Value.ToString();
 
@@ -316,7 +315,7 @@ namespace GRC.UserControls
             // =================================================================
             // 3. TIPO PRODUTO (Venda [Azul] / Estoque [Invisível]) - Gerando Tag/Imagem
             // =================================================================
-            if (dgvItens.Columns[e.ColumnIndex].Name == "colProduto" && e.Value != null)
+            if (dgvMovimentacoes.Columns[e.ColumnIndex].Name == "colProduto" && e.Value != null)
             {
                 string tipo = e.Value.ToString();
 
@@ -390,67 +389,67 @@ namespace GRC.UserControls
             _statusSelecionado = null; // Começa exibindo Todos
             AtualizarVisualFiltros();
             chkItemVenda.Checked = false;
-            dgvItens.Rows.Clear();
-            dgvItens.ColumnHeadersVisible = false;
+            dgvMovimentacoes.Rows.Clear();
+            dgvMovimentacoes.ColumnHeadersVisible = false;
             cbRegistros.Text = "10";
         }
         private void ConfigurarEstiloGrid()
         {
-            dgvItens.SuspendLayout();
+            dgvMovimentacoes.SuspendLayout();
 
             // =====================================================
             // RESET DE HERANÇAS INDESEJADAS
             // =====================================================
-            dgvItens.DefaultCellStyle.Alignment = DataGridViewContentAlignment.NotSet;
-            dgvItens.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.NotSet;
-            dgvItens.AlternatingRowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.NotSet;
+            dgvMovimentacoes.DefaultCellStyle.Alignment = DataGridViewContentAlignment.NotSet;
+            dgvMovimentacoes.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.NotSet;
+            dgvMovimentacoes.AlternatingRowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.NotSet;
 
-            dgvItens.DefaultCellStyle.Padding = Padding.Empty;
-            dgvItens.RowsDefaultCellStyle.Padding = Padding.Empty;
-            dgvItens.AlternatingRowsDefaultCellStyle.Padding = Padding.Empty;
+            dgvMovimentacoes.DefaultCellStyle.Padding = Padding.Empty;
+            dgvMovimentacoes.RowsDefaultCellStyle.Padding = Padding.Empty;
+            dgvMovimentacoes.AlternatingRowsDefaultCellStyle.Padding = Padding.Empty;
 
             // =====================================================
             // CONFIGURAÇÕES GERAIS DO GRID
             // =====================================================
-            dgvItens.BackgroundColor = Color.FromArgb(245, 247, 250);
-            dgvItens.BorderStyle = BorderStyle.None;
-            dgvItens.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvItens.GridColor = Color.FromArgb(235, 238, 242);
-            dgvItens.RowHeadersVisible = false;
-            dgvItens.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvItens.MultiSelect = false;
-            dgvItens.AllowUserToResizeRows = false;
-            dgvItens.AllowUserToResizeColumns = false;
-            dgvItens.EnableHeadersVisualStyles = false;
-            dgvItens.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvItens.ScrollBars = ScrollBars.Vertical;
-            dgvItens.Cursor = Cursors.Hand;
-            dgvItens.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
-            dgvItens.RowTemplate.Height = 96;
+            dgvMovimentacoes.BackgroundColor = Color.FromArgb(245, 247, 250);
+            dgvMovimentacoes.BorderStyle = BorderStyle.None;
+            dgvMovimentacoes.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvMovimentacoes.GridColor = Color.FromArgb(235, 238, 242);
+            dgvMovimentacoes.RowHeadersVisible = false;
+            dgvMovimentacoes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvMovimentacoes.MultiSelect = false;
+            dgvMovimentacoes.AllowUserToResizeRows = false;
+            dgvMovimentacoes.AllowUserToResizeColumns = false;
+            dgvMovimentacoes.EnableHeadersVisualStyles = false;
+            dgvMovimentacoes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvMovimentacoes.ScrollBars = ScrollBars.Vertical;
+            dgvMovimentacoes.Cursor = Cursors.Hand;
+            dgvMovimentacoes.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
+            dgvMovimentacoes.RowTemplate.Height = 96;
 
             // Bordas inferiores SaaS
-            dgvItens.AdvancedCellBorderStyle.Left = DataGridViewAdvancedCellBorderStyle.None;
-            dgvItens.AdvancedCellBorderStyle.Right = DataGridViewAdvancedCellBorderStyle.None;
-            dgvItens.AdvancedCellBorderStyle.Top = DataGridViewAdvancedCellBorderStyle.None;
-            dgvItens.AdvancedCellBorderStyle.Bottom = DataGridViewAdvancedCellBorderStyle.Single;
+            dgvMovimentacoes.AdvancedCellBorderStyle.Left = DataGridViewAdvancedCellBorderStyle.None;
+            dgvMovimentacoes.AdvancedCellBorderStyle.Right = DataGridViewAdvancedCellBorderStyle.None;
+            dgvMovimentacoes.AdvancedCellBorderStyle.Top = DataGridViewAdvancedCellBorderStyle.None;
+            dgvMovimentacoes.AdvancedCellBorderStyle.Bottom = DataGridViewAdvancedCellBorderStyle.Single;
 
             // =====================================================
             // CONFIGURAÇÃO VISUAL DAS LINHAS (Cores e Destaque)
             // =====================================================
-            dgvItens.RowsDefaultCellStyle.BackColor = Color.White;
-            dgvItens.RowsDefaultCellStyle.ForeColor = Color.FromArgb(33, 37, 41);
-            dgvItens.RowsDefaultCellStyle.Font = new Font("Segoe UI", 10F);
+            dgvMovimentacoes.RowsDefaultCellStyle.BackColor = Color.White;
+            dgvMovimentacoes.RowsDefaultCellStyle.ForeColor = Color.FromArgb(33, 37, 41);
+            dgvMovimentacoes.RowsDefaultCellStyle.Font = new Font("Segoe UI", 10F);
 
-            dgvItens.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 243, 248);
-            dgvItens.AlternatingRowsDefaultCellStyle.ForeColor = Color.FromArgb(33, 37, 41);
-            dgvItens.AlternatingRowsDefaultCellStyle.Font = new Font("Segoe UI", 10F);
+            dgvMovimentacoes.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 243, 248);
+            dgvMovimentacoes.AlternatingRowsDefaultCellStyle.ForeColor = Color.FromArgb(33, 37, 41);
+            dgvMovimentacoes.AlternatingRowsDefaultCellStyle.Font = new Font("Segoe UI", 10F);
 
             // =====================================================
             // CABEÇALHO (Header)
             // =====================================================
-            dgvItens.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dgvItens.ColumnHeadersHeight = 52;
-            dgvItens.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvMovimentacoes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvMovimentacoes.ColumnHeadersHeight = 52;
+            dgvMovimentacoes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 
             DataGridViewCellStyle estiloHeader = new DataGridViewCellStyle
             {
@@ -463,15 +462,15 @@ namespace GRC.UserControls
                 // SelectionBackColor = Color.FromArgb(44, 62, 80),
                 // SelectionForeColor = Color.White
 
-                 SelectionBackColor = Color.White,
-                 SelectionForeColor = Color.FromArgb(44, 62, 80)
+                SelectionBackColor = Color.White,
+                SelectionForeColor = Color.FromArgb(44, 62, 80)
             };
-            dgvItens.ColumnHeadersDefaultCellStyle = estiloHeader;
+            dgvMovimentacoes.ColumnHeadersDefaultCellStyle = estiloHeader;
 
             // =====================================================
             // CONTROLE ABSOLUTO COLUNA POR COLUNA
             // =====================================================
-            foreach (DataGridViewColumn coluna in dgvItens.Columns)
+            foreach (DataGridViewColumn coluna in dgvMovimentacoes.Columns)
             {
                 // SE FOR COLUNA DE TEXTO / NÚMERO
                 if (coluna is DataGridViewTextBoxColumn)
@@ -556,11 +555,11 @@ namespace GRC.UserControls
                 }
             }
 
-            dgvItens.DefaultCellStyle.SelectionBackColor = Color.FromArgb(226, 236, 248);
-            dgvItens.DefaultCellStyle.SelectionForeColor = Color.FromArgb(20, 20, 20);
-            dgvItens.ClearSelection();
+            dgvMovimentacoes.DefaultCellStyle.SelectionBackColor = Color.FromArgb(226, 236, 248);
+            dgvMovimentacoes.DefaultCellStyle.SelectionForeColor = Color.FromArgb(20, 20, 20);
+            dgvMovimentacoes.ClearSelection();
 
-            dgvItens.ResumeLayout();
+            dgvMovimentacoes.ResumeLayout();
         }
         private void cbRegistros_TextChanged(object sender, EventArgs e)
         {
@@ -587,7 +586,7 @@ namespace GRC.UserControls
         {
             if (e.RowIndex >= 0)
             {
-                var row = dgvItens.Rows[e.RowIndex];
+                var row = dgvMovimentacoes.Rows[e.RowIndex];
                 return Convert.ToInt32(row.Cells["colId"].Value);
             }
             return null;
@@ -703,5 +702,6 @@ namespace GRC.UserControls
 
             base.Dispose(disposing);
         }
+
     }
 }

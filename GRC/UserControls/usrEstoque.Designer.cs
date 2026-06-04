@@ -11,14 +11,7 @@
         /// Limpar os recursos que estão sendo usados.
         /// </summary>
         /// <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+
 
         #region Código gerado pelo Designer de Componentes
 
@@ -29,24 +22,21 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(usrEstoque));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label11 = new System.Windows.Forms.Label();
             this.lbTitulo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.chkItemVenda = new MaterialSkin.Controls.MaterialCheckbox();
+            this.btnFiltroAtivos = new GRC.Componentes.CustomButton();
+            this.btnFiltroTodos = new GRC.Componentes.CustomButton();
+            this.btnFiltroInativos = new GRC.Componentes.CustomButton();
             this.lblStatusLeitor = new System.Windows.Forms.Label();
             this.lbCódigoBarras = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.modernBox1 = new GRC.Componentes.ModernBox();
             this.txtPesquisa = new GRC.Componentes.RoundedTextBox();
-            this.modernBox5 = new GRC.Componentes.ModernBox();
-            this.modernBox4 = new GRC.Componentes.ModernBox();
-            this.cbCategoria = new GRC.Componentes.RoundedComboBox();
-            this.btnFiltroAtivos = new GRC.Componentes.CustomButton();
-            this.btnFiltroTodos = new GRC.Componentes.CustomButton();
-            this.btnFiltroInativos = new GRC.Componentes.CustomButton();
+            this.cbMarca = new GRC.Componentes.ModernComboBox();
             this.modernBox3 = new GRC.Componentes.ModernBox();
             this.cbRegistros = new System.Windows.Forms.ComboBox();
             this.lbRegistros = new System.Windows.Forms.Label();
@@ -63,12 +53,14 @@
             this.colQtdMinima = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAtivo = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnNovoItem = new GRC.Componentes.CustomButton();
-            this.cbMarca = new GRC.Componentes.ModernComboBox();
+            this.cbCategoria = new GRC.Componentes.ModernComboBox();
+            this.chkItemVenda = new MaterialSkin.Controls.MaterialCheckbox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.modernBox1.SuspendLayout();
-            this.modernBox4.SuspendLayout();
             this.modernBox3.SuspendLayout();
             this.modernBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
@@ -109,22 +101,75 @@
             this.panel1.Size = new System.Drawing.Size(262, 57);
             this.panel1.TabIndex = 179;
             // 
-            // chkItemVenda
+            // btnFiltroAtivos
             // 
-            this.chkItemVenda.AutoSize = true;
-            this.chkItemVenda.BackColor = System.Drawing.Color.Transparent;
-            this.chkItemVenda.Depth = 0;
-            this.chkItemVenda.Location = new System.Drawing.Point(1012, 106);
-            this.chkItemVenda.Margin = new System.Windows.Forms.Padding(0);
-            this.chkItemVenda.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkItemVenda.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkItemVenda.Name = "chkItemVenda";
-            this.chkItemVenda.ReadOnly = false;
-            this.chkItemVenda.Ripple = true;
-            this.chkItemVenda.Size = new System.Drawing.Size(136, 37);
-            this.chkItemVenda.TabIndex = 5;
-            this.chkItemVenda.Text = "Item de Venda";
-            this.chkItemVenda.UseVisualStyleBackColor = false;
+            this.btnFiltroAtivos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.btnFiltroAtivos.CorBorda = System.Drawing.Color.White;
+            this.btnFiltroAtivos.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.btnFiltroAtivos.CorTextoBotao = System.Drawing.Color.White;
+            this.btnFiltroAtivos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFiltroAtivos.FlatAppearance.BorderSize = 0;
+            this.btnFiltroAtivos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnFiltroAtivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltroAtivos.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.btnFiltroAtivos.ForeColor = System.Drawing.Color.White;
+            this.btnFiltroAtivos.Location = new System.Drawing.Point(79, 7);
+            this.btnFiltroAtivos.Name = "btnFiltroAtivos";
+            this.btnFiltroAtivos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnFiltroAtivos.Size = new System.Drawing.Size(103, 43);
+            this.btnFiltroAtivos.TabIndex = 9;
+            this.btnFiltroAtivos.TamanhoBorda = 5;
+            this.btnFiltroAtivos.TamanhoRaio = 20;
+            this.btnFiltroAtivos.Text = "   Ativo";
+            this.btnFiltroAtivos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFiltroAtivos.UseVisualStyleBackColor = false;
+            // 
+            // btnFiltroTodos
+            // 
+            this.btnFiltroTodos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.btnFiltroTodos.CorBorda = System.Drawing.Color.White;
+            this.btnFiltroTodos.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.btnFiltroTodos.CorTextoBotao = System.Drawing.Color.White;
+            this.btnFiltroTodos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFiltroTodos.FlatAppearance.BorderSize = 0;
+            this.btnFiltroTodos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnFiltroTodos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltroTodos.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.btnFiltroTodos.ForeColor = System.Drawing.Color.White;
+            this.btnFiltroTodos.Location = new System.Drawing.Point(3, 7);
+            this.btnFiltroTodos.Name = "btnFiltroTodos";
+            this.btnFiltroTodos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnFiltroTodos.Size = new System.Drawing.Size(159, 43);
+            this.btnFiltroTodos.TabIndex = 6;
+            this.btnFiltroTodos.TamanhoBorda = 5;
+            this.btnFiltroTodos.TamanhoRaio = 20;
+            this.btnFiltroTodos.Text = "Todos";
+            this.btnFiltroTodos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFiltroTodos.UseVisualStyleBackColor = false;
+            // 
+            // btnFiltroInativos
+            // 
+            this.btnFiltroInativos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.btnFiltroInativos.CorBorda = System.Drawing.Color.White;
+            this.btnFiltroInativos.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.btnFiltroInativos.CorTextoBotao = System.Drawing.Color.White;
+            this.btnFiltroInativos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFiltroInativos.FlatAppearance.BorderSize = 0;
+            this.btnFiltroInativos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnFiltroInativos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltroInativos.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.btnFiltroInativos.ForeColor = System.Drawing.Color.White;
+            this.btnFiltroInativos.Location = new System.Drawing.Point(91, 7);
+            this.btnFiltroInativos.Name = "btnFiltroInativos";
+            this.btnFiltroInativos.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
+            this.btnFiltroInativos.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnFiltroInativos.Size = new System.Drawing.Size(168, 43);
+            this.btnFiltroInativos.TabIndex = 8;
+            this.btnFiltroInativos.TamanhoBorda = 5;
+            this.btnFiltroInativos.TamanhoRaio = 20;
+            this.btnFiltroInativos.Text = "Inativo";
+            this.btnFiltroInativos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFiltroInativos.UseVisualStyleBackColor = false;
             // 
             // lblStatusLeitor
             // 
@@ -198,143 +243,27 @@
             this.txtPesquisa.UnderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
             this.txtPesquisa.UnderlineSize = 5;
             // 
-            // modernBox5
+            // cbMarca
             // 
-            this.modernBox5.BackColor = System.Drawing.Color.Transparent;
-            this.modernBox5.BorderColor = System.Drawing.Color.Transparent;
-            this.modernBox5.BorderRadius = 20;
-            this.modernBox5.BorderSize = 1;
-            this.modernBox5.FillColor = System.Drawing.Color.White;
-            this.modernBox5.Location = new System.Drawing.Point(488, 93);
-            this.modernBox5.Name = "modernBox5";
-            this.modernBox5.Padding = new System.Windows.Forms.Padding(8);
-            this.modernBox5.ShadowAngle = 50;
-            this.modernBox5.ShadowColor = System.Drawing.Color.Gainsboro;
-            this.modernBox5.ShadowSize = 3;
-            this.modernBox5.Size = new System.Drawing.Size(257, 50);
-            this.modernBox5.TabIndex = 182;
-            // 
-            // modernBox4
-            // 
-            this.modernBox4.BackColor = System.Drawing.Color.Transparent;
-            this.modernBox4.BorderColor = System.Drawing.Color.Transparent;
-            this.modernBox4.BorderRadius = 20;
-            this.modernBox4.BorderSize = 1;
-            this.modernBox4.Controls.Add(this.cbCategoria);
-            this.modernBox4.FillColor = System.Drawing.Color.White;
-            this.modernBox4.Location = new System.Drawing.Point(751, 93);
-            this.modernBox4.Name = "modernBox4";
-            this.modernBox4.Padding = new System.Windows.Forms.Padding(8);
-            this.modernBox4.ShadowAngle = 50;
-            this.modernBox4.ShadowColor = System.Drawing.Color.Gainsboro;
-            this.modernBox4.ShadowSize = 3;
-            this.modernBox4.Size = new System.Drawing.Size(246, 50);
-            this.modernBox4.TabIndex = 13;
-            // 
-            // cbCategoria
-            // 
-            this.cbCategoria.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.cbCategoria.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.cbCategoria.BackColor = System.Drawing.Color.Transparent;
-            this.cbCategoria.BorderColor = System.Drawing.Color.White;
-            this.cbCategoria.BorderRadius = 12;
-            this.cbCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbCategoria.DataSource = null;
-            this.cbCategoria.DisplayMember = "";
-            this.cbCategoria.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbCategoria.DrawMode = System.Windows.Forms.DrawMode.Normal;
-            this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCategoria.DropDownWidth = 147;
-            this.cbCategoria.DroppedDown = false;
-            this.cbCategoria.FillColor = System.Drawing.Color.White;
-            this.cbCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbCategoria.Icon = null;
-            this.cbCategoria.IconPosition = GRC.Componentes.RoundedComboBox.IconPositionEnum.Right;
-            this.cbCategoria.ItemHeight = 17;
-            this.cbCategoria.Location = new System.Drawing.Point(8, 8);
-            this.cbCategoria.MaxDropDownItems = 10;
-            this.cbCategoria.Name = "cbCategoria";
-            this.cbCategoria.Padding = new System.Windows.Forms.Padding(10);
-            this.cbCategoria.SelectedIndex = -1;
-            this.cbCategoria.SelectedItem = null;
-            this.cbCategoria.SelectedValue = null;
-            this.cbCategoria.Size = new System.Drawing.Size(230, 34);
-            this.cbCategoria.TabIndex = 3;
-            this.cbCategoria.TextColor = System.Drawing.Color.Black;
-            this.cbCategoria.TextStyle = System.Drawing.FontStyle.Regular;
-            this.cbCategoria.UnderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            this.cbCategoria.UnderlineSize = 2;
-            this.cbCategoria.ValueMember = "";
-            // 
-            // btnFiltroAtivos
-            // 
-            this.btnFiltroAtivos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.btnFiltroAtivos.CorBorda = System.Drawing.Color.White;
-            this.btnFiltroAtivos.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.btnFiltroAtivos.CorTextoBotao = System.Drawing.Color.White;
-            this.btnFiltroAtivos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFiltroAtivos.FlatAppearance.BorderSize = 0;
-            this.btnFiltroAtivos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnFiltroAtivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltroAtivos.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.btnFiltroAtivos.ForeColor = System.Drawing.Color.White;
-            this.btnFiltroAtivos.Location = new System.Drawing.Point(79, 7);
-            this.btnFiltroAtivos.Name = "btnFiltroAtivos";
-            this.btnFiltroAtivos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnFiltroAtivos.Size = new System.Drawing.Size(103, 43);
-            this.btnFiltroAtivos.TabIndex = 9;
-            this.btnFiltroAtivos.TamanhoBorda = 5;
-            this.btnFiltroAtivos.TamanhoRaio = 20;
-            this.btnFiltroAtivos.Text = "   Ativo";
-            this.btnFiltroAtivos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFiltroAtivos.UseVisualStyleBackColor = false;
-            // 
-            // btnFiltroTodos
-            // 
-            this.btnFiltroTodos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.btnFiltroTodos.CorBorda = System.Drawing.Color.White;
-            this.btnFiltroTodos.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.btnFiltroTodos.CorTextoBotao = System.Drawing.Color.White;
-            this.btnFiltroTodos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFiltroTodos.FlatAppearance.BorderSize = 0;
-            this.btnFiltroTodos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnFiltroTodos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltroTodos.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.btnFiltroTodos.ForeColor = System.Drawing.Color.White;
-            this.btnFiltroTodos.Location = new System.Drawing.Point(3, 7);
-            this.btnFiltroTodos.Name = "btnFiltroTodos";
-            this.btnFiltroTodos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnFiltroTodos.Size = new System.Drawing.Size(159, 43);
-            this.btnFiltroTodos.TabIndex = 6;
-            this.btnFiltroTodos.TamanhoBorda = 5;
-            this.btnFiltroTodos.TamanhoRaio = 20;
-            this.btnFiltroTodos.Text = "Todos";
-            this.btnFiltroTodos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFiltroTodos.UseVisualStyleBackColor = false;
-            // 
-            // btnFiltroInativos
-            // 
-            this.btnFiltroInativos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.btnFiltroInativos.CorBorda = System.Drawing.Color.White;
-            this.btnFiltroInativos.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.btnFiltroInativos.CorTextoBotao = System.Drawing.Color.White;
-            this.btnFiltroInativos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFiltroInativos.FlatAppearance.BorderSize = 0;
-            this.btnFiltroInativos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnFiltroInativos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltroInativos.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.btnFiltroInativos.ForeColor = System.Drawing.Color.White;
-            this.btnFiltroInativos.Location = new System.Drawing.Point(91, 7);
-            this.btnFiltroInativos.Name = "btnFiltroInativos";
-            this.btnFiltroInativos.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
-            this.btnFiltroInativos.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnFiltroInativos.Size = new System.Drawing.Size(168, 43);
-            this.btnFiltroInativos.TabIndex = 8;
-            this.btnFiltroInativos.TamanhoBorda = 5;
-            this.btnFiltroInativos.TamanhoRaio = 20;
-            this.btnFiltroInativos.Text = "Inativo";
-            this.btnFiltroInativos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFiltroInativos.UseVisualStyleBackColor = false;
+            this.cbMarca.ArrowImage = null;
+            this.cbMarca.ArrowSide = GRC.Componentes.ArrowPosition.Right;
+            this.cbMarca.BackColor = System.Drawing.Color.White;
+            this.cbMarca.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.cbMarca.BorderRadius = 16;
+            this.cbMarca.BorderSize = 4;
+            this.cbMarca.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbMarca.DataSource = null;
+            this.cbMarca.DisplayMember = "";
+            this.cbMarca.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbMarca.Location = new System.Drawing.Point(493, 93);
+            this.cbMarca.Name = "cbMarca";
+            this.cbMarca.PlaceholderColor = System.Drawing.Color.DimGray;
+            this.cbMarca.PlaceholderText = "Selecione a Marca";
+            this.cbMarca.SelectedIndex = -1;
+            this.cbMarca.SelectedItem = null;
+            this.cbMarca.Size = new System.Drawing.Size(241, 50);
+            this.cbMarca.TabIndex = 0;
+            this.cbMarca.ValueMember = "";
             // 
             // modernBox3
             // 
@@ -425,14 +354,14 @@
             this.dgvItens.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvItens.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvItens.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvItens.ColumnHeadersHeight = 35;
             this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colFavorito,
@@ -447,14 +376,14 @@
             this.colQtd,
             this.colAtivo});
             this.dgvItens.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(218)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvItens.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(218)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvItens.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvItens.EnableHeadersVisualStyles = false;
             this.dgvItens.GridColor = System.Drawing.Color.Silver;
             this.dgvItens.Location = new System.Drawing.Point(17, 16);
@@ -463,8 +392,8 @@
             this.dgvItens.ReadOnly = true;
             this.dgvItens.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvItens.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvItens.Size = new System.Drawing.Size(1115, 428);
             this.dgvItens.TabIndex = 4;
@@ -562,6 +491,26 @@
             this.colAtivo.ReadOnly = true;
             this.colAtivo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.DataPropertyName = "ItemVenda";
+            this.dataGridViewImageColumn1.FillWeight = 21.22982F;
+            this.dataGridViewImageColumn1.HeaderText = "Item/Venda";
+            this.dataGridViewImageColumn1.Image = global::GRC.Properties.Resources.Marca_Venda;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.Width = 159;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.DataPropertyName = "Ativo";
+            this.dataGridViewImageColumn2.FillWeight = 20.67864F;
+            this.dataGridViewImageColumn2.HeaderText = "Ativo";
+            this.dataGridViewImageColumn2.Image = global::GRC.Properties.Resources.Marca_Ativo;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn2.Width = 155;
+            // 
             // btnNovoItem
             // 
             this.btnNovoItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
@@ -587,38 +536,54 @@
             this.btnNovoItem.Text = "Novo Item";
             this.btnNovoItem.UseVisualStyleBackColor = false;
             // 
-            // cbMarca
+            // cbCategoria
             // 
-            this.cbMarca.ArrowImage = null;
-            this.cbMarca.ArrowSide = GRC.Componentes.ArrowPosition.Right;
-            this.cbMarca.BackColor = System.Drawing.Color.White;
-            this.cbMarca.BorderColor = System.Drawing.Color.Silver;
-            this.cbMarca.BorderRadius = 12;
-            this.cbMarca.BorderSize = 1;
-            this.cbMarca.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbMarca.DataSource = null;
-            this.cbMarca.DisplayMember = "";
-            this.cbMarca.Location = new System.Drawing.Point(496, 40);
-            this.cbMarca.Name = "cbMarca";
-            this.cbMarca.PlaceholderColor = System.Drawing.Color.Silver;
-            this.cbMarca.PlaceholderText = "Teste";
-            this.cbMarca.SelectedIndex = -1;
-            this.cbMarca.SelectedItem = null;
-            this.cbMarca.Size = new System.Drawing.Size(378, 40);
-            this.cbMarca.TabIndex = 0;
-            this.cbMarca.ValueMember = "";
+            this.cbCategoria.ArrowImage = null;
+            this.cbCategoria.ArrowSide = GRC.Componentes.ArrowPosition.Right;
+            this.cbCategoria.BackColor = System.Drawing.Color.White;
+            this.cbCategoria.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.cbCategoria.BorderRadius = 16;
+            this.cbCategoria.BorderSize = 4;
+            this.cbCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbCategoria.DataSource = null;
+            this.cbCategoria.DisplayMember = "";
+            this.cbCategoria.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbCategoria.Location = new System.Drawing.Point(740, 93);
+            this.cbCategoria.Name = "cbCategoria";
+            this.cbCategoria.PlaceholderColor = System.Drawing.Color.DimGray;
+            this.cbCategoria.PlaceholderText = "Selecione a Categoria";
+            this.cbCategoria.SelectedIndex = -1;
+            this.cbCategoria.SelectedItem = null;
+            this.cbCategoria.Size = new System.Drawing.Size(241, 50);
+            this.cbCategoria.TabIndex = 184;
+            this.cbCategoria.ValueMember = "";
+            // 
+            // chkItemVenda
+            // 
+            this.chkItemVenda.AutoSize = true;
+            this.chkItemVenda.Depth = 0;
+            this.chkItemVenda.Location = new System.Drawing.Point(984, 101);
+            this.chkItemVenda.Margin = new System.Windows.Forms.Padding(0);
+            this.chkItemVenda.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkItemVenda.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkItemVenda.Name = "chkItemVenda";
+            this.chkItemVenda.ReadOnly = false;
+            this.chkItemVenda.Ripple = true;
+            this.chkItemVenda.Size = new System.Drawing.Size(136, 37);
+            this.chkItemVenda.TabIndex = 185;
+            this.chkItemVenda.Text = "Item de Venda";
+            this.chkItemVenda.UseVisualStyleBackColor = true;
             // 
             // usrEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.Controls.Add(this.chkItemVenda);
+            this.Controls.Add(this.cbCategoria);
             this.Controls.Add(this.cbMarca);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lbCódigoBarras);
-            this.Controls.Add(this.modernBox5);
-            this.Controls.Add(this.modernBox4);
-            this.Controls.Add(this.chkItemVenda);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.modernBox3);
             this.Controls.Add(this.modernBox2);
@@ -631,7 +596,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.modernBox1.ResumeLayout(false);
-            this.modernBox4.ResumeLayout(false);
             this.modernBox3.ResumeLayout(false);
             this.modernBox3.PerformLayout();
             this.modernBox2.ResumeLayout(false);
@@ -655,11 +619,7 @@
         private Componentes.ModernBox modernBox2;
         private Componentes.ModernBox modernBox1;
         private Componentes.RoundedTextBox txtPesquisa;
-        private MaterialSkin.Controls.MaterialCheckbox chkItemVenda;
         private System.Windows.Forms.Label lblStatusLeitor;
-        private Componentes.ModernBox modernBox5;
-        private Componentes.RoundedComboBox cbCategoria;
-        private Componentes.ModernBox modernBox4;
         private System.Windows.Forms.Label lbCódigoBarras;
         private System.Windows.Forms.DataGridView dgvItens;
         private System.Windows.Forms.Panel panel2;
@@ -676,5 +636,9 @@
         private System.Windows.Forms.DataGridViewImageColumn colAtivo;
         private Componentes.CustomButton btnFiltroAtivos;
         private Componentes.ModernComboBox cbMarca;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private Componentes.ModernComboBox cbCategoria;
+        private MaterialSkin.Controls.MaterialCheckbox chkItemVenda;
     }
 }

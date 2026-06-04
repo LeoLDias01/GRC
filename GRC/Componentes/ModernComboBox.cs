@@ -348,7 +348,7 @@ namespace GRC.Componentes
             else
                 bgColor = lstItems.BackColor;
 
-            Color textColor = isSelected ? Color.White : lstItems.ForeColor;
+            Color textColor = isSelected ? Color.Black : lstItems.ForeColor;
 
             using (var brush = new SolidBrush(bgColor))
                 e.Graphics.FillRectangle(brush, e.Bounds);
