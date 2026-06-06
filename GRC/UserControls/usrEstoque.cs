@@ -52,6 +52,8 @@ namespace GRC.UserControls
             cbMarca.SelectedIndexChanged += cbMarca_DropDownClosed;
             chkItemVenda.CheckedChanged += chkItemVenda_CheckedChanged;
 
+            txtPesquisa.KeyPress += txtPesquisa_KeyPress;
+
             // Eventos de clique que mudam o estado do filtro
             btnFiltroTodos.Click += (s, e) => { _statusSelecionado = null; AtualizarVisualFiltros(); RealizaPesquisa(); };
             btnFiltroAtivos.Click += (s, e) => { _statusSelecionado = true; AtualizarVisualFiltros(); RealizaPesquisa(); };
@@ -59,6 +61,12 @@ namespace GRC.UserControls
             dgvItens.Paint += dgvItens_Paint;
             dgvItens.CellFormatting += dgvItens_CellFormatting;
         }
+
+        private void txtPesquisa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            RealizaPesquisa();
+        }
+
         private void dgvItens_Paint(object sender, PaintEventArgs e)
         {
             int alturaFaixa = 1;

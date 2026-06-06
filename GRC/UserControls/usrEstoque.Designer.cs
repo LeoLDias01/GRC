@@ -22,9 +22,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(usrEstoque));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label11 = new System.Windows.Forms.Label();
             this.lbTitulo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -188,8 +188,8 @@
             this.lbCódigoBarras.AutoSize = true;
             this.lbCódigoBarras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lbCódigoBarras.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.lbCódigoBarras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbCódigoBarras.Location = new System.Drawing.Point(190, 70);
+            this.lbCódigoBarras.ForeColor = System.Drawing.Color.White;
+            this.lbCódigoBarras.Location = new System.Drawing.Point(214, 1);
             this.lbCódigoBarras.Name = "lbCódigoBarras";
             this.lbCódigoBarras.Size = new System.Drawing.Size(0, 20);
             this.lbCódigoBarras.TabIndex = 183;
@@ -199,6 +199,7 @@
             // 
             this.panel2.Controls.Add(this.modernBox1);
             this.panel2.Controls.Add(this.lblStatusLeitor);
+            this.panel2.Controls.Add(this.lbCódigoBarras);
             this.panel2.Location = new System.Drawing.Point(4, 70);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(486, 76);
@@ -235,6 +236,9 @@
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Padding = new System.Windows.Forms.Padding(10);
             this.txtPesquisa.Placeholder = "Busque por Nome do Item...";
+            this.txtPesquisa.SelectedText = "";
+            this.txtPesquisa.SelectionLength = 0;
+            this.txtPesquisa.SelectionStart = 0;
             this.txtPesquisa.Size = new System.Drawing.Size(467, 34);
             this.txtPesquisa.TabIndex = 2;
             this.txtPesquisa.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -354,14 +358,14 @@
             this.dgvItens.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvItens.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvItens.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvItens.ColumnHeadersHeight = 35;
             this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colFavorito,
@@ -376,14 +380,14 @@
             this.colQtd,
             this.colAtivo});
             this.dgvItens.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(218)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvItens.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(218)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvItens.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgvItens.EnableHeadersVisualStyles = false;
             this.dgvItens.GridColor = System.Drawing.Color.Silver;
             this.dgvItens.Location = new System.Drawing.Point(17, 16);
@@ -392,8 +396,8 @@
             this.dgvItens.ReadOnly = true;
             this.dgvItens.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvItens.RowHeadersVisible = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvItens.Size = new System.Drawing.Size(1115, 428);
             this.dgvItens.TabIndex = 4;
@@ -583,7 +587,6 @@
             this.Controls.Add(this.cbCategoria);
             this.Controls.Add(this.cbMarca);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.lbCódigoBarras);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.modernBox3);
             this.Controls.Add(this.modernBox2);

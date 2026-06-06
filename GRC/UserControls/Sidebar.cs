@@ -106,5 +106,10 @@ namespace GRC.UserControls
         {
             MudaForm(new usrEstoque());
         }
+
+        private void btnMovimentacoesEx_Click(object sender, EventArgs e)
+        {
+            MudaForm(new usrMovimento());
+        }
     }
 }

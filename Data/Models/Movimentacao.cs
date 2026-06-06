@@ -10,13 +10,10 @@ namespace Data.Models
     public class Movimentacao
     {
         public int Id { get; set; }
-        public int IdItem { get; set; }
-        public string DescricaoItem { get; set; }
-        public int IdTipoMovimentacao { get; set; }
-        public string DescricaoTipoMovimentacao { get; set; }
+        public Item DadosItem {  get; set; }
+        public int? TipoMovimentacao { get; set; }
+        public string Descricao { get; set; }
         public string Motivo { get; set; }
-        public int Quantidade { get; set; }
-        public string CustoUnitario { get; set; }
         public string Observacoes { get; set; }
         public string DataMovimentacao { get; set; }
         public string DataReal { get; set; }

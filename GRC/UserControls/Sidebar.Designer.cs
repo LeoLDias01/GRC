@@ -295,6 +295,7 @@
             this.btnMovimentacao.TamanhoRaio = 15;
             this.btnMovimentacao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMovimentacao.UseVisualStyleBackColor = false;
+            this.btnMovimentacao.Click += new System.EventHandler(this.btnMovimentacoesEx_Click);
             // 
             // btnEstoque
             // 
@@ -620,6 +621,7 @@
             this.btnMovimentacoesEx.Text = "        Movimentações";
             this.btnMovimentacoesEx.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMovimentacoesEx.UseVisualStyleBackColor = false;
+            this.btnMovimentacoesEx.Click += new System.EventHandler(this.btnMovimentacoesEx_Click);
             // 
             // btnEstoqueEx
             // 

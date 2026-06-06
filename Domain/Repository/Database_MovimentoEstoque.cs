@@ -188,13 +188,27 @@ namespace Domain.Repository
                                                           AND TIP.ATIVO = 1
     
                                 WHERE MOV.ATIVO = 1 ");
+  
 
-                    // Filtros dinâmicos
-                    if (mov.IdTipoMovimentacao > 0)
-                        sql.Append(" AND MOV.IDGRC_TIPO_MOVIMENTACAO = @IdTipo ");
+                    // 2. Filtros Combo Estruturais (Se selecionados, filtram especificamente)
+                    if (mov.TipoMovimentacao > 0)
+                        sql.Append(" AND ITM.IDGRC_CATEGORIA = @Categoria ");
 
-                    if (mov.IdItem > 0)
-                        sql.Append(" AND MOV.IDGRC_ITEM_ESTOQUE = @IdItem ");
+                    if (mov.DadosItem.CodBarras != string.Empty)
+                        sql.Append(" AND ITM.CODIGO_BARRAS = @CodBarras ");
+
+                    // 3. Filtro Unificado (Valida o termo em qualquer uma das colunas textuais importantes)
+                    // Usamos o campo 'Descricao' do objeto para carregar o termo que veio do txtPesquisa
+                    if (!string.IsNullOrWhiteSpace(mov.Descricao))
+                    {
+                        sql.Append(@" AND (ITM.DESCRICAO LIKE @Termo) ");
+                    }
+
+                    sql.Append(" ORDER BY ITM.FAVORITO DESC, ITM.DESCRICAO ASC LIMIT @Registros; ");
+
+                    // Formata o termo colocando as porcentagens para o LIKE do SQLite
+                    string termoFormatado = $"%{mov.Descricao?.Trim()}%";
+
 
                     if (!string.IsNullOrWhiteSpace(dataInicial) && !string.IsNullOrWhiteSpace(dataFinal))
                         sql.Append(@" AND MOV.DATA_MOVIMENTACAO 
@@ -206,8 +220,9 @@ namespace Domain.Repository
 
                     var lista = conn.Query(sql.ToString(), new
                     {
-                        IdTipo = mov.IdTipoMovimentacao,
-                        IdItem = mov.IdItem,
+                        IdTipo = mov.TipoMovimentacao,
+                        CodBarras = mov.DadosItem.CodBarras,
+                        Termo = termoFormatado,
                         DataInicial = dtInicial?.ToString("yyyy-MM-dd"),
                         DataFinal = dtFinal?.ToString("yyyy-MM-dd"),
                         Registros = registros
@@ -216,16 +231,19 @@ namespace Domain.Repository
                     {
                         DataMovimentacao = x.Data,
                         Id = Convert.ToInt32(x.Id),
-                        DescricaoItem = x.DescricaoItem,
-                        DescricaoTipoMovimentacao = x.TipoMov,
+                        Descricao = x.TipoMov,
                         Motivo = x.Motivo,
+                        DadosItem = new Item
+                        {
+                            Descricao = x.DescricaoItem
+                        }
                     }).ToList();
 
                     return lista;
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Erro ao buscar itens do database: " + ex.Message);
+                    throw new Exception("Erro ao buscar movimentos do db: " + ex.Message);
                 }
             }
         }

@@ -25,6 +25,26 @@ namespace GRC.Componentes
         private IconPositionEnum iconPosition = IconPositionEnum.Left;
 
         public event EventHandler IconClick;
+        public event EventHandler SelectionChanged;
+
+        // Propriedade SelectionStart (expõe o do TextBox interno)
+        public int SelectionStart
+        {
+            get => textBox.SelectionStart;
+            set => textBox.SelectionStart = value;
+        }
+
+        public int SelectionLength
+        {
+            get => textBox.SelectionLength;
+            set => textBox.SelectionLength = value;
+        }
+
+        public string SelectedText
+        {
+            get => isPlaceholder ? "" : textBox.SelectedText;
+            set => textBox.SelectedText = value;
+        }
 
         public int BorderRadius { get; set; } = 12;
         public Color BorderColor { get; set; } = Color.FromArgb(200, 200, 200);

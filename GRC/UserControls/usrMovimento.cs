@@ -3,6 +3,7 @@ using Business.Services;
 using Data.Models;
 using GRC.Componentes;
 using GRC.Telas;
+using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,22 +44,63 @@ namespace GRC.UserControls
             InitializeComponent();
             // Registra os eventos dos novos componentes via código
             this.Load += usrMovimento_Load;
+            txtPesquisa.KeyPress += txt_KeyPress;
+            txtDataInicial.KeyPress += txt_KeyPress;
+            txtDataFinal.KeyPress += txt_KeyPress;
             lbTitulo.DoubleClick += lbTitulo_DoubleClick;
             cbRegistros.TextChanged += cbRegistros_TextChanged;
             cbRegistros.KeyPress += cbRegistros_KeyPress;
             dgvMovimentacoes.CellValueChanged += dgvItens_CellValueChanged;
             dgvMovimentacoes.CellDoubleClick += dgvItens_CellDoubleClick;
-            btnMovimentar.Click += btnNovoItem_Click;
-            cbCategoria.DropDownClosed += cbCategoria_DropDownClosed;
-            cbMarca.SelectedIndexChanged += cbMarca_DropDownClosed;
-            chkItemVenda.CheckedChanged += chkItemVenda_CheckedChanged;
+            btnMovimentar.Click += btnNovoMovimento_Click;
 
-            // Eventos de clique que mudam o estado do filtro
-            btnFiltroTodos.Click += (s, e) => { _statusSelecionado = null; AtualizarVisualFiltros(); RealizaPesquisa(); };
-            btnFiltroAtivos.Click += (s, e) => { _statusSelecionado = true; AtualizarVisualFiltros(); RealizaPesquisa(); };
-            btnFiltroInativos.Click += (s, e) => { _statusSelecionado = false; AtualizarVisualFiltros(); RealizaPesquisa(); };
+            txtDataInicial.KeyDown += txtDataInicial_KeyDown;
+            txtDataFinal.KeyDown += txtDataFinal_KeyDown;
+            cbTipoMovimento.DropDownClosed += cbTipoMovimento_DropDownClosed;
+
+            
             dgvMovimentacoes.Paint += dgvItens_Paint;
             dgvMovimentacoes.CellFormatting += dgvItens_CellFormatting;
+
+
+        }
+        private void txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            RealizaPesquisa();
+        }
+        private void txtDataInicial_KeyDown(object sender, EventArgs e)
+        {
+            FormataData(txtDataInicial);
+        }
+        private void txtDataFinal_KeyDown(object sender, EventArgs e)
+        {
+            FormataData(txtDataFinal);
+        }
+        private void FormataData(RoundedTextBox txt)
+        {
+            // Remove tudo que não é número
+            string apenasNumeros = new string(txt.Text.Where(char.IsDigit).ToArray());
+
+            if (apenasNumeros.Length > 8)
+                apenasNumeros = apenasNumeros.Substring(0, 8);
+
+            string formatado = "";
+
+            if (apenasNumeros.Length <= 2)
+            {
+                formatado = apenasNumeros;
+            }
+            else if (apenasNumeros.Length <= 4)
+            {
+                formatado = apenasNumeros.Insert(2, "/");
+            }
+            else
+            {
+                formatado = apenasNumeros.Insert(2, "/").Insert(5, "/");
+            }
+
+            txt.Text = formatado;
+            txt.SelectionStart = txt.Text.Length;
         }
         private void dgvItens_Paint(object sender, PaintEventArgs e)
         {
@@ -78,44 +120,17 @@ namespace GRC.UserControls
             CarregaCombos();
             cbRegistros.Text = "10";
             _statusSelecionado = null; // Começa exibindo Todos
-            AtualizarVisualFiltros();
             InicializarColunasGrid();
             RealizaPesquisa();
             btnMovimentar.Focus();
         }
-        private void cbCategoria_DropDownClosed(object sender, EventArgs e)
+        private void cbTipoMovimento_DropDownClosed(object sender, EventArgs e)
         {
-            RealizaPesquisa();
+             RealizaPesquisa();
         }
-        private void cbMarca_DropDownClosed(object sender, EventArgs e)
-        { 
-            RealizaPesquisa();
-        }
-        private void chkItemVenda_CheckedChanged(object sender, EventArgs e)
-        {
-            RealizaPesquisa();
-        }
-        private void AtualizarVisualFiltros()
-        {
-            // Reseta o fundo de todos para o padrão inativo (transparente)
-            btnFiltroTodos.BackColor = CorFiltroInativo;
-            btnFiltroAtivos.BackColor = CorFiltroInativo;
-            btnFiltroInativos.BackColor = CorFiltroInativo;
 
-            // Aplica o azul bem claro apenas no fundo do botão que está selecionado
-            if (_statusSelecionado == null)
-            {
-                btnFiltroTodos.BackColor = CorFiltroAtivo;
-            }
-            else if (_statusSelecionado == true)
-            {
-                btnFiltroAtivos.BackColor = CorFiltroAtivo;
-            }
-            else if (_statusSelecionado == false)
-            {
-                btnFiltroInativos.BackColor = CorFiltroAtivo;
-            }
-        }
+        
+
         private void lbTitulo_DoubleClick(object sender, EventArgs e)
         {
             LimpaCampos();
@@ -131,12 +146,8 @@ namespace GRC.UserControls
             cb.DataSource = lista;
             cb.SelectedIndex = -1; // nenhum item selecionado — exibe o placeholder
         }
-        private void btnApagar_Click(object sender, EventArgs e)
-        {
-            LimpaCampos();
-        }
 
-        private void cbxQtdRegistros_TextChanged(object sender, EventArgs e)
+        private void cbRegistros_TextChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(cbRegistros.Text))
             {
@@ -164,10 +175,10 @@ namespace GRC.UserControls
         {
             lbRegistros.Text = $"{dgvMovimentacoes.Rows.Count} registros encontrados!";
         }
-        private void btnNovoItem_Click(object sender, EventArgs e)
+        private void btnNovoMovimento_Click(object sender, EventArgs e)
         {
             txtPesquisa.Text = string.Empty;
-            new CadastroItem().ShowDialog();
+            new CadastroMovimentacao().ShowDialog();
             RealizaPesquisa();
         }
         private void InicializarColunasGrid()
@@ -215,53 +226,41 @@ namespace GRC.UserControls
         }
         private void RealizaPesquisa()
         {
-            int categoria = cbCategoria.SelectedValue != null ? Convert.ToInt32(cbCategoria.SelectedValue) : 0;
-            int marca = cbMarca.SelectedValue != null ? Convert.ToInt32(cbMarca.SelectedValue) : 0;
-
-            var item = new Item
+            int categoria = cbTipoMovimento.SelectedValue != null ? Convert.ToInt32(cbTipoMovimento.SelectedValue) : 0;
+            /// Monta o objeto com base na pesquisa
+            var mov = new Movimentacao
             {
-                CodBarras = string.IsNullOrWhiteSpace(lbCódigoBarras.Text) ? string.Empty : lbCódigoBarras.Text,
-                Descricao = string.IsNullOrWhiteSpace(txtPesquisa.Text) ? string.Empty : txtPesquisa.Text,
-                Categoria = categoria > 0 ? categoria : 0,
-                Fabricante = marca > 0 ? marca : 0,
-                ItemVenda = chkItemVenda.Checked,
-                Ativo = _statusSelecionado
+                TipoMovimentacao = categoria,
+                Descricao = txtPesquisa.Text,
+                DadosItem  = new Item
+                {
+                    CodBarras = lbCódigoBarras.Text
+                }
             };
+
 
             int registros = Convert.ToInt32(cbRegistros.Text);
 
             ConfigurarEstiloGrid();
 
-            var lista = _service.BuscaLimitada(item, registros);
+            var lista = _service.BuscaLimitada(mov, registros, txtDataInicial.Text, txtDataFinal.Text);
+
 
             dgvMovimentacoes.Rows.Clear();
 
             if (lista != null)
             {
-                foreach (var estoque in lista)
+                foreach (var movimento in lista)
                 {
-                    if (estoque.Id > 0)
+                    if (movimento.Id > 0)
                     {
-                        Image foto = null;
-                        if (!string.IsNullOrWhiteSpace(estoque.FotoItem))
-                        {
-                            foto = CriptoImagem.Base64ToImage(estoque.FotoItem);
-                        }
-
-                        // IMPORTANTE: Agora passamos os valores booleanos originais ou strings puras, 
-                        // e deixaremos o CellFormatting desenhar a imagem correspondente!
                         dgvMovimentacoes.Rows.Add(
-                            estoque.Favorito == true ? Resources.star : Resources.starOff, // 1. colFavorito
-                            estoque.Id.ToString(),                                         // 2. colId (Invisível)
-                            foto,                                                          // 3. colImagem
-                            estoque.ItemVenda == true ? "Venda" : "Estoque",               // 4. colProduto (Texto base)
-                            estoque.Descricao,                                             // 5. colDescricao
-                            estoque.CodBarras,                                             // 6. colCodigoBarras
-                            estoque.DescricaoFabricante,                                   // 7. colFabricante
-                            estoque.DescricaoCategoria,                                    // 8. colCategoria
-                            estoque.QuatidadeMinima.ToString(),                            // 9. colQtdMinima
-                            estoque.Quatidade.ToString(),                                  // 10. colQtd
-                            estoque.Ativo == true ? "Ativo" : "Inativo"                    // 11. colAtivo (Texto base)
+
+                        movimento.DataMovimentacao,
+                        movimento.Id.ToString(),
+                        movimento.DadosItem.Descricao,
+                        movimento.Descricao,
+                        movimento.Motivo.ToString()
                         );
                     }
                 }
@@ -385,10 +384,11 @@ namespace GRC.UserControls
         private void LimpaCampos()
         {
             txtPesquisa.Text = string.Empty;
+            txtDataInicial.Text = string.Empty;
+            txtDataFinal.Text = string.Empty;
             CarregaCombos();
             _statusSelecionado = null; // Começa exibindo Todos
-            AtualizarVisualFiltros();
-            chkItemVenda.Checked = false;
+
             dgvMovimentacoes.Rows.Clear();
             dgvMovimentacoes.ColumnHeadersVisible = false;
             cbRegistros.Text = "10";
@@ -561,17 +561,6 @@ namespace GRC.UserControls
 
             dgvMovimentacoes.ResumeLayout();
         }
-        private void cbRegistros_TextChanged(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(cbRegistros.Text))
-            {
-                if (Convert.ToInt32(cbRegistros.Text) > 100)
-                    cbRegistros.Text = "100";
-            }
-            else cbRegistros.Text = "10";
-
-            RealizaPesquisa();
-        }
 
         private void dgvItens_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -579,7 +568,7 @@ namespace GRC.UserControls
             if (id.HasValue)
             {
                 new CadastroItem(id.Value).ShowDialog();
-                RealizaPesquisa();
+                // RealizaPesquisa();
             }
         }
         private long? PegaId(DataGridViewCellEventArgs e)
@@ -702,6 +691,5 @@ namespace GRC.UserControls
 
             base.Dispose(disposing);
         }
-
     }
 }
