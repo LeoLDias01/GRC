@@ -2,6 +2,7 @@
 using Business.Services;
 using Data.Models;
 using GRC.Componentes;
+using GRC.Properties;
 using GRC.Telas;
 using MaterialSkin.Controls;
 using System;
@@ -28,17 +29,6 @@ namespace GRC.UserControls
 
         private SerialPort _serialPort;
 
-        // Estado do filtro atual: null = Todos, true = Ativos, false = Inativos
-        private bool? _statusSelecionado = null;
-
-
-
-
-        // Cores para o efeito de filtro ativo/inativo
-        private readonly Color CorFiltroAtivo = Color.DarkSlateBlue;   // Azul bem claro esbranquiçado
-        private readonly Color CorFiltroInativo = Color.FromArgb(6, 31, 48);             // Se funde totalmente com o fundo
-        private readonly Color CorTextoAtivo = Color.FromArgb(44, 62, 80);       // Seu azul escuro acinzentado
-        private readonly Color CorTextoInativo = Color.FromArgb(127, 140, 141);  // Cinza fosco para o que está desligado
         public usrMovimento()
         {
             InitializeComponent();
@@ -119,7 +109,6 @@ namespace GRC.UserControls
         {
             CarregaCombos();
             cbRegistros.Text = "10";
-            _statusSelecionado = null; // Começa exibindo Todos
             InicializarColunasGrid();
             RealizaPesquisa();
             btnMovimentar.Focus();
@@ -187,42 +176,29 @@ namespace GRC.UserControls
             dgvMovimentacoes.AutoGenerateColumns = false;
 
             // 1. Favorito (Imagem)
-            var colFavorito = new DataGridViewImageColumn { Name = "colFavorito", HeaderText = "★", Width = 60, ImageLayout = DataGridViewImageCellLayout.Normal };
-            dgvMovimentacoes.Columns.Add(colFavorito);
+            // 8. Categoria
+            dgvMovimentacoes.Columns.Add(new DataGridViewTextBoxColumn { Name = "colData", HeaderText = "Data", Width = 110 });
 
             // 2. ID (Invisível)
-            var colId = new DataGridViewTextBoxColumn { Name = "colId", HeaderText = "ID", Visible = false };
+            var colId = new DataGridViewTextBoxColumn { Name = "colId", HeaderText = "Id", Visible = false };
             dgvMovimentacoes.Columns.Add(colId);
 
-            // 3. Foto do Item (Imagem)
-            var colImagem = new DataGridViewImageColumn { Name = "colImagem", HeaderText = "Foto", Width = 110, ImageLayout = DataGridViewImageCellLayout.Zoom };
-            dgvMovimentacoes.Columns.Add(colImagem);
 
             // 4. Marcação de Vendas/Estoque (Botão)
-            var colTipoVenda = new DataGridViewImageColumn { Name = "colProduto", HeaderText = "Tipo", Width = 100, ImageLayout = DataGridViewImageCellLayout.Normal };
+            var colTipoVenda = new DataGridViewImageColumn { Name = "colTipo", HeaderText = "Tipo", Width = 100, ImageLayout = DataGridViewImageCellLayout.Normal };
             dgvMovimentacoes.Columns.Add(colTipoVenda);
 
             // 5. Nome / Descrição
-            dgvMovimentacoes.Columns.Add(new DataGridViewTextBoxColumn { Name = "colDescricao", HeaderText = "Nome", Width = 200 });
-
-            // 6. Código de Barras
-            dgvMovimentacoes.Columns.Add(new DataGridViewTextBoxColumn { Name = "colCodigoBarras", HeaderText = "Cód. Barras", Width = 130 });
-
-            // 7. Marca
-            dgvMovimentacoes.Columns.Add(new DataGridViewTextBoxColumn { Name = "colFabricante", HeaderText = "Marca", Width = 110 });
-
-            // 8. Categoria
-            dgvMovimentacoes.Columns.Add(new DataGridViewTextBoxColumn { Name = "colCategoria", HeaderText = "Categoria", Width = 110 });
-
-            // 9. Quantidade Mínima
-            dgvMovimentacoes.Columns.Add(new DataGridViewTextBoxColumn { Name = "colQtdMinima", HeaderText = "Qtd Mín.", Width = 90 });
+            dgvMovimentacoes.Columns.Add(new DataGridViewTextBoxColumn { Name = "colItem", HeaderText = "Item", Width = 200 });
 
             // 10. Quantidade Atual
-            dgvMovimentacoes.Columns.Add(new DataGridViewTextBoxColumn { Name = "colQtd", HeaderText = "Estoque", Width = 90 });
+            dgvMovimentacoes.Columns.Add(new DataGridViewTextBoxColumn { Name = "colQtd", HeaderText = "Qtd", Width = 90 });
 
-            // 11. Marcação Ativo/Inativo (Botão)
-            var colAtivo = new DataGridViewImageColumn { Name = "colAtivo", HeaderText = "Status", Width = 100, ImageLayout = DataGridViewImageCellLayout.Normal };
-            dgvMovimentacoes.Columns.Add(colAtivo); ;
+            // 6. Código de Barras
+            dgvMovimentacoes.Columns.Add(new DataGridViewTextBoxColumn { Name = "colMotivo", HeaderText = "Motivo", Width = 130 });
+
+            // 7. Marca
+            dgvMovimentacoes.Columns.Add(new DataGridViewImageColumn { Name = "colExcluir", HeaderText = "", Width = 110, Image = Resources.remove });
         }
         private void RealizaPesquisa()
         {
@@ -248,18 +224,21 @@ namespace GRC.UserControls
 
             dgvMovimentacoes.Rows.Clear();
 
+            string tipo;
+
             if (lista != null)
             {
                 foreach (var movimento in lista)
                 {
                     if (movimento.Id > 0)
-                    {
+                    { 
                         dgvMovimentacoes.Rows.Add(
 
                         movimento.DataMovimentacao,
                         movimento.Id.ToString(),
-                        movimento.DadosItem.Descricao,
                         movimento.Descricao,
+                        movimento.DadosItem.Descricao,
+                        movimento.DadosItem.Quatidade,
                         movimento.Motivo.ToString()
                         );
                     }
@@ -279,10 +258,9 @@ namespace GRC.UserControls
             // =================================================================
             if (dgvMovimentacoes.Columns[e.ColumnIndex].Name == "colQtd")
             {
-                decimal qtdAtual = row.Cells["colQtd"].Value != null ? Convert.ToDecimal(row.Cells["colQtd"].Value) : 0;
-                decimal qtdMinima = row.Cells["colQtdMinima"].Value != null ? Convert.ToDecimal(row.Cells["colQtdMinima"].Value) : 0;
-
-                if (qtdAtual <= qtdMinima)
+                string tipo = row.Cells["colQtd"].Value != null ? row.Cells["colQtd"].Value.ToString() : "";
+                
+                if (tipo != "Entrada")
                 {
                     e.CellStyle.ForeColor = Color.OrangeRed;
                     e.CellStyle.SelectionForeColor = Color.OrangeRed;
@@ -297,34 +275,19 @@ namespace GRC.UserControls
             }
 
             // =================================================================
-            // 2. STATUS (Ativo [Verde] / Inativo [Vermelho]) - Gerando Tag/Imagem
-            // =================================================================
-            if (dgvMovimentacoes.Columns[e.ColumnIndex].Name == "colAtivo" && e.Value != null)
-            {
-                string status = e.Value.ToString();
-
-                // Se você tiver os ícones prontos em Resources, use: e.Value = (status == "Ativo") ? Resources.tag_ativo : Resources.tag_inativo;
-                // Caso queira que o próprio C# desenhe a pílula perfeita sem precisar de arquivos externos:
-                if (status == "Ativo")
-                    e.Value = CriarTagColorida("Ativo", Color.FromArgb(46, 204, 113), Color.White);
-                else
-                    e.Value = CriarTagColorida("Inativo", Color.FromArgb(231, 76, 60), Color.White);
-            }
-
-            // =================================================================
             // 3. TIPO PRODUTO (Venda [Azul] / Estoque [Invisível]) - Gerando Tag/Imagem
             // =================================================================
-            if (dgvMovimentacoes.Columns[e.ColumnIndex].Name == "colProduto" && e.Value != null)
+            if (dgvMovimentacoes.Columns[e.ColumnIndex].Name == "colTipo" && e.Value != null)
             {
                 string tipo = e.Value.ToString();
 
-                if (tipo == "Venda")
+                if (tipo == "Entrada")
                 {
-                    e.Value = CriarTagColorida("Venda", Color.FromArgb(52, 152, 219), Color.White);
+                    e.Value = CriarTagColorida("Entrada", Color.DarkGreen, Color.White);
                 }
                 else
                 {
-                    e.Value = CriarTagColorida("Estoque", Color.Goldenrod, Color.White);
+                    e.Value = CriarTagColorida($"{tipo}", Color.DarkRed, Color.White);
                 }
             }
         }
@@ -387,8 +350,6 @@ namespace GRC.UserControls
             txtDataInicial.Text = string.Empty;
             txtDataFinal.Text = string.Empty;
             CarregaCombos();
-            _statusSelecionado = null; // Começa exibindo Todos
-
             dgvMovimentacoes.Rows.Clear();
             dgvMovimentacoes.ColumnHeadersVisible = false;
             cbRegistros.Text = "10";
@@ -425,7 +386,7 @@ namespace GRC.UserControls
             dgvMovimentacoes.ScrollBars = ScrollBars.Vertical;
             dgvMovimentacoes.Cursor = Cursors.Hand;
             dgvMovimentacoes.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
-            dgvMovimentacoes.RowTemplate.Height = 96;
+            dgvMovimentacoes.RowTemplate.Height = 50;
 
             // Bordas inferiores SaaS
             dgvMovimentacoes.AdvancedCellBorderStyle.Left = DataGridViewAdvancedCellBorderStyle.None;
@@ -477,7 +438,7 @@ namespace GRC.UserControls
                 {
                     // ALTERAÇÃO AQUI: Verifica se são as colunas de quantidade
                     // IMPORTANTE: Verifique se os Names abaixo batem exatamente com as suas colunas
-                    if (coluna.Name == "colQtdMinima" || coluna.Name == "colQtd")
+                    if (coluna.Name == "colQtd")
                     {
                         // Centraliza totalmente (Vertical e Horizontal) o Header e as Células
                         coluna.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -503,30 +464,7 @@ namespace GRC.UserControls
                     coluna.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     coluna.HeaderCell.Style.Padding = Padding.Empty;
 
-                    if (coluna.Name == "colImagem")
-                    {
-                        if (coluna is DataGridViewImageColumn imgProduto)
-                        {
-                            imgProduto.ImageLayout = DataGridViewImageCellLayout.Zoom;
-                            imgProduto.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-                            imgProduto.Width = 115;
-                            imgProduto.DefaultCellStyle.NullValue = null;
-                            imgProduto.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                            imgProduto.DefaultCellStyle.Padding = new Padding(6);
-                        }
-                    }
-                    else if (coluna.Name == "colFavorito")
-                    {
-                        if (coluna is DataGridViewImageColumn imgFavorito)
-                        {
-                            imgFavorito.ImageLayout = DataGridViewImageCellLayout.Normal;
-                            imgFavorito.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-                            imgFavorito.Width = 60;
-                            imgFavorito.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                            imgFavorito.DefaultCellStyle.NullValue = null;
-                        }
-                    }
-                    else if (coluna.Name == "colProduto")
+                    if (coluna.Name == "colProduto")
                     {
                         if (coluna is DataGridViewImageColumn imgProd)
                         {
@@ -538,20 +476,7 @@ namespace GRC.UserControls
                             imgProd.DefaultCellStyle.Padding = Padding.Empty;
                         }
                     }
-                    else if (coluna.Name == "colAtivo")
-                    {
-                        if (coluna is DataGridViewImageColumn imgAtivo)
-                        {
-                            imgAtivo.ImageLayout = DataGridViewImageCellLayout.Normal;
-                            imgAtivo.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-                            imgAtivo.Width = 120;
-                            imgAtivo.DefaultCellStyle.NullValue = null;
-                            imgAtivo.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-                            imgAtivo.DefaultCellStyle.Padding = new Padding(0, 0, 20, 0);
-                            imgAtivo.HeaderCell.Style.Padding = new Padding(0, 0, 20, 0);
-                        }
-                    }
+                    
                 }
             }
 

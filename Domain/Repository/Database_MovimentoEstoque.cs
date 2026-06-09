@@ -66,11 +66,11 @@ namespace Domain.Repository
 
                         mov.Id = conn.ExecuteScalar<int>(sqlFornecedor, new
                         {
-                            IdItem = mov.IdItem,
-                            TipoMov = mov.IdTipoMovimentacao,
+                            IdItem = mov.DadosItem.Id,
+                            TipoMov = mov.TipoMovimentacao,
                             Motivo = mov.Motivo,
-                            Qtd = mov.Quantidade,
-                            Custo = mov.IdTipoMovimentacao == 1 ? mov.CustoUnitario : null,
+                            Qtd = mov.DadosItem.Quatidade,
+                            Custo = mov.TipoMovimentacao == 1 ? mov.DadosItem.CustoUnitario : null,
                             Observacoes = mov.Observacoes,
                             DataMov = mov.DataMovimentacao
                         }, tran);
@@ -180,6 +180,7 @@ namespace Domain.Repository
                                         MOV.IDGRC_ITEM_MOVIMENTACAO AS Id,
                                         ITM.DESCRICAO AS DescricaoItem,
                                         TIP.DESCRICAO AS TipoMov,
+                                        MOV.QUANTIDADE AS Qtd,
                                         MOV.MOTIVO AS Motivo
                                 FROM GRC_ITEM_MOVIMENTACAO MOV
                                 INNER JOIN GRC_ITEM_ESTOQUE ITM ON ITM.IDGRC_ITEM_ESTOQUE = MOV.IDGRC_ITEM_ESTOQUE
@@ -192,7 +193,7 @@ namespace Domain.Repository
 
                     // 2. Filtros Combo Estruturais (Se selecionados, filtram especificamente)
                     if (mov.TipoMovimentacao > 0)
-                        sql.Append(" AND ITM.IDGRC_CATEGORIA = @Categoria ");
+                        sql.Append(" AND MOV.IDGRC_TIPO_MOVIMENTACAO = @IdTipo ");
 
                     if (mov.DadosItem.CodBarras != string.Empty)
                         sql.Append(" AND ITM.CODIGO_BARRAS = @CodBarras ");
@@ -203,8 +204,6 @@ namespace Domain.Repository
                     {
                         sql.Append(@" AND (ITM.DESCRICAO LIKE @Termo) ");
                     }
-
-                    sql.Append(" ORDER BY ITM.FAVORITO DESC, ITM.DESCRICAO ASC LIMIT @Registros; ");
 
                     // Formata o termo colocando as porcentagens para o LIKE do SQLite
                     string termoFormatado = $"%{mov.Descricao?.Trim()}%";
@@ -221,7 +220,7 @@ namespace Domain.Repository
                     var lista = conn.Query(sql.ToString(), new
                     {
                         IdTipo = mov.TipoMovimentacao,
-                        CodBarras = mov.DadosItem.CodBarras,
+                        CodBarras = mov.DadosItem.CodBarras != null? mov.DadosItem.CodBarras : null,
                         Termo = termoFormatado,
                         DataInicial = dtInicial?.ToString("yyyy-MM-dd"),
                         DataFinal = dtFinal?.ToString("yyyy-MM-dd"),
@@ -235,7 +234,8 @@ namespace Domain.Repository
                         Motivo = x.Motivo,
                         DadosItem = new Item
                         {
-                            Descricao = x.DescricaoItem
+                            Descricao = x.DescricaoItem,
+                            Quatidade = (int)x.Qtd
                         }
                     }).ToList();
 
@@ -277,12 +277,16 @@ namespace Domain.Repository
                     .Select(x => new Movimentacao
                     {
                         Id = Convert.ToInt32(x.IdMov),
-                        IdItem = Convert.ToInt32(x.IdItem),
-                        DescricaoItem = x.Item,
-                        IdTipoMovimentacao = Convert.ToInt32(x.IdTipo),
+                        DadosItem = new Item
+                        {
+                            Id = Convert.ToInt32(x.IdItem),
+                            Descricao = x.Item,
+                            Quatidade = Convert.ToInt32(x.Qtd),
+                            CustoUnitario = x.Custo
+                        },
+  
+                        TipoMovimentacao = Convert.ToInt32(x.IdTipo),
                         Motivo = x.Motivo,
-                        Quantidade = Convert.ToInt32(x.Qtd),
-                        CustoUnitario = x.Custo,
                         Observacoes = x.Observacoes,
                         DataMovimentacao = x.Data,
                     }).ToList();

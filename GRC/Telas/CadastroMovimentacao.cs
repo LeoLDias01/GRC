@@ -115,11 +115,15 @@ namespace GRC.Telas
                 var movimento = new Movimentacao
                 {
                     Id = _IdMovimentacao,
-                    IdItem = _idItem,
-                    IdTipoMovimentacao = Convert.ToInt32(cbTipoMovimento.SelectedValue),
+                    DadosItem = new Item
+                    {
+                        Id = _idItem,
+                        Quatidade = Convert.ToInt32(txtQuantidade.Text),
+                        CustoUnitario = txtCustoUnitario.Text
+                    },
+                    TipoMovimentacao = Convert.ToInt32(cbTipoMovimento.SelectedValue),
                     Motivo = txtMotivo.Text,
-                    Quantidade = Convert.ToInt32(txtQuantidade.Text),
-                    CustoUnitario = txtCustoUnitario.Text,
+                   
                     Observacoes = txtObservacoes.Text,
                     DataMovimentacao = txtData.Text,
                     Ativo = swItemAtivo.Checked ? true : false
@@ -348,24 +352,24 @@ namespace GRC.Telas
                 if (dadosMov == null)
                     return;
 
-                _idItem = dadosMov.IdItem;
+            //    _idItem = dadosMov.IdItem;
                 swItemAtivo.Checked = true;
                 txtItem.Enabled = false;
                 txtQuantidade.Enabled = false;
                 txtData.Text = dadosMov.DataMovimentacao;
-                cbTipoMovimento.SelectedValue = dadosMov.IdTipoMovimentacao;
+              //  cbTipoMovimento.SelectedValue = dadosMov.IdTipoMovimentacao;
                 cbTipoMovimento.Enabled = false;
-                txtMotivo.Text = dadosMov.Motivo;
-                txtItem.Text = dadosMov.DescricaoItem;
-                txtQuantidade.Text = dadosMov.Quantidade.ToString();
+              //  txtMotivo.Text = dadosMov.Motivo;
+               // txtItem.Text = dadosMov.DescricaoItem;
+              //  txtQuantidade.Text = dadosMov.Quantidade.ToString();
                 txtObservacoes.Text = dadosMov.Observacoes;
 
-                if (dadosMov.IdTipoMovimentacao == 1)
-                {
+               // if (dadosMov.IdTipoMovimentacao == 1)
+                //{
                     txtCustoUnitario.Enabled = false;
-                    txtCustoUnitario.Text = dadosMov.CustoUnitario;
+                    //txtCustoUnitario.Text = dadosMov.CustoUnitario;
                     CalculaCustoTotal();
-                }
+               // }
             }
             catch (Exception ex)
             {

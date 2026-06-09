@@ -76,8 +76,8 @@ namespace GRC.Telas
             /// Monta o objeto com base na pesquisa
             var mov = new Movimentacao
             {
-                IdTipoMovimentacao = categoria,
-                IdItem = _idItem
+                //IdTipoMovimentacao = categoria,
+                //IdItem = _idItem
             };
 
             int registros = Convert.ToInt32(cbxQtdRegistros.Text);
@@ -99,8 +99,8 @@ namespace GRC.Telas
 
                         movimento.DataMovimentacao,
                         movimento.Id.ToString(),
-                        movimento.DescricaoItem,
-                        movimento.DescricaoTipoMovimentacao,
+                       // movimento.DescricaoItem,
+                      //  movimento.DescricaoTipoMovimentacao,
                         movimento.Motivo.ToString()
                         );
                     }
