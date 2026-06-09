@@ -589,6 +589,7 @@
     <None Include="Resources\Marca_Ativo.png" />
     <None Include="Resources\Marca_Inativo.png" />
     <None Include="Resources\no_image.png" />
+    <None Include="Resources\trash.png" />
     <Content Include="RF_Icone.ico" />
   </ItemGroup>
   <ItemGroup>

@@ -21,25 +21,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(usrMovimento));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(usrMovimento));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.modernBox1 = new GRC.Componentes.ModernBox();
-            this.txtPesquisa = new GRC.Componentes.RoundedTextBox();
             this.lblStatusLeitor = new System.Windows.Forms.Label();
             this.lbCódigoBarras = new System.Windows.Forms.Label();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.lbTitulo = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.modernBox5 = new GRC.Componentes.ModernBox();
-            this.txtDataFinal = new GRC.Componentes.RoundedTextBox();
-            this.modernBox4 = new GRC.Componentes.ModernBox();
-            this.txtDataInicial = new GRC.Componentes.RoundedTextBox();
             this.cbTipoMovimento = new GRC.Componentes.ModernComboBox();
+            this.modernBox5 = new GRC.Componentes.ModernBox();
+            this.modernBox4 = new GRC.Componentes.ModernBox();
+            this.modernBox1 = new GRC.Componentes.ModernBox();
             this.modernBox3 = new GRC.Componentes.ModernBox();
             this.cbRegistros = new System.Windows.Forms.ComboBox();
             this.lbRegistros = new System.Windows.Forms.Label();
@@ -51,16 +45,22 @@
             this.colItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMotivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colExcluir = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.txtDataFinal = new GRC.Componentes.RoundedTextBox();
+            this.txtDataInicial = new GRC.Componentes.RoundedTextBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.txtPesquisa = new GRC.Componentes.RoundedTextBox();
+            this.colExcluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnMovimentar = new GRC.Componentes.CustomButton();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2.SuspendLayout();
-            this.modernBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.modernBox5.SuspendLayout();
             this.modernBox4.SuspendLayout();
+            this.modernBox1.SuspendLayout();
             this.modernBox3.SuspendLayout();
             this.modernBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimentacoes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -72,48 +72,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(486, 76);
             this.panel2.TabIndex = 193;
-            // 
-            // modernBox1
-            // 
-            this.modernBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.modernBox1.BackColor = System.Drawing.Color.Transparent;
-            this.modernBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.modernBox1.BorderRadius = 20;
-            this.modernBox1.BorderSize = 1;
-            this.modernBox1.Controls.Add(this.txtPesquisa);
-            this.modernBox1.FillColor = System.Drawing.Color.White;
-            this.modernBox1.Location = new System.Drawing.Point(0, 23);
-            this.modernBox1.Name = "modernBox1";
-            this.modernBox1.Padding = new System.Windows.Forms.Padding(8);
-            this.modernBox1.ShadowAngle = 50;
-            this.modernBox1.ShadowColor = System.Drawing.Color.Gainsboro;
-            this.modernBox1.ShadowSize = 3;
-            this.modernBox1.Size = new System.Drawing.Size(483, 50);
-            this.modernBox1.TabIndex = 176;
-            // 
-            // txtPesquisa
-            // 
-            this.txtPesquisa.BackColor = System.Drawing.Color.Transparent;
-            this.txtPesquisa.BorderColor = System.Drawing.Color.White;
-            this.txtPesquisa.BorderRadius = 12;
-            this.txtPesquisa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPesquisa.FillColor = System.Drawing.Color.White;
-            this.txtPesquisa.Icon = ((System.Drawing.Image)(resources.GetObject("txtPesquisa.Icon")));
-            this.txtPesquisa.IconPosition = GRC.Componentes.RoundedTextBox.IconPositionEnum.Right;
-            this.txtPesquisa.Location = new System.Drawing.Point(8, 8);
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Padding = new System.Windows.Forms.Padding(10);
-            this.txtPesquisa.Placeholder = "Busque por Nome do Item...";
-            this.txtPesquisa.SelectedText = "";
-            this.txtPesquisa.SelectionLength = 0;
-            this.txtPesquisa.SelectionStart = 0;
-            this.txtPesquisa.Size = new System.Drawing.Size(467, 34);
-            this.txtPesquisa.TabIndex = 2;
-            this.txtPesquisa.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtPesquisa.TextColor = System.Drawing.Color.Black;
-            this.txtPesquisa.TextStyle = System.Drawing.FontStyle.Regular;
-            this.txtPesquisa.UnderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            this.txtPesquisa.UnderlineSize = 5;
             // 
             // lblStatusLeitor
             // 
@@ -139,26 +97,6 @@
             this.lbCódigoBarras.TabIndex = 194;
             this.lbCódigoBarras.Visible = false;
             // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.DataPropertyName = "ItemVenda";
-            this.dataGridViewImageColumn1.FillWeight = 21.22982F;
-            this.dataGridViewImageColumn1.HeaderText = "Item/Venda";
-            this.dataGridViewImageColumn1.Image = global::GRC.Properties.Resources.Marca_Venda;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.Width = 159;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.DataPropertyName = "Ativo";
-            this.dataGridViewImageColumn2.FillWeight = 20.67864F;
-            this.dataGridViewImageColumn2.HeaderText = "Ativo";
-            this.dataGridViewImageColumn2.Image = global::GRC.Properties.Resources.Marca_Ativo;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn2.Width = 155;
-            // 
             // lbTitulo
             // 
             this.lbTitulo.AutoSize = true;
@@ -183,15 +121,27 @@
             this.label11.TabIndex = 189;
             this.label11.Text = "Pesquisa de movimentações do estoque";
             // 
-            // pictureBox3
+            // cbTipoMovimento
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(4, 7);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(31, 24);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 196;
-            this.pictureBox3.TabStop = false;
+            this.cbTipoMovimento.ArrowImage = null;
+            this.cbTipoMovimento.ArrowSide = GRC.Componentes.ArrowPosition.Right;
+            this.cbTipoMovimento.BackColor = System.Drawing.Color.White;
+            this.cbTipoMovimento.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.cbTipoMovimento.BorderRadius = 16;
+            this.cbTipoMovimento.BorderSize = 2;
+            this.cbTipoMovimento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbTipoMovimento.DataSource = null;
+            this.cbTipoMovimento.DisplayMember = "";
+            this.cbTipoMovimento.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbTipoMovimento.Location = new System.Drawing.Point(831, 92);
+            this.cbTipoMovimento.Name = "cbTipoMovimento";
+            this.cbTipoMovimento.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cbTipoMovimento.PlaceholderText = "Selecione o tipo de movimento";
+            this.cbTipoMovimento.SelectedIndex = -1;
+            this.cbTipoMovimento.SelectedItem = null;
+            this.cbTipoMovimento.Size = new System.Drawing.Size(320, 50);
+            this.cbTipoMovimento.TabIndex = 185;
+            this.cbTipoMovimento.ValueMember = "";
             // 
             // modernBox5
             // 
@@ -210,30 +160,6 @@
             this.modernBox5.Size = new System.Drawing.Size(163, 50);
             this.modernBox5.TabIndex = 178;
             // 
-            // txtDataFinal
-            // 
-            this.txtDataFinal.BackColor = System.Drawing.Color.Transparent;
-            this.txtDataFinal.BorderColor = System.Drawing.Color.White;
-            this.txtDataFinal.BorderRadius = 12;
-            this.txtDataFinal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDataFinal.FillColor = System.Drawing.Color.White;
-            this.txtDataFinal.Icon = ((System.Drawing.Image)(resources.GetObject("txtDataFinal.Icon")));
-            this.txtDataFinal.IconPosition = GRC.Componentes.RoundedTextBox.IconPositionEnum.Left;
-            this.txtDataFinal.Location = new System.Drawing.Point(8, 8);
-            this.txtDataFinal.Name = "txtDataFinal";
-            this.txtDataFinal.Padding = new System.Windows.Forms.Padding(10);
-            this.txtDataFinal.Placeholder = "Data Final";
-            this.txtDataFinal.SelectedText = "";
-            this.txtDataFinal.SelectionLength = 0;
-            this.txtDataFinal.SelectionStart = 0;
-            this.txtDataFinal.Size = new System.Drawing.Size(147, 34);
-            this.txtDataFinal.TabIndex = 2;
-            this.txtDataFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtDataFinal.TextColor = System.Drawing.Color.Black;
-            this.txtDataFinal.TextStyle = System.Drawing.FontStyle.Regular;
-            this.txtDataFinal.UnderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            this.txtDataFinal.UnderlineSize = 5;
-            // 
             // modernBox4
             // 
             this.modernBox4.BackColor = System.Drawing.Color.Transparent;
@@ -251,51 +177,23 @@
             this.modernBox4.Size = new System.Drawing.Size(163, 50);
             this.modernBox4.TabIndex = 177;
             // 
-            // txtDataInicial
+            // modernBox1
             // 
-            this.txtDataInicial.BackColor = System.Drawing.Color.Transparent;
-            this.txtDataInicial.BorderColor = System.Drawing.Color.White;
-            this.txtDataInicial.BorderRadius = 12;
-            this.txtDataInicial.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDataInicial.FillColor = System.Drawing.Color.White;
-            this.txtDataInicial.Icon = ((System.Drawing.Image)(resources.GetObject("txtDataInicial.Icon")));
-            this.txtDataInicial.IconPosition = GRC.Componentes.RoundedTextBox.IconPositionEnum.Left;
-            this.txtDataInicial.Location = new System.Drawing.Point(8, 8);
-            this.txtDataInicial.Name = "txtDataInicial";
-            this.txtDataInicial.Padding = new System.Windows.Forms.Padding(10);
-            this.txtDataInicial.Placeholder = "Data Inicial";
-            this.txtDataInicial.SelectedText = "";
-            this.txtDataInicial.SelectionLength = 0;
-            this.txtDataInicial.SelectionStart = 0;
-            this.txtDataInicial.Size = new System.Drawing.Size(147, 34);
-            this.txtDataInicial.TabIndex = 2;
-            this.txtDataInicial.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtDataInicial.TextColor = System.Drawing.Color.Black;
-            this.txtDataInicial.TextStyle = System.Drawing.FontStyle.Regular;
-            this.txtDataInicial.UnderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            this.txtDataInicial.UnderlineSize = 5;
-            // 
-            // cbTipoMovimento
-            // 
-            this.cbTipoMovimento.ArrowImage = null;
-            this.cbTipoMovimento.ArrowSide = GRC.Componentes.ArrowPosition.Right;
-            this.cbTipoMovimento.BackColor = System.Drawing.Color.White;
-            this.cbTipoMovimento.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.cbTipoMovimento.BorderRadius = 16;
-            this.cbTipoMovimento.BorderSize = 4;
-            this.cbTipoMovimento.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbTipoMovimento.DataSource = null;
-            this.cbTipoMovimento.DisplayMember = "";
-            this.cbTipoMovimento.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbTipoMovimento.Location = new System.Drawing.Point(831, 92);
-            this.cbTipoMovimento.Name = "cbTipoMovimento";
-            this.cbTipoMovimento.PlaceholderColor = System.Drawing.Color.DimGray;
-            this.cbTipoMovimento.PlaceholderText = "Selecione o tipo de movimento";
-            this.cbTipoMovimento.SelectedIndex = -1;
-            this.cbTipoMovimento.SelectedItem = null;
-            this.cbTipoMovimento.Size = new System.Drawing.Size(317, 50);
-            this.cbTipoMovimento.TabIndex = 185;
-            this.cbTipoMovimento.ValueMember = "";
+            this.modernBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.modernBox1.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox1.BorderColor = System.Drawing.Color.Transparent;
+            this.modernBox1.BorderRadius = 20;
+            this.modernBox1.BorderSize = 1;
+            this.modernBox1.Controls.Add(this.txtPesquisa);
+            this.modernBox1.FillColor = System.Drawing.Color.White;
+            this.modernBox1.Location = new System.Drawing.Point(0, 23);
+            this.modernBox1.Name = "modernBox1";
+            this.modernBox1.Padding = new System.Windows.Forms.Padding(8);
+            this.modernBox1.ShadowAngle = 50;
+            this.modernBox1.ShadowColor = System.Drawing.Color.Gainsboro;
+            this.modernBox1.ShadowSize = 3;
+            this.modernBox1.Size = new System.Drawing.Size(483, 50);
+            this.modernBox1.TabIndex = 176;
             // 
             // modernBox3
             // 
@@ -463,11 +361,107 @@
             this.colMotivo.Name = "colMotivo";
             this.colMotivo.ReadOnly = true;
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.DataPropertyName = "ItemVenda";
+            this.dataGridViewImageColumn1.FillWeight = 21.22982F;
+            this.dataGridViewImageColumn1.HeaderText = "Item/Venda";
+            this.dataGridViewImageColumn1.Image = global::GRC.Properties.Resources.Marca_Venda;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn1.Width = 159;
+            // 
+            // txtDataFinal
+            // 
+            this.txtDataFinal.BackColor = System.Drawing.Color.Transparent;
+            this.txtDataFinal.BorderColor = System.Drawing.Color.White;
+            this.txtDataFinal.BorderRadius = 12;
+            this.txtDataFinal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDataFinal.FillColor = System.Drawing.Color.White;
+            this.txtDataFinal.Icon = ((System.Drawing.Image)(resources.GetObject("txtDataFinal.Icon")));
+            this.txtDataFinal.IconPosition = GRC.Componentes.RoundedTextBox.IconPositionEnum.Left;
+            this.txtDataFinal.Location = new System.Drawing.Point(8, 8);
+            this.txtDataFinal.Name = "txtDataFinal";
+            this.txtDataFinal.Padding = new System.Windows.Forms.Padding(10);
+            this.txtDataFinal.Placeholder = "Data Final";
+            this.txtDataFinal.SelectedText = "";
+            this.txtDataFinal.SelectionLength = 0;
+            this.txtDataFinal.SelectionStart = 0;
+            this.txtDataFinal.Size = new System.Drawing.Size(147, 34);
+            this.txtDataFinal.TabIndex = 2;
+            this.txtDataFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtDataFinal.TextColor = System.Drawing.Color.Black;
+            this.txtDataFinal.TextStyle = System.Drawing.FontStyle.Regular;
+            this.txtDataFinal.UnderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.txtDataFinal.UnderlineSize = 5;
+            // 
+            // txtDataInicial
+            // 
+            this.txtDataInicial.BackColor = System.Drawing.Color.Transparent;
+            this.txtDataInicial.BorderColor = System.Drawing.Color.White;
+            this.txtDataInicial.BorderRadius = 12;
+            this.txtDataInicial.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDataInicial.FillColor = System.Drawing.Color.White;
+            this.txtDataInicial.Icon = ((System.Drawing.Image)(resources.GetObject("txtDataInicial.Icon")));
+            this.txtDataInicial.IconPosition = GRC.Componentes.RoundedTextBox.IconPositionEnum.Left;
+            this.txtDataInicial.Location = new System.Drawing.Point(8, 8);
+            this.txtDataInicial.Name = "txtDataInicial";
+            this.txtDataInicial.Padding = new System.Windows.Forms.Padding(10);
+            this.txtDataInicial.Placeholder = "Data Inicial";
+            this.txtDataInicial.SelectedText = "";
+            this.txtDataInicial.SelectionLength = 0;
+            this.txtDataInicial.SelectionStart = 0;
+            this.txtDataInicial.Size = new System.Drawing.Size(147, 34);
+            this.txtDataInicial.TabIndex = 2;
+            this.txtDataInicial.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtDataInicial.TextColor = System.Drawing.Color.Black;
+            this.txtDataInicial.TextStyle = System.Drawing.FontStyle.Regular;
+            this.txtDataInicial.UnderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.txtDataInicial.UnderlineSize = 5;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(4, 7);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(31, 24);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 196;
+            this.pictureBox3.TabStop = false;
+            // 
+            // txtPesquisa
+            // 
+            this.txtPesquisa.BackColor = System.Drawing.Color.Transparent;
+            this.txtPesquisa.BorderColor = System.Drawing.Color.White;
+            this.txtPesquisa.BorderRadius = 12;
+            this.txtPesquisa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPesquisa.FillColor = System.Drawing.Color.White;
+            this.txtPesquisa.Icon = ((System.Drawing.Image)(resources.GetObject("txtPesquisa.Icon")));
+            this.txtPesquisa.IconPosition = GRC.Componentes.RoundedTextBox.IconPositionEnum.Right;
+            this.txtPesquisa.Location = new System.Drawing.Point(8, 8);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Padding = new System.Windows.Forms.Padding(10);
+            this.txtPesquisa.Placeholder = "Busque por Nome do Item...";
+            this.txtPesquisa.SelectedText = "";
+            this.txtPesquisa.SelectionLength = 0;
+            this.txtPesquisa.SelectionStart = 0;
+            this.txtPesquisa.Size = new System.Drawing.Size(467, 34);
+            this.txtPesquisa.TabIndex = 2;
+            this.txtPesquisa.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtPesquisa.TextColor = System.Drawing.Color.Black;
+            this.txtPesquisa.TextStyle = System.Drawing.FontStyle.Regular;
+            this.txtPesquisa.UnderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.txtPesquisa.UnderlineSize = 5;
+            // 
             // colExcluir
             // 
             this.colExcluir.HeaderText = "";
+            this.colExcluir.Image = global::GRC.Properties.Resources.trash;
             this.colExcluir.Name = "colExcluir";
             this.colExcluir.ReadOnly = true;
+            this.colExcluir.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colExcluir.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // btnMovimentar
             // 
@@ -494,15 +488,25 @@
             this.btnMovimentar.Text = "Movimentar";
             this.btnMovimentar.UseVisualStyleBackColor = false;
             // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.DataPropertyName = "Ativo";
+            this.dataGridViewImageColumn2.FillWeight = 20.67864F;
+            this.dataGridViewImageColumn2.HeaderText = "Ativo";
+            this.dataGridViewImageColumn2.Image = global::GRC.Properties.Resources.Marca_Ativo;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn2.Width = 155;
+            // 
             // usrMovimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.Controls.Add(this.cbTipoMovimento);
             this.Controls.Add(this.modernBox5);
             this.Controls.Add(this.modernBox4);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.cbTipoMovimento);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.modernBox3);
             this.Controls.Add(this.modernBox2);
@@ -513,14 +517,14 @@
             this.Size = new System.Drawing.Size(1154, 677);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.modernBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.modernBox5.ResumeLayout(false);
             this.modernBox4.ResumeLayout(false);
+            this.modernBox1.ResumeLayout(false);
             this.modernBox3.ResumeLayout(false);
             this.modernBox3.PerformLayout();
             this.modernBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimentacoes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -554,6 +558,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn colQtd;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMotivo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colExcluir;
+        private System.Windows.Forms.DataGridViewImageColumn colExcluir;
     }
 }

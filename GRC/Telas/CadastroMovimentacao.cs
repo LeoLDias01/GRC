@@ -27,16 +27,32 @@ namespace GRC.Telas
         Item _dadosItem = new Item();
         ServiceMovimentacao _service = new ServiceMovimentacao();
 
+        #region ..:: Importação de APIs do Windows (Estética e Movimentação) ::..
 
-        // Importar as DLLs do Windows para mover o formulário
+        // Importa a função nativa do Windows responsável por criar regiões arredondadas no formulário
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coord do canto superior esquerdo
+            int nTopRect,      // y-coord do canto superior esquerdo
+            int nRightRect,    // x-coord do canto inferior direito
+            int nBottomRect,   // y-coord do canto inferior direito
+            int nWidthEllipse, // largura da elipse (quanto maior, mais arredondado)
+            int nHeightEllipse // altura da elipse (quanto maior, mais arredondado)
+        );
+
+        // Importa as funções nativas para permitir o arrasto da tela sem usar a barra de título padrão
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
+
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
 
-        // Constantes para a mensagem de movimento
+        // Constantes numéricas exigidas pela API do Windows para capturar o movimento do mouse
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HT_CAPTION = 0x2;
+
+        #endregion
 
         public CadastroMovimentacao(int id = 0)
         {
@@ -103,48 +119,7 @@ namespace GRC.Telas
             }
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-            if (_bloqueado == false)
-            {
-                if (!ValidaCampos())
-                {
-                    MudaCorPainel(Color.Red, Color.Crimson);
-                    return;
-                }
-                var movimento = new Movimentacao
-                {
-                    Id = _IdMovimentacao,
-                    DadosItem = new Item
-                    {
-                        Id = _idItem,
-                        Quatidade = Convert.ToInt32(txtQuantidade.Text),
-                        CustoUnitario = txtCustoUnitario.Text
-                    },
-                    TipoMovimentacao = Convert.ToInt32(cbTipoMovimento.SelectedValue),
-                    Motivo = txtMotivo.Text,
-                   
-                    Observacoes = txtObservacoes.Text,
-                    DataMovimentacao = txtData.Text,
-                    Ativo = swItemAtivo.Checked ? true : false
-                };
-
-                int? retorno = _service.SalvaMovimentacao(movimento);
-                // Chama a services sem identificar se é criação ou alteração pois o processo de validação é feito lá
-                if (retorno > 0)
-                    new AlertBox(Color.FromArgb(0, 60, 4), Color.LimeGreen, Color.Green, Resources.Confirm, "Movimentação", $"Movimento de {cbTipoMovimento.Text.ToString()}", "Foi cadastrado com sucesso!", false).ShowDialog();
-                else if (retorno == 0)
-                    new AlertBox(Color.FromArgb(0, 60, 4), Color.LimeGreen, Color.Green, Resources.Confirm, "Movimentação", $"Movimento de {cbTipoMovimento.Text.ToString()}", "Foi alterado com sucesso!", false).ShowDialog();
-                else if (retorno == -1)
-                    new AlertBox(Color.FromArgb(0, 60, 4), Color.LimeGreen, Color.Green, Resources.Confirm, "Movimentação", $"Movimento de {cbTipoMovimento.Text.ToString()}", "Foi inativado e não pode mais ser recuperado!", false).ShowDialog();
-
-                this.Close();
-            }
-            else
-            {
-                new AlertBox(Color.Goldenrod, Color.Lime, Color.Yellow, Resources.Warning, "Movimentação", "Valores não podem ser salvos", "Movimentação bloqueada", false).ShowDialog();
-            }
-        }
+    
         private void LimpaCampos()
         {
             _idItem = 0;
@@ -412,26 +387,52 @@ namespace GRC.Telas
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+
+        private void btnEncerrarJanelas_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        private void btnMovimentar_Click(object sender, EventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if (_bloqueado == false)
             {
-                ReleaseCapture(); // Libera o mouse para a operação
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
-            }
-        }
+                if (!ValidaCampos())
+                {
+                    MudaCorPainel(Color.Red, Color.Crimson);
+                    return;
+                }
+                var movimento = new Movimentacao
+                {
+                    Id = _IdMovimentacao,
+                    DadosItem = new Item
+                    {
+                        Id = _idItem,
+                        Quatidade = Convert.ToInt32(txtQuantidade.Text),
+                        CustoUnitario = txtCustoUnitario.Text
+                    },
+                    TipoMovimentacao = Convert.ToInt32(cbTipoMovimento.SelectedValue),
+                    Motivo = txtMotivo.Text,
 
-        private void lbTitulo_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
+                    Observacoes = txtObservacoes.Text,
+                    DataMovimentacao = txtData.Text,
+                    Ativo = swItemAtivo.Checked ? true : false
+                };
+
+                int? retorno = _service.SalvaMovimentacao(movimento);
+                // Chama a services sem identificar se é criação ou alteração pois o processo de validação é feito lá
+                if (retorno > 0)
+                    new AlertBox(Color.FromArgb(0, 60, 4), Color.LimeGreen, Color.Green, Resources.Confirm, "Movimentação", $"Movimento de {cbTipoMovimento.Text.ToString()}", "Foi cadastrado com sucesso!", false).ShowDialog();
+                else if (retorno == 0)
+                    new AlertBox(Color.FromArgb(0, 60, 4), Color.LimeGreen, Color.Green, Resources.Confirm, "Movimentação", $"Movimento de {cbTipoMovimento.Text.ToString()}", "Foi alterado com sucesso!", false).ShowDialog();
+                else if (retorno == -1)
+                    new AlertBox(Color.FromArgb(0, 60, 4), Color.LimeGreen, Color.Green, Resources.Confirm, "Movimentação", $"Movimento de {cbTipoMovimento.Text.ToString()}", "Foi inativado e não pode mais ser recuperado!", false).ShowDialog();
+
+                this.Close();
+            }
+            else
             {
-                ReleaseCapture(); // Libera o mouse para a operação
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
+                new AlertBox(Color.Goldenrod, Color.Lime, Color.Yellow, Resources.Warning, "Movimentação", "Valores não podem ser salvos", "Movimentação bloqueada", false).ShowDialog();
             }
         }
     }

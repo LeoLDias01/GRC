@@ -11,6 +11,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Globalization;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
@@ -25,7 +26,8 @@ namespace GRC.UserControls
         private int _idItem = 0;
         ServiceMovimentacao _service = new ServiceMovimentacao();
         Item _dadosItem = new Item();
-
+        private string _dataInicial;
+        private string _dataFinal;
 
         private SerialPort _serialPort;
 
@@ -35,20 +37,19 @@ namespace GRC.UserControls
             // Registra os eventos dos novos componentes via código
             this.Load += usrMovimento_Load;
             txtPesquisa.KeyPress += txt_KeyPress;
-            txtDataInicial.KeyPress += txt_KeyPress;
-            txtDataFinal.KeyPress += txt_KeyPress;
+            txtDataInicial.KeyPress += txtDataInicial_KeyPress;
+            txtDataFinal.KeyPress += txtDataFinal_KeyPress;
             lbTitulo.DoubleClick += lbTitulo_DoubleClick;
             cbRegistros.TextChanged += cbRegistros_TextChanged;
             cbRegistros.KeyPress += cbRegistros_KeyPress;
-            dgvMovimentacoes.CellValueChanged += dgvItens_CellValueChanged;
-            dgvMovimentacoes.CellDoubleClick += dgvItens_CellDoubleClick;
+           
             btnMovimentar.Click += btnNovoMovimento_Click;
 
-            txtDataInicial.KeyDown += txtDataInicial_KeyDown;
-            txtDataFinal.KeyDown += txtDataFinal_KeyDown;
             cbTipoMovimento.DropDownClosed += cbTipoMovimento_DropDownClosed;
 
-            
+            dgvMovimentacoes.CellValueChanged += dgvItens_CellValueChanged;
+            dgvMovimentacoes.CellDoubleClick += dgvMovimentacoes_CellDoubleClick;
+            dgvMovimentacoes.CellClick += dgvMovimentacoes_CellClick;
             dgvMovimentacoes.Paint += dgvItens_Paint;
             dgvMovimentacoes.CellFormatting += dgvItens_CellFormatting;
 
@@ -58,13 +59,52 @@ namespace GRC.UserControls
         {
             RealizaPesquisa();
         }
-        private void txtDataInicial_KeyDown(object sender, EventArgs e)
+        private void txtDataInicial_KeyPress(object sender, KeyPressEventArgs e)
         {
+            // Executa a sua formatação existente
             FormataData(txtDataInicial);
+
+            // 1. Obtém o texto atual do componente
+            string textoAtual = txtDataInicial.Text;
+
+            // 2. Se for uma tecla de controle (como Backspace), não precisamos validar o formato dd/MM/yyyy
+            if (char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+
+            // 3. Monta o texto como ele vai ficar após o processamento da tecla atual
+            string textoCompleto = textoAtual + e.KeyChar;
+
+            // 4. Se o texto atingiu os 10 caracteres (dd/MM/yyyy), fazemos a validação e pesquisa
+            if (textoCompleto.Length == 10)
+            {
+                if (DateTime.TryParseExact(textoCompleto, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dataValida))
+                {
+                    _dataInicial = dataValida.ToString("dd/MM/yyyy");
+                    RealizaPesquisa();
+                }
+            }
         }
-        private void txtDataFinal_KeyDown(object sender, EventArgs e)
+
+        private void txtDataFinal_KeyPress(object sender, KeyPressEventArgs e)
         {
             FormataData(txtDataFinal);
+
+            string textoAtual = txtDataFinal.Text;
+
+            if (char.IsControl(e.KeyChar)) return;
+
+            string textoCompleto = textoAtual + e.KeyChar;
+
+            if (textoCompleto.Length == 10)
+            {
+                if (DateTime.TryParseExact(textoCompleto, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dataValida))
+                {
+                    _dataFinal = dataValida.ToString("dd/MM/yyyy");
+                    RealizaPesquisa();
+                }
+            }
         }
         private void FormataData(RoundedTextBox txt)
         {
@@ -177,7 +217,7 @@ namespace GRC.UserControls
 
             // 1. Favorito (Imagem)
             // 8. Categoria
-            dgvMovimentacoes.Columns.Add(new DataGridViewTextBoxColumn { Name = "colData", HeaderText = "Data", Width = 110 });
+            dgvMovimentacoes.Columns.Add(new DataGridViewTextBoxColumn { Name = "colData", HeaderText = "Data", Width = 80 });
 
             // 2. ID (Invisível)
             var colId = new DataGridViewTextBoxColumn { Name = "colId", HeaderText = "Id", Visible = false };
@@ -185,20 +225,20 @@ namespace GRC.UserControls
 
 
             // 4. Marcação de Vendas/Estoque (Botão)
-            var colTipoVenda = new DataGridViewImageColumn { Name = "colTipo", HeaderText = "Tipo", Width = 100, ImageLayout = DataGridViewImageCellLayout.Normal };
+            var colTipoVenda = new DataGridViewImageColumn { Name = "colTipo", HeaderText = "Tipo", Width = 80, ImageLayout = DataGridViewImageCellLayout.Normal };
             dgvMovimentacoes.Columns.Add(colTipoVenda);
 
             // 5. Nome / Descrição
-            dgvMovimentacoes.Columns.Add(new DataGridViewTextBoxColumn { Name = "colItem", HeaderText = "Item", Width = 200 });
+            dgvMovimentacoes.Columns.Add(new DataGridViewTextBoxColumn { Name = "colItem", HeaderText = "Item", Width = 300 });
 
             // 10. Quantidade Atual
             dgvMovimentacoes.Columns.Add(new DataGridViewTextBoxColumn { Name = "colQtd", HeaderText = "Qtd", Width = 90 });
 
             // 6. Código de Barras
-            dgvMovimentacoes.Columns.Add(new DataGridViewTextBoxColumn { Name = "colMotivo", HeaderText = "Motivo", Width = 130 });
+            dgvMovimentacoes.Columns.Add(new DataGridViewTextBoxColumn { Name = "colMotivo", HeaderText = "Motivo", Width = 150 });
 
             // 7. Marca
-            dgvMovimentacoes.Columns.Add(new DataGridViewImageColumn { Name = "colExcluir", HeaderText = "", Width = 110, Image = Resources.remove });
+            dgvMovimentacoes.Columns.Add(new DataGridViewImageColumn { Name = "colExcluir", HeaderText = "", Width = 80, Image = Resources.trash });
         }
         private void RealizaPesquisa()
         {
@@ -219,12 +259,11 @@ namespace GRC.UserControls
 
             ConfigurarEstiloGrid();
 
-            var lista = _service.BuscaLimitada(mov, registros, txtDataInicial.Text, txtDataFinal.Text);
+            var lista = _service.BuscaLimitada(mov, registros, _dataInicial, _dataFinal);
 
 
             dgvMovimentacoes.Rows.Clear();
 
-            string tipo;
 
             if (lista != null)
             {
@@ -487,14 +526,43 @@ namespace GRC.UserControls
             dgvMovimentacoes.ResumeLayout();
         }
 
-        private void dgvItens_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvMovimentacoes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             long? id = PegaId(e);
             if (id.HasValue)
             {
                 new CadastroItem(id.Value).ShowDialog();
-                // RealizaPesquisa();
+                 RealizaPesquisa();
             }
+        }
+        private void dgvMovimentacoes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Evita o erro se o usuário clicar na linha de cabeçalho (índice da linha é -1)
+            if (e.RowIndex < 0) return;
+
+            if (dgvMovimentacoes.Columns[e.ColumnIndex].Name == "colExcluir")
+            {
+                if (new AlertBox(Color.Goldenrod, Color.Yellow, Color.Gold, Resources.Warning, "Movimentação", $"Deseja excluir a movimentação?", "Seu estoque será recalculado!", true).ShowDialog() == DialogResult.Yes)
+                {
+                    long? id = PegaId(e);
+                    if (id.HasValue)
+                    {
+                        var mov = new Movimentacao
+                        {
+                            Id = (int)id.Value,
+                            Ativo = false
+                        };
+                        int? op = _service.SalvaMovimentacao(mov);
+
+                        if(op == -1)
+                        {
+                            new AlertBox(Color.FromArgb(0, 60, 4), Color.LimeGreen, Color.Green, Resources.Confirm, "Movimentação", $"Movimentação Excluída com Sucesso!", "A movimenta foi excluída e não pode mais ser recuperada!", false).ShowDialog();
+                        }
+                        RealizaPesquisa();
+                    }
+                }
+            }
+            
         }
         private long? PegaId(DataGridViewCellEventArgs e)
         {

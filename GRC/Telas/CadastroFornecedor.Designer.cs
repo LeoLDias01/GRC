@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroFornecedor));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnExterno = new GRC.Componentes.ModernBox();
@@ -49,7 +49,6 @@
             this.btnSalvar = new GRC.Componentes.CustomButton();
             this.chkHabilitaEndereco = new MaterialSkin.Controls.MaterialCheckbox();
             this.txtBairro = new MaterialSkin.Controls.MaterialTextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtComplemento = new MaterialSkin.Controls.MaterialTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtNumero = new MaterialSkin.Controls.MaterialTextBox();
@@ -57,11 +56,9 @@
             this.txtLogradouro = new MaterialSkin.Controls.MaterialTextBox();
             this.chkWhatsapp = new MaterialSkin.Controls.MaterialCheckbox();
             this.txtCep = new MaterialSkin.Controls.MaterialTextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtTelefone = new MaterialSkin.Controls.MaterialTextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.txtEmail = new MaterialSkin.Controls.MaterialTextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.chkHabilitaEmail = new MaterialSkin.Controls.MaterialCheckbox();
             this.txtIE = new MaterialSkin.Controls.MaterialTextBox();
             this.dgvTelefones = new System.Windows.Forms.DataGridView();
@@ -74,6 +71,9 @@
             this.txtCnpj = new MaterialSkin.Controls.MaterialTextBox();
             this.txtFornecedor = new MaterialSkin.Controls.MaterialTextBox();
             this.pn1 = new GRC.Componentes.RoundedPanel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.pnExterno.SuspendLayout();
             this.pnInterno.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -82,6 +82,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelefones)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewImageColumn1
@@ -122,39 +125,17 @@
             // pnInterno
             // 
             this.pnInterno.BackColor = System.Drawing.Color.White;
+            this.pnInterno.Controls.Add(this.groupBox3);
+            this.pnInterno.Controls.Add(this.groupBox1);
+            this.pnInterno.Controls.Add(this.groupBox2);
             this.pnInterno.Controls.Add(this.label11);
             this.pnInterno.Controls.Add(this.btnEncerrarJanelas);
             this.pnInterno.Controls.Add(this.pictureBox4);
             this.pnInterno.Controls.Add(this.pcAtivo);
-            this.pnInterno.Controls.Add(this.txtUf);
-            this.pnInterno.Controls.Add(this.txtCidade);
-            this.pnInterno.Controls.Add(this.txtObservacoesEndereco);
             this.pnInterno.Controls.Add(this.swAtivo);
-            this.pnInterno.Controls.Add(this.pictureBox2);
             this.pnInterno.Controls.Add(this.lbTitulo);
             this.pnInterno.Controls.Add(this.btnSalvar);
-            this.pnInterno.Controls.Add(this.chkHabilitaEndereco);
-            this.pnInterno.Controls.Add(this.txtBairro);
-            this.pnInterno.Controls.Add(this.label3);
-            this.pnInterno.Controls.Add(this.txtComplemento);
-            this.pnInterno.Controls.Add(this.pictureBox1);
-            this.pnInterno.Controls.Add(this.txtNumero);
             this.pnInterno.Controls.Add(this.panel1);
-            this.pnInterno.Controls.Add(this.txtLogradouro);
-            this.pnInterno.Controls.Add(this.chkWhatsapp);
-            this.pnInterno.Controls.Add(this.txtCep);
-            this.pnInterno.Controls.Add(this.label4);
-            this.pnInterno.Controls.Add(this.txtTelefone);
-            this.pnInterno.Controls.Add(this.pictureBox3);
-            this.pnInterno.Controls.Add(this.txtEmail);
-            this.pnInterno.Controls.Add(this.label1);
-            this.pnInterno.Controls.Add(this.chkHabilitaEmail);
-            this.pnInterno.Controls.Add(this.txtIE);
-            this.pnInterno.Controls.Add(this.dgvTelefones);
-            this.pnInterno.Controls.Add(this.txtRazaoSocial);
-            this.pnInterno.Controls.Add(this.txtObservacoesFornecedor);
-            this.pnInterno.Controls.Add(this.txtCnpj);
-            this.pnInterno.Controls.Add(this.txtFornecedor);
             this.pnInterno.CorBorda = System.Drawing.Color.MediumSlateBlue;
             this.pnInterno.CorBotao = System.Drawing.Color.White;
             this.pnInterno.CorTextoBotao = System.Drawing.Color.White;
@@ -238,7 +219,7 @@
             this.txtUf.Hint = "UF";
             this.txtUf.LeadingIcon = null;
             this.txtUf.LeaveOnEnterKey = true;
-            this.txtUf.Location = new System.Drawing.Point(1091, 294);
+            this.txtUf.Location = new System.Drawing.Point(404, 206);
             this.txtUf.MaxLength = 2;
             this.txtUf.MouseState = MaterialSkin.MouseState.OUT;
             this.txtUf.Multiline = false;
@@ -261,7 +242,7 @@
             this.txtCidade.Hint = "Cidade";
             this.txtCidade.LeadingIcon = null;
             this.txtCidade.LeaveOnEnterKey = true;
-            this.txtCidade.Location = new System.Drawing.Point(702, 294);
+            this.txtCidade.Location = new System.Drawing.Point(15, 206);
             this.txtCidade.MaxLength = 250;
             this.txtCidade.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCidade.Multiline = false;
@@ -282,7 +263,7 @@
             this.txtObservacoesEndereco.Enabled = false;
             this.txtObservacoesEndereco.HideSelection = true;
             this.txtObservacoesEndereco.Hint = "Observações";
-            this.txtObservacoesEndereco.Location = new System.Drawing.Point(702, 406);
+            this.txtObservacoesEndereco.Location = new System.Drawing.Point(15, 318);
             this.txtObservacoesEndereco.MaxLength = 300;
             this.txtObservacoesEndereco.MouseState = MaterialSkin.MouseState.OUT;
             this.txtObservacoesEndereco.Name = "txtObservacoesEndereco";
@@ -293,7 +274,7 @@
             this.txtObservacoesEndereco.SelectionLength = 0;
             this.txtObservacoesEndereco.SelectionStart = 0;
             this.txtObservacoesEndereco.ShortcutsEnabled = true;
-            this.txtObservacoesEndereco.Size = new System.Drawing.Size(471, 178);
+            this.txtObservacoesEndereco.Size = new System.Drawing.Size(471, 169);
             this.txtObservacoesEndereco.TabIndex = 24;
             this.txtObservacoesEndereco.TabStop = false;
             this.txtObservacoesEndereco.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -319,7 +300,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1132, 76);
+            this.pictureBox2.Location = new System.Drawing.Point(455, 24);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(41, 47);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -354,7 +335,7 @@
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(450, 8);
+            this.btnSalvar.Location = new System.Drawing.Point(1064, 51);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.btnSalvar.Size = new System.Drawing.Size(127, 37);
@@ -372,7 +353,7 @@
             this.chkHabilitaEndereco.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkHabilitaEndereco.Depth = 0;
             this.chkHabilitaEndereco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkHabilitaEndereco.Location = new System.Drawing.Point(1094, 86);
+            this.chkHabilitaEndereco.Location = new System.Drawing.Point(417, 34);
             this.chkHabilitaEndereco.Margin = new System.Windows.Forms.Padding(0);
             this.chkHabilitaEndereco.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkHabilitaEndereco.MouseState = MaterialSkin.MouseState.HOVER;
@@ -396,7 +377,7 @@
             this.txtBairro.Hint = "Bairro";
             this.txtBairro.LeadingIcon = null;
             this.txtBairro.LeaveOnEnterKey = true;
-            this.txtBairro.Location = new System.Drawing.Point(702, 238);
+            this.txtBairro.Location = new System.Drawing.Point(15, 150);
             this.txtBairro.MaxLength = 100;
             this.txtBairro.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBairro.Multiline = false;
@@ -406,17 +387,6 @@
             this.txtBairro.Text = "";
             this.txtBairro.TrailingIcon = null;
             this.txtBairro.UseAccent = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.label3.Location = new System.Drawing.Point(697, 76);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 25);
-            this.label3.TabIndex = 28;
-            this.label3.Text = "Endereço";
             // 
             // txtComplemento
             // 
@@ -430,7 +400,7 @@
             this.txtComplemento.Hint = "Complemento";
             this.txtComplemento.LeadingIcon = null;
             this.txtComplemento.LeaveOnEnterKey = true;
-            this.txtComplemento.Location = new System.Drawing.Point(702, 350);
+            this.txtComplemento.Location = new System.Drawing.Point(15, 262);
             this.txtComplemento.MaxLength = 100;
             this.txtComplemento.MouseState = MaterialSkin.MouseState.OUT;
             this.txtComplemento.Multiline = false;
@@ -444,7 +414,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(72, 332);
+            this.pictureBox1.Location = new System.Drawing.Point(47, 37);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(41, 47);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -463,7 +433,7 @@
             this.txtNumero.Hint = "Nº";
             this.txtNumero.LeadingIcon = null;
             this.txtNumero.LeaveOnEnterKey = true;
-            this.txtNumero.Location = new System.Drawing.Point(1091, 182);
+            this.txtNumero.Location = new System.Drawing.Point(404, 94);
             this.txtNumero.MaxLength = 8;
             this.txtNumero.MouseState = MaterialSkin.MouseState.OUT;
             this.txtNumero.Multiline = false;
@@ -477,9 +447,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Location = new System.Drawing.Point(680, 108);
+            this.panel1.Location = new System.Drawing.Point(680, 126);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(2, 476);
+            this.panel1.Size = new System.Drawing.Size(2, 455);
             this.panel1.TabIndex = 26;
             // 
             // txtLogradouro
@@ -494,7 +464,7 @@
             this.txtLogradouro.Hint = "Logradouro";
             this.txtLogradouro.LeadingIcon = null;
             this.txtLogradouro.LeaveOnEnterKey = true;
-            this.txtLogradouro.Location = new System.Drawing.Point(702, 182);
+            this.txtLogradouro.Location = new System.Drawing.Point(15, 94);
             this.txtLogradouro.MaxLength = 200;
             this.txtLogradouro.MouseState = MaterialSkin.MouseState.OUT;
             this.txtLogradouro.Multiline = false;
@@ -512,7 +482,7 @@
             this.chkWhatsapp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkWhatsapp.Depth = 0;
             this.chkWhatsapp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkWhatsapp.Location = new System.Drawing.Point(34, 342);
+            this.chkWhatsapp.Location = new System.Drawing.Point(9, 47);
             this.chkWhatsapp.Margin = new System.Windows.Forms.Padding(0);
             this.chkWhatsapp.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkWhatsapp.MouseState = MaterialSkin.MouseState.HOVER;
@@ -535,7 +505,7 @@
             this.txtCep.Hint = "CEP";
             this.txtCep.LeadingIcon = null;
             this.txtCep.LeaveOnEnterKey = true;
-            this.txtCep.Location = new System.Drawing.Point(702, 126);
+            this.txtCep.Location = new System.Drawing.Point(15, 38);
             this.txtCep.MaxLength = 9;
             this.txtCep.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCep.Multiline = false;
@@ -548,17 +518,6 @@
             this.txtCep.TextChanged += new System.EventHandler(this.txtCep_TextChanged);
             this.txtCep.Leave += new System.EventHandler(this.txtCep_Leave);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.label4.Location = new System.Drawing.Point(32, 296);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 25);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Contatos";
-            // 
             // txtTelefone
             // 
             this.txtTelefone.AcceptsTab = true;
@@ -570,7 +529,7 @@
             this.txtTelefone.Hint = "Telefone";
             this.txtTelefone.LeadingIcon = null;
             this.txtTelefone.LeaveOnEnterKey = true;
-            this.txtTelefone.Location = new System.Drawing.Point(119, 332);
+            this.txtTelefone.Location = new System.Drawing.Point(94, 37);
             this.txtTelefone.MaxLength = 15;
             this.txtTelefone.MouseState = MaterialSkin.MouseState.OUT;
             this.txtTelefone.Multiline = false;
@@ -586,7 +545,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(72, 390);
+            this.pictureBox3.Location = new System.Drawing.Point(47, 95);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(41, 47);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -605,7 +564,7 @@
             this.txtEmail.Hint = "E-Mail";
             this.txtEmail.LeadingIcon = null;
             this.txtEmail.LeaveOnEnterKey = true;
-            this.txtEmail.Location = new System.Drawing.Point(119, 387);
+            this.txtEmail.Location = new System.Drawing.Point(94, 92);
             this.txtEmail.MaxLength = 60;
             this.txtEmail.MouseState = MaterialSkin.MouseState.OUT;
             this.txtEmail.Multiline = false;
@@ -616,17 +575,6 @@
             this.txtEmail.TrailingIcon = null;
             this.txtEmail.UseAccent = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.label1.Location = new System.Drawing.Point(25, 76);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(239, 25);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Dados do Fornecedor";
-            // 
             // chkHabilitaEmail
             // 
             this.chkHabilitaEmail.AutoSize = true;
@@ -634,7 +582,7 @@
             this.chkHabilitaEmail.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkHabilitaEmail.Depth = 0;
             this.chkHabilitaEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkHabilitaEmail.Location = new System.Drawing.Point(34, 400);
+            this.chkHabilitaEmail.Location = new System.Drawing.Point(9, 105);
             this.chkHabilitaEmail.Margin = new System.Windows.Forms.Padding(0);
             this.chkHabilitaEmail.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkHabilitaEmail.MouseState = MaterialSkin.MouseState.HOVER;
@@ -657,7 +605,7 @@
             this.txtIE.Hint = "Inscrição Estadual";
             this.txtIE.LeadingIcon = null;
             this.txtIE.LeaveOnEnterKey = true;
-            this.txtIE.Location = new System.Drawing.Point(503, 167);
+            this.txtIE.Location = new System.Drawing.Point(482, 80);
             this.txtIE.MaxLength = 15;
             this.txtIE.MouseState = MaterialSkin.MouseState.OUT;
             this.txtIE.Multiline = false;
@@ -678,14 +626,14 @@
             this.dgvTelefones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvTelefones.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvTelefones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTelefones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTelefones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvTelefones.ColumnHeadersHeight = 35;
             this.dgvTelefones.ColumnHeadersVisible = false;
             this.dgvTelefones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -694,26 +642,26 @@
             this.colTelefone,
             this.colExcluir});
             this.dgvTelefones.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleTurquoise;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTelefones.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTelefones.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvTelefones.EnableHeadersVisualStyles = false;
             this.dgvTelefones.GridColor = System.Drawing.Color.Black;
-            this.dgvTelefones.Location = new System.Drawing.Point(342, 332);
+            this.dgvTelefones.Location = new System.Drawing.Point(326, 28);
             this.dgvTelefones.MultiSelect = false;
             this.dgvTelefones.Name = "dgvTelefones";
             this.dgvTelefones.ReadOnly = true;
             this.dgvTelefones.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvTelefones.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvTelefones.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvTelefones.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvTelefones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTelefones.Size = new System.Drawing.Size(326, 252);
+            this.dgvTelefones.Size = new System.Drawing.Size(327, 246);
             this.dgvTelefones.TabIndex = 14;
             this.dgvTelefones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTelefones_CellClick);
             this.dgvTelefones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTelefones_CellDoubleClick);
@@ -758,7 +706,7 @@
             this.txtRazaoSocial.Hint = "Razão Social";
             this.txtRazaoSocial.LeadingIcon = null;
             this.txtRazaoSocial.LeaveOnEnterKey = true;
-            this.txtRazaoSocial.Location = new System.Drawing.Point(30, 167);
+            this.txtRazaoSocial.Location = new System.Drawing.Point(9, 80);
             this.txtRazaoSocial.MaxLength = 60;
             this.txtRazaoSocial.MouseState = MaterialSkin.MouseState.OUT;
             this.txtRazaoSocial.Multiline = false;
@@ -778,7 +726,7 @@
             this.txtObservacoesFornecedor.Depth = 0;
             this.txtObservacoesFornecedor.HideSelection = true;
             this.txtObservacoesFornecedor.Hint = "Observações";
-            this.txtObservacoesFornecedor.Location = new System.Drawing.Point(30, 223);
+            this.txtObservacoesFornecedor.Location = new System.Drawing.Point(9, 136);
             this.txtObservacoesFornecedor.MaxLength = 300;
             this.txtObservacoesFornecedor.MouseState = MaterialSkin.MouseState.OUT;
             this.txtObservacoesFornecedor.Name = "txtObservacoesFornecedor";
@@ -807,7 +755,7 @@
             this.txtCnpj.Hint = "CNPJ";
             this.txtCnpj.LeadingIcon = null;
             this.txtCnpj.LeaveOnEnterKey = true;
-            this.txtCnpj.Location = new System.Drawing.Point(318, 167);
+            this.txtCnpj.Location = new System.Drawing.Point(297, 80);
             this.txtCnpj.MaxLength = 18;
             this.txtCnpj.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCnpj.Multiline = false;
@@ -830,7 +778,7 @@
             this.txtFornecedor.Hint = "Fornecedor";
             this.txtFornecedor.LeadingIcon = null;
             this.txtFornecedor.LeaveOnEnterKey = true;
-            this.txtFornecedor.Location = new System.Drawing.Point(30, 111);
+            this.txtFornecedor.Location = new System.Drawing.Point(9, 24);
             this.txtFornecedor.MaxLength = 60;
             this.txtFornecedor.MouseState = MaterialSkin.MouseState.OUT;
             this.txtFornecedor.Multiline = false;
@@ -852,6 +800,61 @@
             this.pn1.Name = "pn1";
             this.pn1.Size = new System.Drawing.Size(1219, 10);
             this.pn1.TabIndex = 24;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtObservacoesFornecedor);
+            this.groupBox2.Controls.Add(this.txtFornecedor);
+            this.groupBox2.Controls.Add(this.txtCnpj);
+            this.groupBox2.Controls.Add(this.txtRazaoSocial);
+            this.groupBox2.Controls.Add(this.txtIE);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.groupBox2.Location = new System.Drawing.Point(15, 94);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(659, 212);
+            this.groupBox2.TabIndex = 179;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Dados de Fornecedor";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtEmail);
+            this.groupBox1.Controls.Add(this.chkHabilitaEmail);
+            this.groupBox1.Controls.Add(this.pictureBox3);
+            this.groupBox1.Controls.Add(this.txtTelefone);
+            this.groupBox1.Controls.Add(this.chkWhatsapp);
+            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.dgvTelefones);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.groupBox1.Location = new System.Drawing.Point(15, 312);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(659, 280);
+            this.groupBox1.TabIndex = 180;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Contatos";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txtObservacoesEndereco);
+            this.groupBox3.Controls.Add(this.txtCep);
+            this.groupBox3.Controls.Add(this.txtLogradouro);
+            this.groupBox3.Controls.Add(this.txtNumero);
+            this.groupBox3.Controls.Add(this.txtComplemento);
+            this.groupBox3.Controls.Add(this.txtBairro);
+            this.groupBox3.Controls.Add(this.txtCidade);
+            this.groupBox3.Controls.Add(this.txtUf);
+            this.groupBox3.Controls.Add(this.pictureBox2);
+            this.groupBox3.Controls.Add(this.chkHabilitaEndereco);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.groupBox3.Location = new System.Drawing.Point(689, 94);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(502, 498);
+            this.groupBox3.TabIndex = 180;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Endereço";
             // 
             // CadastroFornecedor
             // 
@@ -880,6 +883,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelefones)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -915,17 +923,17 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label lbTitulo;
         private Componentes.CustomButton btnSalvar;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
         private Componentes.CustomButton btnEncerrarJanelas;
         private Componentes.ModernBox pnExterno;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label11;
         private MaterialSkin.Controls.MaterialCheckbox chkHabilitaEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIdTelefone;
         private System.Windows.Forms.DataGridViewImageColumn colWhatsApp;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTelefone;
         private System.Windows.Forms.DataGridViewImageColumn colExcluir;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
