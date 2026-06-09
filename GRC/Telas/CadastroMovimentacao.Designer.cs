@@ -68,7 +68,7 @@
             this.pnStatus2.GradientAngle = 90F;
             this.pnStatus2.Location = new System.Drawing.Point(3, 3);
             this.pnStatus2.Name = "pnStatus2";
-            this.pnStatus2.Size = new System.Drawing.Size(30, 9);
+            this.pnStatus2.Size = new System.Drawing.Size(31, 9);
             this.pnStatus2.TabIndex = 54;
             // 
             // pnStatus
@@ -79,9 +79,9 @@
             this.pnStatus.CornerRadius = 10;
             this.pnStatus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnStatus.GradientAngle = 90F;
-            this.pnStatus.Location = new System.Drawing.Point(39, 3);
+            this.pnStatus.Location = new System.Drawing.Point(40, 3);
             this.pnStatus.Name = "pnStatus";
-            this.pnStatus.Size = new System.Drawing.Size(563, 9);
+            this.pnStatus.Size = new System.Drawing.Size(587, 9);
             this.pnStatus.TabIndex = 53;
             // 
             // txtData
@@ -291,7 +291,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(605, 15);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(630, 15);
             this.tableLayoutPanel1.TabIndex = 160;
             // 
             // pnInterno
@@ -314,7 +314,7 @@
             this.pnInterno.ForeColor = System.Drawing.Color.White;
             this.pnInterno.Location = new System.Drawing.Point(11, 3);
             this.pnInterno.Name = "pnInterno";
-            this.pnInterno.Size = new System.Drawing.Size(614, 456);
+            this.pnInterno.Size = new System.Drawing.Size(607, 456);
             this.pnInterno.TabIndex = 161;
             this.pnInterno.TamanhoBorda = 0;
             this.pnInterno.TamanhoRaio = 15;
@@ -341,7 +341,7 @@
             // pcAtivo
             // 
             this.pcAtivo.Image = ((System.Drawing.Image)(resources.GetObject("pcAtivo.Image")));
-            this.pcAtivo.Location = new System.Drawing.Point(242, 44);
+            this.pcAtivo.Location = new System.Drawing.Point(256, 12);
             this.pcAtivo.Name = "pcAtivo";
             this.pcAtivo.Size = new System.Drawing.Size(24, 26);
             this.pcAtivo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -364,7 +364,7 @@
             this.btnEncerrarJanelas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEncerrarJanelas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.btnEncerrarJanelas.Image = ((System.Drawing.Image)(resources.GetObject("btnEncerrarJanelas.Image")));
-            this.btnEncerrarJanelas.Location = new System.Drawing.Point(572, 3);
+            this.btnEncerrarJanelas.Location = new System.Drawing.Point(565, 3);
             this.btnEncerrarJanelas.Name = "btnEncerrarJanelas";
             this.btnEncerrarJanelas.Size = new System.Drawing.Size(18, 18);
             this.btnEncerrarJanelas.TabIndex = 163;
@@ -442,7 +442,7 @@
             this.swItemAtivo.Depth = 0;
             this.swItemAtivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.swItemAtivo.ForeColor = System.Drawing.Color.White;
-            this.swItemAtivo.Location = new System.Drawing.Point(253, 10);
+            this.swItemAtivo.Location = new System.Drawing.Point(239, 37);
             this.swItemAtivo.Margin = new System.Windows.Forms.Padding(0);
             this.swItemAtivo.MouseLocation = new System.Drawing.Point(-1, -1);
             this.swItemAtivo.MouseState = MaterialSkin.MouseState.HOVER;
@@ -461,13 +461,13 @@
             this.pnExterno.BorderSize = 1;
             this.pnExterno.Controls.Add(this.pnInterno);
             this.pnExterno.FillColor = System.Drawing.Color.White;
-            this.pnExterno.Location = new System.Drawing.Point(-8, 18);
+            this.pnExterno.Location = new System.Drawing.Point(0, 18);
             this.pnExterno.Name = "pnExterno";
             this.pnExterno.Padding = new System.Windows.Forms.Padding(13);
             this.pnExterno.ShadowAngle = 90;
             this.pnExterno.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.pnExterno.ShadowSize = 8;
-            this.pnExterno.Size = new System.Drawing.Size(625, 475);
+            this.pnExterno.Size = new System.Drawing.Size(627, 475);
             this.pnExterno.TabIndex = 178;
             // 
             // CadastroMovimentacao
@@ -475,7 +475,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(605, 494);
+            this.ClientSize = new System.Drawing.Size(630, 494);
             this.Controls.Add(this.pnExterno);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

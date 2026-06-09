@@ -620,7 +620,7 @@ namespace Domain.Repository
                 }
             }
         }
-        public List<Item> BuscaTelaPesquisaBasica(Item item, int registros)
+        public List<Item> BuscaTelaPesquisaBasica(Item item)
         {
 
             using (var conn = new SQLiteConnection(_conn.GetConnections()))
@@ -650,8 +650,7 @@ namespace Domain.Repository
                     var lista = conn.Query(sql.ToString(), new
                     {
                         Id = (int)item.Id,
-                        Descricao = $"%{item.Descricao.ToString()}%",
-                        Registros = registros
+                        Descricao = $"%{item.Descricao.ToString()}%"
                     })
                     .Select(x => new Item
                     {

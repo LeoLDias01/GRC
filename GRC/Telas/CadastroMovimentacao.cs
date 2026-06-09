@@ -95,10 +95,6 @@ namespace GRC.Telas
             cb.SelectedIndex = 0;
         }
 
-        private void btnSelecaoItem_Click(object sender, EventArgs e)
-        {
-            
-        }
         private void HabilitaCampos()
         {
             _operacao = Convert.ToInt32(cbTipoMovimento.SelectedValue) > 0 ? Convert.ToInt32(cbTipoMovimento.SelectedValue) : 0;
@@ -107,7 +103,7 @@ namespace GRC.Telas
                 txtCustoUnitario.Visible = true;
                 txtCustoTotal.Visible = true;
             }
-            else if(_operacao == 2) // Referente a Saída
+            else if (_operacao == 2) // Referente a Saída
             {
                 txtCustoUnitario.Visible = false;
                 txtCustoTotal.Visible = false;
@@ -119,7 +115,7 @@ namespace GRC.Telas
             }
         }
 
-    
+
         private void LimpaCampos()
         {
             _idItem = 0;
@@ -147,12 +143,12 @@ namespace GRC.Telas
             {
                 if (_operacao == 1)
                 {
-                    if(!string.IsNullOrWhiteSpace(txtCustoUnitario.Text))
+                    if (!string.IsNullOrWhiteSpace(txtCustoUnitario.Text))
                         return true;
-                    else 
+                    else
                         return false;
                 }
-                else 
+                else
                     return true;
             }
             else return false;
@@ -327,24 +323,24 @@ namespace GRC.Telas
                 if (dadosMov == null)
                     return;
 
-            //    _idItem = dadosMov.IdItem;
+                _idItem = (int)dadosMov.DadosItem.Id;
                 swItemAtivo.Checked = true;
                 txtItem.Enabled = false;
                 txtQuantidade.Enabled = false;
                 txtData.Text = dadosMov.DataMovimentacao;
-              //  cbTipoMovimento.SelectedValue = dadosMov.IdTipoMovimentacao;
+                cbTipoMovimento.SelectedValue = dadosMov.TipoMovimentacao;
                 cbTipoMovimento.Enabled = false;
-              //  txtMotivo.Text = dadosMov.Motivo;
-               // txtItem.Text = dadosMov.DescricaoItem;
-              //  txtQuantidade.Text = dadosMov.Quantidade.ToString();
+                txtMotivo.Text = dadosMov.Motivo;
+                txtItem.Text = dadosMov.DadosItem.Descricao;
+                txtQuantidade.Text = dadosMov.DadosItem.Quatidade.ToString();
                 txtObservacoes.Text = dadosMov.Observacoes;
 
-               // if (dadosMov.IdTipoMovimentacao == 1)
-                //{
+                if (dadosMov.TipoMovimentacao == 1)
+                {
                     txtCustoUnitario.Enabled = false;
-                    //txtCustoUnitario.Text = dadosMov.CustoUnitario;
+                    txtCustoUnitario.Text = dadosMov.DadosItem.CustoUnitario;
                     CalculaCustoTotal();
-               // }
+                }
             }
             catch (Exception ex)
             {
@@ -426,7 +422,7 @@ namespace GRC.Telas
                 else if (retorno == 0)
                     new AlertBox(Color.FromArgb(0, 60, 4), Color.LimeGreen, Color.Green, Resources.Confirm, "Movimentação", $"Movimento de {cbTipoMovimento.Text.ToString()}", "Foi alterado com sucesso!", false).ShowDialog();
                 else if (retorno == -1)
-                    new AlertBox(Color.FromArgb(0, 60, 4), Color.LimeGreen, Color.Green, Resources.Confirm, "Movimentação", $"Movimento de {cbTipoMovimento.Text.ToString()}", "Foi inativado e não pode mais ser recuperado!", false).ShowDialog();
+                    new AlertBox(Color.FromArgb(0, 60, 4), Color.LimeGreen, Color.Green, Resources.Confirm, "Movimentação", $"Movimento de {cbTipoMovimento.Text.ToString()}", "Foi excluído e não pode mais ser recuperado!", false).ShowDialog();
 
                 this.Close();
             }

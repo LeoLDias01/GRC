@@ -199,6 +199,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(64, 57);
             this.panel2.TabIndex = 16;
+            this.panel2.Click += new System.EventHandler(this.btnUser_Click);
             // 
             // btnMais
             // 
@@ -443,6 +444,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(257, 57);
             this.panel1.TabIndex = 16;
+            this.panel1.Click += new System.EventHandler(this.btnUser_Click);
             // 
             // lbNomeUser
             // 
@@ -453,9 +455,10 @@
             this.lbNomeUser.Location = new System.Drawing.Point(51, 10);
             this.lbNomeUser.Name = "lbNomeUser";
             this.lbNomeUser.Padding = new System.Windows.Forms.Padding(5);
-            this.lbNomeUser.Size = new System.Drawing.Size(167, 35);
+            this.lbNomeUser.Size = new System.Drawing.Size(179, 35);
             this.lbNomeUser.TabIndex = 29;
             this.lbNomeUser.Text = "Teste";
+            this.lbNomeUser.Click += new System.EventHandler(this.btnUser_Click);
             // 
             // btnUserEx
             // 
@@ -763,7 +766,7 @@
             this.Controls.Add(this.tlpMenu);
             this.Controls.Add(this.tlpMenuRedux);
             this.Name = "Sidebar";
-            this.Size = new System.Drawing.Size(457, 734);
+            this.Size = new System.Drawing.Size(372, 734);
             this.Load += new System.EventHandler(this.Sidebar_Load);
             this.tlpMenuRedux.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

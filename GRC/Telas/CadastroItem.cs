@@ -614,7 +614,6 @@ namespace GRC.Telas
             txtValorVenda.Clear();
             txtLucroItem.Clear();
             txtLucroTotal.Clear();
-            txtId.Clear();
             txtDescricao.Clear();
             txtCodigoBarras.Clear();
             txtGarantia.Clear();
@@ -701,7 +700,6 @@ namespace GRC.Telas
                 }
 
               //  swItemAtivo.Checked = dadosItem.Ativo;
-                txtId.Text = dadosItem.Id.ToString();
                 txtCodigoBarras.Text = dadosItem.CodBarras != null ? dadosItem.CodBarras.ToString() : string.Empty;
                 txtDescricao.Text = dadosItem.Descricao.ToString();
                 txtGarantia.Text = dadosItem.Garantia != null ? dadosItem.Garantia.ToString() : string.Empty;

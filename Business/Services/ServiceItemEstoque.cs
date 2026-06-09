@@ -150,11 +150,11 @@ namespace Business.Services
 
         #region ..:: MOVIMENTAÇÃO ::..
 
-        public List<Item> BuscaTelaPesquisaBasica(Item item, int registros)
+        public List<Item> BuscaTelaPesquisaBasica(Item item)
         {
             try
             {
-                return _database.BuscaTelaPesquisaBasica(item, registros);
+                return _database.BuscaTelaPesquisaBasica(item);
 
 
             }

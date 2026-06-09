@@ -36,37 +36,18 @@ namespace GRC.Telas
             InitializeComponent();
         }
 
-        private void btnApagar_Click(object sender, EventArgs e)
-        {
-            dgvItens.Rows.Clear();
-            txtCodigo.Clear();
-            txtItem.Clear();
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            RealizaPesquisa();
-        }
-
+  
         private void RealizaPesquisa()
         {
             var item = new Item
             {
-                Id = string.IsNullOrWhiteSpace(txtCodigo.Text) ? 0 : Convert.ToInt32(txtCodigo.Text),
-                Descricao = string.IsNullOrWhiteSpace(txtItem.Text) ? string.Empty : txtItem.Text,
+                CodBarras = string.IsNullOrWhiteSpace(lbCódigoBarras.Text) ? null: lbCódigoBarras.Text,
+                Descricao = string.IsNullOrWhiteSpace(txtPesquisa.Text) ? string.Empty : txtPesquisa.Text,
             };
 
-            int registros = Convert.ToInt32(cbxQtdRegistros.Text);
-
-            dgvItens.Visible = true;
             dgvItens.Rows.Clear();
-            dgvItens.RowTemplate.Height = 85;
-            dgvItens.AutoGenerateColumns = false;
-            dgvItens.ColumnHeadersVisible = true;
-            dgvItens.ColumnHeadersHeight = 40;
-            dgvItens.DefaultCellStyle.ForeColor = Color.Black;
 
-            var lista = _service.BuscaTelaPesquisaBasica(item, registros);
+            var lista = _service.BuscaTelaPesquisaBasica(item);
 
             if (lista != null)
             {
@@ -84,14 +65,8 @@ namespace GRC.Telas
                     }
                 }
             }
-
-            lbRegistros.Text = $"{dgvItens.Rows.Count} registros encontrados!";
         }
 
-        private void dgvItens_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            lbRegistros.Text = $"{dgvItens.Rows.Count} registros encontrados!";
-        }
         private int? PegaId(DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -121,17 +96,6 @@ namespace GRC.Telas
             }
         }
 
-        private void cbxQtdRegistros_TextChanged(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(cbxQtdRegistros.Text))
-            {
-                if (Convert.ToInt32(cbxQtdRegistros.Text) > 100)
-                    cbxQtdRegistros.Text = "100";
-            }
-            else cbxQtdRegistros.Text = "10";
-
-            RealizaPesquisa();
-        }
 
         private void PesquisaItem_Load(object sender, EventArgs e)
         {
@@ -155,6 +119,11 @@ namespace GRC.Telas
         private void btnAddItem_Click(object sender, EventArgs e)
         {
             new CadastroItem().ShowDialog();
+        }
+
+        private void btnEncerrarJanelas_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
