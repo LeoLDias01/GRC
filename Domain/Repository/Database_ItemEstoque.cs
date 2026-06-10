@@ -633,32 +633,34 @@ namespace Domain.Repository
                                         ITM.IDGRC_ITEM_ESTOQUE AS Id,
                                         ITM.DESCRICAO AS Descricao,
                                         ITM.FOTO  AS Foto, 
-                                        ITM.QUANTIDADE AS Qtd,
-                                        ITM.CUSTO_UNITARIO AS Custo
+                                        ITM.ITEM_VENDA as Produto
                                 FROM GRC_ITEM_ESTOQUE ITM                                
                                 WHERE 1 = 1 AND ITM.ATIVO = 1");
 
                     // Filtros dinâmicos
-                    if (item.Id > 0)
-                        sql.Append(" AND ITM.IDGRC_ITEM_ESTOQUE = @Id ");
+                    if (!string.IsNullOrWhiteSpace(item.CodBarras))
+                        sql.Append(" AND ITM.CODIGO_BARRAS = @CodBarras ");
+
+                
+                    sql.Append(" AND ITM.ITEM_VENDA = @Produto ");
 
                     if (!string.IsNullOrWhiteSpace(item.Descricao))
                         sql.Append(" AND ITM.DESCRICAO LIKE @Descricao ");
 
-                    sql.Append(" ORDER BY ITM.FAVORITO, ITM.DESCRICAO ASC LIMIT @Registros; ");
+                    sql.Append(" ORDER BY ITM.DESCRICAO ASC LIMIT 3");
 
                     var lista = conn.Query(sql.ToString(), new
                     {
-                        Id = (int)item.Id,
-                        Descricao = $"%{item.Descricao.ToString()}%"
+                        CodBarras = item.CodBarras != string.Empty ? item.CodBarras :"",
+                        Descricao = $"%{item.Descricao.ToString()}%",
+                        Produto = item.ItemVenda == true ? 1 : 0
                     })
                     .Select(x => new Item
                     {
                         Id = Convert.ToInt32(x.Id),
                         Descricao = x.Descricao,
                         FotoItem = x.Foto,
-                        Quatidade = Convert.ToInt32(x.Qtd),
-                        CustoUnitario = x.Custo
+                        ItemVenda = x.Produto == 1 ? true : false
                     }).ToList();
 
                     return lista;

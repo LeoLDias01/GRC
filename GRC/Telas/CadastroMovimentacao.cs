@@ -58,6 +58,9 @@ namespace GRC.Telas
         {
             InitializeComponent();
             _IdMovimentacao = id;
+
+            // Aplica os cantos arredondados na janela do formulário (raio de 30px)
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
         }
 
         private void CadastroMovimentacao_Load(object sender, EventArgs e)
@@ -353,8 +356,9 @@ namespace GRC.Telas
         {
             using (var frm = new PesquisaItem())
             {
+                this.Visible = false;
                 frm.ShowDialog();
-
+                this.Visible = true;
                 if (frm._item != null && frm._item.Count > 0)
                 {
                     foreach (var comp in frm._item)
