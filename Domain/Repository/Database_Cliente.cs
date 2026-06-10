@@ -326,7 +326,7 @@ namespace Domain.Repository
                                     IdCliente = Cliente.Id,
                                     Descricao = tel.Descricao,
                                     Whatsapp = tel.Whatsapp,
-                                 //   Observacoes = tel.Observacoes
+                                    //   Observacoes = tel.Observacoes
                                 }, tran);
                         }
 
@@ -343,7 +343,7 @@ namespace Domain.Repository
                                 {
                                     Descricao = tel.Descricao,
                                     Whatsapp = tel.Whatsapp,
-                                  //  Observacoes = tel.Observacoes,
+                                    //  Observacoes = tel.Observacoes,
                                     Id = tel.Id,
                                     IdCliente = Cliente.Id
                                 }, tran);
@@ -384,7 +384,7 @@ namespace Domain.Repository
         /// <summary>
         /// Busca os dados de fornecedor no banco apenas para exibir, sendo uma busca limitada
         /// </summary>
-        /// <param name="fornecedor"> dados do fornecedor para busca</param>
+        /// <param name="cliente"> dados do fornecedor para busca</param>
         /// <param name="registros"> quantidade de registros a serem buscados</param>
         /// <returns>Retorna uma lista com dados do banco para preencher o datagrid</returns>
         public List<Cliente> BuscaLimitada(Cliente cliente, int registros)
@@ -403,64 +403,60 @@ namespace Domain.Repository
                     CLI.IDGRC_TIPO_PESSOA AS Tipo,
                     CLI.IDENTIFICACAO AS Identificacao,
                     ENDE.CIDADE AS Cidade,
-                    ENDE.UF AS Uf
+                    ENDE.UF AS Uf,
+                    CLI.ATIVO AS Ativo
                 FROM GRC_CLIENTE CLI
                 LEFT JOIN GRC_ENDERECO ENDE ON CLI.IDGRC_ENDERECO = ENDE.IDGRC_ENDERECO 
                                                     AND ENDE.ATIVO = 1
     
                 WHERE 1 = 1 ");
 
-                    // Filtros dinâmicos
-                    if (!string.IsNullOrWhiteSpace(cliente.Nome))
-                        sql.Append(" AND CLI.NOME LIKE @Nome ");
-
-                    if (cliente.TipoPessoa > 0)
-                        sql.Append(" AND CLI.IDGRC_TIPO_PESSOA = @Tipo ");
-
-                    if (!string.IsNullOrWhiteSpace(cliente.Identidade))
-                        sql.Append(" AND CLI.IDENTIFICACAO LIKE @Identificacao ");
-
-                    sql.Append(" AND CLI.ATIVO = @Ativo ");
-
-                    if (cliente.Endereco != null)
+                    // 1. Filtro de Status (Ativo/Inativo) - Se for nulo (filtro "Todos"), não aplica o WHERE do ativo
+                    if (cliente.Ativo.HasValue)
                     {
-                        if (!string.IsNullOrWhiteSpace(cliente.Endereco.Cidade))
-                            sql.Append(" AND ENDE.CIDADE LIKE @Cidade ");
-
-                        if (!string.IsNullOrWhiteSpace(cliente.Endereco.Uf))
-                            sql.Append(" AND ENDE.UF LIKE @Uf ");
+                        sql.Append(" AND CLI.ATIVO = @Ativo ");
                     }
 
+                    if (!string.IsNullOrWhiteSpace(cliente.Nome))
+                    {
+                        sql.Append(@" AND (
+                    CLI.NOME LIKE @Termo 
+                    OR CLI.IDENTIFICACAO LIKE @Termo 
+                    OR ENDE.CIDADE LIKE @Termo 
+                    OR ENDE.UF LIKE @Termo
+                ) ");
+
+                    }
                     sql.Append(" ORDER BY CLI.NOME ASC LIMIT @Registros; ");
 
+                    string termoFormatado = $"%{cliente.Nome?.Trim()}%";
                     var lista = conn.Query(sql.ToString(), new
                     {
-                        Nome = $"%{cliente.Nome}%",
-                        Tipo = cliente.TipoPessoa,
-                        Identificacao = $"%{cliente.Identidade}%",
+                        Termo = termoFormatado,
                         Ativo = cliente.Ativo,
-                        Cidade = cliente.Endereco != null ? $"%{cliente.Endereco.Cidade}%" : null,
-                        Uf = cliente.Endereco != null ? $"%{cliente.Endereco.Uf}%" : null,
                         Registros = registros
                     })
-                    .Select(x => new Cliente
+                .Select(x => new Cliente
+                {
+                    Id = (int)x.Id,
+                    Nome = x.Nome,
+                    TipoPessoa = (int)x.Tipo,
+                    Identidade = x.Identificacao,
+                    Endereco = new Endereco
                     {
-                        Id = (int)x.Id,
-                        Nome = x.Nome,
-                        TipoPessoa = (int)x.Tipo,
-                        Identidade = x.Identificacao,
-                        Endereco = new Endereco
-                        {
-                            Cidade = x.Cidade,
-                            Uf = x.Uf
-                        }
-                    }).ToList();
+                        Cidade = x.Cidade,
+                        Uf = x.Uf
+                    },
+                    Ativo = x.Ativo == 1 ? true : false
+                }).ToList();
 
                     return lista;
+
                 }
                 catch (Exception ex)
                 {
                     throw new Exception("Erro ao buscar Clientes: " + ex.Message);
+
                 }
             }
         }
@@ -491,7 +487,6 @@ namespace Domain.Repository
                 ENDE.OBSERVACOES AS ObservacoesEndereco,
                 EM.IDGRC_EMAIL AS EmailId,
                 EM.EMAIL AS DescricaoEmail,
-                EM.OBSERVACOES AS ObservacoesEmail,
                 CLI.ATIVO AS Ativo
             FROM GRC_CLIENTE CLI
             LEFT JOIN GRC_ENDERECO ENDE ON CLI.IDGRC_ENDERECO = ENDE.IDGRC_ENDERECO AND ENDE.ATIVO = 1
@@ -533,8 +528,7 @@ namespace Domain.Repository
                 IDGRC_TELEFONE_CLIENTE AS Id,
                 IDGRC_CLIENTE AS ClienteId,
                 DESCRICAO AS Descricao,
-                WHATSAPP AS Whatsapp,
-                OBSERVACOES AS Observacoes
+                WHATSAPP AS Whatsapp
             FROM GRC_TELEFONE_CLIENTE
             WHERE IDGRC_CLIENTE = @Id AND ATIVO = 1",
             new { Id = idCliente })
@@ -550,7 +544,7 @@ namespace Domain.Repository
                                     Descricao = t.Descricao?.ToString(),
                                     // Conversão manual de long → bool
                                     Whatsapp = Convert.ToBoolean(t.Whatsapp),
-                                  //  Observacoes = t.Observacoes?.ToString()
+                                    //  Observacoes = t.Observacoes?.ToString()
                                 }).ToList();
                         }
                     }

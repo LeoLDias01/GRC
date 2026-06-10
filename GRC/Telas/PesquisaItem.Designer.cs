@@ -350,7 +350,6 @@
             this.btnAddItem.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
             this.btnAddItem.ForeColor = System.Drawing.Color.White;
             this.btnAddItem.Image = ((System.Drawing.Image)(resources.GetObject("btnAddItem.Image")));
-            this.btnAddItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddItem.Location = new System.Drawing.Point(283, 31);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);

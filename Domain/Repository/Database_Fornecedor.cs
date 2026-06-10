@@ -395,7 +395,8 @@ namespace Domain.Repository
                     FORN.RAZAO_SOCIAL AS RazaoSocial,
                     FORN.CNPJ AS Cnpj,
                     ENDE.CIDADE AS Cidade,
-                    ENDE.UF AS Uf
+                    ENDE.UF AS Uf,
+                    FORN.ATIVO AS Ativo
                 FROM GRC_FORNECEDOR FORN
                 LEFT JOIN GRC_ENDERECO ENDE ON FORN.IDGRC_ENDERECO = ENDE.IDGRC_ENDERECO AND ENDE.ATIVO = 1
                 WHERE 1 = 1 ");
@@ -440,7 +441,8 @@ namespace Domain.Repository
                         {
                             Cidade = x.Cidade,
                             Uf = x.Uf
-                        }
+                        },
+                        Ativo = x.Ativo == 1 ? true : false
                     }).ToList();
 
                     return lista;

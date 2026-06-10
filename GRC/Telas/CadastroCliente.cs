@@ -167,7 +167,7 @@ namespace GRC.Telas
                     rbtPJ.Checked = true;
                 txtIdentificador.Text = clienteDados.Identidade;
                 txtObservacoes.Text = clienteDados.Observacoes;
-                swAtivo.Checked = clienteDados.Ativo;
+              //  swAtivo.Checked = clienteDados.Ativo;
 
                 // Preenche o endereço se existir
                 if (clienteDados.Endereco != null)

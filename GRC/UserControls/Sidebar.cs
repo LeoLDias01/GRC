@@ -80,7 +80,7 @@ namespace GRC.UserControls
 
         private void btnClientesEx_Click(object sender, EventArgs e)
         {
-            new PesquisaCliente().ShowDialog();
+            MudaForm(new usrClientes());
         }
 
         private void Sidebar_Load(object sender, EventArgs e)

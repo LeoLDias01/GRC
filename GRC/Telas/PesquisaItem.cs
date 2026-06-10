@@ -113,6 +113,7 @@ namespace GRC.Telas
         private void PesquisaItem_Load(object sender, EventArgs e)
         {
             InicializarColunasGrid();
+            chkItemVenda.Checked = true;
         }
 
 
