@@ -191,9 +191,9 @@ CREATE TABLE GRC_TIPO (
 );
 
 INSERT INTO GRC_TIPO (DESCRICAO, IDGRC_SUBTIPO) VALUES ('Entrada', 2), ('Saída', 2), ('Desperdício', 2), ('Venda', 2), ('Ordem de Serviço', 2);
-INSERT INTO GRC_TIPO (DESCRICAO, IDGRC_SUBTIPO) VALUES ('Aguardando Análise', 7), ('Em Análise', 7), ('Aguardando Retorno do Cliente', 7), ('Aguardando Peças', 7),  ('Finalizado', 7),  ('Cancelado', 7);
+INSERT INTO GRC_TIPO (DESCRICAO, IDGRC_SUBTIPO) VALUES ('Aberta', 7), ('Em Análise', 7), ('Aguardando Retorno do Cliente', 7), ('Aguardando Peças', 7),  ('Entregue', 7),  ('Cancelada', 7);
 INSERT INTO GRC_TIPO (DESCRICAO, IDGRC_SUBTIPO) VALUES ('Pix', 9), ('Dinheiro', 9), ('Cartão de Débito', 9), ('Cartão de Crédito', 9),('Outros', 9);
-                                     
+       
 CREATE TABLE GRC_ITEM_ESTOQUE 
 (
     IDGRC_ITEM_ESTOQUE INTEGER PRIMARY KEY AUTOINCREMENT,

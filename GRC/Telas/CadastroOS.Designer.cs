@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroOS));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.tbcOs = new MaterialSkin.Controls.MaterialTabControl();
             this.tbpDadosOS = new System.Windows.Forms.TabPage();
@@ -126,11 +126,7 @@
             this.btnSalvar = new GRC.Componentes.CustomButton();
             this.btnExportar = new GRC.Componentes.CustomButton();
             this.pcbFavorito = new GRC.Componentes.CustomPictureBox();
-            this.pnSuperior = new System.Windows.Forms.Panel();
             this.pnStatus = new GRC.Componentes.RoundedPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnClose = new GRC.Componentes.CustomButton();
-            this.pcLogo = new System.Windows.Forms.PictureBox();
             this.pn2 = new GRC.Componentes.RoundedPanel();
             this.lbStatus = new System.Windows.Forms.Label();
             this.pn1 = new GRC.Componentes.RoundedPanel();
@@ -169,8 +165,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcbImagemItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbFavorito)).BeginInit();
-            this.pnSuperior.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcLogo)).BeginInit();
             this.pn2.SuspendLayout();
             this.pn1.SuspendLayout();
             this.customPanel2.SuspendLayout();
@@ -234,10 +228,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gpbInfoVenda.BackColor = System.Drawing.Color.White;
             this.gpbInfoVenda.Controls.Add(this.txtResumoServico);
+            this.gpbInfoVenda.Controls.Add(this.pn2);
             this.gpbInfoVenda.Controls.Add(this.groupBox7);
+            this.gpbInfoVenda.Controls.Add(this.pn1);
+            this.gpbInfoVenda.Controls.Add(this.btnSalvar);
             this.gpbInfoVenda.Controls.Add(this.cbTipoServico);
+            this.gpbInfoVenda.Controls.Add(this.btnExportar);
             this.gpbInfoVenda.Controls.Add(this.cbStatus);
             this.gpbInfoVenda.Controls.Add(this.txtFimPrevisto);
+            this.gpbInfoVenda.Controls.Add(this.pcbFavorito);
             this.gpbInfoVenda.Controls.Add(this.btnCadastraTipoServico);
             this.gpbInfoVenda.Controls.Add(this.txtObservacoesCliente);
             this.gpbInfoVenda.Controls.Add(this.groupBox6);
@@ -386,11 +385,11 @@
             this.cbStatus.Hint = "Situação Atual";
             this.cbStatus.IntegralHeight = false;
             this.cbStatus.ItemHeight = 43;
-            this.cbStatus.Location = new System.Drawing.Point(347, 24);
+            this.cbStatus.Location = new System.Drawing.Point(727, 24);
             this.cbStatus.MaxDropDownItems = 4;
             this.cbStatus.MouseState = MaterialSkin.MouseState.OUT;
             this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(560, 49);
+            this.cbStatus.Size = new System.Drawing.Size(180, 49);
             this.cbStatus.StartIndex = 0;
             this.cbStatus.TabIndex = 86;
             this.cbStatus.UseAccent = false;
@@ -1310,14 +1309,14 @@
             this.dgvItens.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvItens.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvItens.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvItens.ColumnHeadersHeight = 35;
             this.dgvItens.ColumnHeadersVisible = false;
             this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1325,14 +1324,14 @@
             this.colDescricao,
             this.colExcluir});
             this.dgvItens.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.MintCream;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleTurquoise;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvItens.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.MintCream;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvItens.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvItens.EnableHeadersVisualStyles = false;
             this.dgvItens.GridColor = System.Drawing.Color.Black;
             this.dgvItens.Location = new System.Drawing.Point(6, 79);
@@ -1341,8 +1340,8 @@
             this.dgvItens.ReadOnly = true;
             this.dgvItens.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvItens.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvItens.Size = new System.Drawing.Size(522, 346);
             this.dgvItens.TabIndex = 98;
@@ -1726,6 +1725,7 @@
             this.pcbImagemItem.CorBotao = System.Drawing.Color.White;
             this.pcbImagemItem.CorTextoBotao = System.Drawing.Color.White;
             this.pcbImagemItem.ForeColor = System.Drawing.Color.White;
+            this.pcbImagemItem.Image = null;
             this.pcbImagemItem.Location = new System.Drawing.Point(14, 54);
             this.pcbImagemItem.Name = "pcbImagemItem";
             this.pcbImagemItem.Size = new System.Drawing.Size(380, 383);
@@ -1810,7 +1810,7 @@
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(457, 17);
+            this.btnSalvar.Location = new System.Drawing.Point(444, 20);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(41, 41);
             this.btnSalvar.TabIndex = 119;
@@ -1835,7 +1835,7 @@
             this.btnExportar.ForeColor = System.Drawing.Color.White;
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportar.Location = new System.Drawing.Point(410, 17);
+            this.btnExportar.Location = new System.Drawing.Point(397, 20);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(41, 41);
             this.btnExportar.TabIndex = 58;
@@ -1855,7 +1855,7 @@
             this.pcbFavorito.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pcbFavorito.ForeColor = System.Drawing.Color.White;
             this.pcbFavorito.Image = global::GRC.Properties.Resources.star;
-            this.pcbFavorito.Location = new System.Drawing.Point(362, 21);
+            this.pcbFavorito.Location = new System.Drawing.Point(349, 24);
             this.pcbFavorito.Name = "pcbFavorito";
             this.pcbFavorito.Size = new System.Drawing.Size(42, 37);
             this.pcbFavorito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1866,25 +1866,6 @@
             this.ttAjuda.SetToolTip(this.pcbFavorito, "Favoritar a OS permite que apareça primeiro ao pesquisar ");
             this.pcbFavorito.Click += new System.EventHandler(this.pcbFavorito_Click);
             // 
-            // pnSuperior
-            // 
-            this.pnSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
-            this.pnSuperior.Controls.Add(this.pnStatus);
-            this.pnSuperior.Controls.Add(this.label3);
-            this.pnSuperior.Controls.Add(this.btnClose);
-            this.pnSuperior.Controls.Add(this.pcLogo);
-            this.pnSuperior.Controls.Add(this.pn2);
-            this.pnSuperior.Controls.Add(this.pn1);
-            this.pnSuperior.Controls.Add(this.btnSalvar);
-            this.pnSuperior.Controls.Add(this.btnExportar);
-            this.pnSuperior.Controls.Add(this.pcbFavorito);
-            this.pnSuperior.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnSuperior.Location = new System.Drawing.Point(0, 0);
-            this.pnSuperior.Name = "pnSuperior";
-            this.pnSuperior.Size = new System.Drawing.Size(1138, 70);
-            this.pnSuperior.TabIndex = 131;
-            this.pnSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnSuperior_MouseDown);
-            // 
             // pnStatus
             // 
             this.pnStatus.BackColor = System.Drawing.Color.Transparent;
@@ -1892,56 +1873,10 @@
             this.pnStatus.Color2 = System.Drawing.Color.MediumOrchid;
             this.pnStatus.CornerRadius = 10;
             this.pnStatus.GradientAngle = 180F;
-            this.pnStatus.Location = new System.Drawing.Point(-6, 65);
+            this.pnStatus.Location = new System.Drawing.Point(0, 79);
             this.pnStatus.Name = "pnStatus";
             this.pnStatus.Size = new System.Drawing.Size(352, 22);
             this.pnStatus.TabIndex = 131;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(59, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(287, 29);
-            this.label3.TabIndex = 119;
-            this.label3.Text = "Ordem de Serviço (OS)";
-            this.label3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label3_MouseDown);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnClose.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnClose.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnClose.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(1101, 21);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(27, 29);
-            this.btnClose.TabIndex = 122;
-            this.btnClose.TamanhoBorda = 0;
-            this.btnClose.TamanhoRaio = 5;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // pcLogo
-            // 
-            this.pcLogo.Image = ((System.Drawing.Image)(resources.GetObject("pcLogo.Image")));
-            this.pcLogo.Location = new System.Drawing.Point(8, 11);
-            this.pcLogo.Name = "pcLogo";
-            this.pcLogo.Size = new System.Drawing.Size(45, 42);
-            this.pcLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcLogo.TabIndex = 117;
-            this.pcLogo.TabStop = false;
-            this.pcLogo.Click += new System.EventHandler(this.pcLogo_Click);
             // 
             // pn2
             // 
@@ -1953,7 +1888,7 @@
             this.pn2.Controls.Add(this.lbStatus);
             this.pn2.CornerRadius = 10;
             this.pn2.GradientAngle = 90F;
-            this.pn2.Location = new System.Drawing.Point(644, 17);
+            this.pn2.Location = new System.Drawing.Point(631, 20);
             this.pn2.Name = "pn2";
             this.pn2.Size = new System.Drawing.Size(429, 41);
             this.pn2.TabIndex = 6;
@@ -1979,7 +1914,7 @@
             this.pn1.Controls.Add(this.lbDataAtual);
             this.pn1.CornerRadius = 10;
             this.pn1.GradientAngle = 90F;
-            this.pn1.Location = new System.Drawing.Point(514, 17);
+            this.pn1.Location = new System.Drawing.Point(501, 20);
             this.pn1.Name = "pn1";
             this.pn1.Size = new System.Drawing.Size(124, 41);
             this.pn1.TabIndex = 5;
@@ -2205,13 +2140,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1138, 731);
+            this.Controls.Add(this.pnStatus);
             this.Controls.Add(this.customPanel2);
             this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.customPanel5);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.pnSuperior);
             this.Controls.Add(this.materialTabSelector1);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -2250,9 +2185,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcbImagemItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbFavorito)).EndInit();
-            this.pnSuperior.ResumeLayout(false);
-            this.pnSuperior.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcLogo)).EndInit();
             this.pn2.ResumeLayout(false);
             this.pn2.PerformLayout();
             this.pn1.ResumeLayout(false);
@@ -2317,12 +2249,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescricao;
         private System.Windows.Forms.DataGridViewImageColumn colExcluir;
-        private System.Windows.Forms.PictureBox pcLogo;
         private Componentes.CustomButton btnSalvar;
-        private Componentes.CustomButton btnClose;
-        private System.Windows.Forms.Panel pnSuperior;
         private Componentes.RoundedPanel pnStatus;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TabPage tbpDadosAparelho;
         private System.Windows.Forms.GroupBox groupBox5;
