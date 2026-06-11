@@ -53,13 +53,11 @@ namespace Domain.Repository
                         // -------------------------------------------------------
                         if (cliente.Email != null)
                         {
-                            string sqlEmail = @"INSERT INTO GRC_EMAIL
-                                (EMAIL, OBSERVACOES)
-                                VALUES (@Descricao, @Observacoes);
-                                SELECT last_insert_rowid();";
-
-                            cliente.Email.Id = conn.ExecuteScalar<int>(sqlEmail, cliente.Email, tran);
+                            cliente.Email.Id = conn.ExecuteScalar<int>(@"INSERT INTO GRC_EMAIL (EMAIL) VALUES (@Descricao);
+                                SELECT last_insert_rowid();",
+                                param: new { Descricao = cliente.Email.Descricao }, tran);
                         }
+
 
 
                         // -------------------------------------------------------
@@ -90,18 +88,19 @@ namespace Domain.Repository
                             {
                                 string sqlTel = @"
                                     INSERT INTO GRC_TELEFONE_CLIENTE
-                                    (IDGRC_CLIENTE, DESCRICAO, WHATSAPP, OBSERVACOES)
-                                    VALUES (@ClienteId, @Descricao, @Whatsapp, @Observacoes);";
+                                    (IDGRC_CLIENTE, DESCRICAO, WHATSAPP)
+                                    VALUES (@ClienteId, @Descricao, @Whatsapp);";
 
                                 conn.Execute(sqlTel, new
                                 {
                                     ClienteId = cliente.Id,
                                     Descricao = tel.Descricao,
                                     Whatsapp = tel.Whatsapp ? 1 : 0,
-                                    //Observacoes = string.IsNullOrWhiteSpace(tel.Observacoes) ? (object)DBNull.Value : tel.Observacoes
                                 }, tran);
                             }
                         }
+
+
 
                         tran.Commit();
                         return cliente.Id;
@@ -243,7 +242,7 @@ namespace Domain.Repository
                             if (Cliente.Email.Id == 0)
                             {
                                 string sqlEmail = @"
-                                                    INSERT INTO GRC_EMAIL (EMAIL, OBSERVACOES) VALUES (@Descricao, @Observacoes);
+                                                    INSERT INTO GRC_EMAIL (EMAIL) VALUES (@Descricao);
                                                     SELECT last_insert_rowid();";
 
                                 Cliente.Email.Id = conn.ExecuteScalar<int>(sqlEmail, Cliente.Email, tran);
@@ -261,8 +260,7 @@ namespace Domain.Repository
                             {
                                 var sqlUpdateEmail = @"
                                                         UPDATE GRC_EMAIL
-                                                        SET EMAIL = @Descricao,
-                                                        OBSERVACOES = @Observacoes
+                                                        SET EMAIL = @Descricao
                                                         WHERE IDGRC_EMAIL = @Id";
                                 conn.Execute(sqlUpdateEmail,
                                     new
@@ -295,8 +293,7 @@ namespace Domain.Repository
                         // Telefones atuais no banco
                         var telefonesAtuais = conn.Query<Telefone>(@"SELECT IDGRC_TELEFONE_CLIENTE AS Id, 
                                                                             DESCRICAO, 
-                                                                            WHATSAPP, 
-                                                                            OBSERVACOES 
+                                                                            WHATSAPP
                                                                      FROM GRC_TELEFONE_CLIENTE 
                                                                      WHERE IDGRC_CLIENTE = @IdCliente",
                             new
@@ -319,14 +316,13 @@ namespace Domain.Repository
                         foreach (var tel in novos)
                         {
                             conn.Execute(@" INSERT INTO GRC_TELEFONE_CLIENTE
-                                    (IDGRC_CLIENTE, DESCRICAO, WHATSAPP, OBSERVACOES)
-                                    VALUES (@IdCliente, @Descricao, @Whatsapp, @Observacoes);",
+                                    (IDGRC_CLIENTE, DESCRICAO, WHATSAPP)
+                                    VALUES (@IdCliente, @Descricao, @Whatsapp);",
                                 new
                                 {
                                     IdCliente = Cliente.Id,
                                     Descricao = tel.Descricao,
-                                    Whatsapp = tel.Whatsapp,
-                                    //   Observacoes = tel.Observacoes
+                                    Whatsapp = tel.Whatsapp
                                 }, tran);
                         }
 
@@ -336,14 +332,12 @@ namespace Domain.Repository
                             conn.Execute(@"
                                             UPDATE GRC_TELEFONE_CLIENTE
                                             SET DESCRICAO = @Descricao,
-                                                WHATSAPP = @Whatsapp,
-                                                OBSERVACOES = @Observacoes
+                                                WHATSAPP = @Whatsapp
                                                 WHERE IDGRC_TELEFONE_CLIENTE = @Id AND IDGRC_CLIENTE = @IdCliente",
                                 new
                                 {
                                     Descricao = tel.Descricao,
                                     Whatsapp = tel.Whatsapp,
-                                    //  Observacoes = tel.Observacoes,
                                     Id = tel.Id,
                                     IdCliente = Cliente.Id
                                 }, tran);
@@ -543,8 +537,7 @@ namespace Domain.Repository
                                     Id = (int)(t.Id),
                                     Descricao = t.Descricao?.ToString(),
                                     // Conversão manual de long → bool
-                                    Whatsapp = Convert.ToBoolean(t.Whatsapp),
-                                    //  Observacoes = t.Observacoes?.ToString()
+                                    Whatsapp = Convert.ToBoolean(t.Whatsapp)
                                 }).ToList();
                         }
                     }

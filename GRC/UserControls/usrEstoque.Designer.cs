@@ -96,7 +96,7 @@
             this.panel1.Controls.Add(this.btnFiltroAtivos);
             this.panel1.Controls.Add(this.btnFiltroTodos);
             this.panel1.Controls.Add(this.btnFiltroInativos);
-            this.panel1.Location = new System.Drawing.Point(889, 3);
+            this.panel1.Location = new System.Drawing.Point(892, 40);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(262, 57);
             this.panel1.TabIndex = 179;
@@ -530,7 +530,7 @@
             this.btnNovoItem.ForeColor = System.Drawing.Color.White;
             this.btnNovoItem.Image = ((System.Drawing.Image)(resources.GetObject("btnNovoItem.Image")));
             this.btnNovoItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNovoItem.Location = new System.Drawing.Point(242, 4);
+            this.btnNovoItem.Location = new System.Drawing.Point(972, 3);
             this.btnNovoItem.Name = "btnNovoItem";
             this.btnNovoItem.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.btnNovoItem.Size = new System.Drawing.Size(179, 34);

@@ -435,16 +435,15 @@
             this.btnMovimentar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
             this.btnMovimentar.ForeColor = System.Drawing.Color.White;
             this.btnMovimentar.Image = ((System.Drawing.Image)(resources.GetObject("btnMovimentar.Image")));
-            this.btnMovimentar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMovimentar.Location = new System.Drawing.Point(456, 63);
+            this.btnMovimentar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMovimentar.Location = new System.Drawing.Point(438, 63);
             this.btnMovimentar.Name = "btnMovimentar";
             this.btnMovimentar.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.btnMovimentar.Size = new System.Drawing.Size(141, 37);
+            this.btnMovimentar.Size = new System.Drawing.Size(159, 37);
             this.btnMovimentar.TabIndex = 26;
             this.btnMovimentar.TamanhoBorda = 0;
             this.btnMovimentar.TamanhoRaio = 5;
-            this.btnMovimentar.Text = "   Movimentar";
-            this.btnMovimentar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMovimentar.Text = "Movimentar";
             this.btnMovimentar.UseVisualStyleBackColor = false;
             this.btnMovimentar.Click += new System.EventHandler(this.btnMovimentar_Click);
             // 

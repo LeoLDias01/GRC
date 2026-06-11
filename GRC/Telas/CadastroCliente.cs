@@ -36,13 +36,44 @@ namespace GRC.Telas
 
         #endregion
 
-        
+        #region ..:: Importação de APIs do Windows (Estética e Movimentação) ::..
+
+        // Importa a função nativa do Windows responsável por criar regiões arredondadas no formulário
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coord do canto superior esquerdo
+            int nTopRect,      // y-coord do canto superior esquerdo
+            int nRightRect,    // x-coord do canto inferior direito
+            int nBottomRect,   // y-coord do canto inferior direito
+            int nWidthEllipse, // largura da elipse (quanto maior, mais arredondado)
+            int nHeightEllipse // altura da elipse (quanto maior, mais arredondado)
+        );
+
+        // Importa as funções nativas para permitir o arrasto da tela sem usar a barra de título padrão
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        // Constantes numéricas exigidas pela API do Windows para capturar o movimento do mouse
+        private const int WM_NCLBUTTONDOWN = 0xA1;
+        private const int HT_CAPTION = 0x2;
+
+        #endregion
+
+
         public CadastroCliente(int id = 0)
         {
             InitializeComponent();
             _idCliente = id;
             _idEmail = 0;
             _idEndereco = 0;
+
+
+            // Aplica os cantos arredondados na janela do formulário (raio de 30px)
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
         }
 
 
@@ -217,6 +248,7 @@ namespace GRC.Telas
         }
         private void PreencheGridTelefone(int id, bool whatsapp, string telefone)
         {
+            ConfigurarEstiloGridTelefones();
             // Evita que apareça o "X" quando não houver imagem
             dgvTelefones.Columns["colWhatsApp"].DefaultCellStyle.NullValue = null;
             dgvTelefones.RowTemplate.Height = 30;
@@ -228,6 +260,58 @@ namespace GRC.Telas
                     telefone,                   // colTelefone
                     Resources.remove
                 );
+        }
+        private void ConfigurarEstiloGridTelefones()
+        {
+            dgvTelefones.BackgroundColor = Color.FromArgb(244, 246, 249);
+            dgvTelefones.BorderStyle = BorderStyle.None;
+            dgvTelefones.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvTelefones.GridColor = Color.FromArgb(235, 240, 245);
+
+            dgvTelefones.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvTelefones.MultiSelect = false;
+            dgvTelefones.RowHeadersVisible = false;
+            dgvTelefones.AllowUserToResizeRows = false;
+            dgvTelefones.AllowUserToAddRows = false;
+            dgvTelefones.ColumnHeadersVisible = false;
+
+            DataGridViewCellStyle estiloLinha = new DataGridViewCellStyle();
+            estiloLinha.BackColor = Color.White;
+            estiloLinha.ForeColor = Color.FromArgb(45, 52, 54);
+            estiloLinha.Font = new Font("Segoe UI", 10F, FontStyle.Regular);
+            estiloLinha.SelectionBackColor = Color.FromArgb(235, 243, 250);
+            estiloLinha.SelectionForeColor = Color.FromArgb(45, 52, 54);
+            estiloLinha.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dgvTelefones.DefaultCellStyle = estiloLinha;
+
+            dgvTelefones.RowTemplate.Height = 38;
+
+            if (dgvTelefones.Columns.Contains("colIdTelefone"))
+                dgvTelefones.Columns["colIdTelefone"].Visible = false;
+
+            if (dgvTelefones.Columns.Contains("colWhatsApp"))
+            {
+                dgvTelefones.Columns["colWhatsApp"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvTelefones.Columns["colWhatsApp"].Width = 45;
+            }
+
+            if (dgvTelefones.Columns.Contains("colTelefone"))
+            {
+                dgvTelefones.Columns["colTelefone"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvTelefones.Columns["colTelefone"].DefaultCellStyle.Padding = new Padding(5, 0, 0, 0);
+            }
+
+            if (dgvTelefones.Columns.Contains("colExcluir"))
+            {
+                DataGridViewCellStyle estiloExcluir = new DataGridViewCellStyle();
+                estiloExcluir.ForeColor = Color.FromArgb(214, 48, 49);
+                estiloExcluir.SelectionForeColor = Color.FromArgb(214, 48, 49);
+                estiloExcluir.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+                estiloExcluir.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                dgvTelefones.Columns["colExcluir"].DefaultCellStyle = estiloExcluir;
+                dgvTelefones.Columns["colExcluir"].Width = 80;
+            }
         }
         private void MudaCorPainel(Color cor1, Color cor2)
         {
@@ -252,7 +336,6 @@ namespace GRC.Telas
             chkHabilitaEmail.Checked = false;
             _idEmail = 0;
             txtEmail.Text = string.Empty;
-            txtObservacoesEmail.Text = string.Empty;
         }
 
         private void txtTelefone_TextChanged(object sender, EventArgs e)
@@ -324,7 +407,6 @@ namespace GRC.Telas
         private void HabilitaEmail(bool habilita = false)
         {
             txtEmail.Enabled = habilita;
-            txtObservacoesEmail.Enabled = habilita;
         }
         private void HabilitaEndereco(bool habilita = false)
         {
@@ -351,10 +433,7 @@ namespace GRC.Telas
             }
         }
         
-        private void btnAddTelefone_Click(object sender, EventArgs e)
-        {
-           
-        }
+
 
         private void swAtivo_CheckedChanged(object sender, EventArgs e)
         {
@@ -453,6 +532,7 @@ namespace GRC.Telas
                     Identidade = txtIdentificador.Text.Trim(),
                     Observacoes = txtObservacoes.Text,
                     Ativo = _ativo,
+                    // Monta o objeto Endereço (somente se a checkbox estiver marcada)
                     Endereco = chkHabilitaEndereco.Checked ? new Endereco
                     {
                         Id = _idEndereco,
@@ -465,29 +545,31 @@ namespace GRC.Telas
                         Complemento = txtComplemento.Text,
                         Observacoes = txtObservacoesEndereco.Text
                     } : null,
+
+                    // Monta o objeto Email (somente se a checkbox estiver marcada)
                     Email = chkHabilitaEmail.Checked ? new Email
                     {
                         Id = _idEmail,
                         Descricao = txtEmail.Text.Trim()
                     } : null,
-                    Telefones = dgvTelefones.Rows.Cast<DataGridViewRow>()
-    .Where(r => !r.IsNewRow)
-    .Select(r =>
-    {
-        var cellId = r.Cells["colIdTelefone"].Value;
-        var cellTelefone = r.Cells["colTelefone"].Value;
-        var cellObs = r.Cells["colObservacoes"].Value;
-        var cellWhatsapp = r.Cells["colWhatsapp"].Value;
 
-        return new Telefone
-        {
-            Id = cellId == null || cellId == DBNull.Value ? 0 : Convert.ToInt32(cellId),
-            Descricao = cellTelefone?.ToString() ?? string.Empty,
-            // se houver imagem de WhatsApp, considera true
-            Whatsapp = cellWhatsapp != null && cellWhatsapp is Bitmap,
-            //Observacoes = cellObs?.ToString() ?? string.Empty
-        };
-    }).ToList()
+                    // 3. Varre o GridView para montar a lista de Telefones
+                    Telefones = dgvTelefones.Rows.Cast<DataGridViewRow>()
+                    .Where(r => !r.IsNewRow) // Ignora a linha em branco padrão do fim do grid
+                    .Select(r =>
+                    {
+                        var cellId = r.Cells["colIdTelefone"].Value;
+                        var cellTelefone = r.Cells["colTelefone"].Value;
+                        var cellWhatsapp = r.Cells["colWhatsapp"].Value;
+
+                        return new Telefone
+                        {
+                            Id = cellId == null || cellId == DBNull.Value ? 0 : Convert.ToInt32(cellId),
+                            Descricao = cellTelefone?.ToString() ?? string.Empty,
+                            // Transforma a presença do ícone (Bitmap) em boolean (True/False)
+                            Whatsapp = cellWhatsapp != null && cellWhatsapp is Bitmap
+                        };
+                    }).ToList()
                 };
 
                 int? retorno = _service.SalvaFornecedor(cliente);
@@ -514,15 +596,7 @@ namespace GRC.Telas
         {
             this.Close();
         }
-        // Importar as DLLs do Windows para mover o formulário
-        [DllImport("user32.dll")]
-        public static extern bool ReleaseCapture();
-        [DllImport("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-
-        // Constantes para a mensagem de movimento
-        private const int WM_NCLBUTTONDOWN = 0xA1;
-        private const int HT_CAPTION = 0x2;
+        
         private void CadastroCliente_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -532,32 +606,16 @@ namespace GRC.Telas
             }
         }
 
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture(); // Libera o mouse para a operação
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
-            }
-        }
-
-        private void lbTitulo_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture(); // Libera o mouse para a operação
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
-            }
-        }
 
         private void txtTelefone_TrailingIconClick(object sender, EventArgs e)
         {
             bool whatsapp = chkWhatsapp.Checked;
 
-            // Remove tudo que não é número
-            string telefoneNumerico = txtTelefone.Text.Trim();//new string(txtTelefone.Text.Trim().Where(char.IsDigit).ToArray());
+            // Remove os espaços do telefone (mantido original do seu código comentado abaixo)
+            // string telefoneNumerico = new string(txtTelefone.Text.Trim().Where(char.IsDigit).ToArray());
+            string telefoneNumerico = txtTelefone.Text.Trim();
 
-            // Validação simples por quantidade de caracteres
+            // Verifica se a quantidade de caracteres é o padrão de telefone formatado ex: (16) 99999-9999
             if (telefoneNumerico.Length < 14 || telefoneNumerico.Length > 15)
             {
                 new AlertBox(Color.Goldenrod, Color.LimeGreen, Color.Yellow, Resources.Warning, "Entidade: Fornecedor/Telefone", string.Empty, "Informe um telefone válido!", false).ShowDialog();
@@ -565,10 +623,10 @@ namespace GRC.Telas
                 return;
             }
 
-
+            // Joga as informações na tabela (0 indica que é um registro novo e não veio do banco)
             PreencheGridTelefone(0, whatsapp, telefoneNumerico);
 
-            // Limpa campos para próxima entrada
+            // Limpa o campo de entrada e a checkbox para o próximo telefone
             txtTelefone.Clear();
             chkWhatsapp.Checked = false;
             txtTelefone.Focus();
@@ -603,6 +661,11 @@ namespace GRC.Telas
                     MessageBox.Show("Erro ao abrir WhatsApp: " + ex.Message);
                 }
             }
+        }
+
+        private void btnEncerrarJanelas_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

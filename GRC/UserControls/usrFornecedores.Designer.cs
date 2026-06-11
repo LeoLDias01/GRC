@@ -44,8 +44,6 @@
             this.lbRegistros = new System.Windows.Forms.Label();
             this.modernBox2 = new GRC.Componentes.ModernBox();
             this.dgvFornecedores = new System.Windows.Forms.DataGridView();
-            this.modernBox1 = new GRC.Componentes.ModernBox();
-            this.txtPesquisa = new GRC.Componentes.RoundedTextBox();
             this.colIdFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNomeFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRazaoSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +51,8 @@
             this.colCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAtivo = new System.Windows.Forms.DataGridViewImageColumn();
+            this.modernBox1 = new GRC.Componentes.ModernBox();
+            this.txtPesquisa = new GRC.Componentes.RoundedTextBox();
             this.panel1.SuspendLayout();
             this.modernBox3.SuspendLayout();
             this.modernBox2.SuspendLayout();
@@ -180,7 +180,7 @@
             this.btnNovoFornecedor.ForeColor = System.Drawing.Color.White;
             this.btnNovoFornecedor.Image = ((System.Drawing.Image)(resources.GetObject("btnNovoFornecedor.Image")));
             this.btnNovoFornecedor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNovoFornecedor.Location = new System.Drawing.Point(301, 3);
+            this.btnNovoFornecedor.Location = new System.Drawing.Point(818, 3);
             this.btnNovoFornecedor.Name = "btnNovoFornecedor";
             this.btnNovoFornecedor.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.btnNovoFornecedor.Size = new System.Drawing.Size(179, 34);
@@ -319,47 +319,6 @@
             this.dgvFornecedores.Size = new System.Drawing.Size(965, 435);
             this.dgvFornecedores.TabIndex = 11;
             // 
-            // modernBox1
-            // 
-            this.modernBox1.BackColor = System.Drawing.Color.Transparent;
-            this.modernBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.modernBox1.BorderRadius = 20;
-            this.modernBox1.BorderSize = 1;
-            this.modernBox1.Controls.Add(this.txtPesquisa);
-            this.modernBox1.FillColor = System.Drawing.Color.White;
-            this.modernBox1.Location = new System.Drawing.Point(10, 76);
-            this.modernBox1.Name = "modernBox1";
-            this.modernBox1.Padding = new System.Windows.Forms.Padding(8);
-            this.modernBox1.ShadowAngle = 50;
-            this.modernBox1.ShadowColor = System.Drawing.Color.Gainsboro;
-            this.modernBox1.ShadowSize = 3;
-            this.modernBox1.Size = new System.Drawing.Size(713, 50);
-            this.modernBox1.TabIndex = 159;
-            // 
-            // txtPesquisa
-            // 
-            this.txtPesquisa.BackColor = System.Drawing.Color.Transparent;
-            this.txtPesquisa.BorderColor = System.Drawing.Color.White;
-            this.txtPesquisa.BorderRadius = 12;
-            this.txtPesquisa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPesquisa.FillColor = System.Drawing.Color.White;
-            this.txtPesquisa.Icon = ((System.Drawing.Image)(resources.GetObject("txtPesquisa.Icon")));
-            this.txtPesquisa.IconPosition = GRC.Componentes.RoundedTextBox.IconPositionEnum.Right;
-            this.txtPesquisa.Location = new System.Drawing.Point(8, 8);
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Padding = new System.Windows.Forms.Padding(10);
-            this.txtPesquisa.Placeholder = "Busque por Nome ou CNPJ...";
-            this.txtPesquisa.SelectedText = "";
-            this.txtPesquisa.SelectionLength = 0;
-            this.txtPesquisa.SelectionStart = 0;
-            this.txtPesquisa.Size = new System.Drawing.Size(697, 34);
-            this.txtPesquisa.TabIndex = 104;
-            this.txtPesquisa.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtPesquisa.TextColor = System.Drawing.Color.Black;
-            this.txtPesquisa.TextStyle = System.Drawing.FontStyle.Regular;
-            this.txtPesquisa.UnderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            this.txtPesquisa.UnderlineSize = 5;
-            // 
             // colIdFornecedor
             // 
             this.colIdFornecedor.DataPropertyName = "Id";
@@ -410,6 +369,47 @@
             this.colAtivo.HeaderText = "Ativo";
             this.colAtivo.Name = "colAtivo";
             this.colAtivo.ReadOnly = true;
+            // 
+            // modernBox1
+            // 
+            this.modernBox1.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox1.BorderColor = System.Drawing.Color.Transparent;
+            this.modernBox1.BorderRadius = 20;
+            this.modernBox1.BorderSize = 1;
+            this.modernBox1.Controls.Add(this.txtPesquisa);
+            this.modernBox1.FillColor = System.Drawing.Color.White;
+            this.modernBox1.Location = new System.Drawing.Point(10, 76);
+            this.modernBox1.Name = "modernBox1";
+            this.modernBox1.Padding = new System.Windows.Forms.Padding(8);
+            this.modernBox1.ShadowAngle = 50;
+            this.modernBox1.ShadowColor = System.Drawing.Color.Gainsboro;
+            this.modernBox1.ShadowSize = 3;
+            this.modernBox1.Size = new System.Drawing.Size(713, 50);
+            this.modernBox1.TabIndex = 159;
+            // 
+            // txtPesquisa
+            // 
+            this.txtPesquisa.BackColor = System.Drawing.Color.Transparent;
+            this.txtPesquisa.BorderColor = System.Drawing.Color.White;
+            this.txtPesquisa.BorderRadius = 12;
+            this.txtPesquisa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPesquisa.FillColor = System.Drawing.Color.White;
+            this.txtPesquisa.Icon = ((System.Drawing.Image)(resources.GetObject("txtPesquisa.Icon")));
+            this.txtPesquisa.IconPosition = GRC.Componentes.RoundedTextBox.IconPositionEnum.Right;
+            this.txtPesquisa.Location = new System.Drawing.Point(8, 8);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Padding = new System.Windows.Forms.Padding(10);
+            this.txtPesquisa.Placeholder = "Busque por Nome ou CNPJ...";
+            this.txtPesquisa.SelectedText = "";
+            this.txtPesquisa.SelectionLength = 0;
+            this.txtPesquisa.SelectionStart = 0;
+            this.txtPesquisa.Size = new System.Drawing.Size(697, 34);
+            this.txtPesquisa.TabIndex = 104;
+            this.txtPesquisa.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtPesquisa.TextColor = System.Drawing.Color.Black;
+            this.txtPesquisa.TextStyle = System.Drawing.FontStyle.Regular;
+            this.txtPesquisa.UnderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.txtPesquisa.UnderlineSize = 5;
             // 
             // usrFornecedores
             // 

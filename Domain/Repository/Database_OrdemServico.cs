@@ -698,8 +698,7 @@ namespace Domain.Repository
                                         CL.NOME AS Nome,
                                         OS.DATA_ENTRADA AS DataEntrada,
                                         OS.FAVORITO AS Favorito,
-                                        ST.DESCRICAO AS Status, 
-                                        TP.DESCRICAO AS Tipo
+                                        ST.IDGRC_STATUS AS Status
                                 FROM GRC_ORDEM_SERVICO OS
                                 INNER JOIN GRC_TIPO ST ON ST.IDGRC_TIPO = OS.IDGRC_STATUS
                                                           AND ST.IDGRC_SUBTIPO = 7
@@ -711,44 +710,31 @@ namespace Domain.Repository
 
                                 WHERE 1 = 1 ");
 
-                    // Filtros dinâmicos
-                    if (os.Id > 0)
-                        sql.Append(" AND OS.IDGRC_ORDEM_SERVICO = @Id ");
 
-                    if (os.DadosCliente.Id > 0)
-                        sql.Append(" AND OS.IDGRC_CLIENTE = @IdCliente ");
+                    if (!string.IsNullOrWhiteSpace(os.DadosCliente.Nome))
+                    {
+                        sql.Append(@" AND (CL.NOME LIKE @Termo OR OS.IDGRC_ORDEM_SERVICO LIKE @Termo) ");
 
-                    if (os.TipoServico > 0)
-                        sql.Append(" AND OS.IDGRC_TIPO_SERVICO = @Tipo ");
+                    }
 
                     if (os.Status > 0)
                         sql.Append(" AND OS.IDGRC_STATUS = @Status ");
 
-                    if (os.Favorito)
-                        sql.Append(" AND OS.FAVORITO = @Favorito ");
-
-                    if (!string.IsNullOrWhiteSpace(os.DataEntrada))
-                        sql.Append(" AND OS.DATA_ENTRADA = @Data ");
-
                     sql.Append(" ORDER BY OS.FAVORITO, CL.NOME ASC LIMIT @Registros; ");
 
+                    string termoFormatado = $"%{os.DadosCliente.Nome?.Trim()}%";
                     var lista = conn.Query(sql.ToString(), new
                     {
-                        Id = (int)os.Id,
-                        IdCliente = os.DadosCliente.Id > 0 ? os.DadosCliente.Id : 0,
-                        Tipo = os.TipoServico > 0 ? os.TipoServico : 0,
                         Status = os.Status > 0 ? os.Status : 0,
-                        Favorito = os.Favorito == true ? 1 : 0,
-                        Data = os.DataEntrada.ToString(),
+                        Termo = termoFormatado,
                         Registros = registros
                     })
                     .Select(x => new OrdemServico
                     {
+                        Favorito = x.Favorito == 1 ? true : false,
                         Id = (int)x.Id,
                         DataEntrada = x.DataEntrada,
-                        Favorito = x.Favorito == 1 ? true : false,
-                        DescricaoStatus = x.Status,
-                        DescricaoTipo = x.Tipo,
+                        Status = x.Status,
                         DadosCliente = new Cliente
                         {
                             Nome = x.Nome
@@ -759,7 +745,7 @@ namespace Domain.Repository
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Erro ao buscar itens do database: " + ex.Message);
+                    throw new Exception("Erro ao buscar Os do database: " + ex.Message);
                 }
             }
         }

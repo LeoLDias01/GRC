@@ -140,25 +140,7 @@ namespace GRC.UserControls
             cb.DataSource = lista;
             cb.SelectedIndex = -1; // nenhum item selecionado — exibe o placeholder
         }
-        private void btnApagar_Click(object sender, EventArgs e)
-        {
-            LimpaCampos();
-        }
 
-        private void cbxQtdRegistros_TextChanged(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(cbRegistros.Text))
-            {
-                if (Convert.ToInt32(cbRegistros.Text) > 100)
-                    cbRegistros.Text = "100";
-            }
-            else
-            {
-                cbRegistros.Text = "10";
-            }
-
-            RealizaPesquisa();
-        }
 
         private void cbRegistros_KeyPress(object sender, KeyPressEventArgs e)
         {

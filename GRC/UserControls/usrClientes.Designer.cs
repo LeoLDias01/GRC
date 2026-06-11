@@ -33,6 +33,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(usrClientes));
             this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIdentidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAtivo = new System.Windows.Forms.DataGridViewImageColumn();
             this.cbRegistros = new System.Windows.Forms.ComboBox();
             this.modernBox2 = new GRC.Componentes.ModernBox();
             this.lbRegistros = new System.Windows.Forms.Label();
@@ -46,12 +52,6 @@
             this.modernBox1 = new GRC.Componentes.ModernBox();
             this.txtPesquisa = new GRC.Componentes.RoundedTextBox();
             this.btnNovoFornecedor = new GRC.Componentes.CustomButton();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIdentidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAtivo = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.modernBox2.SuspendLayout();
             this.modernBox3.SuspendLayout();
@@ -109,6 +109,50 @@
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClientes.Size = new System.Drawing.Size(965, 435);
             this.dgvClientes.TabIndex = 11;
+            // 
+            // colId
+            // 
+            this.colId.DataPropertyName = "Id";
+            this.colId.FillWeight = 1F;
+            this.colId.HeaderText = "Id";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Visible = false;
+            // 
+            // colNome
+            // 
+            this.colNome.DataPropertyName = "Nome";
+            this.colNome.HeaderText = "Nome";
+            this.colNome.Name = "colNome";
+            this.colNome.ReadOnly = true;
+            // 
+            // colIdentidade
+            // 
+            this.colIdentidade.DataPropertyName = "Cnpj";
+            this.colIdentidade.HeaderText = "CPF/CNPJ";
+            this.colIdentidade.Name = "colIdentidade";
+            this.colIdentidade.ReadOnly = true;
+            // 
+            // colCidade
+            // 
+            this.colCidade.DataPropertyName = "Cidade";
+            this.colCidade.HeaderText = "Cidade";
+            this.colCidade.Name = "colCidade";
+            this.colCidade.ReadOnly = true;
+            // 
+            // colUf
+            // 
+            this.colUf.DataPropertyName = "Uf";
+            this.colUf.FillWeight = 40F;
+            this.colUf.HeaderText = "UF";
+            this.colUf.Name = "colUf";
+            this.colUf.ReadOnly = true;
+            // 
+            // colAtivo
+            // 
+            this.colAtivo.HeaderText = "Ativo";
+            this.colAtivo.Name = "colAtivo";
+            this.colAtivo.ReadOnly = true;
             // 
             // cbRegistros
             // 
@@ -348,7 +392,7 @@
             this.btnNovoFornecedor.ForeColor = System.Drawing.Color.White;
             this.btnNovoFornecedor.Image = ((System.Drawing.Image)(resources.GetObject("btnNovoFornecedor.Image")));
             this.btnNovoFornecedor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNovoFornecedor.Location = new System.Drawing.Point(238, 3);
+            this.btnNovoFornecedor.Location = new System.Drawing.Point(848, 3);
             this.btnNovoFornecedor.Name = "btnNovoFornecedor";
             this.btnNovoFornecedor.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.btnNovoFornecedor.Size = new System.Drawing.Size(149, 34);
@@ -357,50 +401,6 @@
             this.btnNovoFornecedor.TamanhoRaio = 8;
             this.btnNovoFornecedor.Text = "Novo Cliente   ";
             this.btnNovoFornecedor.UseVisualStyleBackColor = false;
-            // 
-            // colId
-            // 
-            this.colId.DataPropertyName = "Id";
-            this.colId.FillWeight = 1F;
-            this.colId.HeaderText = "Id";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.Visible = false;
-            // 
-            // colNome
-            // 
-            this.colNome.DataPropertyName = "Nome";
-            this.colNome.HeaderText = "Nome";
-            this.colNome.Name = "colNome";
-            this.colNome.ReadOnly = true;
-            // 
-            // colIdentidade
-            // 
-            this.colIdentidade.DataPropertyName = "Cnpj";
-            this.colIdentidade.HeaderText = "CPF/CNPJ";
-            this.colIdentidade.Name = "colIdentidade";
-            this.colIdentidade.ReadOnly = true;
-            // 
-            // colCidade
-            // 
-            this.colCidade.DataPropertyName = "Cidade";
-            this.colCidade.HeaderText = "Cidade";
-            this.colCidade.Name = "colCidade";
-            this.colCidade.ReadOnly = true;
-            // 
-            // colUf
-            // 
-            this.colUf.DataPropertyName = "Uf";
-            this.colUf.FillWeight = 40F;
-            this.colUf.HeaderText = "UF";
-            this.colUf.Name = "colUf";
-            this.colUf.ReadOnly = true;
-            // 
-            // colAtivo
-            // 
-            this.colAtivo.HeaderText = "Ativo";
-            this.colAtivo.Name = "colAtivo";
-            this.colAtivo.ReadOnly = true;
             // 
             // usrClientes
             // 

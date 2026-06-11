@@ -824,7 +824,7 @@
             this.btnSalvar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalvar.Location = new System.Drawing.Point(1045, 51);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
@@ -832,7 +832,7 @@
             this.btnSalvar.TabIndex = 160;
             this.btnSalvar.TamanhoBorda = 0;
             this.btnSalvar.TamanhoRaio = 5;
-            this.btnSalvar.Text = "   Salvar";
+            this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
@@ -841,7 +841,7 @@
             this.panel1.BackColor = System.Drawing.Color.LightGray;
             this.panel1.Location = new System.Drawing.Point(668, 125);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(2, 455);
+            this.panel1.Size = new System.Drawing.Size(2, 458);
             this.panel1.TabIndex = 26;
             // 
             // pn1

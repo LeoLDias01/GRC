@@ -70,7 +70,7 @@ namespace GRC.UserControls
 
         private void btnOSEx_Click(object sender, EventArgs e)
         {
-            new PesquisaOS().ShowDialog();
+            MudaForm(new usrOrdemServico());
         }
 
         private void btnVendasEx_Click(object sender, EventArgs e)

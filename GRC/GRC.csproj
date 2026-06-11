@@ -443,6 +443,12 @@
     <Compile Include="UserControls\usrMovimento.Designer.cs">
       <DependentUpon>usrMovimento.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\usrOrdemServico.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usrOrdemServico.Designer.cs">
+      <DependentUpon>usrOrdemServico.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Componentes\ModernComboBox.resx">
       <DependentUpon>ModernComboBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -563,6 +569,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\usrMovimento.resx">
       <DependentUpon>usrMovimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usrOrdemServico.resx">
+      <DependentUpon>usrOrdemServico.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -28,26 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PesquisaOS));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PesquisaOS));
             this.cbxQtdRegistros = new System.Windows.Forms.ComboBox();
             this.lbRegistros = new System.Windows.Forms.Label();
             this.pnSuperior = new System.Windows.Forms.Panel();
             this.pn1 = new GRC.Componentes.RoundedPanel();
-            this.btnSearch = new GRC.Componentes.CustomButton();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnClose = new GRC.Componentes.CustomButton();
-            this.btnApagar = new GRC.Componentes.CustomButton();
-            this.btnMaximize = new GRC.Componentes.CustomButton();
-            this.btnNovaOS = new GRC.Componentes.CustomButton();
-            this.btnMinimize = new GRC.Componentes.CustomButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.modernBox2 = new GRC.Componentes.ModernBox();
             this.dgvOs = new System.Windows.Forms.DataGridView();
-            this.colFavorito = new System.Windows.Forms.DataGridViewImageColumn();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colData = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,17 +49,26 @@
             this.flpMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.txtDataEntrada = new MaterialSkin.Controls.MaterialTextBox();
             this.txtId = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtCliente = new MaterialSkin.Controls.MaterialTextBox();
             this.cbTipoServico = new MaterialSkin.Controls.MaterialComboBox();
             this.cbStatus = new MaterialSkin.Controls.MaterialComboBox();
             this.chkFavorito = new MaterialSkin.Controls.MaterialCheckbox();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colFavorito = new System.Windows.Forms.DataGridViewImageColumn();
+            this.txtCliente = new MaterialSkin.Controls.MaterialTextBox();
+            this.btnSearch = new GRC.Componentes.CustomButton();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnClose = new GRC.Componentes.CustomButton();
+            this.btnApagar = new GRC.Componentes.CustomButton();
+            this.btnMaximize = new GRC.Componentes.CustomButton();
+            this.btnNovaOS = new GRC.Componentes.CustomButton();
+            this.btnMinimize = new GRC.Componentes.CustomButton();
             this.pnSuperior.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
             this.modernBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOs)).BeginInit();
             this.modernBox1.SuspendLayout();
             this.flpMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // cbxQtdRegistros
@@ -139,6 +140,331 @@
             this.pn1.Size = new System.Drawing.Size(353, 30);
             this.pn1.TabIndex = 127;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(64, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(293, 29);
+            this.label1.TabIndex = 120;
+            this.label1.Text = "Ordens de Serviço (OS)";
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.panel2.Controls.Add(this.lbRegistros);
+            this.panel2.Controls.Add(this.cbxQtdRegistros);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 594);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(903, 44);
+            this.panel2.TabIndex = 163;
+            // 
+            // modernBox2
+            // 
+            this.modernBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.modernBox2.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.modernBox2.BorderRadius = 12;
+            this.modernBox2.BorderSize = 1;
+            this.modernBox2.Controls.Add(this.dgvOs);
+            this.modernBox2.FillColor = System.Drawing.Color.White;
+            this.modernBox2.Location = new System.Drawing.Point(13, 238);
+            this.modernBox2.Name = "modernBox2";
+            this.modernBox2.Padding = new System.Windows.Forms.Padding(13);
+            this.modernBox2.ShadowAngle = 135;
+            this.modernBox2.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.modernBox2.ShadowSize = 8;
+            this.modernBox2.Size = new System.Drawing.Size(882, 350);
+            this.modernBox2.TabIndex = 164;
+            // 
+            // dgvOs
+            // 
+            this.dgvOs.AllowUserToAddRows = false;
+            this.dgvOs.AllowUserToDeleteRows = false;
+            this.dgvOs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvOs.BackgroundColor = System.Drawing.Color.White;
+            this.dgvOs.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvOs.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvOs.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvOs.ColumnHeadersHeight = 35;
+            this.dgvOs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colFavorito,
+            this.colId,
+            this.colNome,
+            this.colData,
+            this.colStatus,
+            this.colTipo});
+            this.dgvOs.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(218)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOs.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvOs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvOs.EnableHeadersVisualStyles = false;
+            this.dgvOs.GridColor = System.Drawing.Color.DarkGray;
+            this.dgvOs.Location = new System.Drawing.Point(13, 13);
+            this.dgvOs.MultiSelect = false;
+            this.dgvOs.Name = "dgvOs";
+            this.dgvOs.ReadOnly = true;
+            this.dgvOs.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvOs.RowHeadersVisible = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvOs.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvOs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOs.Size = new System.Drawing.Size(856, 324);
+            this.dgvOs.TabIndex = 22;
+            this.dgvOs.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOs_CellDoubleClick);
+            this.dgvOs.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOs_CellValueChanged);
+            // 
+            // colId
+            // 
+            this.colId.DataPropertyName = "Id";
+            this.colId.FillWeight = 20.35533F;
+            this.colId.HeaderText = "Id";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            // 
+            // colNome
+            // 
+            this.colNome.DataPropertyName = "NomeCliente";
+            this.colNome.FillWeight = 95.16117F;
+            this.colNome.HeaderText = "Cliente";
+            this.colNome.Name = "colNome";
+            this.colNome.ReadOnly = true;
+            // 
+            // colData
+            // 
+            this.colData.DataPropertyName = "DataEntrada";
+            this.colData.FillWeight = 95.16117F;
+            this.colData.HeaderText = "Data";
+            this.colData.Name = "colData";
+            this.colData.ReadOnly = true;
+            // 
+            // colStatus
+            // 
+            this.colStatus.DataPropertyName = "DescricaoStatus";
+            this.colStatus.FillWeight = 95.16117F;
+            this.colStatus.HeaderText = "Status";
+            this.colStatus.Name = "colStatus";
+            this.colStatus.ReadOnly = true;
+            // 
+            // colTipo
+            // 
+            this.colTipo.DataPropertyName = "DescricaoTipo";
+            this.colTipo.FillWeight = 95.16117F;
+            this.colTipo.HeaderText = "Tipo";
+            this.colTipo.Name = "colTipo";
+            this.colTipo.ReadOnly = true;
+            // 
+            // modernBox1
+            // 
+            this.modernBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.modernBox1.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox1.BorderColor = System.Drawing.Color.Transparent;
+            this.modernBox1.BorderRadius = 20;
+            this.modernBox1.BorderSize = 1;
+            this.modernBox1.Controls.Add(this.flpMenu);
+            this.modernBox1.FillColor = System.Drawing.Color.White;
+            this.modernBox1.Location = new System.Drawing.Point(12, 84);
+            this.modernBox1.Name = "modernBox1";
+            this.modernBox1.Padding = new System.Windows.Forms.Padding(5);
+            this.modernBox1.ShadowAngle = 135;
+            this.modernBox1.ShadowColor = System.Drawing.Color.Transparent;
+            this.modernBox1.ShadowSize = 0;
+            this.modernBox1.Size = new System.Drawing.Size(879, 148);
+            this.modernBox1.TabIndex = 162;
+            // 
+            // flpMenu
+            // 
+            this.flpMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flpMenu.BackColor = System.Drawing.Color.White;
+            this.flpMenu.Controls.Add(this.txtDataEntrada);
+            this.flpMenu.Controls.Add(this.txtId);
+            this.flpMenu.Controls.Add(this.txtCliente);
+            this.flpMenu.Controls.Add(this.cbTipoServico);
+            this.flpMenu.Controls.Add(this.cbStatus);
+            this.flpMenu.Controls.Add(this.chkFavorito);
+            this.flpMenu.Location = new System.Drawing.Point(6, 13);
+            this.flpMenu.Name = "flpMenu";
+            this.flpMenu.Padding = new System.Windows.Forms.Padding(10);
+            this.flpMenu.Size = new System.Drawing.Size(860, 124);
+            this.flpMenu.TabIndex = 103;
+            // 
+            // txtDataEntrada
+            // 
+            this.txtDataEntrada.AcceptsTab = true;
+            this.txtDataEntrada.AnimateReadOnly = false;
+            this.txtDataEntrada.AutoWordSelection = true;
+            this.txtDataEntrada.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDataEntrada.Depth = 0;
+            this.txtDataEntrada.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtDataEntrada.Hint = "Data Entrada";
+            this.txtDataEntrada.LeadingIcon = null;
+            this.txtDataEntrada.LeaveOnEnterKey = true;
+            this.txtDataEntrada.Location = new System.Drawing.Point(13, 13);
+            this.txtDataEntrada.MaxLength = 60;
+            this.txtDataEntrada.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtDataEntrada.Multiline = false;
+            this.txtDataEntrada.Name = "txtDataEntrada";
+            this.txtDataEntrada.Size = new System.Drawing.Size(141, 50);
+            this.txtDataEntrada.TabIndex = 90;
+            this.txtDataEntrada.Text = "";
+            this.txtDataEntrada.TrailingIcon = null;
+            this.txtDataEntrada.UseAccent = false;
+            this.txtDataEntrada.TextChanged += new System.EventHandler(this.txtDataEntrada_TextChanged);
+            // 
+            // txtId
+            // 
+            this.txtId.AcceptsTab = true;
+            this.txtId.AnimateReadOnly = false;
+            this.txtId.AutoWordSelection = true;
+            this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtId.Depth = 0;
+            this.txtId.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtId.Hint = "Nº ";
+            this.txtId.LeadingIcon = null;
+            this.txtId.LeaveOnEnterKey = true;
+            this.txtId.Location = new System.Drawing.Point(160, 13);
+            this.txtId.MaxLength = 60;
+            this.txtId.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtId.Multiline = false;
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(155, 50);
+            this.txtId.TabIndex = 83;
+            this.txtId.Text = "";
+            this.txtId.TrailingIcon = null;
+            this.txtId.UseAccent = false;
+            // 
+            // cbTipoServico
+            // 
+            this.cbTipoServico.AutoResize = false;
+            this.cbTipoServico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbTipoServico.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbTipoServico.Depth = 0;
+            this.cbTipoServico.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbTipoServico.DropDownHeight = 174;
+            this.cbTipoServico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoServico.DropDownWidth = 121;
+            this.cbTipoServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbTipoServico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbTipoServico.FormattingEnabled = true;
+            this.cbTipoServico.Hint = "Tipo de Serviço";
+            this.cbTipoServico.IntegralHeight = false;
+            this.cbTipoServico.ItemHeight = 43;
+            this.cbTipoServico.Location = new System.Drawing.Point(13, 69);
+            this.cbTipoServico.MaxDropDownItems = 4;
+            this.cbTipoServico.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbTipoServico.Name = "cbTipoServico";
+            this.cbTipoServico.Size = new System.Drawing.Size(243, 49);
+            this.cbTipoServico.StartIndex = 0;
+            this.cbTipoServico.TabIndex = 87;
+            this.cbTipoServico.UseAccent = false;
+            // 
+            // cbStatus
+            // 
+            this.cbStatus.AutoResize = false;
+            this.cbStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbStatus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbStatus.Depth = 0;
+            this.cbStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbStatus.DropDownHeight = 174;
+            this.cbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbStatus.DropDownWidth = 121;
+            this.cbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbStatus.FormattingEnabled = true;
+            this.cbStatus.Hint = "Status";
+            this.cbStatus.IntegralHeight = false;
+            this.cbStatus.ItemHeight = 43;
+            this.cbStatus.Location = new System.Drawing.Point(262, 69);
+            this.cbStatus.MaxDropDownItems = 4;
+            this.cbStatus.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbStatus.Name = "cbStatus";
+            this.cbStatus.Size = new System.Drawing.Size(344, 49);
+            this.cbStatus.StartIndex = 0;
+            this.cbStatus.TabIndex = 88;
+            this.cbStatus.UseAccent = false;
+            // 
+            // chkFavorito
+            // 
+            this.chkFavorito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkFavorito.AutoSize = true;
+            this.chkFavorito.Depth = 0;
+            this.chkFavorito.Location = new System.Drawing.Point(609, 84);
+            this.chkFavorito.Margin = new System.Windows.Forms.Padding(0);
+            this.chkFavorito.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkFavorito.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkFavorito.Name = "chkFavorito";
+            this.chkFavorito.ReadOnly = false;
+            this.chkFavorito.Ripple = true;
+            this.chkFavorito.Size = new System.Drawing.Size(93, 37);
+            this.chkFavorito.TabIndex = 89;
+            this.chkFavorito.Text = "Favorito";
+            this.chkFavorito.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.DataPropertyName = "Favorito";
+            this.dataGridViewImageColumn1.FillWeight = 30F;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::GRC.Properties.Resources.remove;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Visible = false;
+            // 
+            // colFavorito
+            // 
+            this.colFavorito.DataPropertyName = "Favorito";
+            this.colFavorito.FillWeight = 30F;
+            this.colFavorito.HeaderText = "";
+            this.colFavorito.Image = global::GRC.Properties.Resources.remove;
+            this.colFavorito.Name = "colFavorito";
+            this.colFavorito.ReadOnly = true;
+            this.colFavorito.Visible = false;
+            // 
+            // txtCliente
+            // 
+            this.txtCliente.AcceptsTab = true;
+            this.txtCliente.AnimateReadOnly = true;
+            this.txtCliente.AutoWordSelection = true;
+            this.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCliente.Depth = 0;
+            this.txtCliente.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCliente.Hint = "Cliente";
+            this.txtCliente.LeadingIcon = null;
+            this.txtCliente.LeaveOnEnterKey = true;
+            this.txtCliente.Location = new System.Drawing.Point(321, 13);
+            this.txtCliente.MaxLength = 60;
+            this.txtCliente.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtCliente.Multiline = false;
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.ReadOnly = true;
+            this.txtCliente.Size = new System.Drawing.Size(505, 50);
+            this.txtCliente.TabIndex = 82;
+            this.txtCliente.Text = "";
+            this.txtCliente.TrailingIcon = ((System.Drawing.Image)(resources.GetObject("txtCliente.TrailingIcon")));
+            this.txtCliente.UseAccent = false;
+            this.txtCliente.TrailingIconClick += new System.EventHandler(this.txtCliente_TrailingIconClick);
+            // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
@@ -169,18 +495,6 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 121;
             this.pictureBox3.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(64, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(293, 29);
-            this.label1.TabIndex = 120;
-            this.label1.Text = "Ordens de Serviço (OS)";
-            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
             // 
             // btnClose
             // 
@@ -298,309 +612,6 @@
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
-            this.panel2.Controls.Add(this.lbRegistros);
-            this.panel2.Controls.Add(this.cbxQtdRegistros);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 594);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(903, 44);
-            this.panel2.TabIndex = 163;
-            // 
-            // modernBox2
-            // 
-            this.modernBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.modernBox2.BackColor = System.Drawing.Color.Transparent;
-            this.modernBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.modernBox2.BorderRadius = 12;
-            this.modernBox2.BorderSize = 1;
-            this.modernBox2.Controls.Add(this.dgvOs);
-            this.modernBox2.FillColor = System.Drawing.Color.White;
-            this.modernBox2.Location = new System.Drawing.Point(13, 238);
-            this.modernBox2.Name = "modernBox2";
-            this.modernBox2.Padding = new System.Windows.Forms.Padding(10);
-            this.modernBox2.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.modernBox2.ShadowSize = 8;
-            this.modernBox2.Size = new System.Drawing.Size(882, 350);
-            this.modernBox2.TabIndex = 164;
-            // 
-            // dgvOs
-            // 
-            this.dgvOs.AllowUserToAddRows = false;
-            this.dgvOs.AllowUserToDeleteRows = false;
-            this.dgvOs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvOs.BackgroundColor = System.Drawing.Color.White;
-            this.dgvOs.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvOs.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dgvOs.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvOs.ColumnHeadersHeight = 35;
-            this.dgvOs.ColumnHeadersVisible = false;
-            this.dgvOs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colFavorito,
-            this.colId,
-            this.colNome,
-            this.colData,
-            this.colStatus,
-            this.colTipo});
-            this.dgvOs.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(218)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvOs.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvOs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvOs.EnableHeadersVisualStyles = false;
-            this.dgvOs.GridColor = System.Drawing.Color.DarkGray;
-            this.dgvOs.Location = new System.Drawing.Point(10, 10);
-            this.dgvOs.MultiSelect = false;
-            this.dgvOs.Name = "dgvOs";
-            this.dgvOs.ReadOnly = true;
-            this.dgvOs.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvOs.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvOs.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvOs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOs.Size = new System.Drawing.Size(862, 330);
-            this.dgvOs.TabIndex = 22;
-            this.dgvOs.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOs_CellDoubleClick);
-            this.dgvOs.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOs_CellValueChanged);
-            // 
-            // colFavorito
-            // 
-            this.colFavorito.DataPropertyName = "Favorito";
-            this.colFavorito.FillWeight = 30F;
-            this.colFavorito.HeaderText = "";
-            this.colFavorito.Image = global::GRC.Properties.Resources.remove;
-            this.colFavorito.Name = "colFavorito";
-            this.colFavorito.ReadOnly = true;
-            this.colFavorito.Visible = false;
-            // 
-            // colId
-            // 
-            this.colId.DataPropertyName = "Id";
-            this.colId.FillWeight = 20.35533F;
-            this.colId.HeaderText = "Id";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            // 
-            // colNome
-            // 
-            this.colNome.DataPropertyName = "NomeCliente";
-            this.colNome.FillWeight = 95.16117F;
-            this.colNome.HeaderText = "Cliente";
-            this.colNome.Name = "colNome";
-            this.colNome.ReadOnly = true;
-            // 
-            // colData
-            // 
-            this.colData.DataPropertyName = "DataEntrada";
-            this.colData.FillWeight = 95.16117F;
-            this.colData.HeaderText = "Data";
-            this.colData.Name = "colData";
-            this.colData.ReadOnly = true;
-            // 
-            // colStatus
-            // 
-            this.colStatus.DataPropertyName = "DescricaoStatus";
-            this.colStatus.FillWeight = 95.16117F;
-            this.colStatus.HeaderText = "Status";
-            this.colStatus.Name = "colStatus";
-            this.colStatus.ReadOnly = true;
-            // 
-            // colTipo
-            // 
-            this.colTipo.DataPropertyName = "DescricaoTipo";
-            this.colTipo.FillWeight = 95.16117F;
-            this.colTipo.HeaderText = "Tipo";
-            this.colTipo.Name = "colTipo";
-            this.colTipo.ReadOnly = true;
-            // 
-            // modernBox1
-            // 
-            this.modernBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.modernBox1.BackColor = System.Drawing.Color.Transparent;
-            this.modernBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.modernBox1.BorderRadius = 20;
-            this.modernBox1.BorderSize = 1;
-            this.modernBox1.Controls.Add(this.flpMenu);
-            this.modernBox1.FillColor = System.Drawing.Color.White;
-            this.modernBox1.Location = new System.Drawing.Point(12, 84);
-            this.modernBox1.Name = "modernBox1";
-            this.modernBox1.Padding = new System.Windows.Forms.Padding(10);
-            this.modernBox1.ShadowColor = System.Drawing.Color.Transparent;
-            this.modernBox1.ShadowSize = 0;
-            this.modernBox1.Size = new System.Drawing.Size(879, 148);
-            this.modernBox1.TabIndex = 162;
-            // 
-            // flpMenu
-            // 
-            this.flpMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flpMenu.BackColor = System.Drawing.Color.White;
-            this.flpMenu.Controls.Add(this.txtDataEntrada);
-            this.flpMenu.Controls.Add(this.txtId);
-            this.flpMenu.Controls.Add(this.txtCliente);
-            this.flpMenu.Controls.Add(this.cbTipoServico);
-            this.flpMenu.Controls.Add(this.cbStatus);
-            this.flpMenu.Controls.Add(this.chkFavorito);
-            this.flpMenu.Location = new System.Drawing.Point(6, 13);
-            this.flpMenu.Name = "flpMenu";
-            this.flpMenu.Padding = new System.Windows.Forms.Padding(10);
-            this.flpMenu.Size = new System.Drawing.Size(860, 124);
-            this.flpMenu.TabIndex = 103;
-            // 
-            // txtDataEntrada
-            // 
-            this.txtDataEntrada.AcceptsTab = true;
-            this.txtDataEntrada.AnimateReadOnly = false;
-            this.txtDataEntrada.AutoWordSelection = true;
-            this.txtDataEntrada.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDataEntrada.Depth = 0;
-            this.txtDataEntrada.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtDataEntrada.Hint = "Data Entrada";
-            this.txtDataEntrada.LeadingIcon = null;
-            this.txtDataEntrada.LeaveOnEnterKey = true;
-            this.txtDataEntrada.Location = new System.Drawing.Point(13, 13);
-            this.txtDataEntrada.MaxLength = 60;
-            this.txtDataEntrada.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtDataEntrada.Multiline = false;
-            this.txtDataEntrada.Name = "txtDataEntrada";
-            this.txtDataEntrada.Size = new System.Drawing.Size(141, 50);
-            this.txtDataEntrada.TabIndex = 90;
-            this.txtDataEntrada.Text = "";
-            this.txtDataEntrada.TrailingIcon = null;
-            this.txtDataEntrada.UseAccent = false;
-            this.txtDataEntrada.TextChanged += new System.EventHandler(this.txtDataEntrada_TextChanged);
-            // 
-            // txtId
-            // 
-            this.txtId.AcceptsTab = true;
-            this.txtId.AnimateReadOnly = false;
-            this.txtId.AutoWordSelection = true;
-            this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtId.Depth = 0;
-            this.txtId.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtId.Hint = "Nº ";
-            this.txtId.LeadingIcon = null;
-            this.txtId.LeaveOnEnterKey = true;
-            this.txtId.Location = new System.Drawing.Point(160, 13);
-            this.txtId.MaxLength = 60;
-            this.txtId.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtId.Multiline = false;
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(155, 50);
-            this.txtId.TabIndex = 83;
-            this.txtId.Text = "";
-            this.txtId.TrailingIcon = null;
-            this.txtId.UseAccent = false;
-            // 
-            // txtCliente
-            // 
-            this.txtCliente.AcceptsTab = true;
-            this.txtCliente.AnimateReadOnly = true;
-            this.txtCliente.AutoWordSelection = true;
-            this.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCliente.Depth = 0;
-            this.txtCliente.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtCliente.Hint = "Cliente";
-            this.txtCliente.LeadingIcon = null;
-            this.txtCliente.LeaveOnEnterKey = true;
-            this.txtCliente.Location = new System.Drawing.Point(321, 13);
-            this.txtCliente.MaxLength = 60;
-            this.txtCliente.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtCliente.Multiline = false;
-            this.txtCliente.Name = "txtCliente";
-            this.txtCliente.ReadOnly = true;
-            this.txtCliente.Size = new System.Drawing.Size(505, 50);
-            this.txtCliente.TabIndex = 82;
-            this.txtCliente.Text = "";
-            this.txtCliente.TrailingIcon = ((System.Drawing.Image)(resources.GetObject("txtCliente.TrailingIcon")));
-            this.txtCliente.UseAccent = false;
-            this.txtCliente.TrailingIconClick += new System.EventHandler(this.txtCliente_TrailingIconClick);
-            // 
-            // cbTipoServico
-            // 
-            this.cbTipoServico.AutoResize = false;
-            this.cbTipoServico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbTipoServico.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbTipoServico.Depth = 0;
-            this.cbTipoServico.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cbTipoServico.DropDownHeight = 174;
-            this.cbTipoServico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTipoServico.DropDownWidth = 121;
-            this.cbTipoServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cbTipoServico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cbTipoServico.FormattingEnabled = true;
-            this.cbTipoServico.Hint = "Tipo de Serviço";
-            this.cbTipoServico.IntegralHeight = false;
-            this.cbTipoServico.ItemHeight = 43;
-            this.cbTipoServico.Location = new System.Drawing.Point(13, 69);
-            this.cbTipoServico.MaxDropDownItems = 4;
-            this.cbTipoServico.MouseState = MaterialSkin.MouseState.OUT;
-            this.cbTipoServico.Name = "cbTipoServico";
-            this.cbTipoServico.Size = new System.Drawing.Size(243, 49);
-            this.cbTipoServico.StartIndex = 0;
-            this.cbTipoServico.TabIndex = 87;
-            this.cbTipoServico.UseAccent = false;
-            // 
-            // cbStatus
-            // 
-            this.cbStatus.AutoResize = false;
-            this.cbStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbStatus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbStatus.Depth = 0;
-            this.cbStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cbStatus.DropDownHeight = 174;
-            this.cbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbStatus.DropDownWidth = 121;
-            this.cbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cbStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cbStatus.FormattingEnabled = true;
-            this.cbStatus.Hint = "Status";
-            this.cbStatus.IntegralHeight = false;
-            this.cbStatus.ItemHeight = 43;
-            this.cbStatus.Location = new System.Drawing.Point(262, 69);
-            this.cbStatus.MaxDropDownItems = 4;
-            this.cbStatus.MouseState = MaterialSkin.MouseState.OUT;
-            this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(344, 49);
-            this.cbStatus.StartIndex = 0;
-            this.cbStatus.TabIndex = 88;
-            this.cbStatus.UseAccent = false;
-            // 
-            // chkFavorito
-            // 
-            this.chkFavorito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkFavorito.AutoSize = true;
-            this.chkFavorito.Depth = 0;
-            this.chkFavorito.Location = new System.Drawing.Point(609, 84);
-            this.chkFavorito.Margin = new System.Windows.Forms.Padding(0);
-            this.chkFavorito.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkFavorito.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkFavorito.Name = "chkFavorito";
-            this.chkFavorito.ReadOnly = false;
-            this.chkFavorito.Ripple = true;
-            this.chkFavorito.Size = new System.Drawing.Size(93, 37);
-            this.chkFavorito.TabIndex = 89;
-            this.chkFavorito.Text = "Favorito";
-            this.chkFavorito.UseVisualStyleBackColor = true;
-            // 
             // PesquisaOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -621,7 +632,6 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PesquisaOS_MouseDown);
             this.pnSuperior.ResumeLayout(false);
             this.pnSuperior.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.modernBox2.ResumeLayout(false);
@@ -629,6 +639,7 @@
             this.modernBox1.ResumeLayout(false);
             this.flpMenu.ResumeLayout(false);
             this.flpMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -663,5 +674,6 @@
         private System.Windows.Forms.FlowLayoutPanel flpMenu;
         private System.Windows.Forms.Panel panel2;
         private Componentes.ModernBox modernBox2;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
     }
 }

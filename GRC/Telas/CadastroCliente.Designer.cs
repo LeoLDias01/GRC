@@ -42,11 +42,9 @@
             this.pn1 = new GRC.Componentes.RoundedPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.chkWhatsapp = new MaterialSkin.Controls.MaterialCheckbox();
-            this.txtObservacoesTelefone = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
             this.txtTelefone = new MaterialSkin.Controls.MaterialTextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.chkHabilitaEmail = new MaterialSkin.Controls.MaterialCheckbox();
-            this.txtObservacoesEmail = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
             this.txtEmail = new MaterialSkin.Controls.MaterialTextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.chkHabilitaEndereco = new MaterialSkin.Controls.MaterialCheckbox();
@@ -62,40 +60,36 @@
             this.colIdTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colWhatsApp = new System.Windows.Forms.DataGridViewImageColumn();
             this.colTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colObservacoes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colExcluir = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnSalvar = new GRC.Componentes.CustomButton();
-            this.btnClose = new GRC.Componentes.CustomButton();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pnExterno = new GRC.Componentes.ModernBox();
+            this.pnInterno = new GRC.Componentes.CustomPanel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.btnEncerrarJanelas = new GRC.Componentes.CustomButton();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.lbTitulo = new System.Windows.Forms.Label();
-            this.customPanel4 = new GRC.Componentes.CustomPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.customPanel1 = new GRC.Componentes.CustomPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.customPanel5 = new GRC.Componentes.CustomPanel();
-            this.lbTelefone = new System.Windows.Forms.Label();
-            this.customPanel2 = new GRC.Componentes.CustomPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pcAtivo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelefones)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.customPanel4.SuspendLayout();
-            this.customPanel1.SuspendLayout();
-            this.customPanel5.SuspendLayout();
-            this.customPanel2.SuspendLayout();
+            this.pnExterno.SuspendLayout();
+            this.pnInterno.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // rbtPJ
             // 
             this.rbtPJ.AutoSize = true;
             this.rbtPJ.Depth = 0;
-            this.rbtPJ.Location = new System.Drawing.Point(29, 111);
+            this.rbtPJ.Location = new System.Drawing.Point(163, 26);
             this.rbtPJ.Margin = new System.Windows.Forms.Padding(0);
             this.rbtPJ.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rbtPJ.MouseState = MaterialSkin.MouseState.HOVER;
@@ -112,7 +106,7 @@
             // 
             this.rbtPF.AutoSize = true;
             this.rbtPF.Depth = 0;
-            this.rbtPF.Location = new System.Drawing.Point(29, 74);
+            this.rbtPF.Location = new System.Drawing.Point(13, 28);
             this.rbtPF.Margin = new System.Windows.Forms.Padding(0);
             this.rbtPF.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rbtPF.MouseState = MaterialSkin.MouseState.HOVER;
@@ -128,9 +122,9 @@
             // pcAtivo
             // 
             this.pcAtivo.Image = ((System.Drawing.Image)(resources.GetObject("pcAtivo.Image")));
-            this.pcAtivo.Location = new System.Drawing.Point(318, 18);
+            this.pcAtivo.Location = new System.Drawing.Point(370, 17);
             this.pcAtivo.Name = "pcAtivo";
-            this.pcAtivo.Size = new System.Drawing.Size(35, 36);
+            this.pcAtivo.Size = new System.Drawing.Size(26, 24);
             this.pcAtivo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcAtivo.TabIndex = 38;
             this.pcAtivo.TabStop = false;
@@ -141,7 +135,7 @@
             this.swAtivo.AutoSize = true;
             this.swAtivo.Depth = 0;
             this.swAtivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.swAtivo.Location = new System.Drawing.Point(356, 18);
+            this.swAtivo.Location = new System.Drawing.Point(306, 36);
             this.swAtivo.Margin = new System.Windows.Forms.Padding(0);
             this.swAtivo.MouseLocation = new System.Drawing.Point(-1, -1);
             this.swAtivo.MouseState = MaterialSkin.MouseState.HOVER;
@@ -161,7 +155,7 @@
             this.txtObservacoes.Depth = 0;
             this.txtObservacoes.HideSelection = true;
             this.txtObservacoes.Hint = "Observações";
-            this.txtObservacoes.Location = new System.Drawing.Point(221, 111);
+            this.txtObservacoes.Location = new System.Drawing.Point(12, 122);
             this.txtObservacoes.MaxLength = 300;
             this.txtObservacoes.MouseState = MaterialSkin.MouseState.OUT;
             this.txtObservacoes.Name = "txtObservacoes";
@@ -172,7 +166,7 @@
             this.txtObservacoes.SelectionLength = 0;
             this.txtObservacoes.SelectionStart = 0;
             this.txtObservacoes.ShortcutsEnabled = true;
-            this.txtObservacoes.Size = new System.Drawing.Size(813, 73);
+            this.txtObservacoes.Size = new System.Drawing.Size(640, 84);
             this.txtObservacoes.TabIndex = 5;
             this.txtObservacoes.TabStop = false;
             this.txtObservacoes.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -190,12 +184,12 @@
             this.txtNome.Hint = "Nome";
             this.txtNome.LeadingIcon = null;
             this.txtNome.LeaveOnEnterKey = true;
-            this.txtNome.Location = new System.Drawing.Point(470, 55);
+            this.txtNome.Location = new System.Drawing.Point(204, 66);
             this.txtNome.MaxLength = 60;
             this.txtNome.MouseState = MaterialSkin.MouseState.OUT;
             this.txtNome.Multiline = false;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(564, 50);
+            this.txtNome.Size = new System.Drawing.Size(448, 50);
             this.txtNome.TabIndex = 1;
             this.txtNome.Text = "";
             this.txtNome.TrailingIcon = null;
@@ -212,12 +206,12 @@
             this.txtIdentificador.Hint = "CPF";
             this.txtIdentificador.LeadingIcon = null;
             this.txtIdentificador.LeaveOnEnterKey = true;
-            this.txtIdentificador.Location = new System.Drawing.Point(221, 55);
+            this.txtIdentificador.Location = new System.Drawing.Point(12, 66);
             this.txtIdentificador.MaxLength = 18;
             this.txtIdentificador.MouseState = MaterialSkin.MouseState.OUT;
             this.txtIdentificador.Multiline = false;
             this.txtIdentificador.Name = "txtIdentificador";
-            this.txtIdentificador.Size = new System.Drawing.Size(243, 50);
+            this.txtIdentificador.Size = new System.Drawing.Size(186, 50);
             this.txtIdentificador.TabIndex = 3;
             this.txtIdentificador.Text = "";
             this.txtIdentificador.TrailingIcon = null;
@@ -230,16 +224,18 @@
             this.pn1.Color1 = System.Drawing.Color.SpringGreen;
             this.pn1.Color2 = System.Drawing.Color.Aqua;
             this.pn1.CornerRadius = 8;
+            this.pn1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pn1.GradientAngle = 300F;
-            this.pn1.Location = new System.Drawing.Point(3, 65);
+            this.pn1.Location = new System.Drawing.Point(13, 13);
             this.pn1.Name = "pn1";
-            this.pn1.Size = new System.Drawing.Size(286, 18);
+            this.pn1.Size = new System.Drawing.Size(1179, 8);
             this.pn1.TabIndex = 20;
+            this.pn1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CadastroCliente_MouseDown);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(45, 52);
+            this.pictureBox1.Location = new System.Drawing.Point(50, 43);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(41, 47);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -253,7 +249,7 @@
             this.chkWhatsapp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkWhatsapp.Depth = 0;
             this.chkWhatsapp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkWhatsapp.Location = new System.Drawing.Point(7, 65);
+            this.chkWhatsapp.Location = new System.Drawing.Point(12, 56);
             this.chkWhatsapp.Margin = new System.Windows.Forms.Padding(0);
             this.chkWhatsapp.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkWhatsapp.MouseState = MaterialSkin.MouseState.HOVER;
@@ -263,33 +259,6 @@
             this.chkWhatsapp.Size = new System.Drawing.Size(35, 37);
             this.chkWhatsapp.TabIndex = 11;
             this.chkWhatsapp.UseVisualStyleBackColor = true;
-            // 
-            // txtObservacoesTelefone
-            // 
-            this.txtObservacoesTelefone.AnimateReadOnly = false;
-            this.txtObservacoesTelefone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtObservacoesTelefone.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtObservacoesTelefone.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtObservacoesTelefone.Depth = 0;
-            this.txtObservacoesTelefone.HideSelection = true;
-            this.txtObservacoesTelefone.Hint = "Observações";
-            this.txtObservacoesTelefone.Location = new System.Drawing.Point(9, 105);
-            this.txtObservacoesTelefone.MaxLength = 300;
-            this.txtObservacoesTelefone.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtObservacoesTelefone.Name = "txtObservacoesTelefone";
-            this.txtObservacoesTelefone.PasswordChar = '\0';
-            this.txtObservacoesTelefone.ReadOnly = false;
-            this.txtObservacoesTelefone.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtObservacoesTelefone.SelectedText = "";
-            this.txtObservacoesTelefone.SelectionLength = 0;
-            this.txtObservacoesTelefone.SelectionStart = 0;
-            this.txtObservacoesTelefone.ShortcutsEnabled = true;
-            this.txtObservacoesTelefone.Size = new System.Drawing.Size(287, 68);
-            this.txtObservacoesTelefone.TabIndex = 12;
-            this.txtObservacoesTelefone.TabStop = false;
-            this.txtObservacoesTelefone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtObservacoesTelefone.UseAccent = false;
-            this.txtObservacoesTelefone.UseSystemPasswordChar = false;
             // 
             // txtTelefone
             // 
@@ -302,12 +271,12 @@
             this.txtTelefone.Hint = "Telefone";
             this.txtTelefone.LeadingIcon = null;
             this.txtTelefone.LeaveOnEnterKey = true;
-            this.txtTelefone.Location = new System.Drawing.Point(92, 52);
+            this.txtTelefone.Location = new System.Drawing.Point(97, 43);
             this.txtTelefone.MaxLength = 15;
             this.txtTelefone.MouseState = MaterialSkin.MouseState.OUT;
             this.txtTelefone.Multiline = false;
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(204, 50);
+            this.txtTelefone.Size = new System.Drawing.Size(214, 50);
             this.txtTelefone.TabIndex = 10;
             this.txtTelefone.Text = "";
             this.txtTelefone.TrailingIcon = ((System.Drawing.Image)(resources.GetObject("txtTelefone.TrailingIcon")));
@@ -318,7 +287,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(304, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(50, 99);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(41, 47);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -332,7 +301,7 @@
             this.chkHabilitaEmail.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkHabilitaEmail.Depth = 0;
             this.chkHabilitaEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkHabilitaEmail.Location = new System.Drawing.Point(266, 17);
+            this.chkHabilitaEmail.Location = new System.Drawing.Point(12, 112);
             this.chkHabilitaEmail.Margin = new System.Windows.Forms.Padding(0);
             this.chkHabilitaEmail.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkHabilitaEmail.MouseState = MaterialSkin.MouseState.HOVER;
@@ -343,34 +312,6 @@
             this.chkHabilitaEmail.TabIndex = 6;
             this.chkHabilitaEmail.UseVisualStyleBackColor = true;
             this.chkHabilitaEmail.CheckedChanged += new System.EventHandler(this.chkHabilitaEmail_CheckedChanged);
-            // 
-            // txtObservacoesEmail
-            // 
-            this.txtObservacoesEmail.AnimateReadOnly = false;
-            this.txtObservacoesEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtObservacoesEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtObservacoesEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtObservacoesEmail.Depth = 0;
-            this.txtObservacoesEmail.Enabled = false;
-            this.txtObservacoesEmail.HideSelection = true;
-            this.txtObservacoesEmail.Hint = "Observações";
-            this.txtObservacoesEmail.Location = new System.Drawing.Point(13, 108);
-            this.txtObservacoesEmail.MaxLength = 300;
-            this.txtObservacoesEmail.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtObservacoesEmail.Name = "txtObservacoesEmail";
-            this.txtObservacoesEmail.PasswordChar = '\0';
-            this.txtObservacoesEmail.ReadOnly = false;
-            this.txtObservacoesEmail.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtObservacoesEmail.SelectedText = "";
-            this.txtObservacoesEmail.SelectionLength = 0;
-            this.txtObservacoesEmail.SelectionStart = 0;
-            this.txtObservacoesEmail.ShortcutsEnabled = true;
-            this.txtObservacoesEmail.Size = new System.Drawing.Size(332, 65);
-            this.txtObservacoesEmail.TabIndex = 8;
-            this.txtObservacoesEmail.TabStop = false;
-            this.txtObservacoesEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtObservacoesEmail.UseAccent = false;
-            this.txtObservacoesEmail.UseSystemPasswordChar = false;
             // 
             // txtEmail
             // 
@@ -384,12 +325,12 @@
             this.txtEmail.Hint = "E-Mail";
             this.txtEmail.LeadingIcon = null;
             this.txtEmail.LeaveOnEnterKey = true;
-            this.txtEmail.Location = new System.Drawing.Point(13, 52);
+            this.txtEmail.Location = new System.Drawing.Point(97, 99);
             this.txtEmail.MaxLength = 60;
             this.txtEmail.MouseState = MaterialSkin.MouseState.OUT;
             this.txtEmail.Multiline = false;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(332, 50);
+            this.txtEmail.Size = new System.Drawing.Size(214, 50);
             this.txtEmail.TabIndex = 7;
             this.txtEmail.Text = "";
             this.txtEmail.TrailingIcon = null;
@@ -398,7 +339,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(990, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(442, 24);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(41, 47);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -412,7 +353,7 @@
             this.chkHabilitaEndereco.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkHabilitaEndereco.Depth = 0;
             this.chkHabilitaEndereco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chkHabilitaEndereco.Location = new System.Drawing.Point(952, 17);
+            this.chkHabilitaEndereco.Location = new System.Drawing.Point(404, 38);
             this.chkHabilitaEndereco.Margin = new System.Windows.Forms.Padding(0);
             this.chkHabilitaEndereco.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkHabilitaEndereco.MouseState = MaterialSkin.MouseState.HOVER;
@@ -434,7 +375,7 @@
             this.txtObservacoesEndereco.Enabled = false;
             this.txtObservacoesEndereco.HideSelection = true;
             this.txtObservacoesEndereco.Hint = "Observações";
-            this.txtObservacoesEndereco.Location = new System.Drawing.Point(16, 172);
+            this.txtObservacoesEndereco.Location = new System.Drawing.Point(15, 317);
             this.txtObservacoesEndereco.MaxLength = 300;
             this.txtObservacoesEndereco.MouseState = MaterialSkin.MouseState.OUT;
             this.txtObservacoesEndereco.Name = "txtObservacoesEndereco";
@@ -445,7 +386,7 @@
             this.txtObservacoesEndereco.SelectionLength = 0;
             this.txtObservacoesEndereco.SelectionStart = 0;
             this.txtObservacoesEndereco.ShortcutsEnabled = true;
-            this.txtObservacoesEndereco.Size = new System.Drawing.Size(1015, 81);
+            this.txtObservacoesEndereco.Size = new System.Drawing.Size(471, 147);
             this.txtObservacoesEndereco.TabIndex = 24;
             this.txtObservacoesEndereco.TabStop = false;
             this.txtObservacoesEndereco.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -464,7 +405,7 @@
             this.txtUf.Hint = "UF";
             this.txtUf.LeadingIcon = null;
             this.txtUf.LeaveOnEnterKey = true;
-            this.txtUf.Location = new System.Drawing.Point(949, 115);
+            this.txtUf.Location = new System.Drawing.Point(404, 205);
             this.txtUf.MaxLength = 2;
             this.txtUf.MouseState = MaterialSkin.MouseState.OUT;
             this.txtUf.Multiline = false;
@@ -487,12 +428,12 @@
             this.txtCidade.Hint = "Cidade";
             this.txtCidade.LeadingIcon = null;
             this.txtCidade.LeaveOnEnterKey = true;
-            this.txtCidade.Location = new System.Drawing.Point(423, 115);
+            this.txtCidade.Location = new System.Drawing.Point(15, 205);
             this.txtCidade.MaxLength = 250;
             this.txtCidade.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCidade.Multiline = false;
             this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(520, 50);
+            this.txtCidade.Size = new System.Drawing.Size(383, 50);
             this.txtCidade.TabIndex = 22;
             this.txtCidade.Text = "";
             this.txtCidade.TrailingIcon = null;
@@ -510,12 +451,12 @@
             this.txtComplemento.Hint = "Complemento";
             this.txtComplemento.LeadingIcon = null;
             this.txtComplemento.LeaveOnEnterKey = true;
-            this.txtComplemento.Location = new System.Drawing.Point(852, 60);
+            this.txtComplemento.Location = new System.Drawing.Point(15, 261);
             this.txtComplemento.MaxLength = 100;
             this.txtComplemento.MouseState = MaterialSkin.MouseState.OUT;
             this.txtComplemento.Multiline = false;
             this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(179, 50);
+            this.txtComplemento.Size = new System.Drawing.Size(471, 50);
             this.txtComplemento.TabIndex = 20;
             this.txtComplemento.Text = "";
             this.txtComplemento.TrailingIcon = null;
@@ -533,12 +474,12 @@
             this.txtBairro.Hint = "Bairro";
             this.txtBairro.LeadingIcon = null;
             this.txtBairro.LeaveOnEnterKey = true;
-            this.txtBairro.Location = new System.Drawing.Point(16, 116);
+            this.txtBairro.Location = new System.Drawing.Point(15, 150);
             this.txtBairro.MaxLength = 100;
             this.txtBairro.MouseState = MaterialSkin.MouseState.OUT;
             this.txtBairro.Multiline = false;
             this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(401, 50);
+            this.txtBairro.Size = new System.Drawing.Size(471, 50);
             this.txtBairro.TabIndex = 21;
             this.txtBairro.Text = "";
             this.txtBairro.TrailingIcon = null;
@@ -556,7 +497,7 @@
             this.txtNumero.Hint = "Nº";
             this.txtNumero.LeadingIcon = null;
             this.txtNumero.LeaveOnEnterKey = true;
-            this.txtNumero.Location = new System.Drawing.Point(764, 60);
+            this.txtNumero.Location = new System.Drawing.Point(404, 94);
             this.txtNumero.MaxLength = 8;
             this.txtNumero.MouseState = MaterialSkin.MouseState.OUT;
             this.txtNumero.Multiline = false;
@@ -579,12 +520,12 @@
             this.txtLogradouro.Hint = "Logradouro";
             this.txtLogradouro.LeadingIcon = null;
             this.txtLogradouro.LeaveOnEnterKey = true;
-            this.txtLogradouro.Location = new System.Drawing.Point(201, 60);
+            this.txtLogradouro.Location = new System.Drawing.Point(15, 94);
             this.txtLogradouro.MaxLength = 200;
             this.txtLogradouro.MouseState = MaterialSkin.MouseState.OUT;
             this.txtLogradouro.Multiline = false;
             this.txtLogradouro.Name = "txtLogradouro";
-            this.txtLogradouro.Size = new System.Drawing.Size(557, 50);
+            this.txtLogradouro.Size = new System.Drawing.Size(383, 50);
             this.txtLogradouro.TabIndex = 18;
             this.txtLogradouro.Text = "";
             this.txtLogradouro.TrailingIcon = null;
@@ -602,7 +543,7 @@
             this.txtCep.Hint = "CEP";
             this.txtCep.LeadingIcon = null;
             this.txtCep.LeaveOnEnterKey = true;
-            this.txtCep.Location = new System.Drawing.Point(16, 60);
+            this.txtCep.Location = new System.Drawing.Point(15, 38);
             this.txtCep.MaxLength = 9;
             this.txtCep.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCep.Multiline = false;
@@ -629,7 +570,7 @@
             this.dgvTelefones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.RoyalBlue;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
@@ -641,20 +582,19 @@
             this.colIdTelefone,
             this.colWhatsApp,
             this.colTelefone,
-            this.colObservacoes,
             this.colExcluir});
             this.dgvTelefones.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleTurquoise;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTelefones.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTelefones.EnableHeadersVisualStyles = false;
             this.dgvTelefones.GridColor = System.Drawing.Color.Black;
-            this.dgvTelefones.Location = new System.Drawing.Point(693, 270);
+            this.dgvTelefones.Location = new System.Drawing.Point(317, 37);
             this.dgvTelefones.MultiSelect = false;
             this.dgvTelefones.Name = "dgvTelefones";
             this.dgvTelefones.ReadOnly = true;
@@ -663,7 +603,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvTelefones.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTelefones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTelefones.Size = new System.Drawing.Size(366, 185);
+            this.dgvTelefones.Size = new System.Drawing.Size(336, 209);
             this.dgvTelefones.TabIndex = 25;
             this.dgvTelefones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTelefones_CellClick);
             this.dgvTelefones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTelefones_CellDoubleClick);
@@ -690,36 +630,12 @@
             this.colTelefone.Name = "colTelefone";
             this.colTelefone.ReadOnly = true;
             // 
-            // colObservacoes
-            // 
-            this.colObservacoes.FillWeight = 230F;
-            this.colObservacoes.HeaderText = "Observações";
-            this.colObservacoes.Name = "colObservacoes";
-            this.colObservacoes.ReadOnly = true;
-            // 
             // colExcluir
             // 
             this.colExcluir.FillWeight = 45F;
             this.colExcluir.HeaderText = "";
             this.colExcluir.Name = "colExcluir";
             this.colExcluir.ReadOnly = true;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
-            this.panel1.Controls.Add(this.btnSalvar);
-            this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Controls.Add(this.pcAtivo);
-            this.panel1.Controls.Add(this.swAtivo);
-            this.panel1.Controls.Add(this.pictureBox5);
-            this.panel1.Controls.Add(this.pn1);
-            this.panel1.Controls.Add(this.lbTitulo);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1078, 70);
-            this.panel1.TabIndex = 157;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // btnSalvar
             // 
@@ -735,210 +651,197 @@
             this.btnSalvar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(417, 14);
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalvar.Location = new System.Drawing.Point(1040, 50);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(43, 43);
+            this.btnSalvar.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.btnSalvar.Size = new System.Drawing.Size(127, 37);
             this.btnSalvar.TabIndex = 160;
             this.btnSalvar.TamanhoBorda = 0;
             this.btnSalvar.TamanhoRaio = 10;
+            this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // btnClose
+            // pnExterno
             // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnClose.CorBotao = System.Drawing.Color.Transparent;
-            this.btnClose.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(1030, 14);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(36, 35);
-            this.btnClose.TabIndex = 159;
-            this.btnClose.TamanhoBorda = 0;
-            this.btnClose.TamanhoRaio = 17;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.pnExterno.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnExterno.BackColor = System.Drawing.Color.Transparent;
+            this.pnExterno.BorderColor = System.Drawing.Color.White;
+            this.pnExterno.BorderRadius = 12;
+            this.pnExterno.BorderSize = 1;
+            this.pnExterno.Controls.Add(this.pnInterno);
+            this.pnExterno.Controls.Add(this.pn1);
+            this.pnExterno.FillColor = System.Drawing.Color.White;
+            this.pnExterno.Location = new System.Drawing.Point(-2, -11);
+            this.pnExterno.Name = "pnExterno";
+            this.pnExterno.Padding = new System.Windows.Forms.Padding(13);
+            this.pnExterno.ShadowAngle = 90;
+            this.pnExterno.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnExterno.ShadowSize = 8;
+            this.pnExterno.Size = new System.Drawing.Size(1205, 631);
+            this.pnExterno.TabIndex = 165;
+            this.pnExterno.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CadastroCliente_MouseDown);
             // 
-            // pictureBox5
+            // pnInterno
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(45, 42);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 140;
-            this.pictureBox5.TabStop = false;
+            this.pnInterno.BackColor = System.Drawing.Color.White;
+            this.pnInterno.Controls.Add(this.btnSalvar);
+            this.pnInterno.Controls.Add(this.groupBox3);
+            this.pnInterno.Controls.Add(this.pcAtivo);
+            this.pnInterno.Controls.Add(this.swAtivo);
+            this.pnInterno.Controls.Add(this.groupBox1);
+            this.pnInterno.Controls.Add(this.groupBox2);
+            this.pnInterno.Controls.Add(this.label11);
+            this.pnInterno.Controls.Add(this.btnEncerrarJanelas);
+            this.pnInterno.Controls.Add(this.pictureBox7);
+            this.pnInterno.Controls.Add(this.lbTitulo);
+            this.pnInterno.Controls.Add(this.panel1);
+            this.pnInterno.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.pnInterno.CorBotao = System.Drawing.Color.White;
+            this.pnInterno.CorTextoBotao = System.Drawing.Color.White;
+            this.pnInterno.ForeColor = System.Drawing.Color.White;
+            this.pnInterno.Location = new System.Drawing.Point(16, 23);
+            this.pnInterno.Name = "pnInterno";
+            this.pnInterno.Size = new System.Drawing.Size(1170, 579);
+            this.pnInterno.TabIndex = 0;
+            this.pnInterno.TamanhoBorda = 0;
+            this.pnInterno.TamanhoRaio = 15;
+            this.pnInterno.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CadastroCliente_MouseDown);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txtUf);
+            this.groupBox3.Controls.Add(this.txtObservacoesEndereco);
+            this.groupBox3.Controls.Add(this.pictureBox2);
+            this.groupBox3.Controls.Add(this.txtComplemento);
+            this.groupBox3.Controls.Add(this.txtCidade);
+            this.groupBox3.Controls.Add(this.chkHabilitaEndereco);
+            this.groupBox3.Controls.Add(this.txtNumero);
+            this.groupBox3.Controls.Add(this.txtBairro);
+            this.groupBox3.Controls.Add(this.txtCep);
+            this.groupBox3.Controls.Add(this.txtLogradouro);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.groupBox3.Location = new System.Drawing.Point(676, 93);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(490, 477);
+            this.groupBox3.TabIndex = 180;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Endereço";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.txtEmail);
+            this.groupBox1.Controls.Add(this.pictureBox3);
+            this.groupBox1.Controls.Add(this.dgvTelefones);
+            this.groupBox1.Controls.Add(this.chkHabilitaEmail);
+            this.groupBox1.Controls.Add(this.chkWhatsapp);
+            this.groupBox1.Controls.Add(this.txtTelefone);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.groupBox1.Location = new System.Drawing.Point(3, 311);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(659, 259);
+            this.groupBox1.TabIndex = 180;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Contatos";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rbtPJ);
+            this.groupBox2.Controls.Add(this.rbtPF);
+            this.groupBox2.Controls.Add(this.txtObservacoes);
+            this.groupBox2.Controls.Add(this.txtNome);
+            this.groupBox2.Controls.Add(this.txtIdentificador);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.groupBox2.Location = new System.Drawing.Point(3, 93);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(659, 212);
+            this.groupBox2.TabIndex = 179;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Dados de Cliente";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label11.Location = new System.Drawing.Point(74, 44);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(198, 20);
+            this.label11.TabIndex = 172;
+            this.label11.Text = "Informe os dados do cliente";
+            this.label11.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CadastroCliente_MouseDown);
+            // 
+            // btnEncerrarJanelas
+            // 
+            this.btnEncerrarJanelas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEncerrarJanelas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.btnEncerrarJanelas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEncerrarJanelas.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnEncerrarJanelas.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.btnEncerrarJanelas.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnEncerrarJanelas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEncerrarJanelas.FlatAppearance.BorderSize = 0;
+            this.btnEncerrarJanelas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnEncerrarJanelas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEncerrarJanelas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEncerrarJanelas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnEncerrarJanelas.Image = ((System.Drawing.Image)(resources.GetObject("btnEncerrarJanelas.Image")));
+            this.btnEncerrarJanelas.Location = new System.Drawing.Point(1146, 3);
+            this.btnEncerrarJanelas.Name = "btnEncerrarJanelas";
+            this.btnEncerrarJanelas.Size = new System.Drawing.Size(18, 18);
+            this.btnEncerrarJanelas.TabIndex = 163;
+            this.btnEncerrarJanelas.TamanhoBorda = 0;
+            this.btnEncerrarJanelas.TamanhoRaio = 5;
+            this.btnEncerrarJanelas.UseVisualStyleBackColor = false;
+            this.btnEncerrarJanelas.Click += new System.EventHandler(this.btnEncerrarJanelas_Click);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(16, 12);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(52, 52);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 140;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CadastroCliente_MouseDown);
             // 
             // lbTitulo
             // 
             this.lbTitulo.AutoSize = true;
+            this.lbTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lbTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitulo.ForeColor = System.Drawing.Color.White;
-            this.lbTitulo.Location = new System.Drawing.Point(63, 20);
+            this.lbTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.lbTitulo.Location = new System.Drawing.Point(74, 12);
             this.lbTitulo.Name = "lbTitulo";
             this.lbTitulo.Size = new System.Drawing.Size(245, 29);
             this.lbTitulo.TabIndex = 139;
             this.lbTitulo.Text = "Cadastro de Cliente";
-            this.lbTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbTitulo_MouseDown);
+            this.lbTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CadastroCliente_MouseDown);
             // 
-            // customPanel4
+            // panel1
             // 
-            this.customPanel4.BackColor = System.Drawing.Color.White;
-            this.customPanel4.Controls.Add(this.rbtPJ);
-            this.customPanel4.Controls.Add(this.txtObservacoes);
-            this.customPanel4.Controls.Add(this.label1);
-            this.customPanel4.Controls.Add(this.txtIdentificador);
-            this.customPanel4.Controls.Add(this.txtNome);
-            this.customPanel4.Controls.Add(this.rbtPF);
-            this.customPanel4.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.customPanel4.CorBotao = System.Drawing.Color.White;
-            this.customPanel4.CorTextoBotao = System.Drawing.Color.White;
-            this.customPanel4.ForeColor = System.Drawing.Color.White;
-            this.customPanel4.Location = new System.Drawing.Point(11, 76);
-            this.customPanel4.Name = "customPanel4";
-            this.customPanel4.Size = new System.Drawing.Size(1048, 188);
-            this.customPanel4.TabIndex = 158;
-            this.customPanel4.TamanhoBorda = 0;
-            this.customPanel4.TamanhoRaio = 15;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.label1.Location = new System.Drawing.Point(21, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(193, 25);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Dados do Cliente";
-            // 
-            // customPanel1
-            // 
-            this.customPanel1.BackColor = System.Drawing.Color.White;
-            this.customPanel1.Controls.Add(this.txtObservacoesEmail);
-            this.customPanel1.Controls.Add(this.pictureBox3);
-            this.customPanel1.Controls.Add(this.txtEmail);
-            this.customPanel1.Controls.Add(this.chkHabilitaEmail);
-            this.customPanel1.Controls.Add(this.label2);
-            this.customPanel1.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.customPanel1.CorBotao = System.Drawing.Color.White;
-            this.customPanel1.CorTextoBotao = System.Drawing.Color.White;
-            this.customPanel1.ForeColor = System.Drawing.Color.White;
-            this.customPanel1.Location = new System.Drawing.Point(14, 270);
-            this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(357, 185);
-            this.customPanel1.TabIndex = 159;
-            this.customPanel1.TamanhoBorda = 0;
-            this.customPanel1.TamanhoRaio = 15;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.label2.Location = new System.Drawing.Point(22, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 25);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "E-mail";
-            // 
-            // customPanel5
-            // 
-            this.customPanel5.BackColor = System.Drawing.Color.White;
-            this.customPanel5.Controls.Add(this.pictureBox1);
-            this.customPanel5.Controls.Add(this.lbTelefone);
-            this.customPanel5.Controls.Add(this.txtTelefone);
-            this.customPanel5.Controls.Add(this.chkWhatsapp);
-            this.customPanel5.Controls.Add(this.txtObservacoesTelefone);
-            this.customPanel5.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.customPanel5.CorBotao = System.Drawing.Color.White;
-            this.customPanel5.CorTextoBotao = System.Drawing.Color.White;
-            this.customPanel5.ForeColor = System.Drawing.Color.White;
-            this.customPanel5.Location = new System.Drawing.Point(377, 270);
-            this.customPanel5.Name = "customPanel5";
-            this.customPanel5.Size = new System.Drawing.Size(310, 185);
-            this.customPanel5.TabIndex = 160;
-            this.customPanel5.TamanhoBorda = 0;
-            this.customPanel5.TamanhoRaio = 15;
-            // 
-            // lbTelefone
-            // 
-            this.lbTelefone.AutoSize = true;
-            this.lbTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTelefone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.lbTelefone.Location = new System.Drawing.Point(22, 15);
-            this.lbTelefone.Name = "lbTelefone";
-            this.lbTelefone.Size = new System.Drawing.Size(104, 25);
-            this.lbTelefone.TabIndex = 27;
-            this.lbTelefone.Text = "Telefone";
-            // 
-            // customPanel2
-            // 
-            this.customPanel2.BackColor = System.Drawing.Color.White;
-            this.customPanel2.Controls.Add(this.txtObservacoesEndereco);
-            this.customPanel2.Controls.Add(this.pictureBox2);
-            this.customPanel2.Controls.Add(this.txtUf);
-            this.customPanel2.Controls.Add(this.chkHabilitaEndereco);
-            this.customPanel2.Controls.Add(this.txtCidade);
-            this.customPanel2.Controls.Add(this.label3);
-            this.customPanel2.Controls.Add(this.txtComplemento);
-            this.customPanel2.Controls.Add(this.txtCep);
-            this.customPanel2.Controls.Add(this.txtBairro);
-            this.customPanel2.Controls.Add(this.txtLogradouro);
-            this.customPanel2.Controls.Add(this.txtNumero);
-            this.customPanel2.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.customPanel2.CorBotao = System.Drawing.Color.White;
-            this.customPanel2.CorTextoBotao = System.Drawing.Color.White;
-            this.customPanel2.ForeColor = System.Drawing.Color.White;
-            this.customPanel2.Location = new System.Drawing.Point(14, 461);
-            this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(1045, 269);
-            this.customPanel2.TabIndex = 161;
-            this.customPanel2.TamanhoBorda = 0;
-            this.customPanel2.TamanhoRaio = 15;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.label3.Location = new System.Drawing.Point(11, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 25);
-            this.label3.TabIndex = 28;
-            this.label3.Text = "Endereço";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 738);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1078, 5);
-            this.panel2.TabIndex = 162;
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.Location = new System.Drawing.Point(668, 125);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(2, 455);
+            this.panel1.TabIndex = 26;
             // 
             // CadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(1078, 743);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.customPanel2);
-            this.Controls.Add(this.customPanel5);
-            this.Controls.Add(this.customPanel1);
-            this.Controls.Add(this.dgvTelefones);
-            this.Controls.Add(this.customPanel4);
-            this.Controls.Add(this.panel1);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1200, 622);
+            this.Controls.Add(this.pnExterno);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CadastroCliente";
@@ -951,17 +854,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelefones)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.customPanel4.ResumeLayout(false);
-            this.customPanel4.PerformLayout();
-            this.customPanel1.ResumeLayout(false);
-            this.customPanel1.PerformLayout();
-            this.customPanel5.ResumeLayout(false);
-            this.customPanel5.PerformLayout();
-            this.customPanel2.ResumeLayout(false);
-            this.customPanel2.PerformLayout();
+            this.pnExterno.ResumeLayout(false);
+            this.pnInterno.ResumeLayout(false);
+            this.pnInterno.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -975,11 +877,9 @@
         private MaterialSkin.Controls.MaterialSwitch swAtivo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialCheckbox chkWhatsapp;
-        private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtObservacoesTelefone;
         private MaterialSkin.Controls.MaterialTextBox txtTelefone;
         private System.Windows.Forms.PictureBox pictureBox3;
         private MaterialSkin.Controls.MaterialCheckbox chkHabilitaEmail;
-        private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtObservacoesEmail;
         private MaterialSkin.Controls.MaterialTextBox txtEmail;
         private System.Windows.Forms.PictureBox pictureBox2;
         private MaterialSkin.Controls.MaterialCheckbox chkHabilitaEndereco;
@@ -992,26 +892,22 @@
         private MaterialSkin.Controls.MaterialTextBox txtLogradouro;
         private MaterialSkin.Controls.MaterialTextBox txtCep;
         private System.Windows.Forms.DataGridView dgvTelefones;
+        private MaterialSkin.Controls.MaterialRadioButton rbtPF;
+        private MaterialSkin.Controls.MaterialRadioButton rbtPJ;
+        private Componentes.CustomButton btnSalvar;
+        private Componentes.ModernBox pnExterno;
+        private Componentes.CustomPanel pnInterno;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label11;
+        private Componentes.CustomButton btnEncerrarJanelas;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Label lbTitulo;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIdTelefone;
         private System.Windows.Forms.DataGridViewImageColumn colWhatsApp;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTelefone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colObservacoes;
         private System.Windows.Forms.DataGridViewImageColumn colExcluir;
-        private MaterialSkin.Controls.MaterialRadioButton rbtPF;
-        private MaterialSkin.Controls.MaterialRadioButton rbtPJ;
-        private System.Windows.Forms.Panel panel1;
-        private Componentes.CustomButton btnSalvar;
-        private Componentes.CustomButton btnClose;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label lbTitulo;
-        private Componentes.CustomPanel customPanel4;
-        private System.Windows.Forms.Label label1;
-        private Componentes.CustomPanel customPanel1;
-        private System.Windows.Forms.Label label2;
-        private Componentes.CustomPanel customPanel5;
-        private System.Windows.Forms.Label lbTelefone;
-        private Componentes.CustomPanel customPanel2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel2;
     }
 }
