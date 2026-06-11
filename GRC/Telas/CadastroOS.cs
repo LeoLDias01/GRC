@@ -214,12 +214,12 @@ namespace GRC.Telas
         {
             if (_favorito == true)
             {
-                pcbFavorito.Image = Resources.star;
+                pcFavorito.Image = Resources.star;
                 _favorito = false;
             }
             else
             {
-                pcbFavorito.Image = Resources.starOff;
+                pcFavorito.Image = Resources.starOff;
                 _favorito = true;
             }
         }
@@ -996,7 +996,7 @@ namespace GRC.Telas
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
-            Exportar();
+            
         }
         private void Exportar ()
         {
@@ -1127,15 +1127,6 @@ namespace GRC.Telas
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-            Salvar();
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void CadastroOS_MouseDown(object sender, MouseEventArgs e)
         {
@@ -1323,6 +1314,16 @@ namespace GRC.Telas
         private void chkHabilitaEmail_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnEncerrarJanelas_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            Salvar();
         }
     }
 }

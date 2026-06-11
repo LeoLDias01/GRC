@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroOS));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroOS));
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.tbcOs = new MaterialSkin.Controls.MaterialTabControl();
             this.tbpDadosOS = new System.Windows.Forms.TabPage();
@@ -123,25 +123,27 @@
             this.btnExcluiImagem = new GRC.Componentes.CustomButton();
             this.ttAjuda = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnSalvar = new GRC.Componentes.CustomButton();
-            this.btnExportar = new GRC.Componentes.CustomButton();
-            this.pcbFavorito = new GRC.Componentes.CustomPictureBox();
             this.pnStatus = new GRC.Componentes.RoundedPanel();
             this.pn2 = new GRC.Componentes.RoundedPanel();
             this.lbStatus = new System.Windows.Forms.Label();
             this.pn1 = new GRC.Componentes.RoundedPanel();
             this.lbDataAtual = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.customPanel2 = new GRC.Componentes.CustomPanel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txtId = new MaterialSkin.Controls.MaterialTextBox();
             this.txtDataEntrada = new MaterialSkin.Controls.MaterialTextBox();
             this.txtFimReal = new MaterialSkin.Controls.MaterialTextBox();
-            this.customPanel1 = new GRC.Componentes.CustomPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtIdentidade = new MaterialSkin.Controls.MaterialTextBox();
             this.txtCliente = new MaterialSkin.Controls.MaterialTextBox();
-            this.customPanel5 = new GRC.Componentes.CustomPanel();
+            this.pnExterno = new GRC.Componentes.ModernBox();
+            this.pnInterno = new GRC.Componentes.CustomPanel();
+            this.btnEncerrarJanelas = new GRC.Componentes.CustomButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnSalvar = new GRC.Componentes.CustomButton();
+            this.lbTitulo = new System.Windows.Forms.Label();
+            this.btnExportar = new GRC.Componentes.CustomButton();
+            this.pcFavorito = new GRC.Componentes.CustomPictureBox();
             this.tbcOs.SuspendLayout();
             this.tbpDadosOS.SuspendLayout();
             this.gpbInfoVenda.SuspendLayout();
@@ -164,14 +166,14 @@
             this.tbpTermos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbImagemItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbFavorito)).BeginInit();
             this.pn2.SuspendLayout();
             this.pn1.SuspendLayout();
-            this.customPanel2.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.customPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.customPanel5.SuspendLayout();
+            this.pnExterno.SuspendLayout();
+            this.pnInterno.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcFavorito)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabSelector1
@@ -182,10 +184,10 @@
             this.materialTabSelector1.CharacterCasing = MaterialSkin.Controls.MaterialTabSelector.CustomCharacterCasing.Normal;
             this.materialTabSelector1.Depth = 0;
             this.materialTabSelector1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTabSelector1.Location = new System.Drawing.Point(12, 183);
+            this.materialTabSelector1.Location = new System.Drawing.Point(3, 179);
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(1116, 41);
+            this.materialTabSelector1.Size = new System.Drawing.Size(1110, 41);
             this.materialTabSelector1.TabIndex = 96;
             this.materialTabSelector1.TabIndicatorHeight = 3;
             this.materialTabSelector1.Text = "materialTabSelector1";
@@ -201,13 +203,13 @@
             this.tbcOs.Controls.Add(this.tbpFinanceiro);
             this.tbcOs.Controls.Add(this.tbpTermos);
             this.tbcOs.Depth = 0;
-            this.tbcOs.Location = new System.Drawing.Point(3, 16);
+            this.tbcOs.Location = new System.Drawing.Point(3, 226);
             this.tbcOs.MouseState = MaterialSkin.MouseState.HOVER;
             this.tbcOs.Multiline = true;
             this.tbcOs.Name = "tbcOs";
             this.tbcOs.SelectedIndex = 0;
             this.tbcOs.ShowToolTips = true;
-            this.tbcOs.Size = new System.Drawing.Size(1095, 470);
+            this.tbcOs.Size = new System.Drawing.Size(1270, 480);
             this.tbcOs.TabIndex = 95;
             // 
             // tbpDadosOS
@@ -217,7 +219,7 @@
             this.tbpDadosOS.Location = new System.Drawing.Point(4, 22);
             this.tbpDadosOS.Name = "tbpDadosOS";
             this.tbpDadosOS.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpDadosOS.Size = new System.Drawing.Size(1087, 444);
+            this.tbpDadosOS.Size = new System.Drawing.Size(1262, 454);
             this.tbpDadosOS.TabIndex = 0;
             this.tbpDadosOS.Text = "Dados da OS";
             // 
@@ -228,15 +230,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gpbInfoVenda.BackColor = System.Drawing.Color.White;
             this.gpbInfoVenda.Controls.Add(this.txtResumoServico);
-            this.gpbInfoVenda.Controls.Add(this.pn2);
             this.gpbInfoVenda.Controls.Add(this.groupBox7);
-            this.gpbInfoVenda.Controls.Add(this.pn1);
-            this.gpbInfoVenda.Controls.Add(this.btnSalvar);
             this.gpbInfoVenda.Controls.Add(this.cbTipoServico);
-            this.gpbInfoVenda.Controls.Add(this.btnExportar);
             this.gpbInfoVenda.Controls.Add(this.cbStatus);
             this.gpbInfoVenda.Controls.Add(this.txtFimPrevisto);
-            this.gpbInfoVenda.Controls.Add(this.pcbFavorito);
             this.gpbInfoVenda.Controls.Add(this.btnCadastraTipoServico);
             this.gpbInfoVenda.Controls.Add(this.txtObservacoesCliente);
             this.gpbInfoVenda.Controls.Add(this.groupBox6);
@@ -246,7 +243,7 @@
             this.gpbInfoVenda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.gpbInfoVenda.Location = new System.Drawing.Point(6, 6);
             this.gpbInfoVenda.Name = "gpbInfoVenda";
-            this.gpbInfoVenda.Size = new System.Drawing.Size(1075, 429);
+            this.gpbInfoVenda.Size = new System.Drawing.Size(1082, 439);
             this.gpbInfoVenda.TabIndex = 75;
             this.gpbInfoVenda.TabStop = false;
             this.gpbInfoVenda.Text = "Dados da OS";
@@ -282,9 +279,9 @@
             this.groupBox7.Controls.Add(this.txtRelatorioTecnico);
             this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.groupBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.groupBox7.Location = new System.Drawing.Point(12, 135);
+            this.groupBox7.Location = new System.Drawing.Point(6, 136);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(560, 192);
+            this.groupBox7.Size = new System.Drawing.Size(566, 192);
             this.groupBox7.TabIndex = 97;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Dados de Entrada";
@@ -478,7 +475,7 @@
             this.groupBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.groupBox6.Location = new System.Drawing.Point(578, 80);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(491, 247);
+            this.groupBox6.Size = new System.Drawing.Size(498, 247);
             this.groupBox6.TabIndex = 84;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Dados de Saída";
@@ -1399,7 +1396,7 @@
             this.tbpFinanceiro.Location = new System.Drawing.Point(4, 22);
             this.tbpFinanceiro.Name = "tbpFinanceiro";
             this.tbpFinanceiro.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpFinanceiro.Size = new System.Drawing.Size(1087, 444);
+            this.tbpFinanceiro.Size = new System.Drawing.Size(1262, 454);
             this.tbpFinanceiro.TabIndex = 1;
             this.tbpFinanceiro.Text = "Orçamento";
             // 
@@ -1425,7 +1422,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1061, 428);
+            this.groupBox1.Size = new System.Drawing.Size(1092, 442);
             this.groupBox1.TabIndex = 94;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Orçamento";
@@ -1795,87 +1792,17 @@
             this.ttAjuda.SetToolTip(this.pictureBox2, "Pesquise o cliente na lupa e os dados serão preenchidos atutomaticamente,\r\ncampos" +
         " não editáveis");
             // 
-            // btnSalvar
-            // 
-            this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnSalvar.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnSalvar.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnSalvar.CorTextoBotao = System.Drawing.Color.White;
-            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalvar.FlatAppearance.BorderSize = 0;
-            this.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(444, 20);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(41, 41);
-            this.btnSalvar.TabIndex = 119;
-            this.btnSalvar.TamanhoBorda = 0;
-            this.btnSalvar.TamanhoRaio = 10;
-            this.ttAjuda.SetToolTip(this.btnSalvar, "Salva a OS \r\n(CTRL + S)");
-            this.btnSalvar.UseVisualStyleBackColor = false;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // btnExportar
-            // 
-            this.btnExportar.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnExportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnExportar.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnExportar.CorBotao = System.Drawing.Color.MediumSeaGreen;
-            this.btnExportar.CorTextoBotao = System.Drawing.Color.White;
-            this.btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExportar.FlatAppearance.BorderSize = 0;
-            this.btnExportar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExportar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.btnExportar.ForeColor = System.Drawing.Color.White;
-            this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
-            this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportar.Location = new System.Drawing.Point(397, 20);
-            this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(41, 41);
-            this.btnExportar.TabIndex = 58;
-            this.btnExportar.TamanhoBorda = 0;
-            this.btnExportar.TamanhoRaio = 10;
-            this.btnExportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ttAjuda.SetToolTip(this.btnExportar, "Gera os arquivos em PDF com os dados desta OS \r\n(CTRL + S)");
-            this.btnExportar.UseVisualStyleBackColor = false;
-            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
-            // 
-            // pcbFavorito
-            // 
-            this.pcbFavorito.BackColor = System.Drawing.Color.Transparent;
-            this.pcbFavorito.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.pcbFavorito.CorBotao = System.Drawing.Color.Transparent;
-            this.pcbFavorito.CorTextoBotao = System.Drawing.Color.White;
-            this.pcbFavorito.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pcbFavorito.ForeColor = System.Drawing.Color.White;
-            this.pcbFavorito.Image = global::GRC.Properties.Resources.star;
-            this.pcbFavorito.Location = new System.Drawing.Point(349, 24);
-            this.pcbFavorito.Name = "pcbFavorito";
-            this.pcbFavorito.Size = new System.Drawing.Size(42, 37);
-            this.pcbFavorito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcbFavorito.TabIndex = 42;
-            this.pcbFavorito.TabStop = false;
-            this.pcbFavorito.TamanhoBorda = 0;
-            this.pcbFavorito.TamanhoRaio = 0;
-            this.ttAjuda.SetToolTip(this.pcbFavorito, "Favoritar a OS permite que apareça primeiro ao pesquisar ");
-            this.pcbFavorito.Click += new System.EventHandler(this.pcbFavorito_Click);
-            // 
             // pnStatus
             // 
             this.pnStatus.BackColor = System.Drawing.Color.Transparent;
             this.pnStatus.Color1 = System.Drawing.Color.DodgerBlue;
             this.pnStatus.Color2 = System.Drawing.Color.MediumOrchid;
             this.pnStatus.CornerRadius = 10;
+            this.pnStatus.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnStatus.GradientAngle = 180F;
-            this.pnStatus.Location = new System.Drawing.Point(0, 79);
+            this.pnStatus.Location = new System.Drawing.Point(0, 0);
             this.pnStatus.Name = "pnStatus";
-            this.pnStatus.Size = new System.Drawing.Size(352, 22);
+            this.pnStatus.Size = new System.Drawing.Size(1113, 10);
             this.pnStatus.TabIndex = 131;
             // 
             // pn2
@@ -1888,20 +1815,22 @@
             this.pn2.Controls.Add(this.lbStatus);
             this.pn2.CornerRadius = 10;
             this.pn2.GradientAngle = 90F;
-            this.pn2.Location = new System.Drawing.Point(631, 20);
+            this.pn2.Location = new System.Drawing.Point(617, 23);
             this.pn2.Name = "pn2";
-            this.pn2.Size = new System.Drawing.Size(429, 41);
+            this.pn2.Size = new System.Drawing.Size(441, 27);
             this.pn2.TabIndex = 6;
             this.pn2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pn2_MouseDown);
             // 
             // lbStatus
             // 
             this.lbStatus.AutoSize = true;
-            this.lbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.lbStatus.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.lbStatus.ForeColor = System.Drawing.Color.Black;
-            this.lbStatus.Location = new System.Drawing.Point(12, 11);
+            this.lbStatus.Location = new System.Drawing.Point(0, 0);
             this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(109, 20);
+            this.lbStatus.Padding = new System.Windows.Forms.Padding(30, 5, 0, 5);
+            this.lbStatus.Size = new System.Drawing.Size(128, 27);
             this.lbStatus.TabIndex = 0;
             this.lbStatus.Text = "Não Iniciado";
             this.lbStatus.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbStatus_MouseDown);
@@ -1914,60 +1843,39 @@
             this.pn1.Controls.Add(this.lbDataAtual);
             this.pn1.CornerRadius = 10;
             this.pn1.GradientAngle = 90F;
-            this.pn1.Location = new System.Drawing.Point(501, 20);
+            this.pn1.Location = new System.Drawing.Point(487, 25);
             this.pn1.Name = "pn1";
-            this.pn1.Size = new System.Drawing.Size(124, 41);
+            this.pn1.Size = new System.Drawing.Size(124, 27);
             this.pn1.TabIndex = 5;
             this.pn1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pn1_MouseDown);
             // 
             // lbDataAtual
             // 
             this.lbDataAtual.AutoSize = true;
-            this.lbDataAtual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.lbDataAtual.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lbDataAtual.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.lbDataAtual.ForeColor = System.Drawing.Color.Black;
-            this.lbDataAtual.Location = new System.Drawing.Point(12, 11);
+            this.lbDataAtual.Location = new System.Drawing.Point(0, 0);
             this.lbDataAtual.Name = "lbDataAtual";
-            this.lbDataAtual.Size = new System.Drawing.Size(99, 20);
+            this.lbDataAtual.Padding = new System.Windows.Forms.Padding(20, 5, 0, 5);
+            this.lbDataAtual.Size = new System.Drawing.Size(110, 27);
             this.lbDataAtual.TabIndex = 1;
             this.lbDataAtual.Text = "15/01/2026";
             this.lbDataAtual.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbDataAtual_MouseDown);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 726);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1138, 5);
-            this.panel2.TabIndex = 163;
-            // 
-            // customPanel2
-            // 
-            this.customPanel2.BackColor = System.Drawing.Color.White;
-            this.customPanel2.Controls.Add(this.groupBox4);
-            this.customPanel2.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.customPanel2.CorBotao = System.Drawing.Color.White;
-            this.customPanel2.CorTextoBotao = System.Drawing.Color.White;
-            this.customPanel2.ForeColor = System.Drawing.Color.White;
-            this.customPanel2.Location = new System.Drawing.Point(8, 76);
-            this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(462, 101);
-            this.customPanel2.TabIndex = 166;
-            this.customPanel2.TamanhoBorda = 0;
-            this.customPanel2.TamanhoRaio = 15;
             // 
             // groupBox4
             // 
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Controls.Add(this.pcFavorito);
             this.groupBox4.Controls.Add(this.txtId);
             this.groupBox4.Controls.Add(this.txtDataEntrada);
             this.groupBox4.Controls.Add(this.txtFimReal);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.groupBox4.Location = new System.Drawing.Point(7, 13);
+            this.groupBox4.Location = new System.Drawing.Point(9, 93);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(449, 80);
+            this.groupBox4.Size = new System.Drawing.Size(428, 80);
             this.groupBox4.TabIndex = 96;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "OS";
@@ -1985,13 +1893,13 @@
             this.txtId.Hint = "Nº OS";
             this.txtId.LeadingIcon = null;
             this.txtId.LeaveOnEnterKey = true;
-            this.txtId.Location = new System.Drawing.Point(5, 26);
+            this.txtId.Location = new System.Drawing.Point(7, 24);
             this.txtId.MaxLength = 60;
             this.txtId.MouseState = MaterialSkin.MouseState.OUT;
             this.txtId.Multiline = false;
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(143, 50);
+            this.txtId.Size = new System.Drawing.Size(118, 50);
             this.txtId.TabIndex = 83;
             this.txtId.Text = "";
             this.txtId.TrailingIcon = null;
@@ -2008,7 +1916,7 @@
             this.txtDataEntrada.Hint = "Data Entrada";
             this.txtDataEntrada.LeadingIcon = null;
             this.txtDataEntrada.LeaveOnEnterKey = true;
-            this.txtDataEntrada.Location = new System.Drawing.Point(151, 26);
+            this.txtDataEntrada.Location = new System.Drawing.Point(131, 24);
             this.txtDataEntrada.MaxLength = 60;
             this.txtDataEntrada.MouseState = MaterialSkin.MouseState.OUT;
             this.txtDataEntrada.Multiline = false;
@@ -2031,7 +1939,7 @@
             this.txtFimReal.Hint = "Fim Real";
             this.txtFimReal.LeadingIcon = null;
             this.txtFimReal.LeaveOnEnterKey = true;
-            this.txtFimReal.Location = new System.Drawing.Point(298, 25);
+            this.txtFimReal.Location = new System.Drawing.Point(278, 24);
             this.txtFimReal.MaxLength = 60;
             this.txtFimReal.MouseState = MaterialSkin.MouseState.OUT;
             this.txtFimReal.Multiline = false;
@@ -2043,21 +1951,6 @@
             this.txtFimReal.TrailingIcon = null;
             this.txtFimReal.UseAccent = false;
             // 
-            // customPanel1
-            // 
-            this.customPanel1.BackColor = System.Drawing.Color.White;
-            this.customPanel1.Controls.Add(this.groupBox2);
-            this.customPanel1.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.customPanel1.CorBotao = System.Drawing.Color.White;
-            this.customPanel1.CorTextoBotao = System.Drawing.Color.White;
-            this.customPanel1.ForeColor = System.Drawing.Color.White;
-            this.customPanel1.Location = new System.Drawing.Point(476, 76);
-            this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(649, 101);
-            this.customPanel1.TabIndex = 165;
-            this.customPanel1.TamanhoBorda = 0;
-            this.customPanel1.TamanhoRaio = 15;
-            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -2067,9 +1960,9 @@
             this.groupBox2.Controls.Add(this.txtCliente);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.groupBox2.Location = new System.Drawing.Point(3, 13);
+            this.groupBox2.Location = new System.Drawing.Point(443, 93);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(643, 80);
+            this.groupBox2.Size = new System.Drawing.Size(666, 80);
             this.groupBox2.TabIndex = 94;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dados do Cliente";
@@ -2085,7 +1978,7 @@
             this.txtIdentidade.Hint = "CPF/CNPJ";
             this.txtIdentidade.LeadingIcon = null;
             this.txtIdentidade.LeaveOnEnterKey = true;
-            this.txtIdentidade.Location = new System.Drawing.Point(462, 24);
+            this.txtIdentidade.Location = new System.Drawing.Point(487, 24);
             this.txtIdentidade.MaxLength = 20;
             this.txtIdentidade.MouseState = MaterialSkin.MouseState.OUT;
             this.txtIdentidade.Multiline = false;
@@ -2114,27 +2007,186 @@
             this.txtCliente.Multiline = false;
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.ReadOnly = true;
-            this.txtCliente.Size = new System.Drawing.Size(450, 50);
+            this.txtCliente.Size = new System.Drawing.Size(477, 50);
             this.txtCliente.TabIndex = 75;
             this.txtCliente.Text = "";
             this.txtCliente.TrailingIcon = ((System.Drawing.Image)(resources.GetObject("txtCliente.TrailingIcon")));
             this.txtCliente.UseAccent = false;
             this.txtCliente.TrailingIconClick += new System.EventHandler(this.txtCliente_TrailingIconClick);
             // 
-            // customPanel5
+            // pnExterno
             // 
-            this.customPanel5.BackColor = System.Drawing.Color.White;
-            this.customPanel5.Controls.Add(this.tbcOs);
-            this.customPanel5.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.customPanel5.CorBotao = System.Drawing.Color.White;
-            this.customPanel5.CorTextoBotao = System.Drawing.Color.White;
-            this.customPanel5.ForeColor = System.Drawing.Color.White;
-            this.customPanel5.Location = new System.Drawing.Point(12, 230);
-            this.customPanel5.Name = "customPanel5";
-            this.customPanel5.Size = new System.Drawing.Size(1116, 489);
-            this.customPanel5.TabIndex = 164;
-            this.customPanel5.TamanhoBorda = 0;
-            this.customPanel5.TamanhoRaio = 15;
+            this.pnExterno.BackColor = System.Drawing.Color.Transparent;
+            this.pnExterno.BorderColor = System.Drawing.Color.White;
+            this.pnExterno.BorderRadius = 12;
+            this.pnExterno.BorderSize = 1;
+            this.pnExterno.Controls.Add(this.pnInterno);
+            this.pnExterno.FillColor = System.Drawing.Color.White;
+            this.pnExterno.Location = new System.Drawing.Point(1, 0);
+            this.pnExterno.Name = "pnExterno";
+            this.pnExterno.Padding = new System.Windows.Forms.Padding(13);
+            this.pnExterno.ShadowAngle = 90;
+            this.pnExterno.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnExterno.ShadowSize = 8;
+            this.pnExterno.Size = new System.Drawing.Size(1138, 729);
+            this.pnExterno.TabIndex = 178;
+            // 
+            // pnInterno
+            // 
+            this.pnInterno.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnInterno.BackColor = System.Drawing.Color.White;
+            this.pnInterno.Controls.Add(this.btnExportar);
+            this.pnInterno.Controls.Add(this.tbcOs);
+            this.pnInterno.Controls.Add(this.groupBox2);
+            this.pnInterno.Controls.Add(this.groupBox4);
+            this.pnInterno.Controls.Add(this.materialTabSelector1);
+            this.pnInterno.Controls.Add(this.pnStatus);
+            this.pnInterno.Controls.Add(this.pn2);
+            this.pnInterno.Controls.Add(this.btnEncerrarJanelas);
+            this.pnInterno.Controls.Add(this.label6);
+            this.pnInterno.Controls.Add(this.pn1);
+            this.pnInterno.Controls.Add(this.pictureBox3);
+            this.pnInterno.Controls.Add(this.btnSalvar);
+            this.pnInterno.Controls.Add(this.lbTitulo);
+            this.pnInterno.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.pnInterno.CorBotao = System.Drawing.Color.White;
+            this.pnInterno.CorTextoBotao = System.Drawing.Color.White;
+            this.pnInterno.ForeColor = System.Drawing.Color.White;
+            this.pnInterno.Location = new System.Drawing.Point(16, 4);
+            this.pnInterno.Name = "pnInterno";
+            this.pnInterno.Size = new System.Drawing.Size(1113, 709);
+            this.pnInterno.TabIndex = 0;
+            this.pnInterno.TamanhoBorda = 0;
+            this.pnInterno.TamanhoRaio = 15;
+            // 
+            // btnEncerrarJanelas
+            // 
+            this.btnEncerrarJanelas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEncerrarJanelas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.btnEncerrarJanelas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEncerrarJanelas.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnEncerrarJanelas.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.btnEncerrarJanelas.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnEncerrarJanelas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEncerrarJanelas.FlatAppearance.BorderSize = 0;
+            this.btnEncerrarJanelas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnEncerrarJanelas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEncerrarJanelas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEncerrarJanelas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnEncerrarJanelas.Image = ((System.Drawing.Image)(resources.GetObject("btnEncerrarJanelas.Image")));
+            this.btnEncerrarJanelas.Location = new System.Drawing.Point(1077, 11);
+            this.btnEncerrarJanelas.Name = "btnEncerrarJanelas";
+            this.btnEncerrarJanelas.Size = new System.Drawing.Size(18, 18);
+            this.btnEncerrarJanelas.TabIndex = 163;
+            this.btnEncerrarJanelas.TamanhoBorda = 0;
+            this.btnEncerrarJanelas.TamanhoRaio = 5;
+            this.btnEncerrarJanelas.UseVisualStyleBackColor = false;
+            this.btnEncerrarJanelas.Click += new System.EventHandler(this.btnEncerrarJanelas_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label6.Location = new System.Drawing.Point(64, 55);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(271, 20);
+            this.label6.TabIndex = 175;
+            this.label6.Text = "Informe os dados da ordem de serviço";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(6, 23);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(52, 52);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 174;
+            this.pictureBox3.TabStop = false;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSalvar.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnSalvar.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnSalvar.CorTextoBotao = System.Drawing.Color.White;
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvar.FlatAppearance.BorderSize = 0;
+            this.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSalvar.ForeColor = System.Drawing.Color.White;
+            this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalvar.Location = new System.Drawing.Point(979, 56);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.btnSalvar.Size = new System.Drawing.Size(127, 37);
+            this.btnSalvar.TabIndex = 26;
+            this.btnSalvar.TamanhoBorda = 0;
+            this.btnSalvar.TamanhoRaio = 5;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // lbTitulo
+            // 
+            this.lbTitulo.AutoSize = true;
+            this.lbTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.lbTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.lbTitulo.Location = new System.Drawing.Point(63, 23);
+            this.lbTitulo.Name = "lbTitulo";
+            this.lbTitulo.Size = new System.Drawing.Size(374, 29);
+            this.lbTitulo.TabIndex = 173;
+            this.lbTitulo.Text = "Cadastro de Ordem de Serviço";
+            // 
+            // btnExportar
+            // 
+            this.btnExportar.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnExportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnExportar.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnExportar.CorBotao = System.Drawing.Color.MediumSeaGreen;
+            this.btnExportar.CorTextoBotao = System.Drawing.Color.White;
+            this.btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExportar.FlatAppearance.BorderSize = 0;
+            this.btnExportar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
+            this.btnExportar.ForeColor = System.Drawing.Color.White;
+            this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
+            this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExportar.Location = new System.Drawing.Point(440, 16);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(41, 41);
+            this.btnExportar.TabIndex = 176;
+            this.btnExportar.TamanhoBorda = 0;
+            this.btnExportar.TamanhoRaio = 10;
+            this.btnExportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ttAjuda.SetToolTip(this.btnExportar, "Gera os arquivos em PDF com os dados desta OS \r\n(CTRL + S)");
+            this.btnExportar.UseVisualStyleBackColor = false;
+            // 
+            // pcFavorito
+            // 
+            this.pcFavorito.BackColor = System.Drawing.Color.Transparent;
+            this.pcFavorito.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.pcFavorito.CorBotao = System.Drawing.Color.Transparent;
+            this.pcFavorito.CorTextoBotao = System.Drawing.Color.White;
+            this.pcFavorito.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcFavorito.ForeColor = System.Drawing.Color.White;
+            this.pcFavorito.Image = global::GRC.Properties.Resources.star;
+            this.pcFavorito.Location = new System.Drawing.Point(43, -3);
+            this.pcFavorito.Name = "pcFavorito";
+            this.pcFavorito.Size = new System.Drawing.Size(35, 23);
+            this.pcFavorito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcFavorito.TabIndex = 177;
+            this.pcFavorito.TabStop = false;
+            this.pcFavorito.TamanhoBorda = 0;
+            this.pcFavorito.TamanhoRaio = 0;
             // 
             // CadastroOS
             // 
@@ -2142,12 +2194,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1138, 731);
-            this.Controls.Add(this.pnStatus);
-            this.Controls.Add(this.customPanel2);
-            this.Controls.Add(this.customPanel1);
-            this.Controls.Add(this.customPanel5);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.materialTabSelector1);
+            this.Controls.Add(this.pnExterno);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -2184,25 +2231,24 @@
             this.tbpTermos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbImagemItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbFavorito)).EndInit();
             this.pn2.ResumeLayout(false);
             this.pn2.PerformLayout();
             this.pn1.ResumeLayout(false);
             this.pn1.PerformLayout();
-            this.customPanel2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
-            this.customPanel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            this.customPanel5.ResumeLayout(false);
+            this.pnExterno.ResumeLayout(false);
+            this.pnInterno.ResumeLayout(false);
+            this.pnInterno.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcFavorito)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Componentes.CustomPictureBox pcbFavorito;
         private Componentes.CustomButton btnNovoItem;
         private Componentes.RoundedPanel pn1;
-        private Componentes.CustomButton btnExportar;
         private System.Windows.Forms.GroupBox gpbInfoVenda;
         private MaterialSkin.Controls.MaterialTextBox txtLucro;
         private MaterialSkin.Controls.MaterialTextBox txtTotalCobrado;
@@ -2249,9 +2295,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescricao;
         private System.Windows.Forms.DataGridViewImageColumn colExcluir;
-        private Componentes.CustomButton btnSalvar;
         private Componentes.RoundedPanel pnStatus;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TabPage tbpDadosAparelho;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox7;
@@ -2305,8 +2349,14 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label5;
-        private Componentes.CustomPanel customPanel5;
-        private Componentes.CustomPanel customPanel1;
-        private Componentes.CustomPanel customPanel2;
+        private Componentes.ModernBox pnExterno;
+        private Componentes.CustomPanel pnInterno;
+        private Componentes.CustomButton btnEncerrarJanelas;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private Componentes.CustomButton btnSalvar;
+        private System.Windows.Forms.Label lbTitulo;
+        private Componentes.CustomButton btnExportar;
+        private Componentes.CustomPictureBox pcFavorito;
     }
 }
