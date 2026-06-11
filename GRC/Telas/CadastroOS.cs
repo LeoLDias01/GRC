@@ -257,7 +257,7 @@ namespace GRC.Telas
 
         private void cbStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lbStatus.Text = cbStatus.Text;
+           // lbStatus.Text = cbStatus.Text;
 
             if (Convert.ToInt32(cbStatus.SelectedValue) == 6)
             {
@@ -828,9 +828,9 @@ namespace GRC.Telas
         private void MudaCorPainel(Color cor1, Color cor2)
         {
             pn1.Color1 = cor1;
-            pn2.Color1 = cor1;
+            //pn2.Color1 = cor1;
             pn1.Color2 = cor2;
-            pn2.Color2 = cor2;
+            //pn2.Color2 = cor2;
         }
 
         private void Salvar() 
