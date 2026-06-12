@@ -298,12 +298,11 @@ namespace GRC.Telas
             if (ativo)
             {
                 flpItens.BackColor = Color.FromArgb(43, 69, 98);
-                pnItens.BackColor = Color.FromArgb(43, 69, 98);
+               
             }
             else
             {
                 flpItens.BackColor = Color.FromArgb(52, 57, 66);
-                pnItens.BackColor = Color.FromArgb(52, 57, 66);
             }
         }
 

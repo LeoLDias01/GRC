@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GRC.Componentes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,10 +20,15 @@ namespace GRC.UserControls
 
             // Vincula todos os botões ao mesmo manipulador de eventos
             btnFiltroPersonalizado.Click += BotaoFiltro_Click;
+            lbPersonalizado.Click += BotaoFiltro_Click;
             btnHoje.Click += BotaoFiltro_Click;
+            lbHoje.Click += BotaoFiltro_Click;
             btnOntem.Click += BotaoFiltro_Click;
+            lbOntem.Click += BotaoFiltro_Click;
             btnSemana.Click += BotaoFiltro_Click;
+            lbSemana.Click += BotaoFiltro_Click;
             btnMes.Click += BotaoFiltro_Click;
+            lbMes.Click += BotaoFiltro_Click;
 
             ConfigurarGraficoLucratividade();
             ConfigurarGraficoOS();
@@ -30,40 +36,58 @@ namespace GRC.UserControls
         // O método que gerencia todos os cliques
         private void BotaoFiltro_Click(object sender, EventArgs e)
         {
-            // O 'sender' é o botão físico que foi clicado. Convertemos ele de volta para Button.
-            Button botaoClicado = (Button)sender;
+            ModernBox botaoClicado = null;
+            Label labelClicada = null;
 
-            // Todos os botões rodam essa configuração
-            ConfiguraBtn(botaoClicado);
+            // Clique no Box
+            if (sender is ModernBox box)
+            {
+                botaoClicado = box;
 
-            // Se o botão clicado foi especificamente o de filtro personalizado, mostra o painel
-            if (botaoClicado == btnFiltroPersonalizado)
-            {
-                pnCustomFilter.Visible = true;
+                if (box == btnFiltroPersonalizado) labelClicada = lbPersonalizado;
+                else if (box == btnHoje) labelClicada = lbHoje;
+                else if (box == btnOntem) labelClicada = lbOntem;
+                else if (box == btnSemana) labelClicada = lbSemana;
+                else if (box == btnMes) labelClicada = lbMes;
             }
-            else
+            // Clique na Label
+            else if (sender is Label lbl)
             {
-                // Opcional: esconde o painel se clicar em qualquer outro botão de data
-                pnCustomFilter.Visible = false;
+                labelClicada = lbl;
+
+                if (lbl == lbPersonalizado) botaoClicado = btnFiltroPersonalizado;
+                else if (lbl == lbHoje) botaoClicado = btnHoje;
+                else if (lbl == lbOntem) botaoClicado = btnOntem;
+                else if (lbl == lbSemana) botaoClicado = btnSemana;
+                else if (lbl == lbMes) botaoClicado = btnMes;
             }
+
+            if (botaoClicado == null || labelClicada == null)
+                return;
+
+            ConfiguraBtn(botaoClicado, labelClicada);
+
+            pnCustomFilter.Visible = (botaoClicado == btnFiltroPersonalizado);
         }
-        private void ConfiguraBtn(Button btnClicado)
+        private void ConfiguraBtn(ModernBox btnClicado, Label lb)
         {
-            // 1. Esconde o filtro personalizado por padrão
-            pnCustomFilter.Visible = false;
+            // Reset dos boxes
+            btnFiltroPersonalizado.FillColor = Color.White;
+            btnHoje.FillColor = Color.White;
+            btnOntem.FillColor = Color.White;
+            btnSemana.FillColor = Color.White;
+            btnMes.FillColor = Color.White;
 
-            // 2. Pega o container onde os botões estão (ex: um Panel ou o próprio Form)
-            // e reseta a cor de TODOS os botões que estão lá dentro de uma vez só
-            foreach (Control c in btnClicado.Parent.Controls)
-            {
-                if (c is Button b)
-                {
-                    b.BackColor = Color.FromArgb(0, 20, 30);
-                }
-            }
+            // Reset das labels
+            lbPersonalizado.ForeColor = Color.Black;
+            lbHoje.ForeColor = Color.Black;
+            lbOntem.ForeColor = Color.Black;
+            lbSemana.ForeColor = Color.Black;
+            lbMes.ForeColor = Color.Black;
 
-            // 3. Destaca apenas o botão que foi clicado
-            btnClicado.BackColor = Color.DarkSlateBlue;
+            // Destaca o selecionado
+            btnClicado.FillColor = Color.FromArgb(0, 57, 92);
+            lb.ForeColor = Color.White;
         }
         // ============================================
         // GRÁFICO DE LUCRATIVIDADE (Spline)
@@ -184,5 +208,9 @@ namespace GRC.UserControls
             crtDadosOS.Titles.Add(titulo);
         }
 
+        private void btnFiltroPersonalizado_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

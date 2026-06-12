@@ -517,6 +517,7 @@
             // 
             // btnNovoItem
             // 
+            this.btnNovoItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNovoItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
             this.btnNovoItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnNovoItem.CorBorda = System.Drawing.Color.MediumSlateBlue;
