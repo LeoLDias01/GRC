@@ -38,24 +38,26 @@
             this.rbEntrada = new System.Windows.Forms.RadioButton();
             this.rbSaida = new System.Windows.Forms.RadioButton();
             this.btnExportar = new GRC.Componentes.CustomButton();
-            this.btnSalvar = new GRC.Componentes.CustomButton();
-            this.pnSuperior = new System.Windows.Forms.Panel();
             this.roundedPanel2 = new GRC.Componentes.RoundedPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnSair = new GRC.Componentes.CustomButton();
+            this.pnExterno = new GRC.Componentes.ModernBox();
+            this.pnInterno = new GRC.Componentes.CustomPanel();
+            this.btnEncerrarJanelas = new GRC.Componentes.CustomButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lbTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.customPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.pnSuperior.SuspendLayout();
+            this.pnExterno.SuspendLayout();
+            this.pnInterno.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(11, 10);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 23);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(47, 42);
+            this.pictureBox1.Size = new System.Drawing.Size(55, 52);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 62;
             this.pictureBox1.TabStop = false;
@@ -69,9 +71,9 @@
             this.customPanel1.CorBotao = System.Drawing.Color.White;
             this.customPanel1.CorTextoBotao = System.Drawing.Color.White;
             this.customPanel1.ForeColor = System.Drawing.Color.White;
-            this.customPanel1.Location = new System.Drawing.Point(12, 86);
+            this.customPanel1.Location = new System.Drawing.Point(3, 81);
             this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(325, 157);
+            this.customPanel1.Size = new System.Drawing.Size(358, 157);
             this.customPanel1.TabIndex = 61;
             this.customPanel1.TamanhoBorda = 0;
             this.customPanel1.TamanhoRaio = 20;
@@ -84,7 +86,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.groupBox2.Location = new System.Drawing.Point(14, 81);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(295, 65);
+            this.groupBox2.Size = new System.Drawing.Size(333, 65);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tipo de saída";
@@ -125,7 +127,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.groupBox1.Location = new System.Drawing.Point(14, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(295, 63);
+            this.groupBox1.Size = new System.Drawing.Size(332, 63);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tipo de Impressão";
@@ -172,59 +174,17 @@
             this.btnExportar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
             this.btnExportar.ForeColor = System.Drawing.Color.White;
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
-            this.btnExportar.Location = new System.Drawing.Point(11, 259);
+            this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExportar.Location = new System.Drawing.Point(94, 244);
             this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnExportar.Size = new System.Drawing.Size(326, 41);
+            this.btnExportar.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.btnExportar.Size = new System.Drawing.Size(149, 41);
             this.btnExportar.TabIndex = 59;
             this.btnExportar.TamanhoBorda = 0;
             this.btnExportar.TamanhoRaio = 10;
-            this.btnExportar.Text = "    Gerar PDF";
-            this.btnExportar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExportar.Text = "Gerar PDF";
             this.btnExportar.UseVisualStyleBackColor = false;
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.BackColor = System.Drawing.Color.Transparent;
-            this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnSalvar.CorBorda = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnSalvar.CorBotao = System.Drawing.Color.Transparent;
-            this.btnSalvar.CorTextoBotao = System.Drawing.Color.White;
-            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalvar.FlatAppearance.BorderSize = 0;
-            this.btnSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OrangeRed;
-            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.Location = new System.Drawing.Point(11, 306);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnSalvar.Size = new System.Drawing.Size(326, 42);
-            this.btnSalvar.TabIndex = 23;
-            this.btnSalvar.TamanhoBorda = 3;
-            this.btnSalvar.TamanhoRaio = 10;
-            this.btnSalvar.Text = "  Voltar";
-            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSalvar.UseVisualStyleBackColor = false;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // pnSuperior
-            // 
-            this.pnSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.pnSuperior.Controls.Add(this.roundedPanel2);
-            this.pnSuperior.Controls.Add(this.label2);
-            this.pnSuperior.Controls.Add(this.pictureBox1);
-            this.pnSuperior.Controls.Add(this.btnSair);
-            this.pnSuperior.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnSuperior.Location = new System.Drawing.Point(0, 0);
-            this.pnSuperior.Name = "pnSuperior";
-            this.pnSuperior.Size = new System.Drawing.Size(351, 70);
-            this.pnSuperior.TabIndex = 133;
-            this.pnSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnSuperior_MouseDown);
             // 
             // roundedPanel2
             // 
@@ -232,58 +192,109 @@
             this.roundedPanel2.Color1 = System.Drawing.Color.Aquamarine;
             this.roundedPanel2.Color2 = System.Drawing.Color.Black;
             this.roundedPanel2.CornerRadius = 10;
+            this.roundedPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.roundedPanel2.GradientAngle = 180F;
-            this.roundedPanel2.Location = new System.Drawing.Point(-15, 65);
+            this.roundedPanel2.Location = new System.Drawing.Point(0, 0);
             this.roundedPanel2.Name = "roundedPanel2";
-            this.roundedPanel2.Size = new System.Drawing.Size(285, 101);
+            this.roundedPanel2.Size = new System.Drawing.Size(368, 10);
             this.roundedPanel2.TabIndex = 122;
             // 
-            // label2
+            // pnExterno
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(64, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(185, 27);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "Exportação da OS";
-            this.label2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label2_MouseDown);
+            this.pnExterno.BackColor = System.Drawing.Color.Transparent;
+            this.pnExterno.BorderColor = System.Drawing.Color.White;
+            this.pnExterno.BorderRadius = 12;
+            this.pnExterno.BorderSize = 1;
+            this.pnExterno.Controls.Add(this.pnInterno);
+            this.pnExterno.FillColor = System.Drawing.Color.White;
+            this.pnExterno.Location = new System.Drawing.Point(-2, 1);
+            this.pnExterno.Name = "pnExterno";
+            this.pnExterno.Padding = new System.Windows.Forms.Padding(13);
+            this.pnExterno.ShadowAngle = 90;
+            this.pnExterno.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnExterno.ShadowSize = 8;
+            this.pnExterno.Size = new System.Drawing.Size(393, 310);
+            this.pnExterno.TabIndex = 179;
             // 
-            // btnSair
+            // pnInterno
             // 
-            this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSair.BackColor = System.Drawing.Color.Transparent;
-            this.btnSair.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.btnSair.CorBotao = System.Drawing.Color.Transparent;
-            this.btnSair.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSair.FlatAppearance.BorderSize = 0;
-            this.btnSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
-            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSair.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
-            this.btnSair.Location = new System.Drawing.Point(303, 17);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(36, 35);
-            this.btnSair.TabIndex = 125;
-            this.btnSair.TamanhoBorda = 0;
-            this.btnSair.TamanhoRaio = 17;
-            this.btnSair.UseVisualStyleBackColor = false;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            this.pnInterno.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnInterno.BackColor = System.Drawing.Color.White;
+            this.pnInterno.Controls.Add(this.pictureBox1);
+            this.pnInterno.Controls.Add(this.customPanel1);
+            this.pnInterno.Controls.Add(this.btnExportar);
+            this.pnInterno.Controls.Add(this.roundedPanel2);
+            this.pnInterno.Controls.Add(this.btnEncerrarJanelas);
+            this.pnInterno.Controls.Add(this.label6);
+            this.pnInterno.Controls.Add(this.lbTitulo);
+            this.pnInterno.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.pnInterno.CorBotao = System.Drawing.Color.White;
+            this.pnInterno.CorTextoBotao = System.Drawing.Color.White;
+            this.pnInterno.ForeColor = System.Drawing.Color.White;
+            this.pnInterno.Location = new System.Drawing.Point(16, 4);
+            this.pnInterno.Name = "pnInterno";
+            this.pnInterno.Size = new System.Drawing.Size(368, 290);
+            this.pnInterno.TabIndex = 0;
+            this.pnInterno.TamanhoBorda = 0;
+            this.pnInterno.TamanhoRaio = 15;
+            // 
+            // btnEncerrarJanelas
+            // 
+            this.btnEncerrarJanelas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEncerrarJanelas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.btnEncerrarJanelas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEncerrarJanelas.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnEncerrarJanelas.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.btnEncerrarJanelas.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnEncerrarJanelas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEncerrarJanelas.FlatAppearance.BorderSize = 0;
+            this.btnEncerrarJanelas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnEncerrarJanelas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEncerrarJanelas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEncerrarJanelas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.btnEncerrarJanelas.Image = ((System.Drawing.Image)(resources.GetObject("btnEncerrarJanelas.Image")));
+            this.btnEncerrarJanelas.Location = new System.Drawing.Point(332, 11);
+            this.btnEncerrarJanelas.Name = "btnEncerrarJanelas";
+            this.btnEncerrarJanelas.Size = new System.Drawing.Size(18, 18);
+            this.btnEncerrarJanelas.TabIndex = 163;
+            this.btnEncerrarJanelas.TamanhoBorda = 0;
+            this.btnEncerrarJanelas.TamanhoRaio = 5;
+            this.btnEncerrarJanelas.UseVisualStyleBackColor = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label6.Location = new System.Drawing.Point(64, 55);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(165, 20);
+            this.label6.TabIndex = 175;
+            this.label6.Text = "Escolha como imprimir";
+            // 
+            // lbTitulo
+            // 
+            this.lbTitulo.AutoSize = true;
+            this.lbTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.lbTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.lbTitulo.Location = new System.Drawing.Point(63, 23);
+            this.lbTitulo.Name = "lbTitulo";
+            this.lbTitulo.Size = new System.Drawing.Size(216, 29);
+            this.lbTitulo.TabIndex = 173;
+            this.lbTitulo.Text = "Impressão de OS";
             // 
             // SelecaoImpressao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(351, 373);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(396, 314);
             this.ControlBox = false;
-            this.Controls.Add(this.pnSuperior);
-            this.Controls.Add(this.customPanel1);
-            this.Controls.Add(this.btnExportar);
-            this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.pnExterno);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -299,14 +310,14 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.pnSuperior.ResumeLayout(false);
-            this.pnSuperior.PerformLayout();
+            this.pnExterno.ResumeLayout(false);
+            this.pnInterno.ResumeLayout(false);
+            this.pnInterno.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Componentes.CustomButton btnSalvar;
         private Componentes.CustomButton btnExportar;
         private Componentes.CustomPanel customPanel1;
         private System.Windows.Forms.RadioButton rbEntrada;
@@ -316,9 +327,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbSaida;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel pnSuperior;
         private Componentes.RoundedPanel roundedPanel2;
-        private System.Windows.Forms.Label label2;
-        private Componentes.CustomButton btnSair;
+        private Componentes.ModernBox pnExterno;
+        private Componentes.CustomPanel pnInterno;
+        private Componentes.CustomButton btnEncerrarJanelas;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbTitulo;
     }
 }

@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroOS));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.tbcOs = new MaterialSkin.Controls.MaterialTabControl();
             this.tbpDadosOS = new System.Windows.Forms.TabPage();
@@ -59,7 +59,7 @@
             this.txtFimGarantia = new MaterialSkin.Controls.MaterialTextBox();
             this.txtGarantia = new MaterialSkin.Controls.MaterialTextBox();
             this.txtInicioGarantia = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtDescricao = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
+            this.txtDescricaoSaida = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
             this.txtObservacoes = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
             this.pcAjuda = new System.Windows.Forms.PictureBox();
             this.tbpDadosAparelho = new System.Windows.Forms.TabPage();
@@ -78,7 +78,7 @@
             this.lbG = new System.Windows.Forms.Label();
             this.lbApagar = new System.Windows.Forms.Label();
             this.materialCheckbox3 = new MaterialSkin.Controls.MaterialCheckbox();
-            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtInfoAdicional = new MaterialSkin.Controls.MaterialTextBox();
             this.materialCheckbox2 = new MaterialSkin.Controls.MaterialCheckbox();
             this.materialCheckbox1 = new MaterialSkin.Controls.MaterialCheckbox();
             this.txtOutros = new MaterialSkin.Controls.MaterialTextBox();
@@ -105,9 +105,6 @@
             this.btnConsultaItem = new GRC.Componentes.CustomButton();
             this.gpEsporadico = new System.Windows.Forms.GroupBox();
             this.dgvItens = new System.Windows.Forms.DataGridView();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colExcluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.txtNomeItemEsporadico = new MaterialSkin.Controls.MaterialTextBox();
             this.tbpFinanceiro = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -140,6 +137,13 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnSalvar = new GRC.Componentes.CustomButton();
             this.lbTitulo = new System.Windows.Forms.Label();
+            this.txtQtdItemEsporadico = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtValorItemEsporadico = new MaterialSkin.Controls.MaterialTextBox();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQtdItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colValues = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colExcluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.tbcOs.SuspendLayout();
             this.tbpDadosOS.SuspendLayout();
             this.gpbInfoVenda.SuspendLayout();
@@ -447,8 +451,6 @@
             // txtId
             // 
             this.txtId.AcceptsTab = true;
-            this.txtId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtId.AnimateReadOnly = true;
             this.txtId.AutoWordSelection = true;
             this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -623,7 +625,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox6.BackColor = System.Drawing.Color.White;
             this.groupBox6.Controls.Add(this.groupBox3);
-            this.groupBox6.Controls.Add(this.txtDescricao);
+            this.groupBox6.Controls.Add(this.txtDescricaoSaida);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.groupBox6.Location = new System.Drawing.Point(572, 244);
@@ -681,12 +683,12 @@
             this.txtGarantia.Hint = "Duração (dias)";
             this.txtGarantia.LeadingIcon = null;
             this.txtGarantia.LeaveOnEnterKey = true;
-            this.txtGarantia.Location = new System.Drawing.Point(183, 33);
+            this.txtGarantia.Location = new System.Drawing.Point(170, 33);
             this.txtGarantia.MaxLength = 60;
             this.txtGarantia.MouseState = MaterialSkin.MouseState.OUT;
             this.txtGarantia.Multiline = false;
             this.txtGarantia.Name = "txtGarantia";
-            this.txtGarantia.Size = new System.Drawing.Size(136, 50);
+            this.txtGarantia.Size = new System.Drawing.Size(167, 50);
             this.txtGarantia.TabIndex = 78;
             this.txtGarantia.Text = "";
             this.txtGarantia.TrailingIcon = null;
@@ -718,32 +720,32 @@
             this.txtInicioGarantia.TextChanged += new System.EventHandler(this.txtInicioGarantia_TextChanged);
             this.txtInicioGarantia.Leave += new System.EventHandler(this.txtInicioGarantia_Leave);
             // 
-            // txtDescricao
+            // txtDescricaoSaida
             // 
-            this.txtDescricao.AnimateReadOnly = false;
-            this.txtDescricao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtDescricao.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtDescricao.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDescricao.Depth = 0;
-            this.txtDescricao.HideSelection = true;
-            this.txtDescricao.Hint = "Descrição do Serviço Realizado";
-            this.txtDescricao.Location = new System.Drawing.Point(6, 25);
-            this.txtDescricao.MaxLength = 300;
-            this.txtDescricao.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.PasswordChar = '\0';
-            this.txtDescricao.ReadOnly = false;
-            this.txtDescricao.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtDescricao.SelectedText = "";
-            this.txtDescricao.SelectionLength = 0;
-            this.txtDescricao.SelectionStart = 0;
-            this.txtDescricao.ShortcutsEnabled = true;
-            this.txtDescricao.Size = new System.Drawing.Size(492, 127);
-            this.txtDescricao.TabIndex = 79;
-            this.txtDescricao.TabStop = false;
-            this.txtDescricao.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtDescricao.UseAccent = false;
-            this.txtDescricao.UseSystemPasswordChar = false;
+            this.txtDescricaoSaida.AnimateReadOnly = false;
+            this.txtDescricaoSaida.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtDescricaoSaida.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtDescricaoSaida.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDescricaoSaida.Depth = 0;
+            this.txtDescricaoSaida.HideSelection = true;
+            this.txtDescricaoSaida.Hint = "Descrição do Serviço Realizado";
+            this.txtDescricaoSaida.Location = new System.Drawing.Point(6, 25);
+            this.txtDescricaoSaida.MaxLength = 300;
+            this.txtDescricaoSaida.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtDescricaoSaida.Name = "txtDescricaoSaida";
+            this.txtDescricaoSaida.PasswordChar = '\0';
+            this.txtDescricaoSaida.ReadOnly = false;
+            this.txtDescricaoSaida.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDescricaoSaida.SelectedText = "";
+            this.txtDescricaoSaida.SelectionLength = 0;
+            this.txtDescricaoSaida.SelectionStart = 0;
+            this.txtDescricaoSaida.ShortcutsEnabled = true;
+            this.txtDescricaoSaida.Size = new System.Drawing.Size(492, 127);
+            this.txtDescricaoSaida.TabIndex = 79;
+            this.txtDescricaoSaida.TabStop = false;
+            this.txtDescricaoSaida.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtDescricaoSaida.UseAccent = false;
+            this.txtDescricaoSaida.UseSystemPasswordChar = false;
             // 
             // txtObservacoes
             // 
@@ -803,7 +805,7 @@
             this.groupBox5.BackColor = System.Drawing.Color.White;
             this.groupBox5.Controls.Add(this.groupBox8);
             this.groupBox5.Controls.Add(this.materialCheckbox3);
-            this.groupBox5.Controls.Add(this.materialTextBox1);
+            this.groupBox5.Controls.Add(this.txtInfoAdicional);
             this.groupBox5.Controls.Add(this.materialCheckbox2);
             this.groupBox5.Controls.Add(this.materialCheckbox1);
             this.groupBox5.Controls.Add(this.txtOutros);
@@ -1025,27 +1027,27 @@
             this.materialCheckbox3.Text = "Wi-Fi / Bluetooth";
             this.materialCheckbox3.UseVisualStyleBackColor = false;
             // 
-            // materialTextBox1
+            // txtInfoAdicional
             // 
-            this.materialTextBox1.AcceptsTab = true;
-            this.materialTextBox1.AnimateReadOnly = false;
-            this.materialTextBox1.AutoWordSelection = true;
-            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox1.Depth = 0;
-            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox1.Hint = "Informações Adicionais (cor, capacidade)";
-            this.materialTextBox1.LeadingIcon = null;
-            this.materialTextBox1.LeaveOnEnterKey = true;
-            this.materialTextBox1.Location = new System.Drawing.Point(6, 89);
-            this.materialTextBox1.MaxLength = 60;
-            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox1.Multiline = false;
-            this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(1070, 50);
-            this.materialTextBox1.TabIndex = 143;
-            this.materialTextBox1.Text = "";
-            this.materialTextBox1.TrailingIcon = null;
-            this.materialTextBox1.UseAccent = false;
+            this.txtInfoAdicional.AcceptsTab = true;
+            this.txtInfoAdicional.AnimateReadOnly = false;
+            this.txtInfoAdicional.AutoWordSelection = true;
+            this.txtInfoAdicional.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtInfoAdicional.Depth = 0;
+            this.txtInfoAdicional.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtInfoAdicional.Hint = "Informações Adicionais (cor, capacidade)";
+            this.txtInfoAdicional.LeadingIcon = null;
+            this.txtInfoAdicional.LeaveOnEnterKey = true;
+            this.txtInfoAdicional.Location = new System.Drawing.Point(6, 89);
+            this.txtInfoAdicional.MaxLength = 60;
+            this.txtInfoAdicional.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtInfoAdicional.Multiline = false;
+            this.txtInfoAdicional.Name = "txtInfoAdicional";
+            this.txtInfoAdicional.Size = new System.Drawing.Size(1070, 50);
+            this.txtInfoAdicional.TabIndex = 143;
+            this.txtInfoAdicional.Text = "";
+            this.txtInfoAdicional.TrailingIcon = null;
+            this.txtInfoAdicional.UseAccent = false;
             // 
             // materialCheckbox2
             // 
@@ -1453,7 +1455,7 @@
             this.btnNovoItem.ForeColor = System.Drawing.Color.White;
             this.btnNovoItem.Image = ((System.Drawing.Image)(resources.GetObject("btnNovoItem.Image")));
             this.btnNovoItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNovoItem.Location = new System.Drawing.Point(366, 32);
+            this.btnNovoItem.Location = new System.Drawing.Point(7, 36);
             this.btnNovoItem.Name = "btnNovoItem";
             this.btnNovoItem.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnNovoItem.Size = new System.Drawing.Size(175, 37);
@@ -1480,7 +1482,7 @@
             this.btnConsultaItem.ForeColor = System.Drawing.Color.White;
             this.btnConsultaItem.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultaItem.Image")));
             this.btnConsultaItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnConsultaItem.Location = new System.Drawing.Point(9, 32);
+            this.btnConsultaItem.Location = new System.Drawing.Point(369, 36);
             this.btnConsultaItem.Name = "btnConsultaItem";
             this.btnConsultaItem.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnConsultaItem.Size = new System.Drawing.Size(172, 37);
@@ -1495,6 +1497,8 @@
             // gpEsporadico
             // 
             this.gpEsporadico.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.gpEsporadico.Controls.Add(this.txtValorItemEsporadico);
+            this.gpEsporadico.Controls.Add(this.txtQtdItemEsporadico);
             this.gpEsporadico.Controls.Add(this.dgvItens);
             this.gpEsporadico.Controls.Add(this.txtNomeItemEsporadico);
             this.gpEsporadico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1519,29 +1523,31 @@
             this.dgvItens.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvItens.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvItens.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvItens.ColumnHeadersHeight = 35;
             this.dgvItens.ColumnHeadersVisible = false;
             this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
             this.colDescricao,
+            this.colQtdItem,
+            this.colValues,
             this.colExcluir});
             this.dgvItens.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.MintCream;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleTurquoise;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvItens.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.MintCream;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvItens.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvItens.EnableHeadersVisualStyles = false;
             this.dgvItens.GridColor = System.Drawing.Color.Black;
             this.dgvItens.Location = new System.Drawing.Point(6, 79);
@@ -1550,34 +1556,12 @@
             this.dgvItens.ReadOnly = true;
             this.dgvItens.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvItens.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvItens.Size = new System.Drawing.Size(522, 434);
             this.dgvItens.TabIndex = 98;
             this.dgvItens.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItens_CellContentClick);
-            // 
-            // colId
-            // 
-            this.colId.FillWeight = 1F;
-            this.colId.HeaderText = "Id";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.Visible = false;
-            // 
-            // colDescricao
-            // 
-            this.colDescricao.FillWeight = 250F;
-            this.colDescricao.HeaderText = "Nome Item";
-            this.colDescricao.Name = "colDescricao";
-            this.colDescricao.ReadOnly = true;
-            // 
-            // colExcluir
-            // 
-            this.colExcluir.FillWeight = 45F;
-            this.colExcluir.HeaderText = "";
-            this.colExcluir.Name = "colExcluir";
-            this.colExcluir.ReadOnly = true;
             // 
             // txtNomeItemEsporadico
             // 
@@ -1590,12 +1574,12 @@
             this.txtNomeItemEsporadico.Hint = "Nome";
             this.txtNomeItemEsporadico.LeadingIcon = null;
             this.txtNomeItemEsporadico.LeaveOnEnterKey = true;
-            this.txtNomeItemEsporadico.Location = new System.Drawing.Point(6, 23);
+            this.txtNomeItemEsporadico.Location = new System.Drawing.Point(6, 25);
             this.txtNomeItemEsporadico.MaxLength = 60;
             this.txtNomeItemEsporadico.MouseState = MaterialSkin.MouseState.OUT;
             this.txtNomeItemEsporadico.Multiline = false;
             this.txtNomeItemEsporadico.Name = "txtNomeItemEsporadico";
-            this.txtNomeItemEsporadico.Size = new System.Drawing.Size(522, 50);
+            this.txtNomeItemEsporadico.Size = new System.Drawing.Size(286, 50);
             this.txtNomeItemEsporadico.TabIndex = 2;
             this.txtNomeItemEsporadico.Text = "";
             this.txtNomeItemEsporadico.TrailingIcon = ((System.Drawing.Image)(resources.GetObject("txtNomeItemEsporadico.TrailingIcon")));
@@ -1645,7 +1629,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.label5.Location = new System.Drawing.Point(309, 38);
+            this.label5.Location = new System.Drawing.Point(309, 80);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(173, 20);
             this.label5.TabIndex = 117;
@@ -1656,7 +1640,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.label4.Location = new System.Drawing.Point(18, 38);
+            this.label4.Location = new System.Drawing.Point(16, 80);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 20);
             this.label4.TabIndex = 116;
@@ -1681,7 +1665,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(115, 225);
+            this.pictureBox4.Location = new System.Drawing.Point(113, 267);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(50, 22);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1699,7 +1683,7 @@
             this.txtVezes.Hint = "Vezes";
             this.txtVezes.LeadingIcon = null;
             this.txtVezes.LeaveOnEnterKey = true;
-            this.txtVezes.Location = new System.Drawing.Point(318, 266);
+            this.txtVezes.Location = new System.Drawing.Point(318, 308);
             this.txtVezes.MaxLength = 60;
             this.txtVezes.MouseState = MaterialSkin.MouseState.OUT;
             this.txtVezes.Multiline = false;
@@ -1713,7 +1697,7 @@
             // rbAVista
             // 
             this.rbAVista.AutoSize = true;
-            this.rbAVista.Location = new System.Drawing.Point(320, 110);
+            this.rbAVista.Location = new System.Drawing.Point(320, 152);
             this.rbAVista.Name = "rbAVista";
             this.rbAVista.Size = new System.Drawing.Size(85, 24);
             this.rbAVista.TabIndex = 111;
@@ -1724,7 +1708,7 @@
             // rbParcelado
             // 
             this.rbParcelado.AutoSize = true;
-            this.rbParcelado.Location = new System.Drawing.Point(318, 80);
+            this.rbParcelado.Location = new System.Drawing.Point(318, 122);
             this.rbParcelado.Name = "rbParcelado";
             this.rbParcelado.Size = new System.Drawing.Size(107, 24);
             this.rbParcelado.TabIndex = 110;
@@ -1739,7 +1723,7 @@
             this.chkPago.Checked = true;
             this.chkPago.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkPago.Depth = 0;
-            this.chkPago.Location = new System.Drawing.Point(535, 31);
+            this.chkPago.Location = new System.Drawing.Point(535, 73);
             this.chkPago.Margin = new System.Windows.Forms.Padding(0);
             this.chkPago.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkPago.MouseState = MaterialSkin.MouseState.HOVER;
@@ -1762,7 +1746,7 @@
             this.txtValorPago.Hint = "Valor Pago";
             this.txtValorPago.LeadingIcon = null;
             this.txtValorPago.LeaveOnEnterKey = true;
-            this.txtValorPago.Location = new System.Drawing.Point(318, 210);
+            this.txtValorPago.Location = new System.Drawing.Point(318, 252);
             this.txtValorPago.MaxLength = 60;
             this.txtValorPago.MouseState = MaterialSkin.MouseState.OUT;
             this.txtValorPago.Multiline = false;
@@ -1784,7 +1768,7 @@
             this.txtFormaPagamento.Hint = "Forma de Pagamento";
             this.txtFormaPagamento.LeadingIcon = null;
             this.txtFormaPagamento.LeaveOnEnterKey = true;
-            this.txtFormaPagamento.Location = new System.Drawing.Point(318, 154);
+            this.txtFormaPagamento.Location = new System.Drawing.Point(318, 196);
             this.txtFormaPagamento.MaxLength = 60;
             this.txtFormaPagamento.MouseState = MaterialSkin.MouseState.OUT;
             this.txtFormaPagamento.Multiline = false;
@@ -1807,7 +1791,7 @@
             this.txtLucro.Hint = "Lucro Serviço";
             this.txtLucro.LeadingIcon = null;
             this.txtLucro.LeaveOnEnterKey = true;
-            this.txtLucro.Location = new System.Drawing.Point(24, 253);
+            this.txtLucro.Location = new System.Drawing.Point(22, 295);
             this.txtLucro.MaxLength = 60;
             this.txtLucro.MouseState = MaterialSkin.MouseState.OUT;
             this.txtLucro.Multiline = false;
@@ -1831,12 +1815,12 @@
             this.txtCustoManual.Hint = "Custo Peças Esporádicas";
             this.txtCustoManual.LeadingIcon = null;
             this.txtCustoManual.LeaveOnEnterKey = true;
-            this.txtCustoManual.Location = new System.Drawing.Point(1066, 18);
+            this.txtCustoManual.Location = new System.Drawing.Point(877, 18);
             this.txtCustoManual.MaxLength = 60;
             this.txtCustoManual.MouseState = MaterialSkin.MouseState.OUT;
             this.txtCustoManual.Multiline = false;
             this.txtCustoManual.Name = "txtCustoManual";
-            this.txtCustoManual.Size = new System.Drawing.Size(10, 50);
+            this.txtCustoManual.Size = new System.Drawing.Size(199, 50);
             this.txtCustoManual.TabIndex = 94;
             this.txtCustoManual.Text = "R$ 100,00";
             this.txtCustoManual.TrailingIcon = null;
@@ -1846,7 +1830,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(115, 139);
+            this.pictureBox1.Location = new System.Drawing.Point(113, 181);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 24);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1864,7 +1848,7 @@
             this.txtTotalCobrado.Hint = "Total Cobrado";
             this.txtTotalCobrado.LeadingIcon = null;
             this.txtTotalCobrado.LeaveOnEnterKey = true;
-            this.txtTotalCobrado.Location = new System.Drawing.Point(23, 169);
+            this.txtTotalCobrado.Location = new System.Drawing.Point(21, 211);
             this.txtTotalCobrado.MaxLength = 60;
             this.txtTotalCobrado.MouseState = MaterialSkin.MouseState.OUT;
             this.txtTotalCobrado.Multiline = false;
@@ -1892,7 +1876,7 @@
             this.txtTotalPecas.Hint = "Custo de Peças";
             this.txtTotalPecas.LeadingIcon = null;
             this.txtTotalPecas.LeaveOnEnterKey = true;
-            this.txtTotalPecas.Location = new System.Drawing.Point(22, 83);
+            this.txtTotalPecas.Location = new System.Drawing.Point(20, 125);
             this.txtTotalPecas.MaxLength = 60;
             this.txtTotalPecas.MouseState = MaterialSkin.MouseState.OUT;
             this.txtTotalPecas.Multiline = false;
@@ -2049,7 +2033,7 @@
             // 
             this.pn1.BackColor = System.Drawing.Color.Transparent;
             this.pn1.Color1 = System.Drawing.Color.Black;
-            this.pn1.Color2 = System.Drawing.Color.SlateBlue;
+            this.pn1.Color2 = System.Drawing.Color.RoyalBlue;
             this.pn1.Controls.Add(this.lbDataAtual);
             this.pn1.CornerRadius = 10;
             this.pn1.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -2122,6 +2106,84 @@
             this.lbTitulo.TabIndex = 173;
             this.lbTitulo.Text = "Cadastro de Ordem de Serviço";
             // 
+            // txtQtdItemEsporadico
+            // 
+            this.txtQtdItemEsporadico.AcceptsTab = true;
+            this.txtQtdItemEsporadico.AnimateReadOnly = false;
+            this.txtQtdItemEsporadico.AutoWordSelection = true;
+            this.txtQtdItemEsporadico.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtQtdItemEsporadico.Depth = 0;
+            this.txtQtdItemEsporadico.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtQtdItemEsporadico.Hint = "Qtd";
+            this.txtQtdItemEsporadico.LeadingIcon = null;
+            this.txtQtdItemEsporadico.LeaveOnEnterKey = true;
+            this.txtQtdItemEsporadico.Location = new System.Drawing.Point(298, 25);
+            this.txtQtdItemEsporadico.MaxLength = 60;
+            this.txtQtdItemEsporadico.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtQtdItemEsporadico.Multiline = false;
+            this.txtQtdItemEsporadico.Name = "txtQtdItemEsporadico";
+            this.txtQtdItemEsporadico.Size = new System.Drawing.Size(105, 50);
+            this.txtQtdItemEsporadico.TabIndex = 99;
+            this.txtQtdItemEsporadico.Text = "";
+            this.txtQtdItemEsporadico.TrailingIcon = null;
+            this.txtQtdItemEsporadico.UseAccent = false;
+            // 
+            // txtValorItemEsporadico
+            // 
+            this.txtValorItemEsporadico.AcceptsTab = true;
+            this.txtValorItemEsporadico.AnimateReadOnly = false;
+            this.txtValorItemEsporadico.AutoWordSelection = true;
+            this.txtValorItemEsporadico.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtValorItemEsporadico.Depth = 0;
+            this.txtValorItemEsporadico.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtValorItemEsporadico.Hint = "Valor";
+            this.txtValorItemEsporadico.LeadingIcon = null;
+            this.txtValorItemEsporadico.LeaveOnEnterKey = true;
+            this.txtValorItemEsporadico.Location = new System.Drawing.Point(409, 25);
+            this.txtValorItemEsporadico.MaxLength = 60;
+            this.txtValorItemEsporadico.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtValorItemEsporadico.Multiline = false;
+            this.txtValorItemEsporadico.Name = "txtValorItemEsporadico";
+            this.txtValorItemEsporadico.Size = new System.Drawing.Size(119, 50);
+            this.txtValorItemEsporadico.TabIndex = 100;
+            this.txtValorItemEsporadico.Text = "";
+            this.txtValorItemEsporadico.TrailingIcon = null;
+            this.txtValorItemEsporadico.UseAccent = false;
+            // 
+            // colId
+            // 
+            this.colId.FillWeight = 1F;
+            this.colId.HeaderText = "Id";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Visible = false;
+            // 
+            // colDescricao
+            // 
+            this.colDescricao.FillWeight = 250F;
+            this.colDescricao.HeaderText = "Item";
+            this.colDescricao.Name = "colDescricao";
+            this.colDescricao.ReadOnly = true;
+            // 
+            // colQtdItem
+            // 
+            this.colQtdItem.HeaderText = "Qtd";
+            this.colQtdItem.Name = "colQtdItem";
+            this.colQtdItem.ReadOnly = true;
+            // 
+            // colValues
+            // 
+            this.colValues.HeaderText = "Valor";
+            this.colValues.Name = "colValues";
+            this.colValues.ReadOnly = true;
+            // 
+            // colExcluir
+            // 
+            this.colExcluir.FillWeight = 45F;
+            this.colExcluir.HeaderText = "";
+            this.colExcluir.Name = "colExcluir";
+            this.colExcluir.ReadOnly = true;
+            // 
             // CadastroOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2188,7 +2250,7 @@
         private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtObservacoes;
         private MaterialSkin.Controls.MaterialTextBox txtInicioGarantia;
         private MaterialSkin.Controls.MaterialComboBox cbTipoServico;
-        private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtDescricao;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtDescricaoSaida;
         private MaterialSkin.Controls.MaterialTextBox txtGarantia;
         private MaterialSkin.Controls.MaterialTextBox txtCliente;
         private Componentes.CustomButton btnConsultaItem;
@@ -2214,9 +2276,6 @@
         private MaterialSkin.Controls.MaterialTextBox txtNomeItemEsporadico;
         private System.Windows.Forms.DataGridView dgvItens;
         private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtObservacoesCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDescricao;
-        private System.Windows.Forms.DataGridViewImageColumn colExcluir;
         private Componentes.RoundedPanel pnStatus;
         private System.Windows.Forms.TabPage tbpDadosAparelho;
         private System.Windows.Forms.GroupBox groupBox5;
@@ -2279,11 +2338,18 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private Componentes.RoundedPanel pn1;
         private System.Windows.Forms.Label lbDataAtual;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
+        private MaterialSkin.Controls.MaterialTextBox txtInfoAdicional;
         private MaterialSkin.Controls.MaterialCheckbox materialCheckbox2;
         private MaterialSkin.Controls.MaterialCheckbox materialCheckbox1;
         private MaterialSkin.Controls.MaterialCheckbox materialCheckbox3;
         private System.Windows.Forms.GroupBox groupBox8;
         private Componentes.ModernBox modernBox1;
+        private MaterialSkin.Controls.MaterialTextBox txtValorItemEsporadico;
+        private MaterialSkin.Controls.MaterialTextBox txtQtdItemEsporadico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDescricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colQtdItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colValues;
+        private System.Windows.Forms.DataGridViewImageColumn colExcluir;
     }
 }

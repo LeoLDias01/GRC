@@ -129,7 +129,7 @@ namespace GRC.Telas
             
             else btnExportar.Enabled = false;
 
-            txtDescricao.Focus();
+            txtDescricaoSaida.Focus();
         }
         private void CarregaDados()
         {
@@ -154,7 +154,7 @@ namespace GRC.Telas
 
                 txtId.Text = _idOS.ToString();
                 txtRelatorioTecnico.Text = dadosOs.DescricaoProblema;
-                txtDescricao.Text = dadosOs.DescricaoSolucao.ToString();
+                txtDescricaoSaida.Text = dadosOs.DescricaoSolucao.ToString();
                 cbTipoServico.SelectedValue = dadosOs.TipoServico;
                 _StatusAntigo = dadosOs.Status;
                 cbStatus.SelectedValue = _StatusAntigo;
@@ -854,7 +854,7 @@ namespace GRC.Telas
                     Id = _idOS,
                     DadosCliente = _cliente,
                     DescricaoProblema = !string.IsNullOrWhiteSpace(txtRelatorioTecnico.Text) ? txtRelatorioTecnico.Text : string.Empty,
-                    DescricaoSolucao = !string.IsNullOrWhiteSpace(txtDescricao.Text) ? txtDescricao.Text : string.Empty,
+                    DescricaoSolucao = !string.IsNullOrWhiteSpace(txtDescricaoSaida.Text) ? txtDescricaoSaida.Text : string.Empty,
                     TipoServico = Convert.ToInt32(cbTipoServico.SelectedValue),
                     StatusAntigo = _StatusAntigo,
                     Status = Convert.ToInt32(cbStatus.SelectedValue),
@@ -916,7 +916,7 @@ namespace GRC.Telas
             txtId.Clear();
             txtCliente.Clear();
             txtIdentidade.Clear();
-            txtDescricao.Clear();
+            txtDescricaoSaida.Clear();
             txtRelatorioTecnico.Clear();
             txtObservacoesCliente.Clear();
             txtGarantia.Clear();
@@ -955,7 +955,7 @@ namespace GRC.Telas
             if (string.IsNullOrWhiteSpace(txtRelatorioTecnico.Text))
             {
                 new AlertBox(Color.Goldenrod, Color.Lime, Color.Yellow, Resources.Warning, "Ordem de Serviço", "Item sem nome válido", "O nome do item é obrigatório", false).ShowDialog();
-                txtDescricao.Focus();
+                txtDescricaoSaida.Focus();
                 return false;
             }
             else if (_cliente.Id < 1 && _cliente.Nome != string.Empty)

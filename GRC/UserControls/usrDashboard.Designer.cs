@@ -34,48 +34,16 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(usrDashboard));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(usrDashboard));
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.crtDadosProdutividade = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.crtDadosOS = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pnCustomFilter = new System.Windows.Forms.Panel();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.modernBox14 = new GRC.Componentes.ModernBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dgvItens = new System.Windows.Forms.DataGridView();
-            this.colFavorito = new System.Windows.Forms.DataGridViewImageColumn();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colImagem = new System.Windows.Forms.DataGridViewImageColumn();
-            this.colProduto = new System.Windows.Forms.DataGridViewImageColumn();
-            this.colDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCodigoBarras = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFabricante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQtdMinima = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAtivo = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnFiltroPersonalizado = new GRC.Componentes.ModernBox();
-            this.lbPersonalizado = new System.Windows.Forms.Label();
-            this.btnSemana = new GRC.Componentes.ModernBox();
-            this.lbSemana = new System.Windows.Forms.Label();
-            this.btnMes = new GRC.Componentes.ModernBox();
-            this.lbMes = new System.Windows.Forms.Label();
-            this.btnOntem = new GRC.Componentes.ModernBox();
-            this.lbOntem = new System.Windows.Forms.Label();
-            this.btnHoje = new GRC.Componentes.ModernBox();
-            this.lbHoje = new System.Windows.Forms.Label();
-            this.roundedTextBox3 = new GRC.Componentes.RoundedTextBox();
-            this.roundedTextBox2 = new GRC.Componentes.RoundedTextBox();
-            this.customButton1 = new GRC.Componentes.CustomButton();
             this.modernBox7 = new GRC.Componentes.ModernBox();
             this.modernBox8 = new GRC.Componentes.ModernBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -96,6 +64,38 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnFiltroPersonalizado = new GRC.Componentes.ModernBox();
+            this.lbPersonalizado = new System.Windows.Forms.Label();
+            this.btnSemana = new GRC.Componentes.ModernBox();
+            this.lbSemana = new System.Windows.Forms.Label();
+            this.btnMes = new GRC.Componentes.ModernBox();
+            this.lbMes = new System.Windows.Forms.Label();
+            this.btnOntem = new GRC.Componentes.ModernBox();
+            this.lbOntem = new System.Windows.Forms.Label();
+            this.btnHoje = new GRC.Componentes.ModernBox();
+            this.lbHoje = new System.Windows.Forms.Label();
+            this.pnCustomFilter = new System.Windows.Forms.Panel();
+            this.roundedTextBox3 = new GRC.Componentes.RoundedTextBox();
+            this.roundedTextBox2 = new GRC.Componentes.RoundedTextBox();
+            this.customButton1 = new GRC.Componentes.CustomButton();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.modernBox14 = new GRC.Componentes.ModernBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dgvItens = new System.Windows.Forms.DataGridView();
+            this.colFavorito = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colImagem = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colProduto = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCodigoBarras = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFabricante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQtdMinima = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQtd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAtivo = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -103,20 +103,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.crtDadosProdutividade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.crtDadosOS)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.pnCustomFilter.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
-            this.modernBox14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
-            this.btnFiltroPersonalizado.SuspendLayout();
-            this.btnSemana.SuspendLayout();
-            this.btnMes.SuspendLayout();
-            this.btnOntem.SuspendLayout();
-            this.btnHoje.SuspendLayout();
             this.modernBox7.SuspendLayout();
             this.modernBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -129,6 +115,20 @@
             this.modernBox1.SuspendLayout();
             this.modernBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.btnFiltroPersonalizado.SuspendLayout();
+            this.btnSemana.SuspendLayout();
+            this.btnMes.SuspendLayout();
+            this.btnOntem.SuspendLayout();
+            this.btnHoje.SuspendLayout();
+            this.pnCustomFilter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            this.modernBox14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
             this.SuspendLayout();
             // 
             // label11
@@ -238,483 +238,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1229, 98);
             this.tableLayoutPanel1.TabIndex = 42;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.btnFiltroPersonalizado);
-            this.panel1.Controls.Add(this.btnSemana);
-            this.panel1.Controls.Add(this.btnMes);
-            this.panel1.Controls.Add(this.btnOntem);
-            this.panel1.Controls.Add(this.btnHoje);
-            this.panel1.Location = new System.Drawing.Point(598, 15);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(643, 58);
-            this.panel1.TabIndex = 45;
-            // 
-            // pnCustomFilter
-            // 
-            this.pnCustomFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnCustomFilter.Controls.Add(this.roundedTextBox3);
-            this.pnCustomFilter.Controls.Add(this.roundedTextBox2);
-            this.pnCustomFilter.Controls.Add(this.customButton1);
-            this.pnCustomFilter.Location = new System.Drawing.Point(208, 19);
-            this.pnCustomFilter.Name = "pnCustomFilter";
-            this.pnCustomFilter.Size = new System.Drawing.Size(387, 51);
-            this.pnCustomFilter.TabIndex = 44;
-            this.pnCustomFilter.Visible = false;
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer2.Location = new System.Drawing.Point(7, 180);
-            this.splitContainer2.Name = "splitContainer2";
-            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.splitContainer1);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.modernBox14);
-            this.splitContainer2.Size = new System.Drawing.Size(1234, 509);
-            this.splitContainer2.SplitterDistance = 221;
-            this.splitContainer2.TabIndex = 179;
-            // 
-            // modernBox14
-            // 
-            this.modernBox14.BackColor = System.Drawing.Color.Transparent;
-            this.modernBox14.BorderColor = System.Drawing.Color.White;
-            this.modernBox14.BorderRadius = 12;
-            this.modernBox14.BorderSize = 1;
-            this.modernBox14.Controls.Add(this.label12);
-            this.modernBox14.Controls.Add(this.pictureBox5);
-            this.modernBox14.Controls.Add(this.label9);
-            this.modernBox14.Controls.Add(this.dgvItens);
-            this.modernBox14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.modernBox14.FillColor = System.Drawing.Color.White;
-            this.modernBox14.Location = new System.Drawing.Point(0, 0);
-            this.modernBox14.Name = "modernBox14";
-            this.modernBox14.Padding = new System.Windows.Forms.Padding(13);
-            this.modernBox14.ShadowAngle = 135;
-            this.modernBox14.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.modernBox14.ShadowSize = 8;
-            this.modernBox14.Size = new System.Drawing.Size(1234, 284);
-            this.modernBox14.TabIndex = 178;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Maroon;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Variable Display", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(238, 21);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(33, 20);
-            this.label12.TabIndex = 178;
-            this.label12.Text = "100";
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(27, 18);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(18, 23);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 176;
-            this.pictureBox5.TabStop = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.label9.Font = new System.Drawing.Font("Segoe UI Variable Display", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(51, 21);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(181, 20);
-            this.label9.TabIndex = 175;
-            this.label9.Text = "Itens com Estoque Baixo";
-            // 
-            // dgvItens
-            // 
-            this.dgvItens.AllowUserToAddRows = false;
-            this.dgvItens.AllowUserToDeleteRows = false;
-            this.dgvItens.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvItens.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvItens.BackgroundColor = System.Drawing.Color.White;
-            this.dgvItens.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvItens.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dgvItens.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvItens.ColumnHeadersHeight = 35;
-            this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colFavorito,
-            this.colId,
-            this.colImagem,
-            this.colProduto,
-            this.colDescricao,
-            this.colCodigoBarras,
-            this.colFabricante,
-            this.colCategoria,
-            this.colQtdMinima,
-            this.colQtd,
-            this.colAtivo});
-            this.dgvItens.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(218)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvItens.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvItens.EnableHeadersVisualStyles = false;
-            this.dgvItens.GridColor = System.Drawing.Color.Silver;
-            this.dgvItens.Location = new System.Drawing.Point(17, 52);
-            this.dgvItens.MultiSelect = false;
-            this.dgvItens.Name = "dgvItens";
-            this.dgvItens.ReadOnly = true;
-            this.dgvItens.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvItens.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItens.Size = new System.Drawing.Size(1201, 216);
-            this.dgvItens.TabIndex = 4;
-            // 
-            // colFavorito
-            // 
-            this.colFavorito.DataPropertyName = "Favorito";
-            this.colFavorito.FillWeight = 6.146037F;
-            this.colFavorito.HeaderText = "";
-            this.colFavorito.Name = "colFavorito";
-            this.colFavorito.ReadOnly = true;
-            // 
-            // colId
-            // 
-            this.colId.DataPropertyName = "Id";
-            this.colId.FillWeight = 0.6504041F;
-            this.colId.HeaderText = "Id";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.Visible = false;
-            // 
-            // colImagem
-            // 
-            this.colImagem.DataPropertyName = "FotoItem";
-            this.colImagem.FillWeight = 12.98365F;
-            this.colImagem.HeaderText = "Foto";
-            this.colImagem.Name = "colImagem";
-            this.colImagem.ReadOnly = true;
-            // 
-            // colProduto
-            // 
-            this.colProduto.DataPropertyName = "ItemVenda";
-            this.colProduto.FillWeight = 21.22982F;
-            this.colProduto.HeaderText = "Item/Venda";
-            this.colProduto.Image = global::GRC.Properties.Resources.Marca_Venda;
-            this.colProduto.Name = "colProduto";
-            this.colProduto.ReadOnly = true;
-            this.colProduto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // colDescricao
-            // 
-            this.colDescricao.DataPropertyName = "Descricao";
-            this.colDescricao.FillWeight = 35.69515F;
-            this.colDescricao.HeaderText = "Item";
-            this.colDescricao.Name = "colDescricao";
-            this.colDescricao.ReadOnly = true;
-            // 
-            // colCodigoBarras
-            // 
-            this.colCodigoBarras.DataPropertyName = "CodBarras";
-            this.colCodigoBarras.FillWeight = 35.01702F;
-            this.colCodigoBarras.HeaderText = "Código de Barras";
-            this.colCodigoBarras.Name = "colCodigoBarras";
-            this.colCodigoBarras.ReadOnly = true;
-            this.colCodigoBarras.Visible = false;
-            // 
-            // colFabricante
-            // 
-            this.colFabricante.DataPropertyName = "DescricaoFabricante";
-            this.colFabricante.FillWeight = 25.27785F;
-            this.colFabricante.HeaderText = "Marca";
-            this.colFabricante.Name = "colFabricante";
-            this.colFabricante.ReadOnly = true;
-            // 
-            // colCategoria
-            // 
-            this.colCategoria.DataPropertyName = "DescricaoCategoria";
-            this.colCategoria.FillWeight = 16.20491F;
-            this.colCategoria.HeaderText = "Categoria";
-            this.colCategoria.Name = "colCategoria";
-            this.colCategoria.ReadOnly = true;
-            // 
-            // colQtdMinima
-            // 
-            this.colQtdMinima.HeaderText = "Mínima";
-            this.colQtdMinima.Name = "colQtdMinima";
-            this.colQtdMinima.ReadOnly = true;
-            this.colQtdMinima.Visible = false;
-            // 
-            // colQtd
-            // 
-            this.colQtd.DataPropertyName = "Quantidade";
-            this.colQtd.FillWeight = 10.428F;
-            this.colQtd.HeaderText = "Qtd";
-            this.colQtd.Name = "colQtd";
-            this.colQtd.ReadOnly = true;
-            // 
-            // colAtivo
-            // 
-            this.colAtivo.DataPropertyName = "Ativo";
-            this.colAtivo.FillWeight = 20.67864F;
-            this.colAtivo.HeaderText = "Ativo";
-            this.colAtivo.Image = global::GRC.Properties.Resources.Marca_Ativo;
-            this.colAtivo.Name = "colAtivo";
-            this.colAtivo.ReadOnly = true;
-            this.colAtivo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // btnFiltroPersonalizado
-            // 
-            this.btnFiltroPersonalizado.BackColor = System.Drawing.Color.Transparent;
-            this.btnFiltroPersonalizado.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnFiltroPersonalizado.BorderRadius = 15;
-            this.btnFiltroPersonalizado.BorderSize = 1;
-            this.btnFiltroPersonalizado.Controls.Add(this.lbPersonalizado);
-            this.btnFiltroPersonalizado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFiltroPersonalizado.FillColor = System.Drawing.Color.White;
-            this.btnFiltroPersonalizado.Location = new System.Drawing.Point(479, 1);
-            this.btnFiltroPersonalizado.Name = "btnFiltroPersonalizado";
-            this.btnFiltroPersonalizado.Padding = new System.Windows.Forms.Padding(17);
-            this.btnFiltroPersonalizado.ShadowAngle = 135;
-            this.btnFiltroPersonalizado.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnFiltroPersonalizado.ShadowSize = 12;
-            this.btnFiltroPersonalizado.Size = new System.Drawing.Size(158, 57);
-            this.btnFiltroPersonalizado.TabIndex = 180;
-            // 
-            // lbPersonalizado
-            // 
-            this.lbPersonalizado.AutoSize = true;
-            this.lbPersonalizado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.lbPersonalizado.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbPersonalizado.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPersonalizado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbPersonalizado.Location = new System.Drawing.Point(17, 17);
-            this.lbPersonalizado.Name = "lbPersonalizado";
-            this.lbPersonalizado.Padding = new System.Windows.Forms.Padding(27, 4, 27, 4);
-            this.lbPersonalizado.Size = new System.Drawing.Size(137, 23);
-            this.lbPersonalizado.TabIndex = 176;
-            this.lbPersonalizado.Text = "Personalizado";
-            // 
-            // btnSemana
-            // 
-            this.btnSemana.BackColor = System.Drawing.Color.Transparent;
-            this.btnSemana.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnSemana.BorderRadius = 15;
-            this.btnSemana.BorderSize = 1;
-            this.btnSemana.Controls.Add(this.lbSemana);
-            this.btnSemana.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSemana.FillColor = System.Drawing.Color.White;
-            this.btnSemana.Location = new System.Drawing.Point(242, 0);
-            this.btnSemana.Name = "btnSemana";
-            this.btnSemana.Padding = new System.Windows.Forms.Padding(17);
-            this.btnSemana.ShadowAngle = 135;
-            this.btnSemana.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnSemana.ShadowSize = 12;
-            this.btnSemana.Size = new System.Drawing.Size(114, 57);
-            this.btnSemana.TabIndex = 178;
-            // 
-            // lbSemana
-            // 
-            this.lbSemana.AutoSize = true;
-            this.lbSemana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.lbSemana.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbSemana.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSemana.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbSemana.Location = new System.Drawing.Point(17, 17);
-            this.lbSemana.Name = "lbSemana";
-            this.lbSemana.Padding = new System.Windows.Forms.Padding(20, 4, 20, 4);
-            this.lbSemana.Size = new System.Drawing.Size(91, 23);
-            this.lbSemana.TabIndex = 176;
-            this.lbSemana.Text = "Semana";
-            // 
-            // btnMes
-            // 
-            this.btnMes.BackColor = System.Drawing.Color.Transparent;
-            this.btnMes.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnMes.BorderRadius = 15;
-            this.btnMes.BorderSize = 1;
-            this.btnMes.Controls.Add(this.lbMes);
-            this.btnMes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMes.FillColor = System.Drawing.Color.White;
-            this.btnMes.Location = new System.Drawing.Point(362, 0);
-            this.btnMes.Name = "btnMes";
-            this.btnMes.Padding = new System.Windows.Forms.Padding(17);
-            this.btnMes.ShadowAngle = 135;
-            this.btnMes.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnMes.ShadowSize = 12;
-            this.btnMes.Size = new System.Drawing.Size(114, 57);
-            this.btnMes.TabIndex = 179;
-            // 
-            // lbMes
-            // 
-            this.lbMes.AutoSize = true;
-            this.lbMes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.lbMes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbMes.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbMes.Location = new System.Drawing.Point(17, 17);
-            this.lbMes.Name = "lbMes";
-            this.lbMes.Padding = new System.Windows.Forms.Padding(27, 4, 27, 4);
-            this.lbMes.Size = new System.Drawing.Size(84, 23);
-            this.lbMes.TabIndex = 176;
-            this.lbMes.Text = "Mês";
-            // 
-            // btnOntem
-            // 
-            this.btnOntem.BackColor = System.Drawing.Color.Transparent;
-            this.btnOntem.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnOntem.BorderRadius = 15;
-            this.btnOntem.BorderSize = 1;
-            this.btnOntem.Controls.Add(this.lbOntem);
-            this.btnOntem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOntem.FillColor = System.Drawing.Color.White;
-            this.btnOntem.Location = new System.Drawing.Point(122, 1);
-            this.btnOntem.Name = "btnOntem";
-            this.btnOntem.Padding = new System.Windows.Forms.Padding(17);
-            this.btnOntem.ShadowAngle = 135;
-            this.btnOntem.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnOntem.ShadowSize = 12;
-            this.btnOntem.Size = new System.Drawing.Size(114, 57);
-            this.btnOntem.TabIndex = 177;
-            // 
-            // lbOntem
-            // 
-            this.lbOntem.AutoSize = true;
-            this.lbOntem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.lbOntem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbOntem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbOntem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbOntem.Location = new System.Drawing.Point(17, 17);
-            this.lbOntem.Name = "lbOntem";
-            this.lbOntem.Padding = new System.Windows.Forms.Padding(20, 4, 20, 4);
-            this.lbOntem.Size = new System.Drawing.Size(86, 23);
-            this.lbOntem.TabIndex = 176;
-            this.lbOntem.Text = "Ontem";
-            // 
-            // btnHoje
-            // 
-            this.btnHoje.BackColor = System.Drawing.Color.Transparent;
-            this.btnHoje.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnHoje.BorderRadius = 15;
-            this.btnHoje.BorderSize = 1;
-            this.btnHoje.Controls.Add(this.lbHoje);
-            this.btnHoje.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHoje.FillColor = System.Drawing.Color.White;
-            this.btnHoje.Location = new System.Drawing.Point(3, 0);
-            this.btnHoje.Name = "btnHoje";
-            this.btnHoje.Padding = new System.Windows.Forms.Padding(17);
-            this.btnHoje.ShadowAngle = 135;
-            this.btnHoje.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnHoje.ShadowSize = 12;
-            this.btnHoje.Size = new System.Drawing.Size(114, 57);
-            this.btnHoje.TabIndex = 0;
-            // 
-            // lbHoje
-            // 
-            this.lbHoje.AutoSize = true;
-            this.lbHoje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
-            this.lbHoje.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbHoje.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHoje.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbHoje.Location = new System.Drawing.Point(17, 17);
-            this.lbHoje.Name = "lbHoje";
-            this.lbHoje.Padding = new System.Windows.Forms.Padding(25, 4, 25, 4);
-            this.lbHoje.Size = new System.Drawing.Size(83, 23);
-            this.lbHoje.TabIndex = 176;
-            this.lbHoje.Text = "Hoje";
-            // 
-            // roundedTextBox3
-            // 
-            this.roundedTextBox3.BackColor = System.Drawing.Color.Transparent;
-            this.roundedTextBox3.BorderColor = System.Drawing.Color.Transparent;
-            this.roundedTextBox3.BorderRadius = 12;
-            this.roundedTextBox3.FillColor = System.Drawing.Color.White;
-            this.roundedTextBox3.Icon = null;
-            this.roundedTextBox3.IconPosition = GRC.Componentes.RoundedTextBox.IconPositionEnum.Right;
-            this.roundedTextBox3.Location = new System.Drawing.Point(175, 6);
-            this.roundedTextBox3.Name = "roundedTextBox3";
-            this.roundedTextBox3.Padding = new System.Windows.Forms.Padding(10);
-            this.roundedTextBox3.Placeholder = "Data Final";
-            this.roundedTextBox3.SelectedText = "";
-            this.roundedTextBox3.SelectionLength = 0;
-            this.roundedTextBox3.SelectionStart = 0;
-            this.roundedTextBox3.Size = new System.Drawing.Size(164, 40);
-            this.roundedTextBox3.TabIndex = 23;
-            this.roundedTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.roundedTextBox3.TextColor = System.Drawing.Color.Black;
-            this.roundedTextBox3.TextStyle = System.Drawing.FontStyle.Bold;
-            this.roundedTextBox3.UnderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            this.roundedTextBox3.UnderlineSize = 6;
-            // 
-            // roundedTextBox2
-            // 
-            this.roundedTextBox2.BackColor = System.Drawing.Color.Transparent;
-            this.roundedTextBox2.BorderColor = System.Drawing.Color.Transparent;
-            this.roundedTextBox2.BorderRadius = 12;
-            this.roundedTextBox2.FillColor = System.Drawing.Color.White;
-            this.roundedTextBox2.Icon = null;
-            this.roundedTextBox2.IconPosition = GRC.Componentes.RoundedTextBox.IconPositionEnum.Right;
-            this.roundedTextBox2.Location = new System.Drawing.Point(5, 6);
-            this.roundedTextBox2.Name = "roundedTextBox2";
-            this.roundedTextBox2.Padding = new System.Windows.Forms.Padding(10);
-            this.roundedTextBox2.Placeholder = "Data Inicial";
-            this.roundedTextBox2.SelectedText = "";
-            this.roundedTextBox2.SelectionLength = 0;
-            this.roundedTextBox2.SelectionStart = 0;
-            this.roundedTextBox2.Size = new System.Drawing.Size(164, 40);
-            this.roundedTextBox2.TabIndex = 15;
-            this.roundedTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.roundedTextBox2.TextColor = System.Drawing.Color.Black;
-            this.roundedTextBox2.TextStyle = System.Drawing.FontStyle.Bold;
-            this.roundedTextBox2.UnderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            this.roundedTextBox2.UnderlineSize = 6;
-            // 
-            // customButton1
-            // 
-            this.customButton1.BackColor = System.Drawing.Color.ForestGreen;
-            this.customButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton1.CorBorda = System.Drawing.Color.MediumSlateBlue;
-            this.customButton1.CorBotao = System.Drawing.Color.ForestGreen;
-            this.customButton1.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.customButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.customButton1.Image = ((System.Drawing.Image)(resources.GetObject("customButton1.Image")));
-            this.customButton1.Location = new System.Drawing.Point(345, 11);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(38, 31);
-            this.customButton1.TabIndex = 10;
-            this.customButton1.TamanhoBorda = 0;
-            this.customButton1.TamanhoRaio = 5;
-            this.customButton1.UseVisualStyleBackColor = false;
             // 
             // modernBox7
             // 
@@ -1008,6 +531,483 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "R$ 15.520,77";
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.btnFiltroPersonalizado);
+            this.panel1.Controls.Add(this.btnSemana);
+            this.panel1.Controls.Add(this.btnMes);
+            this.panel1.Controls.Add(this.btnOntem);
+            this.panel1.Controls.Add(this.btnHoje);
+            this.panel1.Location = new System.Drawing.Point(598, 15);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(643, 58);
+            this.panel1.TabIndex = 45;
+            // 
+            // btnFiltroPersonalizado
+            // 
+            this.btnFiltroPersonalizado.BackColor = System.Drawing.Color.Transparent;
+            this.btnFiltroPersonalizado.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnFiltroPersonalizado.BorderRadius = 15;
+            this.btnFiltroPersonalizado.BorderSize = 1;
+            this.btnFiltroPersonalizado.Controls.Add(this.lbPersonalizado);
+            this.btnFiltroPersonalizado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFiltroPersonalizado.FillColor = System.Drawing.Color.White;
+            this.btnFiltroPersonalizado.Location = new System.Drawing.Point(479, 1);
+            this.btnFiltroPersonalizado.Name = "btnFiltroPersonalizado";
+            this.btnFiltroPersonalizado.Padding = new System.Windows.Forms.Padding(17);
+            this.btnFiltroPersonalizado.ShadowAngle = 135;
+            this.btnFiltroPersonalizado.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnFiltroPersonalizado.ShadowSize = 12;
+            this.btnFiltroPersonalizado.Size = new System.Drawing.Size(158, 57);
+            this.btnFiltroPersonalizado.TabIndex = 180;
+            // 
+            // lbPersonalizado
+            // 
+            this.lbPersonalizado.AutoSize = true;
+            this.lbPersonalizado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.lbPersonalizado.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbPersonalizado.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPersonalizado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbPersonalizado.Location = new System.Drawing.Point(17, 17);
+            this.lbPersonalizado.Name = "lbPersonalizado";
+            this.lbPersonalizado.Padding = new System.Windows.Forms.Padding(27, 4, 27, 4);
+            this.lbPersonalizado.Size = new System.Drawing.Size(137, 23);
+            this.lbPersonalizado.TabIndex = 176;
+            this.lbPersonalizado.Text = "Personalizado";
+            // 
+            // btnSemana
+            // 
+            this.btnSemana.BackColor = System.Drawing.Color.Transparent;
+            this.btnSemana.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnSemana.BorderRadius = 15;
+            this.btnSemana.BorderSize = 1;
+            this.btnSemana.Controls.Add(this.lbSemana);
+            this.btnSemana.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSemana.FillColor = System.Drawing.Color.White;
+            this.btnSemana.Location = new System.Drawing.Point(242, 0);
+            this.btnSemana.Name = "btnSemana";
+            this.btnSemana.Padding = new System.Windows.Forms.Padding(17);
+            this.btnSemana.ShadowAngle = 135;
+            this.btnSemana.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnSemana.ShadowSize = 12;
+            this.btnSemana.Size = new System.Drawing.Size(114, 57);
+            this.btnSemana.TabIndex = 178;
+            // 
+            // lbSemana
+            // 
+            this.lbSemana.AutoSize = true;
+            this.lbSemana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.lbSemana.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSemana.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSemana.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbSemana.Location = new System.Drawing.Point(17, 17);
+            this.lbSemana.Name = "lbSemana";
+            this.lbSemana.Padding = new System.Windows.Forms.Padding(20, 4, 20, 4);
+            this.lbSemana.Size = new System.Drawing.Size(91, 23);
+            this.lbSemana.TabIndex = 176;
+            this.lbSemana.Text = "Semana";
+            // 
+            // btnMes
+            // 
+            this.btnMes.BackColor = System.Drawing.Color.Transparent;
+            this.btnMes.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnMes.BorderRadius = 15;
+            this.btnMes.BorderSize = 1;
+            this.btnMes.Controls.Add(this.lbMes);
+            this.btnMes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMes.FillColor = System.Drawing.Color.White;
+            this.btnMes.Location = new System.Drawing.Point(362, 0);
+            this.btnMes.Name = "btnMes";
+            this.btnMes.Padding = new System.Windows.Forms.Padding(17);
+            this.btnMes.ShadowAngle = 135;
+            this.btnMes.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnMes.ShadowSize = 12;
+            this.btnMes.Size = new System.Drawing.Size(114, 57);
+            this.btnMes.TabIndex = 179;
+            // 
+            // lbMes
+            // 
+            this.lbMes.AutoSize = true;
+            this.lbMes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.lbMes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMes.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbMes.Location = new System.Drawing.Point(17, 17);
+            this.lbMes.Name = "lbMes";
+            this.lbMes.Padding = new System.Windows.Forms.Padding(27, 4, 27, 4);
+            this.lbMes.Size = new System.Drawing.Size(84, 23);
+            this.lbMes.TabIndex = 176;
+            this.lbMes.Text = "Mês";
+            // 
+            // btnOntem
+            // 
+            this.btnOntem.BackColor = System.Drawing.Color.Transparent;
+            this.btnOntem.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnOntem.BorderRadius = 15;
+            this.btnOntem.BorderSize = 1;
+            this.btnOntem.Controls.Add(this.lbOntem);
+            this.btnOntem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOntem.FillColor = System.Drawing.Color.White;
+            this.btnOntem.Location = new System.Drawing.Point(122, 1);
+            this.btnOntem.Name = "btnOntem";
+            this.btnOntem.Padding = new System.Windows.Forms.Padding(17);
+            this.btnOntem.ShadowAngle = 135;
+            this.btnOntem.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnOntem.ShadowSize = 12;
+            this.btnOntem.Size = new System.Drawing.Size(114, 57);
+            this.btnOntem.TabIndex = 177;
+            // 
+            // lbOntem
+            // 
+            this.lbOntem.AutoSize = true;
+            this.lbOntem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.lbOntem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbOntem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbOntem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbOntem.Location = new System.Drawing.Point(17, 17);
+            this.lbOntem.Name = "lbOntem";
+            this.lbOntem.Padding = new System.Windows.Forms.Padding(20, 4, 20, 4);
+            this.lbOntem.Size = new System.Drawing.Size(86, 23);
+            this.lbOntem.TabIndex = 176;
+            this.lbOntem.Text = "Ontem";
+            // 
+            // btnHoje
+            // 
+            this.btnHoje.BackColor = System.Drawing.Color.Transparent;
+            this.btnHoje.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnHoje.BorderRadius = 15;
+            this.btnHoje.BorderSize = 1;
+            this.btnHoje.Controls.Add(this.lbHoje);
+            this.btnHoje.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHoje.FillColor = System.Drawing.Color.White;
+            this.btnHoje.Location = new System.Drawing.Point(3, 0);
+            this.btnHoje.Name = "btnHoje";
+            this.btnHoje.Padding = new System.Windows.Forms.Padding(17);
+            this.btnHoje.ShadowAngle = 135;
+            this.btnHoje.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnHoje.ShadowSize = 12;
+            this.btnHoje.Size = new System.Drawing.Size(114, 57);
+            this.btnHoje.TabIndex = 0;
+            // 
+            // lbHoje
+            // 
+            this.lbHoje.AutoSize = true;
+            this.lbHoje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.lbHoje.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbHoje.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHoje.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbHoje.Location = new System.Drawing.Point(17, 17);
+            this.lbHoje.Name = "lbHoje";
+            this.lbHoje.Padding = new System.Windows.Forms.Padding(25, 4, 25, 4);
+            this.lbHoje.Size = new System.Drawing.Size(83, 23);
+            this.lbHoje.TabIndex = 176;
+            this.lbHoje.Text = "Hoje";
+            // 
+            // pnCustomFilter
+            // 
+            this.pnCustomFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnCustomFilter.Controls.Add(this.roundedTextBox3);
+            this.pnCustomFilter.Controls.Add(this.roundedTextBox2);
+            this.pnCustomFilter.Controls.Add(this.customButton1);
+            this.pnCustomFilter.Location = new System.Drawing.Point(208, 19);
+            this.pnCustomFilter.Name = "pnCustomFilter";
+            this.pnCustomFilter.Size = new System.Drawing.Size(387, 51);
+            this.pnCustomFilter.TabIndex = 44;
+            this.pnCustomFilter.Visible = false;
+            // 
+            // roundedTextBox3
+            // 
+            this.roundedTextBox3.BackColor = System.Drawing.Color.Transparent;
+            this.roundedTextBox3.BorderColor = System.Drawing.Color.Transparent;
+            this.roundedTextBox3.BorderRadius = 12;
+            this.roundedTextBox3.FillColor = System.Drawing.Color.White;
+            this.roundedTextBox3.Icon = null;
+            this.roundedTextBox3.IconPosition = GRC.Componentes.RoundedTextBox.IconPositionEnum.Right;
+            this.roundedTextBox3.Location = new System.Drawing.Point(175, 6);
+            this.roundedTextBox3.Name = "roundedTextBox3";
+            this.roundedTextBox3.Padding = new System.Windows.Forms.Padding(10);
+            this.roundedTextBox3.Placeholder = "Data Final";
+            this.roundedTextBox3.SelectedText = "";
+            this.roundedTextBox3.SelectionLength = 0;
+            this.roundedTextBox3.SelectionStart = 0;
+            this.roundedTextBox3.Size = new System.Drawing.Size(164, 40);
+            this.roundedTextBox3.TabIndex = 23;
+            this.roundedTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.roundedTextBox3.TextColor = System.Drawing.Color.Black;
+            this.roundedTextBox3.TextStyle = System.Drawing.FontStyle.Bold;
+            this.roundedTextBox3.UnderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.roundedTextBox3.UnderlineSize = 6;
+            // 
+            // roundedTextBox2
+            // 
+            this.roundedTextBox2.BackColor = System.Drawing.Color.Transparent;
+            this.roundedTextBox2.BorderColor = System.Drawing.Color.Transparent;
+            this.roundedTextBox2.BorderRadius = 12;
+            this.roundedTextBox2.FillColor = System.Drawing.Color.White;
+            this.roundedTextBox2.Icon = null;
+            this.roundedTextBox2.IconPosition = GRC.Componentes.RoundedTextBox.IconPositionEnum.Right;
+            this.roundedTextBox2.Location = new System.Drawing.Point(5, 6);
+            this.roundedTextBox2.Name = "roundedTextBox2";
+            this.roundedTextBox2.Padding = new System.Windows.Forms.Padding(10);
+            this.roundedTextBox2.Placeholder = "Data Inicial";
+            this.roundedTextBox2.SelectedText = "";
+            this.roundedTextBox2.SelectionLength = 0;
+            this.roundedTextBox2.SelectionStart = 0;
+            this.roundedTextBox2.Size = new System.Drawing.Size(164, 40);
+            this.roundedTextBox2.TabIndex = 15;
+            this.roundedTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.roundedTextBox2.TextColor = System.Drawing.Color.Black;
+            this.roundedTextBox2.TextStyle = System.Drawing.FontStyle.Bold;
+            this.roundedTextBox2.UnderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.roundedTextBox2.UnderlineSize = 6;
+            // 
+            // customButton1
+            // 
+            this.customButton1.BackColor = System.Drawing.Color.ForestGreen;
+            this.customButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.customButton1.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.customButton1.CorBotao = System.Drawing.Color.ForestGreen;
+            this.customButton1.CorTextoBotao = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.customButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customButton1.FlatAppearance.BorderSize = 0;
+            this.customButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
+            this.customButton1.Image = ((System.Drawing.Image)(resources.GetObject("customButton1.Image")));
+            this.customButton1.Location = new System.Drawing.Point(345, 11);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.Size = new System.Drawing.Size(38, 31);
+            this.customButton1.TabIndex = 10;
+            this.customButton1.TamanhoBorda = 0;
+            this.customButton1.TamanhoRaio = 5;
+            this.customButton1.UseVisualStyleBackColor = false;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer2.Location = new System.Drawing.Point(7, 180);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.splitContainer1);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.modernBox14);
+            this.splitContainer2.Size = new System.Drawing.Size(1234, 509);
+            this.splitContainer2.SplitterDistance = 221;
+            this.splitContainer2.TabIndex = 179;
+            // 
+            // modernBox14
+            // 
+            this.modernBox14.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox14.BorderColor = System.Drawing.Color.White;
+            this.modernBox14.BorderRadius = 12;
+            this.modernBox14.BorderSize = 1;
+            this.modernBox14.Controls.Add(this.label12);
+            this.modernBox14.Controls.Add(this.pictureBox5);
+            this.modernBox14.Controls.Add(this.label9);
+            this.modernBox14.Controls.Add(this.dgvItens);
+            this.modernBox14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.modernBox14.FillColor = System.Drawing.Color.White;
+            this.modernBox14.Location = new System.Drawing.Point(0, 0);
+            this.modernBox14.Name = "modernBox14";
+            this.modernBox14.Padding = new System.Windows.Forms.Padding(13);
+            this.modernBox14.ShadowAngle = 135;
+            this.modernBox14.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.modernBox14.ShadowSize = 8;
+            this.modernBox14.Size = new System.Drawing.Size(1234, 284);
+            this.modernBox14.TabIndex = 178;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Maroon;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Variable Display", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(238, 21);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(33, 20);
+            this.label12.TabIndex = 178;
+            this.label12.Text = "100";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(27, 18);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(18, 23);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 176;
+            this.pictureBox5.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(6)))));
+            this.label9.Font = new System.Drawing.Font("Segoe UI Variable Display", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label9.Location = new System.Drawing.Point(51, 21);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(181, 20);
+            this.label9.TabIndex = 175;
+            this.label9.Text = "Itens com Estoque Baixo";
+            // 
+            // dgvItens
+            // 
+            this.dgvItens.AllowUserToAddRows = false;
+            this.dgvItens.AllowUserToDeleteRows = false;
+            this.dgvItens.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvItens.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvItens.BackgroundColor = System.Drawing.Color.White;
+            this.dgvItens.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvItens.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvItens.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 11F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvItens.ColumnHeadersHeight = 35;
+            this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colFavorito,
+            this.colId,
+            this.colImagem,
+            this.colProduto,
+            this.colDescricao,
+            this.colCodigoBarras,
+            this.colFabricante,
+            this.colCategoria,
+            this.colQtdMinima,
+            this.colQtd,
+            this.colAtivo});
+            this.dgvItens.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(211)))), ((int)(((byte)(218)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvItens.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvItens.EnableHeadersVisualStyles = false;
+            this.dgvItens.GridColor = System.Drawing.Color.Silver;
+            this.dgvItens.Location = new System.Drawing.Point(17, 52);
+            this.dgvItens.MultiSelect = false;
+            this.dgvItens.Name = "dgvItens";
+            this.dgvItens.ReadOnly = true;
+            this.dgvItens.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvItens.RowHeadersVisible = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvItens.Size = new System.Drawing.Size(1201, 216);
+            this.dgvItens.TabIndex = 4;
+            // 
+            // colFavorito
+            // 
+            this.colFavorito.DataPropertyName = "Favorito";
+            this.colFavorito.FillWeight = 6.146037F;
+            this.colFavorito.HeaderText = "";
+            this.colFavorito.Name = "colFavorito";
+            this.colFavorito.ReadOnly = true;
+            // 
+            // colId
+            // 
+            this.colId.DataPropertyName = "Id";
+            this.colId.FillWeight = 0.6504041F;
+            this.colId.HeaderText = "Id";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Visible = false;
+            // 
+            // colImagem
+            // 
+            this.colImagem.DataPropertyName = "FotoItem";
+            this.colImagem.FillWeight = 12.98365F;
+            this.colImagem.HeaderText = "Foto";
+            this.colImagem.Name = "colImagem";
+            this.colImagem.ReadOnly = true;
+            // 
+            // colProduto
+            // 
+            this.colProduto.DataPropertyName = "ItemVenda";
+            this.colProduto.FillWeight = 21.22982F;
+            this.colProduto.HeaderText = "Item/Venda";
+            this.colProduto.Image = global::GRC.Properties.Resources.Marca_Venda;
+            this.colProduto.Name = "colProduto";
+            this.colProduto.ReadOnly = true;
+            this.colProduto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // colDescricao
+            // 
+            this.colDescricao.DataPropertyName = "Descricao";
+            this.colDescricao.FillWeight = 35.69515F;
+            this.colDescricao.HeaderText = "Item";
+            this.colDescricao.Name = "colDescricao";
+            this.colDescricao.ReadOnly = true;
+            // 
+            // colCodigoBarras
+            // 
+            this.colCodigoBarras.DataPropertyName = "CodBarras";
+            this.colCodigoBarras.FillWeight = 35.01702F;
+            this.colCodigoBarras.HeaderText = "Código de Barras";
+            this.colCodigoBarras.Name = "colCodigoBarras";
+            this.colCodigoBarras.ReadOnly = true;
+            this.colCodigoBarras.Visible = false;
+            // 
+            // colFabricante
+            // 
+            this.colFabricante.DataPropertyName = "DescricaoFabricante";
+            this.colFabricante.FillWeight = 25.27785F;
+            this.colFabricante.HeaderText = "Marca";
+            this.colFabricante.Name = "colFabricante";
+            this.colFabricante.ReadOnly = true;
+            // 
+            // colCategoria
+            // 
+            this.colCategoria.DataPropertyName = "DescricaoCategoria";
+            this.colCategoria.FillWeight = 16.20491F;
+            this.colCategoria.HeaderText = "Categoria";
+            this.colCategoria.Name = "colCategoria";
+            this.colCategoria.ReadOnly = true;
+            // 
+            // colQtdMinima
+            // 
+            this.colQtdMinima.HeaderText = "Mínima";
+            this.colQtdMinima.Name = "colQtdMinima";
+            this.colQtdMinima.ReadOnly = true;
+            this.colQtdMinima.Visible = false;
+            // 
+            // colQtd
+            // 
+            this.colQtd.DataPropertyName = "Quantidade";
+            this.colQtd.FillWeight = 10.428F;
+            this.colQtd.HeaderText = "Qtd";
+            this.colQtd.Name = "colQtd";
+            this.colQtd.ReadOnly = true;
+            // 
+            // colAtivo
+            // 
+            this.colAtivo.DataPropertyName = "Ativo";
+            this.colAtivo.FillWeight = 20.67864F;
+            this.colAtivo.HeaderText = "Ativo";
+            this.colAtivo.Image = global::GRC.Properties.Resources.Marca_Ativo;
+            this.colAtivo.Name = "colAtivo";
+            this.colAtivo.ReadOnly = true;
+            this.colAtivo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
             // usrDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1029,26 +1029,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.crtDadosProdutividade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.crtDadosOS)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.pnCustomFilter.ResumeLayout(false);
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
-            this.modernBox14.ResumeLayout(false);
-            this.modernBox14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).EndInit();
-            this.btnFiltroPersonalizado.ResumeLayout(false);
-            this.btnFiltroPersonalizado.PerformLayout();
-            this.btnSemana.ResumeLayout(false);
-            this.btnSemana.PerformLayout();
-            this.btnMes.ResumeLayout(false);
-            this.btnMes.PerformLayout();
-            this.btnOntem.ResumeLayout(false);
-            this.btnOntem.PerformLayout();
-            this.btnHoje.ResumeLayout(false);
-            this.btnHoje.PerformLayout();
             this.modernBox7.ResumeLayout(false);
             this.modernBox7.PerformLayout();
             this.modernBox8.ResumeLayout(false);
@@ -1065,6 +1045,26 @@
             this.modernBox1.PerformLayout();
             this.modernBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.btnFiltroPersonalizado.ResumeLayout(false);
+            this.btnFiltroPersonalizado.PerformLayout();
+            this.btnSemana.ResumeLayout(false);
+            this.btnSemana.PerformLayout();
+            this.btnMes.ResumeLayout(false);
+            this.btnMes.PerformLayout();
+            this.btnOntem.ResumeLayout(false);
+            this.btnOntem.PerformLayout();
+            this.btnHoje.ResumeLayout(false);
+            this.btnHoje.PerformLayout();
+            this.pnCustomFilter.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            this.modernBox14.ResumeLayout(false);
+            this.modernBox14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

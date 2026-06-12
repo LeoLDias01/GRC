@@ -40,11 +40,42 @@ namespace GRC.Telas
         private const float FontSizeBase = 9f;
 
         private string _totalGeralServico = null;
+
+
+        #region ..:: Importação de APIs do Windows (Estética e Movimentação) ::..
+
+        // Importa a função nativa do Windows responsável por criar regiões arredondadas no formulário
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coord do canto superior esquerdo
+            int nTopRect,      // y-coord do canto superior esquerdo
+            int nRightRect,    // x-coord do canto inferior direito
+            int nBottomRect,   // y-coord do canto inferior direito
+            int nWidthEllipse, // largura da elipse (quanto maior, mais arredondado)
+            int nHeightEllipse // altura da elipse (quanto maior, mais arredondado)
+        );
+
+        // Importa as funções nativas para permitir o arrasto da tela sem usar a barra de título padrão
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        // Constantes numéricas exigidas pela API do Windows para capturar o movimento do mouse
+        private const int WM_NCLBUTTONDOWN = 0xA1;
+        private const int HT_CAPTION = 0x2;
+
+        #endregion
         public SelecaoImpressao(List<OrdemServico> ordemServico, string total = "")
         {
             InitializeComponent();
             _os = ordemServico;
             _totalGeralServico = total;
+
+            // Aplica os cantos arredondados na janela do formulário (raio de 30px)
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -291,15 +322,6 @@ namespace GRC.Telas
                 }
             }
         }
-        // Importar as DLLs do Windows para mover o formulário
-        [DllImport("user32.dll")]
-        public static extern bool ReleaseCapture();
-        [DllImport("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-
-        // Constantes para a mensagem de movimento
-        private const int WM_NCLBUTTONDOWN = 0xA1;
-        private const int HT_CAPTION = 0x2;
 
         private void SelecaoImpressao_MouseDown(object sender, MouseEventArgs e)
         {
