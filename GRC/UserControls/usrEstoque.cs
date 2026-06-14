@@ -88,6 +88,7 @@ namespace GRC.UserControls
             _statusSelecionado = null; // Começa exibindo Todos
             AtualizarVisualFiltros();
             InicializarColunasGrid();
+            ConfigurarEstiloGrid();
             RealizaPesquisa();
             btnNovoItem.Focus();
         }

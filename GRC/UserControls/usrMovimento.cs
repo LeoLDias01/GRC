@@ -152,6 +152,7 @@ namespace GRC.UserControls
             InicializarColunasGrid();
             RealizaPesquisa();
             btnMovimentar.Focus();
+            ConfigurarEstiloGrid();
         }
         private void cbTipoMovimento_DropDownClosed(object sender, EventArgs e)
         {

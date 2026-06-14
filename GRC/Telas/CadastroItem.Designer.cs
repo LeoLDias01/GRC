@@ -146,7 +146,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvItemComposicao.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvItemComposicao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItemComposicao.Size = new System.Drawing.Size(928, 280);
+            this.dgvItemComposicao.Size = new System.Drawing.Size(894, 280);
             this.dgvItemComposicao.TabIndex = 44;
             this.dgvItemComposicao.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemComposicao_CellContentClick);
             // 
@@ -801,7 +801,7 @@
             this.btnAddComposicao.ForeColor = System.Drawing.Color.White;
             this.btnAddComposicao.Image = ((System.Drawing.Image)(resources.GetObject("btnAddComposicao.Image")));
             this.btnAddComposicao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddComposicao.Location = new System.Drawing.Point(881, 6);
+            this.btnAddComposicao.Location = new System.Drawing.Point(847, 6);
             this.btnAddComposicao.Name = "btnAddComposicao";
             this.btnAddComposicao.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnAddComposicao.Size = new System.Drawing.Size(53, 43);

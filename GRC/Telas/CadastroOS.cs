@@ -38,31 +38,32 @@ namespace GRC.Telas
 
         private List<OrdemServico> _OSImpressao = new List<OrdemServico>();
 
-        // Constantes do Windows API
-        private const int WM_NCHITTEST = 0x84;
-        private const int HTCLIENT = 1;
-        private const int HTCAPTION = 2;
-        private const int HTLEFT = 10;
-        private const int HTRIGHT = 11;
-        private const int HTTOP = 12;
-        private const int HTTOPLEFT = 13;
-        private const int HTTOPRIGHT = 14;
-        private const int HTBOTTOM = 15;
-        private const int HTBOTTOMLEFT = 16;
-        private const int HTBOTTOMRIGHT = 17;
+        #region ..:: Importação de APIs do Windows (Estética e Movimentação) ::..
 
-        private const int borderSize = 5;
+        // Importa a função nativa do Windows responsável por criar regiões arredondadas no formulário
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coord do canto superior esquerdo
+            int nTopRect,      // y-coord do canto superior esquerdo
+            int nRightRect,    // x-coord do canto inferior direito
+            int nBottomRect,   // y-coord do canto inferior direito
+            int nWidthEllipse, // largura da elipse (quanto maior, mais arredondado)
+            int nHeightEllipse // altura da elipse (quanto maior, mais arredondado)
+        );
 
-        // Importar as DLLs do Windows para mover o formulário
+        // Importa as funções nativas para permitir o arrasto da tela sem usar a barra de título padrão
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
+
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
 
-        // Constantes para a mensagem de movimento
+        // Constantes numéricas exigidas pela API do Windows para capturar o movimento do mouse
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HT_CAPTION = 0x2;
 
+        #endregion
 
         public CadastroOS(int id = 0)
         {
@@ -72,40 +73,166 @@ namespace GRC.Telas
             this.FormBorderStyle = FormBorderStyle.None; // Garante que está sem borda
             this.DoubleBuffered = true; // Melhora a performance visual ao redimensionar
             this.SetStyle(ControlStyles.ResizeRedraw, true);
+
+            dgvItens.Paint += dgvItens_Paint;
+
+            // Aplica os cantos arredondados na janela do formulário (raio de 30px)
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
         }
-        protected override void WndProc(ref Message m)
+        private void InicializarColunasGrid()
         {
-            base.WndProc(ref m);
+            dgvItens.Columns.Clear();
+            dgvItens.AutoGenerateColumns = false;
 
-            if (m.Msg == WM_NCHITTEST)
+
+            var colId = new DataGridViewTextBoxColumn { Name = "colId", HeaderText = "ID", Visible = false };
+            dgvItens.Columns.Add(colId);
+
+            // 5. Nome / Descrição
+            dgvItens.Columns.Add(new DataGridViewTextBoxColumn { Name = "colDescricao", HeaderText = "Nome", Width = 200 });
+
+            // 10. Quantidade Atual
+            dgvItens.Columns.Add(new DataGridViewTextBoxColumn { Name = "colQtdItem", HeaderText = "Estoque", Width = 90 });
+
+            // 5. Nome / Descrição
+            dgvItens.Columns.Add(new DataGridViewTextBoxColumn { Name = "colValues", HeaderText = "Valor Gasto", Width = 200 });
+
+            // 11. Marcação Ativo/Inativo (Botão)
+            var colAtivo = new DataGridViewImageColumn { Name = "colExcluir", HeaderText = "", Width = 100, ImageLayout = DataGridViewImageCellLayout.Normal, Image = Resources.remove };
+            dgvItens.Columns.Add(colAtivo); ;
+        }
+        private void dgvItens_Paint(object sender, PaintEventArgs e)
+        {
+            int alturaFaixa = 1;
+
+            Rectangle headerRect = dgvItens.DisplayRectangle;
+            headerRect.Y = dgvItens.ColumnHeadersHeight - alturaFaixa;
+            headerRect.Height = alturaFaixa;
+
+            using (Brush brush = new SolidBrush(Color.DarkGray))
             {
-                // Obtém a posição do mouse em coordenadas de tela
-                Point pos = new Point(m.LParam.ToInt32());
-                pos = this.PointToClient(pos);
-
-                // Verifica se o mouse está nas extremidades para redimensionar
-                if (pos.X <= borderSize)
-                {
-                    if (pos.Y <= borderSize) m.Result = (IntPtr)HTTOPLEFT;
-                    else if (pos.Y >= this.ClientSize.Height - borderSize) m.Result = (IntPtr)HTBOTTOMLEFT;
-                    else m.Result = (IntPtr)HTLEFT;
-                }
-                else if (pos.X >= this.ClientSize.Width - borderSize)
-                {
-                    if (pos.Y <= borderSize) m.Result = (IntPtr)HTTOPRIGHT;
-                    else if (pos.Y >= this.ClientSize.Height - borderSize) m.Result = (IntPtr)HTBOTTOMRIGHT;
-                    else m.Result = (IntPtr)HTRIGHT;
-                }
-                else if (pos.Y <= borderSize) m.Result = (IntPtr)HTTOP;
-                else if (pos.Y >= this.ClientSize.Height - borderSize) m.Result = (IntPtr)HTBOTTOM;
-                else
-                {
-                    // Se não estiver nas bordas, permite arrastar o form clicando em qualquer lugar "vazio"
-                    if (m.Result == (IntPtr)HTCLIENT)
-                        m.Result = (IntPtr)HTCAPTION;
-                }
+                e.Graphics.FillRectangle(brush, headerRect);
             }
         }
+        private void ConfigurarEstiloGrid()
+        {
+            dgvItens.SuspendLayout();
+
+            // =====================================================
+            // RESET DE HERANÇAS INDESEJADAS
+            // =====================================================
+            dgvItens.DefaultCellStyle.Alignment = DataGridViewContentAlignment.NotSet;
+            dgvItens.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.NotSet;
+            dgvItens.AlternatingRowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.NotSet;
+
+            dgvItens.DefaultCellStyle.Padding = Padding.Empty;
+            dgvItens.RowsDefaultCellStyle.Padding = Padding.Empty;
+            dgvItens.AlternatingRowsDefaultCellStyle.Padding = Padding.Empty;
+
+            // =====================================================
+            // CONFIGURAÇÕES GERAIS DO GRID
+            // =====================================================
+            dgvItens.BackgroundColor = Color.FromArgb(245, 247, 250);
+            dgvItens.BorderStyle = BorderStyle.None;
+            dgvItens.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvItens.GridColor = Color.FromArgb(235, 238, 242);
+            dgvItens.RowHeadersVisible = false;
+            dgvItens.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvItens.MultiSelect = false;
+            dgvItens.AllowUserToResizeRows = false;
+            dgvItens.AllowUserToResizeColumns = false;
+            dgvItens.EnableHeadersVisualStyles = false;
+            dgvItens.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvItens.ScrollBars = ScrollBars.Vertical;
+            dgvItens.Cursor = Cursors.Hand;
+            dgvItens.DefaultCellStyle.WrapMode = DataGridViewTriState.False;
+            dgvItens.RowTemplate.Height = 96;
+
+            // Bordas inferiores SaaS
+            dgvItens.AdvancedCellBorderStyle.Left = DataGridViewAdvancedCellBorderStyle.None;
+            dgvItens.AdvancedCellBorderStyle.Right = DataGridViewAdvancedCellBorderStyle.None;
+            dgvItens.AdvancedCellBorderStyle.Top = DataGridViewAdvancedCellBorderStyle.None;
+            dgvItens.AdvancedCellBorderStyle.Bottom = DataGridViewAdvancedCellBorderStyle.Single;
+
+            // =====================================================
+            // CONFIGURAÇÃO VISUAL DAS LINHAS (Cores e Destaque)
+            // =====================================================
+            dgvItens.RowsDefaultCellStyle.BackColor = Color.White;
+            dgvItens.RowsDefaultCellStyle.ForeColor = Color.FromArgb(33, 37, 41);
+            dgvItens.RowsDefaultCellStyle.Font = new Font("Segoe UI", 10F);
+
+            dgvItens.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 243, 248);
+            dgvItens.AlternatingRowsDefaultCellStyle.ForeColor = Color.FromArgb(33, 37, 41);
+            dgvItens.AlternatingRowsDefaultCellStyle.Font = new Font("Segoe UI", 10F);
+
+            // =====================================================
+            // CABEÇALHO (Header)
+            // =====================================================
+            dgvItens.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvItens.ColumnHeadersHeight = 52;
+            dgvItens.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+
+            DataGridViewCellStyle estiloHeader = new DataGridViewCellStyle
+            {
+                //BackColor = Color.FromArgb(44, 62, 80),
+                // ForeColor = Color.White,
+
+                BackColor = Color.White,
+                ForeColor = Color.FromArgb(44, 62, 80),
+                Font = new Font("Segoe UI Semibold", 10.5f),
+                // SelectionBackColor = Color.FromArgb(44, 62, 80),
+                // SelectionForeColor = Color.White
+
+                SelectionBackColor = Color.White,
+                SelectionForeColor = Color.FromArgb(44, 62, 80)
+            };
+            dgvItens.ColumnHeadersDefaultCellStyle = estiloHeader;
+
+            // =====================================================
+            // CONTROLE ABSOLUTO COLUNA POR COLUNA
+            // =====================================================
+            foreach (DataGridViewColumn coluna in dgvItens.Columns)
+            {
+                // SE FOR COLUNA DE TEXTO / NÚMERO
+                if (coluna is DataGridViewTextBoxColumn)
+                {
+                    // ALTERAÇÃO AQUI: Verifica se são as colunas de quantidade
+                    // IMPORTANTE: Verifique se os Names abaixo batem exatamente com as suas colunas
+                    if (coluna.Name == "colQtdItem")
+                    {
+                        // Centraliza totalmente (Vertical e Horizontal) o Header e as Células
+                        coluna.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        coluna.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                        // Remove paddings laterais para manter o número morto no centro
+                        coluna.HeaderCell.Style.Padding = Padding.Empty;
+                        coluna.DefaultCellStyle.Padding = Padding.Empty;
+                    }
+                    else
+                    {
+                        // Demais colunas de texto (Nome, Código, Categoria, etc) continuam perfeitamente à esquerda
+                        coluna.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                        coluna.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+                        coluna.HeaderCell.Style.Padding = new Padding(16, 0, 0, 0);
+                        coluna.DefaultCellStyle.Padding = new Padding(16, 0, 0, 0);
+                    }
+                }
+                // SE FOR COLUNA DE IMAGENS / ÍCONES / PÍLULAS
+                else
+                {
+                    coluna.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    coluna.HeaderCell.Style.Padding = Padding.Empty;
+                }
+            }
+
+            dgvItens.DefaultCellStyle.SelectionBackColor = Color.FromArgb(226, 236, 248);
+            dgvItens.DefaultCellStyle.SelectionForeColor = Color.FromArgb(20, 20, 20);
+            dgvItens.ClearSelection();
+
+            dgvItens.ResumeLayout();
+        }
+
         private void btnNovoItem_Click(object sender, EventArgs e)
         {
             new CadastroItem().ShowDialog();
@@ -130,6 +257,9 @@ namespace GRC.Telas
             else btnExportar.Enabled = false;
 
             txtDescricaoSaida.Focus();
+
+            InicializarColunasGrid();
+            ConfigurarEstiloGrid();
         }
         private void CarregaDados()
         {
@@ -193,7 +323,7 @@ namespace GRC.Telas
                 {
                     foreach (var itm in dadosOs.ItensEsporadicos)
                     {
-                        PreencheGridItemEsporadico(itm.Id, itm.Descricao);
+                       // PreencheGridItemEsporadico(itm.Id, itm.Descricao);
                     }
                 }
 
@@ -826,9 +956,9 @@ namespace GRC.Telas
         }
         private void MudaCorPainel(Color cor1, Color cor2)
         {
-            pn1.Color1 = cor1;
+            //pn1.Color1 = cor1;
             //pn2.Color1 = cor1;
-            pn1.Color2 = cor2;
+            //pn1.Color2 = cor2;
             //pn2.Color2 = cor2;
         }
 
@@ -1056,27 +1186,17 @@ namespace GRC.Telas
 
         private void txtNomeItemEsporadico_TrailingIconClick(object sender, EventArgs e)
         {
-            if(!string.IsNullOrWhiteSpace(txtNomeItemEsporadico.Text))
-            {
-                PreencheGridItemEsporadico(0, txtNomeItemEsporadico.Text);
-
-                // Limpa campos para próxima entrada
-                txtNomeItemEsporadico.Clear();
-            }
-            else
-            {
-                new AlertBox(Color.Goldenrod, Color.Lime, Color.Yellow, Resources.Warning, "Ordem de Serviço", "Campo de nome do item vazio", "O nome do item é obrigatório", false).ShowDialog();
-            }
-
-                txtNomeItemEsporadico.Focus();
+            
         }
-        private void PreencheGridItemEsporadico(int id, string item)
+        private void PreencheGridItemEsporadico(int id, string item, string qtd, string valor)
         {
-            dgvItens.RowTemplate.Height = 35;
+            ConfigurarEstiloGrid();
             // Adiciona uma nova linha ao DataGridView
             dgvItens.Rows.Add(
-                    id,                          // colIdTelefone = 0 (novo registro)
-                    item,                   // colTelefone
+                    id,                        
+                    item,
+                    qtd,
+                    valor, 
                     Resources.remove
                 );
         }
@@ -1136,58 +1256,16 @@ namespace GRC.Telas
             }
         }
 
-        private void pnSuperior_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture(); // Libera o mouse para a operação
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
-            }
-        }
-
-        private void label3_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture(); // Libera o mouse para a operação
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
-            }
-        }
-
-        private void pn2_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture(); // Libera o mouse para a operação
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
-            }
-        }
-
-        private void lbStatus_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture(); // Libera o mouse para a operação
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
-            }
-        }
+       
 
         private void pn1_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture(); // Libera o mouse para a operação
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
-            }
+            
         }
 
         private void lbDataAtual_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture(); // Libera o mouse para a operação
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); // Envia comando de mover
-            }
+           
         }
 
         private void lbApagar_Click(object sender, EventArgs e)

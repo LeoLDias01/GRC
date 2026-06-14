@@ -73,7 +73,7 @@
             this.customPanel1.ForeColor = System.Drawing.Color.White;
             this.customPanel1.Location = new System.Drawing.Point(3, 81);
             this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(358, 157);
+            this.customPanel1.Size = new System.Drawing.Size(326, 249);
             this.customPanel1.TabIndex = 61;
             this.customPanel1.TamanhoBorda = 0;
             this.customPanel1.TamanhoRaio = 20;
@@ -84,9 +84,9 @@
             this.groupBox2.Controls.Add(this.rbPdfImp);
             this.groupBox2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold);
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.groupBox2.Location = new System.Drawing.Point(14, 81);
+            this.groupBox2.Location = new System.Drawing.Point(14, 123);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(333, 65);
+            this.groupBox2.Size = new System.Drawing.Size(296, 116);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tipo de saída";
@@ -97,7 +97,7 @@
             this.rbPdf.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbPdf.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbPdf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.rbPdf.Location = new System.Drawing.Point(20, 29);
+            this.rbPdf.Location = new System.Drawing.Point(20, 38);
             this.rbPdf.Name = "rbPdf";
             this.rbPdf.Size = new System.Drawing.Size(48, 19);
             this.rbPdf.TabIndex = 0;
@@ -111,7 +111,7 @@
             this.rbPdfImp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbPdfImp.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbPdfImp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.rbPdfImp.Location = new System.Drawing.Point(128, 29);
+            this.rbPdfImp.Location = new System.Drawing.Point(20, 72);
             this.rbPdfImp.Name = "rbPdfImp";
             this.rbPdfImp.Size = new System.Drawing.Size(123, 19);
             this.rbPdfImp.TabIndex = 1;
@@ -127,7 +127,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.groupBox1.Location = new System.Drawing.Point(14, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(332, 63);
+            this.groupBox1.Size = new System.Drawing.Size(296, 105);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tipo de Impressão";
@@ -152,7 +152,7 @@
             this.rbSaida.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbSaida.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbSaida.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            this.rbSaida.Location = new System.Drawing.Point(128, 29);
+            this.rbSaida.Location = new System.Drawing.Point(20, 64);
             this.rbSaida.Name = "rbSaida";
             this.rbSaida.Size = new System.Drawing.Size(58, 19);
             this.rbSaida.TabIndex = 1;
@@ -162,6 +162,7 @@
             // 
             // btnExportar
             // 
+            this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnExportar.BackColor = System.Drawing.Color.Green;
             this.btnExportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnExportar.CorBorda = System.Drawing.Color.MediumSlateBlue;
@@ -175,7 +176,7 @@
             this.btnExportar.ForeColor = System.Drawing.Color.White;
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExportar.Location = new System.Drawing.Point(94, 244);
+            this.btnExportar.Location = new System.Drawing.Point(95, 336);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.btnExportar.Size = new System.Drawing.Size(149, 41);
@@ -196,11 +197,14 @@
             this.roundedPanel2.GradientAngle = 180F;
             this.roundedPanel2.Location = new System.Drawing.Point(0, 0);
             this.roundedPanel2.Name = "roundedPanel2";
-            this.roundedPanel2.Size = new System.Drawing.Size(368, 10);
+            this.roundedPanel2.Size = new System.Drawing.Size(338, 10);
             this.roundedPanel2.TabIndex = 122;
             // 
             // pnExterno
             // 
+            this.pnExterno.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnExterno.BackColor = System.Drawing.Color.Transparent;
             this.pnExterno.BorderColor = System.Drawing.Color.White;
             this.pnExterno.BorderRadius = 12;
@@ -213,7 +217,7 @@
             this.pnExterno.ShadowAngle = 90;
             this.pnExterno.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.pnExterno.ShadowSize = 8;
-            this.pnExterno.Size = new System.Drawing.Size(393, 310);
+            this.pnExterno.Size = new System.Drawing.Size(363, 411);
             this.pnExterno.TabIndex = 179;
             // 
             // pnInterno
@@ -235,7 +239,7 @@
             this.pnInterno.ForeColor = System.Drawing.Color.White;
             this.pnInterno.Location = new System.Drawing.Point(16, 4);
             this.pnInterno.Name = "pnInterno";
-            this.pnInterno.Size = new System.Drawing.Size(368, 290);
+            this.pnInterno.Size = new System.Drawing.Size(338, 391);
             this.pnInterno.TabIndex = 0;
             this.pnInterno.TamanhoBorda = 0;
             this.pnInterno.TamanhoRaio = 15;
@@ -255,7 +259,7 @@
             this.btnEncerrarJanelas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEncerrarJanelas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
             this.btnEncerrarJanelas.Image = ((System.Drawing.Image)(resources.GetObject("btnEncerrarJanelas.Image")));
-            this.btnEncerrarJanelas.Location = new System.Drawing.Point(332, 11);
+            this.btnEncerrarJanelas.Location = new System.Drawing.Point(311, 16);
             this.btnEncerrarJanelas.Name = "btnEncerrarJanelas";
             this.btnEncerrarJanelas.Size = new System.Drawing.Size(18, 18);
             this.btnEncerrarJanelas.TabIndex = 163;
@@ -292,7 +296,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(396, 314);
+            this.ClientSize = new System.Drawing.Size(366, 412);
             this.ControlBox = false;
             this.Controls.Add(this.pnExterno);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroOS));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.tbcOs = new MaterialSkin.Controls.MaterialTabControl();
             this.tbpDadosOS = new System.Windows.Forms.TabPage();
@@ -77,19 +77,19 @@
             this.lbF = new System.Windows.Forms.Label();
             this.lbG = new System.Windows.Forms.Label();
             this.lbApagar = new System.Windows.Forms.Label();
-            this.materialCheckbox3 = new MaterialSkin.Controls.MaterialCheckbox();
+            this.chkconnections = new MaterialSkin.Controls.MaterialCheckbox();
             this.txtInfoAdicional = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialCheckbox2 = new MaterialSkin.Controls.MaterialCheckbox();
-            this.materialCheckbox1 = new MaterialSkin.Controls.MaterialCheckbox();
+            this.chkBiometria = new MaterialSkin.Controls.MaterialCheckbox();
+            this.chkMic = new MaterialSkin.Controls.MaterialCheckbox();
             this.txtOutros = new MaterialSkin.Controls.MaterialTextBox();
             this.chkOutros = new MaterialSkin.Controls.MaterialCheckbox();
             this.chkConectores = new MaterialSkin.Controls.MaterialCheckbox();
-            this.chkSeguranca = new MaterialSkin.Controls.MaterialCheckbox();
+            this.chkChip = new MaterialSkin.Controls.MaterialCheckbox();
             this.chkbtn = new MaterialSkin.Controls.MaterialCheckbox();
-            this.chkAudio = new MaterialSkin.Controls.MaterialCheckbox();
-            this.chkCamera = new MaterialSkin.Controls.MaterialCheckbox();
+            this.chkAutoFalante = new MaterialSkin.Controls.MaterialCheckbox();
+            this.chkCameras = new MaterialSkin.Controls.MaterialCheckbox();
             this.label11 = new System.Windows.Forms.Label();
-            this.chkSistema = new MaterialSkin.Controls.MaterialCheckbox();
+            this.chkSO = new MaterialSkin.Controls.MaterialCheckbox();
             this.chkCarcaca = new MaterialSkin.Controls.MaterialCheckbox();
             this.chkBateria = new MaterialSkin.Controls.MaterialCheckbox();
             this.chkTela = new MaterialSkin.Controls.MaterialCheckbox();
@@ -99,12 +99,21 @@
             this.txtModelo = new MaterialSkin.Controls.MaterialTextBox();
             this.txtMarca = new MaterialSkin.Controls.MaterialTextBox();
             this.tbpPecas = new System.Windows.Forms.TabPage();
+            this.modernBox2 = new GRC.Componentes.ModernBox();
+            this.dgvItens = new System.Windows.Forms.DataGridView();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQtdItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colValues = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colExcluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.gpEstoque = new System.Windows.Forms.GroupBox();
             this.flpItens = new System.Windows.Forms.FlowLayoutPanel();
             this.btnNovoItem = new GRC.Componentes.CustomButton();
             this.btnConsultaItem = new GRC.Componentes.CustomButton();
             this.gpEsporadico = new System.Windows.Forms.GroupBox();
-            this.dgvItens = new System.Windows.Forms.DataGridView();
+            this.btnAddComposicao = new GRC.Componentes.CustomButton();
+            this.txtValorItemEsporadico = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtQtdItemEsporadico = new MaterialSkin.Controls.MaterialTextBox();
             this.txtNomeItemEsporadico = new MaterialSkin.Controls.MaterialTextBox();
             this.tbpFinanceiro = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -130,20 +139,12 @@
             this.pnExterno = new GRC.Componentes.ModernBox();
             this.modernBox1 = new GRC.Componentes.ModernBox();
             this.pnInterno = new GRC.Componentes.CustomPanel();
+            this.lbDataAtual = new System.Windows.Forms.Label();
             this.btnEncerrarJanelas = new GRC.Componentes.CustomButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.pn1 = new GRC.Componentes.RoundedPanel();
-            this.lbDataAtual = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnSalvar = new GRC.Componentes.CustomButton();
             this.lbTitulo = new System.Windows.Forms.Label();
-            this.txtQtdItemEsporadico = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtValorItemEsporadico = new MaterialSkin.Controls.MaterialTextBox();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQtdItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colValues = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colExcluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.tbcOs.SuspendLayout();
             this.tbpDadosOS.SuspendLayout();
             this.gpbInfoVenda.SuspendLayout();
@@ -160,9 +161,10 @@
             this.groupBox8.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tbpPecas.SuspendLayout();
+            this.modernBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
             this.gpEstoque.SuspendLayout();
             this.gpEsporadico.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
             this.tbpFinanceiro.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -170,7 +172,6 @@
             this.pnExterno.SuspendLayout();
             this.modernBox1.SuspendLayout();
             this.pnInterno.SuspendLayout();
-            this.pn1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -804,19 +805,19 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox5.BackColor = System.Drawing.Color.White;
             this.groupBox5.Controls.Add(this.groupBox8);
-            this.groupBox5.Controls.Add(this.materialCheckbox3);
+            this.groupBox5.Controls.Add(this.chkconnections);
             this.groupBox5.Controls.Add(this.txtInfoAdicional);
-            this.groupBox5.Controls.Add(this.materialCheckbox2);
-            this.groupBox5.Controls.Add(this.materialCheckbox1);
+            this.groupBox5.Controls.Add(this.chkBiometria);
+            this.groupBox5.Controls.Add(this.chkMic);
             this.groupBox5.Controls.Add(this.txtOutros);
             this.groupBox5.Controls.Add(this.chkOutros);
             this.groupBox5.Controls.Add(this.chkConectores);
-            this.groupBox5.Controls.Add(this.chkSeguranca);
+            this.groupBox5.Controls.Add(this.chkChip);
             this.groupBox5.Controls.Add(this.chkbtn);
-            this.groupBox5.Controls.Add(this.chkAudio);
-            this.groupBox5.Controls.Add(this.chkCamera);
+            this.groupBox5.Controls.Add(this.chkAutoFalante);
+            this.groupBox5.Controls.Add(this.chkCameras);
             this.groupBox5.Controls.Add(this.label11);
-            this.groupBox5.Controls.Add(this.chkSistema);
+            this.groupBox5.Controls.Add(this.chkSO);
             this.groupBox5.Controls.Add(this.chkCarcaca);
             this.groupBox5.Controls.Add(this.chkBateria);
             this.groupBox5.Controls.Add(this.chkTela);
@@ -891,6 +892,7 @@
             // 
             this.lbI.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbI.AutoSize = true;
+            this.lbI.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbI.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.lbI.Location = new System.Drawing.Point(247, 131);
             this.lbI.Name = "lbI";
@@ -903,6 +905,7 @@
             // 
             this.lbA.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbA.AutoSize = true;
+            this.lbA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbA.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.lbA.Location = new System.Drawing.Point(125, 6);
             this.lbA.Name = "lbA";
@@ -915,6 +918,7 @@
             // 
             this.lbB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbB.AutoSize = true;
+            this.lbB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.lbB.Location = new System.Drawing.Point(186, 6);
             this.lbB.Name = "lbB";
@@ -927,6 +931,7 @@
             // 
             this.lbC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbC.AutoSize = true;
+            this.lbC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.lbC.Location = new System.Drawing.Point(247, 6);
             this.lbC.Name = "lbC";
@@ -939,6 +944,7 @@
             // 
             this.lbD.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbD.AutoSize = true;
+            this.lbD.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbD.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.lbD.Location = new System.Drawing.Point(125, 67);
             this.lbD.Name = "lbD";
@@ -951,6 +957,7 @@
             // 
             this.lbE.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbE.AutoSize = true;
+            this.lbE.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbE.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.lbE.Location = new System.Drawing.Point(186, 67);
             this.lbE.Name = "lbE";
@@ -963,6 +970,7 @@
             // 
             this.lbH.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbH.AutoSize = true;
+            this.lbH.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbH.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.lbH.Location = new System.Drawing.Point(186, 131);
             this.lbH.Name = "lbH";
@@ -975,6 +983,7 @@
             // 
             this.lbF.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbF.AutoSize = true;
+            this.lbF.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbF.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.lbF.Location = new System.Drawing.Point(247, 67);
             this.lbF.Name = "lbF";
@@ -987,6 +996,7 @@
             // 
             this.lbG.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbG.AutoSize = true;
+            this.lbG.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbG.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.lbG.Location = new System.Drawing.Point(125, 131);
             this.lbG.Name = "lbG";
@@ -1010,22 +1020,22 @@
             this.lbApagar.Text = "Limpar";
             this.lbApagar.Click += new System.EventHandler(this.lbApagar_Click);
             // 
-            // materialCheckbox3
+            // chkconnections
             // 
-            this.materialCheckbox3.AutoSize = true;
-            this.materialCheckbox3.BackColor = System.Drawing.Color.Transparent;
-            this.materialCheckbox3.Depth = 0;
-            this.materialCheckbox3.Location = new System.Drawing.Point(624, 311);
-            this.materialCheckbox3.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckbox3.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckbox3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckbox3.Name = "materialCheckbox3";
-            this.materialCheckbox3.ReadOnly = false;
-            this.materialCheckbox3.Ripple = true;
-            this.materialCheckbox3.Size = new System.Drawing.Size(153, 37);
-            this.materialCheckbox3.TabIndex = 144;
-            this.materialCheckbox3.Text = "Wi-Fi / Bluetooth";
-            this.materialCheckbox3.UseVisualStyleBackColor = false;
+            this.chkconnections.AutoSize = true;
+            this.chkconnections.BackColor = System.Drawing.Color.Transparent;
+            this.chkconnections.Depth = 0;
+            this.chkconnections.Location = new System.Drawing.Point(624, 311);
+            this.chkconnections.Margin = new System.Windows.Forms.Padding(0);
+            this.chkconnections.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkconnections.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkconnections.Name = "chkconnections";
+            this.chkconnections.ReadOnly = false;
+            this.chkconnections.Ripple = true;
+            this.chkconnections.Size = new System.Drawing.Size(153, 37);
+            this.chkconnections.TabIndex = 144;
+            this.chkconnections.Text = "Wi-Fi / Bluetooth";
+            this.chkconnections.UseVisualStyleBackColor = false;
             // 
             // txtInfoAdicional
             // 
@@ -1049,39 +1059,39 @@
             this.txtInfoAdicional.TrailingIcon = null;
             this.txtInfoAdicional.UseAccent = false;
             // 
-            // materialCheckbox2
+            // chkBiometria
             // 
-            this.materialCheckbox2.AutoSize = true;
-            this.materialCheckbox2.BackColor = System.Drawing.Color.Transparent;
-            this.materialCheckbox2.Depth = 0;
-            this.materialCheckbox2.Location = new System.Drawing.Point(624, 274);
-            this.materialCheckbox2.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckbox2.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckbox2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckbox2.Name = "materialCheckbox2";
-            this.materialCheckbox2.ReadOnly = false;
-            this.materialCheckbox2.Ripple = true;
-            this.materialCheckbox2.Size = new System.Drawing.Size(171, 37);
-            this.materialCheckbox2.TabIndex = 142;
-            this.materialCheckbox2.Text = "Biometria / Face ID";
-            this.materialCheckbox2.UseVisualStyleBackColor = false;
+            this.chkBiometria.AutoSize = true;
+            this.chkBiometria.BackColor = System.Drawing.Color.Transparent;
+            this.chkBiometria.Depth = 0;
+            this.chkBiometria.Location = new System.Drawing.Point(624, 274);
+            this.chkBiometria.Margin = new System.Windows.Forms.Padding(0);
+            this.chkBiometria.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkBiometria.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkBiometria.Name = "chkBiometria";
+            this.chkBiometria.ReadOnly = false;
+            this.chkBiometria.Ripple = true;
+            this.chkBiometria.Size = new System.Drawing.Size(171, 37);
+            this.chkBiometria.TabIndex = 142;
+            this.chkBiometria.Text = "Biometria / Face ID";
+            this.chkBiometria.UseVisualStyleBackColor = false;
             // 
-            // materialCheckbox1
+            // chkMic
             // 
-            this.materialCheckbox1.AutoSize = true;
-            this.materialCheckbox1.BackColor = System.Drawing.Color.Transparent;
-            this.materialCheckbox1.Depth = 0;
-            this.materialCheckbox1.Location = new System.Drawing.Point(439, 422);
-            this.materialCheckbox1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckbox1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckbox1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckbox1.Name = "materialCheckbox1";
-            this.materialCheckbox1.ReadOnly = false;
-            this.materialCheckbox1.Ripple = true;
-            this.materialCheckbox1.Size = new System.Drawing.Size(107, 37);
-            this.materialCheckbox1.TabIndex = 141;
-            this.materialCheckbox1.Text = "Microfone";
-            this.materialCheckbox1.UseVisualStyleBackColor = false;
+            this.chkMic.AutoSize = true;
+            this.chkMic.BackColor = System.Drawing.Color.Transparent;
+            this.chkMic.Depth = 0;
+            this.chkMic.Location = new System.Drawing.Point(439, 422);
+            this.chkMic.Margin = new System.Windows.Forms.Padding(0);
+            this.chkMic.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkMic.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkMic.Name = "chkMic";
+            this.chkMic.ReadOnly = false;
+            this.chkMic.Ripple = true;
+            this.chkMic.Size = new System.Drawing.Size(107, 37);
+            this.chkMic.TabIndex = 141;
+            this.chkMic.Text = "Microfone";
+            this.chkMic.UseVisualStyleBackColor = false;
             // 
             // txtOutros
             // 
@@ -1129,7 +1139,7 @@
             this.chkConectores.AutoSize = true;
             this.chkConectores.BackColor = System.Drawing.Color.Transparent;
             this.chkConectores.Depth = 0;
-            this.chkConectores.Location = new System.Drawing.Point(442, 459);
+            this.chkConectores.Location = new System.Drawing.Point(439, 459);
             this.chkConectores.Margin = new System.Windows.Forms.Padding(0);
             this.chkConectores.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkConectores.MouseState = MaterialSkin.MouseState.HOVER;
@@ -1141,22 +1151,22 @@
             this.chkConectores.Text = "Conectores";
             this.chkConectores.UseVisualStyleBackColor = false;
             // 
-            // chkSeguranca
+            // chkChip
             // 
-            this.chkSeguranca.AutoSize = true;
-            this.chkSeguranca.BackColor = System.Drawing.Color.Transparent;
-            this.chkSeguranca.Depth = 0;
-            this.chkSeguranca.Location = new System.Drawing.Point(624, 385);
-            this.chkSeguranca.Margin = new System.Windows.Forms.Padding(0);
-            this.chkSeguranca.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkSeguranca.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkSeguranca.Name = "chkSeguranca";
-            this.chkSeguranca.ReadOnly = false;
-            this.chkSeguranca.Ripple = true;
-            this.chkSeguranca.Size = new System.Drawing.Size(111, 37);
-            this.chkSeguranca.TabIndex = 136;
-            this.chkSeguranca.Text = "Segurança";
-            this.chkSeguranca.UseVisualStyleBackColor = false;
+            this.chkChip.AutoSize = true;
+            this.chkChip.BackColor = System.Drawing.Color.Transparent;
+            this.chkChip.Depth = 0;
+            this.chkChip.Location = new System.Drawing.Point(624, 385);
+            this.chkChip.Margin = new System.Windows.Forms.Padding(0);
+            this.chkChip.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkChip.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkChip.Name = "chkChip";
+            this.chkChip.ReadOnly = false;
+            this.chkChip.Ripple = true;
+            this.chkChip.Size = new System.Drawing.Size(101, 37);
+            this.chkChip.TabIndex = 136;
+            this.chkChip.Text = "Bandejas";
+            this.chkChip.UseVisualStyleBackColor = false;
             // 
             // chkbtn
             // 
@@ -1175,39 +1185,39 @@
             this.chkbtn.Text = "Botões Físicos";
             this.chkbtn.UseVisualStyleBackColor = false;
             // 
-            // chkAudio
+            // chkAutoFalante
             // 
-            this.chkAudio.AutoSize = true;
-            this.chkAudio.BackColor = System.Drawing.Color.Transparent;
-            this.chkAudio.Depth = 0;
-            this.chkAudio.Location = new System.Drawing.Point(439, 385);
-            this.chkAudio.Margin = new System.Windows.Forms.Padding(0);
-            this.chkAudio.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkAudio.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkAudio.Name = "chkAudio";
-            this.chkAudio.ReadOnly = false;
-            this.chkAudio.Ripple = true;
-            this.chkAudio.Size = new System.Drawing.Size(117, 37);
-            this.chkAudio.TabIndex = 134;
-            this.chkAudio.Text = "Alto-falante";
-            this.chkAudio.UseVisualStyleBackColor = false;
+            this.chkAutoFalante.AutoSize = true;
+            this.chkAutoFalante.BackColor = System.Drawing.Color.Transparent;
+            this.chkAutoFalante.Depth = 0;
+            this.chkAutoFalante.Location = new System.Drawing.Point(439, 385);
+            this.chkAutoFalante.Margin = new System.Windows.Forms.Padding(0);
+            this.chkAutoFalante.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkAutoFalante.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkAutoFalante.Name = "chkAutoFalante";
+            this.chkAutoFalante.ReadOnly = false;
+            this.chkAutoFalante.Ripple = true;
+            this.chkAutoFalante.Size = new System.Drawing.Size(117, 37);
+            this.chkAutoFalante.TabIndex = 134;
+            this.chkAutoFalante.Text = "Alto-falante";
+            this.chkAutoFalante.UseVisualStyleBackColor = false;
             // 
-            // chkCamera
+            // chkCameras
             // 
-            this.chkCamera.AutoSize = true;
-            this.chkCamera.BackColor = System.Drawing.Color.Transparent;
-            this.chkCamera.Depth = 0;
-            this.chkCamera.Location = new System.Drawing.Point(439, 311);
-            this.chkCamera.Margin = new System.Windows.Forms.Padding(0);
-            this.chkCamera.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkCamera.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkCamera.Name = "chkCamera";
-            this.chkCamera.ReadOnly = false;
-            this.chkCamera.Ripple = true;
-            this.chkCamera.Size = new System.Drawing.Size(98, 37);
-            this.chkCamera.TabIndex = 133;
-            this.chkCamera.Text = "Câmeras";
-            this.chkCamera.UseVisualStyleBackColor = false;
+            this.chkCameras.AutoSize = true;
+            this.chkCameras.BackColor = System.Drawing.Color.Transparent;
+            this.chkCameras.Depth = 0;
+            this.chkCameras.Location = new System.Drawing.Point(439, 311);
+            this.chkCameras.Margin = new System.Windows.Forms.Padding(0);
+            this.chkCameras.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkCameras.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkCameras.Name = "chkCameras";
+            this.chkCameras.ReadOnly = false;
+            this.chkCameras.Ripple = true;
+            this.chkCameras.Size = new System.Drawing.Size(98, 37);
+            this.chkCameras.TabIndex = 133;
+            this.chkCameras.Text = "Câmeras";
+            this.chkCameras.UseVisualStyleBackColor = false;
             // 
             // label11
             // 
@@ -1220,22 +1230,22 @@
             this.label11.TabIndex = 132;
             this.label11.Text = "Itens Avaliados";
             // 
-            // chkSistema
+            // chkSO
             // 
-            this.chkSistema.AutoSize = true;
-            this.chkSistema.BackColor = System.Drawing.Color.Transparent;
-            this.chkSistema.Depth = 0;
-            this.chkSistema.Location = new System.Drawing.Point(624, 348);
-            this.chkSistema.Margin = new System.Windows.Forms.Padding(0);
-            this.chkSistema.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chkSistema.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chkSistema.Name = "chkSistema";
-            this.chkSistema.ReadOnly = false;
-            this.chkSistema.Ripple = true;
-            this.chkSistema.Size = new System.Drawing.Size(182, 37);
-            this.chkSistema.TabIndex = 109;
-            this.chkSistema.Text = "Sistema Operacional";
-            this.chkSistema.UseVisualStyleBackColor = false;
+            this.chkSO.AutoSize = true;
+            this.chkSO.BackColor = System.Drawing.Color.Transparent;
+            this.chkSO.Depth = 0;
+            this.chkSO.Location = new System.Drawing.Point(624, 348);
+            this.chkSO.Margin = new System.Windows.Forms.Padding(0);
+            this.chkSO.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chkSO.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chkSO.Name = "chkSO";
+            this.chkSO.ReadOnly = false;
+            this.chkSO.Ripple = true;
+            this.chkSO.Size = new System.Drawing.Size(182, 37);
+            this.chkSO.TabIndex = 109;
+            this.chkSO.Text = "Sistema Operacional";
+            this.chkSO.UseVisualStyleBackColor = false;
             // 
             // chkCarcaca
             // 
@@ -1406,6 +1416,7 @@
             // tbpPecas
             // 
             this.tbpPecas.BackColor = System.Drawing.Color.White;
+            this.tbpPecas.Controls.Add(this.modernBox2);
             this.tbpPecas.Controls.Add(this.gpEstoque);
             this.tbpPecas.Controls.Add(this.gpEsporadico);
             this.tbpPecas.Location = new System.Drawing.Point(4, 22);
@@ -1413,6 +1424,108 @@
             this.tbpPecas.Size = new System.Drawing.Size(1095, 525);
             this.tbpPecas.TabIndex = 3;
             this.tbpPecas.Text = "Peças";
+            // 
+            // modernBox2
+            // 
+            this.modernBox2.BackColor = System.Drawing.Color.Transparent;
+            this.modernBox2.BorderColor = System.Drawing.Color.White;
+            this.modernBox2.BorderRadius = 12;
+            this.modernBox2.BorderSize = 1;
+            this.modernBox2.Controls.Add(this.dgvItens);
+            this.modernBox2.FillColor = System.Drawing.Color.White;
+            this.modernBox2.Location = new System.Drawing.Point(3, 84);
+            this.modernBox2.Name = "modernBox2";
+            this.modernBox2.Padding = new System.Windows.Forms.Padding(13);
+            this.modernBox2.ShadowAngle = 90;
+            this.modernBox2.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.modernBox2.ShadowSize = 8;
+            this.modernBox2.Size = new System.Drawing.Size(528, 438);
+            this.modernBox2.TabIndex = 179;
+            // 
+            // dgvItens
+            // 
+            this.dgvItens.AllowUserToAddRows = false;
+            this.dgvItens.AllowUserToDeleteRows = false;
+            this.dgvItens.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvItens.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvItens.BackgroundColor = System.Drawing.Color.White;
+            this.dgvItens.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvItens.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvItens.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvItens.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvItens.ColumnHeadersHeight = 35;
+            this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colId,
+            this.colDescricao,
+            this.colQtdItem,
+            this.colValues,
+            this.colExcluir});
+            this.dgvItens.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.MintCream;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvItens.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvItens.GridColor = System.Drawing.Color.Black;
+            this.dgvItens.Location = new System.Drawing.Point(10, 16);
+            this.dgvItens.MultiSelect = false;
+            this.dgvItens.Name = "dgvItens";
+            this.dgvItens.ReadOnly = true;
+            this.dgvItens.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvItens.RowHeadersVisible = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvItens.Size = new System.Drawing.Size(502, 451);
+            this.dgvItens.TabIndex = 98;
+            this.dgvItens.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItens_CellContentClick);
+            // 
+            // colId
+            // 
+            this.colId.FillWeight = 1F;
+            this.colId.HeaderText = "Id";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Visible = false;
+            // 
+            // colDescricao
+            // 
+            this.colDescricao.FillWeight = 250F;
+            this.colDescricao.HeaderText = "Item";
+            this.colDescricao.Name = "colDescricao";
+            this.colDescricao.ReadOnly = true;
+            // 
+            // colQtdItem
+            // 
+            this.colQtdItem.HeaderText = "Qtd";
+            this.colQtdItem.Name = "colQtdItem";
+            this.colQtdItem.ReadOnly = true;
+            // 
+            // colValues
+            // 
+            this.colValues.HeaderText = "Valor";
+            this.colValues.Name = "colValues";
+            this.colValues.ReadOnly = true;
+            // 
+            // colExcluir
+            // 
+            this.colExcluir.FillWeight = 45F;
+            this.colExcluir.HeaderText = "";
+            this.colExcluir.Name = "colExcluir";
+            this.colExcluir.ReadOnly = true;
             // 
             // gpEstoque
             // 
@@ -1497,9 +1610,9 @@
             // gpEsporadico
             // 
             this.gpEsporadico.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.gpEsporadico.Controls.Add(this.btnAddComposicao);
             this.gpEsporadico.Controls.Add(this.txtValorItemEsporadico);
             this.gpEsporadico.Controls.Add(this.txtQtdItemEsporadico);
-            this.gpEsporadico.Controls.Add(this.dgvItens);
             this.gpEsporadico.Controls.Add(this.txtNomeItemEsporadico);
             this.gpEsporadico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpEsporadico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
@@ -1510,58 +1623,73 @@
             this.gpEsporadico.TabStop = false;
             this.gpEsporadico.Text = "Itens Esporádicos";
             // 
-            // dgvItens
+            // btnAddComposicao
             // 
-            this.dgvItens.AllowUserToAddRows = false;
-            this.dgvItens.AllowUserToDeleteRows = false;
-            this.dgvItens.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvItens.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvItens.BackgroundColor = System.Drawing.Color.White;
-            this.dgvItens.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvItens.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvItens.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dgvItens.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvItens.ColumnHeadersHeight = 35;
-            this.dgvItens.ColumnHeadersVisible = false;
-            this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colId,
-            this.colDescricao,
-            this.colQtdItem,
-            this.colValues,
-            this.colExcluir});
-            this.dgvItens.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.MintCream;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.PaleTurquoise;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvItens.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvItens.EnableHeadersVisualStyles = false;
-            this.dgvItens.GridColor = System.Drawing.Color.Black;
-            this.dgvItens.Location = new System.Drawing.Point(6, 79);
-            this.dgvItens.MultiSelect = false;
-            this.dgvItens.Name = "dgvItens";
-            this.dgvItens.ReadOnly = true;
-            this.dgvItens.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvItens.RowHeadersVisible = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItens.Size = new System.Drawing.Size(522, 434);
-            this.dgvItens.TabIndex = 98;
-            this.dgvItens.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItens_CellContentClick);
+            this.btnAddComposicao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddComposicao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnAddComposicao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAddComposicao.CorBorda = System.Drawing.Color.MediumSlateBlue;
+            this.btnAddComposicao.CorBotao = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(184)))));
+            this.btnAddComposicao.CorTextoBotao = System.Drawing.Color.White;
+            this.btnAddComposicao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddComposicao.FlatAppearance.BorderSize = 0;
+            this.btnAddComposicao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btnAddComposicao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddComposicao.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
+            this.btnAddComposicao.ForeColor = System.Drawing.Color.White;
+            this.btnAddComposicao.Image = ((System.Drawing.Image)(resources.GetObject("btnAddComposicao.Image")));
+            this.btnAddComposicao.Location = new System.Drawing.Point(487, 25);
+            this.btnAddComposicao.Name = "btnAddComposicao";
+            this.btnAddComposicao.Size = new System.Drawing.Size(41, 48);
+            this.btnAddComposicao.TabIndex = 177;
+            this.btnAddComposicao.TamanhoBorda = 0;
+            this.btnAddComposicao.TamanhoRaio = 10;
+            this.btnAddComposicao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddComposicao.UseVisualStyleBackColor = false;
+            // 
+            // txtValorItemEsporadico
+            // 
+            this.txtValorItemEsporadico.AcceptsTab = true;
+            this.txtValorItemEsporadico.AnimateReadOnly = false;
+            this.txtValorItemEsporadico.AutoWordSelection = true;
+            this.txtValorItemEsporadico.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtValorItemEsporadico.Depth = 0;
+            this.txtValorItemEsporadico.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtValorItemEsporadico.Hint = "Valor";
+            this.txtValorItemEsporadico.LeadingIcon = null;
+            this.txtValorItemEsporadico.LeaveOnEnterKey = true;
+            this.txtValorItemEsporadico.Location = new System.Drawing.Point(362, 25);
+            this.txtValorItemEsporadico.MaxLength = 60;
+            this.txtValorItemEsporadico.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtValorItemEsporadico.Multiline = false;
+            this.txtValorItemEsporadico.Name = "txtValorItemEsporadico";
+            this.txtValorItemEsporadico.Size = new System.Drawing.Size(119, 50);
+            this.txtValorItemEsporadico.TabIndex = 100;
+            this.txtValorItemEsporadico.Text = "";
+            this.txtValorItemEsporadico.TrailingIcon = null;
+            this.txtValorItemEsporadico.UseAccent = false;
+            // 
+            // txtQtdItemEsporadico
+            // 
+            this.txtQtdItemEsporadico.AcceptsTab = true;
+            this.txtQtdItemEsporadico.AnimateReadOnly = false;
+            this.txtQtdItemEsporadico.AutoWordSelection = true;
+            this.txtQtdItemEsporadico.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtQtdItemEsporadico.Depth = 0;
+            this.txtQtdItemEsporadico.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtQtdItemEsporadico.Hint = "Qtd";
+            this.txtQtdItemEsporadico.LeadingIcon = null;
+            this.txtQtdItemEsporadico.LeaveOnEnterKey = true;
+            this.txtQtdItemEsporadico.Location = new System.Drawing.Point(251, 25);
+            this.txtQtdItemEsporadico.MaxLength = 60;
+            this.txtQtdItemEsporadico.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtQtdItemEsporadico.Multiline = false;
+            this.txtQtdItemEsporadico.Name = "txtQtdItemEsporadico";
+            this.txtQtdItemEsporadico.Size = new System.Drawing.Size(105, 50);
+            this.txtQtdItemEsporadico.TabIndex = 99;
+            this.txtQtdItemEsporadico.Text = "";
+            this.txtQtdItemEsporadico.TrailingIcon = null;
+            this.txtQtdItemEsporadico.UseAccent = false;
             // 
             // txtNomeItemEsporadico
             // 
@@ -1579,10 +1707,10 @@
             this.txtNomeItemEsporadico.MouseState = MaterialSkin.MouseState.OUT;
             this.txtNomeItemEsporadico.Multiline = false;
             this.txtNomeItemEsporadico.Name = "txtNomeItemEsporadico";
-            this.txtNomeItemEsporadico.Size = new System.Drawing.Size(286, 50);
+            this.txtNomeItemEsporadico.Size = new System.Drawing.Size(239, 50);
             this.txtNomeItemEsporadico.TabIndex = 2;
             this.txtNomeItemEsporadico.Text = "";
-            this.txtNomeItemEsporadico.TrailingIcon = ((System.Drawing.Image)(resources.GetObject("txtNomeItemEsporadico.TrailingIcon")));
+            this.txtNomeItemEsporadico.TrailingIcon = null;
             this.txtNomeItemEsporadico.UseAccent = false;
             this.txtNomeItemEsporadico.TrailingIconClick += new System.EventHandler(this.txtNomeItemEsporadico_TrailingIconClick);
             // 
@@ -1973,12 +2101,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnInterno.BackColor = System.Drawing.Color.White;
+            this.pnInterno.Controls.Add(this.lbDataAtual);
             this.pnInterno.Controls.Add(this.btnExportar);
             this.pnInterno.Controls.Add(this.tbcOs);
             this.pnInterno.Controls.Add(this.pnStatus);
             this.pnInterno.Controls.Add(this.btnEncerrarJanelas);
             this.pnInterno.Controls.Add(this.label6);
-            this.pnInterno.Controls.Add(this.pn1);
             this.pnInterno.Controls.Add(this.pictureBox3);
             this.pnInterno.Controls.Add(this.btnSalvar);
             this.pnInterno.Controls.Add(this.lbTitulo);
@@ -1992,6 +2120,18 @@
             this.pnInterno.TabIndex = 0;
             this.pnInterno.TamanhoBorda = 0;
             this.pnInterno.TamanhoRaio = 15;
+            // 
+            // lbDataAtual
+            // 
+            this.lbDataAtual.AutoSize = true;
+            this.lbDataAtual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.lbDataAtual.ForeColor = System.Drawing.Color.SteelBlue;
+            this.lbDataAtual.Location = new System.Drawing.Point(443, 30);
+            this.lbDataAtual.Name = "lbDataAtual";
+            this.lbDataAtual.Size = new System.Drawing.Size(99, 20);
+            this.lbDataAtual.TabIndex = 1;
+            this.lbDataAtual.Text = "15/01/2026";
+            this.lbDataAtual.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbDataAtual_MouseDown);
             // 
             // btnEncerrarJanelas
             // 
@@ -2028,35 +2168,6 @@
             this.label6.Size = new System.Drawing.Size(271, 20);
             this.label6.TabIndex = 175;
             this.label6.Text = "Informe os dados da ordem de serviço";
-            // 
-            // pn1
-            // 
-            this.pn1.BackColor = System.Drawing.Color.Transparent;
-            this.pn1.Color1 = System.Drawing.Color.Black;
-            this.pn1.Color2 = System.Drawing.Color.RoyalBlue;
-            this.pn1.Controls.Add(this.lbDataAtual);
-            this.pn1.CornerRadius = 10;
-            this.pn1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.pn1.GradientAngle = 50F;
-            this.pn1.Location = new System.Drawing.Point(449, 25);
-            this.pn1.Name = "pn1";
-            this.pn1.Size = new System.Drawing.Size(124, 27);
-            this.pn1.TabIndex = 5;
-            this.pn1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pn1_MouseDown);
-            // 
-            // lbDataAtual
-            // 
-            this.lbDataAtual.AutoSize = true;
-            this.lbDataAtual.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lbDataAtual.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.lbDataAtual.ForeColor = System.Drawing.Color.White;
-            this.lbDataAtual.Location = new System.Drawing.Point(0, 0);
-            this.lbDataAtual.Name = "lbDataAtual";
-            this.lbDataAtual.Padding = new System.Windows.Forms.Padding(20, 5, 0, 5);
-            this.lbDataAtual.Size = new System.Drawing.Size(110, 27);
-            this.lbDataAtual.TabIndex = 1;
-            this.lbDataAtual.Text = "15/01/2026";
-            this.lbDataAtual.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbDataAtual_MouseDown);
             // 
             // pictureBox3
             // 
@@ -2106,84 +2217,6 @@
             this.lbTitulo.TabIndex = 173;
             this.lbTitulo.Text = "Cadastro de Ordem de Serviço";
             // 
-            // txtQtdItemEsporadico
-            // 
-            this.txtQtdItemEsporadico.AcceptsTab = true;
-            this.txtQtdItemEsporadico.AnimateReadOnly = false;
-            this.txtQtdItemEsporadico.AutoWordSelection = true;
-            this.txtQtdItemEsporadico.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtQtdItemEsporadico.Depth = 0;
-            this.txtQtdItemEsporadico.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtQtdItemEsporadico.Hint = "Qtd";
-            this.txtQtdItemEsporadico.LeadingIcon = null;
-            this.txtQtdItemEsporadico.LeaveOnEnterKey = true;
-            this.txtQtdItemEsporadico.Location = new System.Drawing.Point(298, 25);
-            this.txtQtdItemEsporadico.MaxLength = 60;
-            this.txtQtdItemEsporadico.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtQtdItemEsporadico.Multiline = false;
-            this.txtQtdItemEsporadico.Name = "txtQtdItemEsporadico";
-            this.txtQtdItemEsporadico.Size = new System.Drawing.Size(105, 50);
-            this.txtQtdItemEsporadico.TabIndex = 99;
-            this.txtQtdItemEsporadico.Text = "";
-            this.txtQtdItemEsporadico.TrailingIcon = null;
-            this.txtQtdItemEsporadico.UseAccent = false;
-            // 
-            // txtValorItemEsporadico
-            // 
-            this.txtValorItemEsporadico.AcceptsTab = true;
-            this.txtValorItemEsporadico.AnimateReadOnly = false;
-            this.txtValorItemEsporadico.AutoWordSelection = true;
-            this.txtValorItemEsporadico.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtValorItemEsporadico.Depth = 0;
-            this.txtValorItemEsporadico.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtValorItemEsporadico.Hint = "Valor";
-            this.txtValorItemEsporadico.LeadingIcon = null;
-            this.txtValorItemEsporadico.LeaveOnEnterKey = true;
-            this.txtValorItemEsporadico.Location = new System.Drawing.Point(409, 25);
-            this.txtValorItemEsporadico.MaxLength = 60;
-            this.txtValorItemEsporadico.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtValorItemEsporadico.Multiline = false;
-            this.txtValorItemEsporadico.Name = "txtValorItemEsporadico";
-            this.txtValorItemEsporadico.Size = new System.Drawing.Size(119, 50);
-            this.txtValorItemEsporadico.TabIndex = 100;
-            this.txtValorItemEsporadico.Text = "";
-            this.txtValorItemEsporadico.TrailingIcon = null;
-            this.txtValorItemEsporadico.UseAccent = false;
-            // 
-            // colId
-            // 
-            this.colId.FillWeight = 1F;
-            this.colId.HeaderText = "Id";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.Visible = false;
-            // 
-            // colDescricao
-            // 
-            this.colDescricao.FillWeight = 250F;
-            this.colDescricao.HeaderText = "Item";
-            this.colDescricao.Name = "colDescricao";
-            this.colDescricao.ReadOnly = true;
-            // 
-            // colQtdItem
-            // 
-            this.colQtdItem.HeaderText = "Qtd";
-            this.colQtdItem.Name = "colQtdItem";
-            this.colQtdItem.ReadOnly = true;
-            // 
-            // colValues
-            // 
-            this.colValues.HeaderText = "Valor";
-            this.colValues.Name = "colValues";
-            this.colValues.ReadOnly = true;
-            // 
-            // colExcluir
-            // 
-            this.colExcluir.FillWeight = 45F;
-            this.colExcluir.HeaderText = "";
-            this.colExcluir.Name = "colExcluir";
-            this.colExcluir.ReadOnly = true;
-            // 
             // CadastroOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2220,9 +2253,10 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tbpPecas.ResumeLayout(false);
+            this.modernBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).EndInit();
             this.gpEstoque.ResumeLayout(false);
             this.gpEsporadico.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).EndInit();
             this.tbpFinanceiro.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -2232,8 +2266,6 @@
             this.modernBox1.ResumeLayout(false);
             this.pnInterno.ResumeLayout(false);
             this.pnInterno.PerformLayout();
-            this.pn1.ResumeLayout(false);
-            this.pn1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
@@ -2301,14 +2333,14 @@
         private MaterialSkin.Controls.MaterialCheckbox chkCarcaca;
         private MaterialSkin.Controls.MaterialCheckbox chkBateria;
         private MaterialSkin.Controls.MaterialCheckbox chkTela;
-        private MaterialSkin.Controls.MaterialCheckbox chkSistema;
-        private MaterialSkin.Controls.MaterialCheckbox chkCamera;
+        private MaterialSkin.Controls.MaterialCheckbox chkSO;
+        private MaterialSkin.Controls.MaterialCheckbox chkCameras;
         private System.Windows.Forms.Label label11;
         private MaterialSkin.Controls.MaterialCheckbox chkOutros;
         private MaterialSkin.Controls.MaterialCheckbox chkConectores;
-        private MaterialSkin.Controls.MaterialCheckbox chkSeguranca;
+        private MaterialSkin.Controls.MaterialCheckbox chkChip;
         private MaterialSkin.Controls.MaterialCheckbox chkbtn;
-        private MaterialSkin.Controls.MaterialCheckbox chkAudio;
+        private MaterialSkin.Controls.MaterialCheckbox chkAutoFalante;
         private MaterialSkin.Controls.MaterialTextBox txtResumoServico;
         private System.Windows.Forms.Label lbApagar;
         private MaterialSkin.Controls.MaterialTextBox txtValorPago;
@@ -2336,12 +2368,11 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.GroupBox groupBox4;
-        private Componentes.RoundedPanel pn1;
         private System.Windows.Forms.Label lbDataAtual;
         private MaterialSkin.Controls.MaterialTextBox txtInfoAdicional;
-        private MaterialSkin.Controls.MaterialCheckbox materialCheckbox2;
-        private MaterialSkin.Controls.MaterialCheckbox materialCheckbox1;
-        private MaterialSkin.Controls.MaterialCheckbox materialCheckbox3;
+        private MaterialSkin.Controls.MaterialCheckbox chkBiometria;
+        private MaterialSkin.Controls.MaterialCheckbox chkMic;
+        private MaterialSkin.Controls.MaterialCheckbox chkconnections;
         private System.Windows.Forms.GroupBox groupBox8;
         private Componentes.ModernBox modernBox1;
         private MaterialSkin.Controls.MaterialTextBox txtValorItemEsporadico;
@@ -2351,5 +2382,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colQtdItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn colValues;
         private System.Windows.Forms.DataGridViewImageColumn colExcluir;
+        private Componentes.ModernBox modernBox2;
+        private Componentes.CustomButton btnAddComposicao;
     }
 }

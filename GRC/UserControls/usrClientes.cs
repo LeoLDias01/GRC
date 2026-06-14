@@ -66,6 +66,7 @@ namespace GRC.UserControls
             cbRegistros.Text = "10";
             _statusSelecionado = null; // Começa exibindo Todos
             AtualizarVisualFiltros();
+            ConfigurarEstiloGrid();
             RealizaPesquisa();
         }
         private void txtPesquisa_TextChanged(object sender, EventArgs e)

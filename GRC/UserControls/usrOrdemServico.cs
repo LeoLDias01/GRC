@@ -80,6 +80,7 @@ namespace GRC.UserControls
             InicializarColunasGrid();
             RealizaPesquisa();
             btnNovaOS.Focus();
+            ConfigurarEstiloGrid();
         }
         private void CarregaCombos()
         {
