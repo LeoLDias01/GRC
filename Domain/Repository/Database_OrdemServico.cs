@@ -122,7 +122,7 @@ namespace Domain.Repository
                             CustoManual = string.IsNullOrWhiteSpace(os.CustoManual) ? (object)DBNull.Value : os.CustoManual,
                             Acrescimo = string.IsNullOrWhiteSpace(os.Acrescimo) ? (object)DBNull.Value : os.Acrescimo,
                             Desconto = string.IsNullOrWhiteSpace(os.Desconto) ? (object)DBNull.Value : os.Desconto,
-                            ObservacoesLoja = string.IsNullOrWhiteSpace(os.Observacoes) ? (object)DBNull.Value : os.Observacoes,
+                            ObservacoesLoja = string.IsNullOrWhiteSpace(os.ObservacoesLoja) ? (object)DBNull.Value : os.ObservacoesLoja,
                             ObservacoesCliente = string.IsNullOrWhiteSpace(os.ObservacoesCliente) ? (object)DBNull.Value : os.ObservacoesCliente,
                             Favorito = os.Favorito == true ? 1 : 0
 
@@ -234,7 +234,7 @@ namespace Domain.Repository
                             CustoManual = string.IsNullOrWhiteSpace(os.CustoManual) ? (object)DBNull.Value : os.CustoManual,
                             Acrescimo = string.IsNullOrWhiteSpace(os.Acrescimo) ? (object)DBNull.Value : os.Acrescimo,
                             Desconto = string.IsNullOrWhiteSpace(os.Desconto) ? (object)DBNull.Value : os.Desconto,
-                            ObservacoesLoja = string.IsNullOrWhiteSpace(os.Observacoes) ? (object)DBNull.Value : os.Observacoes,
+                            ObservacoesLoja = string.IsNullOrWhiteSpace(os.ObservacoesLoja) ? (object)DBNull.Value : os.ObservacoesLoja,
                             ObservacoesCliente = string.IsNullOrWhiteSpace(os.ObservacoesCliente) ? (object)DBNull.Value : os.ObservacoesCliente,
                             Favorito = os.Favorito == true ? true : false
                         }, tran);
@@ -580,7 +580,7 @@ namespace Domain.Repository
                         CustoManual = x.CustoManual,
                         Acrescimo = x.Acrescimo,
                         Desconto = x.Desconto,
-                        Observacoes = x.ObservacoesLoja,
+                        ObservacoesLoja = x.ObservacoesLoja,
                         ObservacoesCliente = x.ObservacoesCliente,
                         Favorito = Convert.ToBoolean(x.Favorito),
                         DadosCliente = new Cliente

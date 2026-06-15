@@ -294,7 +294,7 @@ namespace GRC.Telas
                 txtGarantia.Text = dadosOs.Garantia;
                 txtInicioGarantia.Text = dadosOs.InicioGarantia;
                 txtFimGarantia.Text = dadosOs.FimGarantia;
-                txtObservacoes.Text = dadosOs.Observacoes;
+                txtObservacoesLoja.Text = dadosOs.ObservacoesLoja;
                 txtObservacoesCliente.Text = dadosOs.ObservacoesCliente;
 
                 // ORÇAMENTO
@@ -997,7 +997,7 @@ namespace GRC.Telas
                     MaoObra = !string.IsNullOrWhiteSpace(txtTotalCobrado.Text) ? txtTotalCobrado.Text : string.Empty,
                     CustoManual = !string.IsNullOrWhiteSpace(txtCustoManual.Text) ? txtCustoManual.Text : string.Empty,
                     
-                    Observacoes = txtObservacoes.Text,
+                    ObservacoesLoja = txtObservacoesLoja.Text,
                     ObservacoesCliente = txtObservacoesCliente.Text,
                     Favorito = _favorito == true ? false : true,
                     ItensOrdemServico = _itensOS.ToList(),
@@ -1057,7 +1057,7 @@ namespace GRC.Telas
             txtTotalCobrado.Clear();
             txtTotalPecas.Clear();
            
-            txtObservacoes.Clear();
+            txtObservacoesLoja.Clear();
             txtLucro.Clear();
             dgvItens.Rows.Clear();
             txtCustoManual.Clear();

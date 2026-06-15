@@ -60,7 +60,7 @@
             this.txtGarantia = new MaterialSkin.Controls.MaterialTextBox();
             this.txtInicioGarantia = new MaterialSkin.Controls.MaterialTextBox();
             this.txtDescricaoSaida = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
-            this.txtObservacoes = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
+            this.txtObservacoesLoja = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
             this.pcAjuda = new System.Windows.Forms.PictureBox();
             this.tbpDadosAparelho = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -231,7 +231,7 @@
             this.gpbInfoVenda.Controls.Add(this.groupBox4);
             this.gpbInfoVenda.Controls.Add(this.txtObservacoesCliente);
             this.gpbInfoVenda.Controls.Add(this.groupBox6);
-            this.gpbInfoVenda.Controls.Add(this.txtObservacoes);
+            this.gpbInfoVenda.Controls.Add(this.txtObservacoesLoja);
             this.gpbInfoVenda.Controls.Add(this.pcAjuda);
             this.gpbInfoVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbInfoVenda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(69)))), ((int)(((byte)(98)))));
@@ -244,8 +244,6 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox7.BackColor = System.Drawing.Color.White;
             this.groupBox7.Controls.Add(this.txtSituacaoRelatada);
             this.groupBox7.Controls.Add(this.txtRelatorioTecnico);
@@ -314,8 +312,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.txtIdentidade);
             this.groupBox2.Controls.Add(this.pictureBox2);
             this.groupBox2.Controls.Add(this.txtCliente);
@@ -370,6 +366,7 @@
             this.txtCliente.AnimateReadOnly = true;
             this.txtCliente.AutoWordSelection = true;
             this.txtCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtCliente.Depth = 0;
             this.txtCliente.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtCliente.Hint = "Cliente";
@@ -390,8 +387,6 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.txtResumoServico);
             this.groupBox4.Controls.Add(this.pcFavorito);
             this.groupBox4.Controls.Add(this.txtId);
@@ -622,8 +617,6 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox6.BackColor = System.Drawing.Color.White;
             this.groupBox6.Controls.Add(this.groupBox3);
             this.groupBox6.Controls.Add(this.txtDescricaoSaida);
@@ -748,32 +741,32 @@
             this.txtDescricaoSaida.UseAccent = false;
             this.txtDescricaoSaida.UseSystemPasswordChar = false;
             // 
-            // txtObservacoes
+            // txtObservacoesLoja
             // 
-            this.txtObservacoes.AnimateReadOnly = false;
-            this.txtObservacoes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtObservacoes.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtObservacoes.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtObservacoes.Depth = 0;
-            this.txtObservacoes.HideSelection = true;
-            this.txtObservacoes.Hint = "Observações (apenas para a loja)";
-            this.txtObservacoes.Location = new System.Drawing.Point(6, 310);
-            this.txtObservacoes.MaxLength = 300;
-            this.txtObservacoes.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtObservacoes.Name = "txtObservacoes";
-            this.txtObservacoes.PasswordChar = '\0';
-            this.txtObservacoes.ReadOnly = false;
-            this.txtObservacoes.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtObservacoes.SelectedText = "";
-            this.txtObservacoes.SelectionLength = 0;
-            this.txtObservacoes.SelectionStart = 0;
-            this.txtObservacoes.ShortcutsEnabled = true;
-            this.txtObservacoes.Size = new System.Drawing.Size(554, 95);
-            this.txtObservacoes.TabIndex = 83;
-            this.txtObservacoes.TabStop = false;
-            this.txtObservacoes.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtObservacoes.UseAccent = false;
-            this.txtObservacoes.UseSystemPasswordChar = false;
+            this.txtObservacoesLoja.AnimateReadOnly = false;
+            this.txtObservacoesLoja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtObservacoesLoja.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtObservacoesLoja.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtObservacoesLoja.Depth = 0;
+            this.txtObservacoesLoja.HideSelection = true;
+            this.txtObservacoesLoja.Hint = "Observações (apenas para a loja)";
+            this.txtObservacoesLoja.Location = new System.Drawing.Point(6, 310);
+            this.txtObservacoesLoja.MaxLength = 300;
+            this.txtObservacoesLoja.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtObservacoesLoja.Name = "txtObservacoesLoja";
+            this.txtObservacoesLoja.PasswordChar = '\0';
+            this.txtObservacoesLoja.ReadOnly = false;
+            this.txtObservacoesLoja.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtObservacoesLoja.SelectedText = "";
+            this.txtObservacoesLoja.SelectionLength = 0;
+            this.txtObservacoesLoja.SelectionStart = 0;
+            this.txtObservacoesLoja.ShortcutsEnabled = true;
+            this.txtObservacoesLoja.Size = new System.Drawing.Size(554, 95);
+            this.txtObservacoesLoja.TabIndex = 83;
+            this.txtObservacoesLoja.TabStop = false;
+            this.txtObservacoesLoja.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtObservacoesLoja.UseAccent = false;
+            this.txtObservacoesLoja.UseSystemPasswordChar = false;
             // 
             // pcAjuda
             // 
@@ -2279,7 +2272,7 @@
         private MaterialSkin.Controls.MaterialTextBox txtFimPrevisto;
         private MaterialSkin.Controls.MaterialComboBox cbStatus;
         private MaterialSkin.Controls.MaterialTextBox txtDataEntrada;
-        private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtObservacoes;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtObservacoesLoja;
         private MaterialSkin.Controls.MaterialTextBox txtInicioGarantia;
         private MaterialSkin.Controls.MaterialComboBox cbTipoServico;
         private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtDescricaoSaida;

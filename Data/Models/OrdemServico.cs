@@ -8,18 +8,45 @@ namespace Data.Models
 {
     public class OrdemServico
     {
+        /// <summary>
+        /// OS
+        /// </summary>
         public int Id { get; set; }
-        public string DescricaoSolucao { get; set; }
-        public string DescricaoProblema { get; set; }
-        public int TipoServico { get; set; }
-        public int Status { get; set; }
-        public int StatusAntigo { get; set; }
-        public string DescricaoStatus { get; set; }
-        public string DescricaoTipo { get; set; }
-        public string Garantia { get; set; }
         public string DataEntrada { get; set; }
         public string FimPrevisto { get; set; }
         public string FimReal { get; set; }
+        public int TipoServico { get; set; }
+        public int StatusAntigo { get; set; }
+        public int Status { get; set; }
+        public string Resumo { get; set; }
+
+
+        /// <summary>
+        /// Cliente
+        /// </summary>
+        public Cliente DadosCliente { get; set; } = new Cliente();
+
+        /// <summary>
+        /// Observações
+        /// </summary>
+        public string ObservacoesLoja { get; set; }
+        public string ObservacoesCliente { get; set; }
+
+
+        /// <summary>
+        /// Dados de Entrada
+        /// </summary>
+
+        public string DescricaoSolucao { get; set; }
+        public string DescricaoProblema { get; set; }
+       
+        
+        
+        public string DescricaoStatus { get; set; }
+        public string DescricaoTipo { get; set; }
+        public string Garantia { get; set; }
+        
+        
         public string InicioGarantia { get; set; }
         public string FimGarantia { get; set; }
         public string MaoObra { get; set; }
@@ -27,10 +54,9 @@ namespace Data.Models
         public string CustoManual { get; set; }
         public string Desconto { get; set; }
         public string Total { get; set; }
-        public string Observacoes { get; set; }
-        public string ObservacoesCliente { get; set; }
+       
         public bool Favorito { get; set; }
-        public Cliente DadosCliente { get; set; } = new Cliente();
+        
         public List<ItemCard> ItensEsporadicos { get; set; } = new List<ItemCard>();
         public List<ItemCard> ItensOrdemServico { get; set; } = new List<ItemCard>();
     }
