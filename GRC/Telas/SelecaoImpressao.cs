@@ -186,9 +186,9 @@ namespace GRC.Telas
             tabelaSaida.AddCell(CriarCelulaLabelValue("Nº CONTROLE", os.Id.ToString().PadLeft(6, '0'), FontSizeBase));
 
             // Linha 2: Garantia
-            tabelaSaida.AddCell(CriarCelulaLabelValue("INÍCIO GARANTIA", os.InicioGarantia ?? os.FimReal, FontSizeBase));
-            tabelaSaida.AddCell(CriarCelulaLabelValue("FIM GARANTIA", os.FimGarantia ?? "---", FontSizeBase));
-            tabelaSaida.AddCell(CriarCelulaLabelValue("VIGÊNCIA", $"{os.Garantia} DIAS", FontSizeBase));
+            tabelaSaida.AddCell(CriarCelulaLabelValue("INÍCIO GARANTIA", os.DtInicioGarantia ?? os.FimReal, FontSizeBase));
+            tabelaSaida.AddCell(CriarCelulaLabelValue("FIM GARANTIA", os.DtFimGarantia ?? "---", FontSizeBase));
+            tabelaSaida.AddCell(CriarCelulaLabelValue("VIGÊNCIA", $"{os.DuracaoGarantia} DIAS", FontSizeBase));
 
             doc.Add(tabelaSaida);
 
