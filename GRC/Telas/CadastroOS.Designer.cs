@@ -383,7 +383,7 @@
             this.txtCliente.Text = "";
             this.txtCliente.TrailingIcon = ((System.Drawing.Image)(resources.GetObject("txtCliente.TrailingIcon")));
             this.txtCliente.UseAccent = false;
-            this.txtCliente.TrailingIconClick += new System.EventHandler(this.txtCliente_TrailingIconClick);
+            this.txtCliente.TrailingIconClick += new System.EventHandler(this.txtCliente_Click);
             // 
             // groupBox4
             // 

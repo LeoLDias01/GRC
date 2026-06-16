@@ -5,6 +5,7 @@ using Data.Models;
 using GRC.Componentes;
 using GRC.Properties;
 using iText.Kernel.Pdf.Function;
+using iText.Layout.Element;
 using iText.Signatures.Validation;
 using MaterialSkin.Controls;
 using System;
@@ -135,8 +136,7 @@ namespace GRC.Telas
             txtTotalPecas.TextChanged += txtTotalPecas_TextChanged;
             txtTotalServico.TextChanged += txtTotalServico_TextChanged;
 
-            txtCliente.TrailingIconClick += txtCliente_TrailingIconClick;
-            txtNomeItemEsporadico.TrailingIconClick += txtNomeItemEsporadico_TrailingIconClick;
+            txtCliente.Click += txtCliente_Click;
 
             chkOutros.CheckedChanged += chkOutros_CheckedChanged;
 
@@ -902,7 +902,19 @@ namespace GRC.Telas
 
             _itensOS.Clear();
         }
+        private bool ValidaData(MaterialTextBox txt)
+        {
+            string formato = "dd/MM/yyyy";
 
+            bool dataValida = DateTime.TryParseExact(
+                txt.Text,
+                formato,
+                CultureInfo.InvariantCulture,
+                DateTimeStyles.None,
+                out DateTime dataResult
+            );
+            return dataValida;
+        }
         private bool ValidaCampos()
         {
             int status = Convert.ToInt32(cbStatus.SelectedValue) > 0 ? Convert.ToInt32(cbStatus.SelectedValue) : 0;
@@ -913,38 +925,54 @@ namespace GRC.Telas
                 cbStatus.Focus();
                 return false;
             }
-            else if (string.IsNullOrWhiteSpace(txtDataEntrada.Text))
+
+            else if (string.IsNullOrWhiteSpace(txtDataEntrada.Text) || ValidaData(txtDataEntrada) == false)
             {
-                new AlertBox(Color.Goldenrod, Color.Lime, Color.Yellow, Resources.Warning, "Item de Estoque", "Item sem quantidade mínima", "A quantidade mínima é obrigatória", false).ShowDialog();
+                new AlertBox(Color.Goldenrod, Color.Lime, Color.Yellow, Resources.Warning, "Ordem de Serviço", "Data de entrada inválida", "Preencha corretamente o campo", false).ShowDialog();
                 txtDataEntrada.Focus();
                 return false;
             }
-            else if (string.IsNullOrWhiteSpace(txtRelatorioTecnico.Text))
+            else if((int)cbTipoServico.SelectedValue < 1)
+            {
+                new AlertBox(Color.Goldenrod, Color.Lime, Color.Yellow, Resources.Warning, "Ordem de Serviço", "Tipo de serviço não selecionado", "Selecione uma das opções", false).ShowDialog();
+                cbTipoServico.Focus();
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtResumoServico.Text))
+            {
+                new AlertBox(Color.Goldenrod, Color.Lime, Color.Yellow, Resources.Warning, "Ordem de Serviço", "Resumo do serviço vazio", "Preencha o campo pois é obrigatório", false).ShowDialog();
+                txtResumoServico.Focus();
+                return false;
+            }
+
+
+
+
+
+
+
+            if (string.IsNullOrWhiteSpace(txtRelatorioTecnico.Text))
             {
                 new AlertBox(Color.Goldenrod, Color.Lime, Color.Yellow, Resources.Warning, "Ordem de Serviço", "Item sem nome válido", "O nome do item é obrigatório", false).ShowDialog();
                 txtDescricaoSaida.Focus();
                 return false;
             }
-            else if (_cliente.Id < 1 && _cliente.Nome != string.Empty)
+            if (_cliente.Id < 1 && _cliente.Nome != string.Empty)
             {
                 new AlertBox(Color.Goldenrod, Color.Lime, Color.Yellow, Resources.Warning, "Ordem de Serviço", "Cliente não foi selecioando", "Selecione o cliente", false).ShowDialog();
                 txtCliente.Focus();
                 return false;
             }
-            else if ((int)cbTipoServico.SelectedValue < 1)
-            {
-                new AlertBox(Color.Goldenrod, Color.Lime, Color.Yellow, Resources.Warning, "Ordem de Serviço", "Unidade de medida inválida", "Selecione uma das opções", false).ShowDialog();
-                cbTipoServico.Focus();
-                return false;
-            }
             
-            
+
+
             else if (_idOS == 0 && (Convert.ToInt32(cbStatus.SelectedValue) == 11 || Convert.ToInt32(cbStatus.SelectedValue) == 10))
             {
                 new AlertBox(Color.Goldenrod, Color.Lime, Color.Yellow, Resources.Warning, "Ordem de Serviço", "Status Inválido para Inserção", "O Status da OS deve seguir o fluxo, não pode iniciar como Finalizado ou Cancelado", false).ShowDialog();
                 cbStatus.Focus();
                 return false;
             }
+
             else return true;
         }
 
@@ -1089,9 +1117,9 @@ namespace GRC.Telas
             }
         }
 
-        
 
-       
+
+
 
         #endregion
 
@@ -1297,7 +1325,7 @@ namespace GRC.Telas
 
         #region Eventos - Cliente e Itens Esporádicos
 
-        private void txtCliente_TrailingIconClick(object sender, EventArgs e)
+        private void txtCliente_Click(object sender, EventArgs e)
         {
             PesquisaRapidaCliente frm = new PesquisaRapidaCliente();
             if (frm.ShowDialog() == DialogResult.OK)
@@ -1306,10 +1334,6 @@ namespace GRC.Telas
                 txtCliente.Text = _cliente.Nome;
                 txtIdentidade.Text = _cliente.Identidade;
             }
-        }
-
-        private void txtNomeItemEsporadico_TrailingIconClick(object sender, EventArgs e)
-        {
         }
 
         private void dgvItens_CellContentClick(object sender, DataGridViewCellEventArgs e)
